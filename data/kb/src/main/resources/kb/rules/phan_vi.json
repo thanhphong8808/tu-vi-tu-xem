@@ -1,0 +1,1098 @@
+{
+ "rules": [
+  {
+   "id": "PV_CU_MON_THIN_TUAT_TAN",
+   "name": "Cự Môn Thìn Tuất gặp tuổi Tân",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self",
+      "chiIn": [
+       "THIN",
+       "TUAT"
+      ]
+     },
+     {
+      "yearCanIn": [
+       "TAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "invert": [
+     "STAR_CU_MON_H@MENH"
+    ]
+   },
+   "textKey": "cc.pv_cu_mon_thin_tuat_tan",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_THIEN_DONG_TUAT_DINH",
+   "name": "Thiên Đồng Tuất gặp tuổi Đinh",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_DONG",
+      "in": "self",
+      "chiIn": [
+       "TUAT"
+      ]
+     },
+     {
+      "yearCanIn": [
+       "DINH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "invert": [
+     "STAR_THIEN_DONG_H@MENH"
+    ]
+   },
+   "textKey": "cc.pv_thien_dong_tuat_dinh",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_MA_DAU_DOI_KIEM",
+   "name": "Mã đầu đới kiếm",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "KINH_DUONG",
+      "in": "self",
+      "chiIn": [
+       "NGO"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "THIEN_DONG",
+        "in": "self"
+       },
+       {
+        "star": "THAM_LANG",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 2.0,
+    "invert": [
+     "PHU_KINH_DUONG@MENH"
+    ]
+   },
+   "textKey": "cc.pv_ma_dau_doi_kiem",
+   "adviceKeys": [
+    "adv.ky_cuong_phap_luat"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_NHAT_HAM_TUAN_TRIET",
+   "name": "Nhật hãm gặp Tuần Triệt",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self",
+      "brightnessIn": [
+       "H"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "invert": [
+     "STAR_THAI_DUONG_H@MENH"
+    ]
+   },
+   "textKey": "cc.pv_nhat_ham_tuan_triet",
+   "adviceKeys": [],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_NGUYET_HAM_TUAN_TRIET",
+   "name": "Nguyệt hãm gặp Tuần Triệt",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_AM",
+      "in": "self",
+      "brightnessIn": [
+       "H"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "invert": [
+     "STAR_THAI_AM_H@MENH"
+    ]
+   },
+   "textKey": "cc.pv_nguyet_ham_tuan_triet",
+   "adviceKeys": [],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_NHAT_NGUYET_SANG_TUAN_TRIET",
+   "name": "Nhật Nguyệt sáng gặp Tuần Triệt",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "THAI_DUONG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAI_AM",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 1.0,
+    "soften": [
+     "STAR_THAI_DUONG_*@MENH",
+     "STAR_THAI_AM_*@MENH"
+    ]
+   },
+   "textKey": "cc.pv_nhat_nguyet_sang_tuan_triet",
+   "adviceKeys": [
+    "adv.tu_luc"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_SAO_HAM_HOA_LOC_QUYEN",
+   "name": "Sao hãm được hóa Lộc/Quyền",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "star": "TU_VI",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "TU_VI",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_CO",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THIEN_CO",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAI_DUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THAI_DUONG",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "VU_KHUC",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "VU_KHUC",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_DONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THIEN_DONG",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "LIEM_TRINH",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "LIEM_TRINH",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_PHU",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THIEN_PHU",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAI_AM",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THAI_AM",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAM_LANG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THAM_LANG",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "CU_MON",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "CU_MON",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_TUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THIEN_TUONG",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_LUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THIEN_LUONG",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAT_SAT",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "THAT_SAT",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "PHA_QUAN",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "hoaOf": "PHA_QUAN",
+        "hoa": [
+         "LOC",
+         "QUYEN"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "soften": [
+     "STAR_*_H@MENH"
+    ]
+   },
+   "textKey": "cc.pv_sao_ham_hoa_loc_quyen",
+   "adviceKeys": [
+    "adv.tu_luc"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_SAT_TINH_DAC_DIA_SPT",
+   "name": "Sát tinh đắc địa phò Sát Phá Tham",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "THAT_SAT",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "PHA_QUAN",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAM_LANG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "KINH_DUONG",
+        "in": "self",
+        "chiIn": [
+         "THIN",
+         "TUAT",
+         "SUU",
+         "MUI"
+        ]
+       },
+       {
+        "star": "DA_LA",
+        "in": "self",
+        "chiIn": [
+         "THIN",
+         "TUAT",
+         "SUU",
+         "MUI"
+        ]
+       },
+       {
+        "star": "HOA_TINH",
+        "in": "self",
+        "chiIn": [
+         "DAN",
+         "MAO",
+         "THIN",
+         "TI",
+         "NGO"
+        ]
+       },
+       {
+        "star": "LINH_TINH",
+        "in": "self",
+        "chiIn": [
+         "DAN",
+         "MAO",
+         "THIN",
+         "TI",
+         "NGO"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "invert": [
+     "PHU_KINH_DUONG@MENH",
+     "PHU_DA_LA@MENH",
+     "PHU_HOA_TINH@MENH",
+     "PHU_LINH_TINH@MENH"
+    ]
+   },
+   "textKey": "cc.pv_sat_tinh_dac_dia_spt",
+   "adviceKeys": [
+    "adv.ky_cuong_phap_luat",
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_KHONG_KIEP_DAC_DIA",
+   "name": "Không Kiếp đắc địa",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "DIA_KHONG",
+        "in": "self",
+        "chiIn": [
+         "DAN",
+         "THAN",
+         "TI",
+         "HOI"
+        ]
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self",
+        "chiIn": [
+         "DAN",
+         "THAN",
+         "TI",
+         "HOI"
+        ]
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "TU_VI",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THIEN_CO",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAI_DUONG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "VU_KHUC",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THIEN_DONG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "LIEM_TRINH",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THIEN_PHU",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAI_AM",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAM_LANG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "CU_MON",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THIEN_TUONG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THIEN_LUONG",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "THAT_SAT",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       },
+       {
+        "star": "PHA_QUAN",
+        "in": "self",
+        "brightnessIn": [
+         "M",
+         "V"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "soften": [
+     "PHU_DIA_KHONG@MENH",
+     "PHU_DIA_KIEP@MENH"
+    ]
+   },
+   "textKey": "cc.pv_khong_kiep_dac_dia",
+   "adviceKeys": [
+    "adv.chot_loi_phan_tan",
+    "adv.bao_phat_giu_phan"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_HOA_KY_TU_MO",
+   "name": "Hóa Kỵ ở Tứ Mộ",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "ANY",
+    "allOf": [
+     {
+      "star": "HOA_KY",
+      "in": "self",
+      "chiIn": [
+       "THIN",
+       "TUAT",
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "soften": [
+     "PHU_HOA_KY@SELF"
+    ]
+   },
+   "textKey": "cc.pv_hoa_ky_tu_mo",
+   "adviceKeys": [
+    "adv.nghien_cuu_chuyen_sau"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_THIEN_HINH_DAC_DIA",
+   "name": "Thiên Hình đắc địa",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_HINH",
+      "in": "self",
+      "chiIn": [
+       "DAN",
+       "MAO",
+       "THAN",
+       "DAU"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "THIEN_LUONG",
+        "in": "self"
+       },
+       {
+        "star": "THAT_SAT",
+        "in": "self"
+       },
+       {
+        "star": "PHA_QUAN",
+        "in": "self"
+       },
+       {
+        "star": "VU_KHUC",
+        "in": "self"
+       },
+       {
+        "star": "LIEM_TRINH",
+        "in": "self"
+       },
+       {
+        "star": "THAM_LANG",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "PHAP_LY"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "invert": [
+     "PHU_THIEN_HINH@MENH"
+    ]
+   },
+   "textKey": "cc.pv_thien_hinh_dac_dia",
+   "adviceKeys": [
+    "adv.ky_cuong_phap_luat"
+   ],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "id": "PV_TUAN_TRIET_GIAI_HUNG",
+   "name": "Tuần Triệt giải hung",
+   "type": "PHAN_VI",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "ANY",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "countOf": [
+         "KINH_DUONG",
+         "DA_LA",
+         "HOA_TINH",
+         "LINH_TINH",
+         "DIA_KHONG",
+         "DIA_KIEP"
+        ],
+        "in": "self",
+        "atLeast": 1
+       },
+       {
+        "star": "TU_VI",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THIEN_CO",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THAI_DUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "VU_KHUC",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THIEN_DONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "LIEM_TRINH",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THIEN_PHU",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THAI_AM",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THAM_LANG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "CU_MON",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THIEN_TUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THIEN_LUONG",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "THAT_SAT",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "PHA_QUAN",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0,
+    "soften": [
+     "STAR_*_H@SELF",
+     "PHU_KINH_DUONG@SELF",
+     "PHU_DA_LA@SELF",
+     "PHU_HOA_TINH@SELF",
+     "PHU_LINH_TINH@SELF",
+     "PHU_DIA_KHONG@SELF",
+     "PHU_DIA_KIEP@SELF"
+    ]
+   },
+   "textKey": "cc.pv_tuan_triet_giai_hung",
+   "adviceKeys": [],
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  }
+ ]
+}

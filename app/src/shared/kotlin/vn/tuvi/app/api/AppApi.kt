@@ -194,7 +194,12 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
                     put("year", chart.lunar.year + p.ages.first - 1)
                 })
             })
-            put("year", yearJson(chart, LimitEngine.forYear(chart, viewYear)))
+            val limits = LimitEngine.forYear(chart, viewYear)
+            put("year", yearJson(chart, limits))
+            // Luận giải sơ bộ (giai đoạn 3). Lỗi ở đây không được làm hỏng lá số.
+            put("reading", try { Reading.json(chart, limits, inputObj.bool("expert") || o.bool("expert")) } catch (e: Throwable) {
+                buildJsonObject { put("error", "${e.javaClass.simpleName}: ${e.message ?: ""}") }
+            })
             put("months", buildJsonArray {
                 val leap = LunarCalendar.leapMonthOf(viewYear)
                 for (m in 1..12) {

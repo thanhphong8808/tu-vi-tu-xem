@@ -1,0 +1,76 @@
+{
+ "texts": [
+  {
+   "key": "cung.MENH",
+   "text": "Cung Mệnh là gốc của lá số: bản chất, tư chất, năng khiếu và xu hướng hành động, nặng nhất trước khoảng 30 tuổi. Luôn đọc cùng Thiên Di (xung chiếu), Quan Lộc và Tài Bạch (tam hợp).",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.PHU_MAU",
+   "text": "Cung Phụ Mẫu nói về cha mẹ (cả cha mẹ nuôi, gia đình bên vợ/chồng): điều kiện, sự nâng đỡ và mức gắn bó giữa mình với cha mẹ. Đọc thêm độ sáng của Thái Dương (cha) và Thái Âm (mẹ).",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.PHUC_DUC",
+   "text": "Cung Phúc Đức được xem là “linh hồn” của lá số: phúc ấm dòng họ, đời sống nội tâm, sự thanh thản và khả năng được che chở khi gặp hạn khó.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.DIEN_TRACH",
+   "text": "Cung Điền Trạch nói về nhà cửa, đất đai, nơi ở và khả năng tích lũy tài sản cố định.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.QUAN_LOC",
+   "text": "Cung Quan Lộc nói về con đường sự nghiệp, ngành nghề phù hợp, vị trí và tinh thần trách nhiệm trong công việc.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.NO_BOC",
+   "text": "Cung Nô Bộc nói về bạn bè, đồng nghiệp, cấp dưới, đối tác và quan hệ với cộng đồng.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.THIEN_DI",
+   "text": "Cung Thiên Di đối diện cung Mệnh: hoàn cảnh bên ngoài xã hội, cơ hội đi xa, khả năng thích ứng với môi trường mới.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.TAT_ACH",
+   "text": "Cung Tật Ách cho biết những điểm nên lưu ý về sức khỏe và an toàn. Đây chỉ là gợi ý để chăm sóc bản thân, không thay cho thăm khám của bác sĩ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.TAI_BACH",
+   "text": "Cung Tài Bạch nói về dòng tiền: cách kiếm tiền, chi tiêu và quản lý tài chính (khác Điền Trạch là tài sản cố định).",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.TU_TUC",
+   "text": "Cung Tử Tức nói về đường con cái, sự gắn bó giữa cha mẹ và con, và cũng là một trong ba cung tài sản.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.PHU_THE",
+   "text": "Cung Phu Thê nói về người bạn đời: tính cách, hoàn cảnh và mức hòa hợp của hôn nhân.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cung.HUYNH_DE",
+   "text": "Cung Huynh Đệ nói về anh chị em: tình cảm, sự tương trợ và khả năng hợp tác giữa anh em.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  }
+ ]
+}

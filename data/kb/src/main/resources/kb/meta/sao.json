@@ -1,0 +1,520 @@
+{
+ "combos": [
+  {
+   "key": "TU_VI_THIEN_PHU",
+   "name": "Tử Phủ",
+   "stars": [
+    "TU_VI",
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "key": "TU_VI_THIEN_TUONG",
+   "name": "Tử Tướng",
+   "stars": [
+    "TU_VI",
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "key": "TU_VI_THAT_SAT",
+   "name": "Tử Sát",
+   "stars": [
+    "TU_VI",
+    "THAT_SAT"
+   ]
+  },
+  {
+   "key": "TU_VI_PHA_QUAN",
+   "name": "Tử Phá",
+   "stars": [
+    "TU_VI",
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "key": "TU_VI_THAM_LANG",
+   "name": "Tử Tham",
+   "stars": [
+    "TU_VI",
+    "THAM_LANG"
+   ]
+  },
+  {
+   "key": "THIEN_CO_CU_MON",
+   "name": "Cơ Cự",
+   "stars": [
+    "THIEN_CO",
+    "CU_MON"
+   ]
+  },
+  {
+   "key": "THIEN_CO_THAI_AM",
+   "name": "Cơ Âm",
+   "stars": [
+    "THIEN_CO",
+    "THAI_AM"
+   ]
+  },
+  {
+   "key": "THIEN_CO_THIEN_LUONG",
+   "name": "Cơ Lương",
+   "stars": [
+    "THIEN_CO",
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "key": "THAI_DUONG_THAI_AM",
+   "name": "Nhật Nguyệt",
+   "stars": [
+    "THAI_DUONG",
+    "THAI_AM"
+   ]
+  },
+  {
+   "key": "THAI_DUONG_CU_MON",
+   "name": "Nhật Cự",
+   "stars": [
+    "THAI_DUONG",
+    "CU_MON"
+   ]
+  },
+  {
+   "key": "THAI_DUONG_THIEN_LUONG",
+   "name": "Nhật Lương",
+   "stars": [
+    "THAI_DUONG",
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "key": "VU_KHUC_THIEN_PHU",
+   "name": "Vũ Phủ",
+   "stars": [
+    "VU_KHUC",
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "key": "VU_KHUC_THIEN_TUONG",
+   "name": "Vũ Tướng",
+   "stars": [
+    "VU_KHUC",
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "key": "VU_KHUC_THAT_SAT",
+   "name": "Vũ Sát",
+   "stars": [
+    "VU_KHUC",
+    "THAT_SAT"
+   ]
+  },
+  {
+   "key": "VU_KHUC_PHA_QUAN",
+   "name": "Vũ Phá",
+   "stars": [
+    "VU_KHUC",
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "key": "VU_KHUC_THAM_LANG",
+   "name": "Vũ Tham",
+   "stars": [
+    "VU_KHUC",
+    "THAM_LANG"
+   ]
+  },
+  {
+   "key": "THIEN_DONG_THAI_AM",
+   "name": "Đồng Âm",
+   "stars": [
+    "THIEN_DONG",
+    "THAI_AM"
+   ]
+  },
+  {
+   "key": "THIEN_DONG_CU_MON",
+   "name": "Đồng Cự",
+   "stars": [
+    "THIEN_DONG",
+    "CU_MON"
+   ]
+  },
+  {
+   "key": "THIEN_DONG_THIEN_LUONG",
+   "name": "Đồng Lương",
+   "stars": [
+    "THIEN_DONG",
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "key": "LIEM_TRINH_THIEN_PHU",
+   "name": "Liêm Phủ",
+   "stars": [
+    "LIEM_TRINH",
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "key": "LIEM_TRINH_THIEN_TUONG",
+   "name": "Liêm Tướng",
+   "stars": [
+    "LIEM_TRINH",
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "key": "LIEM_TRINH_THAT_SAT",
+   "name": "Liêm Sát",
+   "stars": [
+    "LIEM_TRINH",
+    "THAT_SAT"
+   ]
+  },
+  {
+   "key": "LIEM_TRINH_PHA_QUAN",
+   "name": "Liêm Phá",
+   "stars": [
+    "LIEM_TRINH",
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "key": "LIEM_TRINH_THAM_LANG",
+   "name": "Liêm Tham",
+   "stars": [
+    "LIEM_TRINH",
+    "THAM_LANG"
+   ]
+  }
+ ],
+ "minor": [
+  {
+   "star": "TA_PHU",
+   "polarity": 1
+  },
+  {
+   "star": "HUU_BAT",
+   "polarity": 1
+  },
+  {
+   "star": "VAN_XUONG",
+   "polarity": 1,
+   "polarityDac": 1,
+   "polarityHam": 0
+  },
+  {
+   "star": "VAN_KHUC",
+   "polarity": 1,
+   "polarityDac": 1,
+   "polarityHam": 0
+  },
+  {
+   "star": "THIEN_KHOI",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_VIET",
+   "polarity": 1
+  },
+  {
+   "star": "LOC_TON",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_MA",
+   "polarity": 0
+  },
+  {
+   "star": "HOA_LOC",
+   "polarity": 1
+  },
+  {
+   "star": "HOA_QUYEN",
+   "polarity": 1
+  },
+  {
+   "star": "HOA_KHOA",
+   "polarity": 1
+  },
+  {
+   "star": "HOA_KY",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "KINH_DUONG",
+   "polarity": -1,
+   "polarityDac": 1,
+   "polarityHam": -1
+  },
+  {
+   "star": "DA_LA",
+   "polarity": -1,
+   "polarityDac": 1,
+   "polarityHam": -1
+  },
+  {
+   "star": "HOA_TINH",
+   "polarity": -1,
+   "polarityDac": 1,
+   "polarityHam": -1
+  },
+  {
+   "star": "LINH_TINH",
+   "polarity": -1,
+   "polarityDac": 1,
+   "polarityHam": -1
+  },
+  {
+   "star": "DIA_KHONG",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "DIA_KIEP",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "THIEN_QUAN",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_PHUC",
+   "polarity": 1
+  },
+  {
+   "star": "VAN_TINH",
+   "polarity": 1
+  },
+  {
+   "star": "DUONG_PHU",
+   "polarity": 1
+  },
+  {
+   "star": "QUOC_AN",
+   "polarity": 1
+  },
+  {
+   "star": "THAI_PHU",
+   "polarity": 1
+  },
+  {
+   "star": "PHONG_CAO",
+   "polarity": 1
+  },
+  {
+   "star": "TAM_THAI",
+   "polarity": 1
+  },
+  {
+   "star": "BAT_TOA",
+   "polarity": 1
+  },
+  {
+   "star": "AN_QUANG",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_QUY",
+   "polarity": 1
+  },
+  {
+   "star": "LONG_TRI",
+   "polarity": 1
+  },
+  {
+   "star": "PHUONG_CAC",
+   "polarity": 1
+  },
+  {
+   "star": "GIAI_THAN",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_GIAI",
+   "polarity": 1
+  },
+  {
+   "star": "DIA_GIAI",
+   "polarity": 1
+  },
+  {
+   "star": "HONG_LOAN",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_HY",
+   "polarity": 1
+  },
+  {
+   "star": "DAO_HOA",
+   "polarity": 0
+  },
+  {
+   "star": "THIEN_TAI",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_THO",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_DUC",
+   "polarity": 1
+  },
+  {
+   "star": "NGUYET_DUC",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_Y",
+   "polarity": 1
+  },
+  {
+   "star": "THIEN_TRU",
+   "polarity": 1
+  },
+  {
+   "star": "HOA_CAI",
+   "polarity": 0
+  },
+  {
+   "star": "THIEN_HINH",
+   "polarity": -1,
+   "polarityDac": 1,
+   "polarityHam": -1
+  },
+  {
+   "star": "THIEN_RIEU",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "THIEN_KHOC",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "THIEN_HU",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "CO_THAN",
+   "polarity": -1
+  },
+  {
+   "star": "QUA_TU",
+   "polarity": -1
+  },
+  {
+   "star": "KIEP_SAT",
+   "polarity": -1
+  },
+  {
+   "star": "PHA_TOAI",
+   "polarity": -1
+  },
+  {
+   "star": "LUU_HA",
+   "polarity": -1
+  },
+  {
+   "star": "DAU_QUAN",
+   "polarity": -1
+  },
+  {
+   "star": "THIEN_KHONG",
+   "polarity": -1
+  },
+  {
+   "star": "THIEN_LA",
+   "polarity": -1
+  },
+  {
+   "star": "DIA_VONG",
+   "polarity": -1
+  },
+  {
+   "star": "THIEN_THUONG",
+   "polarity": -1
+  },
+  {
+   "star": "THIEN_SU",
+   "polarity": -1
+  },
+  {
+   "star": "DAI_HAO",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "TIEU_HAO",
+   "polarity": -1,
+   "polarityDac": 0,
+   "polarityHam": -1
+  },
+  {
+   "star": "TANG_MON",
+   "polarity": -1
+  },
+  {
+   "star": "BACH_HO",
+   "polarity": -1
+  },
+  {
+   "star": "THAI_TUE",
+   "polarity": 0
+  },
+  {
+   "star": "QUAN_PHU",
+   "polarity": -1
+  },
+  {
+   "star": "THANH_LONG",
+   "polarity": 1
+  },
+  {
+   "star": "TAU_THU",
+   "polarity": 1
+  },
+  {
+   "star": "PHUC_BINH",
+   "polarity": -1
+  },
+  {
+   "star": "TUONG_QUAN",
+   "polarity": 1
+  },
+  {
+   "star": "HY_THAN",
+   "polarity": 1
+  },
+  {
+   "star": "LONG_DUC",
+   "polarity": 1
+  },
+  {
+   "star": "PHUC_DUC",
+   "polarity": 1
+  },
+  {
+   "star": "THAI",
+   "polarity": 0
+  }
+ ]
+}

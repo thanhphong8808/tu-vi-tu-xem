@@ -1,0 +1,50 @@
+{
+ "version": "0.3.0-nhap",
+ "note": "Bản nháp: mọi mục reviewed=false cho tới khi người dùng duyệt (mục 9).",
+ "counts": {
+  "rules": 189,
+  "rulesByType": {
+   "CAT_CACH": 33,
+   "HUNG_CACH": 23,
+   "PHAN_VI": 12,
+   "THE_SAO": 35,
+   "CUNG": 29,
+   "VAN_HAN": 45,
+   "CHUYEN_DE": 12
+  },
+  "textsRules": 189,
+  "textsChinhTinh": 672,
+  "textsDongCung": 288,
+  "textsPhuTinh": 100,
+  "phuTinh": 73,
+  "advice": 50,
+  "faq": 8
+ },
+ "files": {
+  "rules": [
+   "rules/cat_cach.json",
+   "rules/hung_cach.json",
+   "rules/phan_vi.json",
+   "rules/the_sao.json",
+   "rules/cung.json",
+   "rules/van_han.json",
+   "rules/chuyen_de.json"
+  ],
+  "texts": [
+   "texts/rules.json",
+   "texts/cung.json",
+   "texts/chinh_tinh.json",
+   "texts/dong_cung.json",
+   "texts/phu_tinh.json"
+  ],
+  "advice": [
+   "advice/advice.json"
+  ],
+  "faq": [
+   "faq/faq.json"
+  ],
+  "meta": [
+   "meta/sao.json"
+  ]
+ }
+}

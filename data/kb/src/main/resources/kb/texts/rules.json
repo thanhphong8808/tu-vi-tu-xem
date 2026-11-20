@@ -1,0 +1,1138 @@
+{
+ "texts": [
+  {
+   "key": "cc.cc_tu_phu_dong_cung",
+   "text": "Mệnh có Tử Vi – Thiên Phủ đồng cung: có xu hướng nắm cả quyền lẫn kho, thuận cho vai trò lãnh đạo, làm chủ. Gặp thêm Tả Hữu hoặc Lộc thì cách mới trọn.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_quan_than_khanh_hoi",
+   "text": "Tử Vi thủ Mệnh có Tả Phù, Hữu Bật hội về: dễ được người phò tá, thuận lên vị trí quản trị. Có thêm Xương Khúc hay Khôi Việt thì càng mạnh.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_cuc_huong_ly_minh",
+   "text": "Tử Vi tại Ngọ thủ Mệnh, không bị sát tinh tọa thủ: phong thái uy nghi, danh vọng dễ rõ ràng.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_phu_tuong_trieu_vien",
+   "text": "Thiên Phủ và Thiên Tướng cùng hội về Mệnh, không gặp Không Kiếp: thiên về ổn định, biết tích lũy, dễ được tin cậy.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_co_nguyet_dong_luong",
+   "text": "Đủ Thiên Cơ, Thái Âm, Thiên Đồng, Thiên Lương hội về Mệnh: hợp hành chính, giáo dục, y tế, nghiên cứu; con đường ổn định hơn là bứt phá.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_sat_pha_tham",
+   "text": "Mệnh thuộc bộ Sát Phá Tham: tính động, thích khai phá, đời có nhiều thăng trầm. Gặp sát tinh đắc địa thì hợp võ nghiệp hoặc kinh doanh cạnh tranh.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_nhat_nguyet_tinh_minh",
+   "text": "Thái Dương và Thái Âm đều sáng, cùng hội về Mệnh: thông minh, danh và lợi có xu hướng cân bằng.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_minh_chau_xuat_hai",
+   "text": "Mệnh tại Mùi vô chính diệu, Thái Dương ở Mão và Thái Âm ở Hợi chiếu về: dễ tỏa sáng nhờ học vấn và danh tiếng.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_nhat_xuat_phu_tang",
+   "text": "Thái Dương thủ Mệnh tại Mão (mặt trời mới mọc): quang minh, hướng ngoại; danh thường lớn hơn lợi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_nhat_le_trung_thien",
+   "text": "Thái Dương thủ Mệnh tại Ngọ (mặt trời giữa trưa): khí chất rực rỡ, hướng ngoại, danh lớn; nên giữ sự khiêm nhường.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_nguyet_lang_thien_mon",
+   "text": "Thái Âm thủ Mệnh tại Hợi: tinh tế, dễ phú túc; càng thuận với người sinh ban đêm.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_nhat_chieu_loi_mon",
+   "text": "Thái Dương cùng Thiên Lương tại Mão thủ Mệnh: danh và tài dễ rực rỡ, được nhiều người biết đến.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_thach_trung_an_ngoc",
+   "text": "Cự Môn tại {cung} có Hóa Lộc, Quyền hoặc Khoa hội về: tài năng như ngọc trong đá, có xu hướng phát muộn mà bền.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_cu_nhat_dong_cung_dan",
+   "text": "Cự Môn cùng Thái Dương tại Dần thủ Mệnh: dễ có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_cu_nhat_dong_cung_than",
+   "text": "Cự Môn cùng Thái Dương tại Thân thủ Mệnh: vẫn có khiếu ngôn luận, ngoại giao nhưng yếu hơn ở Dần, cần bền bỉ hơn.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_that_sat_trieu_dau",
+   "text": "Thất Sát thủ Mệnh tại {cung}: uy dũng, độc lập, có chí lập nghiệp.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_anh_tinh_nhap_mieu",
+   "text": "Phá Quân thủ Mệnh tại {cung}: tinh thần tiên phong, dám đổi mới.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_anh_tinh_nhap_mieu_hoa",
+   "text": "Phá Quân miếu địa thủ Mệnh lại được hóa Quyền hoặc hóa Lộc: cách Anh tinh nhập miếu ở dạng đẹp nhất, sức khai phá đi kèm thành quả.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_hung_tu_trieu_vien",
+   "text": "Liêm Trinh tại {cung} thủ Mệnh, không sát tinh tọa thủ: liêm chính, có uy tín; hợp ngành luật, kỷ cương.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_tham_hoa_tuong_phung",
+   "text": "Tham Lang gặp Hỏa Tinh tại {cung} thủ Mệnh: dễ có những đợt bạo phát. Bạo phát thì dễ bạo tàn — nhớ giữ lại phần thành quả.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_tham_linh_tinh_thu",
+   "text": "Tham Lang gặp Linh Tinh tại {cung} thủ Mệnh: có xu hướng phát nhanh. Bạo phát thì dễ bạo tàn — nhớ giữ lại phần thành quả.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_tham_hoa_tai_quan",
+   "text": "Tham Lang gặp Hỏa hoặc Linh tại cung {cung}: lĩnh vực của cung này dễ có những bước tiến nhanh, cần biết dừng đúng lúc.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_vu_tham_dong_hanh",
+   "text": "Vũ Khúc cùng Tham Lang tại {cung} thủ Mệnh: tiền bần hậu phú, thường khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_dong_luong_dan_than",
+   "text": "Thiên Đồng cùng Thiên Lương tại {cung} thủ Mệnh: phúc hậu, gặp khó thường có người giúp.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_co_cu_dong_lam",
+   "text": "Thiên Cơ cùng Cự Môn tại {cung} thủ Mệnh: hoạt ngôn, hợp kinh doanh, buôn bán; nhược điểm là hay đa nghi.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_co_cu_hoa_loc_quyen",
+   "text": "Cơ Cự đồng lâm lại có Hóa Lộc hoặc Hóa Quyền tọa thủ: thuận cho việc làm giàu bằng kinh doanh.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_van_que_van_hoa",
+   "text": "Văn Xương và Văn Khúc cùng tại {cung} thủ Mệnh: thiên về văn chương, học vấn.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_loc_ma_giao_tri",
+   "text": "Lộc và Thiên Mã hội về Mệnh, Tài, Quan, Di: tiền dễ đến từ di chuyển, giao thương.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_song_loc_trieu_vien",
+   "text": "Lộc Tồn và Hóa Lộc cùng hội về Mệnh: tài lộc có xu hướng dồi dào.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_tam_hoa_lien_chau",
+   "text": "Hóa Lộc, Hóa Quyền, Hóa Khoa đều hội về Mệnh: danh, quyền, lộc có đủ điều kiện cùng phát triển.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_tai_am_giap_an",
+   "text": "Thiên Tướng thủ Mệnh được kẹp bởi Thiên Lương và Cự Môn có Lộc: hưởng trọn cả quyền lẫn tiền.",
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_giap_cat",
+   "text": "Hai cung kề Mệnh có cặp sao tốt kẹp hai bên: dễ được môi trường xung quanh nâng đỡ.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.cc_toa_quy_huong_quy",
+   "text": "Thiên Khôi, Thiên Việt một sao ở Mệnh, một sao chiếu về: dễ gặp quý nhân, thuận thi cử.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_linh_xuong_da_vu",
+   "text": "Linh Tinh, Văn Xương, Đà La, Vũ Khúc cùng hội ở {cung}: giai đoạn dễ chịu áp lực tinh thần rất lớn. Nên giảm việc, giữ kết nối với người thân và chủ động tìm hỗ trợ chuyên môn khi thấy quá tải.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_linh_xuong_da_vu_dai_han",
+   "text": "Linh Tinh, Văn Xương, Đà La, Vũ Khúc cùng hội ở {cung}: giai đoạn dễ chịu áp lực tinh thần rất lớn. Nên giảm việc, giữ kết nối với người thân và chủ động tìm hỗ trợ chuyên môn khi thấy quá tải.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_linh_xuong_da_vu_tieu_han",
+   "text": "Linh Tinh, Văn Xương, Đà La, Vũ Khúc cùng hội ở {cung}: giai đoạn dễ chịu áp lực tinh thần rất lớn. Nên giảm việc, giữ kết nối với người thân và chủ động tìm hỗ trợ chuyên môn khi thấy quá tải.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_lo_thuong_mai_thi",
+   "text": "Liêm Trinh cùng Thất Sát tại {cung}: nên cẩn trọng khi tham gia giao thông và đi xa, nhất là năm hạn có sát tinh lưu.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_hinh_ky_giap_an",
+   "text": "Thiên Tướng thủ Mệnh bị kẹp giữa Cự Môn hóa Kỵ và Thiên Lương gặp Kình Dương: dễ vướng quy định, giấy tờ, trách nhiệm pháp lý; thận trọng khi ký kết.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_cu_kinh",
+   "text": "Cự Môn gặp Kình Dương tại cung {cung}: hay va chạm lời nói, việc dễ bế tắc nếu nóng vội.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_phiem_thuy_dao_hoa",
+   "text": "Tham Lang tại {cung} gặp Kình, Đà hoặc Hóa Kỵ: ham vui, dễ rối chuyện tình cảm và tài chính cá nhân.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_liem_tham_ti_hoi",
+   "text": "Liêm Trinh cùng Tham Lang tại {cung} thủ Mệnh: dễ vướng thị phi vì tiền hoặc tình; nên tránh xa vùng xám.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_liem_tham_ti_hoi_ky",
+   "text": "Liêm Tham tại {cung} lại gặp Hóa Kỵ: nguy cơ vướng pháp lý vì tiền hoặc tình cao hơn; tuyệt đối minh bạch giấy tờ, tránh việc mập mờ.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_vu_pha_ti_hoi",
+   "text": "Vũ Khúc cùng Phá Quân tại {cung} thủ Mệnh: tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_khong_kiep_giap_menh",
+   "text": "Địa Không và Địa Kiếp kẹp hai bên Mệnh: môi trường hay gây hao hụt, kế hoạch dễ đứt gãy; nên có phương án dự phòng.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_tu_sat_hoi_menh",
+   "text": "Từ ba sao trở lên trong Kình, Đà, Hỏa, Linh hội về Mệnh mà không có sao giải: đường đi nhiều trở ngại, cần sự bền bỉ.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_thien_co_khong_kiep",
+   "text": "Thiên Cơ gặp Địa Không hoặc Địa Kiếp tọa thủ: dễ mưu tính quá đà, hỏng việc vì tính toán quá nhiều.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_loc_phung_luong_sat",
+   "text": "Lộc gặp cả Địa Không lẫn Địa Kiếp hội về Mệnh: tiền đến rồi đi, khó giữ.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_ma_lac_khong_vong",
+   "text": "Thiên Mã tại cung {cung} gặp Tuần hoặc Triệt: di chuyển, đổi việc hay trắc trở, chậm hơn dự tính.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_chiet_tuc_ma",
+   "text": "Thiên Mã đồng cung Đà La tại cung {cung}: việc đi lại, thay đổi dễ bị trì trệ; nên chuẩn bị kỹ trước khi đi.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_nhat_nguyet_phan_boi",
+   "text": "Thái Dương và Thái Âm cùng hãm, hội về Mệnh: dễ vất vả, danh chưa tương xứng công sức — trừ khi có điều kiện phản vi.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_kho_thung",
+   "text": "Thiên Phủ gặp Địa Không/Địa Kiếp tại cung {cung} (kho thủng): tích lũy khó bền; cần kỷ luật tài chính, tránh đầu cơ.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_kho_lo",
+   "text": "Thiên Phủ gặp Tuần hoặc Triệt tại cung {cung} (kho lộ): khó giữ của bền; nên giữ kỷ luật chi tiêu.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_co_quan",
+   "text": "Tử Vi thủ Mệnh mà không có Tả Hữu hội về (cô quân): dễ thiếu người phò tá, đôi khi cô đơn, cố chấp.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_hon_quan",
+   "text": "Tử Vi không Tả Hữu lại gặp từ hai sát tinh: dễ bị người xấu lợi dụng, tính ngang bướng; rất cần người góp ý thẳng thắn.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_song_ky",
+   "text": "Hóa Kỵ gốc và Hóa Kỵ lưu cùng ở cung {cung} trong năm {nam}: lĩnh vực của cung này dễ có vướng mắc kéo dài; giải quyết từng việc nhỏ, đừng để dồn.",
+   "source": "Prompt mục 10.2; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "cc.hc_cuc_khac_menh",
+   "text": "Hành của Cục khắc hành bản mệnh: hoàn cảnh ít nâng đỡ, thành quả chủ yếu do tự lực.",
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.I.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_cu_mon_thin_tuat_tan",
+   "text": "Cự Môn hãm tại {cung} nhưng tuổi Tân được Cự Môn hóa Lộc: “hãm địa mà hóa cát”, khẩu tài trở thành lợi thế.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_thien_dong_tuat_dinh",
+   "text": "Thiên Đồng tại Tuất thủ Mệnh, tuổi Đinh được Thiên Đồng hóa Quyền: phản bối hóa cát, có thể vươn rất cao.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_ma_dau_doi_kiem",
+   "text": "Kình Dương tại Ngọ thủ Mệnh có Thiên Đồng hoặc Tham Lang: uy trấn một phương, hợp võ nghiệp và quản lý cứng rắn.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_nhat_ham_tuan_triet",
+   "text": "Thái Dương hãm thủ Mệnh lại gặp Tuần hoặc Triệt: theo Nam phái là “phản vi minh”, tính hãm giảm mạnh.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_nguyet_ham_tuan_triet",
+   "text": "Thái Âm hãm thủ Mệnh lại gặp Tuần hoặc Triệt: theo Nam phái là “phản vi minh”, tính hãm giảm mạnh.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_nhat_nguyet_sang_tuan_triet",
+   "text": "Nhật hoặc Nguyệt đang sáng thủ Mệnh lại bị Tuần/Triệt án ngữ: độ sáng bị giảm, cần nỗ lực hơn để tỏa sáng.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_sao_ham_hoa_loc_quyen",
+   "text": "Chính tinh hãm thủ Mệnh nhưng chính nó được hóa Lộc hoặc Quyền: giảm hung một bậc — vất vả nhưng có lối ra.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_sat_tinh_dac_dia_spt",
+   "text": "Sát tinh đắc địa đi cùng Sát Phá Tham miếu vượng ở Mệnh: sát hóa thành quyền — hợp võ nghiệp, phẫu thuật, an ninh, kinh doanh cạnh tranh.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_khong_kiep_dac_dia",
+   "text": "Không Kiếp đắc địa ở Mệnh có chính tinh miếu vượng: có thể “phát như sấm” nhưng cũng dễ tàn nhanh — luôn chốt lời, phân tán rủi ro.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_hoa_ky_tu_mo",
+   "text": "Hóa Kỵ tại {cung} thuộc Tứ Mộ: giảm hung, chuyển thành sự cẩn trọng, đi sâu vào chuyên môn.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_thien_hinh_dac_dia",
+   "text": "Thiên Hình đắc địa thủ Mệnh cùng chính tinh võ hoặc Thiên Lương: quyền uy về pháp luật, y khoa, kỷ luật.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.pv_tuan_triet_giai_hung",
+   "text": "Tuần/Triệt án ngữ cung {cung} có sát tinh hoặc chính tinh hãm: phần xấu ở đó được giảm bớt.",
+   "source": "Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_vcd_muon_xung",
+   "text": "Mệnh vô chính diệu: mượn chính tinh cung xung chiếu (Thiên Di) để luận, lực giảm còn khoảng bảy phần; tính cách dễ chịu ảnh hưởng của môi trường.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_vcd_tam_khong",
+   "text": "Mệnh vô chính diệu gặp đủ “tam không”: theo Nam phái là cách có thể phú quý bất ngờ.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_vcd_nhat_nguyet_chieu",
+   "text": "Mệnh vô chính diệu được Nhật hoặc Nguyệt sáng chiếu về: điểm tựa tốt, giảm bớt sự chông chênh.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_vcd_sat_toa",
+   "text": "Mệnh vô chính diệu có sát tinh tọa thủ: gốc yếu, dễ bị ngoại cảnh chi phối; đi xa lập nghiệp thường thuận hơn.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_tuan_triet_dong_cung",
+   "text": "Tuần và Triệt cùng án ngữ cung {cung}: lực chặn rất mạnh — điều tốt của cung dễ bế tắc, điều xấu lại được giải mạnh.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_loc_ton_thu_menh",
+   "text": "Lộc Tồn thủ Mệnh (luôn bị Kình Đà kẹp hai bên): biết giữ của nhưng dễ dè dặt, đôi khi cô độc.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_loc_ton_bi_pha",
+   "text": "Lộc Tồn thủ Mệnh gặp Hóa Kỵ hoặc Không Kiếp đồng cung: lộc dễ bị phá, nên thận trọng với tiền bạc.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_loc_ky_dong_cung",
+   "text": "Hóa Lộc và Hóa Kỵ cùng ở cung {cung}: được rồi vướng — cái lợi thường đi kèm rắc rối.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_thien_tuong_xet_giap",
+   "text": "Thiên Tướng thủ Mệnh: tốt xấu phụ thuộc nhiều vào hai cung kẹp bên (Thiên Lương và Cự Môn); trọng danh dự hơn tiền bạc.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_am_duong_thuan_ly",
+   "text": "Âm Dương thuận lý (tuổi và cung Mệnh cùng tính Âm/Dương): nền tảng hài hòa, làm việc thuận chiều.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_am_duong_nghich_ly",
+   "text": "Âm Dương nghịch lý: hay phải đi đường vòng hơn người khác một chút; bù lại bằng sự kiên trì.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_menh_dong_cung",
+   "text": "Thân Mệnh đồng cung (sinh giờ Tý hoặc Ngọ): tính cách nhất quán, tự làm tự chịu, cung Mệnh có trọng lượng cả đời.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_cu_thien_di",
+   "text": "Thân cư Thiên Di: hướng ngoại, hay di chuyển; thành bại gắn liền với hoạt động xã hội. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_cu_quan_loc",
+   "text": "Thân cư Quan Lộc: nặng lòng vì sự nghiệp, lấy công việc làm lẽ sống. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_cu_tai_bach",
+   "text": "Thân cư Tài Bạch: thực tế, coi trọng giá trị đồng tiền; chuyện mưu sinh chi phối nhiều quyết định. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_cu_phu_the",
+   "text": "Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cc.ts_than_cu_phuc_duc",
+   "text": "Thân cư Phúc Đức: hưởng phúc ấm tổ tiên hoặc gánh vác việc dòng họ. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.",
+   "source": "Prompt mục 10.4; Cẩm nang V2 – P.I.3",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_mau_am_duong_sang",
+   "text": "Thái Dương (cha) và Thái Âm (mẹ) đều sáng, lại chiếu về cung Phụ Mẫu: thường được cha mẹ nâng đỡ, gia đình gốc vững.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_mau_am_duong_ham_sat",
+   "text": "Nhật Nguyệt cùng hãm, cung Phụ Mẫu lại gặp nhiều sát tinh: nên dành nhiều sự quan tâm, chăm sóc sức khỏe cha mẹ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_mau_thua_huong",
+   "text": "Cung Phụ Mẫu có Lộc Tồn, Thiên Phủ, Tướng Quân hoặc Quốc Ấn: dễ được thừa hưởng tài sản, nền tảng từ cha mẹ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_mau_bat_hoa",
+   "text": "Cung Phụ Mẫu có Thiên Riêu, Hóa Kỵ hoặc sát tinh: cha mẹ dễ khác quan điểm với nhau hoặc với mình; cần nhiều sự kiên nhẫn.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phuc_duc_dep",
+   "text": "Cung Phúc Đức hội nhiều phúc tinh (Lương, Đồng, Tử Phủ, Khoa Quyền Lộc, Quang Quý): phúc ấm dày, gặp khó dễ được che chở; đây là chỗ dựa cho cả lá số.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phuc_duc_ky_sat",
+   "text": "Cung Phúc Đức gặp Không Kiếp, hoặc Hỏa Linh ở cung ban đêm: tâm tính dễ bất an, nên chăm lo đời sống tinh thần và sự gắn kết dòng họ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_dien_tai_tinh",
+   "text": "Cung Điền Trạch có tài tinh (Lộc, Thiên Phủ, Vũ Khúc hay Thái Âm sáng): thuận tích lũy nhà đất, dễ có tài sản cố định.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_dien_hao_khong_kiep",
+   "text": "Cung Điền Trạch gặp Không Kiếp hoặc Song Hao: tài sản cố định dễ hao hụt; tránh dùng nhà đất làm tài sản bảo đảm cho việc rủi ro.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_dien_tranh_chap",
+   "text": "Cung Điền Trạch có Kình Đà, Thiên Hình hoặc Hóa Kỵ: dễ phát sinh tranh chấp về nhà đất; giấy tờ cần chặt chẽ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_quan_tu_phu_vu_tuong_liem",
+   "text": "Cung Quan Lộc có bộ Tử Phủ Vũ Tướng Liêm hội Lộc, Ấn, Tả Hữu, Khôi Việt: thuận cho quản trị, lãnh đạo tổ chức lớn.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_quan_sat_pha_tham_sat",
+   "text": "Cung Quan Lộc có Sát Phá Tham hội sát tinh: hợp quân sự, an ninh, thể thao hoặc kinh doanh nhiều cạnh tranh.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_quan_co_nguyet_dong_luong",
+   "text": "Cung Quan Lộc thuộc bộ Cơ Nguyệt Đồng Lương: hợp giáo dục, hành chính công, y tế, văn hóa, nghiên cứu.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_no_cat",
+   "text": "Cung Nô Bộc có cát tinh trợ lực, không sát tinh: bạn bè, cộng sự đắc lực, dễ có người nâng đỡ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_no_ham_sat",
+   "text": "Cung Nô Bộc gặp Không Kiếp, Hóa Kỵ hoặc Phục Binh: cẩn trọng khi hợp tác, cho vay hoặc giao quyền cho người khác.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_di_sao_dong",
+   "text": "Cung Thiên Di có Thiên Mã, Thiên Đồng, Long Trì hoặc Phượng Các: dễ đi xa, công tác, xuất ngoại.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_di_sat_tinh",
+   "text": "Cung Thiên Di có từ hai sát tinh: ra ngoài nên cẩn trọng giao thông, tránh va chạm và thị phi.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tat_hoa_linh",
+   "text": "Cung Tật Ách có Hỏa Tinh hoặc Linh Tinh: nên chú ý giữ sức, tránh làm việc quá sức; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tat_kinh_hinh",
+   "text": "Cung Tật Ách có Kình Dương hoặc Thiên Hình: cẩn trọng va chạm khi vận động mạnh, lao động hay tham gia giao thông.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tat_rieu_ky",
+   "text": "Cung Tật Ách có Thiên Riêu hoặc Hóa Kỵ: nên khám sức khỏe định kỳ để phát hiện sớm những vấn đề âm thầm.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tat_ky_xung",
+   "text": "Cung Tật Ách bị Hóa Kỵ xung chiếu: nên duy trì khám định kỳ, không chủ quan với dấu hiệu nhỏ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tai_loc",
+   "text": "Cung Tài Bạch có Lộc, Vũ Khúc hoặc Thiên Phủ: dòng tiền có xu hướng thuận, giỏi xoay xở tài chính.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tai_song_hao",
+   "text": "Cung Tài Bạch có Song Hao: tiền bạc tụ tán thất thường, có tiền là có việc phải chi — nên lập ngân sách.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tai_khong_kiep",
+   "text": "Cung Tài Bạch gặp Địa Không/Địa Kiếp: kiếm tiền táo bạo nhưng dễ hụt hẫng; nên phân tán rủi ro.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tu_tuc_cat",
+   "text": "Cung Tử Tức có Thai, Long Phượng hoặc Khôi Việt: đường con cái thuận, con dễ thành đạt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_tu_tuc_luu_y",
+   "text": "Cung Tử Tức có từ hai sao trong nhóm Tang Hổ, Khốc Hư, Không Kiếp: nên chăm sóc con nhỏ kỹ hơn; nếu có kế hoạch sinh con thì khám thai định kỳ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_the_doan_chinh",
+   "text": "Cung Phu Thê có Thiên Tướng, Thiên Phủ (hoặc Thái Âm với nam): người phối ngẫu đoan chính, biết vun vén, giúp ích cho nhau.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_phu_the_trac_tro",
+   "text": "Cung Phu Thê có từ hai sao cô độc, sát phạt: hôn nhân cần vun đắp nhiều hơn; dễ bất đồng nếu thiếu lắng nghe.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_huynh_de_hoa_thuan",
+   "text": "Cung Huynh Đệ có cát tinh, không sát tinh: anh chị em hòa thuận, dễ tương trợ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cg.cg_huynh_de_bat_hoa",
+   "text": "Cung Huynh Đệ có từ hai sát tinh: anh chị em dễ bất đồng quyền lợi; nên rõ ràng chuyện tài sản chung.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_tu_vi_ty",
+   "text": "Tử Vi độc thủ tại Tý: thế quân vương nhưng hơi trầm mặc, dễ thấy cô đơn khi ở vị trí cao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thien_co_bat_hung",
+   "text": "Thiên Cơ thủ Mệnh gặp từ hai trong tám hung tinh: tâm trí dễ bất an, mưu tính dễ sai; nên làm việc có kế hoạch rõ và người góp ý.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_vu_khuc_luc_than",
+   "text": "Vũ Khúc tại cung {cung}: tính cương của tài tinh khiến quan hệ trong cung này cần được vun đắp nhiều hơn.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_vu_khuc_hoa_linh",
+   "text": "Vũ Khúc gặp Hỏa hoặc Linh tại cung {cung}: vì tiền dễ rước phiền phức; giữ kín đáo, tránh phô trương tài sản.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_liem_trinh_ky",
+   "text": "Liêm Trinh gặp Hóa Kỵ tại {cung}: dễ va chạm pháp lý, kiện tụng; tuân thủ quy định và minh bạch giấy tờ là ưu tiên số một.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_liem_trinh_nghe_thuat",
+   "text": "Liêm Trinh hội Xương Khúc hoặc Đào Hồng: có gu thẩm mỹ tốt, hợp nghệ thuật, thiết kế, kiến trúc.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_liem_trinh_sang",
+   "text": "Liêm Trinh sáng sủa thủ Mệnh: làm việc nghiêm minh; hợp tư pháp, thanh tra, công an, quân đội.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thien_phu_tai_dien",
+   "text": "Thiên Phủ tại cung {cung}, kho không bị thủng hay lộ: giỏi tích lũy, giữ của.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thai_am_sinh_dem",
+   "text": "Thái Âm sáng thủ Mệnh và sinh ban đêm: hợp cách, tính tinh tế, dễ được việc.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thai_am_ham_ky",
+   "text": "Thái Âm hãm thủ Mệnh lại gặp Hóa Kỵ: nên dành nhiều quan tâm cho mẹ và người bạn đời; chuyện gia đạo cần kiên nhẫn.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_cu_mon_nhat_chieu",
+   "text": "Cự Môn thủ Mệnh được Thái Dương sáng chiếu: tính “ám” được giải, lời nói có sức nặng hơn.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_cu_mon_hung_bien",
+   "text": "Cự Môn thủ Mệnh hội Xương Khúc, Lộc, Quyền, Tấu Thư hoặc Bạch Hổ: hợp luật, ngoại giao, truyền thông.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thien_luong_phuc_dien",
+   "text": "Thiên Lương tại cung {cung}: phát phúc, dễ được hưởng nền tảng của gia đình.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_that_sat_vo_cong",
+   "text": "Thất Sát thủ Mệnh hội Kình Đà đắc địa hoặc Lộc Ấn: thăng tiến nhanh trong quân sự, an ninh, y khoa phẫu thuật.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_that_sat_ham_ky_kk",
+   "text": "Thất Sát hãm thủ Mệnh gặp Hóa Kỵ và Không Kiếp: đường đi nhiều trắc trở; nên chọn việc an toàn, cẩn trọng trong vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_pha_quan_phu_the",
+   "text": "Phá Quân tại cung Phu Thê: duyên phận nhiều thay đổi; hôn nhân cần sự kiên nhẫn và vun đắp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_pha_quan_gap_sat",
+   "text": "Phá Quân thủ Mệnh gặp Không Kiếp hoặc Kình Đà: Phá Quân ưa sát tinh — như mãnh thú có nanh vuốt, hợp lập nghiệp lớn trong môi trường cạnh tranh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "cc.st_thien_dong_sat",
+   "text": "Thiên Đồng thủ Mệnh hội nhiều sát tinh: có xu hướng chuyển sang nghiên cứu huyền học, tâm linh, y học.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thai_duong_ky_luu",
+   "text": "Mệnh có Thái Dương, năm {nam} can năm làm Thái Dương hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thai_duong_loc_luu",
+   "text": "Mệnh có Thái Dương, năm {nam} can năm làm Thái Dương hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thien_co_ky_luu",
+   "text": "Mệnh có Thiên Cơ, năm {nam} can năm làm Thiên Cơ hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thien_co_loc_luu",
+   "text": "Mệnh có Thiên Cơ, năm {nam} can năm làm Thiên Cơ hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_vu_khuc_ky_luu",
+   "text": "Mệnh có Vũ Khúc, năm {nam} can năm làm Vũ Khúc hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_vu_khuc_loc_luu",
+   "text": "Mệnh có Vũ Khúc, năm {nam} can năm làm Vũ Khúc hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_liem_trinh_ky_luu",
+   "text": "Mệnh có Liêm Trinh, năm {nam} can năm làm Liêm Trinh hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_liem_trinh_loc_luu",
+   "text": "Mệnh có Liêm Trinh, năm {nam} can năm làm Liêm Trinh hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thai_am_ky_luu",
+   "text": "Mệnh có Thái Âm, năm {nam} can năm làm Thái Âm hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thai_am_loc_luu",
+   "text": "Mệnh có Thái Âm, năm {nam} can năm làm Thái Âm hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_cu_mon_ky_luu",
+   "text": "Mệnh có Cự Môn, năm {nam} can năm làm Cự Môn hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_cu_mon_loc_luu",
+   "text": "Mệnh có Cự Môn, năm {nam} can năm làm Cự Môn hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thien_dong_ky_luu",
+   "text": "Mệnh có Thiên Đồng, năm {nam} can năm làm Thiên Đồng hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_thien_dong_loc_luu",
+   "text": "Mệnh có Thiên Đồng, năm {nam} can năm làm Thiên Đồng hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_tham_lang_ky_luu",
+   "text": "Mệnh có Tham Lang, năm {nam} can năm làm Tham Lang hóa Kỵ: năm dễ vướng mắc với chính điểm mạnh của mình; làm chậm mà chắc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_menh_tham_lang_loc_luu",
+   "text": "Mệnh có Tham Lang, năm {nam} can năm làm Tham Lang hóa Lộc: năm thuận để phát huy sở trường, tài lộc có xu hướng tăng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_menh",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_phu_mau",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_phuc_duc",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_dien_trach",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_quan_loc",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_no_boc",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_thien_di",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_tat_ach",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_tai_bach",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_tu_tuc",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_phu_the",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_thai_tue_huynh_de",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung}: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_trung_luu_nien",
+   "text": "Năm {nam}, tiểu hạn và lưu niên đại hạn cùng ở cung {cung}: diễn biến và kết quả trong năm cùng xoay quanh một lĩnh vực.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_kinh_tat",
+   "text": "Năm {nam}, Lưu Kình Dương vào cung Tật Ách: cẩn trọng va chạm, vận động và đi lại.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_bach_ho_tat",
+   "text": "Năm {nam}, Lưu Bạch Hổ vào cung Tật Ách: nên khám sức khỏe định kỳ, đi lại cẩn trọng hơn.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_loc_ton_tai",
+   "text": "Năm {nam}, Lưu Lộc Tồn vào cung Tài Bạch: có thêm cơ hội tài lộc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_loc_ton_menh",
+   "text": "Năm {nam}, Lưu Lộc Tồn vào cung Mệnh: năm có cơ hội và người giúp; giữ tâm thế chủ động.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_ma_di_chuyen",
+   "text": "Năm {nam}, Lưu Thiên Mã vào cung {cung}: dễ có di chuyển, đổi việc hoặc mua sắm phương tiện.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_khoc_hu_menh",
+   "text": "Năm {nam}, Lưu Thiên Khốc hoặc Thiên Hư vào cung Mệnh: tâm trạng dễ trùng xuống; giữ nhịp sống điều độ và chia sẻ với người thân.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_luu_tang_mon_menh",
+   "text": "Năm {nam}, Lưu Tang Môn vào cung Mệnh: dễ có chuyện phiền lòng hoặc thay đổi chỗ làm; quan tâm người thân nhiều hơn.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_ky_luu_menh",
+   "text": "Năm {nam}, Hóa Kỵ lưu vào cung Mệnh: dễ vướng hiểu lầm, việc chậm; giữ bình tĩnh và minh bạch.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_loc_luu_menh",
+   "text": "Năm {nam}, Hóa Lộc lưu vào cung Mệnh: năm thuận, dễ có cơ hội mới.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_loc_luu_tai",
+   "text": "Năm {nam}, Hóa Lộc lưu vào cung Tài Bạch: dòng tiền có xu hướng cải thiện.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_ky_luu_tai_quan",
+   "text": "Năm {nam}, Hóa Kỵ lưu vào cung {cung}: lĩnh vực này dễ chậm trễ, vướng giấy tờ; nên thận trọng và giữ chứng từ.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_thien_thoi_dai_han_sinh_tuoi",
+   "text": "Đại hạn 10 năm tại cung {cung} — đại hạn sinh tuổi theo ngũ hành tam hợp (cụ Thiên Lương): đắc thiên thời, được hoàn cảnh nâng đỡ; thuận để chủ động mở rộng.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_thien_thoi_dong_hanh",
+   "text": "Đại hạn 10 năm tại cung {cung} — đại hạn đồng hành theo ngũ hành tam hợp (cụ Thiên Lương): hòa hợp, thuận để giữ vững và phát triển thành quả.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_thien_thoi_tuoi_khac_dai_han",
+   "text": "Đại hạn 10 năm tại cung {cung} — tuổi khắc đại hạn theo ngũ hành tam hợp (cụ Thiên Lương): vất vả, phải tự lực nhưng có thể giành được thành quả.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_thien_thoi_tuoi_sinh_dai_han",
+   "text": "Đại hạn 10 năm tại cung {cung} — tuổi sinh đại hạn theo ngũ hành tam hợp (cụ Thiên Lương): dễ hao tâm tổn sức, thành quả bị san sẻ; nên chọn việc trọng tâm.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_thien_thoi_dai_han_khac_tuoi",
+   "text": "Đại hạn 10 năm tại cung {cung} — đại hạn khắc tuổi theo ngũ hành tam hợp (cụ Thiên Lương): thất thời — nên thủ hơn công, hoãn quyết định lớn nếu được.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_hon_nhan_hoa_cai_ma",
+   "text": "Mệnh có Hoa Cái, cung Phu Thê có Thiên Mã gặp Tuần/Triệt. Dấu hiệu tại cung Phu Thê cho thấy hôn nhân cần vun đắp nhiều hơn; lập gia đình muộn và tìm hiểu kỹ thường thuận hơn.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_hon_nhan_kinh_da_co_qua",
+   "text": "Mệnh có Kình Dương, cung Phu Thê có Đà La gặp Tang Môn, Cô Thần hoặc Quả Tú. Dấu hiệu tại cung Phu Thê cho thấy hôn nhân cần vun đắp nhiều hơn; lập gia đình muộn và tìm hiểu kỹ thường thuận hơn.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_hon_nhan_duong_luong",
+   "text": "Mệnh Dương Lương tại {cung}, cung Phu Thê có Đồng Cự gặp Hóa Kỵ: dễ bất đồng trong lời nói. Dấu hiệu tại cung Phu Thê cho thấy hôn nhân cần vun đắp nhiều hơn; lập gia đình muộn và tìm hiểu kỹ thường thuận hơn.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_hon_nhan_tuong_liem_tham",
+   "text": "Mệnh có Thiên Tướng, cung Phu Thê có Liêm Tham gặp Hóa Kỵ. Dấu hiệu tại cung Phu Thê cho thấy hôn nhân cần vun đắp nhiều hơn; lập gia đình muộn và tìm hiểu kỹ thường thuận hơn.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_hon_nhan_sat_pha_ham_ky",
+   "text": "Cung Phu Thê có Thất Sát hoặc Phá Quân hãm gặp Hóa Kỵ. Dấu hiệu tại cung Phu Thê cho thấy hôn nhân cần vun đắp nhiều hơn; lập gia đình muộn và tìm hiểu kỹ thường thuận hơn.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_han_hy_cuoi_hoi",
+   "text": "Năm {nam} hội đủ ba dấu hiệu hạn hỷ (sao lưu tình duyên vào Mệnh/Thân/Nô, tiểu hạn có sao hôn lễ, lưu niên đại hạn vào cung hợp): khả năng cao là năm thuận cho chuyện cưới hỏi.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_han_hy_tinh_duyen",
+   "text": "Năm {nam} có Lưu Đào Hoa, Hồng Loan hoặc Hỷ Thần vào Mệnh hay Thân: chuyện tình cảm dễ được khơi gợi; đây mới là một dấu hiệu, nên lưu ý.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_luu_thai_tue_co_qua",
+   "text": "Năm {nam}, Lưu Thái Tuế gặp Cô Thần/Quả Tú gốc: theo quan niệm Tử Vi, năm này không thuận cưới hỏi; nếu đã định, hãy dành nhiều thời gian cho giao tiếp vợ chồng.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_sinh_con_luu_loc",
+   "text": "Năm {nam}, Lưu Lộc Tồn hoặc Hóa Lộc lưu vào cung Tử Tức: thuận cho chuyện con cái.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_sinh_con_thai",
+   "text": "Năm {nam}, tiểu hạn ở tam hợp của sao Thai: theo cẩm nang là năm thuận cho việc có con, nếu gia đình đang mong.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_sinh_con_luu_y",
+   "text": "Năm {nam}, cung Tử Tức có sao lưu cần lưu ý: nếu có kế hoạch sinh con, nên chăm sóc thai kỳ kỹ và khám định kỳ theo hướng dẫn của bác sĩ.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "cd.cd_con_cai_khong_don_tuyen",
+   "text": "Đường con cái có thể không đơn tuyến (con nuôi, con riêng hoặc con của hôn nhân sau). Đây là quan điểm riêng của một số sách, chỉ để tham khảo.",
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  }
+ ]
+}

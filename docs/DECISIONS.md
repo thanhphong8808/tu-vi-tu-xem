@@ -220,3 +220,56 @@ Mỗi lần đẩy mã, workflow `android-emulator.yml` cài đúng file trong `
 App có thêm bộ ghi lỗi (`TuViApp`/`CrashLog`): nếu app dừng, lần mở sau hiện nguyên văn lỗi kèm nút Sao chép.
 Lỗi trong cầu nối JS được trả về giao diện, không làm app thoát. `onRenderProcessGone` cũng được xử lý.
 Bước build có thêm `check_api.py`: mọi lời gọi từ DEX sang Android phải có trong android.jar API 35.
+
+### D-34 · Luật viết bằng Python, app chỉ đọc JSON
+Knowledge base được soạn trong `tools/kb/kb_rules.py` (189 luật, 50 khuyến nghị) và `tools/kb/kb_drafts.py`
+(câu luận chính tinh theo độ sáng × cung, 24 bộ đồng cung, 73 phụ tinh, câu hỏi mẫu). `tools/kb/build_kb.py` sinh
+ra `data/kb/src/main/resources/kb/**.json` đúng schema mục 9. App và test chỉ đọc JSON; không có Python lúc chạy.
+Viết bằng Python để dùng lại điều kiện chung, ví dụ nhóm sát tinh `SAT6`, `TINH_DUYEN_O` hay hàm `rule(...)`. Viết
+tay 189 khối JSON dễ sai lệch giữa các luật cùng họ. Mọi mục đều có `reviewed: false` (bản nháp do script sinh,
+mục 15) cho tới khi người dùng duyệt. Sửa luật → `python3 tools/kb/build_kb.py` → `./gradlew :core:interpret:findFixtures`
+(tìm lại lá số mẫu) → `./gradlew test`.
+
+### D-35 · Độ ưu tiên và “luật cụ thể hơn thắng luật chung”
+Mục 9 định nghĩa độ ưu tiên là số predicate. Cách đếm cụ thể:
+- mỗi điều kiện lá tính 1;
+- `anyOf` tính bằng nhánh ngắn nhất;
+- `countOf … atLeast n` tính n, vì “ít nhất 4 trong 4 sao” cụ thể như 4 điều kiện riêng;
+- cung neo không tính.
+
+Áp dụng ở hai chỗ:
+1. **Chặn / đảo / làm nhẹ.** Khi nhiều luật cùng nhắm vào một finding, chỉ luật ưu tiên cao nhất có hiệu lực.
+   Nếu bằng nhau, thứ tự là chặn > đảo > làm nhẹ. Ví dụ: Cự Môn Thìn Tuất tuổi Tân (đảo, 2 predicate) thắng
+   “sao hãm gặp Lộc Quyền” (làm nhẹ). Nếu cộng dồn, câu Cự Môn hãm sẽ thành trung tính, sai với cách phản vi.
+2. **Hai luật ngược chiều.** Điều kiện để luật chung bị chặn:
+   - hai luật cùng cung neo, cùng chủ đề, cùng tầng;
+   - bằng chứng của luật cụ thể chứa trọn bằng chứng của luật chung (cùng sao, có thêm yếu tố);
+   - luật cụ thể có nhiều predicate hơn.
+
+   Ví dụ: “Điền Trạch có tài tinh” (Thiên Phủ) bị “Kho lộ” (Thiên Phủ + Tuần) chặn. Ngược lại, “Kho lộ” không bị
+   “Tử Phủ đồng cung” chặn, vì Tử Phủ không nói gì về Tuần/Triệt. Hai câu cùng hiện, giai đoạn 4 cân trọng số.
+   Luật phản vi không tham gia bước này, vì chúng đã tác động qua chặn/đảo/làm nhẹ. Đã thử cách so khớp theo
+   “có chung một sao”: cách này chặn nhầm hàng trăm câu, nên đã bỏ.
+
+### D-36 · Lá số mẫu cho từng luật được tìm tự động
+Cổng mục 15 yêu cầu mỗi luật có một lá số kích hoạt và một lá số không kích hoạt.
+`core/interpret/src/test/kotlin/…/tools/FindFixtures.kt` tìm hai lá số này cho từng luật:
+- dò 200 000 lá số ngẫu nhiên (hạt giống cố định);
+- sau đó vét cạn năm 1984–2043 × tháng × ngày × 12 canh × 2 giới.
+
+Lá số “không kích hoạt” ưu tiên loại *suýt khớp*: điều kiện lá đầu tiên đúng nhưng cả luật sai.
+105/189 luật có lá số suýt khớp; 84 luật còn lại dùng lá số bất kỳ không kích hoạt.
+Kết quả lưu ở `rule-fixtures.json` (âm lịch + canh + giới + năm xem), nên test không phụ thuộc engine sinh ra nó.
+Vì lá số mẫu do chính engine tìm, có thêm `IndependentRulesTest`: 27 luật được viết tay lại bằng Kotlin thuần trên
+mô hình lá số, không qua DSL, rồi so với RuleEngine trên 4 000 lá số ngẫu nhiên cộng mọi lá số mẫu.
+
+### D-37 · Bản 0.3.0 hiện luận giải sơ bộ, ghi rõ là bản nháp
+App 0.3.0 nạp knowledge base từ APK (`/kb/…`, nạp sẵn ở luồng nền) và gọi RuleEngine cùng lúc lập lá số.
+Giao diện có ba phần:
+- thẻ “Cách cục & dấu hiệu lá số”, nhóm theo loại;
+- mục “Dấu hiệu năm …” trong thẻ vận hạn;
+- câu luận từng cung trong bảng chi tiết cung.
+
+Mỗi mục có “Vì sao?” (sao, cung, quan hệ làm căn cứ), gợi ý và nguồn. Thẻ luôn ghi “bản nháp tự sinh, chưa qua
+thẩm định”. Luật độ tin cậy C chỉ hiện khi bật “Chế độ chuyên sâu” trong Cài đặt. Nếu nạp knowledge base lỗi, lá số
+vẫn hiện bình thường, kèm một dòng báo lỗi. Bộ ghép câu, chấm điểm chủ đề và khuyến nghị tổng hợp là giai đoạn 4.

@@ -1,0 +1,1732 @@
+{
+ "texts": [
+  {
+   "key": "combo.TU_VI_THIEN_PHU.MENH",
+   "text": "Bộ Tử Phủ đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.PHU_MAU",
+   "text": "Bộ Tử Phủ đồng cung tại cung Phụ Mẫu: cha mẹ mang nét vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.PHUC_DUC",
+   "text": "Bộ Tử Phủ đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.DIEN_TRACH",
+   "text": "Bộ Tử Phủ đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.QUAN_LOC",
+   "text": "Bộ Tử Phủ đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.NO_BOC",
+   "text": "Bộ Tử Phủ đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.THIEN_DI",
+   "text": "Bộ Tử Phủ đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.TAT_ACH",
+   "text": "Bộ Tử Phủ đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.TAI_BACH",
+   "text": "Bộ Tử Phủ đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.TU_TUC",
+   "text": "Bộ Tử Phủ đồng cung tại cung Tử Tức: con cái mang nét vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.PHU_THE",
+   "text": "Bộ Tử Phủ đồng cung tại cung Phu Thê: người bạn đời mang nét vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_PHU.HUYNH_DE",
+   "text": "Bộ Tử Phủ đồng cung tại cung Huynh Đệ: anh chị em mang nét vừa có quyền vừa có kho, ổn định và có tầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.MENH",
+   "text": "Bộ Tử Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.PHU_MAU",
+   "text": "Bộ Tử Tướng đồng cung tại cung Phụ Mẫu: cha mẹ mang nét tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.PHUC_DUC",
+   "text": "Bộ Tử Tướng đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.DIEN_TRACH",
+   "text": "Bộ Tử Tướng đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.QUAN_LOC",
+   "text": "Bộ Tử Tướng đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.NO_BOC",
+   "text": "Bộ Tử Tướng đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.THIEN_DI",
+   "text": "Bộ Tử Tướng đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.TAT_ACH",
+   "text": "Bộ Tử Tướng đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.TAI_BACH",
+   "text": "Bộ Tử Tướng đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.TU_TUC",
+   "text": "Bộ Tử Tướng đồng cung tại cung Tử Tức: con cái mang nét tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.PHU_THE",
+   "text": "Bộ Tử Tướng đồng cung tại cung Phu Thê: người bạn đời mang nét tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THIEN_TUONG.HUYNH_DE",
+   "text": "Bộ Tử Tướng đồng cung tại cung Huynh Đệ: anh chị em mang nét tài năng dễ bị kìm hãm (thế La Võng), hợp vị trí “dưới một người, trên muôn người”.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.MENH",
+   "text": "Bộ Tử Sát đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.PHU_MAU",
+   "text": "Bộ Tử Sát đồng cung tại cung Phụ Mẫu: cha mẹ mang nét quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.PHUC_DUC",
+   "text": "Bộ Tử Sát đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.DIEN_TRACH",
+   "text": "Bộ Tử Sát đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.QUAN_LOC",
+   "text": "Bộ Tử Sát đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.NO_BOC",
+   "text": "Bộ Tử Sát đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.THIEN_DI",
+   "text": "Bộ Tử Sát đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.TAT_ACH",
+   "text": "Bộ Tử Sát đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.TAI_BACH",
+   "text": "Bộ Tử Sát đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.TU_TUC",
+   "text": "Bộ Tử Sát đồng cung tại cung Tử Tức: con cái mang nét quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.PHU_THE",
+   "text": "Bộ Tử Sát đồng cung tại cung Phu Thê: người bạn đời mang nét quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAT_SAT.HUYNH_DE",
+   "text": "Bộ Tử Sát đồng cung tại cung Huynh Đệ: anh chị em mang nét quyết đoán, biến áp lực thành động lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.MENH",
+   "text": "Bộ Tử Phá đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.PHU_MAU",
+   "text": "Bộ Tử Phá đồng cung tại cung Phụ Mẫu: cha mẹ mang nét tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.PHUC_DUC",
+   "text": "Bộ Tử Phá đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.DIEN_TRACH",
+   "text": "Bộ Tử Phá đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.QUAN_LOC",
+   "text": "Bộ Tử Phá đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.NO_BOC",
+   "text": "Bộ Tử Phá đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.THIEN_DI",
+   "text": "Bộ Tử Phá đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.TAT_ACH",
+   "text": "Bộ Tử Phá đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.TAI_BACH",
+   "text": "Bộ Tử Phá đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.TU_TUC",
+   "text": "Bộ Tử Phá đồng cung tại cung Tử Tức: con cái mang nét tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.PHU_THE",
+   "text": "Bộ Tử Phá đồng cung tại cung Phu Thê: người bạn đời mang nét tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_PHA_QUAN.HUYNH_DE",
+   "text": "Bộ Tử Phá đồng cung tại cung Huynh Đệ: anh chị em mang nét tiên phong mở lối, dám nghĩ dám làm, nhiều thăng trầm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.MENH",
+   "text": "Bộ Tử Tham đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.PHU_MAU",
+   "text": "Bộ Tử Tham đồng cung tại cung Phụ Mẫu: cha mẹ mang nét giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.PHUC_DUC",
+   "text": "Bộ Tử Tham đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.DIEN_TRACH",
+   "text": "Bộ Tử Tham đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.QUAN_LOC",
+   "text": "Bộ Tử Tham đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.NO_BOC",
+   "text": "Bộ Tử Tham đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.THIEN_DI",
+   "text": "Bộ Tử Tham đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.TAT_ACH",
+   "text": "Bộ Tử Tham đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.TAI_BACH",
+   "text": "Bộ Tử Tham đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.TU_TUC",
+   "text": "Bộ Tử Tham đồng cung tại cung Tử Tức: con cái mang nét giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.PHU_THE",
+   "text": "Bộ Tử Tham đồng cung tại cung Phu Thê: người bạn đời mang nét giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.TU_VI_THAM_LANG.HUYNH_DE",
+   "text": "Bộ Tử Tham đồng cung tại cung Huynh Đệ: anh chị em mang nét giằng co giữa ham muốn vật chất và hướng về tâm linh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.MENH",
+   "text": "Bộ Cơ Cự đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.PHU_MAU",
+   "text": "Bộ Cơ Cự đồng cung tại cung Phụ Mẫu: cha mẹ mang nét hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.PHUC_DUC",
+   "text": "Bộ Cơ Cự đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.DIEN_TRACH",
+   "text": "Bộ Cơ Cự đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.QUAN_LOC",
+   "text": "Bộ Cơ Cự đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.NO_BOC",
+   "text": "Bộ Cơ Cự đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.THIEN_DI",
+   "text": "Bộ Cơ Cự đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.TAT_ACH",
+   "text": "Bộ Cơ Cự đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.TAI_BACH",
+   "text": "Bộ Cơ Cự đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.TU_TUC",
+   "text": "Bộ Cơ Cự đồng cung tại cung Tử Tức: con cái mang nét hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.PHU_THE",
+   "text": "Bộ Cơ Cự đồng cung tại cung Phu Thê: người bạn đời mang nét hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_CU_MON.HUYNH_DE",
+   "text": "Bộ Cơ Cự đồng cung tại cung Huynh Đệ: anh chị em mang nét hoạt ngôn, giỏi kinh doanh nhưng hay đa nghi.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.MENH",
+   "text": "Bộ Cơ Âm đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.PHU_MAU",
+   "text": "Bộ Cơ Âm đồng cung tại cung Phụ Mẫu: cha mẹ mang nét khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.PHUC_DUC",
+   "text": "Bộ Cơ Âm đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.DIEN_TRACH",
+   "text": "Bộ Cơ Âm đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.QUAN_LOC",
+   "text": "Bộ Cơ Âm đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.NO_BOC",
+   "text": "Bộ Cơ Âm đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.THIEN_DI",
+   "text": "Bộ Cơ Âm đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.TAT_ACH",
+   "text": "Bộ Cơ Âm đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.TAI_BACH",
+   "text": "Bộ Cơ Âm đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.TU_TUC",
+   "text": "Bộ Cơ Âm đồng cung tại cung Tử Tức: con cái mang nét khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.PHU_THE",
+   "text": "Bộ Cơ Âm đồng cung tại cung Phu Thê: người bạn đời mang nét khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THAI_AM.HUYNH_DE",
+   "text": "Bộ Cơ Âm đồng cung tại cung Huynh Đệ: anh chị em mang nét khéo léo, tinh tế, thích thay đổi môi trường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.MENH",
+   "text": "Bộ Cơ Lương đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.PHU_MAU",
+   "text": "Bộ Cơ Lương đồng cung tại cung Phụ Mẫu: cha mẹ mang nét mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.PHUC_DUC",
+   "text": "Bộ Cơ Lương đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.DIEN_TRACH",
+   "text": "Bộ Cơ Lương đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.QUAN_LOC",
+   "text": "Bộ Cơ Lương đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.NO_BOC",
+   "text": "Bộ Cơ Lương đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.THIEN_DI",
+   "text": "Bộ Cơ Lương đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.TAT_ACH",
+   "text": "Bộ Cơ Lương đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.TAI_BACH",
+   "text": "Bộ Cơ Lương đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.TU_TUC",
+   "text": "Bộ Cơ Lương đồng cung tại cung Tử Tức: con cái mang nét mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.PHU_THE",
+   "text": "Bộ Cơ Lương đồng cung tại cung Phu Thê: người bạn đời mang nét mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_CO_THIEN_LUONG.HUYNH_DE",
+   "text": "Bộ Cơ Lương đồng cung tại cung Huynh Đệ: anh chị em mang nét mưu trí, giỏi tư vấn, hợp giáo dục, tham mưu.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.MENH",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.PHU_MAU",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Phụ Mẫu: cha mẹ mang nét cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.PHUC_DUC",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.DIEN_TRACH",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.QUAN_LOC",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.NO_BOC",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.THIEN_DI",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.TAT_ACH",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.TAI_BACH",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.TU_TUC",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Tử Tức: con cái mang nét cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.PHU_THE",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Phu Thê: người bạn đời mang nét cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THAI_AM.HUYNH_DE",
+   "text": "Bộ Nhật Nguyệt đồng cung tại cung Huynh Đệ: anh chị em mang nét cân bằng giữa hướng ngoại và nội tâm, đôi khi do dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.MENH",
+   "text": "Bộ Nhật Cự đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.PHU_MAU",
+   "text": "Bộ Nhật Cự đồng cung tại cung Phụ Mẫu: cha mẹ mang nét có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.PHUC_DUC",
+   "text": "Bộ Nhật Cự đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.DIEN_TRACH",
+   "text": "Bộ Nhật Cự đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.QUAN_LOC",
+   "text": "Bộ Nhật Cự đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.NO_BOC",
+   "text": "Bộ Nhật Cự đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.THIEN_DI",
+   "text": "Bộ Nhật Cự đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.TAT_ACH",
+   "text": "Bộ Nhật Cự đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.TAI_BACH",
+   "text": "Bộ Nhật Cự đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.TU_TUC",
+   "text": "Bộ Nhật Cự đồng cung tại cung Tử Tức: con cái mang nét có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.PHU_THE",
+   "text": "Bộ Nhật Cự đồng cung tại cung Phu Thê: người bạn đời mang nét có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_CU_MON.HUYNH_DE",
+   "text": "Bộ Nhật Cự đồng cung tại cung Huynh Đệ: anh chị em mang nét có danh nhờ ngôn luận, ngoại giao.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.MENH",
+   "text": "Bộ Nhật Lương đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.PHU_MAU",
+   "text": "Bộ Nhật Lương đồng cung tại cung Phụ Mẫu: cha mẹ mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.PHUC_DUC",
+   "text": "Bộ Nhật Lương đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.DIEN_TRACH",
+   "text": "Bộ Nhật Lương đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.QUAN_LOC",
+   "text": "Bộ Nhật Lương đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.NO_BOC",
+   "text": "Bộ Nhật Lương đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.THIEN_DI",
+   "text": "Bộ Nhật Lương đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.TAT_ACH",
+   "text": "Bộ Nhật Lương đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.TAI_BACH",
+   "text": "Bộ Nhật Lương đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.TU_TUC",
+   "text": "Bộ Nhật Lương đồng cung tại cung Tử Tức: con cái mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.PHU_THE",
+   "text": "Bộ Nhật Lương đồng cung tại cung Phu Thê: người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THAI_DUONG_THIEN_LUONG.HUYNH_DE",
+   "text": "Bộ Nhật Lương đồng cung tại cung Huynh Đệ: anh chị em mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.MENH",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.PHU_MAU",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Phụ Mẫu: cha mẹ mang nét giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.PHUC_DUC",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.DIEN_TRACH",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.QUAN_LOC",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.NO_BOC",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.THIEN_DI",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.TAT_ACH",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.TAI_BACH",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.TU_TUC",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Tử Tức: con cái mang nét giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.PHU_THE",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Phu Thê: người bạn đời mang nét giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_PHU.HUYNH_DE",
+   "text": "Bộ Vũ Phủ đồng cung tại cung Huynh Đệ: anh chị em mang nét giỏi kiếm và giữ tiền, tài chính vững.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.MENH",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.PHU_MAU",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Phụ Mẫu: cha mẹ mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.PHUC_DUC",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.DIEN_TRACH",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.QUAN_LOC",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.NO_BOC",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.THIEN_DI",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.TAT_ACH",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.TAI_BACH",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.TU_TUC",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Tử Tức: con cái mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.PHU_THE",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Phu Thê: người bạn đời mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THIEN_TUONG.HUYNH_DE",
+   "text": "Bộ Vũ Tướng đồng cung tại cung Huynh Đệ: anh chị em mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.MENH",
+   "text": "Bộ Vũ Sát đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.PHU_MAU",
+   "text": "Bộ Vũ Sát đồng cung tại cung Phụ Mẫu: cha mẹ mang nét cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.PHUC_DUC",
+   "text": "Bộ Vũ Sát đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.DIEN_TRACH",
+   "text": "Bộ Vũ Sát đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.QUAN_LOC",
+   "text": "Bộ Vũ Sát đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.NO_BOC",
+   "text": "Bộ Vũ Sát đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.THIEN_DI",
+   "text": "Bộ Vũ Sát đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.TAT_ACH",
+   "text": "Bộ Vũ Sát đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.TAI_BACH",
+   "text": "Bộ Vũ Sát đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.TU_TUC",
+   "text": "Bộ Vũ Sát đồng cung tại cung Tử Tức: con cái mang nét cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.PHU_THE",
+   "text": "Bộ Vũ Sát đồng cung tại cung Phu Thê: người bạn đời mang nét cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAT_SAT.HUYNH_DE",
+   "text": "Bộ Vũ Sát đồng cung tại cung Huynh Đệ: anh chị em mang nét cương quyết, dám làm, tiền bạc đến qua nỗ lực lớn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.MENH",
+   "text": "Bộ Vũ Phá đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.PHU_MAU",
+   "text": "Bộ Vũ Phá đồng cung tại cung Phụ Mẫu: cha mẹ mang nét tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.PHUC_DUC",
+   "text": "Bộ Vũ Phá đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.DIEN_TRACH",
+   "text": "Bộ Vũ Phá đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.QUAN_LOC",
+   "text": "Bộ Vũ Phá đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.NO_BOC",
+   "text": "Bộ Vũ Phá đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.THIEN_DI",
+   "text": "Bộ Vũ Phá đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.TAT_ACH",
+   "text": "Bộ Vũ Phá đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.TAI_BACH",
+   "text": "Bộ Vũ Phá đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.TU_TUC",
+   "text": "Bộ Vũ Phá đồng cung tại cung Tử Tức: con cái mang nét tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.PHU_THE",
+   "text": "Bộ Vũ Phá đồng cung tại cung Phu Thê: người bạn đời mang nét tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_PHA_QUAN.HUYNH_DE",
+   "text": "Bộ Vũ Phá đồng cung tại cung Huynh Đệ: anh chị em mang nét tiền bạc tụ tán mạnh, dễ liều.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.MENH",
+   "text": "Bộ Vũ Tham đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.PHU_MAU",
+   "text": "Bộ Vũ Tham đồng cung tại cung Phụ Mẫu: cha mẹ mang nét tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.PHUC_DUC",
+   "text": "Bộ Vũ Tham đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.DIEN_TRACH",
+   "text": "Bộ Vũ Tham đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.QUAN_LOC",
+   "text": "Bộ Vũ Tham đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.NO_BOC",
+   "text": "Bộ Vũ Tham đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.THIEN_DI",
+   "text": "Bộ Vũ Tham đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.TAT_ACH",
+   "text": "Bộ Vũ Tham đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.TAI_BACH",
+   "text": "Bộ Vũ Tham đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.TU_TUC",
+   "text": "Bộ Vũ Tham đồng cung tại cung Tử Tức: con cái mang nét tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.PHU_THE",
+   "text": "Bộ Vũ Tham đồng cung tại cung Phu Thê: người bạn đời mang nét tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.VU_KHUC_THAM_LANG.HUYNH_DE",
+   "text": "Bộ Vũ Tham đồng cung tại cung Huynh Đệ: anh chị em mang nét tiền bần hậu phú, khá lên rõ sau khoảng 30 tuổi.",
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.MENH",
+   "text": "Bộ Đồng Âm đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.PHU_MAU",
+   "text": "Bộ Đồng Âm đồng cung tại cung Phụ Mẫu: cha mẹ mang nét ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.PHUC_DUC",
+   "text": "Bộ Đồng Âm đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.DIEN_TRACH",
+   "text": "Bộ Đồng Âm đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.QUAN_LOC",
+   "text": "Bộ Đồng Âm đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.NO_BOC",
+   "text": "Bộ Đồng Âm đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.THIEN_DI",
+   "text": "Bộ Đồng Âm đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.TAT_ACH",
+   "text": "Bộ Đồng Âm đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.TAI_BACH",
+   "text": "Bộ Đồng Âm đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.TU_TUC",
+   "text": "Bộ Đồng Âm đồng cung tại cung Tử Tức: con cái mang nét ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.PHU_THE",
+   "text": "Bộ Đồng Âm đồng cung tại cung Phu Thê: người bạn đời mang nét ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THAI_AM.HUYNH_DE",
+   "text": "Bộ Đồng Âm đồng cung tại cung Huynh Đệ: anh chị em mang nét ôn hòa, tinh tế, coi trọng gia đình.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.MENH",
+   "text": "Bộ Đồng Cự đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.PHU_MAU",
+   "text": "Bộ Đồng Cự đồng cung tại cung Phụ Mẫu: cha mẹ mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.PHUC_DUC",
+   "text": "Bộ Đồng Cự đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.DIEN_TRACH",
+   "text": "Bộ Đồng Cự đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.QUAN_LOC",
+   "text": "Bộ Đồng Cự đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.NO_BOC",
+   "text": "Bộ Đồng Cự đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.THIEN_DI",
+   "text": "Bộ Đồng Cự đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.TAT_ACH",
+   "text": "Bộ Đồng Cự đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.TAI_BACH",
+   "text": "Bộ Đồng Cự đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.TU_TUC",
+   "text": "Bộ Đồng Cự đồng cung tại cung Tử Tức: con cái mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.PHU_THE",
+   "text": "Bộ Đồng Cự đồng cung tại cung Phu Thê: người bạn đời mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_CU_MON.HUYNH_DE",
+   "text": "Bộ Đồng Cự đồng cung tại cung Huynh Đệ: anh chị em mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.MENH",
+   "text": "Bộ Đồng Lương đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.PHU_MAU",
+   "text": "Bộ Đồng Lương đồng cung tại cung Phụ Mẫu: cha mẹ mang nét phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.PHUC_DUC",
+   "text": "Bộ Đồng Lương đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.DIEN_TRACH",
+   "text": "Bộ Đồng Lương đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.QUAN_LOC",
+   "text": "Bộ Đồng Lương đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.NO_BOC",
+   "text": "Bộ Đồng Lương đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.THIEN_DI",
+   "text": "Bộ Đồng Lương đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.TAT_ACH",
+   "text": "Bộ Đồng Lương đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.TAI_BACH",
+   "text": "Bộ Đồng Lương đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.TU_TUC",
+   "text": "Bộ Đồng Lương đồng cung tại cung Tử Tức: con cái mang nét phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.PHU_THE",
+   "text": "Bộ Đồng Lương đồng cung tại cung Phu Thê: người bạn đời mang nét phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.THIEN_DONG_THIEN_LUONG.HUYNH_DE",
+   "text": "Bộ Đồng Lương đồng cung tại cung Huynh Đệ: anh chị em mang nét phúc hậu, gặp khó thường có người giúp.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.MENH",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.PHU_MAU",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Phụ Mẫu: cha mẹ mang nét nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.PHUC_DUC",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.DIEN_TRACH",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.QUAN_LOC",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.NO_BOC",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.THIEN_DI",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.TAT_ACH",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.TAI_BACH",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.TU_TUC",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Tử Tức: con cái mang nét nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.PHU_THE",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Phu Thê: người bạn đời mang nét nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_PHU.HUYNH_DE",
+   "text": "Bộ Liêm Phủ đồng cung tại cung Huynh Đệ: anh chị em mang nét nguyên tắc nhưng biết giữ của, ổn định.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.MENH",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.PHU_MAU",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Phụ Mẫu: cha mẹ mang nét nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.PHUC_DUC",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.DIEN_TRACH",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.QUAN_LOC",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.NO_BOC",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.THIEN_DI",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.TAT_ACH",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.TAI_BACH",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.TU_TUC",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Tử Tức: con cái mang nét nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.PHU_THE",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Phu Thê: người bạn đời mang nét nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THIEN_TUONG.HUYNH_DE",
+   "text": "Bộ Liêm Tướng đồng cung tại cung Huynh Đệ: anh chị em mang nét nghiêm túc, trọng danh dự, hợp kỷ cương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.MENH",
+   "text": "Bộ Liêm Sát đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.PHU_MAU",
+   "text": "Bộ Liêm Sát đồng cung tại cung Phụ Mẫu: cha mẹ mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.PHUC_DUC",
+   "text": "Bộ Liêm Sát đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.DIEN_TRACH",
+   "text": "Bộ Liêm Sát đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.QUAN_LOC",
+   "text": "Bộ Liêm Sát đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.NO_BOC",
+   "text": "Bộ Liêm Sát đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.THIEN_DI",
+   "text": "Bộ Liêm Sát đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.TAT_ACH",
+   "text": "Bộ Liêm Sát đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.TAI_BACH",
+   "text": "Bộ Liêm Sát đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.TU_TUC",
+   "text": "Bộ Liêm Sát đồng cung tại cung Tử Tức: con cái mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.PHU_THE",
+   "text": "Bộ Liêm Sát đồng cung tại cung Phu Thê: người bạn đời mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAT_SAT.HUYNH_DE",
+   "text": "Bộ Liêm Sát đồng cung tại cung Huynh Đệ: anh chị em mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.MENH",
+   "text": "Bộ Liêm Phá đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.PHU_MAU",
+   "text": "Bộ Liêm Phá đồng cung tại cung Phụ Mẫu: cha mẹ mang nét nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.PHUC_DUC",
+   "text": "Bộ Liêm Phá đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.DIEN_TRACH",
+   "text": "Bộ Liêm Phá đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.QUAN_LOC",
+   "text": "Bộ Liêm Phá đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.NO_BOC",
+   "text": "Bộ Liêm Phá đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.THIEN_DI",
+   "text": "Bộ Liêm Phá đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.TAT_ACH",
+   "text": "Bộ Liêm Phá đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.TAI_BACH",
+   "text": "Bộ Liêm Phá đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.TU_TUC",
+   "text": "Bộ Liêm Phá đồng cung tại cung Tử Tức: con cái mang nét nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.PHU_THE",
+   "text": "Bộ Liêm Phá đồng cung tại cung Phu Thê: người bạn đời mang nét nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_PHA_QUAN.HUYNH_DE",
+   "text": "Bộ Liêm Phá đồng cung tại cung Huynh Đệ: anh chị em mang nét nhiều biến động, dám thay đổi, cần kiểm soát cảm xúc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.MENH",
+   "text": "Bộ Liêm Tham đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.PHU_MAU",
+   "text": "Bộ Liêm Tham đồng cung tại cung Phụ Mẫu: cha mẹ mang nét dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.PHUC_DUC",
+   "text": "Bộ Liêm Tham đồng cung tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.DIEN_TRACH",
+   "text": "Bộ Liêm Tham đồng cung tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.QUAN_LOC",
+   "text": "Bộ Liêm Tham đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.NO_BOC",
+   "text": "Bộ Liêm Tham đồng cung tại cung Nô Bộc: bạn bè, cộng sự mang nét dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.THIEN_DI",
+   "text": "Bộ Liêm Tham đồng cung tại cung Thiên Di: khi ra ngoài xã hội, đi xa, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.TAT_ACH",
+   "text": "Bộ Liêm Tham đồng cung tại cung Tật Ách: nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.TAI_BACH",
+   "text": "Bộ Liêm Tham đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.TU_TUC",
+   "text": "Bộ Liêm Tham đồng cung tại cung Tử Tức: con cái mang nét dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.PHU_THE",
+   "text": "Bộ Liêm Tham đồng cung tại cung Phu Thê: người bạn đời mang nét dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "combo.LIEM_TRINH_THAM_LANG.HUYNH_DE",
+   "text": "Bộ Liêm Tham đồng cung tại cung Huynh Đệ: anh chị em mang nét dễ vướng thị phi vì tiền hoặc tình, nên tránh vùng xám.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  }
+ ]
+}

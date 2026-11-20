@@ -19,7 +19,7 @@ echo "== APK: $REL · $ST"
 
 OLD=$(ls ci/regression/TuViTuXem-*.apk 2>/dev/null | head -1)
 if [ -n "$OLD" ]; then
-  echo "== 0) Bản cũ người dùng đã cài ($OLD) — chỉ để xác nhận nguyên nhân lỗi, không tính vào kết luận"
+  echo "== 0) Bản trước đang có trên máy người dùng ($OLD) — để bước 1 kiểm tra đường cập nhật (cài đè)"
   adb install -r "$OLD" >/dev/null && adb logcat -c && adb shell am start -W -n "$PKG/$ACT" >/dev/null; sleep 12
   if [ -n "$(adb shell pidof "$PKG" | tr -d '\r')" ]; then echo "OLD_APK_ALIVE"; else echo "OLD_APK_DEAD"; fi
   adb logcat -d | grep -E "FATAL EXCEPTION|NullPointerException|at vn\.tuvi" | head -8

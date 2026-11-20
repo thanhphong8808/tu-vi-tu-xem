@@ -32,10 +32,12 @@ step() { printf '\n== %s\n' "$*"; }
 rm -rf "$OUT"
 mkdir -p "$OUT/classes/core" "$OUT/classes/app" "$OUT/libs" "$OUT/dex" "$OUT/javares"
 
-step "1/7 Biên dịch engine + cầu nối (:core:calendar, :core:engine, app/src/shared) với android.jar API 26 (minSdk)"
+step "1/7 Biên dịch engine + luận giải + cầu nối (:core:calendar, :core:engine, :core:interpret, app/src/shared) với android.jar API 26 (minSdk)"
 "$KOTLINC" "${KFLAGS[@]}" -no-jdk -classpath "$ANDROID_JAR_26:$SERIALIZATION_JARS" -d "$OUT/classes/core" \
-  $(find "$ROOT/core/calendar/src/main/kotlin" "$ROOT/core/engine/src/main/kotlin" "$ROOT/app/src/shared/kotlin" -name '*.kt')
+  $(find "$ROOT/core/calendar/src/main/kotlin" "$ROOT/core/engine/src/main/kotlin" "$ROOT/core/interpret/src/main/kotlin" "$ROOT/app/src/shared/kotlin" -name '*.kt')
 cp "$ROOT/core/engine/src/main/resources/brightness.json" "$OUT/javares/"
+# Knowledge base (giai đoạn 3): đọc bằng Class.getResourceAsStream("/kb/…") như trên JVM.
+cp -r "$ROOT/data/kb/src/main/resources/kb" "$OUT/javares/kb"
 
 step "2/7 Biên dịch Activity với android.jar API 35 (targetSdk; API mới đều có kiểm tra phiên bản)"
 "$KOTLINC" "${KFLAGS[@]}" -no-jdk -classpath "$ANDROID_JAR_35:$OUT/classes/core:$SERIALIZATION_JARS" -d "$OUT/classes/app" \
@@ -76,7 +78,7 @@ package() { # $1 = tên, $2 = thư mục assets, $3.. = cờ aapt thêm
     --min-sdk-version 26 --target-sdk-version 35 --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" "$@" \
     -F "$OUT/$name-unsigned.apk"
   (cd "$OUT/dex" && aapt add -k "$OUT/$name-unsigned.apk" classes.dex >/dev/null)
-  (cd "$OUT/javares" && aapt add "$OUT/$name-unsigned.apk" brightness.json >/dev/null)
+  (cd "$OUT/javares" && aapt add "$OUT/$name-unsigned.apk" brightness.json $(find kb -type f -name '*.json' | sort) >/dev/null)
   zipalign -p -f 4 "$OUT/$name-unsigned.apk" "$OUT/$name-aligned.apk"
 }
 package release "$ROOT/app/assets"

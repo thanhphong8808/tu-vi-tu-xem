@@ -50,7 +50,7 @@
   const S = {
     stack: ['home'],
     today: null,
-    settings: { preset: 'NAM_PHAI_VN', onboarded: false },
+    settings: { preset: 'NAM_PHAI_VN', onboarded: false, expert: false },
     profiles: [],
     form: null,
     formError: '',
@@ -66,6 +66,7 @@
     hours: null,
     hoursInput: null,
     lunarCache: {},
+    rdOpen: {}, // mục luận giải đang mở “Vì sao?”
   };
 
   function defaultForm() {
@@ -250,7 +251,7 @@
   }
   const str = (v) => (v == null ? '' : String(v));
   const pad = (n) => (n == null || n === '' ? '--' : (+n < 10 ? '0' : '') + (+n));
-  const withPreset = (input) => Object.assign({}, input, { preset: S.settings.preset });
+  const withPreset = (input) => Object.assign({}, input, { preset: S.settings.preset, expert: !!S.settings.expert });
 
   function validate(f) {
     if (!f.gender) return 'Chưa chọn giới tính.';
@@ -358,7 +359,10 @@
       `<div class="card"><h2>Trường phái an sao</h2>` +
       PRESETS.map(([k, n, d]) => `<div class="opt ${S.settings.preset === k ? 'on' : ''}" data-act="preset" data-k="${k}"><b>${esc(n)}</b><span>${esc(d)}</span></div>`).join('') +
       `<p class="small muted">Áp dụng cho các lá số mở sau khi đổi.</p></div>` +
-      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — bản chạy thử (giai đoạn 2B): lá số, đại hạn, tiểu hạn, lưu niên, sao lưu, nguyệt hạn. Phần luận giải chi tiết sẽ có ở các bản sau.</p>` +
+      `<div class="card"><h2>Luận giải</h2><div class="opt ${S.settings.expert ? 'on' : ''}" data-act="expert"><b>Chế độ chuyên sâu ${S.settings.expert ? '· đang bật' : '· đang tắt'}</b>` +
+      `<span>Hiện thêm các luật độ tin cậy thấp (C), còn nhiều tranh luận giữa các trường phái.</span></div>` +
+      `<p class="small muted">Áp dụng cho các lá số mở sau khi đổi.</p></div>` +
+      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — bản chạy thử (giai đoạn 3): lá số, đại hạn, tiểu hạn, lưu niên, sao lưu, nguyệt hạn và luận giải sơ bộ (cách cục, câu luận từng cung). Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định; phần chấm điểm, tổng hợp theo chủ đề có ở bản sau.</p>` +
       `<p class="small muted">${esc(ONBOARD)}</p></div>`;
   }
 
@@ -388,8 +392,8 @@
       `<div class="legend"><span><i>M</i> Miếu · <i>V</i> Vượng · <i>Đ</i> Đắc · <i>B</i> Bình · <i>H</i> Hãm</span>` +
       `<span><i class="e-kim">Kim</i> · <i class="e-moc">Mộc</i> · <i class="e-thuy">Thủy</i> · <i class="e-hoa">Hỏa</i> · <i class="e-tho">Thổ</i></span>` +
       `<span><i style="color:var(--luu)">L.</i> sao lưu năm · chạm một cung để xem chi tiết</span></div>` +
-      yearCard(d) + daiHanCard(d) + monthCard(d) +
-      `<p class="note">Bản chạy thử: chưa có phần luận giải. Tử Vi là bản đồ thời tiết — đức năng thắng số, lựa chọn của bạn quyết định kết quả.</p>`;
+      readingCard(d) + yearCard(d) + daiHanCard(d) + monthCard(d) +
+      `<p class="note">Luận giải đang là bản nháp tự sinh, chưa thẩm định. Tử Vi là bản đồ thời tiết — đức năng thắng số, lựa chọn của bạn quyết định kết quả.</p>`;
   }
 
   function starSpan(s, cls) {
@@ -473,7 +477,7 @@
       `<div class="fact"><span>Can chi năm xem</span><b>${esc(y.canChi)}</b><small>Tứ Hóa lưu theo can năm</small></div>` +
       `</div>` +
       (hoa ? `<h3>Tứ Hóa lưu</h3><div class="tags">${hoa}</div>` : '') +
-      `<h3>Sao lưu</h3><div class="tags">${luu}</div></div>`;
+      `<h3>Sao lưu</h3><div class="tags">${luu}</div>` + yearReading(d) + `</div>`;
   }
   const roleAt = (d, chi) => d.palaces[chi].role;
   const scoreOf = (d, i) => d.daiHan[i].score;
@@ -491,6 +495,53 @@
     const leap = d.months.find((m) => m.leapAfter);
     return `<div class="card"><h2>Nguyệt hạn năm ${d.year.lunarYear}</h2><div class="months">${items}</div>` +
       `<p class="small muted" style="margin:6px 0 0">Cung nguyệt hạn của từng tháng âm.${leap ? ` *Năm có tháng ${leap.month} nhuận, dùng chung cung với tháng ${leap.month}.` : ''}</p></div>`;
+  }
+
+  // ——— Luận giải sơ bộ (giai đoạn 3): cách cục, dấu hiệu, câu luận từng cung ———
+  const polCls = (p) => (p > 0 ? 'pos' : p < 0 ? 'neg' : 'neu');
+  const polTxt = (p) => (p >= 2 ? '++' : p === 1 ? '+' : p === 0 ? '·' : p === -1 ? '−' : '−−');
+  const ADV = { NEN: 'Nên', KHONG_NEN: 'Không nên', LUU_Y: 'Lưu ý' };
+  function rdItem(it, key) {
+    const open = !!S.rdOpen[key];
+    return `<div class="rd ${polCls(it.pol)}${open ? ' open' : ''}" data-act="rd" data-key="${esc(key)}">` +
+      `<div class="rd-h"><span class="pol">${polTxt(it.pol)}</span><b>${esc(it.name)}</b><span class="rd-role">${esc(it.role)}</span></div>` +
+      `<div class="rd-t">${esc(it.text)}</div>` +
+      `<div class="rd-more"><div class="rd-sub">Vì sao?</div><ul>${it.why.map((w) => `<li>${esc(w)}</li>`).join('')}</ul>` +
+      (it.advice.length ? `<div class="rd-sub">Gợi ý</div><ul>${it.advice.map((a) => `<li><b>${ADV[a.type] || ''}:</b> ${esc(a.t)}</li>`).join('')}</ul>` : '') +
+      `<div class="rd-src">${esc(it.typeVn)} · độ tin cậy ${esc(it.rel)} · ${esc(it.topics.join(', '))}<br>Nguồn: ${esc(it.source)}</div></div>` +
+      `<div class="rd-tap">${open ? 'Thu gọn ‹' : 'Vì sao? ›'}</div></div>`;
+  }
+  function readingCard(d) {
+    const r = d.reading;
+    if (!r) return '';
+    if (r.error) return `<div class="card" id="reading"><h2>Cách cục &amp; dấu hiệu lá số</h2><p class="small muted">Chưa tải được phần luận giải (${esc(r.error)}). Lá số và vận hạn vẫn dùng bình thường.</p></div>`;
+    const groups = [];
+    r.natal.forEach((it) => {
+      let g = groups.find((x) => x.name === it.typeVn);
+      if (!g) { g = { name: it.typeVn, items: [] }; groups.push(g); }
+      g.items.push(it);
+    });
+    const body = groups.map((g) => `<h3>${esc(g.name)} (${g.items.length})</h3>` + g.items.map((it) => rdItem(it, 'n:' + it.id + ':' + it.chi)).join('')).join('');
+    return `<div class="card" id="reading"><h2>Cách cục &amp; dấu hiệu lá số</h2>` +
+      `<div class="draft">Bản nháp tự sinh từ ${r.counts.rules} luật của cẩm nang, chưa qua thẩm định — chỉ để tham khảo.${r.expert ? ' Đang bật chế độ chuyên sâu.' : ''} Chạm một mục để xem sao, cung làm căn cứ và gợi ý.</div>` +
+      (body || '<p class="small muted">Không có cách cục nổi bật nào khớp với lá số này.</p>') + `</div>`;
+  }
+  function yearReading(d) {
+    const r = d.reading;
+    if (!r || r.error) return '';
+    const yr = r.year.map((it) => rdItem(it, 'y:' + it.id + ':' + it.chi)).join('');
+    const dh = r.daiHan.map((it) => rdItem(it, 'd:' + it.id + ':' + it.chi)).join('');
+    return `<h3>Dấu hiệu năm ${d.year.lunarYear} (bản nháp)</h3>` + (yr || '<p class="small muted">Không có dấu hiệu nổi bật.</p>') +
+      (dh ? `<h3>Đại hạn đang đi (bản nháp)</h3>${dh}` : '');
+  }
+  function palaceReading(d, chi) {
+    const r = d.reading;
+    if (!r || r.error) return '';
+    const lines = (r.palaces[chi] || []).map((x) => `<div class="pl ${polCls(x.pol)}"><b>${esc(x.title)}</b><div>${esc(x.text)}</div></div>`).join('');
+    const rules = r.natal.concat(r.daiHan, r.year).filter((it) => (it.chis || [it.chi]).indexOf(chi) >= 0).map((it) => rdItem(it, 'p:' + it.id + ':' + it.chi)).join('');
+    return `<h3>Luận giải sơ bộ (bản nháp)</h3>` + (lines || '<div class="small muted">—</div>') +
+      (rules ? `<h3>Cách cục, dấu hiệu tại cung này</h3>${rules}` : '') +
+      `<p class="small muted">Câu luận tự sinh, chưa thẩm định. Chấm điểm và tổng hợp theo chủ đề có ở bản sau.</p>`;
   }
 
   // Sau khi dựng lưới: vẽ Tuần/Triệt trên đường ranh giới và đường tam phương tứ chính.
@@ -588,7 +639,7 @@
       (luuHere.length ? `<h3>Sao lưu năm ${y.lunarYear}</h3><div class="slist">${luuHere.map((n) => `<span class="tag" style="color:var(--luu)">${esc(n)}</span>`).join('')}</div>` : '') +
       `<h3>Liên hệ</h3><div class="small">Tam hợp: <b>${esc(rel([m(chi + 4), m(chi + 8)]))}</b><br>Xung chiếu: <b>${esc(rel([m(chi + 6)]))}</b><br>` +
       `Giáp: <b>${esc(rel([m(chi - 1), m(chi + 1)]))}</b><br>Nhị hợp: <b>${esc(rel([m(1 - chi)]))}</b></div>` +
-      `<p class="small muted">Luận giải chi tiết từng cung sẽ có ở bản sau.</p>`;
+      palaceReading(d, chi);
     $('#scrim').classList.add('open');
     $('#sheet').classList.add('open');
     $('#sheet').scrollTop = 0;
@@ -689,6 +740,15 @@
         break;
       }
       case 'preset': S.settings.preset = el.dataset.k; saveSettings(); render(false); break;
+      case 'expert': S.settings.expert = !S.settings.expert; saveSettings(); render(false); break;
+      case 'rd': {
+        const k = el.dataset.key, open = !S.rdOpen[k];
+        S.rdOpen[k] = open;
+        el.classList.toggle('open', open);
+        const t = el.querySelector('.rd-tap');
+        if (t) t.textContent = open ? 'Thu gọn ‹' : 'Vì sao? ›';
+        break;
+      }
       case 'year': setYear(S.req.viewYear + parseInt(el.dataset.d, 10)); break;
       case 'goto-year': setYear(parseInt(el.dataset.y, 10)); break;
       case 'layer': S.layers[el.dataset.k] = !S.layers[el.dataset.k]; render(false); break;

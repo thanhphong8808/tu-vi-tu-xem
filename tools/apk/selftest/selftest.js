@@ -16,6 +16,29 @@
   const setSel = (s, v) => { const e = need(s); e.value = v; e.dispatchEvent(new Event('change', { bubbles: true })); };
   const setText = (s, v) => { const e = need(s); e.value = v; e.dispatchEvent(new Event('input', { bubbles: true })); e.dispatchEvent(new Event('change', { bubbles: true })); };
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  // Mục 14.3: từ cấm trong câu luận (đồng bộ KbLint.FORBIDDEN).
+  const FORBIDDEN = ['chắc chắn', '100%', 'không thể tránh', 'định mệnh', 'tử vong', 'chết', 'đoản thọ', 'tuổi thọ', 'sảy thai', 'ly hôn',
+    'tù tội', 'lao lý', 'tai nạn chết người', 'hạn chí đầu hà', 'dị bào', 'giới tính thai', 'con trai', 'con gái', 'giải hạn', 'cúng sao', 'dâng sao'];
+  const forbiddenIn = (t) => { const low = t.toLowerCase(); return FORBIDDEN.filter((w) => new RegExp('(^|[^0-9A-Za-zÀ-ỹ])' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '($|[^0-9A-Za-zÀ-ỹ])').test(low)); };
+  // Giai đoạn 3: thẻ luận giải sơ bộ (knowledge base nạp từ APK, RuleEngine chạy trong DEX).
+  function verifyReading(tag, expectNatal, expectYear) {
+    const card = $('#reading');
+    check(!!card, `${tag}: thiếu thẻ luận giải`);
+    if (!card) return;
+    const txt = card.textContent || '';
+    check(txt.indexOf('Chưa tải được') < 0, `${tag}: không tải được luận giải: ${txt.slice(0, 160)}`);
+    const items = card.querySelectorAll('.rd').length;
+    check(items >= 1, `${tag}: phải có ít nhất 1 cách cục/dấu hiệu`);
+    const texts = Array.from(document.querySelectorAll('.rd-t, .pl div')).map((e) => e.textContent || '');
+    check(texts.every((t) => t.indexOf('{') < 0 && t.trim()), `${tag}: câu luận còn ô trống/chưa điền`);
+    const bad = forbiddenIn(need('#app').textContent || '');
+    check(bad.length === 0, `${tag}: lọt từ cấm ${bad}`);
+    (expectNatal || []).forEach((n) => check(txt.indexOf(n) >= 0, `${tag}: thiếu “${n}”`));
+    const yc = Array.from(document.querySelectorAll('.card')).find((c) => (c.textContent || '').indexOf('Dấu hiệu năm') >= 0);
+    check(!!yc, `${tag}: thiếu mục dấu hiệu năm`);
+    (expectYear || []).forEach((n) => check(!!yc && (yc.textContent || '').indexOf(n) >= 0, `${tag}: năm thiếu “${n}”`));
+    log(`READING ${tag} natal=${items} year=${yc ? yc.querySelectorAll('.rd').length : 0}`);
+  }
 
   function readBoard() {
     const out = {};
@@ -86,9 +109,12 @@
         click('[data-act="submit"]');
         check(!!$('[data-act="confirm"]'), `${tag}: phải sang thẻ xác nhận (lỗi form: ${($('#form-error') || {}).textContent || ''})`);
         check((need('#app').textContent || '').indexOf(g.lunar.replace('N', ' nhuận')) >= 0, `${tag}: thẻ xác nhận phải có âm lịch ${g.lunar}`);
+        const t0 = performance.now();
         click('[data-act="confirm"]');
+        log(`TIME ${tag} lập lá số + luận giải ${Math.round(performance.now() - t0)} ms`);
         await sleep(150);
         verify(g, readBoard(), tag);
+        verifyReading(tag, g.id === 'A' ? ['Âm Dương thuận lý', 'Thiên Tướng thủ Mệnh'] : [], g.id === 'A' ? ['Lưu Thái Tuế vào cung Quan Lộc'] : []);
         click('[data-act="layer"][data-k="month"]');
         click('[data-act="month"][data-m="1"]');
         const b = readBoard();
@@ -98,6 +124,8 @@
         click('.cell[data-chi="' + CHI.indexOf(g.menh) + '"]');
         await sleep(100);
         check((need('#sheet').textContent || '').indexOf('Cung Mệnh') >= 0, `${tag}: bảng chi tiết cung Mệnh`);
+        check((need('#sheet').textContent || '').indexOf('Luận giải sơ bộ') >= 0 && document.querySelectorAll('#sheet .pl').length >= 1, `${tag}: bảng cung Mệnh phải có luận giải sơ bộ`);
+        check(forbiddenIn(need('#sheet').textContent || '').length === 0, `${tag}: bảng cung Mệnh lọt từ cấm`);
         window.tvBack();
         log('OK ' + tag);
         click('[data-act="back"]');
@@ -128,6 +156,8 @@
       check(!!prof, 'Hồ sơ Ca A phải được lưu');
       if (prof) { prof.click(); await sleep(100); verify(GOLDEN[0], readBoard(), 'Mở lại Ca A'); click('[data-act="year"][data-d="1"]'); check((need('.yv').textContent || '').indexOf('2027') >= 0, 'Nút ▶ sang 2027'); }
       check(!document.querySelector('.error-box'), 'Không được có hộp lỗi trên màn hình: ' + ((document.querySelector('.error-box') || {}).textContent || ''));
+      // Để ảnh chụp màn hình cuối cùng cho thấy thẻ luận giải.
+      const rc = $('#reading'); if (rc) rc.scrollIntoView({ block: 'start' });
     } catch (e) {
       fail++;
       log('ERROR ' + e.message + ' ' + (e.stack || ''));

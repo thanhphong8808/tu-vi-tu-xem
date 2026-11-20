@@ -1,0 +1,604 @@
+{
+ "texts": [
+  {
+   "key": "phu.TA_PHU",
+   "text": "Tả Phù: sao phò tá: được người giúp, có cộng sự.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TA_PHU.NO_BOC",
+   "text": "Tả Phù tại cung Nô Bộc: bạn bè, cộng sự đắc lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HUU_BAT",
+   "text": "Hữu Bật: sao phò tá: được người giúp, khéo hợp tác.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HUU_BAT.NO_BOC",
+   "text": "Hữu Bật tại cung Nô Bộc: bạn bè, cộng sự đắc lực.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.VAN_XUONG",
+   "text": "Văn Xương: văn tinh: học vấn, chữ nghĩa, giấy tờ.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.VAN_KHUC",
+   "text": "Văn Khúc: văn tinh: tài ăn nói, nghệ thuật, năng khiếu.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_KHOI",
+   "text": "Thiên Khôi: quý nhân: được người có vị thế giúp đỡ, thuận thi cử.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_KHOI.NO_BOC",
+   "text": "Thiên Khôi tại cung Nô Bộc: dễ gặp quý nhân.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_VIET",
+   "text": "Thiên Việt: quý nhân: được giúp đỡ, thuận thi cử.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LOC_TON",
+   "text": "Lộc Tồn: tài lộc, biết giữ của; luôn bị Kình Đà kẹp nên dễ dè dặt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LOC_TON.TAI_BACH",
+   "text": "Lộc Tồn tại cung Tài Bạch: dòng tiền ổn định, biết giữ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LOC_TON.PHU_MAU",
+   "text": "Lộc Tồn tại cung Phụ Mẫu: dễ được cha mẹ để lại tài sản.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_MA",
+   "text": "Thiên Mã: sao động: di chuyển, thay đổi, cơ hội ở xa.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_MA.THIEN_DI",
+   "text": "Thiên Mã tại cung Thiên Di: dễ đi xa, công tác, xuất ngoại.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_LOC",
+   "text": "Hóa Lộc: tài lộc, sự thuận lợi, duyên tiền bạc.",
+   "source": "Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_LOC.TAI_BACH",
+   "text": "Hóa Lộc tại cung Tài Bạch: dòng tiền thuận.",
+   "source": "Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_QUYEN",
+   "text": "Hóa Quyền: quyền hành, sức ảnh hưởng, năng lực quản lý.",
+   "source": "Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_QUYEN.QUAN_LOC",
+   "text": "Hóa Quyền tại cung Quan Lộc: dễ nắm vai trò chủ chốt.",
+   "source": "Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_KHOA",
+   "text": "Hóa Khoa: danh tiếng, học vấn, quý nhân giải nguy.",
+   "source": "Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_KY",
+   "text": "Hóa Kỵ: vướng mắc, hiểu lầm, chậm trễ; ở Tứ Mộ thì giảm hung.",
+   "source": "Prompt mục 7, 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_KY.TAT_ACH",
+   "text": "Hóa Kỵ tại cung Tật Ách: nên khám định kỳ.",
+   "source": "Prompt mục 7, 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "phu.KINH_DUONG",
+   "text": "Kình Dương: sát tinh: cạnh tranh, va chạm, quyết liệt; đắc địa thì thành sức mạnh.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.KINH_DUONG.TAT_ACH",
+   "text": "Kình Dương tại cung Tật Ách: cẩn trọng va chạm khi vận động.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DA_LA",
+   "text": "Đà La: sát tinh: trì trệ, vướng mắc ngấm ngầm; đắc địa thì bền bỉ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_TINH",
+   "text": "Hỏa Tinh: sát tinh: nóng vội, bất ngờ; đắc địa thì nhanh nhạy, quyết đoán.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_TINH.TAT_ACH",
+   "text": "Hỏa Tinh tại cung Tật Ách: nên giữ sức, tránh làm việc quá sức.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LINH_TINH",
+   "text": "Linh Tinh: sát tinh: âm thầm, bất ngờ; đắc địa thì sắc sảo.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_KHONG",
+   "text": "Địa Không: sát tinh: hao hụt, ý tưởng khác thường; đắc địa thì phát nhanh nhưng dễ tàn.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_KHONG.TAI_BACH",
+   "text": "Địa Không tại cung Tài Bạch: kiếm tiền táo bạo nhưng dễ hụt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_KIEP",
+   "text": "Địa Kiếp: sát tinh: hao tổn, biến động; đắc địa thì phát nhanh nhưng dễ tàn.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_KIEP.TAI_BACH",
+   "text": "Địa Kiếp tại cung Tài Bạch: kiếm tiền táo bạo nhưng dễ hụt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_QUAN",
+   "text": "Thiên Quan: quý nhân, được che chở, thuận việc công.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_PHUC",
+   "text": "Thiên Phúc: phúc đức, được che chở.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.VAN_TINH",
+   "text": "Văn Tinh: học vấn, văn chương.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DUONG_PHU",
+   "text": "Đường Phù: nhà cửa, địa vị, sự vững chãi.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DUONG_PHU.DIEN_TRACH",
+   "text": "Đường Phù tại cung Điền Trạch: thuận có nhà cửa.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUOC_AN",
+   "text": "Quốc Ấn: ấn tín, quyền hành, chức vị.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUOC_AN.QUAN_LOC",
+   "text": "Quốc Ấn tại cung Quan Lộc: thuận chức vị.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THAI_PHU",
+   "text": "Thai Phụ: khoa danh, chữ nghĩa.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHONG_CAO",
+   "text": "Phong Cáo: khen thưởng, danh dự.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TAM_THAI",
+   "text": "Tam Thai: địa vị, sự nâng đỡ.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.BAT_TOA",
+   "text": "Bát Tọa: địa vị, sự nâng đỡ.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.AN_QUANG",
+   "text": "Ân Quang: ân huệ, quý nhân, phúc.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_QUY",
+   "text": "Thiên Quý: ân huệ, quý nhân, phúc.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LONG_TRI",
+   "text": "Long Trì: thanh lịch, khoa danh; sao hỷ sự.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LONG_TRI.THIEN_DI",
+   "text": "Long Trì tại cung Thiên Di: dễ đi xa.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHUONG_CAC",
+   "text": "Phượng Các: thanh lịch, khoa danh; sao hỷ sự.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHUONG_CAC.THIEN_DI",
+   "text": "Phượng Các tại cung Thiên Di: dễ đi xa.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.GIAI_THAN",
+   "text": "Giải Thần: giải trừ khó khăn.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_GIAI",
+   "text": "Thiên Giải: giải trừ khó khăn.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_GIAI",
+   "text": "Địa Giải: giải trừ khó khăn.",
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HONG_LOAN",
+   "text": "Hồng Loan: tình duyên, hỷ sự, duyên dáng.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_HY",
+   "text": "Thiên Hỷ: niềm vui, hỷ sự.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DAO_HOA",
+   "text": "Đào Hoa: duyên dáng, thu hút, tình cảm.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_TAI",
+   "text": "Thiên Tài: tài năng, khéo léo.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_THO",
+   "text": "Thiên Thọ: hiền hòa, bền bỉ.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_DUC",
+   "text": "Thiên Đức: tứ đức: hiền lành, gặp khó có người giúp.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.NGUYET_DUC",
+   "text": "Nguyệt Đức: tứ đức: hiền lành, gặp khó có người giúp.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_Y",
+   "text": "Thiên Y: y dược, chăm sóc, chữa lành.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_TRU",
+   "text": "Thiên Trù: ăn uống, bếp núc, đủ đầy.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HOA_CAI",
+   "text": "Hoa Cái: đẹp đẽ, thích tôn giáo, nghệ thuật; đôi khi cô độc.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_HINH",
+   "text": "Thiên Hình: kỷ luật, pháp lý; đắc địa thì có uy.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_HINH.TAT_ACH",
+   "text": "Thiên Hình tại cung Tật Ách: cẩn trọng va chạm, thương tích.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_RIEU",
+   "text": "Thiên Riêu: phong lưu, đa cảm; dễ vướng chuyện ngấm ngầm.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_RIEU.TAT_ACH",
+   "text": "Thiên Riêu tại cung Tật Ách: nên khám định kỳ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_KHOC",
+   "text": "Thiên Khốc: buồn phiền; đắc địa thì có chí, có tiếng nói.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_HU",
+   "text": "Thiên Hư: hư hao, lo âu; đắc địa thì giảm bớt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.CO_THAN",
+   "text": "Cô Thần: cô độc, thích tự lập.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.CO_THAN.PHU_THE",
+   "text": "Cô Thần tại cung Phu Thê: hôn nhân cần vun đắp.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUA_TU",
+   "text": "Quả Tú: cô độc, sống nội tâm.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUA_TU.PHU_THE",
+   "text": "Quả Tú tại cung Phu Thê: hôn nhân cần vun đắp.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.KIEP_SAT",
+   "text": "Kiếp Sát: biến cố bất ngờ, cần cẩn trọng.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHA_TOAI",
+   "text": "Phá Toái: hao hụt, đổ vỡ nhỏ.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LUU_HA",
+   "text": "Lưu Hà: cẩn trọng nơi sông nước, đi lại.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DAU_QUAN",
+   "text": "Đẩu Quân: nghiêm khắc, cô độc; ở Phu Thê cản trở hôn nhân.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DAU_QUAN.PHU_THE",
+   "text": "Đẩu Quân tại cung Phu Thê: hôn nhân cần vun đắp.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_KHONG",
+   "text": "Thiên Không: hư không, ý tưởng khác thường.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_LA",
+   "text": "Thiên La: bị gò bó, ràng buộc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DIA_VONG",
+   "text": "Địa Võng: bị gò bó, ràng buộc.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_THUONG",
+   "text": "Thiên Thương: hao tổn, buồn phiền khi gặp hạn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THIEN_SU",
+   "text": "Thiên Sứ: hao tổn, trắc trở khi gặp hạn.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DAI_HAO",
+   "text": "Đại Hao: hao tán tiền bạc; đắc địa thì tiêu tiền có mục đích.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.DAI_HAO.TAI_BACH",
+   "text": "Đại Hao tại cung Tài Bạch: tiền tụ tán thất thường.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TIEU_HAO",
+   "text": "Tiểu Hao: hao hụt nhỏ, chi tiêu vụn vặt.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TIEU_HAO.TAI_BACH",
+   "text": "Tiểu Hao tại cung Tài Bạch: tiền tụ tán thất thường.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TANG_MON",
+   "text": "Tang Môn: buồn phiền, thay đổi.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.BACH_HO",
+   "text": "Bạch Hổ: va chạm, thị phi; đi cùng Cự Môn thì thành tài hùng biện.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THAI_TUE",
+   "text": "Thái Tuế: lời nói, thị phi, sự chính trực.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUAN_PHU",
+   "text": "Quan Phù: giấy tờ, pháp lý, thị phi.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "phu.QUAN_PHU.QUAN_LOC",
+   "text": "Quan Phù tại cung Quan Lộc: cẩn trọng giấy tờ.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THANH_LONG",
+   "text": "Thanh Long: hỷ sự, may mắn, thuận lợi.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TAU_THU",
+   "text": "Tấu Thư: văn thư, tài ăn nói.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHUC_BINH",
+   "text": "Phục Binh: tiểu nhân ngấm ngầm, cần đề phòng.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHUC_BINH.NO_BOC",
+   "text": "Phục Binh tại cung Nô Bộc: cẩn trọng khi hợp tác.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.TUONG_QUAN",
+   "text": "Tướng Quân: uy quyền, mạnh mẽ.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.HY_THAN",
+   "text": "Hỷ Thần: niềm vui, hỷ sự.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.LONG_DUC",
+   "text": "Long Đức: tứ đức: nhân hậu, được giúp đỡ.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.PHUC_DUC",
+   "text": "Phúc Đức (sao): tứ đức: phúc hậu, được che chở.",
+   "source": "Tổng hợp phổ thông Nam phái (bản nháp, cần duyệt)",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THAI",
+   "text": "Thai: khởi đầu mới, chuyện con cái.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "phu.THAI.TU_TUC",
+   "text": "Thai tại cung Tử Tức: đường con cái thuận.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  }
+ ]
+}

@@ -3,6 +3,7 @@
 Cổng giai đoạn 2B: 4 lá số golden hiển thị đúng trên lưới 12 cung (mọi chính tinh, phụ tinh trong golden,
 Tuần, Triệt, Mệnh, Thân, Cục, tuổi đại hạn, đại hạn/tiểu hạn/lưu niên đại hạn/nguyệt hạn tháng Giêng năm 2026),
 cộng các luồng: nhập âm lịch, canh giờ, không rõ giờ, lá số thay thế, lưu/mở/xóa hồ sơ, đổi trường phái, đổi năm.
+Giai đoạn 3: thẻ “Cách cục & dấu hiệu”, dấu hiệu năm, luận giải từng cung, “Vì sao?”, chế độ chuyên sâu, không lọt từ cấm.
 Chạy: tools/apk/devserver.sh 8765 2026-11-20 &  rồi  python3 tools/apk/uitest/test_ui.py [thư mục ảnh]
 """
 import asyncio, json, os, re, sys
@@ -15,6 +16,16 @@ SHOTS = sys.argv[1] if len(sys.argv) > 1 else '/tmp/uishots'
 os.makedirs(SHOTS, exist_ok=True)
 CHI = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi']
 HOA = {'Hóa Lộc': 'LOC', 'Hóa Quyền': 'QUYEN', 'Hóa Khoa': 'KHOA', 'Hóa Kỵ': 'KY'}
+KB = os.path.join(ROOT, 'data/kb/src/main/resources/kb')
+RULE_NAME = {r['id']: r['name'] for f in json.load(open(os.path.join(KB, 'index.json'), encoding='utf-8'))['files']['rules']
+             for r in json.load(open(os.path.join(KB, f), encoding='utf-8'))['rules']}
+# Mục 14.3: các từ không được xuất hiện trong câu luận (đồng bộ với KbLint.FORBIDDEN).
+FORBIDDEN = ['chắc chắn', '100%', 'không thể tránh', 'định mệnh', 'tử vong', 'chết', 'đoản thọ', 'tuổi thọ', 'sảy thai', 'ly hôn',
+             'tù tội', 'lao lý', 'tai nạn chết người', 'hạn chí đầu hà', 'dị bào', 'giới tính thai', 'con trai', 'con gái',
+             'giải hạn', 'cúng sao', 'dâng sao']
+def forbidden_in(text):
+    low = text.lower()
+    return [w for w in FORBIDDEN if re.search(r'(?<![\wÀ-ỹ])' + re.escape(w) + r'(?![\wÀ-ỹ])', low)]
 
 failures, checks = [], 0
 def check(cond, msg):
@@ -150,6 +161,66 @@ async def main():
         await page.click('.profile:has-text("Ca A")')
         await page.wait_for_selector('#board')
         verify_golden(GOLDEN[0], await page.evaluate(READ_BOARD), 'Mở lại Ca A')
+
+        # —— luận giải sơ bộ (giai đoạn 3) trên ca A, năm 2026 ——
+        rd = await page.inner_text('#reading')
+        check('Bản nháp' in rd and 'chưa qua thẩm định' in rd, 'Thẻ luận giải phải ghi rõ là bản nháp chưa thẩm định')
+        n_items = await page.locator('#reading .rd').count()
+        check(n_items >= 3, f'Ca A phải có ít nhất 3 cách cục/dấu hiệu, đang có {n_items}')
+        for rid in ['TS_THIEN_TUONG_XET_GIAP', 'TS_AM_DUONG_THUAN_LY']:
+            check(RULE_NAME[rid] in rd, f'Ca A phải có “{RULE_NAME[rid]}” ({rid})')
+        for rid in ['CC_TAI_AM_GIAP_AN', 'CC_PHU_TUONG_TRIEU_VIEN']:
+            check(RULE_NAME[rid] not in rd, f'Ca A không được có “{RULE_NAME[rid]}” ({rid})')
+        yc = await page.inner_text('.card:has-text("Vận hạn năm 2026")')
+        check('Dấu hiệu năm 2026' in yc, 'Thẻ vận hạn phải có mục dấu hiệu năm 2026')
+        for rid in ['VH_LUU_THAI_TUE_QUAN_LOC', 'VH_THIEN_THOI_TUOI_KHAC_DAI_HAN']:
+            check(RULE_NAME[rid] in yc, f'Năm 2026 ca A phải có “{RULE_NAME[rid]}” ({rid})')
+        texts = await page.evaluate("() => Array.from(document.querySelectorAll('.rd-t')).map(e => e.textContent)")
+        check(all('{' not in t and '}' not in t for t in texts), 'Câu luận còn ô {…} chưa điền')
+        check(all(t.strip() for t in texts), 'Có câu luận rỗng')
+        # “Vì sao?”: chạm mở, chạm lần nữa đóng; danh sách căn cứ phải có sao và cung.
+        first = page.locator('#reading .rd >> nth=0')
+        await first.click()
+        check(await first.evaluate('e => e.classList.contains("open")'), 'Chạm mục luận giải phải mở phần “Vì sao?”')
+        why = await first.locator('.rd-more').inner_text()
+        check('tại' in why and 'Nguồn' in why, f'Phần “Vì sao?” phải có căn cứ và nguồn: {why[:120]}')
+        await page.screenshot(path=f'{SHOTS}/A_4_reading.png', full_page=True)
+        await first.click()
+        check(not await first.evaluate('e => e.classList.contains("open")'), 'Chạm lần nữa phải thu gọn')
+        # Bảng chi tiết cung Mệnh: câu luận bộ Vũ Khúc – Thiên Tướng.
+        await page.click('.cell[data-chi="2"]')
+        await page.wait_for_selector('#sheet.open')
+        sh = await page.inner_text('#sheet')
+        check('luận giải sơ bộ' in sh.lower() and 'Vũ Khúc' in sh and 'Thiên Tướng' in sh, 'Bảng cung Mệnh phải có luận giải sơ bộ bộ Vũ Tướng')
+        check(await page.locator('#sheet .pl').count() >= 2, 'Bảng cung Mệnh phải có từ 2 câu luận sao')
+        await page.screenshot(path=f'{SHOTS}/A_5_sheet_reading.png')
+        bad = forbidden_in(await page.inner_text('#app') + sh)
+        check(not bad, f'Lọt từ cấm (mục 14.3): {bad}')
+        await page.evaluate('window.tvBack()')
+        # Quét từ cấm trên nhiều năm và cả 12 cung.
+        all_text = ''
+        for yv in range(2020, 2032):
+            await page.evaluate(f"(() => {{ const r = document.querySelector('[data-act=year-range]'); r.value = '{yv}'; r.dispatchEvent(new Event('change', {{bubbles: true}})); }})()")
+            all_text += await page.inner_text('#app')
+        check('Năm 2031' in await page.inner_text('.yv'), 'Thanh trượt năm phải chuyển tới 2031')
+        for chi in range(12):
+            await page.click(f'.cell[data-chi="{chi}"]'); await page.wait_for_selector('#sheet.open')
+            all_text += await page.inner_text('#sheet')
+            await page.evaluate('window.tvBack()')
+        bad = forbidden_in(all_text)
+        check(not bad, f'Lọt từ cấm khi xem 12 cung: {bad}')
+        # Chế độ chuyên sâu.
+        await page.evaluate('window.tvBack()')
+        await page.click('[data-act="settings"]')
+        await page.click('[data-act="expert"]')
+        check('đang bật' in await page.inner_text('[data-act="expert"]'), 'Bật chế độ chuyên sâu không thành công')
+        await page.evaluate('window.tvBack()')
+        await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+        check('chế độ chuyên sâu' in await page.inner_text('#reading'), 'Thẻ luận giải phải ghi đang bật chế độ chuyên sâu')
+        await page.evaluate('window.tvBack()')
+        await page.click('[data-act="settings"]'); await page.click('[data-act="expert"]'); await page.evaluate('window.tvBack()')
+        await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+        check('chế độ chuyên sâu' not in await page.inner_text('#reading'), 'Tắt chế độ chuyên sâu không thành công')
         # đổi năm: ▶ sang 2027 rồi chạm đại hạn đầu
         await page.click('[data-act="year"][data-d="1"]')
         check('Năm 2027' in await page.inner_text('.yv'), 'Nút ▶ phải chuyển sang năm 2027')

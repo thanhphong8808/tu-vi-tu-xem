@@ -1,0 +1,4036 @@
+{
+ "texts": [
+  {
+   "key": "star.TU_VI.M.MENH",
+   "text": "Tử Vi miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.PHU_MAU",
+   "text": "Tử Vi miếu địa tại cung Phụ Mẫu: cha mẹ thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.PHUC_DUC",
+   "text": "Tử Vi miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.DIEN_TRACH",
+   "text": "Tử Vi miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.QUAN_LOC",
+   "text": "Tử Vi miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.NO_BOC",
+   "text": "Tử Vi miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.THIEN_DI",
+   "text": "Tử Vi miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.TAT_ACH",
+   "text": "Tử Vi miếu địa tại cung Tật Ách: nên giữ nhịp làm việc vừa phải, tránh ôm việc; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.TAI_BACH",
+   "text": "Tử Vi miếu địa tại cung Tài Bạch: phát huy trọn vẹn: biết dùng tiền để làm việc lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.TU_TUC",
+   "text": "Tử Vi miếu địa tại cung Tử Tức: con cái thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.PHU_THE",
+   "text": "Tử Vi miếu địa tại cung Phu Thê: người bạn đời thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.M.HUYNH_DE",
+   "text": "Tử Vi miếu địa tại cung Huynh Đệ: anh chị em thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.MENH",
+   "text": "Tử Vi vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.PHU_MAU",
+   "text": "Tử Vi vượng địa tại cung Phụ Mẫu: cha mẹ thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.PHUC_DUC",
+   "text": "Tử Vi vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.DIEN_TRACH",
+   "text": "Tử Vi vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.QUAN_LOC",
+   "text": "Tử Vi vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.NO_BOC",
+   "text": "Tử Vi vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.THIEN_DI",
+   "text": "Tử Vi vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.TAT_ACH",
+   "text": "Tử Vi vượng địa tại cung Tật Ách: nên giữ nhịp làm việc vừa phải, tránh ôm việc; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.TAI_BACH",
+   "text": "Tử Vi vượng địa tại cung Tài Bạch: phát huy mạnh: biết dùng tiền để làm việc lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.TU_TUC",
+   "text": "Tử Vi vượng địa tại cung Tử Tức: con cái thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.PHU_THE",
+   "text": "Tử Vi vượng địa tại cung Phu Thê: người bạn đời thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.V.HUYNH_DE",
+   "text": "Tử Vi vượng địa tại cung Huynh Đệ: anh chị em thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.MENH",
+   "text": "Tử Vi đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.PHU_MAU",
+   "text": "Tử Vi đắc địa tại cung Phụ Mẫu: cha mẹ thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.PHUC_DUC",
+   "text": "Tử Vi đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.DIEN_TRACH",
+   "text": "Tử Vi đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.QUAN_LOC",
+   "text": "Tử Vi đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.NO_BOC",
+   "text": "Tử Vi đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.THIEN_DI",
+   "text": "Tử Vi đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.TAT_ACH",
+   "text": "Tử Vi đắc địa tại cung Tật Ách: nên giữ nhịp làm việc vừa phải, tránh ôm việc; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.TAI_BACH",
+   "text": "Tử Vi đắc địa tại cung Tài Bạch: phát huy khá tốt: biết dùng tiền để làm việc lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.TU_TUC",
+   "text": "Tử Vi đắc địa tại cung Tử Tức: con cái thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.PHU_THE",
+   "text": "Tử Vi đắc địa tại cung Phu Thê: người bạn đời thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.Đ.HUYNH_DE",
+   "text": "Tử Vi đắc địa tại cung Huynh Đệ: anh chị em thường đĩnh đạc, có uy, biết lo toan; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.MENH",
+   "text": "Tử Vi bình hòa tại cung Mệnh: về tính cách và xu hướng hành động, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.PHU_MAU",
+   "text": "Tử Vi bình hòa tại cung Phụ Mẫu: cha mẹ mang nét đĩnh đạc, có uy, biết lo toan, đôi khi tự tôn, khó chiều.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.PHUC_DUC",
+   "text": "Tử Vi bình hòa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.DIEN_TRACH",
+   "text": "Tử Vi bình hòa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.QUAN_LOC",
+   "text": "Tử Vi bình hòa tại cung Quan Lộc: ở mức trung bình, tốt xấu tùy sao hội chiếu điểm mạnh — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.NO_BOC",
+   "text": "Tử Vi bình hòa tại cung Nô Bộc: bạn bè, cộng sự mang nét đĩnh đạc, có uy, biết lo toan, đôi khi tự tôn, khó chiều.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.THIEN_DI",
+   "text": "Tử Vi bình hòa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.TAT_ACH",
+   "text": "Tử Vi bình hòa tại cung Tật Ách: nên giữ nhịp làm việc vừa phải, tránh ôm việc; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.TAI_BACH",
+   "text": "Tử Vi bình hòa tại cung Tài Bạch: ở mức trung bình, tốt xấu tùy sao hội chiếu: biết dùng tiền để làm việc lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.TU_TUC",
+   "text": "Tử Vi bình hòa tại cung Tử Tức: con cái mang nét đĩnh đạc, có uy, biết lo toan, đôi khi tự tôn, khó chiều.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.PHU_THE",
+   "text": "Tử Vi bình hòa tại cung Phu Thê: người bạn đời mang nét đĩnh đạc, có uy, biết lo toan, đôi khi tự tôn, khó chiều.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.TU_VI.B.HUYNH_DE",
+   "text": "Tử Vi bình hòa tại cung Huynh Đệ: anh chị em mang nét đĩnh đạc, có uy, biết lo toan, đôi khi tự tôn, khó chiều.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.MENH",
+   "text": "Thiên Cơ miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.PHU_MAU",
+   "text": "Thiên Cơ miếu địa tại cung Phụ Mẫu: cha mẹ thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.PHUC_DUC",
+   "text": "Thiên Cơ miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.DIEN_TRACH",
+   "text": "Thiên Cơ miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.QUAN_LOC",
+   "text": "Thiên Cơ miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — thông minh, giỏi phân tích, ứng biến và hoạch định; hợp tham mưu, nghiên cứu, giáo dục, lập trình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.NO_BOC",
+   "text": "Thiên Cơ miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.THIEN_DI",
+   "text": "Thiên Cơ miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.TAT_ACH",
+   "text": "Thiên Cơ miếu địa tại cung Tật Ách: nên giảm căng thẳng, ngủ đủ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.TAI_BACH",
+   "text": "Thiên Cơ miếu địa tại cung Tài Bạch: phát huy trọn vẹn: giỏi tính toán, xoay xở.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.TU_TUC",
+   "text": "Thiên Cơ miếu địa tại cung Tử Tức: con cái thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.PHU_THE",
+   "text": "Thiên Cơ miếu địa tại cung Phu Thê: người bạn đời thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.M.HUYNH_DE",
+   "text": "Thiên Cơ miếu địa tại cung Huynh Đệ: anh chị em thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.MENH",
+   "text": "Thiên Cơ vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.PHU_MAU",
+   "text": "Thiên Cơ vượng địa tại cung Phụ Mẫu: cha mẹ thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.PHUC_DUC",
+   "text": "Thiên Cơ vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.DIEN_TRACH",
+   "text": "Thiên Cơ vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.QUAN_LOC",
+   "text": "Thiên Cơ vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — thông minh, giỏi phân tích, ứng biến và hoạch định; hợp tham mưu, nghiên cứu, giáo dục, lập trình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.NO_BOC",
+   "text": "Thiên Cơ vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.THIEN_DI",
+   "text": "Thiên Cơ vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.TAT_ACH",
+   "text": "Thiên Cơ vượng địa tại cung Tật Ách: nên giảm căng thẳng, ngủ đủ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.TAI_BACH",
+   "text": "Thiên Cơ vượng địa tại cung Tài Bạch: phát huy mạnh: giỏi tính toán, xoay xở.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.TU_TUC",
+   "text": "Thiên Cơ vượng địa tại cung Tử Tức: con cái thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.PHU_THE",
+   "text": "Thiên Cơ vượng địa tại cung Phu Thê: người bạn đời thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.V.HUYNH_DE",
+   "text": "Thiên Cơ vượng địa tại cung Huynh Đệ: anh chị em thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.MENH",
+   "text": "Thiên Cơ đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.PHU_MAU",
+   "text": "Thiên Cơ đắc địa tại cung Phụ Mẫu: cha mẹ thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.PHUC_DUC",
+   "text": "Thiên Cơ đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.DIEN_TRACH",
+   "text": "Thiên Cơ đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.QUAN_LOC",
+   "text": "Thiên Cơ đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — thông minh, giỏi phân tích, ứng biến và hoạch định; hợp tham mưu, nghiên cứu, giáo dục, lập trình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.NO_BOC",
+   "text": "Thiên Cơ đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.THIEN_DI",
+   "text": "Thiên Cơ đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: thông minh, giỏi phân tích, ứng biến và hoạch định.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.TAT_ACH",
+   "text": "Thiên Cơ đắc địa tại cung Tật Ách: nên giảm căng thẳng, ngủ đủ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.TAI_BACH",
+   "text": "Thiên Cơ đắc địa tại cung Tài Bạch: phát huy khá tốt: giỏi tính toán, xoay xở.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.TU_TUC",
+   "text": "Thiên Cơ đắc địa tại cung Tử Tức: con cái thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.PHU_THE",
+   "text": "Thiên Cơ đắc địa tại cung Phu Thê: người bạn đời thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.Đ.HUYNH_DE",
+   "text": "Thiên Cơ đắc địa tại cung Huynh Đệ: anh chị em thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.MENH",
+   "text": "Thiên Cơ hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.PHU_MAU",
+   "text": "Thiên Cơ hãm địa tại cung Phụ Mẫu: cha mẹ có thể hay lo nghĩ, khó đoán; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.PHUC_DUC",
+   "text": "Thiên Cơ hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.DIEN_TRACH",
+   "text": "Thiên Cơ hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.QUAN_LOC",
+   "text": "Thiên Cơ hãm địa tại cung Quan Lộc: dễ lộ mặt trái là dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ; nên chọn môi trường ổn định, hợp tham mưu, nghiên cứu, giáo dục, lập trình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.NO_BOC",
+   "text": "Thiên Cơ hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể hay lo nghĩ, khó đoán; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.THIEN_DI",
+   "text": "Thiên Cơ hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.TAT_ACH",
+   "text": "Thiên Cơ hãm địa tại cung Tật Ách: nên giảm căng thẳng, ngủ đủ; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.TAI_BACH",
+   "text": "Thiên Cơ hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ tính toán quá nhiều, thiếu quyết đoán, hay lo nghĩ; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.TU_TUC",
+   "text": "Thiên Cơ hãm địa tại cung Tử Tức: con cái có thể hay lo nghĩ, khó đoán; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.PHU_THE",
+   "text": "Thiên Cơ hãm địa tại cung Phu Thê: người bạn đời có thể hay lo nghĩ, khó đoán; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_CO.H.HUYNH_DE",
+   "text": "Thiên Cơ hãm địa tại cung Huynh Đệ: anh chị em có thể hay lo nghĩ, khó đoán; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.MENH",
+   "text": "Thái Dương miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.PHU_MAU",
+   "text": "Thái Dương miếu địa tại cung Phụ Mẫu: cha mẹ thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận. Thái Dương cũng tượng trưng cho người cha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.PHUC_DUC",
+   "text": "Thái Dương miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.DIEN_TRACH",
+   "text": "Thái Dương miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.QUAN_LOC",
+   "text": "Thái Dương miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — chính trực, hào sảng, quang minh, dám nghĩ dám làm; hợp công việc cần uy tín, giao tiếp, công quyền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.NO_BOC",
+   "text": "Thái Dương miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.THIEN_DI",
+   "text": "Thái Dương miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.TAT_ACH",
+   "text": "Thái Dương miếu địa tại cung Tật Ách: nên giữ thị lực, nghỉ ngơi điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.TAI_BACH",
+   "text": "Thái Dương miếu địa tại cung Tài Bạch: phát huy trọn vẹn: danh thường đi trước lợi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.TU_TUC",
+   "text": "Thái Dương miếu địa tại cung Tử Tức: con cái thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.PHU_THE",
+   "text": "Thái Dương miếu địa tại cung Phu Thê: người bạn đời thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.M.HUYNH_DE",
+   "text": "Thái Dương miếu địa tại cung Huynh Đệ: anh chị em thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.MENH",
+   "text": "Thái Dương vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.PHU_MAU",
+   "text": "Thái Dương vượng địa tại cung Phụ Mẫu: cha mẹ thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận. Thái Dương cũng tượng trưng cho người cha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.PHUC_DUC",
+   "text": "Thái Dương vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.DIEN_TRACH",
+   "text": "Thái Dương vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.QUAN_LOC",
+   "text": "Thái Dương vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — chính trực, hào sảng, quang minh, dám nghĩ dám làm; hợp công việc cần uy tín, giao tiếp, công quyền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.NO_BOC",
+   "text": "Thái Dương vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.THIEN_DI",
+   "text": "Thái Dương vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.TAT_ACH",
+   "text": "Thái Dương vượng địa tại cung Tật Ách: nên giữ thị lực, nghỉ ngơi điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.TAI_BACH",
+   "text": "Thái Dương vượng địa tại cung Tài Bạch: phát huy mạnh: danh thường đi trước lợi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.TU_TUC",
+   "text": "Thái Dương vượng địa tại cung Tử Tức: con cái thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.PHU_THE",
+   "text": "Thái Dương vượng địa tại cung Phu Thê: người bạn đời thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.V.HUYNH_DE",
+   "text": "Thái Dương vượng địa tại cung Huynh Đệ: anh chị em thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.MENH",
+   "text": "Thái Dương đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.PHU_MAU",
+   "text": "Thái Dương đắc địa tại cung Phụ Mẫu: cha mẹ thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận. Thái Dương cũng tượng trưng cho người cha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.PHUC_DUC",
+   "text": "Thái Dương đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.DIEN_TRACH",
+   "text": "Thái Dương đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.QUAN_LOC",
+   "text": "Thái Dương đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — chính trực, hào sảng, quang minh, dám nghĩ dám làm; hợp công việc cần uy tín, giao tiếp, công quyền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.NO_BOC",
+   "text": "Thái Dương đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.THIEN_DI",
+   "text": "Thái Dương đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: chính trực, hào sảng, quang minh, dám nghĩ dám làm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.TAT_ACH",
+   "text": "Thái Dương đắc địa tại cung Tật Ách: nên giữ thị lực, nghỉ ngơi điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.TAI_BACH",
+   "text": "Thái Dương đắc địa tại cung Tài Bạch: phát huy khá tốt: danh thường đi trước lợi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.TU_TUC",
+   "text": "Thái Dương đắc địa tại cung Tử Tức: con cái thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.PHU_THE",
+   "text": "Thái Dương đắc địa tại cung Phu Thê: người bạn đời thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.Đ.HUYNH_DE",
+   "text": "Thái Dương đắc địa tại cung Huynh Đệ: anh chị em thường thẳng thắn, rộng lượng, có trách nhiệm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.MENH",
+   "text": "Thái Dương hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.PHU_MAU",
+   "text": "Thái Dương hãm địa tại cung Phụ Mẫu: cha mẹ có thể nóng tính, hay lo việc người; quan hệ cần thêm sự thấu hiểu. Thái Dương cũng tượng trưng cho người cha.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.PHUC_DUC",
+   "text": "Thái Dương hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.DIEN_TRACH",
+   "text": "Thái Dương hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.QUAN_LOC",
+   "text": "Thái Dương hãm địa tại cung Quan Lộc: dễ lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức; nên chọn môi trường ổn định, hợp công việc cần uy tín, giao tiếp, công quyền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.NO_BOC",
+   "text": "Thái Dương hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể nóng tính, hay lo việc người; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.THIEN_DI",
+   "text": "Thái Dương hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.TAT_ACH",
+   "text": "Thái Dương hãm địa tại cung Tật Ách: nên giữ thị lực, nghỉ ngơi điều độ; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.TAI_BACH",
+   "text": "Thái Dương hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì bộc trực quá mức, dễ hao tổn vì người khác, danh chưa tương xứng công sức; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.TU_TUC",
+   "text": "Thái Dương hãm địa tại cung Tử Tức: con cái có thể nóng tính, hay lo việc người; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.PHU_THE",
+   "text": "Thái Dương hãm địa tại cung Phu Thê: người bạn đời có thể nóng tính, hay lo việc người; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_DUONG.H.HUYNH_DE",
+   "text": "Thái Dương hãm địa tại cung Huynh Đệ: anh chị em có thể nóng tính, hay lo việc người; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.MENH",
+   "text": "Vũ Khúc miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.PHU_MAU",
+   "text": "Vũ Khúc miếu địa tại cung Phụ Mẫu: cha mẹ thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.PHUC_DUC",
+   "text": "Vũ Khúc miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.DIEN_TRACH",
+   "text": "Vũ Khúc miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.QUAN_LOC",
+   "text": "Vũ Khúc miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính; hợp tài chính, ngân hàng, kinh doanh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.NO_BOC",
+   "text": "Vũ Khúc miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.THIEN_DI",
+   "text": "Vũ Khúc miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.TAT_ACH",
+   "text": "Vũ Khúc miếu địa tại cung Tật Ách: nên điều độ, tránh làm việc quá sức; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.TAI_BACH",
+   "text": "Vũ Khúc miếu địa tại cung Tài Bạch: phát huy trọn vẹn: giỏi kiếm và quản lý tiền. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.TU_TUC",
+   "text": "Vũ Khúc miếu địa tại cung Tử Tức: con cái thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.PHU_THE",
+   "text": "Vũ Khúc miếu địa tại cung Phu Thê: người bạn đời thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận. Vũ Khúc ở cung lục thân cần nhiều vun đắp tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.M.HUYNH_DE",
+   "text": "Vũ Khúc miếu địa tại cung Huynh Đệ: anh chị em thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.MENH",
+   "text": "Vũ Khúc vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.PHU_MAU",
+   "text": "Vũ Khúc vượng địa tại cung Phụ Mẫu: cha mẹ thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.PHUC_DUC",
+   "text": "Vũ Khúc vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.DIEN_TRACH",
+   "text": "Vũ Khúc vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.QUAN_LOC",
+   "text": "Vũ Khúc vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính; hợp tài chính, ngân hàng, kinh doanh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.NO_BOC",
+   "text": "Vũ Khúc vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.THIEN_DI",
+   "text": "Vũ Khúc vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.TAT_ACH",
+   "text": "Vũ Khúc vượng địa tại cung Tật Ách: nên điều độ, tránh làm việc quá sức; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.TAI_BACH",
+   "text": "Vũ Khúc vượng địa tại cung Tài Bạch: phát huy mạnh: giỏi kiếm và quản lý tiền. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.TU_TUC",
+   "text": "Vũ Khúc vượng địa tại cung Tử Tức: con cái thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.PHU_THE",
+   "text": "Vũ Khúc vượng địa tại cung Phu Thê: người bạn đời thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận. Vũ Khúc ở cung lục thân cần nhiều vun đắp tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.V.HUYNH_DE",
+   "text": "Vũ Khúc vượng địa tại cung Huynh Đệ: anh chị em thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.MENH",
+   "text": "Vũ Khúc đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.PHU_MAU",
+   "text": "Vũ Khúc đắc địa tại cung Phụ Mẫu: cha mẹ thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.PHUC_DUC",
+   "text": "Vũ Khúc đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.DIEN_TRACH",
+   "text": "Vũ Khúc đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.QUAN_LOC",
+   "text": "Vũ Khúc đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính; hợp tài chính, ngân hàng, kinh doanh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.NO_BOC",
+   "text": "Vũ Khúc đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.THIEN_DI",
+   "text": "Vũ Khúc đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.TAT_ACH",
+   "text": "Vũ Khúc đắc địa tại cung Tật Ách: nên điều độ, tránh làm việc quá sức; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.TAI_BACH",
+   "text": "Vũ Khúc đắc địa tại cung Tài Bạch: phát huy khá tốt: giỏi kiếm và quản lý tiền. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.TU_TUC",
+   "text": "Vũ Khúc đắc địa tại cung Tử Tức: con cái thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.PHU_THE",
+   "text": "Vũ Khúc đắc địa tại cung Phu Thê: người bạn đời thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận. Vũ Khúc ở cung lục thân cần nhiều vun đắp tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.Đ.HUYNH_DE",
+   "text": "Vũ Khúc đắc địa tại cung Huynh Đệ: anh chị em thường thực tế, có kỷ luật, giỏi kiếm tiền; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.MENH",
+   "text": "Vũ Khúc hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là cứng nhắc, cô độc, hay quyết liệt quá mức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.PHU_MAU",
+   "text": "Vũ Khúc hãm địa tại cung Phụ Mẫu: cha mẹ có thể cứng rắn, ít biểu lộ tình cảm; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.PHUC_DUC",
+   "text": "Vũ Khúc hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là cứng nhắc, cô độc, hay quyết liệt quá mức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.DIEN_TRACH",
+   "text": "Vũ Khúc hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là cứng nhắc, cô độc, hay quyết liệt quá mức. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.QUAN_LOC",
+   "text": "Vũ Khúc hãm địa tại cung Quan Lộc: dễ lộ mặt trái là cứng nhắc, cô độc, hay quyết liệt quá mức; nên chọn môi trường ổn định, hợp tài chính, ngân hàng, kinh doanh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.NO_BOC",
+   "text": "Vũ Khúc hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể cứng rắn, ít biểu lộ tình cảm; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.THIEN_DI",
+   "text": "Vũ Khúc hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là cứng nhắc, cô độc, hay quyết liệt quá mức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.TAT_ACH",
+   "text": "Vũ Khúc hãm địa tại cung Tật Ách: nên điều độ, tránh làm việc quá sức; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.TAI_BACH",
+   "text": "Vũ Khúc hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì cứng nhắc, cô độc, hay quyết liệt quá mức; cần kỷ luật chi tiêu. Vũ Khúc rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.TU_TUC",
+   "text": "Vũ Khúc hãm địa tại cung Tử Tức: con cái có thể cứng rắn, ít biểu lộ tình cảm; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.PHU_THE",
+   "text": "Vũ Khúc hãm địa tại cung Phu Thê: người bạn đời có thể cứng rắn, ít biểu lộ tình cảm; quan hệ cần thêm sự thấu hiểu. Vũ Khúc ở cung lục thân cần nhiều vun đắp tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.VU_KHUC.H.HUYNH_DE",
+   "text": "Vũ Khúc hãm địa tại cung Huynh Đệ: anh chị em có thể cứng rắn, ít biểu lộ tình cảm; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.MENH",
+   "text": "Thiên Đồng miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.PHU_MAU",
+   "text": "Thiên Đồng miếu địa tại cung Phụ Mẫu: cha mẹ thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.PHUC_DUC",
+   "text": "Thiên Đồng miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn. Thiên Đồng là phúc tinh, rất hợp cung Phúc Đức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.DIEN_TRACH",
+   "text": "Thiên Đồng miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.QUAN_LOC",
+   "text": "Thiên Đồng miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn; hợp dịch vụ, chăm sóc, văn hóa.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.NO_BOC",
+   "text": "Thiên Đồng miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.THIEN_DI",
+   "text": "Thiên Đồng miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.TAT_ACH",
+   "text": "Thiên Đồng miếu địa tại cung Tật Ách: nên vận động đều, tránh lười; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.TAI_BACH",
+   "text": "Thiên Đồng miếu địa tại cung Tài Bạch: phát huy trọn vẹn: tiền đến nhẹ nhàng nhưng ít tích lũy lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.TU_TUC",
+   "text": "Thiên Đồng miếu địa tại cung Tử Tức: con cái thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.PHU_THE",
+   "text": "Thiên Đồng miếu địa tại cung Phu Thê: người bạn đời thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.M.HUYNH_DE",
+   "text": "Thiên Đồng miếu địa tại cung Huynh Đệ: anh chị em thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.MENH",
+   "text": "Thiên Đồng vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.PHU_MAU",
+   "text": "Thiên Đồng vượng địa tại cung Phụ Mẫu: cha mẹ thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.PHUC_DUC",
+   "text": "Thiên Đồng vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn. Thiên Đồng là phúc tinh, rất hợp cung Phúc Đức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.DIEN_TRACH",
+   "text": "Thiên Đồng vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.QUAN_LOC",
+   "text": "Thiên Đồng vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn; hợp dịch vụ, chăm sóc, văn hóa.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.NO_BOC",
+   "text": "Thiên Đồng vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.THIEN_DI",
+   "text": "Thiên Đồng vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.TAT_ACH",
+   "text": "Thiên Đồng vượng địa tại cung Tật Ách: nên vận động đều, tránh lười; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.TAI_BACH",
+   "text": "Thiên Đồng vượng địa tại cung Tài Bạch: phát huy mạnh: tiền đến nhẹ nhàng nhưng ít tích lũy lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.TU_TUC",
+   "text": "Thiên Đồng vượng địa tại cung Tử Tức: con cái thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.PHU_THE",
+   "text": "Thiên Đồng vượng địa tại cung Phu Thê: người bạn đời thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.V.HUYNH_DE",
+   "text": "Thiên Đồng vượng địa tại cung Huynh Đệ: anh chị em thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.MENH",
+   "text": "Thiên Đồng đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.PHU_MAU",
+   "text": "Thiên Đồng đắc địa tại cung Phụ Mẫu: cha mẹ thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.PHUC_DUC",
+   "text": "Thiên Đồng đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn. Thiên Đồng là phúc tinh, rất hợp cung Phúc Đức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.DIEN_TRACH",
+   "text": "Thiên Đồng đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.QUAN_LOC",
+   "text": "Thiên Đồng đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn; hợp dịch vụ, chăm sóc, văn hóa.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.NO_BOC",
+   "text": "Thiên Đồng đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.THIEN_DI",
+   "text": "Thiên Đồng đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: nhân hậu, yêu đời, ôn hòa, có khả năng hóa giải khó khăn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.TAT_ACH",
+   "text": "Thiên Đồng đắc địa tại cung Tật Ách: nên vận động đều, tránh lười; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.TAI_BACH",
+   "text": "Thiên Đồng đắc địa tại cung Tài Bạch: phát huy khá tốt: tiền đến nhẹ nhàng nhưng ít tích lũy lớn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.TU_TUC",
+   "text": "Thiên Đồng đắc địa tại cung Tử Tức: con cái thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.PHU_THE",
+   "text": "Thiên Đồng đắc địa tại cung Phu Thê: người bạn đời thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.Đ.HUYNH_DE",
+   "text": "Thiên Đồng đắc địa tại cung Huynh Đệ: anh chị em thường hiền hòa, dễ chịu, biết hưởng thụ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.MENH",
+   "text": "Thiên Đồng hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là dễ ham an nhàn, thiếu quyết tâm, hay đổi ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.PHU_MAU",
+   "text": "Thiên Đồng hãm địa tại cung Phụ Mẫu: cha mẹ có thể ham vui, thiếu kiên định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.PHUC_DUC",
+   "text": "Thiên Đồng hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là dễ ham an nhàn, thiếu quyết tâm, hay đổi ý. Thiên Đồng là phúc tinh, rất hợp cung Phúc Đức.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.DIEN_TRACH",
+   "text": "Thiên Đồng hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là dễ ham an nhàn, thiếu quyết tâm, hay đổi ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.QUAN_LOC",
+   "text": "Thiên Đồng hãm địa tại cung Quan Lộc: dễ lộ mặt trái là dễ ham an nhàn, thiếu quyết tâm, hay đổi ý; nên chọn môi trường ổn định, hợp dịch vụ, chăm sóc, văn hóa.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.NO_BOC",
+   "text": "Thiên Đồng hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể ham vui, thiếu kiên định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.THIEN_DI",
+   "text": "Thiên Đồng hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là dễ ham an nhàn, thiếu quyết tâm, hay đổi ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.TAT_ACH",
+   "text": "Thiên Đồng hãm địa tại cung Tật Ách: nên vận động đều, tránh lười; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.TAI_BACH",
+   "text": "Thiên Đồng hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ ham an nhàn, thiếu quyết tâm, hay đổi ý; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.TU_TUC",
+   "text": "Thiên Đồng hãm địa tại cung Tử Tức: con cái có thể ham vui, thiếu kiên định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.PHU_THE",
+   "text": "Thiên Đồng hãm địa tại cung Phu Thê: người bạn đời có thể ham vui, thiếu kiên định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_DONG.H.HUYNH_DE",
+   "text": "Thiên Đồng hãm địa tại cung Huynh Đệ: anh chị em có thể ham vui, thiếu kiên định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.MENH",
+   "text": "Liêm Trinh miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.PHU_MAU",
+   "text": "Liêm Trinh miếu địa tại cung Phụ Mẫu: cha mẹ thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.PHUC_DUC",
+   "text": "Liêm Trinh miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.DIEN_TRACH",
+   "text": "Liêm Trinh miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.QUAN_LOC",
+   "text": "Liêm Trinh miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — liêm khiết, nghiêm minh, có gu thẩm mỹ; hợp tư pháp, kỷ cương hoặc nghệ thuật, thiết kế.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.NO_BOC",
+   "text": "Liêm Trinh miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.THIEN_DI",
+   "text": "Liêm Trinh miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.TAT_ACH",
+   "text": "Liêm Trinh miếu địa tại cung Tật Ách: nên giữ tinh thần thoải mái, tránh nóng giận; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.TAI_BACH",
+   "text": "Liêm Trinh miếu địa tại cung Tài Bạch: phát huy trọn vẹn: kiếm tiền bằng chuyên môn, cần minh bạch.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.TU_TUC",
+   "text": "Liêm Trinh miếu địa tại cung Tử Tức: con cái thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.PHU_THE",
+   "text": "Liêm Trinh miếu địa tại cung Phu Thê: người bạn đời thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.M.HUYNH_DE",
+   "text": "Liêm Trinh miếu địa tại cung Huynh Đệ: anh chị em thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.MENH",
+   "text": "Liêm Trinh vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.PHU_MAU",
+   "text": "Liêm Trinh vượng địa tại cung Phụ Mẫu: cha mẹ thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.PHUC_DUC",
+   "text": "Liêm Trinh vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.DIEN_TRACH",
+   "text": "Liêm Trinh vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.QUAN_LOC",
+   "text": "Liêm Trinh vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — liêm khiết, nghiêm minh, có gu thẩm mỹ; hợp tư pháp, kỷ cương hoặc nghệ thuật, thiết kế.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.NO_BOC",
+   "text": "Liêm Trinh vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.THIEN_DI",
+   "text": "Liêm Trinh vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.TAT_ACH",
+   "text": "Liêm Trinh vượng địa tại cung Tật Ách: nên giữ tinh thần thoải mái, tránh nóng giận; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.TAI_BACH",
+   "text": "Liêm Trinh vượng địa tại cung Tài Bạch: phát huy mạnh: kiếm tiền bằng chuyên môn, cần minh bạch.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.TU_TUC",
+   "text": "Liêm Trinh vượng địa tại cung Tử Tức: con cái thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.PHU_THE",
+   "text": "Liêm Trinh vượng địa tại cung Phu Thê: người bạn đời thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.V.HUYNH_DE",
+   "text": "Liêm Trinh vượng địa tại cung Huynh Đệ: anh chị em thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.MENH",
+   "text": "Liêm Trinh đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.PHU_MAU",
+   "text": "Liêm Trinh đắc địa tại cung Phụ Mẫu: cha mẹ thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.PHUC_DUC",
+   "text": "Liêm Trinh đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.DIEN_TRACH",
+   "text": "Liêm Trinh đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.QUAN_LOC",
+   "text": "Liêm Trinh đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — liêm khiết, nghiêm minh, có gu thẩm mỹ; hợp tư pháp, kỷ cương hoặc nghệ thuật, thiết kế.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.NO_BOC",
+   "text": "Liêm Trinh đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.THIEN_DI",
+   "text": "Liêm Trinh đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: liêm khiết, nghiêm minh, có gu thẩm mỹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.TAT_ACH",
+   "text": "Liêm Trinh đắc địa tại cung Tật Ách: nên giữ tinh thần thoải mái, tránh nóng giận; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.TAI_BACH",
+   "text": "Liêm Trinh đắc địa tại cung Tài Bạch: phát huy khá tốt: kiếm tiền bằng chuyên môn, cần minh bạch.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.TU_TUC",
+   "text": "Liêm Trinh đắc địa tại cung Tử Tức: con cái thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.PHU_THE",
+   "text": "Liêm Trinh đắc địa tại cung Phu Thê: người bạn đời thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.Đ.HUYNH_DE",
+   "text": "Liêm Trinh đắc địa tại cung Huynh Đệ: anh chị em thường nghiêm túc, có nguyên tắc, thu hút; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.MENH",
+   "text": "Liêm Trinh hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cố chấp, dễ vướng thị phi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.PHU_MAU",
+   "text": "Liêm Trinh hãm địa tại cung Phụ Mẫu: cha mẹ có thể nóng nảy, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.PHUC_DUC",
+   "text": "Liêm Trinh hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cố chấp, dễ vướng thị phi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.DIEN_TRACH",
+   "text": "Liêm Trinh hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cố chấp, dễ vướng thị phi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.QUAN_LOC",
+   "text": "Liêm Trinh hãm địa tại cung Quan Lộc: dễ lộ mặt trái là nóng nảy, cố chấp, dễ vướng thị phi; nên chọn môi trường ổn định, hợp tư pháp, kỷ cương hoặc nghệ thuật, thiết kế.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.NO_BOC",
+   "text": "Liêm Trinh hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể nóng nảy, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.THIEN_DI",
+   "text": "Liêm Trinh hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cố chấp, dễ vướng thị phi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.TAT_ACH",
+   "text": "Liêm Trinh hãm địa tại cung Tật Ách: nên giữ tinh thần thoải mái, tránh nóng giận; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.TAI_BACH",
+   "text": "Liêm Trinh hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì nóng nảy, cố chấp, dễ vướng thị phi; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.TU_TUC",
+   "text": "Liêm Trinh hãm địa tại cung Tử Tức: con cái có thể nóng nảy, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.PHU_THE",
+   "text": "Liêm Trinh hãm địa tại cung Phu Thê: người bạn đời có thể nóng nảy, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.LIEM_TRINH.H.HUYNH_DE",
+   "text": "Liêm Trinh hãm địa tại cung Huynh Đệ: anh chị em có thể nóng nảy, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.MENH",
+   "text": "Thiên Phủ miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.PHU_MAU",
+   "text": "Thiên Phủ miếu địa tại cung Phụ Mẫu: cha mẹ thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.PHUC_DUC",
+   "text": "Thiên Phủ miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.DIEN_TRACH",
+   "text": "Thiên Phủ miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.QUAN_LOC",
+   "text": "Thiên Phủ miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung; hợp quản lý tài sản, hành chính, tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.NO_BOC",
+   "text": "Thiên Phủ miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.THIEN_DI",
+   "text": "Thiên Phủ miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.TAT_ACH",
+   "text": "Thiên Phủ miếu địa tại cung Tật Ách: nên ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.TAI_BACH",
+   "text": "Thiên Phủ miếu địa tại cung Tài Bạch: phát huy trọn vẹn: giỏi giữ và tích lũy. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.TU_TUC",
+   "text": "Thiên Phủ miếu địa tại cung Tử Tức: con cái thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.PHU_THE",
+   "text": "Thiên Phủ miếu địa tại cung Phu Thê: người bạn đời thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.M.HUYNH_DE",
+   "text": "Thiên Phủ miếu địa tại cung Huynh Đệ: anh chị em thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.MENH",
+   "text": "Thiên Phủ vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.PHU_MAU",
+   "text": "Thiên Phủ vượng địa tại cung Phụ Mẫu: cha mẹ thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.PHUC_DUC",
+   "text": "Thiên Phủ vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.DIEN_TRACH",
+   "text": "Thiên Phủ vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.QUAN_LOC",
+   "text": "Thiên Phủ vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung; hợp quản lý tài sản, hành chính, tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.NO_BOC",
+   "text": "Thiên Phủ vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.THIEN_DI",
+   "text": "Thiên Phủ vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.TAT_ACH",
+   "text": "Thiên Phủ vượng địa tại cung Tật Ách: nên ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.TAI_BACH",
+   "text": "Thiên Phủ vượng địa tại cung Tài Bạch: phát huy mạnh: giỏi giữ và tích lũy. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.TU_TUC",
+   "text": "Thiên Phủ vượng địa tại cung Tử Tức: con cái thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.PHU_THE",
+   "text": "Thiên Phủ vượng địa tại cung Phu Thê: người bạn đời thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.V.HUYNH_DE",
+   "text": "Thiên Phủ vượng địa tại cung Huynh Đệ: anh chị em thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.MENH",
+   "text": "Thiên Phủ đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.PHU_MAU",
+   "text": "Thiên Phủ đắc địa tại cung Phụ Mẫu: cha mẹ thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.PHUC_DUC",
+   "text": "Thiên Phủ đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.DIEN_TRACH",
+   "text": "Thiên Phủ đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.QUAN_LOC",
+   "text": "Thiên Phủ đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung; hợp quản lý tài sản, hành chính, tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.NO_BOC",
+   "text": "Thiên Phủ đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.THIEN_DI",
+   "text": "Thiên Phủ đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.TAT_ACH",
+   "text": "Thiên Phủ đắc địa tại cung Tật Ách: nên ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.TAI_BACH",
+   "text": "Thiên Phủ đắc địa tại cung Tài Bạch: phát huy khá tốt: giỏi giữ và tích lũy. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.TU_TUC",
+   "text": "Thiên Phủ đắc địa tại cung Tử Tức: con cái thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.PHU_THE",
+   "text": "Thiên Phủ đắc địa tại cung Phu Thê: người bạn đời thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.Đ.HUYNH_DE",
+   "text": "Thiên Phủ đắc địa tại cung Huynh Đệ: anh chị em thường chu đáo, biết vun vén, rộng lượng; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.MENH",
+   "text": "Thiên Phủ bình hòa tại cung Mệnh: về tính cách và xu hướng hành động, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.PHU_MAU",
+   "text": "Thiên Phủ bình hòa tại cung Phụ Mẫu: cha mẹ mang nét chu đáo, biết vun vén, rộng lượng, đôi khi bảo thủ, hay giữ ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.PHUC_DUC",
+   "text": "Thiên Phủ bình hòa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.DIEN_TRACH",
+   "text": "Thiên Phủ bình hòa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.QUAN_LOC",
+   "text": "Thiên Phủ bình hòa tại cung Quan Lộc: ở mức trung bình, tốt xấu tùy sao hội chiếu điểm mạnh — cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung; hợp quản lý tài sản, hành chính, tài chính.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.NO_BOC",
+   "text": "Thiên Phủ bình hòa tại cung Nô Bộc: bạn bè, cộng sự mang nét chu đáo, biết vun vén, rộng lượng, đôi khi bảo thủ, hay giữ ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.THIEN_DI",
+   "text": "Thiên Phủ bình hòa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao ở mức trung bình, tốt xấu tùy sao hội chiếu: tốt xấu tùy sao hội chiếu; nét chính là cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.TAT_ACH",
+   "text": "Thiên Phủ bình hòa tại cung Tật Ách: nên ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.TAI_BACH",
+   "text": "Thiên Phủ bình hòa tại cung Tài Bạch: ở mức trung bình, tốt xấu tùy sao hội chiếu: giỏi giữ và tích lũy. Thiên Phủ là kho, rất hợp cung tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.TU_TUC",
+   "text": "Thiên Phủ bình hòa tại cung Tử Tức: con cái mang nét chu đáo, biết vun vén, rộng lượng, đôi khi bảo thủ, hay giữ ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.PHU_THE",
+   "text": "Thiên Phủ bình hòa tại cung Phu Thê: người bạn đời mang nét chu đáo, biết vun vén, rộng lượng, đôi khi bảo thủ, hay giữ ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_PHU.B.HUYNH_DE",
+   "text": "Thiên Phủ bình hòa tại cung Huynh Đệ: anh chị em mang nét chu đáo, biết vun vén, rộng lượng, đôi khi bảo thủ, hay giữ ý.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.MENH",
+   "text": "Thái Âm miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.PHU_MAU",
+   "text": "Thái Âm miếu địa tại cung Phụ Mẫu: cha mẹ thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận. Thái Âm cũng tượng trưng cho người mẹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.PHUC_DUC",
+   "text": "Thái Âm miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.DIEN_TRACH",
+   "text": "Thái Âm miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản. Thái Âm có duyên với nhà đất.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.QUAN_LOC",
+   "text": "Thái Âm miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — nhu thuận, thanh lịch, tinh tế, có duyên với tài sản; hợp bất động sản, tài chính, nghệ thuật, chăm sóc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.NO_BOC",
+   "text": "Thái Âm miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.THIEN_DI",
+   "text": "Thái Âm miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.TAT_ACH",
+   "text": "Thái Âm miếu địa tại cung Tật Ách: nên giữ nhịp sinh hoạt đều đặn; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.TAI_BACH",
+   "text": "Thái Âm miếu địa tại cung Tài Bạch: phát huy trọn vẹn: có duyên tích lũy, nhất là tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.TU_TUC",
+   "text": "Thái Âm miếu địa tại cung Tử Tức: con cái thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.PHU_THE",
+   "text": "Thái Âm miếu địa tại cung Phu Thê: người bạn đời thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.M.HUYNH_DE",
+   "text": "Thái Âm miếu địa tại cung Huynh Đệ: anh chị em thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.MENH",
+   "text": "Thái Âm vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.PHU_MAU",
+   "text": "Thái Âm vượng địa tại cung Phụ Mẫu: cha mẹ thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận. Thái Âm cũng tượng trưng cho người mẹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.PHUC_DUC",
+   "text": "Thái Âm vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.DIEN_TRACH",
+   "text": "Thái Âm vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản. Thái Âm có duyên với nhà đất.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.QUAN_LOC",
+   "text": "Thái Âm vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — nhu thuận, thanh lịch, tinh tế, có duyên với tài sản; hợp bất động sản, tài chính, nghệ thuật, chăm sóc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.NO_BOC",
+   "text": "Thái Âm vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.THIEN_DI",
+   "text": "Thái Âm vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.TAT_ACH",
+   "text": "Thái Âm vượng địa tại cung Tật Ách: nên giữ nhịp sinh hoạt đều đặn; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.TAI_BACH",
+   "text": "Thái Âm vượng địa tại cung Tài Bạch: phát huy mạnh: có duyên tích lũy, nhất là tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.TU_TUC",
+   "text": "Thái Âm vượng địa tại cung Tử Tức: con cái thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.PHU_THE",
+   "text": "Thái Âm vượng địa tại cung Phu Thê: người bạn đời thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.V.HUYNH_DE",
+   "text": "Thái Âm vượng địa tại cung Huynh Đệ: anh chị em thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.MENH",
+   "text": "Thái Âm đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.PHU_MAU",
+   "text": "Thái Âm đắc địa tại cung Phụ Mẫu: cha mẹ thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận. Thái Âm cũng tượng trưng cho người mẹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.PHUC_DUC",
+   "text": "Thái Âm đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.DIEN_TRACH",
+   "text": "Thái Âm đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản. Thái Âm có duyên với nhà đất.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.QUAN_LOC",
+   "text": "Thái Âm đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — nhu thuận, thanh lịch, tinh tế, có duyên với tài sản; hợp bất động sản, tài chính, nghệ thuật, chăm sóc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.NO_BOC",
+   "text": "Thái Âm đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.THIEN_DI",
+   "text": "Thái Âm đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: nhu thuận, thanh lịch, tinh tế, có duyên với tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.TAT_ACH",
+   "text": "Thái Âm đắc địa tại cung Tật Ách: nên giữ nhịp sinh hoạt đều đặn; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.TAI_BACH",
+   "text": "Thái Âm đắc địa tại cung Tài Bạch: phát huy khá tốt: có duyên tích lũy, nhất là tài sản.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.TU_TUC",
+   "text": "Thái Âm đắc địa tại cung Tử Tức: con cái thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.PHU_THE",
+   "text": "Thái Âm đắc địa tại cung Phu Thê: người bạn đời thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.Đ.HUYNH_DE",
+   "text": "Thái Âm đắc địa tại cung Huynh Đệ: anh chị em thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.MENH",
+   "text": "Thái Âm hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là đa sầu đa cảm, dễ thiếu quyết đoán.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.PHU_MAU",
+   "text": "Thái Âm hãm địa tại cung Phụ Mẫu: cha mẹ có thể nhạy cảm, hay buồn; quan hệ cần thêm sự thấu hiểu. Thái Âm cũng tượng trưng cho người mẹ.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.PHUC_DUC",
+   "text": "Thái Âm hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là đa sầu đa cảm, dễ thiếu quyết đoán.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.DIEN_TRACH",
+   "text": "Thái Âm hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là đa sầu đa cảm, dễ thiếu quyết đoán. Thái Âm có duyên với nhà đất.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.QUAN_LOC",
+   "text": "Thái Âm hãm địa tại cung Quan Lộc: dễ lộ mặt trái là đa sầu đa cảm, dễ thiếu quyết đoán; nên chọn môi trường ổn định, hợp bất động sản, tài chính, nghệ thuật, chăm sóc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.NO_BOC",
+   "text": "Thái Âm hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể nhạy cảm, hay buồn; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.THIEN_DI",
+   "text": "Thái Âm hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là đa sầu đa cảm, dễ thiếu quyết đoán.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.TAT_ACH",
+   "text": "Thái Âm hãm địa tại cung Tật Ách: nên giữ nhịp sinh hoạt đều đặn; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.TAI_BACH",
+   "text": "Thái Âm hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì đa sầu đa cảm, dễ thiếu quyết đoán; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.TU_TUC",
+   "text": "Thái Âm hãm địa tại cung Tử Tức: con cái có thể nhạy cảm, hay buồn; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.PHU_THE",
+   "text": "Thái Âm hãm địa tại cung Phu Thê: người bạn đời có thể nhạy cảm, hay buồn; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAI_AM.H.HUYNH_DE",
+   "text": "Thái Âm hãm địa tại cung Huynh Đệ: anh chị em có thể nhạy cảm, hay buồn; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.MENH",
+   "text": "Tham Lang miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.PHU_MAU",
+   "text": "Tham Lang miếu địa tại cung Phụ Mẫu: cha mẹ thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.PHUC_DUC",
+   "text": "Tham Lang miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.DIEN_TRACH",
+   "text": "Tham Lang miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.QUAN_LOC",
+   "text": "Tham Lang miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài; hợp kinh doanh, ngoại giao, giải trí.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.NO_BOC",
+   "text": "Tham Lang miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.THIEN_DI",
+   "text": "Tham Lang miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.TAT_ACH",
+   "text": "Tham Lang miếu địa tại cung Tật Ách: nên điều độ ăn uống, nghỉ ngơi; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.TAI_BACH",
+   "text": "Tham Lang miếu địa tại cung Tài Bạch: phát huy trọn vẹn: kiếm tiền nhanh, cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.TU_TUC",
+   "text": "Tham Lang miếu địa tại cung Tử Tức: con cái thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.PHU_THE",
+   "text": "Tham Lang miếu địa tại cung Phu Thê: người bạn đời thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.M.HUYNH_DE",
+   "text": "Tham Lang miếu địa tại cung Huynh Đệ: anh chị em thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.MENH",
+   "text": "Tham Lang vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.PHU_MAU",
+   "text": "Tham Lang vượng địa tại cung Phụ Mẫu: cha mẹ thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.PHUC_DUC",
+   "text": "Tham Lang vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.DIEN_TRACH",
+   "text": "Tham Lang vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.QUAN_LOC",
+   "text": "Tham Lang vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài; hợp kinh doanh, ngoại giao, giải trí.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.NO_BOC",
+   "text": "Tham Lang vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.THIEN_DI",
+   "text": "Tham Lang vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.TAT_ACH",
+   "text": "Tham Lang vượng địa tại cung Tật Ách: nên điều độ ăn uống, nghỉ ngơi; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.TAI_BACH",
+   "text": "Tham Lang vượng địa tại cung Tài Bạch: phát huy mạnh: kiếm tiền nhanh, cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.TU_TUC",
+   "text": "Tham Lang vượng địa tại cung Tử Tức: con cái thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.PHU_THE",
+   "text": "Tham Lang vượng địa tại cung Phu Thê: người bạn đời thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.V.HUYNH_DE",
+   "text": "Tham Lang vượng địa tại cung Huynh Đệ: anh chị em thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.MENH",
+   "text": "Tham Lang đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.PHU_MAU",
+   "text": "Tham Lang đắc địa tại cung Phụ Mẫu: cha mẹ thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.PHUC_DUC",
+   "text": "Tham Lang đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.DIEN_TRACH",
+   "text": "Tham Lang đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.QUAN_LOC",
+   "text": "Tham Lang đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài; hợp kinh doanh, ngoại giao, giải trí.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.NO_BOC",
+   "text": "Tham Lang đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.THIEN_DI",
+   "text": "Tham Lang đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: linh hoạt, giỏi ngoại giao, nhiều tham vọng, đa tài.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.TAT_ACH",
+   "text": "Tham Lang đắc địa tại cung Tật Ách: nên điều độ ăn uống, nghỉ ngơi; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.TAI_BACH",
+   "text": "Tham Lang đắc địa tại cung Tài Bạch: phát huy khá tốt: kiếm tiền nhanh, cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.TU_TUC",
+   "text": "Tham Lang đắc địa tại cung Tử Tức: con cái thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.PHU_THE",
+   "text": "Tham Lang đắc địa tại cung Phu Thê: người bạn đời thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.Đ.HUYNH_DE",
+   "text": "Tham Lang đắc địa tại cung Huynh Đệ: anh chị em thường lôi cuốn, linh hoạt, giỏi giao tiếp; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.MENH",
+   "text": "Tham Lang hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là dễ ham vui, nhiều ham muốn vật chất và tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.PHU_MAU",
+   "text": "Tham Lang hãm địa tại cung Phụ Mẫu: cha mẹ có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.PHUC_DUC",
+   "text": "Tham Lang hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là dễ ham vui, nhiều ham muốn vật chất và tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.DIEN_TRACH",
+   "text": "Tham Lang hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là dễ ham vui, nhiều ham muốn vật chất và tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.QUAN_LOC",
+   "text": "Tham Lang hãm địa tại cung Quan Lộc: dễ lộ mặt trái là dễ ham vui, nhiều ham muốn vật chất và tình cảm; nên chọn môi trường ổn định, hợp kinh doanh, ngoại giao, giải trí.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.NO_BOC",
+   "text": "Tham Lang hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.THIEN_DI",
+   "text": "Tham Lang hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là dễ ham vui, nhiều ham muốn vật chất và tình cảm.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.TAT_ACH",
+   "text": "Tham Lang hãm địa tại cung Tật Ách: nên điều độ ăn uống, nghỉ ngơi; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.TAI_BACH",
+   "text": "Tham Lang hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ ham vui, nhiều ham muốn vật chất và tình cảm; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.TU_TUC",
+   "text": "Tham Lang hãm địa tại cung Tử Tức: con cái có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.PHU_THE",
+   "text": "Tham Lang hãm địa tại cung Phu Thê: người bạn đời có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAM_LANG.H.HUYNH_DE",
+   "text": "Tham Lang hãm địa tại cung Huynh Đệ: anh chị em có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.MENH",
+   "text": "Cự Môn miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.PHU_MAU",
+   "text": "Cự Môn miếu địa tại cung Phụ Mẫu: cha mẹ thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.PHUC_DUC",
+   "text": "Cự Môn miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.DIEN_TRACH",
+   "text": "Cự Môn miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.QUAN_LOC",
+   "text": "Cự Môn miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — hùng biện, tư duy phản biện sắc bén; hợp luật, ngoại giao, giảng dạy, truyền thông.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.NO_BOC",
+   "text": "Cự Môn miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.THIEN_DI",
+   "text": "Cự Môn miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.TAT_ACH",
+   "text": "Cự Môn miếu địa tại cung Tật Ách: nên giữ giọng nói, ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.TAI_BACH",
+   "text": "Cự Môn miếu địa tại cung Tài Bạch: phát huy trọn vẹn: kiếm tiền bằng lời nói, chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.TU_TUC",
+   "text": "Cự Môn miếu địa tại cung Tử Tức: con cái thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.PHU_THE",
+   "text": "Cự Môn miếu địa tại cung Phu Thê: người bạn đời thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.M.HUYNH_DE",
+   "text": "Cự Môn miếu địa tại cung Huynh Đệ: anh chị em thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.MENH",
+   "text": "Cự Môn vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.PHU_MAU",
+   "text": "Cự Môn vượng địa tại cung Phụ Mẫu: cha mẹ thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.PHUC_DUC",
+   "text": "Cự Môn vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.DIEN_TRACH",
+   "text": "Cự Môn vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.QUAN_LOC",
+   "text": "Cự Môn vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — hùng biện, tư duy phản biện sắc bén; hợp luật, ngoại giao, giảng dạy, truyền thông.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.NO_BOC",
+   "text": "Cự Môn vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.THIEN_DI",
+   "text": "Cự Môn vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.TAT_ACH",
+   "text": "Cự Môn vượng địa tại cung Tật Ách: nên giữ giọng nói, ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.TAI_BACH",
+   "text": "Cự Môn vượng địa tại cung Tài Bạch: phát huy mạnh: kiếm tiền bằng lời nói, chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.TU_TUC",
+   "text": "Cự Môn vượng địa tại cung Tử Tức: con cái thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.PHU_THE",
+   "text": "Cự Môn vượng địa tại cung Phu Thê: người bạn đời thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.V.HUYNH_DE",
+   "text": "Cự Môn vượng địa tại cung Huynh Đệ: anh chị em thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.MENH",
+   "text": "Cự Môn đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.PHU_MAU",
+   "text": "Cự Môn đắc địa tại cung Phụ Mẫu: cha mẹ thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.PHUC_DUC",
+   "text": "Cự Môn đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.DIEN_TRACH",
+   "text": "Cự Môn đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.QUAN_LOC",
+   "text": "Cự Môn đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — hùng biện, tư duy phản biện sắc bén; hợp luật, ngoại giao, giảng dạy, truyền thông.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.NO_BOC",
+   "text": "Cự Môn đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.THIEN_DI",
+   "text": "Cự Môn đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: hùng biện, tư duy phản biện sắc bén.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.TAT_ACH",
+   "text": "Cự Môn đắc địa tại cung Tật Ách: nên giữ giọng nói, ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.TAI_BACH",
+   "text": "Cự Môn đắc địa tại cung Tài Bạch: phát huy khá tốt: kiếm tiền bằng lời nói, chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.TU_TUC",
+   "text": "Cự Môn đắc địa tại cung Tử Tức: con cái thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.PHU_THE",
+   "text": "Cự Môn đắc địa tại cung Phu Thê: người bạn đời thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.Đ.HUYNH_DE",
+   "text": "Cự Môn đắc địa tại cung Huynh Đệ: anh chị em thường hoạt ngôn, sắc sảo; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.MENH",
+   "text": "Cự Môn hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là đa nghi, dễ gây hiểu lầm, khẩu thiệt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.PHU_MAU",
+   "text": "Cự Môn hãm địa tại cung Phụ Mẫu: cha mẹ có thể hay tranh luận, đa nghi; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.PHUC_DUC",
+   "text": "Cự Môn hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là đa nghi, dễ gây hiểu lầm, khẩu thiệt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.DIEN_TRACH",
+   "text": "Cự Môn hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là đa nghi, dễ gây hiểu lầm, khẩu thiệt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.QUAN_LOC",
+   "text": "Cự Môn hãm địa tại cung Quan Lộc: dễ lộ mặt trái là đa nghi, dễ gây hiểu lầm, khẩu thiệt; nên chọn môi trường ổn định, hợp luật, ngoại giao, giảng dạy, truyền thông.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.NO_BOC",
+   "text": "Cự Môn hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể hay tranh luận, đa nghi; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.THIEN_DI",
+   "text": "Cự Môn hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là đa nghi, dễ gây hiểu lầm, khẩu thiệt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.TAT_ACH",
+   "text": "Cự Môn hãm địa tại cung Tật Ách: nên giữ giọng nói, ăn uống điều độ; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.TAI_BACH",
+   "text": "Cự Môn hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì đa nghi, dễ gây hiểu lầm, khẩu thiệt; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.TU_TUC",
+   "text": "Cự Môn hãm địa tại cung Tử Tức: con cái có thể hay tranh luận, đa nghi; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.PHU_THE",
+   "text": "Cự Môn hãm địa tại cung Phu Thê: người bạn đời có thể hay tranh luận, đa nghi; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.CU_MON.H.HUYNH_DE",
+   "text": "Cự Môn hãm địa tại cung Huynh Đệ: anh chị em có thể hay tranh luận, đa nghi; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.MENH",
+   "text": "Thiên Tướng miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.PHU_MAU",
+   "text": "Thiên Tướng miếu địa tại cung Phụ Mẫu: cha mẹ thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.PHUC_DUC",
+   "text": "Thiên Tướng miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.DIEN_TRACH",
+   "text": "Thiên Tướng miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.QUAN_LOC",
+   "text": "Thiên Tướng miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác; hợp vai trò phó tướng, thừa hành, quản lý theo nguyên tắc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.NO_BOC",
+   "text": "Thiên Tướng miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.THIEN_DI",
+   "text": "Thiên Tướng miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.TAT_ACH",
+   "text": "Thiên Tướng miếu địa tại cung Tật Ách: nên chú ý chăm sóc vẻ ngoài, da; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.TAI_BACH",
+   "text": "Thiên Tướng miếu địa tại cung Tài Bạch: phát huy trọn vẹn: trọng nghĩa hơn tiền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.TU_TUC",
+   "text": "Thiên Tướng miếu địa tại cung Tử Tức: con cái thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.PHU_THE",
+   "text": "Thiên Tướng miếu địa tại cung Phu Thê: người bạn đời thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.M.HUYNH_DE",
+   "text": "Thiên Tướng miếu địa tại cung Huynh Đệ: anh chị em thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.MENH",
+   "text": "Thiên Tướng vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.PHU_MAU",
+   "text": "Thiên Tướng vượng địa tại cung Phụ Mẫu: cha mẹ thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.PHUC_DUC",
+   "text": "Thiên Tướng vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.DIEN_TRACH",
+   "text": "Thiên Tướng vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.QUAN_LOC",
+   "text": "Thiên Tướng vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác; hợp vai trò phó tướng, thừa hành, quản lý theo nguyên tắc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.NO_BOC",
+   "text": "Thiên Tướng vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.THIEN_DI",
+   "text": "Thiên Tướng vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.TAT_ACH",
+   "text": "Thiên Tướng vượng địa tại cung Tật Ách: nên chú ý chăm sóc vẻ ngoài, da; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.TAI_BACH",
+   "text": "Thiên Tướng vượng địa tại cung Tài Bạch: phát huy mạnh: trọng nghĩa hơn tiền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.TU_TUC",
+   "text": "Thiên Tướng vượng địa tại cung Tử Tức: con cái thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.PHU_THE",
+   "text": "Thiên Tướng vượng địa tại cung Phu Thê: người bạn đời thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.V.HUYNH_DE",
+   "text": "Thiên Tướng vượng địa tại cung Huynh Đệ: anh chị em thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.MENH",
+   "text": "Thiên Tướng đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.PHU_MAU",
+   "text": "Thiên Tướng đắc địa tại cung Phụ Mẫu: cha mẹ thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.PHUC_DUC",
+   "text": "Thiên Tướng đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.DIEN_TRACH",
+   "text": "Thiên Tướng đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.QUAN_LOC",
+   "text": "Thiên Tướng đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác; hợp vai trò phó tướng, thừa hành, quản lý theo nguyên tắc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.NO_BOC",
+   "text": "Thiên Tướng đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.THIEN_DI",
+   "text": "Thiên Tướng đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: cẩn trọng, điềm đạm, trọng danh dự, có tinh thần gánh vác.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.TAT_ACH",
+   "text": "Thiên Tướng đắc địa tại cung Tật Ách: nên chú ý chăm sóc vẻ ngoài, da; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.TAI_BACH",
+   "text": "Thiên Tướng đắc địa tại cung Tài Bạch: phát huy khá tốt: trọng nghĩa hơn tiền.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.TU_TUC",
+   "text": "Thiên Tướng đắc địa tại cung Tử Tức: con cái thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.PHU_THE",
+   "text": "Thiên Tướng đắc địa tại cung Phu Thê: người bạn đời thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.Đ.HUYNH_DE",
+   "text": "Thiên Tướng đắc địa tại cung Huynh Đệ: anh chị em thường đoan chính, chung thủy, trọng nghĩa; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.MENH",
+   "text": "Thiên Tướng hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là dễ bị hoàn cảnh chi phối, ngại tranh đấu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.PHU_MAU",
+   "text": "Thiên Tướng hãm địa tại cung Phụ Mẫu: cha mẹ có thể cả nể, dễ bị chi phối; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.PHUC_DUC",
+   "text": "Thiên Tướng hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là dễ bị hoàn cảnh chi phối, ngại tranh đấu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.DIEN_TRACH",
+   "text": "Thiên Tướng hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là dễ bị hoàn cảnh chi phối, ngại tranh đấu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.QUAN_LOC",
+   "text": "Thiên Tướng hãm địa tại cung Quan Lộc: dễ lộ mặt trái là dễ bị hoàn cảnh chi phối, ngại tranh đấu; nên chọn môi trường ổn định, hợp vai trò phó tướng, thừa hành, quản lý theo nguyên tắc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.NO_BOC",
+   "text": "Thiên Tướng hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể cả nể, dễ bị chi phối; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.THIEN_DI",
+   "text": "Thiên Tướng hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là dễ bị hoàn cảnh chi phối, ngại tranh đấu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.TAT_ACH",
+   "text": "Thiên Tướng hãm địa tại cung Tật Ách: nên chú ý chăm sóc vẻ ngoài, da; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.TAI_BACH",
+   "text": "Thiên Tướng hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ bị hoàn cảnh chi phối, ngại tranh đấu; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.TU_TUC",
+   "text": "Thiên Tướng hãm địa tại cung Tử Tức: con cái có thể cả nể, dễ bị chi phối; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.PHU_THE",
+   "text": "Thiên Tướng hãm địa tại cung Phu Thê: người bạn đời có thể cả nể, dễ bị chi phối; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_TUONG.H.HUYNH_DE",
+   "text": "Thiên Tướng hãm địa tại cung Huynh Đệ: anh chị em có thể cả nể, dễ bị chi phối; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.MENH",
+   "text": "Thiên Lương miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.PHU_MAU",
+   "text": "Thiên Lương miếu địa tại cung Phụ Mẫu: cha mẹ thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.PHUC_DUC",
+   "text": "Thiên Lương miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây thường phát phúc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.DIEN_TRACH",
+   "text": "Thiên Lương miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây dễ được hưởng nền tảng gia đình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.QUAN_LOC",
+   "text": "Thiên Lương miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — lương thiện, bác ái, khoan dung, hay giúp người; hợp y tế, giáo dục, tư vấn, công tác xã hội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.NO_BOC",
+   "text": "Thiên Lương miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.THIEN_DI",
+   "text": "Thiên Lương miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.TAT_ACH",
+   "text": "Thiên Lương miếu địa tại cung Tật Ách: gặp khó thường có người giúp; vẫn nên khám định kỳ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.TAI_BACH",
+   "text": "Thiên Lương miếu địa tại cung Tài Bạch: phát huy trọn vẹn: tiền đến từ uy tín và chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.TU_TUC",
+   "text": "Thiên Lương miếu địa tại cung Tử Tức: con cái thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.PHU_THE",
+   "text": "Thiên Lương miếu địa tại cung Phu Thê: người bạn đời thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.M.HUYNH_DE",
+   "text": "Thiên Lương miếu địa tại cung Huynh Đệ: anh chị em thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.MENH",
+   "text": "Thiên Lương vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.PHU_MAU",
+   "text": "Thiên Lương vượng địa tại cung Phụ Mẫu: cha mẹ thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.PHUC_DUC",
+   "text": "Thiên Lương vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây thường phát phúc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.DIEN_TRACH",
+   "text": "Thiên Lương vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây dễ được hưởng nền tảng gia đình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.QUAN_LOC",
+   "text": "Thiên Lương vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — lương thiện, bác ái, khoan dung, hay giúp người; hợp y tế, giáo dục, tư vấn, công tác xã hội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.NO_BOC",
+   "text": "Thiên Lương vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.THIEN_DI",
+   "text": "Thiên Lương vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.TAT_ACH",
+   "text": "Thiên Lương vượng địa tại cung Tật Ách: gặp khó thường có người giúp; vẫn nên khám định kỳ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.TAI_BACH",
+   "text": "Thiên Lương vượng địa tại cung Tài Bạch: phát huy mạnh: tiền đến từ uy tín và chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.TU_TUC",
+   "text": "Thiên Lương vượng địa tại cung Tử Tức: con cái thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.PHU_THE",
+   "text": "Thiên Lương vượng địa tại cung Phu Thê: người bạn đời thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.V.HUYNH_DE",
+   "text": "Thiên Lương vượng địa tại cung Huynh Đệ: anh chị em thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.MENH",
+   "text": "Thiên Lương đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.PHU_MAU",
+   "text": "Thiên Lương đắc địa tại cung Phụ Mẫu: cha mẹ thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.PHUC_DUC",
+   "text": "Thiên Lương đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây thường phát phúc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.DIEN_TRACH",
+   "text": "Thiên Lương đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: lương thiện, bác ái, khoan dung, hay giúp người. Thiên Lương ở đây dễ được hưởng nền tảng gia đình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.QUAN_LOC",
+   "text": "Thiên Lương đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — lương thiện, bác ái, khoan dung, hay giúp người; hợp y tế, giáo dục, tư vấn, công tác xã hội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.NO_BOC",
+   "text": "Thiên Lương đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.THIEN_DI",
+   "text": "Thiên Lương đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: lương thiện, bác ái, khoan dung, hay giúp người.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.TAT_ACH",
+   "text": "Thiên Lương đắc địa tại cung Tật Ách: gặp khó thường có người giúp; vẫn nên khám định kỳ; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.TAI_BACH",
+   "text": "Thiên Lương đắc địa tại cung Tài Bạch: phát huy khá tốt: tiền đến từ uy tín và chuyên môn.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.TU_TUC",
+   "text": "Thiên Lương đắc địa tại cung Tử Tức: con cái thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.PHU_THE",
+   "text": "Thiên Lương đắc địa tại cung Phu Thê: người bạn đời thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.Đ.HUYNH_DE",
+   "text": "Thiên Lương đắc địa tại cung Huynh Đệ: anh chị em thường hiền lành, đáng tin, hay giúp đỡ; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.MENH",
+   "text": "Thiên Lương hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.PHU_MAU",
+   "text": "Thiên Lương hãm địa tại cung Phụ Mẫu: cha mẹ có thể hay can thiệp, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.PHUC_DUC",
+   "text": "Thiên Lương hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên. Thiên Lương ở đây thường phát phúc.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.DIEN_TRACH",
+   "text": "Thiên Lương hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên. Thiên Lương ở đây dễ được hưởng nền tảng gia đình.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.QUAN_LOC",
+   "text": "Thiên Lương hãm địa tại cung Quan Lộc: dễ lộ mặt trái là hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên; nên chọn môi trường ổn định, hợp y tế, giáo dục, tư vấn, công tác xã hội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.NO_BOC",
+   "text": "Thiên Lương hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể hay can thiệp, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.THIEN_DI",
+   "text": "Thiên Lương hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.TAT_ACH",
+   "text": "Thiên Lương hãm địa tại cung Tật Ách: gặp khó thường có người giúp; vẫn nên khám định kỳ; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.TAI_BACH",
+   "text": "Thiên Lương hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì hay lo chuyện người khác, đôi khi cô độc, phải qua nguy rồi mới yên; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.TU_TUC",
+   "text": "Thiên Lương hãm địa tại cung Tử Tức: con cái có thể hay can thiệp, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.PHU_THE",
+   "text": "Thiên Lương hãm địa tại cung Phu Thê: người bạn đời có thể hay can thiệp, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THIEN_LUONG.H.HUYNH_DE",
+   "text": "Thiên Lương hãm địa tại cung Huynh Đệ: anh chị em có thể hay can thiệp, khó tính; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.MENH",
+   "text": "Thất Sát miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.PHU_MAU",
+   "text": "Thất Sát miếu địa tại cung Phụ Mẫu: cha mẹ thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.PHUC_DUC",
+   "text": "Thất Sát miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.DIEN_TRACH",
+   "text": "Thất Sát miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.QUAN_LOC",
+   "text": "Thất Sát miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — quyết đoán, dũng cảm, dám đương đầu; hợp quân sự, an ninh, khai phá, kinh doanh cạnh tranh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.NO_BOC",
+   "text": "Thất Sát miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.THIEN_DI",
+   "text": "Thất Sát miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.TAT_ACH",
+   "text": "Thất Sát miếu địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.TAI_BACH",
+   "text": "Thất Sát miếu địa tại cung Tài Bạch: phát huy trọn vẹn: tiền đến theo từng đợt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.TU_TUC",
+   "text": "Thất Sát miếu địa tại cung Tử Tức: con cái thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.PHU_THE",
+   "text": "Thất Sát miếu địa tại cung Phu Thê: người bạn đời thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.M.HUYNH_DE",
+   "text": "Thất Sát miếu địa tại cung Huynh Đệ: anh chị em thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.MENH",
+   "text": "Thất Sát vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.PHU_MAU",
+   "text": "Thất Sát vượng địa tại cung Phụ Mẫu: cha mẹ thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.PHUC_DUC",
+   "text": "Thất Sát vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.DIEN_TRACH",
+   "text": "Thất Sát vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.QUAN_LOC",
+   "text": "Thất Sát vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — quyết đoán, dũng cảm, dám đương đầu; hợp quân sự, an ninh, khai phá, kinh doanh cạnh tranh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.NO_BOC",
+   "text": "Thất Sát vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.THIEN_DI",
+   "text": "Thất Sát vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.TAT_ACH",
+   "text": "Thất Sát vượng địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.TAI_BACH",
+   "text": "Thất Sát vượng địa tại cung Tài Bạch: phát huy mạnh: tiền đến theo từng đợt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.TU_TUC",
+   "text": "Thất Sát vượng địa tại cung Tử Tức: con cái thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.PHU_THE",
+   "text": "Thất Sát vượng địa tại cung Phu Thê: người bạn đời thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.V.HUYNH_DE",
+   "text": "Thất Sát vượng địa tại cung Huynh Đệ: anh chị em thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.MENH",
+   "text": "Thất Sát đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.PHU_MAU",
+   "text": "Thất Sát đắc địa tại cung Phụ Mẫu: cha mẹ thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.PHUC_DUC",
+   "text": "Thất Sát đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.DIEN_TRACH",
+   "text": "Thất Sát đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.QUAN_LOC",
+   "text": "Thất Sát đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — quyết đoán, dũng cảm, dám đương đầu; hợp quân sự, an ninh, khai phá, kinh doanh cạnh tranh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.NO_BOC",
+   "text": "Thất Sát đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.THIEN_DI",
+   "text": "Thất Sát đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: quyết đoán, dũng cảm, dám đương đầu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.TAT_ACH",
+   "text": "Thất Sát đắc địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.TAI_BACH",
+   "text": "Thất Sát đắc địa tại cung Tài Bạch: phát huy khá tốt: tiền đến theo từng đợt.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.TU_TUC",
+   "text": "Thất Sát đắc địa tại cung Tử Tức: con cái thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.PHU_THE",
+   "text": "Thất Sát đắc địa tại cung Phu Thê: người bạn đời thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.Đ.HUYNH_DE",
+   "text": "Thất Sát đắc địa tại cung Huynh Đệ: anh chị em thường mạnh mẽ, độc lập; quan hệ có xu hướng thuận. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.MENH",
+   "text": "Thất Sát hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cô độc, dễ hành động vội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.PHU_MAU",
+   "text": "Thất Sát hãm địa tại cung Phụ Mẫu: cha mẹ có thể nóng tính, xa cách; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.PHUC_DUC",
+   "text": "Thất Sát hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cô độc, dễ hành động vội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.DIEN_TRACH",
+   "text": "Thất Sát hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cô độc, dễ hành động vội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.QUAN_LOC",
+   "text": "Thất Sát hãm địa tại cung Quan Lộc: dễ lộ mặt trái là nóng nảy, cô độc, dễ hành động vội; nên chọn môi trường ổn định, hợp quân sự, an ninh, khai phá, kinh doanh cạnh tranh.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.NO_BOC",
+   "text": "Thất Sát hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể nóng tính, xa cách; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.THIEN_DI",
+   "text": "Thất Sát hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là nóng nảy, cô độc, dễ hành động vội.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.TAT_ACH",
+   "text": "Thất Sát hãm địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.TAI_BACH",
+   "text": "Thất Sát hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì nóng nảy, cô độc, dễ hành động vội; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.TU_TUC",
+   "text": "Thất Sát hãm địa tại cung Tử Tức: con cái có thể nóng tính, xa cách; quan hệ cần thêm sự thấu hiểu. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.PHU_THE",
+   "text": "Thất Sát hãm địa tại cung Phu Thê: người bạn đời có thể nóng tính, xa cách; quan hệ cần thêm sự thấu hiểu. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.THAT_SAT.H.HUYNH_DE",
+   "text": "Thất Sát hãm địa tại cung Huynh Đệ: anh chị em có thể nóng tính, xa cách; quan hệ cần thêm sự thấu hiểu. Thất Sát ở cung lục thân dễ tạo khoảng cách, cần chủ động gần gũi.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.MENH",
+   "text": "Phá Quân miếu địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy trọn vẹn: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.PHU_MAU",
+   "text": "Phá Quân miếu địa tại cung Phụ Mẫu: cha mẹ thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.PHUC_DUC",
+   "text": "Phá Quân miếu địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy trọn vẹn: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.DIEN_TRACH",
+   "text": "Phá Quân miếu địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy trọn vẹn: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.QUAN_LOC",
+   "text": "Phá Quân miếu địa tại cung Quan Lộc: phát huy trọn vẹn điểm mạnh — tiên phong, dám đổi mới, phóng khoáng; hợp đổi mới, khởi nghiệp, kỹ thuật, quân sự.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.NO_BOC",
+   "text": "Phá Quân miếu địa tại cung Nô Bộc: bạn bè, cộng sự thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.THIEN_DI",
+   "text": "Phá Quân miếu địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy trọn vẹn: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.TAT_ACH",
+   "text": "Phá Quân miếu địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh, đi lại; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.TAI_BACH",
+   "text": "Phá Quân miếu địa tại cung Tài Bạch: phát huy trọn vẹn: tiền vào ra mạnh, cần kỷ luật.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.TU_TUC",
+   "text": "Phá Quân miếu địa tại cung Tử Tức: con cái thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.PHU_THE",
+   "text": "Phá Quân miếu địa tại cung Phu Thê: người bạn đời thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận. Phá Quân ở cung Phu Thê khiến duyên phận nhiều thay đổi, cần vun đắp.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.M.HUYNH_DE",
+   "text": "Phá Quân miếu địa tại cung Huynh Đệ: anh chị em thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.MENH",
+   "text": "Phá Quân vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.PHU_MAU",
+   "text": "Phá Quân vượng địa tại cung Phụ Mẫu: cha mẹ thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.PHUC_DUC",
+   "text": "Phá Quân vượng địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy mạnh: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.DIEN_TRACH",
+   "text": "Phá Quân vượng địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy mạnh: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.QUAN_LOC",
+   "text": "Phá Quân vượng địa tại cung Quan Lộc: phát huy mạnh điểm mạnh — tiên phong, dám đổi mới, phóng khoáng; hợp đổi mới, khởi nghiệp, kỹ thuật, quân sự.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.NO_BOC",
+   "text": "Phá Quân vượng địa tại cung Nô Bộc: bạn bè, cộng sự thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.THIEN_DI",
+   "text": "Phá Quân vượng địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy mạnh: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.TAT_ACH",
+   "text": "Phá Quân vượng địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh, đi lại; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.TAI_BACH",
+   "text": "Phá Quân vượng địa tại cung Tài Bạch: phát huy mạnh: tiền vào ra mạnh, cần kỷ luật.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.TU_TUC",
+   "text": "Phá Quân vượng địa tại cung Tử Tức: con cái thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.PHU_THE",
+   "text": "Phá Quân vượng địa tại cung Phu Thê: người bạn đời thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận. Phá Quân ở cung Phu Thê khiến duyên phận nhiều thay đổi, cần vun đắp.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.V.HUYNH_DE",
+   "text": "Phá Quân vượng địa tại cung Huynh Đệ: anh chị em thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.MENH",
+   "text": "Phá Quân đắc địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy khá tốt: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.PHU_MAU",
+   "text": "Phá Quân đắc địa tại cung Phụ Mẫu: cha mẹ thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.PHUC_DUC",
+   "text": "Phá Quân đắc địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao phát huy khá tốt: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.DIEN_TRACH",
+   "text": "Phá Quân đắc địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao phát huy khá tốt: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.QUAN_LOC",
+   "text": "Phá Quân đắc địa tại cung Quan Lộc: phát huy khá tốt điểm mạnh — tiên phong, dám đổi mới, phóng khoáng; hợp đổi mới, khởi nghiệp, kỹ thuật, quân sự.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.NO_BOC",
+   "text": "Phá Quân đắc địa tại cung Nô Bộc: bạn bè, cộng sự thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.THIEN_DI",
+   "text": "Phá Quân đắc địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao phát huy khá tốt: tiên phong, dám đổi mới, phóng khoáng.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.TAT_ACH",
+   "text": "Phá Quân đắc địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh, đi lại; có dấu hiệu bất thường thì nên đi khám.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.TAI_BACH",
+   "text": "Phá Quân đắc địa tại cung Tài Bạch: phát huy khá tốt: tiền vào ra mạnh, cần kỷ luật.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.TU_TUC",
+   "text": "Phá Quân đắc địa tại cung Tử Tức: con cái thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.PHU_THE",
+   "text": "Phá Quân đắc địa tại cung Phu Thê: người bạn đời thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận. Phá Quân ở cung Phu Thê khiến duyên phận nhiều thay đổi, cần vun đắp.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.Đ.HUYNH_DE",
+   "text": "Phá Quân đắc địa tại cung Huynh Đệ: anh chị em thường phóng khoáng, dám nghĩ dám làm; quan hệ có xu hướng thuận.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.MENH",
+   "text": "Phá Quân hãm địa tại cung Mệnh: về tính cách và xu hướng hành động, sao bị hạn chế: dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.PHU_MAU",
+   "text": "Phá Quân hãm địa tại cung Phụ Mẫu: cha mẹ có thể thất thường, khó giữ ổn định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.PHUC_DUC",
+   "text": "Phá Quân hãm địa tại cung Phúc Đức: về đời sống tinh thần và phúc ấm gia đình, sao bị hạn chế: dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.DIEN_TRACH",
+   "text": "Phá Quân hãm địa tại cung Điền Trạch: về nhà cửa, đất đai và tài sản cố định, sao bị hạn chế: dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.QUAN_LOC",
+   "text": "Phá Quân hãm địa tại cung Quan Lộc: dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay; nên chọn môi trường ổn định, hợp đổi mới, khởi nghiệp, kỹ thuật, quân sự.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.NO_BOC",
+   "text": "Phá Quân hãm địa tại cung Nô Bộc: bạn bè, cộng sự có thể thất thường, khó giữ ổn định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.THIEN_DI",
+   "text": "Phá Quân hãm địa tại cung Thiên Di: khi ra ngoài xã hội, đi xa, sao bị hạn chế: dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.TAT_ACH",
+   "text": "Phá Quân hãm địa tại cung Tật Ách: nên cẩn trọng khi vận động mạnh, đi lại; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.TAI_BACH",
+   "text": "Phá Quân hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì liều lĩnh, ngang tàng, tiêu tiền phóng tay; cần kỷ luật chi tiêu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.TU_TUC",
+   "text": "Phá Quân hãm địa tại cung Tử Tức: con cái có thể thất thường, khó giữ ổn định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.PHU_THE",
+   "text": "Phá Quân hãm địa tại cung Phu Thê: người bạn đời có thể thất thường, khó giữ ổn định; quan hệ cần thêm sự thấu hiểu. Phá Quân ở cung Phu Thê khiến duyên phận nhiều thay đổi, cần vun đắp.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "star.PHA_QUAN.H.HUYNH_DE",
+   "text": "Phá Quân hãm địa tại cung Huynh Đệ: anh chị em có thể thất thường, khó giữ ổn định; quan hệ cần thêm sự thấu hiểu.",
+   "source": "Sinh nháp tự động từ cẩm nang V2 (P.II, P.III) + mục 6",
+   "reviewed": false
+  }
+ ]
+}

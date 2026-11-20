@@ -1,0 +1,1470 @@
+{
+ "rules": [
+  {
+   "id": "VH_MENH_THAI_DUONG_KY_LUU",
+   "name": "Mệnh Thái Dương gặp năm Thái Dương hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAI_DUONG",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thai_duong_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THAI_DUONG_LOC_LUU",
+   "name": "Mệnh Thái Dương gặp năm Thái Dương hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAI_DUONG",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thai_duong_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THIEN_CO_KY_LUU",
+   "name": "Mệnh Thiên Cơ gặp năm Thiên Cơ hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THIEN_CO",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thien_co_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THIEN_CO_LOC_LUU",
+   "name": "Mệnh Thiên Cơ gặp năm Thiên Cơ hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THIEN_CO",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thien_co_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_VU_KHUC_KY_LUU",
+   "name": "Mệnh Vũ Khúc gặp năm Vũ Khúc hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "VU_KHUC",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "VU_KHUC",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_vu_khuc_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_VU_KHUC_LOC_LUU",
+   "name": "Mệnh Vũ Khúc gặp năm Vũ Khúc hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "VU_KHUC",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "VU_KHUC",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_vu_khuc_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_LIEM_TRINH_KY_LUU",
+   "name": "Mệnh Liêm Trinh gặp năm Liêm Trinh hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "LIEM_TRINH",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_liem_trinh_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_LIEM_TRINH_LOC_LUU",
+   "name": "Mệnh Liêm Trinh gặp năm Liêm Trinh hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "LIEM_TRINH",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_liem_trinh_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THAI_AM_KY_LUU",
+   "name": "Mệnh Thái Âm gặp năm Thái Âm hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_AM",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAI_AM",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thai_am_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THAI_AM_LOC_LUU",
+   "name": "Mệnh Thái Âm gặp năm Thái Âm hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_AM",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAI_AM",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thai_am_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_CU_MON_KY_LUU",
+   "name": "Mệnh Cự Môn gặp năm Cự Môn hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "CU_MON",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_cu_mon_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_CU_MON_LOC_LUU",
+   "name": "Mệnh Cự Môn gặp năm Cự Môn hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "CU_MON",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_cu_mon_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THIEN_DONG_KY_LUU",
+   "name": "Mệnh Thiên Đồng gặp năm Thiên Đồng hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_DONG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THIEN_DONG",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thien_dong_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THIEN_DONG_LOC_LUU",
+   "name": "Mệnh Thiên Đồng gặp năm Thiên Đồng hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_DONG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THIEN_DONG",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_thien_dong_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THAM_LANG_KY_LUU",
+   "name": "Mệnh Tham Lang gặp năm Tham Lang hóa Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAM_LANG",
+      "hoa": [
+       "KY"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_tham_lang_ky_luu",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_MENH_THAM_LANG_LOC_LUU",
+   "name": "Mệnh Tham Lang gặp năm Tham Lang hóa Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "luuHoaOf": "THAM_LANG",
+      "hoa": [
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_menh_tham_lang_loc_luu",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_MENH",
+   "name": "Lưu Thái Tuế vào cung Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "MENH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_menh",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_PHU_MAU",
+   "name": "Lưu Thái Tuế vào cung Phụ Mẫu",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "PHU_MAU"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_phu_mau",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_PHUC_DUC",
+   "name": "Lưu Thái Tuế vào cung Phúc Đức",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "PHUC_DUC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_phuc_duc",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_DIEN_TRACH",
+   "name": "Lưu Thái Tuế vào cung Điền Trạch",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "DIEN_TRACH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_dien_trach",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_QUAN_LOC",
+   "name": "Lưu Thái Tuế vào cung Quan Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_quan_loc",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_NO_BOC",
+   "name": "Lưu Thái Tuế vào cung Nô Bộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "NO_BOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_no_boc",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_THIEN_DI",
+   "name": "Lưu Thái Tuế vào cung Thiên Di",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "THIEN_DI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_thien_di",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_TAT_ACH",
+   "name": "Lưu Thái Tuế vào cung Tật Ách",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "TAT_ACH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_tat_ach",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_TAI_BACH",
+   "name": "Lưu Thái Tuế vào cung Tài Bạch",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "TAI_BACH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_tai_bach",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_TU_TUC",
+   "name": "Lưu Thái Tuế vào cung Tử Tức",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "TU_TUC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_tu_tuc",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_PHU_THE",
+   "name": "Lưu Thái Tuế vào cung Phu Thê",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "PHU_THE"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_phu_the",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_THAI_TUE_HUYNH_DE",
+   "name": "Lưu Thái Tuế vào cung Huynh Đệ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "HUYNH_DE"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_thai_tue_huynh_de",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_TRUNG_LUU_NIEN",
+   "name": "Tiểu hạn trùng lưu niên đại hạn",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "at": "tieuHan",
+      "same": "luuNienDaiHan"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 0,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_tieu_han_trung_luu_nien",
+   "adviceKeys": [
+    "adv.uu_tien_cong_viec_nam"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_KINH_TAT",
+   "name": "Lưu Kình Dương vào Tật Ách",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAT_ACH",
+    "allOf": [
+     {
+      "luuStar": "KINH_DUONG",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SUC_KHOE"
+    ],
+    "polarity": -1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_kinh_tat",
+   "adviceKeys": [
+    "adv.can_trong_di_lai",
+    "adv.kham_dinh_ky"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_BACH_HO_TAT",
+   "name": "Lưu Bạch Hổ vào Tật Ách",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAT_ACH",
+    "allOf": [
+     {
+      "luuStar": "BACH_HO",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SUC_KHOE"
+    ],
+    "polarity": -1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_bach_ho_tat",
+   "adviceKeys": [
+    "adv.kham_dinh_ky",
+    "adv.can_trong_di_lai"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_LOC_TON_TAI",
+   "name": "Lưu Lộc Tồn vào Tài Bạch",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAI_BACH",
+    "allOf": [
+     {
+      "luuStar": "LOC_TON",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_loc_ton_tai",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_LOC_TON_MENH",
+   "name": "Lưu Lộc Tồn vào Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "luuStar": "LOC_TON",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "TINH_CACH"
+    ],
+    "polarity": 1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_loc_ton_menh",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_MA_DI_CHUYEN",
+   "name": "Lưu Thiên Mã vào Mệnh/Di",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": [
+     "MENH",
+     "THIEN_DI"
+    ],
+    "allOf": [
+     {
+      "luuStar": "THIEN_MA",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN"
+    ],
+    "polarity": 0,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_ma_di_chuyen",
+   "adviceKeys": [
+    "adv.di_xa_mo_rong"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_KHOC_HU_MENH",
+   "name": "Lưu Khốc Hư vào Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "anyOf": [
+     {
+      "luuStar": "THIEN_KHOC",
+      "in": "self"
+     },
+     {
+      "luuStar": "THIEN_HU",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_khoc_hu_menh",
+   "adviceKeys": [
+    "adv.giu_ket_noi",
+    "adv.dieu_do_sinh_hoat"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LUU_TANG_MON_MENH",
+   "name": "Lưu Tang Môn vào Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "luuStar": "TANG_MON",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 1.0
+   },
+   "textKey": "vh.vh_luu_tang_mon_menh",
+   "adviceKeys": [
+    "adv.quan_tam_cha_me"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_KY_LUU_MENH",
+   "name": "Hóa Kỵ lưu vào Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "luuHoa": "KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_ky_luu_menh",
+   "adviceKeys": [
+    "adv.can_than_loi_noi",
+    "adv.thu_hon_cong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LOC_LUU_MENH",
+   "name": "Hóa Lộc lưu vào Mệnh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "luuHoa": "LOC",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "TINH_CACH"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_loc_luu_menh",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LOC_LUU_TAI",
+   "name": "Hóa Lộc lưu vào Tài Bạch",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAI_BACH",
+    "allOf": [
+     {
+      "luuHoa": "LOC",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_loc_luu_tai",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "id": "VH_KY_LUU_TAI_QUAN",
+   "name": "Hóa Kỵ lưu vào Tài/Quan",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": [
+     "TAI_BACH",
+     "QUAN_LOC"
+    ],
+    "allOf": [
+     {
+      "luuHoa": "KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "vh.vh_ky_luu_tai_quan",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.thu_hon_cong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "id": "VH_THIEN_THOI_DAI_HAN_SINH_TUOI",
+   "name": "Thiên thời: Đại hạn sinh tuổi",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "thienThoiIn": [
+       "DAI_HAN_SINH_TUOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_thien_thoi_dai_han_sinh_tuoi",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_THIEN_THOI_DONG_HANH",
+   "name": "Thiên thời: Đại hạn đồng hành",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "thienThoiIn": [
+       "DONG_HANH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_thien_thoi_dong_hanh",
+   "adviceKeys": [
+    "adv.on_dinh_hon_but_pha"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_THIEN_THOI_TUOI_KHAC_DAI_HAN",
+   "name": "Thiên thời: Tuổi khắc đại hạn",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "thienThoiIn": [
+       "TUOI_KHAC_DAI_HAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 0,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_thien_thoi_tuoi_khac_dai_han",
+   "adviceKeys": [
+    "adv.tu_luc"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_THIEN_THOI_TUOI_SINH_DAI_HAN",
+   "name": "Thiên thời: Tuổi sinh đại hạn",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "thienThoiIn": [
+       "TUOI_SINH_DAI_HAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_thien_thoi_tuoi_sinh_dai_han",
+   "adviceKeys": [
+    "adv.giam_tai_cong_viec"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_THIEN_THOI_DAI_HAN_KHAC_TUOI",
+   "name": "Thiên thời: Đại hạn khắc tuổi",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "thienThoiIn": [
+       "DAI_HAN_KHAC_TUOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": -2,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_thien_thoi_dai_han_khac_tuoi",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.khong_mo_rong_nong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  }
+ ]
+}

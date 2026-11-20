@@ -1,0 +1,115 @@
+{
+ "faq": [
+  {
+   "id": "faq.nam_nay_cong_viec",
+   "question": "Năm nay công việc của tôi thế nào?",
+   "answer": "Năm {nam}, hãy xem cung tiểu hạn (diễn biến), lưu niên đại hạn (kết quả) và Lưu Thái Tuế (lĩnh vực được kích hoạt). Nếu Lưu Thái Tuế vào Quan Lộc thì công việc là trọng tâm năm; có Hóa Quyền, Khôi Việt hội về thì thuận để nhận trách nhiệm mới.",
+   "topics": [
+    "SU_NGHIEP"
+   ],
+   "relatedRules": [
+    "VH_LUU_THAI_TUE_QUAN_LOC",
+    "VH_KY_LUU_TAI_QUAN"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.co_nen_doi_viec",
+   "question": "Tôi có nên đổi việc năm nay không?",
+   "answer": "Ứng dụng không quyết định thay bạn. Hãy xem Thiên thời của đại hạn và tiểu hạn năm {nam}: giai đoạn thuận thì thuận để chủ động, giai đoạn thất thời thì nên chuẩn bị kỹ và có phương án dự phòng trước khi đổi.",
+   "topics": [
+    "SU_NGHIEP"
+   ],
+   "relatedRules": [
+    "VH_THIEN_THOI_DAI_HAN_SINH_TUOI",
+    "VH_THIEN_THOI_DAI_HAN_KHAC_TUOI"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.nam_nao_cuoi",
+   "question": "Năm nào thuận cho chuyện cưới hỏi?",
+   "answer": "Theo cẩm nang, năm thuận cưới hỏi khi hội đủ ba dấu hiệu: sao lưu tình duyên vào Mệnh, Thân hoặc Nô Bộc; tiểu hạn có sao hôn lễ; lưu niên đại hạn vào Mệnh, Thân, Phu Thê, Quan Lộc hoặc Tài Bạch. Đây là xu hướng tham khảo, quyết định vẫn là của hai bạn.",
+   "topics": [
+    "TINH_DUYEN"
+   ],
+   "relatedRules": [
+    "CD_HAN_HY_CUOI_HOI",
+    "CD_LUU_THAI_TUE_CO_QUA"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.menh_vo_chinh_dieu",
+   "question": "Mệnh vô chính diệu có xấu không?",
+   "answer": "Không hẳn. Mệnh vô chính diệu mượn chính tinh cung Thiên Di để luận; nếu được Nhật Nguyệt sáng chiếu hoặc gặp “tam không” thì lại có cách riêng. Điều quan trọng là sự tự lực và môi trường bạn chọn.",
+   "topics": [
+    "TINH_CACH"
+   ],
+   "relatedRules": [
+    "TS_VCD_MUON_XUNG",
+    "TS_VCD_TAM_KHONG",
+    "TS_VCD_NHAT_NGUYET_CHIEU"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.sao_ham_co_xau",
+   "question": "Sao hãm địa có phải là xấu không?",
+   "answer": "Sao hãm không tự động là xấu. Ứng dụng luôn xét các cách “phản vi” trước khi kết luận — ví dụ Cự Môn hãm ở Thìn Tuất mà tuổi Tân thì lại hóa cát.",
+   "topics": [
+    "TINH_CACH"
+   ],
+   "relatedRules": [
+    "PV_CU_MON_THIN_TUAT_TAN",
+    "PV_SAO_HAM_HOA_LOC_QUYEN"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.tai_chinh_nam",
+   "question": "Tài chính năm nay có ổn không?",
+   "answer": "Năm {nam}, hãy xem Hóa Lộc lưu, Lưu Lộc Tồn có vào Mệnh hay Tài Bạch không, và cung Tài Bạch có gặp Không Kiếp, Song Hao không. Dù xu hướng thế nào, quỹ dự phòng và kỷ luật chi tiêu luôn là lựa chọn an toàn.",
+   "topics": [
+    "TAI_CHINH"
+   ],
+   "relatedRules": [
+    "VH_LOC_LUU_TAI",
+    "VH_LUU_LOC_TON_TAI",
+    "CG_TAI_KHONG_KIEP"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.suc_khoe",
+   "question": "Lá số nói gì về sức khỏe của tôi?",
+   "answer": "Tử Vi chỉ gợi ý những điểm nên lưu ý qua cung Tật Ách, không chẩn đoán bệnh. Hãy khám sức khỏe định kỳ và hỏi ý kiến bác sĩ khi có dấu hiệu bất thường.",
+   "topics": [
+    "SUC_KHOE"
+   ],
+   "relatedRules": [
+    "CG_TAT_RIEU_KY",
+    "CG_TAT_KINH_HINH"
+   ],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  },
+  {
+   "id": "faq.giai_han",
+   "question": "Tôi có cần làm lễ để tránh hạn xấu không?",
+   "answer": "Ứng dụng không khuyến nghị dịch vụ có thu phí nào. Tử Vi là bản đồ thời tiết: hiểu giai đoạn khó để chủ động thu xếp công việc, giữ sức khỏe và gắn kết với người thân — đức năng thắng số.",
+   "topics": [
+    "PHUC_DUC"
+   ],
+   "relatedRules": [],
+   "source": "Bản nháp từ prompt mục 9–12 và cẩm nang V2",
+   "reviewed": false
+  }
+ ]
+}

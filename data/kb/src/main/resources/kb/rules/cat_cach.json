@@ -1,0 +1,1517 @@
+{
+ "rules": [
+  {
+   "id": "CC_TU_PHU_DONG_CUNG",
+   "name": "Tử Phủ đồng cung",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "TU_VI",
+      "in": "self"
+     },
+     {
+      "star": "THIEN_PHU",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "DAN",
+       "THAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "COMBO_TU_VI_THIEN_PHU@SELF"
+    ]
+   },
+   "textKey": "cc.cc_tu_phu_dong_cung",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao",
+    "adv.tim_nguoi_pho_ta"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_QUAN_THAN_KHANH_HOI",
+   "name": "Quân thần khánh hội",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "TU_VI",
+      "in": "self"
+     },
+     {
+      "star": "TA_PHU",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HUU_BAT",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "HC_CO_QUAN",
+     "HC_HON_QUAN"
+    ]
+   },
+   "textKey": "cc.cc_quan_than_khanh_hoi",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao",
+    "adv.lang_nghe_gop_y"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CUC_HUONG_LY_MINH",
+   "name": "Cực hướng ly minh",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "TU_VI",
+      "in": "self",
+      "chiIn": [
+       "NGO"
+      ]
+     },
+     {
+      "noneOf": [
+       {
+        "star": "KINH_DUONG",
+        "in": "self"
+       },
+       {
+        "star": "DA_LA",
+        "in": "self"
+       },
+       {
+        "star": "HOA_TINH",
+        "in": "self"
+       },
+       {
+        "star": "LINH_TINH",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_cuc_huong_ly_minh",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_PHU_TUONG_TRIEU_VIEN",
+   "name": "Phủ Tướng triều viên",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_PHU",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "THIEN_TUONG",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "noneOf": [
+       {
+        "star": "DIA_KHONG",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "tamPhuongTuChinh"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_phu_tuong_trieu_vien",
+   "adviceKeys": [
+    "adv.tich_luy_truoc_khi_bung",
+    "adv.giu_tron_chu_tin"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CO_NGUYET_DONG_LUONG",
+   "name": "Cơ Nguyệt Đồng Lương",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "THAI_AM",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "THIEN_DONG",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "THIEN_LUONG",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_co_nguyet_dong_luong",
+   "adviceKeys": [
+    "adv.hop_hanh_chinh_giao_duc",
+    "adv.on_dinh_hon_but_pha"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "id": "CC_SAT_PHA_THAM",
+   "name": "Sát Phá Tham",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "anyOf": [
+     {
+      "star": "THAT_SAT",
+      "in": "self"
+     },
+     {
+      "star": "PHA_QUAN",
+      "in": "self"
+     },
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "cc.cc_sat_pha_tham",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach",
+    "adv.tranh_lieu_linh"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_NHAT_NGUYET_TINH_MINH",
+   "name": "Nhật Nguyệt tịnh minh",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "tamPhuongTuChinh",
+      "brightnessIn": [
+       "M",
+       "V",
+       "Đ"
+      ]
+     },
+     {
+      "star": "THAI_AM",
+      "in": "tamPhuongTuChinh",
+      "brightnessIn": [
+       "M",
+       "V",
+       "Đ"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_nhat_nguyet_tinh_minh",
+   "adviceKeys": [
+    "adv.hoc_tap_thi_cu"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_MINH_CHAU_XUAT_HAI",
+   "name": "Minh Châu xuất hải",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "chiIn": [
+       "MUI"
+      ]
+     },
+     {
+      "isVCD": true
+     },
+     {
+      "star": "THAI_DUONG",
+      "in": "chart",
+      "chiIn": [
+       "MAO"
+      ]
+     },
+     {
+      "star": "THAI_AM",
+      "in": "chart",
+      "chiIn": [
+       "HOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "TS_VCD_MUON_XUNG",
+     "TS_VCD_NHAT_NGUYET_CHIEU"
+    ]
+   },
+   "textKey": "cc.cc_minh_chau_xuat_hai",
+   "adviceKeys": [
+    "adv.hoc_tap_thi_cu"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_NHAT_XUAT_PHU_TANG",
+   "name": "Nhật xuất Phù Tang",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self",
+      "chiIn": [
+       "MAO"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_THAI_DUONG_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_nhat_xuat_phu_tang",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_NHAT_LE_TRUNG_THIEN",
+   "name": "Nhật lệ trung thiên",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self",
+      "chiIn": [
+       "NGO"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_THAI_DUONG_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_nhat_le_trung_thien",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao",
+    "adv.lang_nghe_gop_y"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_NGUYET_LANG_THIEN_MON",
+   "name": "Nguyệt lãng thiên môn",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_AM",
+      "in": "self",
+      "chiIn": [
+       "HOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_THAI_AM_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_nguyet_lang_thien_mon",
+   "adviceKeys": [
+    "adv.tich_luy_truoc_khi_bung"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_NHAT_CHIEU_LOI_MON",
+   "name": "Nhật chiếu lôi môn",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self",
+      "chiIn": [
+       "MAO"
+      ]
+     },
+     {
+      "star": "THIEN_LUONG",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "CC_NHAT_XUAT_PHU_TANG",
+     "COMBO_THAI_DUONG_THIEN_LUONG@SELF"
+    ]
+   },
+   "textKey": "cc.cc_nhat_chieu_loi_mon",
+   "adviceKeys": [
+    "adv.hoc_tap_thi_cu",
+    "adv.phat_huy_ngon_ngu"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_THACH_TRUNG_AN_NGOC",
+   "name": "Thạch trung ẩn ngọc",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self",
+      "chiIn": [
+       "TY",
+       "NGO"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_LOC",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "HOA_QUYEN",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "HOA_KHOA",
+        "in": "tamPhuongTuChinh"
+       }
+      ]
+     }
+    ],
+    "noneOf": [
+     {
+      "star": "KINH_DUONG",
+      "in": "self"
+     },
+     {
+      "star": "HOA_KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 3.0,
+    "suppress": [
+     "STAR_CU_MON_*@MENH"
+    ]
+   },
+   "textKey": "cc.cc_thach_trung_an_ngoc",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu",
+    "adv.tich_luy_truoc_khi_bung"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CU_NHAT_DONG_CUNG_DAN",
+   "name": "Cự Nhật đồng cung (Dần)",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "star": "THAI_DUONG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "DAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_THAI_DUONG_CU_MON@SELF"
+    ]
+   },
+   "textKey": "cc.cc_cu_nhat_dong_cung_dan",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CU_NHAT_DONG_CUNG_THAN",
+   "name": "Cự Nhật đồng cung (Thân)",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "star": "THAI_DUONG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "THAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "suppress": [
+     "COMBO_THAI_DUONG_CU_MON@SELF"
+    ]
+   },
+   "textKey": "cc.cc_cu_nhat_dong_cung_than",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu",
+    "adv.can_than_loi_noi"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_THAT_SAT_TRIEU_DAU",
+   "name": "Thất Sát triều đẩu / ngưỡng đẩu",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAT_SAT",
+      "in": "self",
+      "chiIn": [
+       "TY",
+       "NGO",
+       "DAN",
+       "THAN"
+      ]
+     }
+    ],
+    "noneOf": [
+     {
+      "allOf": [
+       {
+        "star": "HOA_KY",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "anyOf": [
+         {
+          "star": "DIA_KHONG",
+          "in": "tamPhuongTuChinh"
+         },
+         {
+          "star": "DIA_KIEP",
+          "in": "tamPhuongTuChinh"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_THAT_SAT_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_that_sat_trieu_dau",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_ANH_TINH_NHAP_MIEU",
+   "name": "Anh tinh nhập miếu",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "PHA_QUAN",
+      "in": "self",
+      "chiIn": [
+       "TY",
+       "NGO"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_PHA_QUAN_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_anh_tinh_nhap_mieu",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_ANH_TINH_NHAP_MIEU_HOA",
+   "name": "Anh tinh nhập miếu (Phá Quân hóa Quyền/Lộc)",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "PHA_QUAN",
+      "in": "self",
+      "chiIn": [
+       "TY",
+       "NGO"
+      ]
+     },
+     {
+      "hoaOf": "PHA_QUAN",
+      "hoa": [
+       "QUYEN",
+       "LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 3.0,
+    "suppress": [
+     "CC_ANH_TINH_NHAP_MIEU",
+     "STAR_PHA_QUAN_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_anh_tinh_nhap_mieu_hoa",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach",
+    "adv.phat_huy_lanh_dao"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_HUNG_TU_TRIEU_VIEN",
+   "name": "Hùng tú triều viên",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self",
+      "chiIn": [
+       "DAN",
+       "THAN"
+      ]
+     },
+     {
+      "noneOf": [
+       {
+        "star": "KINH_DUONG",
+        "in": "self"
+       },
+       {
+        "star": "DA_LA",
+        "in": "self"
+       },
+       {
+        "star": "HOA_TINH",
+        "in": "self"
+       },
+       {
+        "star": "LINH_TINH",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 1,
+    "weight": 2.0,
+    "suppress": [
+     "STAR_LIEM_TRINH_*@SELF"
+    ]
+   },
+   "textKey": "cc.cc_hung_tu_trieu_vien",
+   "adviceKeys": [
+    "adv.ky_cuong_phap_luat",
+    "adv.giu_tron_chu_tin"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_THAM_HOA_TUONG_PHUNG",
+   "name": "Tham Hỏa tương phùng",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "star": "HOA_TINH",
+      "in": "self"
+     }
+    ],
+    "anyOf": [
+     {
+      "chiIn": [
+       "THIN",
+       "TUAT",
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.5
+   },
+   "textKey": "cc.cc_tham_hoa_tuong_phung",
+   "adviceKeys": [
+    "adv.bao_phat_giu_phan",
+    "adv.chot_loi_phan_tan"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_THAM_LINH_TINH_THU",
+   "name": "Tham Linh tịnh thủ",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "star": "LINH_TINH",
+      "in": "self"
+     }
+    ],
+    "anyOf": [
+     {
+      "chiIn": [
+       "THIN",
+       "TUAT",
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.5
+   },
+   "textKey": "cc.cc_tham_linh_tinh_thu",
+   "adviceKeys": [
+    "adv.bao_phat_giu_phan",
+    "adv.chot_loi_phan_tan"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_THAM_HOA_TAI_QUAN",
+   "name": "Tham Hỏa / Tham Linh tại Tài, Quan",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": [
+     "TAI_BACH",
+     "QUAN_LOC"
+    ],
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_TINH",
+        "in": "self"
+       },
+       {
+        "star": "LINH_TINH",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "chiIn": [
+       "THIN",
+       "TUAT",
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "cc.cc_tham_hoa_tai_quan",
+   "adviceKeys": [
+    "adv.bao_phat_giu_phan"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_VU_THAM_DONG_HANH",
+   "name": "Vũ Tham đồng hành",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "VU_KHUC",
+      "in": "self"
+     },
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_VU_KHUC_THAM_LANG@SELF"
+    ]
+   },
+   "textKey": "cc.cc_vu_tham_dong_hanh",
+   "adviceKeys": [
+    "adv.tich_luy_truoc_khi_bung",
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_DONG_LUONG_DAN_THAN",
+   "name": "Đồng Lương Dần Thân",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_DONG",
+      "in": "self"
+     },
+     {
+      "star": "THIEN_LUONG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "DAN",
+       "THAN"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHUC_DUC",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_THIEN_DONG_THIEN_LUONG@SELF"
+    ]
+   },
+   "textKey": "cc.cc_dong_luong_dan_than",
+   "adviceKeys": [
+    "adv.tu_duong_tinh_than"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CO_CU_DONG_LAM",
+   "name": "Cơ Cự đồng lâm",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "self"
+     },
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "MAO",
+       "DAU"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_THIEN_CO_CU_MON@SELF"
+    ]
+   },
+   "textKey": "cc.cc_co_cu_dong_lam",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu",
+    "adv.lang_nghe_gop_y"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_CO_CU_HOA_LOC_QUYEN",
+   "name": "Cơ Cự đồng lâm có Hóa Lộc/Quyền",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "self"
+     },
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "MAO",
+       "DAU"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_LOC",
+        "in": "self"
+       },
+       {
+        "star": "HOA_QUYEN",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "CC_CO_CU_DONG_LAM",
+     "COMBO_THIEN_CO_CU_MON@SELF"
+    ]
+   },
+   "textKey": "cc.cc_co_cu_hoa_loc_quyen",
+   "adviceKeys": [
+    "adv.phat_huy_ngon_ngu",
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_VAN_QUE_VAN_HOA",
+   "name": "Văn Quế Văn Hoa",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "VAN_XUONG",
+      "in": "self"
+     },
+     {
+      "star": "VAN_KHUC",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": 2,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_van_que_van_hoa",
+   "adviceKeys": [
+    "adv.hoc_tap_thi_cu"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_LOC_MA_GIAO_TRI",
+   "name": "Lộc Mã giao trì",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_MA",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "LOC_TON",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "HOA_LOC",
+        "in": "tamPhuongTuChinh"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "DI_CHUYEN"
+    ],
+    "polarity": 2,
+    "weight": 2.0
+   },
+   "textKey": "cc.cc_loc_ma_giao_tri",
+   "adviceKeys": [
+    "adv.di_xa_mo_rong"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_SONG_LOC_TRIEU_VIEN",
+   "name": "Song Lộc triều viên",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LOC_TON",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HOA_LOC",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 2.5
+   },
+   "textKey": "cc.cc_song_loc_trieu_vien",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh",
+    "adv.lap_quy_du_phong"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_TAM_HOA_LIEN_CHAU",
+   "name": "Tam Hóa liên châu",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "HOA_LOC",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HOA_QUYEN",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HOA_KHOA",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 2,
+    "weight": 3.0
+   },
+   "textKey": "cc.cc_tam_hoa_lien_chau",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co",
+    "adv.giu_tron_chu_tin"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_TAI_AM_GIAP_AN",
+   "name": "Tài Ấm giáp Ấn",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_TUONG",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "at": "star:CU_MON",
+        "hasStar": "HOA_LOC"
+       },
+       {
+        "at": "star:CU_MON",
+        "hasStar": "LOC_TON"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 2.5,
+    "suppress": [
+     "TS_THIEN_TUONG_XET_GIAP"
+    ]
+   },
+   "textKey": "cc.cc_tai_am_giap_an",
+   "adviceKeys": [
+    "adv.phat_huy_lanh_dao",
+    "adv.giu_tron_chu_tin"
+   ],
+   "source": "Prompt mục 10.1; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "CC_GIAP_CAT",
+   "name": "Giáp cát",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "anyOf": [
+     {
+      "pairGiap": [
+       "TA_PHU",
+       "HUU_BAT"
+      ]
+     },
+     {
+      "pairGiap": [
+       "VAN_XUONG",
+       "VAN_KHUC"
+      ]
+     },
+     {
+      "pairGiap": [
+       "THIEN_KHOI",
+       "THIEN_VIET"
+      ]
+     },
+     {
+      "pairGiap": [
+       "THAI_DUONG",
+       "THAI_AM"
+      ]
+     },
+     {
+      "pairGiap": [
+       "HOA_QUYEN",
+       "HOA_LOC"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "cc.cc_giap_cat",
+   "adviceKeys": [
+    "adv.tim_nguoi_pho_ta"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  },
+  {
+   "id": "CC_TOA_QUY_HUONG_QUY",
+   "name": "Tọa quý hướng quý",
+   "type": "CAT_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "star": "THIEN_KHOI",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_VIET",
+        "in": "tamPhuong"
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_VIET",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_KHOI",
+        "in": "tamPhuong"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5
+   },
+   "textKey": "cc.cc_toa_quy_huong_quy",
+   "adviceKeys": [
+    "adv.hoc_tap_thi_cu"
+   ],
+   "source": "Prompt mục 10.1",
+   "reviewed": false
+  }
+ ]
+}

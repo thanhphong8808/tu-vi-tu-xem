@@ -1,0 +1,454 @@
+{
+ "advice": [
+  {
+   "key": "adv.phat_huy_lanh_dao",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tim_nguoi_pho_ta",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Chủ động tìm cộng sự, người cố vấn bù chỗ còn thiếu thay vì ôm việc một mình.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.lang_nghe_gop_y",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Dành thời gian lắng nghe góp ý trước khi quyết việc lớn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_doc_doan",
+   "type": "KHONG_NEN",
+   "topic": "TINH_CACH",
+   "text": "Quyết việc lớn theo cảm tính hoặc gạt bỏ ý kiến người cùng làm.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tich_luy_truoc_khi_bung",
+   "type": "NEN",
+   "topic": "TAI_CHINH",
+   "text": "Tích lũy năng lực và vốn đủ lâu trước khi mở rộng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.phat_huy_ngon_ngu",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Phát huy khả năng nói, viết, thuyết phục trong công việc.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.can_than_loi_noi",
+   "type": "LUU_Y",
+   "topic": "PHAP_LY",
+   "text": "Cân nhắc lời nói nơi đông người; ghi lại thỏa thuận quan trọng bằng văn bản.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.doc_ky_hop_dong",
+   "type": "NEN",
+   "topic": "PHAP_LY",
+   "text": "Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_ky_khi_chua_ro",
+   "type": "KHONG_NEN",
+   "topic": "PHAP_LY",
+   "text": "Ký giấy tờ chưa đọc kỹ hoặc tham gia việc mập mờ.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.lap_quy_du_phong",
+   "type": "NEN",
+   "topic": "TAI_CHINH",
+   "text": "Lập quỹ dự phòng, chia nhỏ khoản đầu tư.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_dau_co",
+   "type": "KHONG_NEN",
+   "topic": "TAI_CHINH",
+   "text": "Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.chot_loi_phan_tan",
+   "type": "NEN",
+   "topic": "TAI_CHINH",
+   "text": "Khi được lợi nhanh, chốt một phần và phân tán rủi ro.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.bao_phat_giu_phan",
+   "type": "LUU_Y",
+   "topic": "TAI_CHINH",
+   "text": "Thành quả đến nhanh thì dễ đi nhanh: giữ lại một phần, đừng dồn hết vào một lần.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.ky_luat_tai_chinh",
+   "type": "NEN",
+   "topic": "TAI_CHINH",
+   "text": "Giữ kỷ luật chi tiêu, ghi chép dòng tiền đều đặn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.on_dinh_hon_but_pha",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Chọn môi trường ổn định, đi đường dài thay vì đổi hướng liên tục.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.hop_hanh_chinh_giao_duc",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Cân nhắc các hướng hành chính, giáo dục, y tế, nghiên cứu.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.dam_doi_moi_co_ke_hoach",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Dám đổi mới nhưng có kế hoạch dự phòng cho từng bước.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tranh_lieu_linh",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Dồn toàn lực vào một canh bạc lớn khi chưa có phương án lùi.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.hoc_tap_thi_cu",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Đầu tư cho học tập, bằng cấp, chứng chỉ chuyên môn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.di_xa_mo_rong",
+   "type": "NEN",
+   "topic": "DI_CHUYEN",
+   "text": "Tận dụng cơ hội đi xa, công tác, mở thị trường mới.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.can_trong_di_lai",
+   "type": "LUU_Y",
+   "topic": "DI_CHUYEN",
+   "text": "Đi lại và vận động nên cẩn trọng hơn thường lệ; tuân thủ luật giao thông.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.kham_dinh_ky",
+   "type": "NEN",
+   "topic": "SUC_KHOE",
+   "text": "Khám sức khỏe định kỳ; có dấu hiệu bất thường kéo dài thì gặp bác sĩ.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_bo_qua_dau_hieu",
+   "type": "KHONG_NEN",
+   "topic": "SUC_KHOE",
+   "text": "Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.dieu_do_sinh_hoat",
+   "type": "NEN",
+   "topic": "SUC_KHOE",
+   "text": "Giữ nhịp ngủ nghỉ điều độ, tránh làm việc quá sức kéo dài.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.giu_ket_noi",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Giữ kết nối thường xuyên với người thân, bạn bè tin cậy; chia sẻ khi thấy áp lực.",
+   "severity": 3,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tim_ho_tro_chuyen_mon",
+   "type": "NEN",
+   "topic": "SUC_KHOE",
+   "text": "Khi áp lực tinh thần kéo dài, chủ động tìm chuyên gia tâm lý hoặc bác sĩ để được hỗ trợ.",
+   "severity": 3,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.giam_tai_cong_viec",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Giảm bớt việc, ưu tiên những gì thật cần trong giai đoạn này.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.vun_dap_hon_nhan",
+   "type": "NEN",
+   "topic": "TINH_DUYEN",
+   "text": "Dành nhiều thời gian lắng nghe, trò chuyện với người bạn đời; cùng thống nhất việc lớn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_quyet_khi_gian",
+   "type": "KHONG_NEN",
+   "topic": "TINH_DUYEN",
+   "text": "Đưa ra quyết định lớn về hôn nhân khi đang giận hoặc căng thẳng.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.cuoi_muon_thuan",
+   "type": "LUU_Y",
+   "topic": "TINH_DUYEN",
+   "text": "Tìm hiểu đủ lâu trước khi kết hôn; theo quan niệm Tử Vi, lập gia đình muộn thường thuận hơn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.chu_dong_gap_go",
+   "type": "NEN",
+   "topic": "TINH_DUYEN",
+   "text": "Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.giu_hoa_khi_gia_dinh",
+   "type": "NEN",
+   "topic": "GIA_DAO",
+   "text": "Giữ hòa khí trong nhà; khác ý kiến thì bàn bạc thẳng thắn, tôn trọng nhau.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.cham_soc_thai_ky",
+   "type": "NEN",
+   "topic": "GIA_DAO",
+   "text": "Nếu có kế hoạch sinh con: chăm sóc thai kỳ kỹ, khám định kỳ theo hướng dẫn của bác sĩ.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.quan_tam_cha_me",
+   "type": "NEN",
+   "topic": "GIA_DAO",
+   "text": "Dành thời gian thăm hỏi, quan tâm sức khỏe cha mẹ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.ro_rang_tien_bac_nguoi_than",
+   "type": "NEN",
+   "topic": "GIA_DAO",
+   "text": "Rõ ràng chuyện tiền bạc, tài sản chung với người thân bằng giấy tờ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.chon_ban_lam_an",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Chọn kỹ cộng sự, đối tác; phân định quyền lợi rõ ràng từ đầu.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_tin_nguoi_de_dang",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Giao tiền bạc, quyền quyết định cho người chưa đủ tin cậy.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.giu_tai_san_co_dinh",
+   "type": "NEN",
+   "topic": "NHA_DAT",
+   "text": "Ưu tiên giữ tài sản cố định; chuẩn bị kỹ dòng tiền trước khi mua bán nhà đất lớn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.can_trong_giay_to_nha_dat",
+   "type": "LUU_Y",
+   "topic": "NHA_DAT",
+   "text": "Kiểm tra kỹ pháp lý, ranh giới khi giao dịch nhà đất.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tu_duong_tinh_than",
+   "type": "NEN",
+   "topic": "PHUC_DUC",
+   "text": "Dành thời gian cho đời sống tinh thần: thiện nguyện, đọc sách, thiền, gắn bó gia đình.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tu_luc",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.lap_nghiep_xa",
+   "type": "NEN",
+   "topic": "DI_CHUYEN",
+   "text": "Cân nhắc lập nghiệp ở môi trường mới, xa nơi quen thuộc.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.giu_tron_chu_tin",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Giữ chữ tín và sự minh bạch — đó là vốn quý nhất trong giai đoạn này.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tan_dung_thoi_co",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Thời điểm thuận: chủ động đề xuất, nhận trách nhiệm mới, triển khai việc đã chuẩn bị.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.thu_hon_cong",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Giai đoạn nên thủ hơn công: củng cố nền tảng, hoãn quyết định lớn nếu được.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.khong_mo_rong_nong",
+   "type": "KHONG_NEN",
+   "topic": "TAI_CHINH",
+   "text": "Mở rộng nóng, vay mượn lớn để tăng quy mô.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.uu_tien_cong_viec_nam",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Đặt trọng tâm năm vào lĩnh vực của cung được kích hoạt; lên kế hoạch cụ thể cho nó.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.nghien_cuu_chuyen_sau",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Phát triển chuyên môn sâu; hợp nghiên cứu, y học, triết học, tâm linh.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.tham_my_nghe_thuat",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Thử sức ở lĩnh vực cần óc thẩm mỹ: thiết kế, kiến trúc, nghệ thuật.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "adv.ky_cuong_phap_luat",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Hợp môi trường kỷ cương: luật, thanh tra, an ninh, quản lý chất lượng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false
+  }
+ ]
+}

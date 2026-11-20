@@ -1,0 +1,970 @@
+{
+ "rules": [
+  {
+   "id": "HC_LINH_XUONG_DA_VU",
+   "name": "Linh Xương Đà Vũ (gốc)",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "countOf": [
+       "LINH_TINH",
+       "VAN_XUONG",
+       "DA_LA",
+       "VU_KHUC"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 4
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SUC_KHOE"
+    ],
+    "polarity": -2,
+    "weight": 2.5
+   },
+   "textKey": "cc.hc_linh_xuong_da_vu",
+   "adviceKeys": [
+    "adv.giu_ket_noi",
+    "adv.tim_ho_tro_chuyen_mon",
+    "adv.giam_tai_cong_viec"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LINH_XUONG_DA_VU_DAI_HAN",
+   "name": "Linh Xương Đà Vũ (đại hạn)",
+   "type": "HUNG_CACH",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "countOf": [
+       "LINH_TINH",
+       "VAN_XUONG",
+       "DA_LA",
+       "VU_KHUC"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 4
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SUC_KHOE"
+    ],
+    "polarity": -2,
+    "weight": 2.5
+   },
+   "textKey": "cc.hc_linh_xuong_da_vu_dai_han",
+   "adviceKeys": [
+    "adv.giu_ket_noi",
+    "adv.tim_ho_tro_chuyen_mon",
+    "adv.giam_tai_cong_viec"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LINH_XUONG_DA_VU_TIEU_HAN",
+   "name": "Linh Xương Đà Vũ (tiểu hạn)",
+   "type": "HUNG_CACH",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "countOf": [
+       "LINH_TINH",
+       "VAN_XUONG",
+       "DA_LA",
+       "VU_KHUC"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 4
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SUC_KHOE"
+    ],
+    "polarity": -2,
+    "weight": 2.5
+   },
+   "textKey": "cc.hc_linh_xuong_da_vu_tieu_han",
+   "adviceKeys": [
+    "adv.giu_ket_noi",
+    "adv.tim_ho_tro_chuyen_mon",
+    "adv.giam_tai_cong_viec"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LO_THUONG_MAI_THI",
+   "name": "Lộ thượng mai thi",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": [
+     "MENH",
+     "THIEN_DI",
+     "TAT_ACH"
+    ],
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self"
+     },
+     {
+      "star": "THAT_SAT",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "SUU",
+       "MUI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN",
+     "SUC_KHOE"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_lo_thuong_mai_thi",
+   "adviceKeys": [
+    "adv.can_trong_di_lai"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_HINH_KY_GIAP_AN",
+   "name": "Hình Kỵ giáp Ấn",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_TUONG",
+      "in": "self"
+     },
+     {
+      "at": "star:CU_MON",
+      "hasStar": "HOA_KY"
+     },
+     {
+      "at": "star:THIEN_LUONG",
+      "hasStar": "KINH_DUONG"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY",
+     "SU_NGHIEP"
+    ],
+    "polarity": -2,
+    "weight": 2.5,
+    "suppress": [
+     "TS_THIEN_TUONG_XET_GIAP"
+    ]
+   },
+   "textKey": "cc.hc_hinh_ky_giap_an",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.khong_ky_khi_chua_ro"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_CU_KINH",
+   "name": "Cự Kình",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": [
+     "MENH",
+     "QUAN_LOC"
+    ],
+    "allOf": [
+     {
+      "star": "CU_MON",
+      "in": "self"
+     },
+     {
+      "star": "KINH_DUONG",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_cu_kinh",
+   "adviceKeys": [
+    "adv.can_than_loi_noi",
+    "adv.lang_nghe_gop_y"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_PHIEM_THUY_DAO_HOA",
+   "name": "Phiếm thủy đào hoa",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAM_LANG",
+      "in": "self",
+      "chiIn": [
+       "TY",
+       "HOI"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "KINH_DUONG",
+        "in": "self"
+       },
+       {
+        "star": "DA_LA",
+        "in": "self"
+       },
+       {
+        "star": "HOA_KY",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN",
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_phiem_thuy_dao_hoa",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh",
+    "adv.vun_dap_hon_nhan"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LIEM_THAM_TI_HOI",
+   "name": "Liêm Tham Tỵ Hợi",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self"
+     },
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "TI",
+       "HOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY",
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_LIEM_TRINH_THAM_LANG@SELF"
+    ]
+   },
+   "textKey": "cc.hc_liem_tham_ti_hoi",
+   "adviceKeys": [
+    "adv.khong_ky_khi_chua_ro",
+    "adv.giu_tron_chu_tin"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LIEM_THAM_TI_HOI_KY",
+   "name": "Liêm Tham Tỵ Hợi gặp Hóa Kỵ",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "LIEM_TRINH",
+      "in": "self"
+     },
+     {
+      "star": "THAM_LANG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "TI",
+       "HOI"
+      ]
+     },
+     {
+      "star": "HOA_KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY",
+     "TINH_DUYEN"
+    ],
+    "polarity": -2,
+    "weight": 2.5,
+    "suppress": [
+     "HC_LIEM_THAM_TI_HOI",
+     "COMBO_LIEM_TRINH_THAM_LANG@SELF"
+    ]
+   },
+   "textKey": "cc.hc_liem_tham_ti_hoi_ky",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.khong_ky_khi_chua_ro"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_VU_PHA_TI_HOI",
+   "name": "Vũ Phá Tỵ Hợi",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "VU_KHUC",
+      "in": "self"
+     },
+     {
+      "star": "PHA_QUAN",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "TI",
+       "HOI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 2.0,
+    "suppress": [
+     "COMBO_VU_KHUC_PHA_QUAN@SELF"
+    ]
+   },
+   "textKey": "cc.hc_vu_pha_ti_hoi",
+   "adviceKeys": [
+    "adv.lap_quy_du_phong",
+    "adv.khong_dau_co"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_KHONG_KIEP_GIAP_MENH",
+   "name": "Không Kiếp giáp Mệnh",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "pairGiap": [
+       "DIA_KHONG",
+       "DIA_KIEP"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_khong_kiep_giap_menh",
+   "adviceKeys": [
+    "adv.lap_quy_du_phong",
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_TU_SAT_HOI_MENH",
+   "name": "Tứ sát hội Mệnh",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "countOf": [
+       "KINH_DUONG",
+       "DA_LA",
+       "HOA_TINH",
+       "LINH_TINH"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 3
+     }
+    ],
+    "noneOf": [
+     {
+      "star": "THIEN_GIAI",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "DIA_GIAI",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "GIAI_THAN",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH",
+     "SU_NGHIEP"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_tu_sat_hoi_menh",
+   "adviceKeys": [
+    "adv.tu_luc",
+    "adv.dieu_do_sinh_hoat"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_THIEN_CO_KHONG_KIEP",
+   "name": "Thiên Cơ ngộ Không Kiếp",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_CO",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cc.hc_thien_co_khong_kiep",
+   "adviceKeys": [
+    "adv.lang_nghe_gop_y",
+    "adv.tranh_lieu_linh"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_LOC_PHUNG_LUONG_SAT",
+   "name": "Lộc phùng lưỡng sát",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "LOC_TON",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "HOA_LOC",
+        "in": "tamPhuongTuChinh"
+       }
+      ]
+     },
+     {
+      "star": "DIA_KHONG",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "DIA_KIEP",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_loc_phung_luong_sat",
+   "adviceKeys": [
+    "adv.lap_quy_du_phong",
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_MA_LAC_KHONG_VONG",
+   "name": "Mã lạc không vong",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": [
+     "MENH",
+     "THIEN_DI"
+    ],
+    "allOf": [
+     {
+      "star": "THIEN_MA",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cc.hc_ma_lac_khong_vong",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_CHIET_TUC_MA",
+   "name": "Chiết túc mã",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": [
+     "MENH",
+     "THIEN_DI"
+    ],
+    "allOf": [
+     {
+      "star": "THIEN_MA",
+      "in": "self"
+     },
+     {
+      "star": "DA_LA",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cc.hc_chiet_tuc_ma",
+   "adviceKeys": [
+    "adv.can_trong_di_lai"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_NHAT_NGUYET_PHAN_BOI",
+   "name": "Nhật Nguyệt phản bối",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "tamPhuongTuChinh",
+      "brightnessIn": [
+       "H"
+      ]
+     },
+     {
+      "star": "THAI_AM",
+      "in": "tamPhuongTuChinh",
+      "brightnessIn": [
+       "H"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_nhat_nguyet_phan_boi",
+   "adviceKeys": [
+    "adv.tu_luc",
+    "adv.hoc_tap_thi_cu"
+   ],
+   "source": "Prompt mục 10.2",
+   "reviewed": false
+  },
+  {
+   "id": "HC_KHO_THUNG",
+   "name": "Kho thủng",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": [
+     "MENH",
+     "TAI_BACH",
+     "DIEN_TRACH"
+    ],
+    "allOf": [
+     {
+      "star": "THIEN_PHU",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "NHA_DAT"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_kho_thung",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh",
+    "adv.khong_dau_co"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_KHO_LO",
+   "name": "Kho lộ",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": [
+     "MENH",
+     "TAI_BACH",
+     "DIEN_TRACH"
+    ],
+    "allOf": [
+     {
+      "star": "THIEN_PHU",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH",
+     "NHA_DAT"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cc.hc_kho_lo",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_CO_QUAN",
+   "name": "Cô quân",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "TU_VI",
+      "in": "self"
+     }
+    ],
+    "noneOf": [
+     {
+      "star": "TA_PHU",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HUU_BAT",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cc.hc_co_quan",
+   "adviceKeys": [
+    "adv.tim_nguoi_pho_ta",
+    "adv.lang_nghe_gop_y"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_HON_QUAN",
+   "name": "Hôn quân",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "TU_VI",
+      "in": "self"
+     },
+     {
+      "countOf": [
+       "KINH_DUONG",
+       "DA_LA",
+       "HOA_TINH",
+       "LINH_TINH",
+       "DIA_KHONG",
+       "DIA_KIEP"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 2
+     }
+    ],
+    "noneOf": [
+     {
+      "star": "TA_PHU",
+      "in": "tamPhuongTuChinh"
+     },
+     {
+      "star": "HUU_BAT",
+      "in": "tamPhuongTuChinh"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -2,
+    "weight": 2.0,
+    "suppress": [
+     "HC_CO_QUAN"
+    ]
+   },
+   "textKey": "cc.hc_hon_quan",
+   "adviceKeys": [
+    "adv.lang_nghe_gop_y",
+    "adv.khong_doc_doan"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "id": "HC_SONG_KY",
+   "name": "Song Kỵ",
+   "type": "HUNG_CACH",
+   "scope": "NAM",
+   "reliability": "B",
+   "when": {
+    "palace": "ANY",
+    "allOf": [
+     {
+      "star": "HOA_KY",
+      "in": "self"
+     },
+     {
+      "luuHoa": "KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "@PALACE"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "cc.hc_song_ky",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong"
+   ],
+   "source": "Prompt mục 10.2; Prompt mục 7",
+   "reviewed": false
+  },
+  {
+   "id": "HC_CUC_KHAC_MENH",
+   "name": "Cục khắc Mệnh",
+   "type": "HUNG_CACH",
+   "scope": "GOC",
+   "reliability": "B",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "cucMenh": [
+       "CUC_KHAC_MENH"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_CACH"
+    ],
+    "polarity": -1,
+    "weight": 1.0
+   },
+   "textKey": "cc.hc_cuc_khac_menh",
+   "adviceKeys": [
+    "adv.tu_luc"
+   ],
+   "source": "Prompt mục 10.2; Cẩm nang V2 – P.I.4",
+   "reviewed": false
+  }
+ ]
+}

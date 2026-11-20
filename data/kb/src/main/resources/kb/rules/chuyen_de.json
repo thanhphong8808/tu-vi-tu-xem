@@ -1,0 +1,678 @@
+{
+ "rules": [
+  {
+   "id": "CD_HON_NHAN_HOA_CAI_MA",
+   "name": "Hôn nhân: Hoa Cái – Thiên Mã – Tuần/Triệt",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "PHU_THE",
+    "allOf": [
+     {
+      "at": "menh",
+      "hasStar": "HOA_CAI"
+     },
+     {
+      "star": "THIEN_MA",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "hasTuan": true
+       },
+       {
+        "hasTriet": true
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_hon_nhan_hoa_cai_ma",
+   "adviceKeys": [
+    "adv.cuoi_muon_thuan",
+    "adv.vun_dap_hon_nhan"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HON_NHAN_KINH_DA_CO_QUA",
+   "name": "Hôn nhân: Kình Mệnh – Đà Phu Thê gặp Tang/Cô/Quả",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "PHU_THE",
+    "allOf": [
+     {
+      "at": "menh",
+      "hasStar": "KINH_DUONG"
+     },
+     {
+      "star": "DA_LA",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "TANG_MON",
+        "in": "self"
+       },
+       {
+        "star": "CO_THAN",
+        "in": "self"
+       },
+       {
+        "star": "QUA_TU",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_hon_nhan_kinh_da_co_qua",
+   "adviceKeys": [
+    "adv.cuoi_muon_thuan",
+    "adv.vun_dap_hon_nhan"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HON_NHAN_DUONG_LUONG",
+   "name": "Hôn nhân: Dương Lương Mão Dậu – Đồng Cự hóa Kỵ",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THAI_DUONG",
+      "in": "self"
+     },
+     {
+      "star": "THIEN_LUONG",
+      "in": "self"
+     },
+     {
+      "chiIn": [
+       "MAO",
+       "DAU"
+      ]
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "THIEN_DONG"
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "CU_MON"
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "HOA_KY"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_hon_nhan_duong_luong",
+   "adviceKeys": [
+    "adv.vun_dap_hon_nhan",
+    "adv.khong_quyet_khi_gian"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HON_NHAN_TUONG_LIEM_THAM",
+   "name": "Hôn nhân: Thiên Tướng – Phu Thê Liêm Tham hóa Kỵ",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "star": "THIEN_TUONG",
+      "in": "self"
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "LIEM_TRINH"
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "THAM_LANG"
+     },
+     {
+      "at": "role:PHU_THE",
+      "hasStar": "HOA_KY"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_hon_nhan_tuong_liem_tham",
+   "adviceKeys": [
+    "adv.vun_dap_hon_nhan",
+    "adv.khong_quyet_khi_gian"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HON_NHAN_SAT_PHA_HAM_KY",
+   "name": "Hôn nhân: Sát Phá hãm gặp Hóa Kỵ ở Phu Thê",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "A",
+   "when": {
+    "palace": "PHU_THE",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "THAT_SAT",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       },
+       {
+        "star": "PHA_QUAN",
+        "in": "self",
+        "brightnessIn": [
+         "H"
+        ]
+       }
+      ]
+     },
+     {
+      "star": "HOA_KY",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_hon_nhan_sat_pha_ham_ky",
+   "adviceKeys": [
+    "adv.vun_dap_hon_nhan",
+    "adv.cuoi_muon_thuan"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HAN_HY_CUOI_HOI",
+   "name": "Hạn hỷ: năm thuận cưới hỏi",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "at": "menh",
+        "hasLuuStar": [
+         "DAO_HOA",
+         "HONG_LOAN",
+         "HY_THAN",
+         "LONG_DUC",
+         "NGUYET_DUC"
+        ]
+       },
+       {
+        "at": "than",
+        "hasLuuStar": [
+         "DAO_HOA",
+         "HONG_LOAN",
+         "HY_THAN",
+         "LONG_DUC",
+         "NGUYET_DUC"
+        ]
+       },
+       {
+        "at": "role:NO_BOC",
+        "hasLuuStar": [
+         "DAO_HOA",
+         "HONG_LOAN",
+         "HY_THAN",
+         "LONG_DUC",
+         "NGUYET_DUC"
+        ]
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "THANH_LONG",
+        "in": "self"
+       },
+       {
+        "star": "LONG_TRI",
+        "in": "self"
+       },
+       {
+        "star": "PHUONG_CAC",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HY",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "at": "luuNienDaiHan",
+        "roleIn": [
+         "MENH",
+         "PHU_THE",
+         "QUAN_LOC",
+         "TAI_BACH"
+        ]
+       },
+       {
+        "at": "luuNienDaiHan",
+        "same": "than"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": 2,
+    "weight": 2.0,
+    "suppress": [
+     "CD_HAN_HY_TINH_DUYEN"
+    ]
+   },
+   "textKey": "cd.cd_han_hy_cuoi_hoi",
+   "adviceKeys": [
+    "adv.chu_dong_gap_go"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_HAN_HY_TINH_DUYEN",
+   "name": "Hạn hỷ: sao lưu tình duyên kích hoạt",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "MENH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "at": "menh",
+        "hasLuuStar": [
+         "DAO_HOA",
+         "HONG_LOAN",
+         "HY_THAN"
+        ]
+       },
+       {
+        "at": "than",
+        "hasLuuStar": [
+         "DAO_HOA",
+         "HONG_LOAN",
+         "HY_THAN"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": 1,
+    "weight": 1.0
+   },
+   "textKey": "cd.cd_han_hy_tinh_duyen",
+   "adviceKeys": [
+    "adv.chu_dong_gap_go"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_LUU_THAI_TUE_CO_QUA",
+   "name": "Lưu Thái Tuế trùng Cô Thần/Quả Tú",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "anyOf": [
+     {
+      "star": "CO_THAN",
+      "in": "self"
+     },
+     {
+      "star": "QUA_TU",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_luu_thai_tue_co_qua",
+   "adviceKeys": [
+    "adv.vun_dap_hon_nhan"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_SINH_CON_LUU_LOC",
+   "name": "Sinh con: Lộc lưu vào Tử Tức",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TU_TUC",
+    "anyOf": [
+     {
+      "luuStar": "LOC_TON",
+      "in": "self"
+     },
+     {
+      "luuHoa": "LOC",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO"
+    ],
+    "polarity": 1,
+    "weight": 1.0
+   },
+   "textKey": "cd.cd_sinh_con_luu_loc",
+   "adviceKeys": [
+    "adv.cham_soc_thai_ky"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_SINH_CON_THAI",
+   "name": "Sinh con: tiểu hạn hội sao Thai",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "anyOf": [
+     {
+      "star": "THAI",
+      "in": "self"
+     },
+     {
+      "star": "THAI",
+      "in": "tamHop"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO"
+    ],
+    "polarity": 1,
+    "weight": 1.0
+   },
+   "textKey": "cd.cd_sinh_con_thai",
+   "adviceKeys": [
+    "adv.cham_soc_thai_ky"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_SINH_CON_LUU_Y",
+   "name": "Sinh con: dấu hiệu cần chăm sóc thai kỳ",
+   "type": "CHUYEN_DE",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TU_TUC",
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "luuStar": "BACH_HO",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_KHOC",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "luuStar": "THIEN_HU",
+        "in": "self"
+       },
+       {
+        "anyOf": [
+         {
+          "star": "KINH_DUONG",
+          "in": "self"
+         },
+         {
+          "star": "DA_LA",
+          "in": "self"
+         },
+         {
+          "star": "DIA_KHONG",
+          "in": "self"
+         },
+         {
+          "star": "DIA_KIEP",
+          "in": "self"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO"
+    ],
+    "polarity": -1,
+    "weight": 1.5
+   },
+   "textKey": "cd.cd_sinh_con_luu_y",
+   "adviceKeys": [
+    "adv.cham_soc_thai_ky"
+   ],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "CD_CON_CAI_KHONG_DON_TUYEN",
+   "name": "Đường con cái không đơn tuyến (chuyên sâu)",
+   "type": "CHUYEN_DE",
+   "scope": "GOC",
+   "reliability": "C",
+   "when": {
+    "palace": "TU_TUC",
+    "anyOf": [
+     {
+      "allOf": [
+       {
+        "star": "THIEN_CO",
+        "in": "self"
+       },
+       {
+        "star": "CU_MON",
+        "in": "self"
+       },
+       {
+        "chiIn": [
+         "MAO",
+         "DAU"
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THIEN_TUONG",
+        "in": "self"
+       },
+       {
+        "anyOf": [
+         {
+          "star": "TUYET",
+          "in": "self"
+         },
+         {
+          "star": "THAI",
+          "in": "self"
+         },
+         {
+          "star": "TA_PHU",
+          "in": "self"
+         },
+         {
+          "star": "HUU_BAT",
+          "in": "self"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAI",
+        "in": "self"
+       },
+       {
+        "star": "PHUC_BINH",
+        "in": "self"
+       },
+       {
+        "star": "DE_VUONG",
+        "in": "self"
+       },
+       {
+        "star": "TUONG_QUAN",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "allOf": [
+         {
+          "star": "TUONG_QUAN",
+          "in": "self"
+         },
+         {
+          "star": "PHUC_BINH",
+          "in": "xungChieu"
+         }
+        ]
+       },
+       {
+        "allOf": [
+         {
+          "star": "PHUC_BINH",
+          "in": "self"
+         },
+         {
+          "star": "TUONG_QUAN",
+          "in": "xungChieu"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "allOf": [
+       {
+        "star": "THAI_AM",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_PHUC",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO"
+    ],
+    "polarity": 0,
+    "weight": 0.5
+   },
+   "textKey": "cd.cd_con_cai_khong_don_tuyen",
+   "adviceKeys": [],
+   "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
+   "reviewed": false,
+   "expertOnly": true
+  }
+ ]
+}
