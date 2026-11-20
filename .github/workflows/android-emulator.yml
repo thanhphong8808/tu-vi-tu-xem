@@ -7,6 +7,14 @@ on:
   workflow_dispatch:
 
 jobs:
+  sdk-list:
+    name: Danh sách máy ảo có sẵn
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          SDKM=$(ls $ANDROID_HOME/cmdline-tools/*/bin/sdkmanager | head -1)
+          $SDKM --list 2>/dev/null | grep -E "system-images;android-3[5-9]|platforms;android-3[6-9]" | sort -u | head -40
+
   emulator:
     name: Android API ${{ matrix.api }}
     runs-on: ubuntu-latest

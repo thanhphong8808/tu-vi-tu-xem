@@ -47,12 +47,6 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         val night = (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
         val bg = if (night) Color.rgb(0x14, 0x16, 0x1b) else Color.rgb(0xf6, 0xf2, 0xe9)
-        try {
-            setupEdgeToEdge(night, bg)
-        } catch (e: Throwable) {
-            Log.w(TAG, "edge-to-edge", e) // không ảnh hưởng chức năng
-        }
-
         val root = FrameLayout(this)
         root.setBackgroundColor(bg)
         root.setOnApplyWindowInsetsListener(InsetsPadding())
@@ -60,6 +54,7 @@ class MainActivity : Activity() {
         val report = CrashLog.pending(this)
         if (report != null) {
             showReport(root, report, night)
+            applyEdgeToEdge(night, bg)
             return
         }
 
@@ -75,11 +70,13 @@ class MainActivity : Activity() {
                     "trong Google Play / Galaxy Store rồi mở lại app.\n\n(${e.javaClass.simpleName}: ${e.message})",
                 night,
             )
+            applyEdgeToEdge(night, bg)
             return
         }
         view.setBackgroundColor(bg)
         root.addView(view, FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
         setContentView(root)
+        applyEdgeToEdge(night, bg)
 
         val s = view.settings
         s.javaScriptEnabled = true
@@ -98,6 +95,18 @@ class MainActivity : Activity() {
         val selfTest = debuggable && intent?.getStringExtra("selftest") != null
         val restored = !selfTest && savedInstanceState != null && view.restoreState(savedInstanceState) != null
         if (!restored) view.loadUrl("file:///android_asset/web/index.html" + if (selfTest) "#selftest" else "")
+    }
+
+    /**
+     * Gọi SAU setContentView: trước đó cửa sổ chưa có DecorView và `window.insetsController` ném NullPointerException
+     * (đây là lỗi làm bản 0.2.0 thoát ngay khi mở trên Android 11+). Lỗi ở đây chỉ ảnh hưởng màu thanh hệ thống.
+     */
+    private fun applyEdgeToEdge(night: Boolean, bg: Int) {
+        try {
+            setupEdgeToEdge(night, bg)
+        } catch (e: Throwable) {
+            Log.w(TAG, "edge-to-edge", e)
+        }
     }
 
     private fun setupEdgeToEdge(night: Boolean, bg: Int) {
@@ -298,7 +307,7 @@ class MainActivity : Activity() {
     }
 
     companion object {
-        const val APP_VERSION = "0.2.1 (2B)"
+        const val APP_VERSION = "0.2.2 (2B)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
 

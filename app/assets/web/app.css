@@ -153,7 +153,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 .center .ct-row > span:first-child { color: var(--muted); flex: none; }
 .center .ct-row > b { font-weight: 700; }
 .center .ct-foot { margin-top: 4px; font-size: 10px; color: var(--muted); text-align: center; }
-.overlay { position: absolute; inset: 0; pointer-events: none; overflow: visible; }
+.overlay { position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; overflow: visible; }
 .overlay line { stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 4 3; opacity: .75; }
 .tt { position: absolute; transform: translate(-50%, -50%); z-index: 3; pointer-events: none; padding: 1px 5px; border-radius: 6px; background: #222; color: #fff; font-size: 9px; font-weight: 800; letter-spacing: .4px; white-space: nowrap; }
 .tt.v { writing-mode: vertical-rl; text-orientation: upright; padding: 5px 1px; letter-spacing: -1px; line-height: 1; font-size: 8.5px; }
@@ -187,7 +187,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 .hours .h b { color: var(--accent); }
 
 /* —— bảng trượt chi tiết cung, hộp thoại —— */
-.scrim { position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, .38); display: none; }
+.scrim { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 50; background: rgba(0, 0, 0, .38); display: none; }
 .scrim.open { display: block; }
 .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 51; max-height: 78vh; overflow-y: auto; background: var(--card); border-radius: 20px 20px 0 0;
   padding: 8px 16px 24px; transform: translateY(105%); transition: transform .22s ease; max-width: 820px; margin: 0 auto; }
@@ -198,7 +198,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 .sheet h3 { margin: 14px 0 4px; font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
 .sheet .sline > span:first-child { color: var(--muted); }
 .slist { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
-.modal { position: fixed; inset: 0; z-index: 60; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, .45); }
+.modal { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 60; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(0, 0, 0, .45); }
 .modal.open { display: flex; }
 .modal .box { background: var(--card); border-radius: 18px; padding: 18px; max-width: 460px; width: 100%; box-shadow: var(--shadow); }
 .modal .box h2 { margin: 0 0 8px; font-size: 18px; }

@@ -17,7 +17,16 @@ echo "== Máy ảo: Android $(adb shell getprop ro.build.version.release | tr -d
 adb shell dumpsys webviewupdate 2>/dev/null | grep -m2 -iE "Current WebView package|versionName" || true
 echo "== APK: $REL · $ST"
 
-echo "== 1) Bản phát hành"
+OLD=$(ls ci/regression/TuViTuXem-*.apk 2>/dev/null | head -1)
+if [ -n "$OLD" ]; then
+  echo "== 0) Bản cũ người dùng đã cài ($OLD) — chỉ để xác nhận nguyên nhân lỗi, không tính vào kết luận"
+  adb install -r "$OLD" >/dev/null && adb logcat -c && adb shell am start -W -n "$PKG/$ACT" >/dev/null; sleep 12
+  if [ -n "$(adb shell pidof "$PKG" | tr -d '\r')" ]; then echo "OLD_APK_ALIVE"; else echo "OLD_APK_DEAD"; fi
+  adb logcat -d | grep -E "FATAL EXCEPTION|NullPointerException|at vn\.tuvi" | head -8
+  adb shell am force-stop "$PKG"
+fi
+
+echo "== 1) Bản phát hành (cài đè lên bản cũ như người dùng sẽ làm)"
 adb install -r "$REL" || { echo "CAI_DAT_THAT_BAI"; exit 1; }
 adb logcat -c
 adb shell am start -W -n "$PKG/$ACT"
@@ -29,6 +38,7 @@ grep -nE "FATAL EXCEPTION|AndroidRuntime|TuViTuXem|TuViWeb|Process: $PKG|VerifyE
 if [ -n "$PID" ]; then echo "RELEASE_ALIVE pid=$PID"; else echo "RELEASE_DEAD"; FAIL=1; fi
 if grep -q "FATAL EXCEPTION" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_FATAL"; FAIL=1; fi
 if grep -q "TuViWeb.*ERROR" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_JS_ERROR"; FAIL=1; fi
+if grep -qE " [WE] TuViTuXem" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_APP_WARNING"; FAIL=1; fi
 emit_png "release-api$API" "$OUT/1-release-api$API.png"
 
 echo "== 2) Bản tự kiểm tra (4 ca golden trong app thật)"
