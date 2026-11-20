@@ -1,3 +1,6 @@
+import org.gradle.api.tasks.testing.TestDescriptor
+import org.gradle.api.tasks.testing.TestListener
+import org.gradle.api.tasks.testing.TestResult
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
@@ -29,6 +32,19 @@ subprojects {
                 exceptionFormat = TestExceptionFormat.FULL
                 showStandardStreams = false
             }
+            // In một dòng tổng kết cho mỗi module (đọc được trong nhật ký GitHub Actions).
+            val modulePath = project.path
+            addTestListener(object : TestListener {
+                override fun beforeSuite(suite: TestDescriptor) {}
+                override fun beforeTest(testDescriptor: TestDescriptor) {}
+                override fun afterTest(testDescriptor: TestDescriptor, result: TestResult) {}
+                override fun afterSuite(suite: TestDescriptor, result: TestResult) {
+                    if (suite.parent == null) {
+                        println("TONG KET TEST $modulePath: ${result.testCount} test, ${result.successfulTestCount} dat, " +
+                            "${result.failedTestCount} loi, ${result.skippedTestCount} bo qua")
+                    }
+                }
+            })
         }
         // Công cụ dev (dumpLunar, dumpCharts, dumpFull, stressCheck) in tiếng Việt: ép UTF-8 kể cả trên Windows.
         tasks.withType<JavaExec>().configureEach {

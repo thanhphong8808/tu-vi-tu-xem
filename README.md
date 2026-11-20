@@ -17,7 +17,7 @@ App Android lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Vi�
 
 ## Cài lên điện thoại Android
 
-1. Chép file `TuViTuXem-0.2.0.apk` vào điện thoại (Zalo, Google Drive, cáp USB…).
+1. Chép file `TuViTuXem-0.2.2.apk` (trong `dist/`) vào điện thoại (Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. App không xin
@@ -25,7 +25,10 @@ App Android lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Vi�
 
 Cần Android 8.0 trở lên. Bản sau cài đè lên bản trước, không mất lá số đã lưu, vì cùng khóa ký trong `app/keystore` (D-31).
 
-Build lại APK (Linux, không cần Android Studio): `bash tools/apk/build_apk.sh`. Công cụ cần có ghi ở đầu script.
+Mỗi lần đẩy mã lên GitHub, workflow “Chạy thử trên máy ảo Android” cài file trong `dist/` lên máy ảo Android 11–16:
+mở app, bắt lỗi văng, rồi chạy 4 ca golden ngay trong app (`ci/emulator_test.sh`).
+
+Build lại APK (Linux, không cần Android Studio): `bash tools/apk/build_apk.sh`. Lệnh này ra bản phát hành và bản tự kiểm tra. Công cụ cần có ghi ở đầu script.
 Kiểm thử giao diện: `tools/apk/devserver.sh 8765 &` rồi chạy `python3 tools/apk/uitest/test_ui.py`.
 
 ## Chạy test

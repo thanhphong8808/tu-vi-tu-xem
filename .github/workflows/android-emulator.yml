@@ -1,4 +1,4 @@
-# Cài và chạy thử đúng file APK trong dist/ trên máy ảo Android 11, 14, 15, 16, 17.
+# Cài và chạy thử đúng file APK trong dist/ trên máy ảo Android 11, 14, 15, 16 (và 17 nếu GitHub có ảnh máy ảo).
 # Mỗi máy ảo: mở bản phát hành (không được văng) rồi chạy bản tự kiểm tra (4 ca golden qua giao diện thật).
 name: Chạy thử trên máy ảo Android
 
@@ -13,17 +13,23 @@ jobs:
     steps:
       - run: |
           SDKM=$(ls $ANDROID_HOME/cmdline-tools/*/bin/sdkmanager | head -1)
-          $SDKM --list 2>/dev/null | grep -E "system-images;android-3[5-9]|platforms;android-3[6-9]" | sort -u | head -40
+          $SDKM --list 2>/dev/null | grep -oE "system-images;android-3[6-9][^ |]*" | sort -u
 
   emulator:
     name: Android API ${{ matrix.api }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    continue-on-error: ${{ matrix.api == 37 }}
+    continue-on-error: ${{ matrix.optional == true }}
     strategy:
       fail-fast: false
       matrix:
-        api: [30, 34, 35, 36, 37]
+        include:
+          - api: 30
+          - api: 34
+          - api: 35
+          - api: 36
+          - api: "37.0"      # Android 17 — ảnh máy ảo có thể chưa có trên GitHub
+            optional: true
     steps:
       - uses: actions/checkout@v6
 

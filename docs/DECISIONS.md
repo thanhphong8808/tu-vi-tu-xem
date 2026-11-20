@@ -202,3 +202,21 @@ chiếu và khớp với stdlib gốc. Mã app được biên dịch với `-Xla
 `app/keystore/tuvi-tu-xem.jks` (mật khẩu `tuvituxem`) dùng để ký mọi bản cập nhật. Android chỉ cho cài đè khi
 chữ ký trùng, nên phải giữ file này; mất khóa thì phải gỡ app cũ (mất dữ liệu đã lưu) rồi mới cài được bản mới.
 Đây là app cá nhân cài ngoài cửa hàng. Nếu sau này đưa lên Google Play, cần tạo khóa riêng và không để trong mã nguồn.
+
+### D-32 · Lỗi 0.2.0 thoát ngay khi mở: gọi `window.insetsController` trước `setContentView`
+Trên Android 11+ (API 30+), `PhoneWindow.getInsetsController()` dùng DecorView. Trước `setContentView` chưa có
+DecorView, nên lệnh này ném NullPointerException trong `onCreate`, và app thoát trên mọi máy Android 11 trở lên.
+Kiểm thử trên trình duyệt không thấy lỗi này, vì nó nằm ở phần Activity chỉ chạy trên Android.
+Bản 0.2.2 thiết lập tràn viền sau `setContentView`, và có bọc try/catch vì phần này chỉ ảnh hưởng màu thanh hệ thống.
+Máy ảo đã chạy lại đúng file 0.2.0 và tái hiện đúng lỗi này (`OLD_APK_DEAD`) trước khi xác nhận bản sửa.
+
+### D-33 · Không gửi APK khi chưa chạy trên máy ảo Android
+Mỗi lần đẩy mã, workflow `android-emulator.yml` cài đúng file trong `dist/` lên máy ảo API 30/34/35/36
+(và 37.0 nếu GitHub có ảnh máy ảo). Các bước kiểm tra:
+- mở bản phát hành; app phải còn sống sau 20 giây, logcat không có FATAL, lỗi JavaScript hay cảnh báo của app;
+- chạy bản tự kiểm tra: cùng mã, thêm `debuggable` và `selftest.js`. Bản này nhập 4 ca golden qua giao diện thật
+  và gọi engine thật dạng DEX (430 mục);
+- cài đè lên bản cũ để kiểm tra đường cập nhật.
+App có thêm bộ ghi lỗi (`TuViApp`/`CrashLog`): nếu app dừng, lần mở sau hiện nguyên văn lỗi kèm nút Sao chép.
+Lỗi trong cầu nối JS được trả về giao diện, không làm app thoát. `onRenderProcessGone` cũng được xử lý.
+Bước build có thêm `check_api.py`: mọi lời gọi từ DEX sang Android phải có trong android.jar API 35.

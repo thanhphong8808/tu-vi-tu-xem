@@ -1,14 +1,30 @@
 # Báo cáo Giai đoạn 2B — Bản chạy thử cài lên điện thoại
 
-Ngày: 20/11/2026 · Sản phẩm: `TuViTuXem-0.2.0.apk` (1,1 MB) · package `vn.tuvi.tuxem` · Android 8.0+ (minSdk 26, targetSdk 35)
+Ngày: 20/11/2026 · Sản phẩm: `TuViTuXem-0.2.2.apk` (1,1 MB) · package `vn.tuvi.tuxem` · Android 8.0+ (minSdk 26, targetSdk 35)
 
 ## Cổng giai đoạn
 
 | Cổng (mục 15) | Kết quả |
 | --- | --- |
 | 4 ca golden hiển thị đúng trên lưới 12 cung | **PASS.** Nhập qua form như người dùng; đối chiếu mọi chính tinh và phụ tinh có trong golden, Tứ Hóa, Tuần/Triệt, Mệnh, Thân, Cục, âm lịch, tuổi đại hạn, đại hạn/tiểu hạn/lưu niên đại hạn/nguyệt hạn tháng Giêng năm 2026 |
-| Chạy trên Galaxy S22 Ultra | **Chờ anh cài thử.** Môi trường build không có máy Android hay máy ảo; giao diện đã chạy thử trên Chromium giả lập màn hình S22 Ultra (412×915, dọc/ngang, sáng/tối) |
+| Chạy trên điện thoại | **PASS trên máy ảo Android 11, 14, 15, 16** (GitHub Actions): app mở không văng, tự kiểm tra 4 ca golden trong app thật đạt 430/430 ở mọi máy. Còn chờ anh cài thử trên máy thật |
 | Chưa cần luận giải | Đúng phạm vi: lá số + vận hạn, chưa có luận giải |
+
+## Sự cố bản 0.2.0 (đã sửa ở 0.2.2)
+
+Bản 0.2.0 thoát ngay khi mở trên mọi máy Android 11 trở lên. Nguyên nhân: gọi `window.insetsController` trước
+`setContentView` → NullPointerException trong `onCreate` (D-32). Kiểm thử trên trình duyệt không bắt được lỗi này,
+vì nó nằm ở phần Activity chỉ chạy trên Android. Từ nay mọi APK phải qua máy ảo Android trước khi gửi (D-33).
+
+| Máy ảo (GitHub Actions) | WebView | Bản 0.2.0 | Bản 0.2.2 mở app | Tự kiểm tra trong app |
+| --- | --- | --- | --- | --- |
+| Android 11 (API 30) | 83 | văng (NPE) | chạy, không cảnh báo | 430/430 |
+| Android 14 (API 34) | 113 | văng (NPE) | chạy, không cảnh báo | 430/430 |
+| Android 15 (API 35) | 124 | văng (NPE) | chạy, không cảnh báo | 430/430 |
+| Android 16 (API 36) | 133 | văng (NPE) | chạy, không cảnh báo | 430/430 |
+
+Cũng nhờ máy ảo mà tìm ra thêm: trên WebView cũ (Android 11), khung “Lời ngỏ” lệch xuống đáy màn hình vì CSS `inset`.
+Đã sửa. Bản 0.2.2 cài đè lên 0.2.0 được, không cần gỡ app cũ.
 
 ## Tính năng
 
@@ -53,13 +69,16 @@ Ngoài 4 ca golden, bộ test giao diện còn kiểm:
 - tô sáng tam phương tứ chính, nút Back theo đúng thứ tự (bảng chi tiết → màn trước → trang chủ);
 - báo lỗi khi chưa chọn giới tính hoặc nhập ngày 31/2.
 
-## Chưa kiểm được ở đây
+## Chưa kiểm được
 
-- Chạy trên máy thật. Lỗi JavaScript nếu có sẽ hiện ngay trên màn hình (để chụp gửi lại). Máy thiếu Android System
-  WebView sẽ thấy thông báo hướng dẫn thay vì văng app.
-- Job `apk` trong `.github/workflows/build.yml` chưa chạy thử trên GitHub. Script `build_apk.sh` thì đã chạy được ở đây.
+- Chạy trên máy thật. Nếu app dừng, lần mở sau sẽ hiện báo cáo lỗi kèm nút Sao chép; lỗi JavaScript hiện ngay
+  trên màn hình.
+- Android 17: tùy GitHub đã có ảnh máy ảo `android-37.0` hay chưa (job được đánh dấu tùy chọn).
+
+Trên GitHub: build Gradle lần đầu chạy thật đã đạt, và job `apk` đã build lại APK từ mã nguồn thành công.
 
 ## Quyết định mới
 
 D-28 (APK không cần Android Studio, giao diện WebView), D-29 (màu và cột sao chỉ để hiển thị),
-D-30 (vá invokedynamic của stdlib), D-31 (khóa ký nằm trong dự án) — xem `docs/DECISIONS.md`.
+D-30 (vá invokedynamic của stdlib), D-31 (khóa ký nằm trong dự án),
+D-32 (nguyên nhân lỗi 0.2.0), D-33 (bắt buộc chạy máy ảo trước khi gửi) — xem `docs/DECISIONS.md`.
