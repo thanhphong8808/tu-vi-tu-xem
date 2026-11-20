@@ -1,0 +1,509 @@
+CẨM NANG THỰC HÀNH TỬ VI ĐẨU SỐ TOÀN THƯ (PHIÊN BẢN MỞ RỘNG V2)
+
+Hướng Dẫn Chi Tiết Toàn Diện Về 14 Chính Tinh, 12 Cung Chức, Các Thế Cục & Hệ Thống Vận Hạn Đa Tầng
+
+LỜI NÓI ĐẦU & PHƯƠNG PHÁP LUẬN TỰ HỌC
+
+Tử Vi Đẩu Số là hệ thống dự trắc học cổ truyền phương Đông kết hợp hài hòa giữa quy luật vận hành của Âm Dương, Ngũ Hành, Thiên Can, Địa Chi với chuyển động biểu kiến của hệ thống tinh tú. Khác với các phương thức bói toán đơn giản dựa trên 9 sao Cửu Diệu hay sao hạn Tam Tai thường thiếu tính cá thể hóa, Tử Vi Đẩu Số thiết lập một bản đồ vận mệnh độc bản cho từng cá nhân dựa trên bốn trụ cốt lõi: Giờ, Ngày, Tháng, Năm sinh theo âm lịch.
+
+Cuốn cẩm nang này được biên soạn nhằm hệ thống hóa toàn bộ kiến thức thực chiến từ hệ thống bài giảng của kênh Tử Vi Học Quán, cung cấp cho người học một tài liệu tra cứu hoàn chỉnh, chi tiết từ bản chất từng ngôi sao, ý nghĩa từng cung vị, cấu trúc các thế đứng, bộ sao và các tầng vận hạn (hạn đời, hạn năm, hạn tuổi, hạn tháng, hạn ngày, hạn giờ) nhằm phục vụ công tác giải đoán thực tiễn chuẩn xác.
+
+PHẦN I: NỀN TẢNG ÂM DƯƠNG, NGŨ HÀNH & KỸ THUẬT AN LÁ SỐ
+
+Chương 1: Bản Thể Âm Dương - Ngũ Hành & Hệ Thống 10 Can, 12 Chi
+
+Huyền học phương Đông quy định mọi biến chuyển của vạn vật đều khởi nguồn từ Âm Dương và Ngũ Hành (Kim, Mộc, Thủy, Hỏa, Thổ):
+
+1. Hệ Thống 10 Thiên Can:
+  * Năm Thiên Can Dương (+): Giáp, Bính, Mậu, Canh, Nhâm.
+  * Năm Thiên Can Âm (-): Ất, Đinh, Kỷ, Tân, Quý.
+  * Quy luật số hóa đuôi năm sinh: Năm tận cùng bằng số 4 là Can Giáp, 5 là Ất, 6 là Bính, 7 là Đinh, 8 là Mậu, 9 là Kỷ, 0 là Canh, 1 là Tân, 2 là Nhâm, 3 là Quý.
+2. Hệ Thống 12 Địa Chi & Tương Quan Hình Học Trên Địa Bàn:
+  * Sáu Chi Dương (+): Tý, Dần, Thìn, Ngọ, Thân, Tuất.
+  * Sáu Chi Âm (-): Sửu, Mão, Tỵ, Mùi, Dậu, Hợi.
+  * Tam Hợp Địa Chi (Hình Tam Giác): Dần - Ngọ - Tuất (Hỏa cục), Thân - Tý - Thìn (Thủy cục), Tỵ - Dậu - Sửu (Kim cục), Hợi - Mão - Mùi (Mộc cục).
+  * Tứ Hành Xung (Hình Vuông / Trục Vuông Góc): Dần - Thân - Tỵ - Hợi, Tý - Ngọ - Mão - Dậu, Thìn - Tuất - Sửu - Mùi.
+  * Lục Hại (Trục Dọc Thẳng Đứng Đối Xứng): Tỵ hại Dần, Thìn hại Mão, Ngọ hại Sửu, Mùi hại Tý, Thân hại Hợi, Dậu hại Tuất.
+  * Lục Hợp / Nhị Hợp (Trục Ngang Song Song): Ngọ hợp Mùi, Tỵ hợp Thân, Thìn hợp Dậu, Mão hợp Tuất, Dần hợp Hợi, Tý hợp Sửu.
+  * Lục Xung / Xung Chiếu (Trục Chéo Đối Cung): Tý - Ngọ, Sửu - Mùi, Dần - Thân, Mão - Dậu, Thìn - Tuất, Tỵ - Hợi.
+3. Phân Vùng 12 Ô Vuông Của Địa Bàn:
+  * Tứ Sinh (Bốn Góc Địa Bàn): Dần, Thân, Tỵ, Hợi — Nơi khởi đầu sinh sôi, là vị trí đắc địa của vòng Trường Sinh và sao Thiên Mã.
+  * Tứ Chính: Tý, Ngọ, Mão, Dậu — Bốn cung trung tâm chính vị, nơi hội tụ năng lượng đào hoa, giao cảm.
+  * Tứ Mộ: Thìn, Tuất, Sửu, Mùi — Đất thổ vùi lấp tàng ẩn, là nơi chôn cất, tích tụ, độc quyền an vị sao Hoa Cái, Cô Thần, Quả Tú, đồng thời là đất kiêng kỵ tuyệt đối không có Lộc Tồn tọa thủ.
+
+Chương 2: Phương Pháp Bấm Tay Tính Nhanh Ngũ Hành Can Chi & Cung Vị
+
+Để xác định ngũ hành nạp âm của một tuổi bất kỳ trong lục thập hoa giáp mà không cần tra cứu sách vở, người học sử dụng phương pháp tính nhẩm qua hệ số Can và Chi:
+
+* Bảng Quy Ước Giá Trị Thiên Can:
+  * Giáp, Ất = 1
+  * Bính, Đinh = 2
+  * Mậu, Kỷ = 3
+  * Canh, Tân = 4
+  * Nhâm, Quý = 5
+* Bảng Quy Ước Giá Trị Địa Chi:
+  * Tý, Sửu, Ngọ, Mùi = 0
+  * Dần, Mão, Thân, Dậu = 1
+  * Thìn, Tỵ, Tuất, Hợi = 2
+* Công Thức Tính Ngũ Hành Nạp Âm: \text{Ngũ Hành} = \text{Can} + \text{Chi} (Nếu tổng lớn hơn 5, lấy tổng trừ đi 5).
+  * Kết quả = 1: Hành Kim
+  * Kết quả = 2: Hành Thủy
+  * Kết quả = 3: Hành Hỏa
+  * Kết quả = 4: Hành Thổ
+  * Kết quả = 5: Hành Mộc
+* Ngũ Hành Bản Vị Của 12 Cung Trên Địa Bàn:
+  * Cung Hợi, Tý: Hành Thủy (Phương Bắc).
+  * Cung Dần, Mão: Hành Mộc (Phương Đông).
+  * Cung Tỵ, Ngọ: Hành Hỏa (Phương Nam).
+  * Cung Thân, Dậu: Hành Kim (Phương Tây).
+  * Cung Thìn, Tuất, Sửu, Mùi: Hành Thổ (Trung ương và bốn góc chuyển giao mùa).
+
+Chương 3: Kỹ Thuật Ngũ Hổ Độn & Định Vị Cung Mệnh - Cung Thân
+
+1. Ngũ Hổ Độn Khởi Can Cung Dần:
+  * Bài quyết khởi đầu nạp Can cho 12 cung xuất phát từ can năm sinh của đương số:
+    * Năm Giáp, Kỷ: Khởi từ Bính Dần.
+    * Năm Ất, Canh: Khởi từ Mậu Dần.
+    * Năm Bính, Tân: Khởi từ Canh Dần.
+    * Năm Đinh, Nhâm: Khởi từ Nhâm Dần.
+    * Năm Mậu, Quý: Khởi từ Giáp Dần.
+  * Từ cung Dần, lần lượt nạp các Thiên Can thuận theo chiều kim đồng hồ cho 12 cung. Do có 10 Thiên can phân bổ vào 12 cung nên luôn có 2 cặp cung trùng Thiên can (Cung Tý trùng Can với cung Dần; cung Sửu trùng Can với cung Mão).
+2. Quy Tắc Định Vị Cung An Mệnh & Cung An Thân:
+  * Cung Mệnh (Tiền vận, gốc rễ cuộc đời từ 1 đến 30 tuổi):
+    * Khởi từ cung Dần là tháng 1 âm lịch, đếm thuận chiều kim đồng hồ đến tháng sinh của đương số.
+    * Dừng ở cung nào, xem cung đó là giờ Tý, đếm nghịch chiều kim đồng hồ đến giờ sinh. Dừng tại đâu, an Cung Mệnh tại đó.
+  * Cung Thân (Hậu vận, hành động thực tế từ sau 30 tuổi):
+    * Khởi từ cung Dần là tháng 1 âm lịch, đếm thuận đến tháng sinh.
+    * Dừng ở cung nào, xem cung đó là giờ Tý, đếm thuận chiều kim đồng hồ đến giờ sinh. Dừng tại đâu, an Cung Thân tại đó.
+  * Quy luật 6 vị trí cư Thân cố định theo giờ sinh:
+    * Sinh giờ Tý, Ngọ: Thân Mệnh đồng cung (tính cách nhất quán, tự làm tự chịu, cuộc đời ít bị ngoại cảnh làm đổi hướng).
+    * Sinh giờ Mão, Dậu: Thân cư Thiên Di (hướng ngoại, hay di chuyển, thành bại gắn liền với hoạt động xã hội).
+    * Sinh giờ Dần, Thân: Thân cư Quan Lộc (nặng lòng vì sự nghiệp, đam mê công danh, lấy công việc làm lẽ sống).
+    * Sinh giờ Thìn, Tuất: Thân cư Tài Bạch (thực tế, coi trọng giá trị đồng tiền, mưu sinh chi phối mọi quyết định).
+    * Sinh giờ Tỵ, Hợi: Thân cư Phu Thê (chịu ảnh hưởng sâu sắc từ người phối ngẫu, buồn vui gắn liền với gia đạo).
+    * Sinh giờ Sửu, Mùi: Thân cư Phúc Đức (hưởng phúc ấm tổ tiên hoặc phải gánh vác nghiệp duyên dòng họ).
+3. Thứ Tự An 12 Cung Chức Trên Địa Bàn (Đi Nghịch Chiều Kim Đồng Hồ Từ Cung Mệnh):
+  * Mệnh \rightarrow Huynh Đệ \rightarrow Phu Thê \rightarrow Tử Tức \rightarrow Tài Bạch \rightarrow Tật Ách \rightarrow Thiên Di \rightarrow Nô Bộc \rightarrow Quan Lộc \rightarrow Điền Trạch \rightarrow Phúc Đức \rightarrow Phụ Mẫu.
+
+Chương 4: Định Cục & Thuật Toán Bấm Tay An 14 Chính Tinh
+
+1. Tìm Ngũ Hành Của Cục:
+  * Cục (môi trường dung dưỡng hoặc khắc hãm bản mệnh) được xác định từ Can Chi của cung Mệnh:
+    * Thủy nhị cục (số 2)
+    * Mộc tam cục (số 3)
+    * Kim tứ cục (số 4)
+    * Thổ ngũ cục (số 5)
+    * Hỏa lục cục (số 6)
+  * Tương quan Cục và Mệnh: Bản Mệnh sinh Cục (sinh xuất, hao tổn tâm lực); Cục sinh Bản Mệnh (thuận lợi, được hoàn cảnh nâng đỡ); Cục Mệnh đồng hành (bình ổn, dễ thích nghi); Cục khắc Mệnh (nghịch cảnh, vất vả gian truân); Mệnh khắc Cục (vượt khó bằng ý chí cá nhân).
+2. Thuật Toán Bấm Tay Xác Định Vị Trí Sao Tử Vi:
+  * Lấy Ngày sinh (âm lịch) chia cho Số Cục:
+    * Trường hợp chia hết: Thương số là X. Từ cung Dần tính là 1, đếm thuận chiều kim đồng hồ đến cung thứ X, đó chính là vị trí an sao Tử Vi.
+    * Trường hợp không chia hết: Mượn một số nguyên nhỏ nhất (Y) sao cho (\text{Ngày sinh} + Y) chia hết cho Số Cục. Kết quả chia ra thương số Z. Khởi từ Dần là 1, đếm thuận đến cung Z.
+      * Nếu số mượn Y là số Lẻ: Từ cung Z, lùi (nghịch) lại Y cung để an Tử Vi.
+      * Nếu số mượn Y là số Chẵn: Từ cung Z, tiến (thuận) thêm Y cung để an Tử Vi.
+3. Quy Luật Trục Đối Xứng Dần - Thân Giữa Tử Vi & Thiên Phủ:
+  * Hai đế tinh Tử Vi và Thiên Phủ luôn di chuyển đối xứng nhau qua trục thẳng đứng nối hai cung Dần và Thân:
+    * Tử Vi tại Dần \leftrightarrow Thiên Phủ đồng cung tại Dần.
+    * Tử Vi tại Thân \leftrightarrow Thiên Phủ đồng cung tại Thân.
+    * Tử Vi tại Mão \leftrightarrow Thiên Phủ tại Sửu.
+    * Tử Vi tại Thìn \leftrightarrow Thiên Phủ tại Tý.
+    * Tử Vi tại Tỵ \leftrightarrow Thiên Phủ tại Hợi.
+    * Tử Vi tại Ngọ \leftrightarrow Thiên Phủ tại Tuất.
+    * Tử Vi tại Mùi \leftrightarrow Thiên Phủ tại Dậu.
+4. Sơ Đồ Phân Bổ 14 Chính Tinh:
+  * Nhóm 6 Sao Vòng Tử Vi (Đi Nghịch Chiều Kim Đồng Hồ):
+    * Cung có Tử Vi \rightarrow Cung kế tiếp là Thiên Cơ \rightarrow Cách 1 cung là Thái Dương \rightarrow Cung kế tiếp là Vũ Khúc \rightarrow Cung kế tiếp là Thiên Đồng \rightarrow Cách 2 cung là Liêm Trinh.
+  * Nhóm 8 Sao Vòng Thiên Phủ (Đi Thuận Chiều Kim Đồng Hồ):
+    * Cung có Thiên Phủ \rightarrow Cung kế tiếp là Thái Âm \rightarrow Cung kế tiếp là Tham Lang \rightarrow Cung kế tiếp là Cự Môn \rightarrow Cung kế tiếp là Thiên Tướng \rightarrow Cung kế tiếp là Thiên Lương \rightarrow Cung kế tiếp là Thất Sát \rightarrow Cách 3 cung là Phá Quân.
+
+Chương 5: An Ba Vòng Sao Nền Tảng (Trường Sinh, Lộc Tồn, Thái Tuế) & Phụ Tinh Cốt Lõi
+
+1. Vòng Trường Sinh (Đo lường nguyên khí sinh diệt của Cục):
+  * Khởi tại cung Tứ Sinh theo ngũ hành của Cục:
+    * Thủy nhị cục & Thổ ngũ cục: Khởi Trường Sinh tại Thân.
+    * Mộc tam cục: Khởi Trường Sinh tại Hợi.
+    * Hỏa lục cục: Khởi Trường Sinh tại Dần.
+    * Kim tứ cục: Khởi Trường Sinh tại Tỵ.
+  * Thứ tự 12 sao: Trường Sinh \rightarrow Mộc Dục \rightarrow Quan Đới \rightarrow Lâm Quan \rightarrow Đế Vượng \rightarrow Suy \rightarrow Bệnh \rightarrow Tử \rightarrow Mộ \rightarrow Tuyệt \rightarrow Thai \rightarrow Dưỡng. (Dương Nam, Âm Nữ đi thuận; Âm Nam, Dương Nữ đi nghịch).
+2. Vòng Lộc Tồn (Thiên Lộc của đất trời, an theo Thiên Can năm sinh):
+  * Can Giáp tại Dần; Can Ất tại Mão; Can Bính, Mậu tại Tỵ; Can Đinh, Kỷ tại Ngọ; Can Canh tại Thân; Can Tân tại Dậu; Can Nhâm tại Hợi; Can Quý tại Tý.
+  * Đặc tính kiêng kỵ: Lộc Tồn không bao giờ đóng tại 4 cung Tứ Mộ (Thìn, Tuất, Sửu, Mùi).
+  * Thế giáp kẹp tiền Kình hậu Đà: Cung trước mặt Lộc Tồn (thuận chiều) luôn luôn có Kình Dương trấn giữ; cung sau lưng Lộc Tồn (nghịch chiều) luôn luôn có Đà La mai phục để canh giữ kho thiên lộc.
+3. Vòng Thái Tuế (Đạo làm người, tư cách, an theo Địa Chi năm sinh):
+  * Chi năm sinh đóng tại cung nào thì khởi Thái Tuế tại cung đó, luôn luôn chạy thuận chiều kim đồng hồ.
+  * Thứ tự 12 sao: Thái Tuế \rightarrow Thiếu Dương (ngộ Thiên Không) \rightarrow Tang Môn \rightarrow Thiếu Âm \rightarrow Quan Phù \rightarrow Tử Phù \rightarrow Tuế Phá \rightarrow Long Đức \rightarrow Bạch Hổ \rightarrow Phúc Đức (đồng cung Thiên Đức) \rightarrow Điếu Khách \rightarrow Trực Phù.
+4. Kỹ Thuật An Sao Tuần Không & Triệt Không:
+  * Triệt Lộ Không Vong (Ảnh hưởng mạnh từ 1 đến 30 tuổi): An theo cặp can năm sinh: Giáp - Kỷ tại Thân - Dậu; Ất - Canh tại Ngọ - Mùi; Bính - Tân tại Thìn - Tỵ; Đinh - Nhâm tại Dần - Mão; Mậu - Quý tại Tý - Sửu. (Triệt không bao giờ đóng tại Tuất, Hợi).
+  * Tuần Trung Không Vong (Bao bọc suốt đời, tác dụng mạnh từ 30 tuổi về sau): Tìm theo Giáp của tuần con giáp đương số sinh (lấy 10 can trừ đi 12 chi, 2 chi còn dư lại không có can là nơi đóng của Tuần).
+
+PHẦN II: GIẢI NGHĨA CHI TIẾT 12 CUNG CHỨC & VỊ TRÍ ĐỨNG CỦA CUNG THÂN
+
+Mỗi cung vị trên lá số không tồn tại biệt lập mà liên kết chặt chẽ theo cấu trúc Tam phương tứ chính (Chính chiếu, hai cung tam hợp và cung xung chiếu), thế nhị hợp và giáp cung:
+
+1. Cung Mệnh
+
+* Ý nghĩa thực chất: Là gốc rễ của đời người, thể hiện bản chất nội tâm, tư chất trí tuệ, năng khiếu bẩm sinh, hình thể diện mạo, nhân sinh quan và xu hướng hành động chủ đạo từ lúc sinh ra đến trước tuổi 30.
+* Tương tác: Cung Mệnh luôn xung chiếu với cung Thiên Di (môi trường ngoài xã hội), tam hợp với cung Quan Lộc và Tài Bạch (sự nghiệp và tài chính), nhị hợp với một cung chức khác để phản ánh sự gắn kết ngầm định.
+
+2. Cung Phụ Mẫu
+
+* Ý nghĩa thực chất: Đại diện cho tứ thân phụ mẫu (cha mẹ ruột, cha mẹ nuôi, gia đình bên chồng hoặc bên vợ). Cho biết phúc thọ, điều kiện kinh tế, địa vị xã hội của đấng sinh thành và mức độ hòa hợp, gắn kết giữa con cái với cha mẹ.
+* Dấu hiệu thực chiến:
+  * Cần quan sát thêm vị trí miếu hãm của hai sao Thái Dương (đại diện cho cha, ông) và Thái Âm (đại diện cho mẹ, bà). Âm Dương miếu vượng thì cha mẹ trường thọ; Âm Dương lạc hãm lại hội nhiều sát bại tinh thì cha mẹ suy giảm tuổi thọ hoặc sớm ly tán.
+  * Cung Phụ Mẫu có Lộc Tồn, Thiên Phủ, Tướng Quân, Quốc Ấn: Được hưởng của cải, tài sản thừa kế từ cha mẹ. Có Thiên Riêu, Hóa Kỵ, sát tinh: Cha mẹ dễ bất hòa, ly thân hoặc có người tái giá bước thêm bước nữa.
+
+3. Cung Phúc Đức
+
+* Ý nghĩa thực chất: Được coi là "cung vị linh hồn" của toàn bộ lá số, chi phối gián tiếp đến cả 11 cung vị còn lại. Cung Phúc Đức phản ánh phúc ấm dòng họ, mồ mả tổ tiên tiền tổ, nhân quả kiếp trước, đời sống nội tâm, tinh thần thanh thản hay dằn vặt lo âu, đồng thời là cung quyết định tuổi thọ và sự cứu giải khi gặp đại hạn ngặt nghèo.
+* Dấu hiệu thực chiến:
+  * Phúc Đức đẹp (hội tụ Thiên Lương, Thiên Đồng, Tử Vi, Thiên Phủ, Khoa Quyền Lộc, Quang Quý) có thể giải trừ hung hiểm của các cung khác, giúp đương số gặp dữ hóa lành, dòng họ có nhiều người thành đạt.
+  * Phúc Đức tối kỵ hội tụ các sát tinh hạng nặng như Địa Không, Địa Kiếp, hoặc các "Đoản thọ tinh" như Hỏa Tinh, Linh Tinh đóng tại các cung ban đêm (từ Thân qua Tý đến Sửu), chủ về tổn hao phúc thọ, mồ mả động loạn, dòng họ ly tán, bản thân thường bất an tâm tính.
+
+4. Cung Điền Trạch
+
+* Ý nghĩa thực chất: Là một trong ba cung vị quản trị tài sản (cùng với Tài Bạch và Tử Tức). Cung Điền phản ánh nhà cửa, đất đai, bất động sản, cơ sở kinh doanh, khả năng tích lũy tài sản cố định và môi trường không gian sinh sống của gia đình.
+* Dấu hiệu thực chiến:
+  * Rất ưa các tài tinh như Lộc Tồn, Hóa Lộc, Thiên Phủ, Vũ Khúc, Thái Âm (miếu vượng): Đất cát rộng lớn, dễ mua bán sinh lời, được thừa hưởng bất động sản của tiền nhân để lại.
+  * Kỵ gặp Không Kiếp, Đại Hao, Tiểu Hao (chủ về tán tài, bán nhà trả nợ), kỵ gặp Kình Đà, Thiên Hình, Hóa Kỵ (dễ tranh chấp pháp lý, kiện tụng về đất đai).
+
+5. Cung Quan Lộc
+
+* Ý nghĩa thực chất: Thể hiện con đường công danh sự nghiệp, chức vị quyền hạn, ngành nghề phù hợp, môi trường làm việc, tinh thần trách nhiệm và mức độ thăng tiến xã hội.
+* Dấu hiệu thực chiến:
+  * Bộ Tử Phủ Vũ Tướng Liêm hội Lộc Tướng Ấn, Tả Hữu, Khôi Việt: Hợp đường quan lộ, giữ cương vị lãnh đạo nhà nước hoặc quản trị doanh nghiệp quy mô lớn.
+  * Bộ Sát Phá Tham hội Tứ sát: Hợp đường quân sự, công an, lực lượng vũ trang, thể thao hoặc kinh doanh mạo hiểm.
+  * Cơ Nguyệt Đồng Lương: Hợp ngành giáo dục, hành chính công, công chức, y tế, văn hóa, nghiên cứu khoa học.
+
+6. Cung Nô Bộc
+
+* Ý nghĩa thực chất: Phản ánh mối quan hệ với bạn bè, đồng nghiệp, cấp dưới, người làm công, đối tác hợp tác làm ăn và quần chúng xã hội.
+* Dấu hiệu thực chiến:
+  * Cung Nô miếu vượng, có cát tinh trợ lực (Khôi Việt, Tả Hữu, Hóa Khoa, Lộc Tồn): Cấp dưới trung thành, bạn bè đắc lực, luôn có quý nhân phò tá nâng đỡ cơ đồ.
+  * Cung Nô hãm địa, hội Không Kiếp, Hóa Kỵ, Phục Binh: Dễ bị bạn bè phản trắc, lừa đảo chiếm đoạt tiền bạc, cấp dưới chống đối gây họa.
+
+7. Cung Thiên Di
+
+* Ý nghĩa thực chất: Đối xứng trực tiếp với cung Mệnh, thể hiện hoàn cảnh bên ngoài xã hội, cơ hội xuất ngoại, đi lại xa xứ, khả năng thích ứng với môi trường mới và các mối nguy cơ rình rập khi bước chân ra khỏi lũy tre làng.
+* Dấu hiệu thực chiến:
+  * Có sao động như Thiên Mã, Thiên Đồng, Long Trì, Phượng Các: Rất dễ xuất ngoại, hay phải đi công tác xa, đi lại nhiều như con thoi.
+  * Thiên Di sáng sủa: Đi xa gặp quý nhân, làm ăn phát đạt ở xứ người. Thiên Di có sát tinh độc hiểm: Ra ngoài dễ gặp tai nạn giao thông, va chạm bạo lực, thị phi khẩu thiệt.
+
+8. Cung Tật Ách
+
+* Ý nghĩa thực chất: Phản ánh thể trạng sức khỏe, bệnh tật bẩm sinh hoặc mắc phải, tai nạn hình thương, các biến cố rủi ro nguy hại đến tính mạng và khả năng tai qua nạn khỏi suốt một đời.
+* Dấu hiệu thực chiến:
+  * Bệnh tật phản chiếu theo tính chất của sao đóng tại cung: Hỏa Tinh/Linh Tinh dễ bị bỏng, sốt cao; Kình Dương/Thiên Hình chủ về mổ xẻ phẫu thuật, thương tích đâm chém; Thiên Riêu/Hóa Kỵ chủ về bệnh nội tiết, bệnh ngấm ngầm, trúng độc.
+  * Cung Tật Ách kỵ nhất Hóa Kỵ xung chiếu (từ cung Phụ Mẫu chiếu sang) hoặc thủ cung, làm tăng tính ám muội và mầm mống ác bệnh.
+
+9. Cung Tài Bạch
+
+* Ý nghĩa thực chất: Đo lường dòng chảy tiền tệ lưu thông, năng lực kiếm tiền, cung cách chi tiêu, phương thức quản lý tài chính và mức độ giàu nghèo của cá nhân.
+* Dấu hiệu thực chiến:
+  * Khác với Điền Trạch (tài sản chìm cố định), Tài Bạch là tiền mặt, tính thanh khoản. Cung Tài rất ưa các bộ Lộc Tồn, Hóa Lộc, Vũ Khúc, Thiên Phủ.
+  * Gặp Song Hao (Đại Hao, Tiểu Hao) thì tiền bạc tụ tán thất thường, có tiền là có việc phải chi; gặp Không Kiếp thì kiếm tiền táo bạo nhưng rất dễ phá sản sụp đổ chớp nhoáng.
+
+10. Cung Tử Tức
+
+* Ý nghĩa thực chất: Thể hiện đường con cái (số lượng con, giới tính, mức độ hòa thuận với cha mẹ, khả năng thành đạt của con cái sau này) và các biến cố trong quá trình thụ thai sinh nở.
+* Dấu hiệu thực chiến:
+  * Là một trong ba cung tài sản: Cung Tử Tức đẹp biểu thị hậu vận hưng vượng, con cái hiếu thảo thành tài.
+  * Cung Tử Tức có các sao Thai (vòng Trường Sinh), Long Phượng, Khôi Việt: Dễ sinh con quý tử. Kỵ gặp Tang Hổ, Khốc Hư, Bạch Hổ, Địa Không, Địa Kiếp chủ về sảy thai, sinh non hoặc khó nuôi con thời thơ ấu.
+
+11. Cung Phu Thê
+
+* Ý nghĩa thực chất: Cho biết diện mạo, tính cách, hoàn cảnh gia đình, nghề nghiệp của người phối ngẫu (vợ hoặc chồng), mức độ hòa hợp, sự chung thủy, hạnh phúc gia đạo và số lần kết hôn trong đời.
+* Dấu hiệu thực chiến:
+  * Thiên Tướng, Thiên Phủ, Thái Âm (đối với nam): Người hôn phối đoan chính, biết thu vén việc nhà, giúp ích cho sự nghiệp của chồng.
+  * Kỵ gặp các bộ sao cô độc sát phạt: Thất Sát, Phá Quân hãm, Cô Thần, Quả Tú, Hóa Kỵ, Kình Đà làm cho hôn nhân trắc trở, bất đồng, dễ dẫn đến cảnh đứt gánh giữa đường.
+
+12. Cung Huynh Đệ
+
+* Ý nghĩa thực chất: Cho biết mối quan hệ tình cảm, sự đoàn kết tương trợ giữa anh chị em ruột thịt trong gia đình, số lượng anh em và khả năng hợp tác làm ăn kinh tế chung giữa các anh chị em.
+* Dấu hiệu thực chiến: Miếu vượng có cát tinh thì anh em hòa thuận, khá giả, tương trợ lẫn nhau. Hãm địa ngộ sát tinh thì anh em bất hòa, phân tranh quyền lợi tài sản, như mặt trăng mặt trời.
+
+PHẦN III: GIẢI NGHĨA CHI TIẾT 14 CHÍNH TINH & CÁC THẾ ĐỨNG ĐẶC THÙ
+
+Mỗi chính tinh trong Tử Vi Đẩu Số đều mang một bản chất ngũ hành, thuộc chòm Nam Đẩu hay Bắc Đẩu, có hóa khí đặc trưng và trạng thái miếu vượng đắc hãm quyết định trực tiếp đến cát hung:
+
+Bảng Tổng Hợp Thuộc Tính 14 Chính Tinh
+
+Chính Tinh	Nam / Bắc Đẩu	Ngũ Hành	Hóa Khí	Đặc Tính Chủ Đạo
+Tử Vi	Nam Bắc Đẩu	Âm Thổ	Đế Tinh	Quyền uy, phúc lộc, tôn quý, giải ách
+Thiên Cơ	Nam Đẩu	Âm Mộc	Thiện Tinh	Mưu lược, trí tuệ, hoạch định, phúc thọ
+Thái Dương	Bắc Đẩu	Dương Hỏa	Quý Tinh	Quang minh, chính trực, uy quyền, cha/chồng
+Vũ Khúc	Bắc Đẩu	Âm Kim	Tài Tinh	Quả quyết, tài lộc, cô quả, tài chính ngân hàng
+Thiên Đồng	Nam Đẩu	Dương Thủy	Phúc Tinh	Nhân hậu, an nhàn, hưởng thụ, cứu giải tai ương
+Liêm Trinh	Bắc Đẩu	Âm Hỏa	Tù / Đào Hoa Thứ	Liêm khiết, hình ngục, tư pháp hoặc nghệ thuật thẩm mỹ
+Thiên Phủ	Nam Đẩu	Dương Thổ	Tài / Lệnh Tinh	Kho tàng ngân khố, bao dung, điền sản tích lũy
+Thái Âm	Bắc Đẩu	Âm Thủy	Phú / Lộc Tinh	Nhu thuận, phú túc, điền sản bất động sản, mẹ/vợ
+Tham Lang	Bắc Đẩu	Thủy đới Mộc	Đào Hoa / Dục Vọng	Ngoại giao, linh biến, dục vọng, bạo phát (ngộ Hỏa/Linh)
+Cự Môn	Bắc Đẩu	Âm Thủy	Ám Tinh	Hùng biện, phản biện, thị phi, khẩu thiệt, luật sư
+Thiên Tướng	Nam Đẩu	Dương Thủy	Ấn Tinh	Phò tá trung trinh, ấn tín công quyền, trọng nghĩa khinh tài
+Thiên Lương	Nam Đẩu	Dương Mộc	Ấm / Thọ Tinh	Cứu khốn phò nguy, y dược, giáo dục, gặp hung hóa cát
+Thất Sát	Nam Đẩu	Dương Kim	Dũng / Quyền Tinh	Sát phạt, uy dũng, độc lập, quân sự võ nghiệp
+Phá Quân	Bắc Đẩu	Âm Thủy	Hao / Dũng Tinh	Tiên phong phá cũ lập mới, ưa hội Lục Sát Tinh bạo phát
+
+1. Sao TỬ VI (Đế Tinh - Vua Của Các Vì Sao)
+
+* Bản chất: Thuộc chòm Nam Bắc Đẩu, ngũ hành Âm Thổ, là biểu tượng tối cao của quyền lực vương quyền, ban phát tài lộc, phúc đức và có khả năng cứu giải tai ương cực mạnh.
+* Vị trí miếu hãm:
+  * Miếu địa: Tỵ, Ngọ, Dần, Thân.
+  * Vượng địa: Thìn, Tuất.
+  * Đắc địa: Sửu, Mùi.
+  * Bình hòa: Tý, Mão, Dậu, Hợi. (Tử Vi tuyệt đối không có vị trí Hãm địa).
+* Đặc tính tính cách & năng lực: Điềm đạm, đôn hậu, có tài tổ chức lãnh đạo, thích ra lệnh, muốn người khác phục tùng theo ý mình nhưng giàu lòng vị tha.
+* Cát hung khi phối hợp sao:
+  * Rất ưa: Bộ Quân thần khánh hội gồm Tả Phù, Hữu Bật (quần thần phò tá), Văn Xương, Văn Khúc (văn quan), Lộc Tướng Ấn (binh quyền tài chính), Khôi Việt, Hóa Khoa. Vua gặp quần thần như rồng thêm mây, phú quý tột bực.
+  * Kỵ: Tử Vi đứng đơn độc không có Tả Hữu (gọi là Cô quân), nếu lại hội ngộ Tứ sát Kình Đà Hỏa Linh thì trở thành "Hôn quân", dễ bị gian thần lừa gạt, tính tình ngang bướng, cô độc. Tử Vi chế ngự được Hỏa Tinh, Linh Tinh, biến hung thành bề tôi phục vụ cho mình.
+* Các thế đứng kinh điển của Tử Vi:
+  1. Tử Vi - Thiên Phủ đồng cung tại Dần, Thân: Vua tôi hòa hợp, nắm giữ cả quyền lực lẫn tiền bạc kho tàng, cách cục phú quý bậc nhất, rất hợp làm chủ doanh nghiệp lớn hoặc nguyên thủ.
+  2. Tử Vi độc thủ tại Tý, Ngọ (Cực Hướng Ly Minh cách tại Ngọ): Thế đứng quân vương trị vì, tại Ngọ quang minh rực rỡ, tính cách uy nghiêm; tại Tý hơi trầm mặc và dễ rơi vào cảm giác cô đơn nơi đỉnh cao.
+  3. Tử Vi - Phá Quân đồng cung tại Sửu, Mùi: Vua đích thân mang gươm đi trận tiền, tính cách quyết liệt, tiên phong mở lối, dám nghĩ dám làm, cuộc đời nhiều phen thăng trầm biến động.
+  4. Tử Vi - Tham Lang đồng cung tại Mão, Dậu: Vua say đắm tửu sắc (Đắc Kỷ Trụ Vương), tâm tính mâu thuẫn giữa dục vọng vật chất và xu hướng giác ngộ tâm linh tôn giáo.
+  5. Tử Vi - Thiên Tướng đồng cung tại Thìn, Tuất: Vua lâm La Võng (lưới trời lưới đất), tài năng bị kìm hãm, thường phải đứng ở cương vị thừa hành dưới một người trên muôn người.
+  6. Tử Vi - Thất Sát đồng cung tại Tỵ, Hợi: Vua ngự giá thân chinh, sát phạt quyết đoán, biến đại sát tinh thành trợ thủ đắc lực.
+
+2. Sao THIÊN CƠ (Mưu Lược & Trí Tuệ)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Âm Mộc, hóa khí là Thiện Tinh, chủ quản về mưu trí, phân tích, hoạch định chiến lược và phúc thọ. Được ví như quân sư Tiêu Hà, Gia Cát Lượng hay Công Tôn Sách.
+* Vị trí miếu hãm:
+  * Miếu địa: Thìn, Tuất, Mão.
+  * Vượng địa: Tỵ, Thân.
+  * Đắc địa: Tý, Ngọ, Sửu, Mùi.
+  * Hãm địa: Dần, Dậu, Hợi.
+* Đặc tính: Thông minh xuất chúng, giỏi ứng biến, tính toán chu toàn mọi việc, mềm mỏng nhưng thiếu tính quyết đoán liều lĩnh để làm tướng tiên phong; hợp làm cố vấn, tham mưu, lập trình, nghiên cứu, giáo dục.
+* Tương tác sao:
+  * Rất sợ 8 hung tinh: Địa Không, Địa Kiếp, Kình Dương, Đà La, Hỏa Tinh, Linh Tinh, Hóa Kỵ, Thiên Hình. Thiên Cơ bản chất nhạy cảm, ngộ Không Kiếp thì tâm trí toan tính mưu mô xảo quyệt (giao trứng cho ác), dễ rơi vào cảnh tán gia bại sản hoặc tai họa bất ngờ.
+  * Đồng cung với Cự Môn tại Mão Dậu (Cơ Cự Mão Dậu cách): Giàu có về kinh doanh buôn bán, hoạt ngôn, nhưng đa nghi.
+
+3. Sao THÁI DƯƠNG (Vầng Nhật Quang - Uy Quyền)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Dương Hỏa, hóa khí là Quý Tinh, đại diện cho mặt trời, quang minh chính đại, cha và chồng.
+* Vị trí miếu hãm:
+  * Miếu địa: Tỵ, Ngọ.
+  * Vượng địa: Dần, Mão, Thìn.
+  * Đắc địa: Sửu, Mùi.
+  * Hãm địa: Thân, Dậu, Tuất, Hợi, Tý.
+  * Quy luật: Thái Dương mọc ban ngày (từ Dần đến Ngọ) là đắc cách, sáng sủa; đóng ở các cung ban đêm (từ Thân đến Tý) là hãm địa, mất ánh sáng.
+* Đặc tính: Chính trực, khảng khái, hào sảng, dám nghĩ dám làm, thông minh đĩnh đạc, tính tình bộc trực. Rất ưa bộ Lộc Tướng Ấn để củng cố quyền lực công danh.
+* Mệnh Hạn: Người mệnh Thái Dương gặp năm Can Giáp (có Hóa Kỵ) cực kỳ bất lợi cho mắt, danh dự và sức khỏe của cha; gặp năm Can Canh (có Hóa Lộc) thì tài lộc thăng tiến rực rỡ.
+
+4. Sao VŨ KHÚC (Tài Tinh & Cô Tinh)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Âm Kim, hóa khí là Tài Tinh và Cô Quả chi tinh. Vừa là ngôi sao tiền bạc thực tế, vừa mang mầm mống cô độc.
+* Vị trí miếu hãm: Miếu tại Thìn, Tuất, Sửu, Mùi; Vượng tại Tý, Ngọ, Dần, Thân; Hãm địa tại Tỵ, Hợi, Mão, Dậu.
+* Đặc tính: Quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi kinh doanh tài chính ngân hàng. Cực kỳ ưa đóng tại các cung tài sản (Tài Bạch, Điền Trạch), tối kỵ đóng tại cung Lục thân (Phu Thê, Huynh Đệ, Tử Tức) vì chủ về hình khắc, ngắn ngủi duyên phận (khúc dã, đoản dã).
+* Tương tác: Kỵ Hỏa Tinh, Linh Tinh (chủ về vì tiền bạc mà rước họa sát thân, bị cướp đoạt); kỵ Kình Đà xung chiếu.
+
+5. Sao THIÊN ĐỒNG (Phúc Tinh & Giải Ách)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Dương Thủy, hóa khí là Phúc Tinh, chủ quản cung Phúc Đức.
+* Vị trí miếu hãm: Miếu tại Dần, Thân; Vượng tại Tý; Đắc địa tại Mão, Hợi; Hãm địa tại Thìn, Tuất, Sửu, Mùi, Ngọ, Dậu.
+* Đặc tính: Nhân hậu, lương thiện, yêu đời, thích an nhàn, có khả năng hóa giải hung nguy. Dù đắc hay hãm vẫn giữ được cốt cách phúc hậu.
+* Đặc thù: Thiên Đồng không quá sợ sát tinh; nếu hội nhiều sát tinh lại có xu hướng chuyển hóa sang nghiên cứu huyền học, tâm linh, y học. Đẹp nhất khi hội Thiên Lương tại Dần Thân (Đồng Lương đồng cung, phúc thọ viên mãn).
+
+6. Sao LIÊM TRINH (Tù Tinh & Đào Hoa Thứ)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Âm Hỏa, hóa khí là Tù Tinh và Đào Hoa Thứ. Vừa mang tính hình ngục, nghiêm minh, vừa mang tính nghệ thuật, thẩm mỹ thu hút phái yếu.
+* Vị trí miếu hãm: Miếu tại Thìn, Tuất; Vượng tại Tý, Ngọ, Dần, Thân; Hãm địa tại Tỵ, Hợi, Mão, Dậu.
+* Đặc tính:
+  * Khi sáng sủa hoặc hội cát võ tinh: Làm việc liêm khiết, nghiêm khắc, rất hợp ngành tư pháp, tòa án, viện kiểm sát, công an, quân đội. Nếu hội Xương Khúc, Đào Hồng lại trở thành nghệ sĩ, kiến trúc sư, người có gu thẩm mỹ tuyệt vời.
+  * Khi lạc hãm ngộ sát kỵ: Bản tính nóng nảy, cố chấp. Ngộ Hóa Kỵ tại Tỵ Hợi, Tý Ngọ rất dễ dính vòng lao lý, tù tội kiện tụng. Đồng cung Thất Sát tại Sửu Mùi đi ra đường dễ gặp tai nạn thương tích (Lộ thượng mai thi cách).
+
+7. Sao THIÊN PHỦ (Lệnh Tinh - Kho Tàng Của Trời)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Dương Thổ, hóa khí là Tài Lộc và Quyền Lệnh, được ví như Hoàng hậu, thủ kho ngân khố quốc gia.
+* Vị trí miếu hãm: Miếu tại Dần, Thân, Tý, Ngọ; Vượng tại Thìn, Tuất; Đắc địa tại Tỵ, Hợi; Bình hòa tại Mão, Dậu, Sửu, Mùi. (Thiên Phủ không có vị trí Hãm địa).
+* Đặc tính: Cẩn trọng, trầm tĩnh, chu đáo, giỏi tích lũy, bao dung độ lượng, có phong thái quý phái. Rất ưa đóng tại Điền Trạch, Tài Bạch.
+* Điều kiện tối kỵ: Thiên Phủ là kho tiền, tối kỵ bị Tuần, Triệt án ngữ hoặc Địa Không, Địa Kiếp xâm phạm. Khi đó kho bị đục thủng (Kho rỗng - Không Kiếp / Kho lộ - Tuần Triệt), chủ về phá sản, tiêu tán tài sản lớn, tâm tính chuyển sang mưu mẹo.
+
+8. Sao THÁI ÂM (Vầng Nguyệt Lượng - Phú Tinh)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Âm Thủy, hóa khí là Phú Tinh và Tài Lộc, đại diện cho mặt trăng, mẹ, vợ và con gái.
+* Vị trí miếu hãm: Miếu tại Dậu, Tuất, Hợi; Vượng tại Thân, Tý; Đắc địa tại Sửu, Mùi; Hãm địa tại Dần, Mão, Thìn, Tỵ, Ngọ. (Sáng từ chiều tối Thân đến đêm Tý, tối từ sáng Dần đến Ngọ).
+* Đặc tính: Nhu thuận, thanh lịch, lãng mạn, tinh tế, có duyên kinh doanh bất động sản. Hợp người sinh ban đêm và sinh tuần trăng sáng (từ mùng 8 đến 15 âm lịch). Lạc hãm kỵ gặp Hóa Kỵ, chủ về mẹ đau ốm sớm, vợ chồng lận đận.
+
+9. Sao THAM LANG (Đào Hoa Tinh & Họa Phúc Chi Tinh)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Thủy đới Mộc, hóa khí là Đào Hoa và Dục Vọng, chủ về họa phúc, uy quyền và tuổi thọ.
+* Vị trí miếu hãm: Miếu tại Sửu, Mùi; Vượng tại Thìn, Tuất; Đắc địa tại Dần, Thân; Hãm địa tại Tý, Ngọ, Mão, Dậu, Tỵ, Hợi.
+* Đặc tính: Thông minh linh hoạt, tài ngoại giao bậc thầy, tham vọng lớn, nhiều ham muốn vật chất và tình cảm.
+* Cách cục đắc địa phi thường: Tham Lang là sao duy nhất cực kỳ ưa Hỏa Tinh và Linh Tinh.
+  * Tham Hỏa tương phùng / Tham Linh tịnh thủ tại Thìn, Tuất, Sửu, Mùi: Chủ về bạo phát tài lộc, phát tài chớp nhoáng từ kinh doanh, quân sự, phú quý vang dội.
+  * Hãm địa tại Tý (Phiếm Thủy Đào Hoa): Trôi dạt phóng đãng, ham mê thanh sắc; tại Tỵ Hợi đồng cung Liêm Trinh: Dễ vướng vào vòng lao lý vì sắc dục hoặc tiền bạc phi pháp.
+
+10. Sao CỰ MÔN (Ám Tinh - Khẩu Thiệt Hùng Biện)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Âm Thủy, hóa khí là Ám Tinh, chủ về thị phi, nghi ngờ, tranh luận và tài năng ăn nói.
+* Vị trí miếu hãm: Miếu tại Mão, Dậu; Vượng tại Dần, Thân; Đắc địa tại Hợi, Tý, Ngọ; Hãm địa tại Thìn, Tuất, Sửu, Mùi, Tỵ.
+* Đặc tính: Khả năng hùng biện sắc bén, tư duy phản biện cao, đa nghi, dễ gây hiểu lầm khẩu thiệt.
+* Phối hợp sao:
+  * Cần có Thái Dương miếu vượng chiếu sáng để giải tỏa tính ám muội. Rất ưa Xương Khúc, Hóa Lộc, Hóa Quyền, Tấu Thư, Bạch Hổ (trở thành luật sư, thẩm phán, nhà ngoại giao, chính trị gia xuất chúng).
+  * Thế cục Thạch Trung Ẩn Ngọc (Ngọc ẩn trong đá) tại Tý, Ngọ: Có Hóa Lộc, Hóa Khoa hoặc Hóa Quyền hội tụ là cách đại phú đại quý, tài năng xuất chúng.
+  * Tối kỵ Kình Dương đồng cung (Cự Kình chung thân ải trệ): Dễ bị tai nạn thương tật hoặc bế tắc cuộc đời.
+
+11. Sao THIÊN TƯỚNG (Ấn Tinh - Tướng Soái Trung Trinh)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Dương Thủy, hóa khí là Ấn Tinh, biểu tượng của con dấu quyền lực, sự phò tá, chính nghĩa và lòng trung thành.
+* Vị trí miếu hãm: Miếu tại Dần, Thân; Vượng tại Thìn, Tuất, Tý, Ngọ; Đắc địa tại Sửu, Mùi, Tỵ, Hợi; Hãm địa tại Mão, Dậu.
+* Đặc tính: Cẩn trọng, điềm đạm, trọng danh dự hơn tiền bạc (trọng nghĩa khinh tài), chung thủy, có tinh thần gánh vác việc chung. Chỉ hợp làm vị trí phó tướng, thừa hành, không hợp làm người đứng đầu tranh quyền đoạt lợi.
+* Nguyên tắc luận đoán độc nhất vô nhị - Giáp Cung: Thiên Tướng chịu ảnh hưởng quyết định bởi hai cung kẹp hai bên (Cung trước luôn là Thiên Lương, cung sau luôn là Cự Môn):
+  1. Cách Cục Tài Ấm Giáp Ấn (Cát cách): Một bên có Thiên Lương (Ấm tinh), một bên có Cự Môn hóa thành Lộc (Hóa Lộc hoặc Lộc Tồn). Thiên Tướng được hưởng trọn vẹn quyền uy, tiền tài, phú quý vô song.
+  2. Cách Cục Hình Kỵ Giáp Ấn (Hung cách): Một bên có Kình Dương (Hình tinh) hoặc Thiên Lương ngộ sát, một bên có Hóa Kỵ (Ám tinh kẹp vào). Thiên Tướng bị trói chặt, chủ về tai họa hình ngục, tai nạn bất ngờ, mất chức, thương tật vùng đầu mặt.
+
+12. Sao THIÊN LƯƠNG (Ấm Tinh & Thọ Tinh)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Dương Mộc, hóa khí là Ấm Tinh (che chở) và Thọ Tinh, chủ về phụ mẫu, y tế, giáo dục, cứu khốn phò nguy.
+* Vị trí miếu hãm: Miếu tại Ngọ, Thìn, Tuất; Vượng tại Tý, Mão, Dần, Thân; Đắc địa tại Sửu, Mùi; Hãm địa tại Dậu, Tỵ, Hợi.
+* Đặc tính: Lương thiện, bác ái, khoan dung, hiếu học, có phong thái đạo mạo quân tử, có duyên đặc biệt với y học, dược lý, tâm linh.
+* Đặc tính kỳ lạ - "Gặp Hung Hóa Cát": Thiên Lương có năng lực giải trừ tai ách, nhưng để giải trừ thì đương số thường phải trải qua nguy nan trước rồi mới thoát nạn sau. Đóng tại cung Phúc Đức, Điền Trạch rất phát phúc, được hưởng gia sản tổ nghiệp. Hội tụ cùng Thái Dương tại Mão (Nhật Chiếu Lôi Môn): Danh tài rực rỡ, vang danh thiên hạ.
+
+13. Sao THẤT SÁT (Dũng Tinh - Tướng Soái Tiền Tuyến)
+
+* Bản chất: Thuộc Nam Đẩu tinh, ngũ hành Dương Kim (đới Hỏa), hóa khí là Quyền Uy và Sát Phạt, biểu tượng của thanh bảo kiếm sắc bén thời chiến.
+* Vị trí miếu hãm: Miếu tại Dần, Thân, Tý, Ngọ; Vượng tại Tỵ, Hợi; Đắc địa tại Sửu, Mùi; Hãm địa tại Thìn, Tuất, Mão, Dậu.
+* Đặc tính: Quyết đoán, dũng cảm, dám đương đầu với bão tố, cô độc, nóng nảy. Đóng tại cung Lục thân chủ về hình khắc, xa cách.
+* Cát hung:
+  * Thất Sát ngộ Kình Dương, Đà La đắc địa hoặc hội Lộc Tướng Ấn: Lập võ công hiển hách, thăng tiến nhanh trong quân sự, an ninh, y khoa phẫu thuật.
+  * Hãm địa ngộ Hóa Kỵ, Không Kiếp: Thất bại cay đắng, dễ vướng thương tích tàn tật. Thất Sát tại Tý Ngọ (Thất Sát Triều Đẩu): Uy phong lẫm liệt, tài năng cái thế.
+
+14. Sao PHÁ QUÂN (Hao Tinh - Tiên Phong Phá Cũ Đổi Mới)
+
+* Bản chất: Thuộc Bắc Đẩu tinh, ngũ hành Âm Thủy, hóa khí là Hao Tinh và Dũng Tinh, biểu tượng của người dũng sĩ cảm tử, phá tan trật tự cũ để lập lại cái mới.
+* Vị trí miếu hãm: Miếu tại Tý, Ngọ; Vượng tại Sửu, Mùi; Đắc địa tại Thìn, Tuất; Hãm địa tại Dần, Thân, Mão, Dậu, Tỵ, Hợi.
+* Đặc tính: Liều lĩnh, ngang tàng, ưa đổi mới, thích mạo hiểm, tiêu tiền phóng khoáng. Cung Phu Thê kỵ Phá Quân vì chủ về duyên phận trắc trở, vợ chồng dễ đôi lần ly tán.
+* Nguyên lý độc đáo về Sát Tinh: Khác với các sao khác sợ Lục sát tinh, Phá Quân ngũ hành Âm Thủy lại rất ưa hội Lục Sát Tinh (nhất là Địa Không, Địa Kiếp, Kình Đà) vì Thủy chế ngự được Hỏa và Kim sinh Thủy. Phá Quân gặp Không Kiếp như mãnh thú có nanh vuốt, thị uy quyền thế, lập nên sự nghiệp kinh doanh lớn hoặc quân công hiển hách trong thời loạn.
+
+PHẦN IV: HỆ THỐNG VẬN HẠN ĐA TẦNG - CÔNG THỨC & THỰC HÀNH GIẢI ĐOÁN
+
+Trong Tử Vi Đẩu Số, xem vận hạn đòi hỏi sự tổng hợp đồng thời của 4 tầng không gian và thời gian từ vĩ mô đến vi mô:
+
+Cấu Trúc Khung Phân Tầng Vận Hạn
+
+1. Đại Hạn (10 Năm): Môi trường sống tổng quan, đo lường Thiên thời - Địa lợi thông qua tương quan Ngũ hành Tam hợp tuổi và Tam hợp đại hạn.
+2. Tiểu Hạn (1 Năm): Không gian diễn biến, phản ánh các đầu mối sự việc phát sinh trong năm (tính theo Tam hợp tuổi, phân định Nam thuận Nữ nghịch).
+3. Lưu Niên Đại Hạn (1 Năm): Kết quả thực tế đạt được trong năm (tính theo số tuổi thực của đương số khởi từ gốc Đại hạn).
+4. Lưu Thái Tuế & 9 Sao Lưu: Yếu tố kích hoạt đánh thức cung vị, định vị chính xác phương diện đời sống bùng nổ cát hung cụ thể.
+
+Chương 1: Đại Hạn (10 Năm) & Đánh Giá Thiên Thời Theo Phái Thiên Lương
+
+1. Phương Pháp An Đại Hạn:
+  * Khởi điểm số tuổi bằng chính số Cục tại cung Mệnh (Thủy 2, Mộc 3, Kim 4, Thổ 5, Hỏa 6).
+  * Dương Nam, Âm Nữ: Chạy thuận chiều kim đồng hồ qua các cung phụ cận.
+  * Âm Nam, Dương Nữ: Chạy nghịch chiều kim đồng hồ.
+2. Quy Tắc Đánh Giá Thiên Thời Bằng Ngũ Hành Tam Hợp Của Cụ Thiên Lương:
+  * So sánh giữa Ngũ Hành Tam Hợp Tuổi (Bản mệnh gốc) với Ngũ Hành Tam Hợp Của Đại Hạn đang đi qua:
+    * Đại Hạn sinh Tam Hợp Tuổi: Đắc Thiên thời, được hoàn cảnh nâng đỡ tuyệt đối, làm 1 hưởng 10, may mắn hanh thông.
+    * Đại Hạn đồng hành với Tam Hợp Tuổi: Hòa hợp, thuận lợi, giữ vững thành quả.
+    * Tam Hợp Tuổi khắc Tam Hợp Đại Hạn: Vất vả, phải nỗ lực vượt bậc tự lực cánh sinh mới giành được thắng lợi.
+    * Đại Hạn khắc Tam Hợp Tuổi: Thất thời sa cơ, nghịch cảnh bủa vây, tuyệt đối không nên mưu sự lớn, nên an phận thủ thường.
+    * Tam Hợp Tuổi sinh xuất cho Tam Hợp Đại Hạn: Hao tâm tổn tứ, hao tài tốn lực vì người khác, thành quả bị san sẻ.
+
+Chương 2: Tiểu Hạn & Lưu Niên Đại Hạn - Diễn Biến & Kết Quả 1 Năm
+
+1. Tiểu Hạn (1 Năm Diễn Biến):
+  * Cách an: Dựa vào Tam Hợp Tuổi của đương số (Thân Tý Thìn, Dần Ngọ Tuất, Tỵ Dậu Sửu, Hợi Mão Mùi).
+    * Lấy chi cuối cùng của Tam Hợp làm gốc, tìm cung xung chiếu với nó.
+    * Ghi tên chi năm sinh của đương số vào cung xung chiếu đó làm khởi điểm.
+    * Từ cung khởi điểm: Nam đi thuận, Nữ đi nghịch chiều kim đồng hồ lần lượt ghi 12 địa chi vào 12 cung.
+  * Ý nghĩa: Cung Tiểu Hạn mang địa chi của năm xem hạn cho biết toàn bộ các diễn biến, hoạt động, mưu sự xoay quanh vấn đề gì trong năm đó.
+2. Lưu Niên Đại Hạn (1 Năm Kết Quả):
+  * Cách an: Khởi từ cung gốc của Đại Hạn 10 năm hiện tại.
+    * Tuổi đầu tiên của Đại Hạn tại cung gốc. Tuổi kế tiếp nhảy sang cung xung chiếu.
+    * Nếu Đại Hạn chạy nghịch: Lùi 1 cung theo chiều thuận, rồi tiến thuận/nghịch theo từng tuổi kế tiếp nối nhau.
+  * Ý nghĩa: Cho biết kết quả cuối cùng của sự việc. Tiểu Hạn có thể diễn biến gặp khó khăn (nhiều sát tinh), nhưng Lưu Niên Đại Hạn hội tụ cát tinh, tài tinh thì kết cục vẫn gặt hái thành công. Ngược lại, nếu Lưu Niên Đại Hạn rơi vào cung Tật Ách hay ngộ hung bại tinh thì diễn biến dù khởi sắc, kết quả vẫn tiêu tán, thất bại.
+
+Chương 3: Hệ Thống 9 Sao Lưu Phái Thiên Lương & Kỹ Thuật Lưu Mệnh 12 Cung
+
+Khi năm mới chuyển giao, các sao lưu di chuyển vào địa bàn làm "thức tỉnh" các cung vị đang ngủ yên:
+
+1. Lưu Thái Tuế (Quan đương niên hành khiển cai quản năm):
+  * Địa chi năm xem hạn là gì thì Lưu Thái Tuế đóng đúng tại cung có địa chi đó.
+  * Lưu Thái Tuế kích động cung vị mạnh nhất. Rơi vào cung nào thì biến cố năm đó xoay quanh cung chức đó (vào Tài lo tiền bạc, vào Quan lo sự nghiệp, vào Phụ Mẫu lo cha mẹ).
+2. Lưu Tang Môn & Lưu Bạch Hổ:
+  * Từ cung có Lưu Thái Tuế, bỏ cách 1 cung theo chiều thuận an Lưu Tang Môn (chủ buồn phiền, tang chế, thay đổi chỗ làm).
+  * Cung xung chiếu trực tiếp với Lưu Tang Môn là Lưu Bạch Hổ (chủ bệnh tật, máu huyết, kiện tụng, sảy thai).
+3. Lưu Lộc Tồn, Lưu Kình Dương, Lưu Đà La:
+  * An Lưu Lộc Tồn theo Thiên Can năm xem hạn (Canh tại Thân, Tân tại Dậu, Giáp tại Dần...). Đem lại cơ hội tài lộc, giải trừ tai họa.
+  * Cung trước Lưu Lộc Tồn luôn có Lưu Kình Dương (tai họa bộc phát, va đập, hình thương mổ xẻ, tranh chấp lộ diện).
+  * Cung sau Lưu Lộc Tồn luôn có Lưu Đà La (tai họa ngấm ngầm, bệnh âm thầm, chậm trễ, tiểu nhân mưu hại sau lưng).
+4. Lưu Thiên Mã, Lưu Thiên Khốc, Lưu Thiên Hư:
+  * Lưu Thiên Mã: Lấy chi đầu của tam hợp năm xem hạn xung chiếu sang. Chủ về di chuyển, mua sắm xe cộ, đổi việc.
+  * Lưu Thiên Khốc, Thiên Hư: Khởi từ cung Ngọ, đếm thuận đến năm xem hạn an Thiên Hư (hư hỏng, hao tổn), đếm nghịch an Thiên Khốc (nước mắt, buồn bã).
+5. Kỹ Thuật "Lưu Mệnh Xoay 12 Cung" Để Đoán Vận Hạn Thần Tốc:
+  * Đặt cung có Lưu Thái Tuế làm Cung Lưu Mệnh.
+  * Từ Lưu Mệnh, lần lượt an nghịch 12 cung lưu: Lưu Mệnh \rightarrow Lưu Huynh Đệ \rightarrow Lưu Phu Thê \rightarrow Lưu Tử Tức \rightarrow Lưu Tài \rightarrow Lưu Tật \rightarrow Lưu Di \rightarrow Lưu Nô \rightarrow Lưu Quan \rightarrow Lưu Điền \rightarrow Lưu Phúc \rightarrow Lưu Phụ Mẫu.
+  * Đem ý nghĩa cung lưu chồng lên cung vị cố định để giải đoán biến cố nhanh chóng và chính xác gấp bội.
+
+Chương 4: Hạn Tuổi, Mệnh Hạn & Tứ Hóa Lưu Theo Thiên Can
+
+* Mệnh Hạn: Là sự tương tác giữa sao thủ mệnh cố định với các sao Tứ Hóa lưu động hàng năm:
+  * Người mệnh có Thái Dương: Rất sợ năm Can Giáp (có Hóa Kỵ lưu); mừng năm Can Canh (có Hóa Lộc lưu).
+  * Người mệnh có Thiên Cơ: Sợ năm Can Mậu (có Hóa Kỵ); mừng năm Can Ất (có Hóa Lộc).
+  * Người mệnh có Vũ Khúc: Sợ năm Can Nhâm (có Hóa Kỵ); mừng năm Can Kỷ (có Hóa Lộc).
+  * Người mệnh có Liêm Trinh: Sợ năm Can Bính (có Hóa Kỵ - dễ tù tội, biến động công việc); mừng năm Can Giáp (có Hóa Lộc).
+  * Người mệnh có Thái Âm: Sợ năm Can Ất (có Hóa Kỵ); mừng năm Can Đinh (có Hóa Lộc).
+  * Người mệnh có Cự Môn: Sợ năm Can Đinh (có Hóa Kỵ - khẩu thiệt, thị phi); mừng năm Can Tân (có Hóa Lộc).
+  * Người mệnh có Thiên Đồng: Sợ năm Can Canh (có Hóa Kỵ); mừng năm Can Bính (có Hóa Lộc).
+  * Người mệnh có Tham Lang: Sợ năm Can Quý (có Hóa Kỵ); mừng năm Can Mậu (có Hóa Lộc).
+
+PHẦN V: CẨM NANG THỰC CHIẾN GIẢI ĐOÁN CÁC CHUYÊN ĐỀ ĐỜI SỐNG
+
+1. Chuyên Đề Hôn Nhân: Cách Cục Đa Thê, Đa Phu & Dấu Hiệu Đổ Vỡ
+
+1. Dấu hiệu tại cung Mệnh và Phu Thê:
+  * Mệnh có Hoa Cái (tại Tứ Mộ Thìn Tuất Sửu Mùi): Mặc định cung Phu Thê luôn có Thiên Mã (tại Tứ Sinh). Nếu cung Phu Thê bị dính thêm Tuần Không hoặc Triệt Không (như tuổi Tân Mùi, Tân Mão, Tân Hợi có Triệt tại cung Thê) \rightarrow Chắc chắn hôn nhân đổ vỡ, nhiều lần lập gia đình.
+  * Mệnh có Kình Dương: Cung Phu Thê mặc định luôn có Đà La tọa thủ. Nếu cung Phu Thê ngộ thêm Tang Môn, Cô Thần, Quả Tú \rightarrow Vợ chồng trắc trở, muộn màng, dễ chia lìa.
+  * Mệnh Dương Lương tại Mão, Dậu: Cung Phu Thê có Đồng Cự ngộ Hóa Kỵ (đặc biệt người sinh năm Can Đinh hoặc Can Canh) \rightarrow 90% dẫn đến hai lần đò vì bất đồng ngôn ngữ, cãi vã triền miên.
+  * Mệnh có Thiên Tướng: Phu Thê có Liêm Tham ngộ Hóa Kỵ (tuổi Quý hoặc Bính) \rightarrow Chồng hoặc vợ ăn chơi phóng túng, dễ vướng vòng lao lý, dẫn đến cảnh gia đình ly tán.
+  * Cung Phu Thê ngộ Thất Sát, Phá Quân hãm địa hội Hóa Kỵ.
+2. Năm Cách Cục Con Dị Bào (Con Khác Dòng) Tại Cung Tử Tức: Để quyết đoán một người có hai đời vợ/chồng hay không, ngoài cung Phu Thê bắt buộc phải đối chiếu cung Tử Tức xem có xuất hiện 1 trong 5 cách cục con dị bào:
+  * Cách 1: Cự Môn - Thiên Cơ đồng cung tại Mão, Dậu.
+  * Cách 2: Thiên Tướng đồng cung với sao Tuyệt, hoặc ngộ Thai, Tả Phụ, Hữu Bật.
+  * Cách 3: Bộ Thai - Phục - Vượng - Tướng (sao Thai, Phục Binh, Đế Vượng, Tướng Quân).
+  * Cách 4: Bộ Tướng Quân - Phục Binh xung chiếu nhau giữa hai cung Tử Tức và Điền Trạch.
+  * Cách 5: Sao Thái Âm đồng cung Thiên Phúc.
+
+2. Chuyên Đề Hạn Hỷ: Xem Năm Có Tình Duyên & Cưới Xin
+
+1. 5 Sao Lưu Tình Duyên (Kích hoạt tình cảm khi nhập vào Mệnh, Thân, hoặc Nô Bộc):
+  * Lưu Đào Hoa: An theo tam hợp năm xem hạn (Dần Ngọ Tuất an tại Mão; Thân Tý Thìn an tại Dậu; Tỵ Dậu Sửu an tại Ngọ; Hợi Mão Mùi an tại Tý).
+  * Lưu Hồng Loan: Khởi từ cung Mão là Tý, đếm nghịch đến chi năm xem hạn.
+  * Lưu Hỷ Thần: Sao thứ 8 trong vòng Lộc Tồn.
+  * Lưu Long Đức: Sao thứ 8 trong vòng Thái Tuế.
+  * Lưu Nguyệt Đức: Khởi từ cung Tỵ là Tý, đếm thuận đến chi năm xem hạn.
+2. Dấu Hiệu Tiến Tới Cưới Xin Cụ Thể:
+  * Khi Mệnh, Thân, Nô đã có 1 trong 5 sao lưu tình duyên, cung Tiểu Hạn trong năm phải xuất hiện các sao hôn lễ: Thanh Long, Long Trì, Phượng Các (hoặc Thiên Hỷ).
+  * Đồng thời, Lưu Niên Đại Hạn rơi vào các cung: Mệnh, Thân, Phu Thê, Quan Lộc, Tài Bạch \rightarrow Đương số chính thức tổ chức đám cưới. Nếu Lưu Niên rơi vào Huynh Đệ hoặc Phụ Mẫu thì là anh chị em hoặc cha mẹ tái giá.
+  * Trường hợp chắc chắn 100%: Cung Tiểu Hạn và Lưu Niên Đại Hạn trùng phùng tại 1 cung có cát tinh và sao hỷ.
+3. Ba Sao Cản Trở Hôn Nhân & Điều Cấm Kỵ Tuyệt Đối:
+  * Ba sao cản trở nặng nề: Cô Thần, Quả Tú, Đẩu Quân.
+  * Điều cấm kỵ tuyệt đối: Nghiêm cấm cưới xin vào năm có Lưu Thái Tuế đồng cung với sao Cô Thần hoặc sao Quả Tú cố định. 100% các cuộc hôn nhân cưới vào năm này đều rơi vào cảnh lạnh nhạt, bất hạnh, cô đơn và sớm muộn cũng dẫn tới ly hôn.
+
+3. Chuyên Đề Sinh Con & Xem Hạn Thụ Thai
+
+* Điều kiện thụ thai thành công:
+  * Đại Hạn hoặc Tiểu Hạn rơi vào tam hợp của sao Thai (thuộc vòng Trường Sinh), hoặc hội tụ Long Trì, Phượng Các, Khôi Việt, Hóa Quyền, Thái Âm, Thái Dương miếu vượng.
+  * Cung Tử Tức có Lưu Lộc Tồn hoặc Lưu Hóa Lộc ghé thăm: Rất dễ đậu thai, sinh con quý tử.
+* Dấu hiệu cảnh báo nguy cơ hỏng thai, sảy thai, sinh non:
+  * Cung Tử Tức năm đó có Lưu Bạch Hổ đồng cung Lưu Thiên Khốc (máu huyết, nước mắt tang thương).
+  * Cung Tử Tức ngộ Lưu Thiên Hư (hư hỏng thai) đi cùng Kình Đà, Không Kiếp.
+  * Gặp các tổ hợp này bắt buộc thai phụ phải đi khám bệnh viện thường xuyên, giữ gìn tuyệt đối để tránh biến cố băng huyết, sảy thai.
+* Dự đoán giới tính con:
+  * Cung Tử Tức miếu vượng tại cung Dương, chính tinh là Nam Đẩu tinh (Thất Sát, Thiên Lương, Thiên Cơ, Thiên Đồng, Thiên Tướng) \rightarrow Xác suất cao sinh con trai.
+  * Cung Tử Tức tại cung Âm, chính tinh là Bắc Đẩu tinh (Thái Âm, Tham Lang, Cự Môn, Vũ Khúc, Liêm Trinh, Phá Quân) \rightarrow Xác suất cao sinh con gái.
+
+4. Chuyên Đề Hiện Tượng Truyền Tinh & Truyền Cung
+
+* Hiện tượng Truyền Cung:
+  * Cung Phu Thê của người chồng đóng tại cung nào (ví dụ cung Dần), mà Cung Mệnh của người vợ thực tế cũng đóng đúng tại cung Dần trên lá số của cô ấy \rightarrow Đó là thế truyền cung vợ chồng gắn bó keo sơn.
+  * Tương tự, cung Tử Tức của cha mẹ đóng tại cung Sửu, đứa con sinh ra có cung Mệnh đóng tại Sửu \rightarrow Con truyền cung với cha mẹ.
+* Hiện tượng Truyền Tinh:
+  * Cung Phu Thê của người này có các bộ chính tinh nào (ví dụ Đồng Lương, Tử Tướng, Vũ Phủ), thì cung Mệnh của người hôn phối cũng mang chính các bộ sao đó tọa thủ.
+  * Cảnh báo thực chiến: Truyền tinh là con dao hai lưỡi. Nếu truyền các bộ sao đẹp (Đồng Lương, Tử Phủ) thì gia đạo thuận hòa, phúc lộc song toàn. Nếu truyền các bộ sao hung sát cô độc (như Vũ Phá tại Tỵ Hợi, Liêm Tham hãm, Không Kiếp) thì đó là "truyền tai họa", nghiệp duyên nặng nề khiến cả hai khó tránh khỏi cảnh dở dang, đổ vỡ.
+
+KẾT LUẬN & QUY TẮC BẤT DI BẤT DỊCH TRONG GIẢI ĐOÁN
+
+1. Lấy Cung Phúc Đức và Đại Hạn 10 năm làm gốc rễ: Trước khi quyết đoán bất kỳ hung cát nào của 1 năm, luôn luôn thẩm định độ vững chắc của cung Phúc Đức và ngũ hành tam hợp của Đại Hạn. Gốc có bền thì cây mới vững trước bão giông.
+2. Không kết luận vội vã qua một sao đơn lẻ: Một điềm báo tai họa hay hỷ sự chỉ thành hiện thực khi có sự "đồng thanh tương ứng, đồng khí tương cầu" giữa Đại hạn, Tiểu hạn, Lưu niên đại hạn và sự kích hoạt của Lưu Thái Tuế cùng hệ thống sao lưu.
+3. Đức năng thắng số: Tử Vi Đẩu Số không phải là định mệnh bất biến cứng nhắc mà là tấm bản đồ thời tiết của đời người. Hiểu rõ quy luật vận hành của sao hạn giúp con người chủ động chọn thời điểm tiến - thoái, hành thiện tích đức, tu tâm dưỡng tính để đón cát tránh hung, đạt tới cuộc sống an lạc và viên mãn.

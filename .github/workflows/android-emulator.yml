@@ -1,0 +1,44 @@
+# Cài và chạy thử đúng file APK trong dist/ trên máy ảo Android 11, 14, 15, 16, 17.
+# Mỗi máy ảo: mở bản phát hành (không được văng) rồi chạy bản tự kiểm tra (4 ca golden qua giao diện thật).
+name: Chạy thử trên máy ảo Android
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  emulator:
+    name: Android API ${{ matrix.api }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    continue-on-error: ${{ matrix.api == 37 }}
+    strategy:
+      fail-fast: false
+      matrix:
+        api: [30, 34, 35, 36, 37]
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Bật KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Chạy máy ảo và thử app
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api }}
+          target: google_apis
+          arch: x86_64
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -no-snapshot -camera-back none
+          script: bash ci/emulator_test.sh ${{ matrix.api }}
+
+      - name: Lưu ảnh chụp và logcat
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: emulator-api${{ matrix.api }}
+          path: out/
+          if-no-files-found: ignore

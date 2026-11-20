@@ -1,0 +1,84 @@
+# Build + test trên máy chủ GitHub (miễn phí), không cần Android Studio hay JDK trên máy bạn.
+# Job “apk” build file cài Android bằng tools/apk/build_apk.sh (không cần Android Studio).
+name: Kiem tra
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      stress:
+        description: "Chạy thêm vét cạn 2,2 triệu lá số (stressCheck)"
+        type: boolean
+        default: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Chạy toàn bộ bài kiểm tra
+        run: |
+          chmod +x gradlew
+          ./gradlew test --continue --console=plain
+
+      - name: Vét cạn mọi ngày giờ sinh 1900–2100
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.stress }}
+        run: ./gradlew :core:engine:stressCheck --console=plain
+
+      - name: Lưu báo cáo kiểm tra
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: bao-cao-kiem-tra
+          path: core/*/build/reports/tests/test/
+          if-no-files-found: ignore
+
+  apk:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "21"
+
+      - name: Cài công cụ Android từ kho Ubuntu
+        run: sudo apt-get update && sudo apt-get install -y aapt zipalign dalvik-exchange apksigner dexdump
+
+      - name: Tải Kotlin 2.0.21, android.jar API 26/35, kotlinx-serialization 1.6.2
+        run: |
+          mkdir -p "$HOME/tk" && cd "$HOME/tk"
+          curl -sSLo kotlin.zip https://github.com/JetBrains/kotlin/releases/download/v2.0.21/kotlin-compiler-2.0.21.zip
+          unzip -q kotlin.zip
+          for a in 26 35; do
+            curl -sSLo "android-$a.jar" "https://raw.githubusercontent.com/Sable/android-platforms/master/android-$a/android.jar"
+          done
+          M=https://repo1.maven.org/maven2/org/jetbrains/kotlinx
+          curl -sSLO "$M/kotlinx-serialization-core-jvm/1.6.2/kotlinx-serialization-core-jvm-1.6.2.jar"
+          curl -sSLO "$M/kotlinx-serialization-json-jvm/1.6.2/kotlinx-serialization-json-jvm-1.6.2.jar"
+
+      - name: Build APK
+        run: |
+          T="$HOME/tk"
+          export KOTLINC="$T/kotlinc/bin/kotlinc" KOTLIN_STDLIB="$T/kotlinc/lib/kotlin-stdlib.jar"
+          export ANDROID_JAR_26="$T/android-26.jar" ANDROID_JAR_35="$T/android-35.jar"
+          export SERIALIZATION_JARS="$T/kotlinx-serialization-core-jvm-1.6.2.jar:$T/kotlinx-serialization-json-jvm-1.6.2.jar"
+          bash tools/apk/build_apk.sh
+
+      - name: Lưu file APK
+        uses: actions/upload-artifact@v6
+        with:
+          name: TuViTuXem-apk
+          path: app/build/*.apk
