@@ -121,7 +121,8 @@ class RuleEngine(private val kb: KnowledgeBase) {
             when (b?.second) {
                 null -> modified.add(f)
                 3 -> suppressed.add(f to b.first.id)
-                2 -> modified.add(f.copy(polarity = -f.polarity))
+                // Phản vi = xấu hóa tốt: câu đang xấu thành tốt; câu đã tốt (vd. sát tinh đắc địa) giữ nguyên.
+                2 -> modified.add(f.copy(polarity = kotlin.math.abs(f.polarity)))
                 else -> modified.add(f.copy(polarity = when { f.polarity > 0 -> f.polarity - 1; f.polarity < 0 -> f.polarity + 1; else -> 0 }))
             }
         }

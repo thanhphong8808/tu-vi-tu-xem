@@ -58,6 +58,15 @@ grep -nE "TUVI_SELFTEST|FATAL EXCEPTION|AndroidRuntime|TuViTuXem|VerifyError|NoC
 RES=$(grep -o "TUVI_SELFTEST RESULT pass=[0-9]* fail=[0-9]*" "$OUT/logcat-selftest-api$API.txt" | tail -1)
 echo "SELFTEST: ${RES:-KHONG_CO_KET_QUA}"
 case "$RES" in *" fail=0") ;; *) FAIL=1 ;; esac
+if [ "$FAIL" != 0 ]; then
+  echo "== Chẩn đoán: tiến trình, bộ nhớ, lỗi native, WebView"
+  adb logcat -d -b crash 2>/dev/null | tail -80
+  adb logcat -d -b events 2>/dev/null | grep -E "am_proc_died|am_kill|am_low_memory|am_crash|am_anr|am_proc_start" | grep -iE "tuvi|webview|sandboxed|low_memory" | tail -40
+  grep -nE "Fatal signal|SIGSEGV|SIGABRT|SIGKILL|lowmemorykiller|lmkd|Killing|has died|ANR in|Force finishing|backtrace|crash_dump|DEBUG +:|libc +:|chromium|cr_|WebView|vn\.tuvi|TuVi" "$OUT/logcat-selftest-api$API.txt" \
+    | grep -vE "SliceDataConverter|TUVI_SELFTEST (OK|TIME|READING)" | tail -150
+  adb shell dumpsys meminfo vn.tuvi.tuxem 2>/dev/null | head -30 || true
+  adb shell cat /proc/meminfo | head -5
+fi
 emit_png "selftest-api$API" "$OUT/2-selftest-api$API.png"
 echo "== KẾT LUẬN API $API: $([ $FAIL = 0 ] && echo ĐẠT || echo LỖI)"
 exit $FAIL

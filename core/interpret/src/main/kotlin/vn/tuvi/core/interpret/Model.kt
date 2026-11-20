@@ -115,6 +115,7 @@ data class Effect(
     val weight: Double,
     val suppress: List<String> = emptyList(),
     val soften: List<String> = emptyList(),
+    /** Phản vi (xấu hóa tốt): finding đang âm thành dương cùng độ lớn; finding đã dương giữ nguyên. */
     val invert: List<String> = emptyList(),
 )
 

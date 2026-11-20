@@ -124,6 +124,10 @@ class RuleEngineTest {
         val pv = findingsOf("PV_CU_MON_THIN_TUAT_TAN")
         val cm = pv.findings.first { it.ruleId == "STAR_CU_MON_H@MENH" }
         assertTrue(cm.polarity > 0, "đảo chiều câu Cự Môn hãm: ${cm.polarity}")
+        // Phản vi chỉ đổi xấu thành tốt: Thiên Hình đắc địa ở Mệnh golden A (+1) không bị đảo thành −1.
+        val ga = engine.evaluate(a)
+        assertTrue("PV_THIEN_HINH_DAC_DIA" in ga.firedRules.map { it.first.id })
+        assertEquals(1, ga.findings.first { it.ruleId == "PHU_THIEN_HINH@MENH" }.polarity)
         // Bộ đồng cung chặn câu đơn sao trong cùng cung.
         val combo = t.findings.filter { it.ruleId.startsWith("COMBO_") }
         for (f in combo) {
