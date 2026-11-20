@@ -326,7 +326,8 @@
     "weight": 2.0,
     "suppress": [
      "CD_HAN_HY_TINH_DUYEN"
-    ]
+    ],
+    "event": "CUOI_HOI"
    },
    "textKey": "cd.cd_han_hy_cuoi_hoi",
    "adviceKeys": [
@@ -371,7 +372,8 @@
      "TINH_DUYEN"
     ],
     "polarity": 1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "CUOI_HOI"
    },
    "textKey": "cd.cd_han_hy_tinh_duyen",
    "adviceKeys": [
@@ -437,7 +439,8 @@
      "GIA_DAO"
     ],
     "polarity": 1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "SINH_CON"
    },
    "textKey": "cd.cd_sinh_con_luu_loc",
    "adviceKeys": [
@@ -470,7 +473,8 @@
      "GIA_DAO"
     ],
     "polarity": 1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "SINH_CON"
    },
    "textKey": "cd.cd_sinh_con_thai",
    "adviceKeys": [

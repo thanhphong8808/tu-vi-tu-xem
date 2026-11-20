@@ -25,7 +25,10 @@
    "text": "Dành thời gian lắng nghe góp ý trước khi quyết việc lớn.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.khong_doc_doan",
@@ -34,7 +37,10 @@
    "text": "Quyết việc lớn theo cảm tính hoặc gạt bỏ ý kiến người cùng làm.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.tich_luy_truoc_khi_bung",
@@ -70,7 +76,11 @@
    "text": "Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG",
+    "WEAK"
+   ]
   },
   {
    "key": "adv.khong_ky_khi_chua_ro",
@@ -79,7 +89,10 @@
    "text": "Ký giấy tờ chưa đọc kỹ hoặc tham gia việc mập mờ.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.lap_quy_du_phong",
@@ -88,7 +101,10 @@
    "text": "Lập quỹ dự phòng, chia nhỏ khoản đầu tư.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.khong_dau_co",
@@ -97,7 +113,10 @@
    "text": "Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.chot_loi_phan_tan",
@@ -106,7 +125,14 @@
    "text": "Khi được lợi nhanh, chốt một phần và phân tán rủi ro.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ],
+   "stances": [
+    "TAN",
+    "GIU"
+   ]
   },
   {
    "key": "adv.bao_phat_giu_phan",
@@ -178,7 +204,10 @@
    "text": "Tận dụng cơ hội đi xa, công tác, mở thị trường mới.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.can_trong_di_lai",
@@ -196,7 +225,10 @@
    "text": "Khám sức khỏe định kỳ; có dấu hiệu bất thường kéo dài thì gặp bác sĩ.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.khong_bo_qua_dau_hieu",
@@ -205,7 +237,10 @@
    "text": "Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.dieu_do_sinh_hoat",
@@ -214,7 +249,10 @@
    "text": "Giữ nhịp ngủ nghỉ điều độ, tránh làm việc quá sức kéo dài.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.giu_ket_noi",
@@ -241,7 +279,15 @@
    "text": "Giảm bớt việc, ưu tiên những gì thật cần trong giai đoạn này.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ],
+   "stances": [
+    "GIU",
+    "THU",
+    "LUI"
+   ]
   },
   {
    "key": "adv.vun_dap_hon_nhan",
@@ -250,7 +296,10 @@
    "text": "Dành nhiều thời gian lắng nghe, trò chuyện với người bạn đời; cùng thống nhất việc lớn.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.khong_quyet_khi_gian",
@@ -259,7 +308,10 @@
    "text": "Đưa ra quyết định lớn về hôn nhân khi đang giận hoặc căng thẳng.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.cuoi_muon_thuan",
@@ -277,7 +329,10 @@
    "text": "Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.giu_hoa_khi_gia_dinh",
@@ -286,7 +341,10 @@
    "text": "Giữ hòa khí trong nhà; khác ý kiến thì bàn bạc thẳng thắn, tôn trọng nhau.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.cham_soc_thai_ky",
@@ -304,7 +362,10 @@
    "text": "Dành thời gian thăm hỏi, quan tâm sức khỏe cha mẹ.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
   },
   {
    "key": "adv.ro_rang_tien_bac_nguoi_than",
@@ -340,7 +401,10 @@
    "text": "Ưu tiên giữ tài sản cố định; chuẩn bị kỹ dòng tiền trước khi mua bán nhà đất lớn.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.can_trong_giay_to_nha_dat",
@@ -358,7 +422,11 @@
    "text": "Dành thời gian cho đời sống tinh thần: thiện nguyện, đọc sách, thiền, gắn bó gia đình.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG",
+    "WEAK"
+   ]
   },
   {
    "key": "adv.tu_luc",
@@ -385,7 +453,10 @@
    "text": "Giữ chữ tín và sự minh bạch — đó là vốn quý nhất trong giai đoạn này.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ]
   },
   {
    "key": "adv.tan_dung_thoi_co",
@@ -394,7 +465,14 @@
    "text": "Thời điểm thuận: chủ động đề xuất, nhận trách nhiệm mới, triển khai việc đã chuẩn bị.",
    "severity": 1,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "uses": [
+    "STRONG"
+   ],
+   "stances": [
+    "TAN",
+    "GIU"
+   ]
   },
   {
    "key": "adv.thu_hon_cong",
@@ -403,7 +481,11 @@
    "text": "Giai đoạn nên thủ hơn công: củng cố nền tảng, hoãn quyết định lớn nếu được.",
    "severity": 2,
    "source": "Prompt mục 11",
-   "reviewed": false
+   "reviewed": false,
+   "stances": [
+    "THU",
+    "LUI"
+   ]
   },
   {
    "key": "adv.khong_mo_rong_nong",
@@ -449,6 +531,523 @@
    "severity": 1,
    "source": "Prompt mục 11",
    "reviewed": false
+  },
+  {
+   "key": "adv.nhan_trach_nhiem_moi",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Nhận trách nhiệm mới, đề xuất thăng tiến hoặc ra mắt dự án vào những tháng điểm cao.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "TAN",
+    "GIU"
+   ]
+  },
+  {
+   "key": "adv.khong_doi_viec_cam_tinh",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_om_viec",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Ôm đồm quá nhiều việc cùng lúc rồi không việc nào trọn vẹn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_chi_phong_tay",
+   "type": "KHONG_NEN",
+   "topic": "TAI_CHINH",
+   "text": "Chi tiêu phô trương hoặc mua sắm lớn theo cảm hứng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_dem_chuyen_rieng_ra_ngoai",
+   "type": "KHONG_NEN",
+   "topic": "TINH_DUYEN",
+   "text": "Đem chuyện riêng của hai người ra bàn với người ngoài khi đang có mâu thuẫn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_mo_ho_tai_san_gia_dinh",
+   "type": "KHONG_NEN",
+   "topic": "GIA_DAO",
+   "text": "Để tiền bạc, tài sản chung với người thân mập mờ, không có giấy tờ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_qua_suc",
+   "type": "KHONG_NEN",
+   "topic": "SUC_KHOE",
+   "text": "Làm việc quá sức, thức khuya kéo dài.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_voi_vang_di_xa",
+   "type": "KHONG_NEN",
+   "topic": "DI_CHUYEN",
+   "text": "Lên đường vội vàng khi chưa chuẩn bị giấy tờ, lịch trình, bảo hiểm.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_the_chap_nha",
+   "type": "KHONG_NEN",
+   "topic": "NHA_DAT",
+   "text": "Dùng nhà đất làm tài sản bảo đảm cho khoản vay nhiều rủi ro.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_dung_ten_viec_mo_ho",
+   "type": "KHONG_NEN",
+   "topic": "PHAP_LY",
+   "text": "Đứng tên, bảo lãnh hay tham gia việc chưa rõ ràng về pháp lý.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_hua_qua_suc",
+   "type": "KHONG_NEN",
+   "topic": "TINH_CACH",
+   "text": "Hứa hẹn vượt khả năng chỉ để giữ thể diện.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.khong_ton_tien_doi_van",
+   "type": "KHONG_NEN",
+   "topic": "PHUC_DUC",
+   "text": "Tốn tiền cho các dịch vụ tâm linh thu phí hứa hẹn đổi vận.",
+   "severity": 2,
+   "source": "Prompt mục 11 quy tắc 7",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.chuan_bi_chuyen_di",
+   "type": "NEN",
+   "topic": "DI_CHUYEN",
+   "text": "Chuẩn bị kỹ giấy tờ, lịch trình và phương án dự phòng trước mỗi chuyến đi xa.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.giu_nguyen_tai_san",
+   "type": "NEN",
+   "topic": "NHA_DAT",
+   "text": "Giữ nguyên hiện trạng tài sản lớn; chưa vội mua bán nếu dòng tiền chưa vững.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_cong_viec_cham",
+   "type": "LUU_Y",
+   "topic": "SU_NGHIEP",
+   "text": "Công việc có thể chậm hơn kỳ vọng: chia mục tiêu lớn thành từng bước và theo dõi tiến độ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_nguoi_than",
+   "type": "LUU_Y",
+   "topic": "GIA_DAO",
+   "text": "Người thân có thể cần bạn nhiều hơn; sắp xếp thời gian thăm hỏi, chăm sóc.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_tam_ly",
+   "type": "LUU_Y",
+   "topic": "TINH_CACH",
+   "text": "Tâm lý dễ dao động: giữ nhịp sinh hoạt đều đặn và chia sẻ khi thấy áp lực.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_suc_khoe",
+   "type": "LUU_Y",
+   "topic": "SUC_KHOE",
+   "text": "Để ý giấc ngủ, ăn uống, vận động; đi khám khi có dấu hiệu bất thường kéo dài.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_binh_an",
+   "type": "LUU_Y",
+   "topic": "PHUC_DUC",
+   "text": "Giữ sự bình an trong lòng; đừng để lo lắng chi phối các quyết định lớn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_dong_tien",
+   "type": "LUU_Y",
+   "topic": "TAI_CHINH",
+   "text": "Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_tinh_cam",
+   "type": "LUU_Y",
+   "topic": "TINH_DUYEN",
+   "text": "Chuyện tình cảm cần kiên nhẫn: nói rõ mong muốn, tránh suy đoán ý nhau.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_giay_to",
+   "type": "LUU_Y",
+   "topic": "PHAP_LY",
+   "text": "Lưu giữ chứng từ, tin nhắn thỏa thuận quan trọng để tránh hiểu lầm về sau.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_di_lai",
+   "type": "LUU_Y",
+   "topic": "DI_CHUYEN",
+   "text": "Kiểm tra phương tiện trước chuyến đi xa; tránh đi đêm khi mệt.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.ly_nha_dat",
+   "type": "LUU_Y",
+   "topic": "NHA_DAT",
+   "text": "Rà soát giấy tờ nhà đất, sửa chữa hư hỏng nhỏ trước khi thành lớn.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "WEAK"
+   ]
+  },
+  {
+   "key": "adv.the_tan_nen",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Chủ động mở rộng: đề xuất dự án, nhận vai trò lớn hơn, tìm thị trường mới trong các tháng điểm cao.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "TAN"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_tan_khong",
+   "type": "KHONG_NEN",
+   "topic": "TAI_CHINH",
+   "text": "Chủ quan vì đang thuận mà bỏ qua kế hoạch dự phòng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "TAN"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_giu_nen",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Củng cố những gì đang có: hoàn thiện kỹ năng, chăm sóc khách hàng và các mối quan hệ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "GIU"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_giu_khong",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Đổi hướng lớn khi chưa có lý do rõ ràng và phương án dự phòng.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "GIU"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_thu_nen",
+   "type": "NEN",
+   "topic": "TAI_CHINH",
+   "text": "Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "THU"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_thu_khong",
+   "type": "KHONG_NEN",
+   "topic": "TAI_CHINH",
+   "text": "Nhận cam kết dài hạn mới hoặc dồn khoản tiền lớn vào một chỗ.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "THU"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_lui_nen",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Hoãn quyết định lớn nếu được; dồn sức cho sức khỏe, gia đình và nền tảng.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "LUI"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.the_lui_khong",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Ép tiến độ, chạy theo mục tiêu lớn khi hoàn cảnh chưa thuận.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "stances": [
+    "LUI"
+   ],
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.chung_ra_soat",
+   "type": "NEN",
+   "topic": "TINH_CACH",
+   "text": "Ghi lại mục tiêu và rà soát mỗi tháng để điều chỉnh kịp thời.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.chung_khong_quyet_voi",
+   "type": "KHONG_NEN",
+   "topic": "TINH_CACH",
+   "text": "Quyết việc lớn khi chưa đủ thông tin hoặc đang mệt mỏi, nóng giận.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "STANCE"
+   ]
+  },
+  {
+   "key": "adv.tre_tro_chuyen",
+   "type": "NEN",
+   "topic": "GIA_DAO",
+   "text": "Dành thời gian cùng con trò chuyện, đọc sách, vui chơi mỗi ngày.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_ngu_du",
+   "type": "NEN",
+   "topic": "SUC_KHOE",
+   "text": "Cho trẻ ngủ đủ giấc, ăn uống điều độ và vận động ngoài trời thường xuyên.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_kham_pha",
+   "type": "NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Khuyến khích trẻ khám phá năng khiếu qua nhiều hoạt động khác nhau.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_khong_ep_hoc",
+   "type": "KHONG_NEN",
+   "topic": "SU_NGHIEP",
+   "text": "Ép trẻ học quá sức hay so sánh trẻ với bạn bè.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_khong_man_hinh",
+   "type": "KHONG_NEN",
+   "topic": "SUC_KHOE",
+   "text": "Để trẻ dùng điện thoại, máy tính bảng quá lâu mỗi ngày.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_khong_cai_nhau",
+   "type": "KHONG_NEN",
+   "topic": "GIA_DAO",
+   "text": "Tranh cãi gay gắt trước mặt trẻ.",
+   "severity": 1,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
+  },
+  {
+   "key": "adv.tre_an_toan",
+   "type": "LUU_Y",
+   "topic": "DI_CHUYEN",
+   "text": "Chú ý an toàn cho trẻ khi đi lại, vui chơi gần nước và xe cộ.",
+   "severity": 2,
+   "source": "Prompt mục 11",
+   "reviewed": false,
+   "uses": [
+    "CHILD"
+   ]
   }
  ]
 }

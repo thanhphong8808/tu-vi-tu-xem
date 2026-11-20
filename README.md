@@ -11,13 +11,13 @@ App Android lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Vi�
 | 2 | Vận hạn (`LimitEngine`) | ✅ Xong — [báo cáo](docs/PHASE2_REPORT.md) |
 | 2B | Bản chạy thử cài lên điện thoại (file APK) | ✅ Xong — [báo cáo](docs/PHASE2B_REPORT.md) |
 | 3 | Knowledge base + RuleEngine (`:data:kb`, `:core:interpret`) + luận giải sơ bộ trong app 0.3.0 | ✅ Xong — [báo cáo](docs/PHASE3_REPORT.md) |
-| 4 | Luận giải + khuyến nghị | Chưa làm |
+| 4 | Luận giải + khuyến nghị (chấm điểm, tổng hợp tầng, ghép câu, Nên/Không nên) + màn Luận giải trong app 0.4.0 | ✅ Xong — [báo cáo](docs/PHASE4_REPORT.md) |
 | 5 | UI Android đầy đủ | Chưa làm |
 | 6 | Trợ lý AI trên máy + câu hỏi thường gặp (Firebase) + phát hành | Chưa làm |
 
 ## Cài lên điện thoại Android
 
-1. Chép file `TuViTuXem-0.3.0.apk` (trong `dist/`) vào điện thoại (Zalo, Google Drive, cáp USB…).
+1. Chép file `TuViTuXem-0.4.0.apk` (trong `dist/`) vào điện thoại (Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. App không xin
@@ -82,6 +82,17 @@ kq.findings      // Finding: luật, chủ đề, chiều (−2..+2), trọng s�
 kq.suppressed    // câu bị luật cụ thể hơn chặn, kèm luật chặn
 KbLint.run(kb)   // từ cấm, ô {…} lạ, thiếu nguồn, thiếu câu luận
 ```
+
+Bản luận (giai đoạn 4):
+
+```kotlin
+val composer = Composer(kb)
+val nam = composer.year(chart, 2026)          // điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, 7 chủ đề, sự kiện, Nên/Không nên, 12 tháng
+composer.lifetime(chart); composer.decade(chart, 2026); composer.month(chart, 2026, 3)
+println(nam.render(why = true))               // văn bản, kèm căn cứ “Vì sao?” của từng đoạn
+```
+
+Bản luận mẫu của 4 ca golden: [`core/interpret/src/test/resources/snapshots/`](core/interpret/src/test/resources/snapshots/).
 
 Vận hạn:
 

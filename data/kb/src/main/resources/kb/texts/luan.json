@@ -1,0 +1,232 @@
+{
+ "texts": [
+  {
+   "key": "ev.cuoi_hoi.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về chuyện tình cảm, cưới hỏi: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.cuoi_hoi.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về chuyện tình cảm, cưới hỏi: có thể thành hiện thực nếu bạn chủ động.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.cuoi_hoi.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về chuyện tình cảm, cưới hỏi: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.sinh_con.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về chuyện con cái, đón thành viên mới: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.sinh_con.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về chuyện con cái, đón thành viên mới: có thể thành hiện thực nếu bạn chủ động.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.sinh_con.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về chuyện con cái, đón thành viên mới: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.thang_tien.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về thăng tiến, nhận trách nhiệm mới: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.thang_tien.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về thăng tiến, nhận trách nhiệm mới: có thể thành hiện thực nếu bạn chủ động.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.thang_tien.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về thăng tiến, nhận trách nhiệm mới: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.doi_viec.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về thay đổi công việc, môi trường làm việc: khả năng cao năm có chuyển động theo hướng này; chuẩn bị trước sẽ chủ động hơn.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.doi_viec.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về thay đổi công việc, môi trường làm việc: có thể xảy ra, nên tính trước phương án.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.doi_viec.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về thay đổi công việc, môi trường làm việc: mới là dấu hiệu, nên lưu ý.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.duoc_tai.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về tài lộc, dòng tiền cải thiện: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.duoc_tai.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về tài lộc, dòng tiền cải thiện: có thể thành hiện thực nếu bạn chủ động.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.duoc_tai.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về tài lộc, dòng tiền cải thiện: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.hao_tai.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về hao tài, chi phí ngoài dự tính: khả năng cao đây là việc cần phòng bị trong năm; chuẩn bị sớm sẽ giảm nhẹ ảnh hưởng.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.hao_tai.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về hao tài, chi phí ngoài dự tính: có thể gặp, nên phòng bị từ sớm.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.hao_tai.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về hao tài, chi phí ngoài dự tính: mới là dấu hiệu, nên lưu ý và cẩn trọng hơn thường lệ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.phap_ly.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về vướng giấy tờ, thị phi, va chạm pháp lý: khả năng cao đây là việc cần phòng bị trong năm; chuẩn bị sớm sẽ giảm nhẹ ảnh hưởng.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.phap_ly.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về vướng giấy tờ, thị phi, va chạm pháp lý: có thể gặp, nên phòng bị từ sớm.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.phap_ly.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về vướng giấy tờ, thị phi, va chạm pháp lý: mới là dấu hiệu, nên lưu ý và cẩn trọng hơn thường lệ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.di_chuyen.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về đi xa, di chuyển, đổi chỗ ở hoặc chỗ làm: khả năng cao năm có chuyển động theo hướng này; chuẩn bị trước sẽ chủ động hơn.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.di_chuyen.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về đi xa, di chuyển, đổi chỗ ở hoặc chỗ làm: có thể xảy ra, nên tính trước phương án.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.di_chuyen.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về đi xa, di chuyển, đổi chỗ ở hoặc chỗ làm: mới là dấu hiệu, nên lưu ý.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.suc_khoe.cao",
+   "text": "Năm {nam}, từ ba tầng vận hạn trở lên cùng chỉ về cần chăm sóc sức khỏe, an toàn kỹ hơn: khả năng cao đây là việc cần phòng bị trong năm; chuẩn bị sớm sẽ giảm nhẹ ảnh hưởng.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.suc_khoe.co_the",
+   "text": "Năm {nam}, hai tầng vận hạn cùng chỉ về cần chăm sóc sức khỏe, an toàn kỹ hơn: có thể gặp, nên phòng bị từ sớm.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "ev.suc_khoe.dau_hieu",
+   "text": "Năm {nam}, một tầng vận hạn chỉ về cần chăm sóc sức khỏe, an toàn kỹ hơn: mới là dấu hiệu, nên lưu ý và cẩn trọng hơn thường lệ.",
+   "source": "Prompt mục 9 (đồng thanh tương ứng)",
+   "reviewed": false
+  },
+  {
+   "key": "the.tan",
+   "text": "Thế Tấn: giai đoạn thuận, nên chủ động mở rộng.",
+   "source": "Prompt mục 11 bước 4",
+   "reviewed": false
+  },
+  {
+   "key": "the.giu",
+   "text": "Thế Giữ: nên củng cố, phát triển vững những gì đang có.",
+   "source": "Prompt mục 11 bước 4",
+   "reviewed": false
+  },
+  {
+   "key": "the.thu",
+   "text": "Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.",
+   "source": "Prompt mục 11 bước 4",
+   "reviewed": false
+  },
+  {
+   "key": "the.lui",
+   "text": "Thế Lùi: nên hoãn quyết định lớn nếu được, dồn sức cho nền tảng.",
+   "source": "Prompt mục 11 bước 4",
+   "reviewed": false
+  },
+  {
+   "key": "note.duc_nang",
+   "text": "Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.",
+   "source": "Prompt mục 11 quy tắc 8",
+   "reviewed": false
+  },
+  {
+   "key": "note.ket_noi",
+   "text": "Giai đoạn này có thể nhiều áp lực tinh thần. Hãy giữ kết nối thường xuyên với người thân, bạn bè tin cậy, và tìm gặp chuyên gia tâm lý khi thấy căng thẳng kéo dài.",
+   "source": "Prompt mục 11 quy tắc 5",
+   "reviewed": false
+  },
+  {
+   "key": "note.chua_co_luan",
+   "text": "Chưa có luận giải riêng cho tổ hợp này; điểm số dựa trên sao tại các cung đọc chính.",
+   "source": "Prompt mục 1, nguyên tắc 3",
+   "reviewed": false
+  },
+  {
+   "key": "note.suc_khoe",
+   "text": "Phần sức khỏe chỉ là gợi ý để chú ý chăm sóc bản thân, không thay cho thăm khám của bác sĩ.",
+   "source": "Prompt mục 11 quy tắc 3",
+   "reviewed": false
+  },
+  {
+   "key": "note.tai_chinh",
+   "text": "Phần tài chính chỉ nêu khung rủi ro, không phải lời khuyên mua bán tài sản cụ thể.",
+   "source": "Prompt mục 11 quy tắc 4",
+   "reviewed": false
+  },
+  {
+   "key": "note.tre_nho",
+   "text": "Lá số trẻ nhỏ (dưới 16 tuổi âm): phần luận vận hạn chỉ tập trung vào học tập, sức khỏe, gia đình và an toàn đi lại.",
+   "source": "D-39",
+   "reviewed": false
+  },
+  {
+   "key": "note.thang",
+   "text": "Điểm tháng tính từ điểm năm, cung nguyệt hạn và Tứ Hóa tháng; độ tin cậy thấp hơn tầng năm.",
+   "source": "Prompt mục 9 bước 6",
+   "reviewed": false
+  }
+ ]
+}

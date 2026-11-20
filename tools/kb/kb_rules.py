@@ -54,8 +54,10 @@ def none_of(stars, inn="self"): return NONE(*[S(s, inn) for s in stars])
 
 ADVICE = {}
 
-def adv(key, type_, topic, text, severity=1, source="Prompt mục 11"):
+def adv(key, type_, topic, text, severity=1, source="Prompt mục 11", stances=(), uses=()):
     ADVICE[key] = {"key": key, "type": type_, "topic": topic, "text": text, "severity": severity, "source": source, "reviewed": False}
+    if stances: ADVICE[key]["stances"] = list(stances)
+    if uses: ADVICE[key]["uses"] = list(uses)
 
 # ——————————————————————————— khuyến nghị (mục 11) ———————————————————————————
 adv("adv.phat_huy_lanh_dao", "NEN", "SU_NGHIEP", "Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.")
@@ -114,7 +116,7 @@ RULES = []
 TEXTS = {}
 
 def rule(id, name, type_, when, topics, polarity, weight, text, advice=(), source="", rel="A", scope="GOC",
-         suppress=(), soften=(), invert=(), expert=False, text_source=None):
+         suppress=(), soften=(), invert=(), expert=False, text_source=None, event=None):
     key = ("cc." if type_ in ("CAT_CACH", "HUNG_CACH", "PHAN_VI", "THE_SAO") else
            "cg." if type_ == "CUNG" else "vh." if type_ == "VAN_HAN" else "cd.") + id.lower()
     r = {"id": id, "name": name, "type": type_, "scope": scope, "reliability": rel, "when": when,
@@ -123,6 +125,7 @@ def rule(id, name, type_, when, topics, polarity, weight, text, advice=(), sourc
     if suppress: r["effect"]["suppress"] = list(suppress)
     if soften: r["effect"]["soften"] = list(soften)
     if invert: r["effect"]["invert"] = list(invert)
+    if event: r["effect"]["event"] = event
     if expert: r["expertOnly"] = True
     RULES.append(r)
     TEXTS[key] = {"key": key, "text": text, "source": text_source or source, "reviewed": False}

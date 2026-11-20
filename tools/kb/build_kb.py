@@ -4,9 +4,9 @@ from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import kb_rules, kb_drafts  # noqa: E402
+import kb_rules, kb_drafts, kb_luan  # noqa: E402  (kb_luan bổ sung luật, khuyến nghị giai đoạn 4)
 
-VERSION = "0.3.0-nhap"
+VERSION = "0.4.0-nhap"
 ROOT = os.path.dirname(os.path.dirname(HERE))
 OUT = os.path.join(ROOT, "data", "kb", "src", "main", "resources", "kb")
 
@@ -47,6 +47,7 @@ def main():
     files["texts"].append(write("texts/chinh_tinh.json", {"texts": list(kb_drafts.main_texts().values())}))
     files["texts"].append(write("texts/dong_cung.json", {"texts": list(kb_drafts.combo_texts().values())}))
     files["texts"].append(write("texts/phu_tinh.json", {"texts": list(kb_drafts.minor_texts().values())}))
+    files["texts"].append(write("texts/luan.json", {"texts": list(kb_luan.luan_texts().values())}))
     files["advice"].append(write("advice/advice.json", {"advice": list(kb_rules.ADVICE.values())}))
     files["faq"].append(write("faq/faq.json", {"faq": kb_drafts.faq_entries()}))
     files["meta"].append(write("meta/sao.json", {"combos": kb_drafts.combo_meta(), "minor": kb_drafts.minor_meta()}))
@@ -59,7 +60,10 @@ def main():
         "textsDongCung": len(kb_drafts.combo_texts()),
         "textsPhuTinh": len(kb_drafts.minor_texts()),
         "phuTinh": len(kb_drafts.MINOR),
+        "textsLuan": len(kb_luan.luan_texts()),
         "advice": len(kb_rules.ADVICE),
+        "adviceByType": dict(Counter(a["type"] for a in kb_rules.ADVICE.values())),
+        "events": len([r for r in kb_rules.RULES if r["effect"].get("event")]),
         "faq": len(kb_drafts.FAQ),
     }
     write("index.json", {"version": VERSION, "note": "Bản nháp: mọi mục reviewed=false cho tới khi người dùng duyệt (mục 9).",

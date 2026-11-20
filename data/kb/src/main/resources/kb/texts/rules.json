@@ -1133,6 +1133,150 @@
    "text": "Đường con cái có thể không đơn tuyến (con nuôi, con riêng hoặc con của hôn nhân sau). Đây là quan điểm riêng của một số sách, chỉ để tham khảo.",
    "source": "Prompt mục 10.5; Cẩm nang V2 – P.V",
    "reviewed": false
+  },
+  {
+   "key": "vh.vh_ltt_quan_quyen",
+   "text": "Năm {nam}, Lưu Thái Tuế đánh thức cung Quan Lộc có Hóa Quyền hoặc Khôi Việt: thuận để nhận trách nhiệm mới, đề xuất thăng tiến.",
+   "source": "Prompt mục 11; Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_quan_quyen",
+   "text": "Năm {nam}, tiểu hạn đi vào cung Quan Lộc có Hóa Quyền hoặc Khôi Việt: diễn biến công việc trong năm có nhiều cơ hội thể hiện năng lực.",
+   "source": "Prompt mục 11; Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_lndh_cat_hoi",
+   "text": "Năm {nam}, lưu niên đại hạn tại cung {cung} hội nhiều cát tinh (Lộc, Quyền, Khoa, Tả Hữu, Khôi Việt): kết quả cuối năm có xu hướng tốt.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_dai_han_cat_hoi",
+   "text": "Đại hạn 10 năm tại cung {cung} hội nhiều cát tinh trong tam phương tứ chính: nền vận thuận để xây dựng sự nghiệp và tài sản.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_dai_han_sat_hoi",
+   "text": "Đại hạn 10 năm tại cung {cung} hội nhiều sát tinh trong tam phương tứ chính: giai đoạn nhiều thử thách, nên đi chắc từng bước và giữ nền tảng.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_pha_ma",
+   "text": "Năm {nam}, tiểu hạn gặp Phá Quân hoặc Thiên Mã: dễ có thay đổi công việc, chỗ làm hay cách làm việc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_ltt_quan_dong",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung Quan Lộc gặp sao động (Phá Quân, Thất Sát, Thiên Mã): công việc có xu hướng chuyển động, đổi mới.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_thien_di",
+   "text": "Năm {nam}, tiểu hạn đi vào cung Thiên Di: năm nhiều việc bên ngoài, dễ đi xa hoặc thay đổi môi trường.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_lndh_thien_di",
+   "text": "Năm {nam}, lưu niên đại hạn vào cung Thiên Di: kết quả của năm gắn với việc đi xa, đối ngoại.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_di_ma_loc_luu",
+   "text": "Năm {nam}, cung Thiên Di có Lưu Thiên Mã gặp Lộc: thuận đi xa, công tác, mở thị trường mới.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tat_kinh_hinh_bach_ho",
+   "text": "Năm {nam}, cung Tật Ách có Kình Dương hoặc Thiên Hình gặp Lưu Bạch Hổ: nên khám sức khỏe định kỳ, cẩn trọng khi lái xe và vận động mạnh.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_tat_sat",
+   "text": "Năm {nam}, tiểu hạn vào cung Tật Ách gặp sát tinh: giai đoạn cần chăm sóc sức khỏe và an toàn kỹ hơn.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tai_hao_luu_sat",
+   "text": "Năm {nam}, cung Tài Bạch có Song Hao hoặc Không Kiếp lại gặp Kình Đà lưu hay Hóa Kỵ lưu: nên lập quỹ dự phòng, chia nhỏ khoản đầu tư.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_tai_hao",
+   "text": "Năm {nam}, tiểu hạn vào cung Tài Bạch gặp Song Hao hoặc Không Kiếp: dễ phát sinh khoản chi ngoài dự tính.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_lndh_tai_ky",
+   "text": "Năm {nam}, lưu niên đại hạn vào cung Tài Bạch gặp Hóa Kỵ hoặc Không Kiếp: kết quả tài chính cuối năm cần giữ chặt, tránh mạo hiểm.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_loc",
+   "text": "Năm {nam}, tiểu hạn gặp Lộc Tồn hoặc Hóa Lộc: diễn biến trong năm có thêm cơ hội về tiền bạc.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_lndh_loc",
+   "text": "Năm {nam}, lưu niên đại hạn tại cung {cung} hội Lộc: kết quả tài chính trong năm có xu hướng cải thiện.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_phap_ly",
+   "text": "Năm {nam}, tiểu hạn vào cung {cung} gặp Quan Phù, Thiên Hình hoặc Hóa Kỵ: đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn khi cần.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_ltt_phap_ly",
+   "text": "Năm {nam}, Lưu Thái Tuế vào cung {cung} gặp Quan Phù, Thiên Hình hoặc Hóa Kỵ: dễ va chạm giấy tờ, thị phi; tránh tham gia việc mập mờ.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_ky_luu_phap_ly",
+   "text": "Năm {nam}, Hóa Kỵ lưu vào cung {cung} gặp Quan Phù hoặc Thiên Hình: ký kết, giấy tờ cần thận trọng gấp đôi.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_phu_the_hong_hy_long_phuong",
+   "text": "Năm {nam}, cung Phu Thê có Hồng Loan hoặc Thiên Hỷ lưu gặp Long Trì, Phượng Các: thuận để chủ động gặp gỡ, bàn chuyện cưới hỏi.",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_phu_the",
+   "text": "Năm {nam}, tiểu hạn vào cung Phu Thê gặp sao tình duyên: chuyện tình cảm được khơi gợi trong năm.",
+   "source": "Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_lndh_phu_the",
+   "text": "Năm {nam}, lưu niên đại hạn vào cung Phu Thê gặp sao tình duyên: kết quả năm có xu hướng gắn với chuyện gia đình riêng.",
+   "source": "Cẩm nang V2 – P.V; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "vh.vh_tieu_han_tu_tuc",
+   "text": "Năm {nam}, tiểu hạn vào cung Tử Tức gặp sao hỷ: thuận cho chuyện con cái nếu gia đình đang mong.",
+   "source": "Cẩm nang V2 – P.V",
+   "reviewed": false
   }
  ]
 }

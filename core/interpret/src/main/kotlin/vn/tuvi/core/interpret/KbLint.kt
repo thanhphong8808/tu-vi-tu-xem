@@ -89,6 +89,27 @@ object KbLint {
         for (c in kb.combos) {
             if (kb.texts.keys.none { it.startsWith("combo.${c.key}.") }) issues.add(Issue("combo#${c.key}", "chưa có câu luận"))
         }
+        // Giai đoạn 4: câu sự kiện đủ 3 mức, câu thế giai đoạn, ghi chú bắt buộc, khuyến nghị dự phòng đủ cho mọi chủ đề và mọi thế.
+        for (e in Event.entries) for (l in Likelihood.entries) {
+            if ("ev.${e.name.lowercase()}.${l.key}" !in kb.texts) issues.add(Issue("event#${e.name}", "thiếu câu mức ${l.key}"))
+        }
+        for (st in Stance.entries) if ("the.${st.key}" !in kb.texts) issues.add(Issue("stance#${st.name}", "thiếu câu thế giai đoạn"))
+        for (n in listOf("note.duc_nang", "note.ket_noi", "note.chua_co_luan")) if (n !in kb.texts) issues.add(Issue("note", "thiếu $n"))
+        for (t in Topic.entries) {
+            fun has(type: AdviceType, use: AdviceUse) = kb.advice.values.any { it.topic == t && it.type == type && use in it.uses }
+            if (!has(AdviceType.NEN, AdviceUse.STRONG)) issues.add(Issue("advice#${t.name}", "thiếu NÊN dự phòng khi chủ đề mạnh"))
+            if (!has(AdviceType.NEN, AdviceUse.WEAK)) issues.add(Issue("advice#${t.name}", "thiếu NÊN dự phòng khi chủ đề yếu"))
+            if (!has(AdviceType.KHONG_NEN, AdviceUse.WEAK)) issues.add(Issue("advice#${t.name}", "thiếu KHÔNG NÊN dự phòng khi chủ đề yếu"))
+        }
+        for (type in listOf(AdviceType.NEN, AdviceType.KHONG_NEN)) {
+            if (kb.advice.values.count { AdviceUse.CHILD in it.uses && it.type == type } < 3) issues.add(Issue("advice#CHILD", "cần ≥ 3 $type cho trẻ nhỏ"))
+        }
+        if ("note.tre_nho" !in kb.texts) issues.add(Issue("note", "thiếu note.tre_nho"))
+        for (st in Stance.entries) for (type in listOf(AdviceType.NEN, AdviceType.KHONG_NEN)) {
+            if (kb.advice.values.none { AdviceUse.STANCE in it.uses && it.type == type && (it.stances.isEmpty() || st in it.stances) }) {
+                issues.add(Issue("advice#${st.name}", "thiếu $type theo thế giai đoạn"))
+            }
+        }
         for (m in kb.minor.keys) {
             if (kb.texts.keys.none { it == "phu.${m.name}" || it.startsWith("phu.${m.name}.") }) issues.add(Issue("minor#${m.name}", "chưa có câu luận"))
         }

@@ -65,6 +65,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         val req: JsonElement = if (arg.isNullOrBlank()) JsonObject(emptyMap()) else Json.parseToJsonElement(arg)
         val data: JsonElement = when (method) {
             "chart" -> chart(req.jsonObject)
+            "reading" -> reading(req.jsonObject)
             "allHours" -> allHours(req.jsonObject)
             "lunarYear" -> lunarYear(req.jsonObject)
             "convert" -> convert(req.jsonObject)
@@ -197,7 +198,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
             val limits = LimitEngine.forYear(chart, viewYear)
             put("year", yearJson(chart, limits))
             // Luận giải sơ bộ (giai đoạn 3). Lỗi ở đây không được làm hỏng lá số.
-            put("reading", try { Reading.json(chart, limits, inputObj.bool("expert") || o.bool("expert")) } catch (e: Throwable) {
+            put("reading", try { Luan.json(chart, limits, inputObj.bool("expert") || o.bool("expert")) } catch (e: Throwable) {
                 buildJsonObject { put("error", "${e.javaClass.simpleName}: ${e.message ?: ""}") }
             })
             put("months", buildJsonArray {
@@ -212,6 +213,24 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
                 }
             })
         }
+    }
+
+    /**
+     * Bản luận (giai đoạn 4): `scope` = life | decade | year | month, `viewYear`, `month`. Cùng đầu vào với [chart]
+     * (kể cả lá số thay thế `alt`, chế độ chuyên sâu `expert`).
+     */
+    private fun reading(o: JsonObject): JsonElement {
+        val inputObj = (o["input"] as? JsonObject) ?: o
+        val base = ChartEngine.build(parseInput(inputObj), configOf(inputObj))
+        val altIndex = o.int("alt")
+        val chart = if (altIndex != null) {
+            val w = base.warnings.getOrNull(altIndex) ?: throw IllegalArgumentException("Không có lá số thay thế này.")
+            ChartEngine.buildAlternative(base, w)
+        } else base
+        val viewYear = o.int("viewYear") ?: currentLunarYear()
+        if (viewYear !in 1900..2200) throw IllegalArgumentException("Năm xem phải trong 1900–2200.")
+        val month = (o.int("month") ?: 1).coerceIn(1, 12)
+        return Luan.readingJson(chart, o.str("scope") ?: "year", viewYear, month, inputObj.bool("expert") || o.bool("expert"), currentLunarYear())
     }
 
     private fun canhLabel(input: BirthInput): String? = input.canh?.vn
@@ -395,7 +414,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         val l = LunarCalendar.solarToLunar(t, 7)
         return buildJsonObject {
             put("solar", fmtDate(t)); put("year", t.year)
-            put("lunarYear", l.year); put("lunar", "${l.day}/${l.month}${if (l.isLeap) " nhuận" else ""}/${l.year}")
+            put("lunarYear", l.year); put("lunarMonth", l.month); put("lunar", "${l.day}/${l.month}${if (l.isLeap) " nhuận" else ""}/${l.year}")
             put("lunarYearCanChi", CanChi.ofYear(l.year).vn)
         }
     }

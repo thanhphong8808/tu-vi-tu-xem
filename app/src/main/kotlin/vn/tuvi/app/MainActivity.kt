@@ -31,7 +31,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import vn.tuvi.app.api.AppApi
-import vn.tuvi.app.api.Reading
+import vn.tuvi.app.api.Luan
 import vn.tuvi.app.api.KeyValueStore
 
 /**
@@ -296,7 +296,7 @@ class MainActivity : Activity() {
         init {
             // Nạp sẵn knowledge base (luận giải) ở luồng nền để lần mở lá số đầu tiên không phải chờ.
             Thread({
-                try { Reading.warmUp() } catch (e: Throwable) { Log.w(TAG, "Nạp knowledge base", e) }
+                try { Luan.warmUp() } catch (e: Throwable) { Log.w(TAG, "Nạp knowledge base", e) }
             }, "tuvi-kb").start()
         }
 
@@ -315,7 +315,7 @@ class MainActivity : Activity() {
     }
 
     companion object {
-        const val APP_VERSION = "0.3.0 (3)"
+        const val APP_VERSION = "0.4.0 (4)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
 

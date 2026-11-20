@@ -67,6 +67,9 @@
     hoursInput: null,
     lunarCache: {},
     rdOpen: {}, // mục luận giải đang mở “Vì sao?”
+    rv: null, // màn luận giải: {scope, year, month, data, err}
+    readingCache: {},
+    palOpen: {},
   };
 
   function defaultForm() {
@@ -115,6 +118,7 @@
     else if (v === 'chart') html = viewChart();
     else if (v === 'hours') html = viewHours();
     else if (v === 'settings') html = viewSettings();
+    else if (v === 'reading') html = viewReading();
     app.innerHTML = html;
     if (scrollTop) window.scrollTo(0, 0);
     if (v === 'chart') afterChart();
@@ -362,7 +366,7 @@
       `<div class="card"><h2>Luận giải</h2><div class="opt ${S.settings.expert ? 'on' : ''}" data-act="expert"><b>Chế độ chuyên sâu ${S.settings.expert ? '· đang bật' : '· đang tắt'}</b>` +
       `<span>Hiện thêm các luật độ tin cậy thấp (C), còn nhiều tranh luận giữa các trường phái.</span></div>` +
       `<p class="small muted">Áp dụng cho các lá số mở sau khi đổi.</p></div>` +
-      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — bản chạy thử (giai đoạn 3): lá số, đại hạn, tiểu hạn, lưu niên, sao lưu, nguyệt hạn và luận giải sơ bộ (cách cục, câu luận từng cung). Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định; phần chấm điểm, tổng hợp theo chủ đề có ở bản sau.</p>` +
+      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — bản chạy thử (giai đoạn 4): lá số, vận hạn và luận giải trọn đời / đại vận / năm / tháng: chấm điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, luận theo chủ đề, Nên/Không nên, “Vì sao?” cho mọi đoạn. Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định.</p>` +
       `<p class="small muted">${esc(ONBOARD)}</p></div>`;
   }
 
@@ -392,7 +396,7 @@
       `<div class="legend"><span><i>M</i> Miếu · <i>V</i> Vượng · <i>Đ</i> Đắc · <i>B</i> Bình · <i>H</i> Hãm</span>` +
       `<span><i class="e-kim">Kim</i> · <i class="e-moc">Mộc</i> · <i class="e-thuy">Thủy</i> · <i class="e-hoa">Hỏa</i> · <i class="e-tho">Thổ</i></span>` +
       `<span><i style="color:var(--luu)">L.</i> sao lưu năm · chạm một cung để xem chi tiết</span></div>` +
-      readingCard(d) + yearCard(d) + daiHanCard(d) + monthCard(d) +
+      luanCard(d) + readingCard(d) + yearCard(d) + daiHanCard(d) + monthCard(d) +
       `<p class="note">Luận giải đang là bản nháp tự sinh, chưa thẩm định. Tử Vi là bản đồ thời tiết — đức năng thắng số, lựa chọn của bạn quyết định kết quả.</p>`;
   }
 
@@ -542,6 +546,89 @@
     return `<h3>Luận giải sơ bộ (bản nháp)</h3>` + (lines || '<div class="small muted">—</div>') +
       (rules ? `<h3>Cách cục, dấu hiệu tại cung này</h3>${rules}` : '') +
       `<p class="small muted">Câu luận tự sinh, chưa thẩm định. Chấm điểm và tổng hợp theo chủ đề có ở bản sau.</p>`;
+  }
+
+  // ——— Luận giải (giai đoạn 4): trọn đời / đại vận / năm / tháng ———
+  const SCOPES = [['life', 'Trọn đời'], ['decade', 'Đại vận'], ['year', 'Năm'], ['month', 'Tháng']];
+  const STANCE_CLS = { TAN: 'st-tan', GIU: 'st-giu', THU: 'st-thu', LUI: 'st-lui' };
+  const bandCls = (s) => (s >= 55 ? 'b-good' : s <= 45 ? 'b-bad' : 'b-mid');
+  function luanCard(d) {
+    const y = d.year.lunarYear;
+    return `<div class="card" id="luan"><h2>Luận giải</h2><div class="rbtns">` +
+      SCOPES.map(([k, l]) => `<button class="btn" data-act="open-reading" data-s="${k}">${k === 'year' ? 'Năm ' + y : l}</button>`).join('') +
+      `</div><p class="small muted" style="margin:8px 0 0">Điểm 0–100 (50 là mức trung bình), thế Tấn/Giữ/Thủ/Lùi, luận theo chủ đề, Nên/Không nên, “Vì sao?” cho mọi đoạn. Câu luận đang là bản nháp.</p></div>`;
+  }
+  function readingKey(rv) {
+    return JSON.stringify([S.req && S.req.input, S.req && S.req.alt, S.settings.preset, !!S.settings.expert, rv.scope, rv.scope === 'life' ? 0 : rv.year, rv.scope === 'month' ? rv.month : 0]);
+  }
+  function loadReading() {
+    const rv = S.rv;
+    const key = readingKey(rv);
+    if (S.readingCache[key]) { rv.data = S.readingCache[key]; rv.err = ''; return; }
+    try {
+      rv.data = api('reading', { input: withPreset(S.req.input), viewYear: rv.year, alt: S.req.alt, scope: rv.scope, month: rv.month });
+      rv.err = '';
+      S.readingCache[key] = rv.data;
+    } catch (e) { rv.data = null; rv.err = e.message; }
+  }
+  function openReading(scope, year, month) {
+    const prev = S.rv || {};
+    const todayMonth = S.today && S.today.lunarYear === S.req.viewYear ? S.today.lunarMonth : 1;
+    S.rv = { scope: scope, year: year || S.req.viewYear, month: month || prev.month || todayMonth || 1, data: null, err: '' };
+    loadReading();
+    if (top() === 'reading') render(true); else go('reading');
+  }
+  const KIND_ICON = { LEAD: '', PLAIN: '', WEIGH: '⚖ ', EVENT: '◆ ', NOTE: '' };
+  function rPara(p, key) {
+    const open = !!S.rdOpen[key];
+    const why = p.why.map((w) => `<div class="w"><b>${esc(w.title)}</b>${w.detail ? `<div>${esc(w.detail)}</div>` : ''}` +
+      (w.evidence.length ? `<ul>${w.evidence.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>` : '') +
+      (w.source ? `<small>Nguồn: ${esc(w.source)}</small>` : '') + `</div>`).join('');
+    return `<div class="rp k-${p.kind} ${polCls(p.pol)}${open ? ' open' : ''}" data-act="rp" data-key="${esc(key)}">` +
+      `<div class="rp-t">${KIND_ICON[p.kind] || ''}${esc(p.text)}${p.draft ? ' <span class="draft-tag">nháp</span>' : ''}</div>` +
+      `<div class="rp-why">${why}<small class="ids">Mã: ${esc(p.ids.join(', '))}</small></div>` +
+      `<div class="rp-tap">${open ? 'Thu gọn ‹' : 'Vì sao? ›'}</div></div>`;
+  }
+  function rSection(s, prefix, collapsible) {
+    const open = !collapsible || !!S.palOpen[prefix + s.id];
+    const head = `<div class="rs-h"${collapsible ? ` data-act="pal" data-id="${esc(prefix + s.id)}"` : ''}><b>${esc(s.title)}</b>` +
+      (s.score != null ? `<span class="sc ${bandCls(s.score)}">${s.score}</span>` : '') + (collapsible ? `<span class="chev">${open ? '▾' : '▸'}</span>` : '') + `</div>` +
+      (s.subtitle ? `<div class="small muted">${esc(s.subtitle)}</div>` : '');
+    return `<div class="card rs" id="rs-${esc(s.id)}">${head}${open ? s.paragraphs.map((p, i) => rPara(p, prefix + s.id + ':' + i)).join('') : ''}</div>`;
+  }
+  function viewReading() {
+    const rv = S.rv;
+    if (!rv || !S.chart) return viewHome();
+    const info = S.chart.info;
+    const tabs = `<div class="chips rtabs">` + SCOPES.map(([k, l]) => `<button class="chip ${rv.scope === k ? 'on' : ''}" data-act="rscope" data-s="${k}">${l}</button>`).join('') + `</div>`;
+    const yearBar = rv.scope === 'life' ? '' : `<div class="yearbar"><button class="icon-btn" data-act="ryear" data-d="-1" aria-label="Năm trước">◀</button>` +
+      `<div class="yv"><b>Năm ${rv.year}</b><span>${rv.scope === 'decade' ? 'đại vận chứa năm này' : rv.scope === 'month' ? 'chọn tháng âm bên dưới' : 'năm âm lịch'}</span></div>` +
+      `<button class="icon-btn" data-act="ryear" data-d="1" aria-label="Năm sau">▶</button></div>`;
+    const monthChips = rv.scope === 'month' ? `<div class="chips months">${Array.from({ length: 12 }, (_, i) => i + 1).map((m) =>
+      `<button class="chip ${rv.month === m ? 'on' : ''}" data-act="rmonth" data-m="${m}">T${m}</button>`).join('')}</div>` : '';
+    let body;
+    const r = rv.data;
+    if (!r) body = `<div class="card"><p>Chưa lập được bản luận: ${esc(rv.err || 'lỗi không rõ')}</p></div>`;
+    else {
+      const sum = `<div class="card rsum"><div class="rsum-h"><div class="big ${bandCls(r.score)}">${r.score}<small>/100</small></div>` +
+        `<div><div class="rt">${esc(r.title)}</div><div class="small muted">${esc(r.subtitle)}</div><span class="stance ${STANCE_CLS[r.stance] || ''}">Thế ${esc(r.stanceVn)}</span></div></div>` +
+        r.summary.map((p, i) => rPara(p, 'sum:' + i)).join('') + `</div>`;
+      const heat = r.months && r.months.length && r.scope !== 'THANG' ? `<div class="card"><h2>12 tháng âm năm ${rv.year}</h2><div class="heat">` +
+        r.months.map((m) => `<div class="hm ${bandCls(m.score)}${r.goodMonths.indexOf(m.month) >= 0 ? ' good' : ''}${r.cautionMonths.indexOf(m.month) >= 0 ? ' caution' : ''}" data-act="hm" data-m="${m.month}">` +
+          `<span>T${m.month}</span><b>${m.score}</b><small>${esc(m.role || '')}</small></div>`).join('') + `</div>` +
+        (r.goodMonths.length ? `<p class="small" style="margin:6px 0 0">Tháng thuận: <b>${r.goodMonths.join(', ')}</b> · tháng nên thận trọng: <b>${r.cautionMonths.join(', ')}</b> (âm lịch). Chạm một tháng để xem chi tiết.</p>` : '') + `</div>` : '';
+      const tl = r.timeline.length ? `<div class="card"><h2>12 đại vận</h2><div class="tl">` + r.timeline.map((t) =>
+        `<div class="dh ${t.current ? 'cur' : ''}" data-act="rdecade" data-y="${t.startYear}"><b>${t.from}–${t.to}</b><span>${esc(t.chiVn)} · ${esc(t.role)}</span>` +
+        `<span><span class="sc ${bandCls(t.score)}">${t.score}</span> ${esc(t.stance)}</span><span>${esc(t.thienThoi)}</span></div>`).join('') + `</div></div>` : '';
+      const adv = r.advice.length ? `<div class="card radv"><h2>Nên / Không nên</h2>` + [['NEN', 'Nên'], ['KHONG_NEN', 'Không nên'], ['LUU_Y', 'Lưu ý']].map(([k, l]) => {
+        const items = r.advice.filter((a) => a.type === k);
+        return items.length ? `<h3 class="adv-${k}">${l}</h3><ul>${items.map((a) => `<li>${esc(a.text)}<small> — vì: ${esc(a.because)}</small></li>`).join('')}</ul>` : '';
+      }).join('') + `</div>` : '';
+      const pal = r.palaces.length ? `<h2 class="rh">12 cung</h2>` + r.palaces.map((s) => rSection(s, 'p:', true)).join('') : '';
+      body = sum + heat + r.sections.map((s) => rSection(s, 't:', false)).join('') + tl + pal + adv +
+        `<p class="note">${esc(r.closing)}</p>`;
+    }
+    return bar('Luận giải', info.name || 'Lá số') + tabs + yearBar + monthChips + body;
   }
 
   // Sau khi dựng lưới: vẽ Tuần/Triệt trên đường ranh giới và đường tam phương tứ chính.
@@ -741,6 +828,21 @@
       }
       case 'preset': S.settings.preset = el.dataset.k; saveSettings(); render(false); break;
       case 'expert': S.settings.expert = !S.settings.expert; saveSettings(); render(false); break;
+      case 'open-reading': openReading(el.dataset.s); break;
+      case 'rscope': openReading(el.dataset.s, S.rv.year, S.rv.month); break;
+      case 'ryear': openReading(S.rv.scope, Math.max(1900, Math.min(2200, S.rv.year + parseInt(el.dataset.d, 10))), S.rv.month); break;
+      case 'rmonth': openReading('month', S.rv.year, +el.dataset.m); break;
+      case 'hm': openReading('month', S.rv.year, +el.dataset.m); break;
+      case 'rdecade': openReading('decade', parseInt(el.dataset.y, 10)); break;
+      case 'pal': { const k = el.dataset.id; S.palOpen[k] = !S.palOpen[k]; const sy = window.scrollY; render(false); window.scrollTo(0, sy); break; }
+      case 'rp': {
+        const k = el.dataset.key, open = !S.rdOpen[k];
+        S.rdOpen[k] = open;
+        el.classList.toggle('open', open);
+        const t = el.querySelector('.rp-tap');
+        if (t) t.textContent = open ? 'Thu gọn ‹' : 'Vì sao? ›';
+        break;
+      }
       case 'rd': {
         const k = el.dataset.key, open = !S.rdOpen[k];
         S.rdOpen[k] = open;

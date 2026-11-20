@@ -117,7 +117,70 @@ data class Effect(
     val soften: List<String> = emptyList(),
     /** Phản vi (xấu hóa tốt): finding đang âm thành dương cùng độ lớn; finding đã dương giữ nguyên. */
     val invert: List<String> = emptyList(),
+    /** Sự kiện cụ thể mà luật chỉ báo (quy tắc đồng thanh tương ứng, mục 9). */
+    val event: Event? = null,
 )
+
+/**
+ * Sự kiện cụ thể dùng cho quy tắc “đồng thanh tương ứng” (mục 9): ≥ 3 tầng cùng chỉ → “khả năng cao”,
+ * 2 tầng → “có thể”, 1 tầng → “dấu hiệu, nên lưu ý”. [polarity]: chiều của chính sự kiện.
+ */
+enum class Event(val vn: String, val short: String, val topic: Topic, val polarity: Int) {
+    CUOI_HOI("chuyện tình cảm, cưới hỏi", "tình cảm, cưới hỏi", Topic.TINH_DUYEN, 1),
+    SINH_CON("chuyện con cái, đón thành viên mới", "con cái", Topic.GIA_DAO, 1),
+    THANG_TIEN("thăng tiến, nhận trách nhiệm mới", "thăng tiến", Topic.SU_NGHIEP, 1),
+    DOI_VIEC("thay đổi công việc, môi trường làm việc", "đổi việc", Topic.SU_NGHIEP, 0),
+    DUOC_TAI("tài lộc, dòng tiền cải thiện", "tài lộc", Topic.TAI_CHINH, 1),
+    HAO_TAI("hao tài, chi phí ngoài dự tính", "hao tài", Topic.TAI_CHINH, -1),
+    PHAP_LY("vướng giấy tờ, thị phi, va chạm pháp lý", "giấy tờ, thị phi", Topic.PHAP_LY, -1),
+    DI_CHUYEN("đi xa, di chuyển, đổi chỗ ở hoặc chỗ làm", "đi xa", Topic.DI_CHUYEN, 0),
+    SUC_KHOE("cần chăm sóc sức khỏe, an toàn kỹ hơn", "sức khỏe", Topic.SUC_KHOE, -1),
+}
+
+/** Mức khả năng theo số tầng cùng chỉ (mục 9). */
+enum class Likelihood(val key: String, val vn: String) {
+    CAO("cao", "khả năng cao"),
+    CO_THE("co_the", "có thể"),
+    DAU_HIEU("dau_hieu", "mới là dấu hiệu");
+
+    companion object {
+        fun of(layers: Int): Likelihood? = when {
+            layers >= 3 -> CAO
+            layers == 2 -> CO_THE
+            layers == 1 -> DAU_HIEU
+            else -> null
+        }
+    }
+}
+
+/** Các tầng vận hạn (mục 8, mục 9 bước 6). */
+enum class Layer(val vn: String) {
+    GOC("lá số gốc"),
+    DAI_HAN("đại hạn"),
+    LUU_NIEN("lưu niên đại hạn"),
+    TIEU_HAN("tiểu hạn"),
+    LUU_THAI_TUE("Lưu Thái Tuế, sao lưu, Tứ Hóa lưu"),
+}
+
+/** Thế của giai đoạn theo điểm tổng (mục 11 bước 4). */
+enum class Stance(val vn: String, val key: String) {
+    TAN("Tấn", "tan"), GIU("Giữ", "giu"), THU("Thủ", "thu"), LUI("Lùi", "lui");
+
+    companion object {
+        fun of(score: Int): Stance = when {
+            score >= 70 -> TAN
+            score >= 50 -> GIU
+            score >= 35 -> THU
+            else -> LUI
+        }
+    }
+}
+
+/**
+ * Khuyến nghị dự phòng theo chủ đề: dùng khi chủ đề mạnh (STRONG) hay yếu (WEAK), theo thế giai đoạn (STANCE),
+ * hoặc cho lá số trẻ nhỏ dưới 16 tuổi âm (CHILD, D-39).
+ */
+enum class AdviceUse { STRONG, WEAK, STANCE, CHILD }
 
 /** Cung neo của luật. */
 sealed class Anchor {
@@ -171,6 +234,10 @@ data class AdviceEntry(
     val severity: Int,
     val source: String,
     val reviewed: Boolean,
+    /** Chỉ dùng khi thế giai đoạn thuộc tập này (rỗng = mọi thế). */
+    val stances: Set<Stance> = emptySet(),
+    /** Dùng làm khuyến nghị dự phòng khi các finding không đủ 3 mục (mục 11). */
+    val uses: Set<AdviceUse> = emptySet(),
 )
 
 /** Câu trả lời mẫu cho câu hỏi thường gặp (mục 12.5, thư mục `faq/`). */

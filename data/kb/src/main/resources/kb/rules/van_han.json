@@ -64,7 +64,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_thai_duong_loc_luu",
    "adviceKeys": [
@@ -137,7 +138,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_thien_co_loc_luu",
    "adviceKeys": [
@@ -210,7 +212,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_vu_khuc_loc_luu",
    "adviceKeys": [
@@ -283,7 +286,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_liem_trinh_loc_luu",
    "adviceKeys": [
@@ -356,7 +360,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_thai_am_loc_luu",
    "adviceKeys": [
@@ -429,7 +434,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_cu_mon_loc_luu",
    "adviceKeys": [
@@ -502,7 +508,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_thien_dong_loc_luu",
    "adviceKeys": [
@@ -575,7 +582,8 @@
      "SU_NGHIEP"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_menh_tham_lang_loc_luu",
    "adviceKeys": [
@@ -993,7 +1001,8 @@
      "SUC_KHOE"
     ],
     "polarity": -1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "SUC_KHOE"
    },
    "textKey": "vh.vh_luu_kinh_tat",
    "adviceKeys": [
@@ -1023,7 +1032,8 @@
      "SUC_KHOE"
     ],
     "polarity": -1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "SUC_KHOE"
    },
    "textKey": "vh.vh_luu_bach_ho_tat",
    "adviceKeys": [
@@ -1053,7 +1063,8 @@
      "TAI_CHINH"
     ],
     "polarity": 1,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_luu_loc_ton_tai",
    "adviceKeys": [
@@ -1115,7 +1126,8 @@
      "DI_CHUYEN"
     ],
     "polarity": 0,
-    "weight": 1.0
+    "weight": 1.0,
+    "event": "DI_CHUYEN"
    },
    "textKey": "vh.vh_luu_ma_di_chuyen",
    "adviceKeys": [
@@ -1239,7 +1251,8 @@
      "TINH_CACH"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_loc_luu_menh",
    "adviceKeys": [
@@ -1268,7 +1281,8 @@
      "TAI_CHINH"
     ],
     "polarity": 1,
-    "weight": 1.5
+    "weight": 1.5,
+    "event": "DUOC_TAI"
    },
    "textKey": "vh.vh_loc_luu_tai",
    "adviceKeys": [
@@ -1464,6 +1478,1177 @@
     "adv.khong_mo_rong_nong"
    ],
    "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LTT_QUAN_QUYEN",
+   "name": "Lưu Thái Tuế vào Quan Lộc có Quyền, Khôi Việt",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_QUYEN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_KHOI",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_VIET",
+        "in": "self"
+       },
+       {
+        "luuHoa": "QUYEN",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 2,
+    "weight": 1.5,
+    "event": "THANG_TIEN"
+   },
+   "textKey": "vh.vh_ltt_quan_quyen",
+   "adviceKeys": [
+    "adv.nhan_trach_nhiem_moi",
+    "adv.khong_doi_viec_cam_tinh"
+   ],
+   "source": "Prompt mục 11; Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_QUAN_QUYEN",
+   "name": "Tiểu hạn vào Quan Lộc có Quyền, Khôi Việt",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_QUYEN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_KHOI",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_VIET",
+        "in": "self"
+       },
+       {
+        "luuHoa": "QUYEN",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "event": "THANG_TIEN"
+   },
+   "textKey": "vh.vh_tieu_han_quan_quyen",
+   "adviceKeys": [
+    "adv.nhan_trach_nhiem_moi"
+   ],
+   "source": "Prompt mục 11; Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LNDH_CAT_HOI",
+   "name": "Lưu niên đại hạn hội cát tinh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuNienDaiHan",
+    "allOf": [
+     {
+      "countOf": [
+       "HOA_LOC",
+       "HOA_QUYEN",
+       "HOA_KHOA",
+       "TA_PHU",
+       "HUU_BAT",
+       "THIEN_KHOI",
+       "THIEN_VIET",
+       "LOC_TON"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 3
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "event": "THANG_TIEN"
+   },
+   "textKey": "vh.vh_lndh_cat_hoi",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "id": "VH_DAI_HAN_CAT_HOI",
+   "name": "Đại hạn hội nhiều cát tinh",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "countOf": [
+       "HOA_LOC",
+       "HOA_QUYEN",
+       "HOA_KHOA",
+       "TA_PHU",
+       "HUU_BAT",
+       "THIEN_KHOI",
+       "THIEN_VIET",
+       "LOC_TON"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 4
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 2.0,
+    "event": "THANG_TIEN"
+   },
+   "textKey": "vh.vh_dai_han_cat_hoi",
+   "adviceKeys": [
+    "adv.tan_dung_thoi_co",
+    "adv.tich_luy_truoc_khi_bung"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_DAI_HAN_SAT_HOI",
+   "name": "Đại hạn hội nhiều sát tinh",
+   "type": "VAN_HAN",
+   "scope": "DAI_HAN",
+   "reliability": "A",
+   "when": {
+    "layer": "daiHan",
+    "allOf": [
+     {
+      "countOf": [
+       "KINH_DUONG",
+       "DA_LA",
+       "HOA_TINH",
+       "LINH_TINH",
+       "DIA_KHONG",
+       "DIA_KIEP",
+       "HOA_KY"
+      ],
+      "in": "tamPhuongTuChinh",
+      "atLeast": 4
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP",
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 2.0
+   },
+   "textKey": "vh.vh_dai_han_sat_hoi",
+   "adviceKeys": [
+    "adv.thu_hon_cong",
+    "adv.lap_quy_du_phong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_PHA_MA",
+   "name": "Tiểu hạn gặp Phá Quân hoặc Thiên Mã",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "anyOf": [
+     {
+      "star": "PHA_QUAN",
+      "in": "self"
+     },
+     {
+      "star": "THIEN_MA",
+      "in": "self"
+     },
+     {
+      "luuStar": "THIEN_MA",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 0,
+    "weight": 1.0,
+    "event": "DOI_VIEC"
+   },
+   "textKey": "vh.vh_tieu_han_pha_ma",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach",
+    "adv.khong_doi_viec_cam_tinh"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LTT_QUAN_DONG",
+   "name": "Lưu Thái Tuế vào Quan Lộc gặp sao động",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "PHA_QUAN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_MA",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_MA",
+        "in": "self"
+       },
+       {
+        "star": "THAT_SAT",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SU_NGHIEP"
+    ],
+    "polarity": 0,
+    "weight": 1.0,
+    "event": "DOI_VIEC"
+   },
+   "textKey": "vh.vh_ltt_quan_dong",
+   "adviceKeys": [
+    "adv.dam_doi_moi_co_ke_hoach"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_THIEN_DI",
+   "name": "Tiểu hạn vào Thiên Di",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "THIEN_DI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN"
+    ],
+    "polarity": 0,
+    "weight": 1.0,
+    "event": "DI_CHUYEN"
+   },
+   "textKey": "vh.vh_tieu_han_thien_di",
+   "adviceKeys": [
+    "adv.chuan_bi_chuyen_di"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LNDH_THIEN_DI",
+   "name": "Lưu niên đại hạn vào Thiên Di",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuNienDaiHan",
+    "allOf": [
+     {
+      "role": [
+       "THIEN_DI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN"
+    ],
+    "polarity": 0,
+    "weight": 1.0,
+    "event": "DI_CHUYEN"
+   },
+   "textKey": "vh.vh_lndh_thien_di",
+   "adviceKeys": [
+    "adv.di_xa_mo_rong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "id": "VH_DI_MA_LOC_LUU",
+   "name": "Thiên Di có Lưu Thiên Mã gặp Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "THIEN_DI",
+    "allOf": [
+     {
+      "luuStar": "THIEN_MA",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "LOC_TON",
+        "in": "self"
+       },
+       {
+        "star": "HOA_LOC",
+        "in": "self"
+       },
+       {
+        "luuStar": "LOC_TON",
+        "in": "self"
+       },
+       {
+        "luuHoa": "LOC",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "DI_CHUYEN",
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "event": "DI_CHUYEN"
+   },
+   "textKey": "vh.vh_di_ma_loc_luu",
+   "adviceKeys": [
+    "adv.di_xa_mo_rong"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TAT_KINH_HINH_BACH_HO",
+   "name": "Tật Ách có Kình Dương/Thiên Hình gặp Lưu Bạch Hổ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAT_ACH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "KINH_DUONG",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HINH",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "luuStar": "BACH_HO",
+      "in": "self"
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SUC_KHOE"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "suppress": [
+     "VH_LUU_BACH_HO_TAT"
+    ],
+    "event": "SUC_KHOE"
+   },
+   "textKey": "vh.vh_tat_kinh_hinh_bach_ho",
+   "adviceKeys": [
+    "adv.kham_dinh_ky",
+    "adv.khong_bo_qua_dau_hieu"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_TAT_SAT",
+   "name": "Tiểu hạn vào Tật Ách gặp sát tinh",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "TAT_ACH"
+      ]
+     },
+     {
+      "countOf": [
+       "KINH_DUONG",
+       "DA_LA",
+       "HOA_TINH",
+       "LINH_TINH",
+       "DIA_KHONG",
+       "DIA_KIEP"
+      ],
+      "in": "self",
+      "atLeast": 2
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "SUC_KHOE"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "SUC_KHOE"
+   },
+   "textKey": "vh.vh_tieu_han_tat_sat",
+   "adviceKeys": [
+    "adv.dieu_do_sinh_hoat",
+    "adv.khong_qua_suc"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TAI_HAO_LUU_SAT",
+   "name": "Tài Bạch có Song Hao/Không Kiếp gặp sát lưu",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "TAI_BACH",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "DAI_HAO",
+        "in": "self"
+       },
+       {
+        "star": "TIEU_HAO",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "luuStar": "KINH_DUONG",
+        "in": "self"
+       },
+       {
+        "luuStar": "DA_LA",
+        "in": "self"
+       },
+       {
+        "luuHoa": "KY",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "HAO_TAI"
+   },
+   "textKey": "vh.vh_tai_hao_luu_sat",
+   "adviceKeys": [
+    "adv.lap_quy_du_phong",
+    "adv.khong_dau_co"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_TAI_HAO",
+   "name": "Tiểu hạn vào Tài Bạch gặp Hao, Không Kiếp",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "TAI_BACH"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "DAI_HAO",
+        "in": "self"
+       },
+       {
+        "star": "TIEU_HAO",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 1.0,
+    "event": "HAO_TAI"
+   },
+   "textKey": "vh.vh_tieu_han_tai_hao",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh",
+    "adv.khong_chi_phong_tay"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LNDH_TAI_KY",
+   "name": "Lưu niên đại hạn vào Tài Bạch gặp Kỵ, Không Kiếp",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuNienDaiHan",
+    "allOf": [
+     {
+      "role": [
+       "TAI_BACH"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HOA_KY",
+        "in": "self"
+       },
+       {
+        "luuHoa": "KY",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KHONG",
+        "in": "self"
+       },
+       {
+        "star": "DIA_KIEP",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "HAO_TAI"
+   },
+   "textKey": "vh.vh_lndh_tai_ky",
+   "adviceKeys": [
+    "adv.lap_quy_du_phong",
+    "adv.khong_mo_rong_nong"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_LOC",
+   "name": "Tiểu hạn gặp Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "LOC_TON",
+        "in": "self"
+       },
+       {
+        "star": "HOA_LOC",
+        "in": "self"
+       },
+       {
+        "luuStar": "LOC_TON",
+        "in": "self"
+       },
+       {
+        "luuHoa": "LOC",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "event": "DUOC_TAI"
+   },
+   "textKey": "vh.vh_tieu_han_loc",
+   "adviceKeys": [
+    "adv.ky_luat_tai_chinh"
+   ],
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LNDH_LOC",
+   "name": "Lưu niên đại hạn hội Lộc",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuNienDaiHan",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "star": "LOC_TON",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "star": "HOA_LOC",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "luuStar": "LOC_TON",
+        "in": "tamPhuongTuChinh"
+       },
+       {
+        "luuHoa": "LOC",
+        "in": "tamPhuongTuChinh"
+       }
+      ]
+     },
+     {
+      "role": [
+       "MENH",
+       "TAI_BACH",
+       "QUAN_LOC",
+       "DIEN_TRACH",
+       "THIEN_DI"
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TAI_CHINH"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "event": "DUOC_TAI"
+   },
+   "textKey": "vh.vh_lndh_loc",
+   "adviceKeys": [
+    "adv.chot_loi_phan_tan"
+   ],
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_PHAP_LY",
+   "name": "Tiểu hạn vào Quan Lộc/Thiên Di gặp Quan Phù, Hình, Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC",
+       "THIEN_DI"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "QUAN_PHU",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HINH",
+        "in": "self"
+       },
+       {
+        "star": "HOA_KY",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "PHAP_LY"
+   },
+   "textKey": "vh.vh_tieu_han_phap_ly",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.khong_ky_khi_chua_ro"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LTT_PHAP_LY",
+   "name": "Lưu Thái Tuế vào Quan Lộc/Thiên Di gặp Quan Phù, Hình, Kỵ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuThaiTue",
+    "allOf": [
+     {
+      "role": [
+       "QUAN_LOC",
+       "THIEN_DI"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "QUAN_PHU",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HINH",
+        "in": "self"
+       },
+       {
+        "star": "HOA_KY",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "PHAP_LY"
+   },
+   "textKey": "vh.vh_ltt_phap_ly",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.khong_dung_ten_viec_mo_ho"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_KY_LUU_PHAP_LY",
+   "name": "Hóa Kỵ lưu gặp Quan Phù/Thiên Hình ở Quan Lộc, Thiên Di",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": [
+     "QUAN_LOC",
+     "THIEN_DI"
+    ],
+    "allOf": [
+     {
+      "luuHoa": "KY",
+      "in": "self"
+     },
+     {
+      "anyOf": [
+       {
+        "star": "QUAN_PHU",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HINH",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "PHAP_LY"
+    ],
+    "polarity": -1,
+    "weight": 1.5,
+    "event": "PHAP_LY"
+   },
+   "textKey": "vh.vh_ky_luu_phap_ly",
+   "adviceKeys": [
+    "adv.doc_ky_hop_dong",
+    "adv.khong_ky_khi_chua_ro"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_PHU_THE_HONG_HY_LONG_PHUONG",
+   "name": "Phu Thê có Hồng Loan/Thiên Hỷ lưu gặp Long Trì, Phượng Các",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "palace": "PHU_THE",
+    "allOf": [
+     {
+      "anyOf": [
+       {
+        "luuStar": "HONG_LOAN",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_HY",
+        "in": "self"
+       }
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "LONG_TRI",
+        "in": "self"
+       },
+       {
+        "star": "PHUONG_CAC",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": 1,
+    "weight": 1.5,
+    "event": "CUOI_HOI"
+   },
+   "textKey": "vh.vh_phu_the_hong_hy_long_phuong",
+   "adviceKeys": [
+    "adv.chu_dong_gap_go",
+    "adv.khong_quyet_khi_gian"
+   ],
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_PHU_THE",
+   "name": "Tiểu hạn vào Phu Thê gặp sao tình duyên",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "PHU_THE"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HONG_LOAN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HY",
+        "in": "self"
+       },
+       {
+        "star": "DAO_HOA",
+        "in": "self"
+       },
+       {
+        "star": "LONG_TRI",
+        "in": "self"
+       },
+       {
+        "star": "PHUONG_CAC",
+        "in": "self"
+       },
+       {
+        "luuStar": "HONG_LOAN",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_HY",
+        "in": "self"
+       },
+       {
+        "luuStar": "DAO_HOA",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "event": "CUOI_HOI"
+   },
+   "textKey": "vh.vh_tieu_han_phu_the",
+   "adviceKeys": [
+    "adv.chu_dong_gap_go"
+   ],
+   "source": "Cẩm nang V2 – P.V",
+   "reviewed": false
+  },
+  {
+   "id": "VH_LNDH_PHU_THE",
+   "name": "Lưu niên đại hạn vào Phu Thê gặp sao tình duyên",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "luuNienDaiHan",
+    "allOf": [
+     {
+      "role": [
+       "PHU_THE"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "HONG_LOAN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HY",
+        "in": "self"
+       },
+       {
+        "star": "DAO_HOA",
+        "in": "self"
+       },
+       {
+        "star": "LONG_TRI",
+        "in": "self"
+       },
+       {
+        "star": "PHUONG_CAC",
+        "in": "self"
+       },
+       {
+        "luuStar": "HONG_LOAN",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_HY",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "TINH_DUYEN"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "event": "CUOI_HOI"
+   },
+   "textKey": "vh.vh_lndh_phu_the",
+   "adviceKeys": [
+    "adv.vun_dap_hon_nhan"
+   ],
+   "source": "Cẩm nang V2 – P.V; Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "id": "VH_TIEU_HAN_TU_TUC",
+   "name": "Tiểu hạn vào Tử Tức gặp sao hỷ",
+   "type": "VAN_HAN",
+   "scope": "NAM",
+   "reliability": "A",
+   "when": {
+    "layer": "tieuHan",
+    "allOf": [
+     {
+      "role": [
+       "TU_TUC"
+      ]
+     },
+     {
+      "anyOf": [
+       {
+        "star": "THAI",
+        "in": "self"
+       },
+       {
+        "star": "THANH_LONG",
+        "in": "self"
+       },
+       {
+        "star": "HY_THAN",
+        "in": "self"
+       },
+       {
+        "star": "THIEN_HY",
+        "in": "self"
+       },
+       {
+        "luuStar": "THIEN_HY",
+        "in": "self"
+       },
+       {
+        "luuStar": "HY_THAN",
+        "in": "self"
+       }
+      ]
+     }
+    ]
+   },
+   "effect": {
+    "topics": [
+     "GIA_DAO"
+    ],
+    "polarity": 1,
+    "weight": 1.0,
+    "event": "SINH_CON"
+   },
+   "textKey": "vh.vh_tieu_han_tu_tuc",
+   "adviceKeys": [
+    "adv.cham_soc_thai_ky"
+   ],
+   "source": "Cẩm nang V2 – P.V",
    "reviewed": false
   }
  ]

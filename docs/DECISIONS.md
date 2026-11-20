@@ -273,3 +273,79 @@ Giao diện có ba phần:
 Mỗi mục có “Vì sao?” (sao, cung, quan hệ làm căn cứ), gợi ý và nguồn. Thẻ luôn ghi “bản nháp tự sinh, chưa qua
 thẩm định”. Luật độ tin cậy C chỉ hiện khi bật “Chế độ chuyên sâu” trong Cài đặt. Nếu nạp knowledge base lỗi, lá số
 vẫn hiện bình thường, kèm một dòng báo lỗi. Bộ ghép câu, chấm điểm chủ đề và khuyến nghị tổng hợp là giai đoạn 4.
+
+### D-38 · Chấm điểm: hiệu chỉnh mức nền, khung cung theo tầng, trọng số đại vận
+Điểm vẫn tính theo công thức mục 9: `clamp(50 + 10 × Σ, 5, 95)`. Σ gồm hai phần:
+- lực sao × quan hệ cung (tọa thủ 1,0; xung chiếu 0,8; tam hợp 0,6; giáp 0,4 chỉ với cặp có nghĩa; nhị hợp 0,3)
+  × Tuần/Triệt theo tuổi;
+- chiều × trọng số của các luật đã kích hoạt.
+
+Có ba điểm phải tự quyết:
+1. **Mức nền.** Trên lá số ngẫu nhiên, tổng thô trung bình không bằng 0: phụ tinh tốt nhiều hơn phụ tinh xấu, chính
+   tinh phần lớn sáng. Vì vậy Σ = (tổng thô − mức nền) × đơn vị. Mức nền và đơn vị đo trên 3 000 lá số ngẫu nhiên
+   (36 000 cung), sao cho 50 điểm = mức trung bình và độ lệch chuẩn khoảng 13 điểm. Đo lại: điểm cung trung bình 50,2,
+   độ lệch chuẩn 12,6. Lực chính tinh lấy theo bảng mục 6 (M +2, V +1,5, Đ +1, B 0, H −1,5). Phản vi và làm nhẹ từ
+   luật chỉnh lực sao tương ứng.
+2. **Khung cung theo tầng.** Mỗi tầng xoay 12 vai trò từ cung của tầng đó: đại hạn = “ĐH Mệnh”, tiểu hạn = “Mệnh của
+   năm”, lưu niên đại hạn, Lưu Thái Tuế = Lưu Mệnh (mục 8.1, 8.4). Chủ đề Tài chính của năm vì vậy đọc ở cung Tài Bạch
+   của từng tầng. Sao lưu và Tứ Hóa lưu chỉ cộng vào tầng Lưu Thái Tuế (đúng nhóm 0,15 của mục 9 bước 6). Tứ Hóa đại
+   hạn (nếu bật) cộng vào tầng đại hạn. Luật năm góp vào tầng của điểm neo; luật neo theo cung gốc có sao lưu góp
+   vào tầng Lưu Thái Tuế. Trước đại hạn đầu không có đại hạn và lưu niên đại hạn, nên trọng số còn lại được chia lại
+   cho đủ 1.
+3. **Đại vận và điểm tổng.** Mục 9 không cho trọng số đại vận, nên dùng gốc 0,25 + đại hạn 0,75. Điểm tổng mỗi tầng
+   = 0,4 × điểm cung Mệnh của tầng + 0,6 × trung bình có trọng số các chủ đề (Sự nghiệp, Tài chính 1; Tình duyên,
+   Sức khỏe 0,8; Gia đạo, Pháp lý 0,6; Di chuyển 0,4). Tổng quan trọn đời = Mệnh 0,45 + Thân 0,2 + Phúc Đức 0,35.
+   Tháng và ngày theo đúng trọng số mục 9 bước 6. Can chi ngày: lục xung 25, tam hợp 75, lục hợp 70, còn lại 50.
+
+Chủ đề Pháp lý không có cung riêng, nên đọc theo sao chỉ báo (Quan Phù, Thiên Hình, Hóa Kỵ, Cự Môn hãm, Kình
+Dương; Giải Thần, Thiên Giải, Địa Giải, Hóa Khoa làm nhẹ) ở Quan Lộc, Thiên Di (Nô Bộc ×0,5).
+
+### D-39 · Lá số trẻ nhỏ (dưới 16 tuổi âm)
+Luận năm và đại vận cho trẻ dưới 16 tuổi âm chỉ giữ bốn chủ đề: Học tập, phát triển (thay tên Sự nghiệp), Sức khỏe,
+Gia đạo, Di chuyển. Bỏ Tình duyên, Tài chính, Pháp lý. Bỏ các sự kiện cưới hỏi, con cái, thăng tiến, đổi việc, tài lộc.
+Chỉ dùng 7 khuyến nghị dành cho trẻ (giấc ngủ, vận động, trò chuyện, không ép học, an toàn đi lại…). Không bật câu
+áp lực tinh thần. Bản luận ghi rõ “Lá số trẻ nhỏ”. Phần trọn đời giữ nguyên, vì đó là mô tả tính chất lá số.
+Ca golden C (sinh 2023) là trường hợp kiểm thử.
+
+### D-40 · Ghép câu và chống câu trái ngược
+Mỗi khối (một chủ đề, một cung, phần tổng quan) có:
+- câu mở: điểm và mức “rất thuận / khá thuận / cân bằng / cần thận trọng / nhiều thử thách”, kèm tầng đỡ nhất hoặc
+  tầng kéo xuống nhất, ghi rõ “cung Tài Bạch của tiểu hạn tại Tý, trên cung gốc Phu Thê”;
+- các câu luận một chiều;
+- câu sự kiện;
+- **nhiều nhất một câu cân nhắc**.
+
+Chiều trội lấy theo điểm (≥ 55 thuận, ≤ 45 cần lưu ý). Ở mức cân bằng, chiều trội lấy theo tổng lực các yếu tố.
+Riêng khối cung lấy theo sao chính tọa thủ, vì đó là phần mô tả cốt lõi của cung. Yếu tố ngược chiều trội không in
+thành câu riêng. Tên của chúng đi vào câu cân nhắc “Có cả … lẫn …, nghiêng về … vì …”, và câu gốc vẫn mở được trong
+“Vì sao?”. Test kiểm bất biến này trên 4 ca golden và 300 lá số ngẫu nhiên (24 000 đoạn).
+
+Mục “lưu cung” lấy đúng câu sao chính theo vai trò xoay trong KB. Ví dụ “Theo tiểu hạn, cung Tài Bạch của năm rơi
+vào Tý…” dùng câu Tham Lang hãm tại cung Tài Bạch. Nhờ vậy năm và đại vận có nội dung cả khi chưa có luật riêng.
+Chỉ khi không có gì mới in “Chưa có luận giải riêng cho tổ hợp này” (nguyên tắc 3).
+
+**Đồng thanh tương ứng.** Luật mang `effect.event` (cưới hỏi, con cái, thăng tiến, đổi việc, tài lộc, hao tài,
+giấy tờ/thị phi, đi xa, sức khỏe). Số tầng tính từ điều kiện của luật: tầng neo, cộng tầng mà điều kiện bắt buộc xét
+(`allOf` lấy hợp, `anyOf` lấy giao). Không tính lá số gốc, vì gốc luôn đúng mọi năm. Ví dụ “Hạn hỷ” = tiểu hạn +
+Lưu Thái Tuế + lưu niên đại hạn = 3 tầng → “khả năng cao”. Test đếm lại số tầng độc lập cho mọi câu sự kiện.
+
+**Khuyến nghị.** Bước 1 lấy từ adviceKeys của các finding mạnh nhất (xếp theo |chiều × trọng số|), mỗi loại một mục
+cho một chủ đề, tối đa 5. Nếu còn thiếu thì thêm theo thứ tự cho đủ 3 Nên và 3 Không nên:
+1. khuyến nghị dự phòng của chủ đề mạnh/yếu;
+2. khuyến nghị theo thế Tấn/Giữ/Thủ/Lùi;
+3. khuyến nghị của chủ đề gần mức trung bình.
+
+Khuyến nghị gắn thế (“thủ hơn công”, “tận dụng thời cơ”) chỉ dùng khi đúng thế. Mỗi khuyến nghị ghi “vì: …”. Hai
+tháng điểm cao nhất là tháng thuận cho việc NÊN, hai tháng thấp nhất là tháng nên thận trọng. Thêm 24 luật năm (có
+6 tình huống của bảng mục 11) và 41 khuyến nghị: Không nên/Lưu ý cho mọi chủ đề, theo thế giai đoạn, cho trẻ nhỏ.
+Nâng KB lên 0.4.0 (213 luật, 91 khuyến nghị).
+
+### D-41 · App 0.4.0: màn Luận giải
+Màn Luận giải có các tab Trọn đời / Đại vận / Năm / Tháng, gọi `AppApi.reading` (Composer chạy trong DEX).
+- **Mọi tab:** thẻ tóm tắt (điểm 0–100, thế Tấn/Giữ/Thủ/Lùi), các chủ đề, mỗi đoạn có “Vì sao?” (căn cứ, bằng chứng,
+  nguồn, mã luật), nhãn “nháp” cho câu chưa duyệt.
+- **Tab Năm:** thêm heat-map 12 tháng (chạm vào để xem tháng) và Nên/Không nên/Lưu ý.
+- **Tab Trọn đời:** thêm 12 cung (mở từng cung) và dòng thời gian 12 đại vận (chạm vào để xem đại vận).
+
+Bản luận chỉ tính khi mở tab và được lưu tạm theo (lá số, năm, tháng, trường phái, chế độ chuyên sâu), nên kéo thanh
+năm ở màn lá số không chậm đi. Danh mục “Cách cục & dấu hiệu” của giai đoạn 3 vẫn giữ ở màn lá số.

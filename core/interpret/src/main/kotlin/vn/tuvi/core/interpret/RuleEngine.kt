@@ -46,6 +46,8 @@ data class Evaluation(
     val findings: List<Finding>,
     val suppressed: List<Pair<Finding, String>>,
     val firedRules: List<Pair<Rule, Chi>>,
+    /** Tác động lên câu sao/bộ đồng cung/phụ tinh (ruleId → 1 làm nhẹ, 2 phản vi, 3 chặn): bộ chấm điểm dùng để chỉnh lực sao. */
+    val adjust: Map<String, Int> = emptyMap(),
 )
 
 /**
@@ -107,6 +109,7 @@ class RuleEngine(private val kb: KnowledgeBase) {
         // → chỉ luật ưu tiên cao nhất (nhiều predicate nhất) có hiệu lực; bằng nhau thì chặn > đảo > làm nhẹ (mục 9).
         val suppressed = ArrayList<Pair<Finding, String>>()
         val modified = ArrayList<Finding>()
+        val adjust = HashMap<String, Int>()
         for (f in all) {
             var best: Triple<Rule, Int, Int>? = null // luật, hành động (3 chặn, 2 đảo, 1 nhẹ), ưu tiên
             for ((rule, palace, eff) in modifiers) {
@@ -118,6 +121,7 @@ class RuleEngine(private val kb: KnowledgeBase) {
                 if (b == null || rule.priority > b.third || (rule.priority == b.third && action > b.second)) best = Triple(rule, action, rule.priority)
             }
             val b = best
+            if (b != null && f.type == null) adjust[f.ruleId] = b.second
             when (b?.second) {
                 null -> modified.add(f)
                 3 -> suppressed.add(f to b.first.id)
@@ -140,7 +144,7 @@ class RuleEngine(private val kb: KnowledgeBase) {
             }
             if (winner != null) suppressed.add(f to winner.ruleId) else result.add(f)
         }
-        return Evaluation(result, suppressed, fired)
+        return Evaluation(result, suppressed, fired, adjust)
     }
 
     /**

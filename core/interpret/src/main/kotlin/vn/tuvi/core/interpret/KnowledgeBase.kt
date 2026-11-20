@@ -110,6 +110,8 @@ class KnowledgeBase(
                         topic = Topic.entries.firstOrNull { it.name == o.str("topic", p) } ?: throw KbException("$p: topic"),
                         text = o.str("text", p), severity = (o["severity"] as? JsonPrimitive)?.intOrNull ?: 1,
                         source = o.str("source", p), reviewed = o.bool("reviewed") ?: false,
+                        stances = o.strList("stances").map { n -> Stance.entries.firstOrNull { it.name == n } ?: throw KbException("$p.stances: $n") }.toSet(),
+                        uses = o.strList("uses").map { n -> AdviceUse.entries.firstOrNull { it.name == n } ?: throw KbException("$p.uses: $n") }.toSet(),
                     )
                     if (advice.put(a.key, a) != null) throw KbException("$p: trùng khuyến nghị ${a.key}")
                 }
@@ -184,6 +186,7 @@ class KnowledgeBase(
                 polarity = polarity,
                 weight = (e["weight"] as? JsonPrimitive)?.doubleOrNull ?: throw KbException("$p.effect.weight"),
                 suppress = e.strList("suppress"), soften = e.strList("soften"), invert = e.strList("invert"),
+                event = e.strOrNull("event")?.let { n -> Event.entries.firstOrNull { it.name == n } ?: throw KbException("$p.effect.event: $n") },
             )
             if (effect.topics.isEmpty() && !effect.byPalace) throw KbException("$p.effect.topics rỗng")
             return Rule(

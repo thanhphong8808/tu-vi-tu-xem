@@ -22,3 +22,9 @@ tasks.register<JavaExec>("findFixtures") {
     args(project.file("src/test/resources/rule-fixtures.json").absolutePath)
     maxHeapSize = "2g"
 }
+
+// Snapshot bản luận 4 ca golden (cổng giai đoạn 4). Cập nhật khi thay đổi là chủ ý: ./gradlew :core:interpret:test -PupdateSnapshots
+tasks.test {
+    systemProperty("tuvi.snapshotDir", project.file("src/test/resources/snapshots").absolutePath)
+    if (project.hasProperty("updateSnapshots")) systemProperty("tuvi.updateSnapshots", "true")
+}

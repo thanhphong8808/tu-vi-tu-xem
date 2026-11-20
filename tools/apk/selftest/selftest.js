@@ -155,9 +155,40 @@
       const prof = Array.from(document.querySelectorAll('.profile')).find((p) => (p.textContent || '').indexOf('Ca A') >= 0);
       check(!!prof, 'Hồ sơ Ca A phải được lưu');
       if (prof) { prof.click(); await sleep(100); verify(GOLDEN[0], readBoard(), 'Mở lại Ca A'); click('[data-act="year"][data-d="1"]'); check((need('.yv').textContent || '').indexOf('2027') >= 0, 'Nút ▶ sang 2027'); }
+      // Giai đoạn 4: màn Luận giải (bản luận ghép câu + chấm điểm chạy trong DEX).
+      if (prof) {
+        click('[data-act="year"][data-d="-1"]');
+        const t1 = performance.now();
+        click('[data-act="open-reading"][data-s="year"]');
+        log(`TIME Luận năm 2026 ${Math.round(performance.now() - t1)} ms`);
+        const rsum = $('.rsum');
+        check(!!rsum && (rsum.textContent || '').indexOf('Năm 2026 (Bính Ngọ)') >= 0, 'Luận năm 2026: thiếu thẻ tóm tắt — ' + ((need('#app').textContent || '').slice(0, 200)));
+        check(document.querySelectorAll('.rs').length === 7, `Luận năm: 7 chủ đề, đang có ${document.querySelectorAll('.rs').length}`);
+        check(document.querySelectorAll('.heat .hm').length === 12, 'Luận năm: heat-map 12 tháng');
+        const nen = document.querySelectorAll('.radv h3.adv-NEN + ul li').length, khong = document.querySelectorAll('.radv h3.adv-KHONG_NEN + ul li').length;
+        check(nen >= 3 && nen <= 5 && khong >= 3 && khong <= 5, `Nên ${nen}, Không nên ${khong}`);
+        const rps = Array.from(document.querySelectorAll('.rp'));
+        check(rps.length > 10 && rps.every((e) => e.querySelector('.rp-why .w')), 'Mọi đoạn luận phải có “Vì sao?”');
+        let txt = need('#app').textContent || '';
+        check(txt.indexOf('khả năng cao') >= 0, 'Ca A 2026: hạn hỷ “khả năng cao”');
+        const t2 = performance.now();
+        click('[data-act="rscope"][data-s="life"]');
+        log(`TIME Luận trọn đời ${Math.round(performance.now() - t2)} ms`);
+        check(document.querySelectorAll('.rs-h[data-act="pal"]').length === 12 && document.querySelectorAll('.tl .dh').length === 12, 'Trọn đời: 12 cung và 12 đại vận');
+        txt += need('#app').textContent || '';
+        click('[data-act="rscope"][data-s="decade"]');
+        check(((($('.rsum') || {}).textContent) || '').indexOf('Đại vận 35–44 tuổi') >= 0, 'Đại vận 35–44 tuổi');
+        txt += need('#app').textContent || '';
+        click('[data-act="rscope"][data-s="month"]'); click('[data-act="rmonth"][data-m="3"]');
+        check(((($('.rsum') || {}).textContent) || '').indexOf('Tháng 3 âm lịch') >= 0, 'Luận tháng 3');
+        txt += need('#app').textContent || '';
+        check(forbiddenIn(txt).length === 0 && txt.indexOf('{') < 0, 'Bản luận lọt từ cấm hoặc ô chưa điền: ' + forbiddenIn(txt));
+        log(`READING luận giải: ${rps.length} đoạn ở luận năm`);
+        click('[data-act="rscope"][data-s="year"]');
+        window.scrollTo(0, 0);
+      }
       check(!document.querySelector('.error-box'), 'Không được có hộp lỗi trên màn hình: ' + ((document.querySelector('.error-box') || {}).textContent || ''));
-      // Để ảnh chụp màn hình cuối cùng cho thấy thẻ luận giải.
-      const rc = $('#reading'); if (rc) rc.scrollIntoView({ block: 'start' });
+      // Ảnh chụp cuối cùng: màn Luận giải năm (đang mở).
     } catch (e) {
       fail++;
       log('ERROR ' + e.message + ' ' + (e.stack || ''));

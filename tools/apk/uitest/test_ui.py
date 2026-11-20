@@ -4,6 +4,7 @@ Cổng giai đoạn 2B: 4 lá số golden hiển thị đúng trên lưới 12 c
 Tuần, Triệt, Mệnh, Thân, Cục, tuổi đại hạn, đại hạn/tiểu hạn/lưu niên đại hạn/nguyệt hạn tháng Giêng năm 2026),
 cộng các luồng: nhập âm lịch, canh giờ, không rõ giờ, lá số thay thế, lưu/mở/xóa hồ sơ, đổi trường phái, đổi năm.
 Giai đoạn 3: thẻ “Cách cục & dấu hiệu”, dấu hiệu năm, luận giải từng cung, “Vì sao?”, chế độ chuyên sâu, không lọt từ cấm.
+Giai đoạn 4: màn Luận giải (trọn đời, đại vận, năm, tháng): điểm, thế, chủ đề, 12 cung, 12 đại vận, heat-map tháng, Nên/Không nên.
 Chạy: tools/apk/devserver.sh 8765 2026-11-20 &  rồi  python3 tools/apk/uitest/test_ui.py [thư mục ảnh]
 """
 import asyncio, json, os, re, sys
@@ -221,6 +222,53 @@ async def main():
         await page.click('[data-act="settings"]'); await page.click('[data-act="expert"]'); await page.evaluate('window.tvBack()')
         await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
         check('chế độ chuyên sâu' not in await page.inner_text('#reading'), 'Tắt chế độ chuyên sâu không thành công')
+
+        # —— màn Luận giải (giai đoạn 4) ——
+        await page.click('[data-act="open-reading"][data-s="year"]')
+        await page.wait_for_selector('.rsum')
+        rs = await page.inner_text('#app')
+        check('Năm 2026 (Bính Ngọ)' in rs and 'Thế ' in rs, 'Luận năm phải có tiêu đề năm 2026 và thế giai đoạn')
+        check(await page.locator('.rs').count() == 7, f'Luận năm phải có 7 chủ đề, đang có {await page.locator(".rs").count()}')
+        check(await page.locator('.heat .hm').count() == 12, 'Luận năm phải có heat-map 12 tháng')
+        nen = await page.locator('.radv h3.adv-NEN + ul li').count()
+        khong = await page.locator('.radv h3.adv-KHONG_NEN + ul li').count()
+        check(3 <= nen <= 5 and 3 <= khong <= 5, f'Nên {nen}, Không nên {khong} phải trong 3–5')
+        check('khả năng cao' in rs and 'cưới hỏi' in rs, 'Ca A năm 2026: hạn hỷ đủ ba tầng phải thành “khả năng cao”')
+        check('Đức năng thắng số' in rs, 'Bản luận phải kết thúc bằng câu Đức năng thắng số')
+        n_rp = await page.locator('.rp').count()
+        n_ids = await page.evaluate("() => Array.from(document.querySelectorAll('.rp')).filter(e => e.querySelector('.rp-why .w') && e.querySelector('.ids').textContent.trim().length > 4).length")
+        check(n_rp > 10 and n_ids == n_rp, f'Mọi đoạn luận phải có “Vì sao?” và mã luật ({n_ids}/{n_rp})')
+        first = page.locator('.rp >> nth=1')
+        await first.click()
+        check(await first.evaluate('e => e.classList.contains("open")'), 'Chạm đoạn luận phải mở “Vì sao?”')
+        await page.screenshot(path=f'{SHOTS}/A_6_luan_nam.png', full_page=True)
+        all_luan = rs
+        await page.click('.heat .hm[data-m="3"]')
+        await page.wait_for_selector('.rsum')
+        check('Tháng 3 âm lịch' in await page.inner_text('.rsum'), 'Chạm ô tháng 3 trên heat-map phải mở luận tháng 3')
+        all_luan += await page.inner_text('#app')
+        await page.click('[data-act="rscope"][data-s="decade"]')
+        await page.wait_for_selector('.rsum')
+        dv = await page.inner_text('#app')
+        check('Đại vận 35–44 tuổi' in dv, 'Ca A năm 2026 đang ở đại vận 35–44 tuổi')
+        all_luan += dv
+        await page.click('[data-act="rscope"][data-s="life"]')
+        await page.wait_for_selector('.rsum')
+        check('Tử vi trọn đời' in await page.inner_text('.rsum'), 'Tab Trọn đời')
+        check(await page.locator('.rs-h[data-act="pal"]').count() == 12, '12 cung từng mục')
+        check(await page.locator('.tl .dh').count() == 12, 'Dòng thời gian 12 đại vận')
+        await page.click('.rs-h[data-act="pal"] >> nth=0')
+        check(await page.locator('#rs-palace_MENH .rp').count() >= 2, 'Mở cung Mệnh phải hiện các đoạn luận')
+        all_luan += await page.inner_text('#app')
+        await page.screenshot(path=f'{SHOTS}/A_7_tron_doi.png', full_page=True)
+        await page.click('.tl .dh >> nth=4')
+        await page.wait_for_selector('.rsum')
+        check('Đại vận 45–54 tuổi' in await page.inner_text('.rsum'), 'Chạm đại vận thứ 5 phải mở đại vận 45–54 tuổi')
+        bad = forbidden_in(all_luan)
+        check(not bad, f'Lọt từ cấm trong bản luận: {bad}')
+        check('{' not in all_luan and '}' not in all_luan, 'Bản luận còn ô {…} chưa điền')
+        await page.evaluate('window.tvBack()')
+        check(await page.locator('#board').count() == 1, 'Back từ màn luận giải phải về lá số')
         # đổi năm: ▶ sang 2027 rồi chạm đại hạn đầu
         await page.click('[data-act="year"][data-d="1"]')
         check('Năm 2027' in await page.inner_text('.yv'), 'Nút ▶ phải chuyển sang năm 2027')

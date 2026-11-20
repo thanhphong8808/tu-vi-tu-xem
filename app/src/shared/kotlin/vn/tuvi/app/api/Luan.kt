@@ -11,6 +11,9 @@ import vn.tuvi.core.engine.Chart
 import vn.tuvi.core.engine.LimitLayers
 import vn.tuvi.core.engine.StarKind
 import vn.tuvi.core.interpret.Anchor
+import vn.tuvi.core.interpret.Composer
+import vn.tuvi.core.interpret.Paragraph
+import vn.tuvi.core.interpret.Section
 import vn.tuvi.core.interpret.Finding
 import vn.tuvi.core.interpret.KnowledgeBase
 import vn.tuvi.core.interpret.LimitPoint
@@ -20,18 +23,71 @@ import vn.tuvi.core.interpret.RuleType
 import vn.tuvi.core.interpret.Scope
 
 /**
- * Luận giải sơ bộ (giai đoạn 3): cách cục và dấu hiệu do RuleEngine dò trên lá số + năm đang xem, kèm câu luận
- * nháp trong knowledge base (chưa duyệt). Bộ ghép câu và chấm điểm theo chủ đề thuộc giai đoạn 4.
+ * Cầu nối luận giải cho giao diện:
+ * - [json]: cách cục và dấu hiệu RuleEngine dò được trên lá số + năm đang xem (danh mục, giai đoạn 3);
+ * - [readingJson]: bản luận đã ghép câu, chấm điểm, Nên/Không nên cho trọn đời / đại vận / năm / tháng (giai đoạn 4).
+ * Câu luận trong knowledge base đang là bản nháp (reviewed = false).
  */
-object Reading {
-    @Volatile private var loaded: Pair<KnowledgeBase, RuleEngine>? = null
+object Luan {
+    @Volatile private var loaded: Triple<KnowledgeBase, RuleEngine, Composer>? = null
 
-    /** Nạp knowledge base một lần (≈ 0,6 MB JSON trong APK). Gọi sớm ở luồng nền để lần mở lá số đầu không phải chờ. */
-    fun engine(): Pair<KnowledgeBase, RuleEngine> = loaded ?: synchronized(this) {
-        loaded ?: KnowledgeBase.load().let { it to RuleEngine(it) }.also { loaded = it }
+    /** Nạp knowledge base một lần (≈ 0,7 MB JSON trong APK). Gọi sớm ở luồng nền để lần mở lá số đầu không phải chờ. */
+    fun engine(): Pair<KnowledgeBase, RuleEngine> = all().let { it.first to it.second }
+
+    private fun all(): Triple<KnowledgeBase, RuleEngine, Composer> = loaded ?: synchronized(this) {
+        loaded ?: KnowledgeBase.load().let { Triple(it, RuleEngine(it), Composer(it)) }.also { loaded = it }
     }
 
-    fun warmUp() { engine() }
+    fun warmUp() { all() }
+
+    /** Bản luận một phạm vi: "life" | "decade" | "year" | "month". */
+    fun readingJson(chart: Chart, scope: String, lunarYear: Int, month: Int, expert: Boolean, currentLunarYear: Int): JsonObject {
+        val c = all().third
+        val r = when (scope) {
+            "life" -> c.lifetime(chart, expert, currentLunarYear)
+            "decade" -> c.decade(chart, lunarYear, expert)
+            "month" -> c.month(chart, lunarYear, month, expert)
+            else -> c.year(chart, lunarYear, expert)
+        }
+        return toJson(r)
+    }
+
+    private fun para(p: Paragraph) = buildJsonObject {
+        put("text", p.text); put("pol", p.polarity); put("kind", p.kind.name); put("topic", p.topic?.name); put("draft", p.draft)
+        put("ids", buildJsonArray { p.ruleIds.forEach { add(it) } })
+        put("why", buildJsonArray {
+            for (w in p.why) add(buildJsonObject {
+                put("id", w.id); put("title", w.title); put("detail", w.detail); put("source", w.source)
+                put("evidence", buildJsonArray { w.evidence.forEach { add(it) } })
+            })
+        })
+    }
+
+    private fun section(s: Section) = buildJsonObject {
+        put("id", s.id); put("title", s.title); put("topic", s.topic?.name); put("score", s.score); put("subtitle", s.subtitle)
+        put("paragraphs", JsonArray(s.paragraphs.map { para(it) }))
+    }
+
+    fun toJson(r: vn.tuvi.core.interpret.Reading): JsonObject = buildJsonObject {
+        put("scope", r.scope.name); put("title", r.title); put("subtitle", r.subtitle); put("score", r.score)
+        put("stance", r.stance.name); put("stanceVn", r.stance.vn); put("stanceText", r.stanceText)
+        put("summary", JsonArray(r.summary.map { para(it) }))
+        put("sections", JsonArray(r.sections.map { section(it) }))
+        put("palaces", JsonArray(r.palaces.map { section(it) }))
+        put("timeline", buildJsonArray {
+            for (d in r.timeline) add(buildJsonObject {
+                put("index", d.index); put("from", d.from); put("to", d.to); put("chi", d.chi.ordinal); put("chiVn", d.chi.vn); put("role", d.role)
+                put("canChi", d.canChi); put("score", d.score); put("stance", d.stance.vn); put("thienThoi", d.thienThoi); put("startYear", d.startYear); put("current", d.current)
+            })
+        })
+        put("advice", buildJsonArray {
+            for (a in r.advice) add(buildJsonObject { put("key", a.key); put("type", a.type.name); put("topic", a.topic.vn); put("text", a.text); put("because", a.because) })
+        })
+        put("goodMonths", buildJsonArray { r.goodMonths.forEach { add(it) } })
+        put("cautionMonths", buildJsonArray { r.cautionMonths.forEach { add(it) } })
+        put("months", buildJsonArray { for (m in r.months) add(buildJsonObject { put("month", m.month); put("score", m.score); put("chi", m.chi?.vn); put("role", m.role) }) })
+        put("closing", r.closing); put("kbVersion", r.kbVersion)
+    }
 
     private val TYPE_ORDER = listOf(
         RuleType.CAT_CACH, RuleType.HUNG_CACH, RuleType.PHAN_VI, RuleType.THE_SAO, RuleType.CUNG, RuleType.CHUYEN_DE, RuleType.VAN_HAN,
