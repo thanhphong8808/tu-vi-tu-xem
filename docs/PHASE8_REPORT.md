@@ -145,14 +145,18 @@ Giờ sinh lệch thì năm lệch theo; vì vậy đoạn “đối chiếu nă
 
 ## Máy ảo Android 0.8.1 (CI)
 
-Workflow “Chạy thử trên máy ảo Android”, commit `9aaf4ca`
-([run 44927583277](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44927583277)) — **đạt cả 5 máy ngay lần đầu**.
-Workflow “Kiem tra” (Gradle + APK khóa tạm) đạt cả lượt push và lượt PR.
+Lượt đầu (commit `9aaf4ca`) đạt cả 5 máy. Lượt chạy lại cùng APK (commit chỉ sửa tài liệu) có **Android 16 trượt**: câu
+“Khi nào tôi lấy vợ?” mất 4,4 giây, quá chỉ tiêu 3 giây, vì phần dò thêm các năm đã qua tính đầy đủ từng năm. Mình đã sửa:
+chỉ tính sự kiện đồng thanh (`Composer.yearEvents`) và dò các năm song song (D-64), rồi build lại APK.
 
-| Máy ảo | Cài đè 0.8.0 → 0.8.1 | Selftest | LiteRT-LM (probe) | Gõ câu hỏi, trợ năng, chạm giữ, chia sẻ, PDF, PNG | Luận một năm |
-| --- | --- | --- | --- | --- | --- |
-| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 23 ms |
-| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 92 ms |
-| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 85 ms |
-| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 99 ms |
-| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 174 ms |
+Bản sửa, commit `4d0f8ab`
+([run 44929804114](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44929804114)) — **đạt cả 5 máy**.
+Workflow “Kiem tra” đạt cả lượt push và lượt PR.
+
+| Máy ảo | Cài đè 0.8.0 → 0.8.1 | Selftest | LiteRT-LM (probe) | Gõ câu hỏi, trợ năng, chạm giữ, chia sẻ, PDF, PNG | Luận một năm | “Khi nào tôi lấy vợ?” |
+| --- | --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 32 ms | 290 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 74 ms | 676 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 79 ms | 1.042 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 67 ms | 680 ms (trước khi sửa: 4.364 ms) |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 48 ms | 504 ms |
