@@ -63,7 +63,13 @@ bản 0.5.0 (vẫn là bản nháp chưa thẩm định). Quyết định thiế
 | Android 16 (API 36) | 133 | chạy, không cảnh báo | 499/499 | đạt cả 4 | 1,56 / 125 / 132 ms | 8 trang, 1,3 s |
 | Android 17 (API 37) | 145 | chạy, không cảnh báo | 499/499 | đạt cả 4 | 0,22 / 54 / 47 ms | 8 trang, 0,2 s |
 
-Các lần chạy liên tiếp trên GitHub cho 0.5.0 đều đạt cả 5 máy ngay lần đầu, không phải chạy lại lần nào. Số trong bảng lấy từ lần chạy 58d4440.
+Số trong bảng lấy từ lần chạy 58d4440: cả 5 máy đạt ngay lần đầu. Lần chạy c36a016 có hai báo lỗi không do app:
+- **API 37**: công cụ `uiautomator` (tiến trình kiểm thử, không phải app) tự văng với lỗi `Bad file descriptor` khi đọc
+  cây trợ năng. Script đã sửa để chỉ tính lỗi văng có dòng `Process: vn.tuvi.tuxem`.
+- **API 34**: bản phát hành không còn tiến trình sau 20 giây nhưng không có lỗi văng nào trong logcat. Hai lần chạy
+  trước trên cùng máy đều chạy bình thường, và ngay sau đó bản tự kiểm tra trên chính máy này đạt 499/499. Script nay
+  in nhật ký hệ thống (am_kill/am_proc_died) khi gặp lại. Nếu đúng lỗi môi trường Google Play Services đã ghi ở giai
+  đoạn 3 thì script chạy lại một lần, như bước tự kiểm tra.
 
 “Lá số” trong bảng là thời gian lập một lá số. “Năm” là thời gian luận một năm. “30 ngày” là chấm điểm cả tháng. Số
 đo bằng `AppApi.bench` ngay trong app, sau khi đã chạy nóng. Máy ảo trên GitHub không có GPU, chạy chung máy chủ, nên

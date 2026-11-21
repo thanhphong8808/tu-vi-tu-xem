@@ -31,15 +31,31 @@ fi
 
 echo "== 1) Bản phát hành (cài đè lên bản cũ như người dùng sẽ làm)"
 adb install -r "$REL" || { echo "CAI_DAT_THAT_BAI"; exit 1; }
-adb logcat -c
-adb shell am start -W -n "$PKG/$ACT"
-sleep 20
-PID=$(adb shell pidof "$PKG" | tr -d '\r')
-adb exec-out screencap -p > "$OUT/1-release-api$API.png"
-adb logcat -d > "$OUT/logcat-release-api$API.txt"
+run_release() {
+  adb shell am force-stop "$PKG"
+  adb logcat -c; adb logcat -b events -c 2>/dev/null
+  adb shell am start -W -n "$PKG/$ACT"
+  sleep 20
+  PID=$(adb shell pidof "$PKG" | tr -d '\r')
+  adb exec-out screencap -p > "$OUT/1-release-api$API.png"
+  adb logcat -d > "$OUT/logcat-release-api$API.txt"
+}
+run_release
+if [ -z "$PID" ]; then
+  echo "== Chẩn đoán: bản phát hành không còn chạy sau 20 giây"
+  adb logcat -d -b events 2>/dev/null | grep -E "am_kill|am_proc_died|am_crash|am_anr|am_proc_start|am_low_memory" | grep -iE "tuvi|gms|low_memory" | tail -20
+  adb logcat -d -b crash 2>/dev/null | tail -30
+  grep -nE "vn\.tuvi|TuVi|ActivityManager.*(Kill|kill|died)|lowmemorykiller|Fatal signal" "$OUT/logcat-release-api$API.txt" | tail -40
+  # Cùng lỗi môi trường như bước tự kiểm tra: Google Play Services trên máy ảo tự dừng, Android dừng luôn app đang dùng
+  # FontsProvider của nó. Chỉ khi đúng lý do này mới chạy lại một lần.
+  if adb logcat -d -b events 2>/dev/null | grep -q "am_kill.*vn.tuvi.tuxem.*dying proc"; then
+    echo "RELEASE_RETRY: hệ thống dừng app vì tiến trình Google Play Services trên máy ảo bị dừng"
+    sleep 10; run_release
+  fi
+fi
 grep -nE "FATAL EXCEPTION|AndroidRuntime|TuViTuXem|TuViWeb|Process: $PKG|VerifyError|NoClassDefFound|ClassNotFound" "$OUT/logcat-release-api$API.txt" | head -150
 if [ -n "$PID" ]; then echo "RELEASE_ALIVE pid=$PID"; else echo "RELEASE_DEAD"; FAIL=1; fi
-if grep -q "FATAL EXCEPTION" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_FATAL"; FAIL=1; fi
+if grep -A1 "FATAL EXCEPTION" "$OUT/logcat-release-api$API.txt" | grep -q "Process: $PKG"; then echo "RELEASE_FATAL"; FAIL=1; fi
 if grep -q "TuViWeb.*ERROR" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_JS_ERROR"; FAIL=1; fi
 if grep -qE " [WE] TuViTuXem" "$OUT/logcat-release-api$API.txt"; then echo "RELEASE_APP_WARNING"; FAIL=1; fi
 emit_png "release-api$API" "$OUT/1-release-api$API.png"
@@ -129,7 +145,8 @@ print(int(wx+x*d), int(wy+y*d))")"
   fi
   grep -E "exportFile|ShareProvider" "$OUT/logcat-selftest-api$API.txt" | head -5
   adb logcat -d | grep -E "FATAL EXCEPTION|E TuViTuXem" | head -10
-  if adb logcat -d | grep -q "FATAL EXCEPTION"; then echo "PHASE5_FATAL"; FAIL=1; fi
+  # Chỉ tính lỗi văng của app (“Process: vn.tuvi.tuxem”); công cụ uiautomator đôi khi tự văng, không phải lỗi app.
+  if adb logcat -d | grep -A1 "FATAL EXCEPTION" | grep -q "Process: $PKG"; then echo "PHASE5_FATAL"; FAIL=1; fi
   # 3d) Tệp đã lưu: PDF trong Tải xuống/TuViTuXem, PNG trong Ảnh/TuViTuXem.
   PDF=$(adb shell ls -t /sdcard/Download/TuViTuXem/ 2>/dev/null | tr -d '\r' | grep -m1 '\.pdf$')
   PNGF=$(adb shell ls -t /sdcard/Pictures/TuViTuXem/ 2>/dev/null | tr -d '\r' | grep -m1 '\.png$')
