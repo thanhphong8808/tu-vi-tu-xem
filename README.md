@@ -11,8 +11,9 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | --- | --- |
 | [TuViTuXem-0.7.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.7.0.apk) | File cài app Android (bản mới nhất, ~22 MB). Mục **Hỏi đáp** có thêm **Trợ lý AI chạy trên máy** (Gemma 4 E2B, tải một lần ~2,6 GB qua Wi-Fi): viết lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao — đã đối chiếu với lá số. Cài đè lên bản cũ không mất lá số |
 | [Chấm 40 câu Trợ lý AI](docs/tai-ve/ai-cham-40-cau.md) | 40 câu hỏi trên 4 lá số, câu AI viết (model thật), câu nào qua/trượt kiểm tra dữ kiện và vì sao, thời gian mỗi câu |
+| [Ảnh thẻ Trợ lý AI](docs/tai-ve/TroLyAI_TheTai.png) | Thẻ tải Trợ lý AI trong mục Hỏi đáp: dung lượng, nguồn tải, chỉ qua Wi-Fi |
 | [Báo cáo giai đoạn 7](docs/PHASE7_REPORT.md) | Trợ lý AI trên máy: cách gắn, kiểm tra đầu ra, kết quả kiểm thử, 5 máy ảo, việc anh cần thử trên S22 Ultra |
-| [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15) sau khi gõ “nam sau tai chinh ra sao” |
+| [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15, bản 0.7.0) sau khi gõ “nam sau tai chinh ra sao” |
 | [Hỏi đáp mẫu (0.6.1)](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app luận trên lá số mẫu, đủ các tầng: gốc, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, tổng hợp |
 | [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |

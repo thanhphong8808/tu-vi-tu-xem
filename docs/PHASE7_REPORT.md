@@ -80,7 +80,21 @@ nạp `liblitertlm_jni.so` thật và gọi vào LiteRT-LM với file giả ph�
 model trả “chưa dùng AI” và Hỏi đáp vẫn trả lời. Cùng các bước cũ: cài đè từ 0.6.1, selftest 4 ca golden, trợ năng,
 chạm giữ, chia sẻ, gõ câu hỏi.
 
-Kết quả 5 máy ảo: _(ghi sau khi workflow chạy xong)_
+Kết quả workflow “Chạy thử trên máy ảo Android”, commit `551752d`
+([run 44904090478](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44904090478)):
+
+| Máy ảo | Cài đè 0.6.1 → 0.7.0 | Selftest | Thư viện LiteRT-LM (probe) | Màn hình thật (trợ năng, chạm giữ, chia sẻ, gõ câu hỏi, PDF, PNG) | Luận một năm |
+| --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ nạp `lib/x86_64`, báo lỗi gọn (10 ms) | ✅ | 32 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ (24 ms) | ✅ | 114 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ (33 ms) | ✅ | 121 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ (29 ms) | ✅ | 61 ms |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ (23 ms) | ✅ | 68 ms |
+
+Máy ảo có 2–4 GB RAM nên thẻ Trợ lý AI báo “chưa đủ RAM” (đúng như thiết kế). Lần chạy đầu, máy ảo Android 16 trượt
+đúng một mục: ngưỡng hiệu năng “luận một năm < 250 ms” đo được 290 ms (máy ảo GitHub chạy chậm lúc đó; phần này không
+dính tới AI, cùng APK trên Android 15 đo 121 ms). Chạy lại job đó: 61 ms, đạt hết.
+Ảnh mục Hỏi đáp trên máy ảo Android 15: `docs/tai-ve/HoiDap_MayAo_API35.png`.
 
 ## Việc anh cần làm trên S22 Ultra
 
