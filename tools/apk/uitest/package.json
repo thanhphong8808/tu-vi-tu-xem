@@ -1,0 +1,8 @@
+{
+  "name": "tuvi-uitest",
+  "private": true,
+  "description": "Kiểm thử giao diện: axe-core cho cổng trợ năng (test_ui.py).",
+  "devDependencies": {
+    "axe-core": "4.10.2"
+  }
+}

@@ -6,7 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import kb_rules, kb_drafts, kb_luan  # noqa: E402  (kb_luan bổ sung luật, khuyến nghị giai đoạn 4)
 
-VERSION = "0.4.0-nhap"
+VERSION = "0.5.0-nhap"
 ROOT = os.path.dirname(os.path.dirname(HERE))
 OUT = os.path.join(ROOT, "data", "kb", "src", "main", "resources", "kb")
 
@@ -50,7 +50,7 @@ def main():
     files["texts"].append(write("texts/luan.json", {"texts": list(kb_luan.luan_texts().values())}))
     files["advice"].append(write("advice/advice.json", {"advice": list(kb_rules.ADVICE.values())}))
     files["faq"].append(write("faq/faq.json", {"faq": kb_drafts.faq_entries()}))
-    files["meta"].append(write("meta/sao.json", {"combos": kb_drafts.combo_meta(), "minor": kb_drafts.minor_meta()}))
+    files["meta"].append(write("meta/sao.json", {"combos": kb_drafts.combo_meta(), "minor": kb_drafts.minor_meta(), "chinh": kb_luan.chinh_meta()}))
 
     counts = {
         "rules": len(kb_rules.RULES),

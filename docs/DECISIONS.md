@@ -349,3 +349,93 @@ Màn Luận giải có các tab Trọn đời / Đại vận / Năm / Tháng, g�
 
 Bản luận chỉ tính khi mở tab và được lưu tạm theo (lá số, năm, tháng, trường phái, chế độ chuyên sâu), nên kéo thanh
 năm ở màn lá số không chậm đi. Danh mục “Cách cục & dấu hiệu” của giai đoạn 3 vẫn giữ ở màn lá số.
+
+### D-42 · Tầng Ngày: lịch tháng có điểm, chi tiết ngày, 12 giờ
+Mục 2.3 tầng 6 và mục 9 bước 6, theo công thức đã chốt ở D-38:
+- **Điểm ngày** = điểm tháng ×0,50 + cung nhật hạn ×0,35 + can chi ngày so với tuổi ×0,15. Can chi ngày: lục xung 25,
+  tam hợp 75, lục hợp 70, còn lại 50. Nhật hạn: từ cung nguyệt hạn coi là mùng 1, đếm thuận tới ngày âm (mục 8.5).
+- **Lịch tháng** đi theo tháng dương lịch (người dùng xếp việc theo lịch dương). Mỗi ô ghi ngày dương, ngày âm (mùng 1
+  ghi kèm tháng âm, “n” là tháng nhuận) và điểm. Màu theo đúng ngưỡng toàn app: từ 55 thuận, từ 45 trở xuống nên thận
+  trọng. Một tháng dương có thể vắt qua hai tháng âm, nên mỗi ngày tính lại từ đúng tháng âm của nó. Điểm năm và điểm
+  tháng được lưu tạm trong một lần chấm, nên 30 ngày chỉ tốn khoảng 1–2 lần luận năm (≈ 5 ms trên JVM, 12 ms trên máy ảo).
+- **Giờ trong ngày**: giờ Tý ở cung nhật hạn, đếm thuận. Điểm giờ = điểm ngày ×0,5 + điểm cung thời hạn ×0,5. Ba giờ
+  cao nhất là giờ thuận, hai giờ thấp nhất là giờ nên thận trọng.
+- **Nhãn độ tin cậy**: thẻ lịch luôn ghi “Độ tin cậy thấp hơn tầng năm” (mục 2.3). Bản luận ngày kết bằng `note.ngay`,
+  “Vì sao?” của giờ thuận kèm `note.gio` (độ tin cậy thấp hơn tầng ngày).
+- Trên 50 tháng ngẫu nhiên: trung bình 50, độ lệch 6,7; 30% số ngày thuận, 23% nên thận trọng. Trong một tháng, điểm
+  dao động khoảng 15.
+
+### D-43 · Thẻ sao
+Chạm giữ một sao trên lưới 0,55 giây (rê ngón quá 12 px thì huỷ) hoặc chạm tên sao trong bảng cung để mở thẻ sao:
+- **Thông tin chung**: chòm (Bắc/Nam Đẩu/Trung Thiên), ngũ hành âm dương, hóa khí, đặc tính. Lấy từ bảng thuộc tính
+  14 chính tinh của cẩm nang P.III, ghi trong `meta/sao.json` mục `chinh`. KbLint bắt đủ 14 sao.
+- **Tại cung này**: độ sáng, câu ý nghĩa đúng sao – độ sáng – cung, Tứ Hóa gốc kèm can năm, các cách cục gốc có sao
+  này làm bằng chứng.
+- **Phụ tinh** không có dòng chòm/hóa khí và dùng câu phụ tinh theo cung. Chưa có câu thì in `note.chua_co_luan`.
+- Chạm nhanh vẫn mở bảng cung như cũ. Trên lưới, chạm giữ không kích hoạt chọn chữ hay menu ngữ cảnh của WebView.
+
+### D-44 · So hai lá số (cẩm nang P.V.4)
+- **Truyền cung**:
+  - vợ chồng: cung Phu Thê của người này trùng cung Mệnh của người kia, xét cả hai chiều;
+  - cha mẹ – con: cung Tử Tức của cha/mẹ trùng cung Mệnh của con.
+- **Truyền tinh**: bộ chính tinh của cung đó giống hệt bộ chính tinh cung Mệnh người kia.
+  - Đều sáng → thuận.
+  - Là bộ sao nặng → truyền tinh hung. Gồm: Vũ Phá tại Tỵ/Hợi, Liêm Tham có sao hãm, hoặc Không/Kiếp ở cả hai cung.
+  - Còn lại → trung tính.
+  - Chung một phần → “truyền tinh một phần”.
+- Cùng chủ đề không để hai câu trái chiều. Có cả dấu hiệu thuận lẫn nặng thì phần thuận gộp vào một câu cân nhắc, như
+  bản luận. Không có dấu hiệu nào thì in `cmp.khong`. Luôn kết bằng `cmp.note`: quan hệ là tương tác hai chiều, không
+  đổ lỗi cho ai (mục 11).
+- Màn so sánh lấy hai lá số trong hồ sơ, bỏ qua hồ sơ không rõ giờ.
+
+### D-45 · Không rõ giờ sinh: xếp hạng 12 giờ theo sự kiện đã qua
+Bảy câu hỏi (mục 2.3: 5–7 câu): năm kết hôn, sinh con đầu, thăng tiến, đổi việc, khoản thu lớn, hao tài lớn, chuyển nhà
+hay đi xa. Cần ít nhất hai câu trả lời, năm phải từ năm sinh tới năm nay.
+
+Với mỗi giờ, mỗi sự kiện được chấm theo mức đồng thanh tương ứng (D-40) ở đúng năm đó: khả năng cao 3, có thể 2, mới
+là dấu hiệu 1, không thấy 0. Mức khớp = tổng / (3 × số sự kiện), thang 100. Không ghi phần trăm để khỏi giống lời khẳng
+định chắc chắn. Kết quả luôn gắn nhãn “ước đoán”, kèm chi tiết từng sự kiện, và bảng 12 lá số để tự đọc vẫn ở ngay dưới.
+
+Test: lấy 3 sự kiện mạnh nhất của chính lá số giờ thật (ca A, giờ Tỵ) thì Tỵ phải đứng đầu với đúng số điểm tính lại
+độc lập. Ca A đạt Tỵ 78–89, các giờ khác từ 44 trở xuống.
+
+### D-46 · Trường phái tùy chỉnh từng điểm
+Ngoài 3 preset, Cài đặt có “Tùy chỉnh từng điểm” cho 12 điểm của `SchoolConfig`: Tứ Hóa năm Canh, năm Nhâm hóa Khoa,
+Khôi Việt, Hỏa Linh, Thiên Giải, Lưu Hà, tháng nhuận, giờ Tý muộn, nguyệt hạn, độ sáng Cự Môn, Tứ Hóa theo can đại hạn,
+Thân chủ tuổi Tý.
+- Danh sách lấy từ `AppApi.configOptions`, nên engine thêm biến thể thì giao diện tự có.
+- Cấu hình gửi theo tên enum. Tên lạ thì dùng giá trị mặc định, không lỗi.
+- Lá số và PDF ghi “Tùy chỉnh”. Bộ nhớ tạm của bản luận có tính cả cấu hình.
+
+### D-47 · Xuất PNG, PDF A4
+- **PNG**: vẽ bằng canvas ở phía giao diện, 1256×1504, luôn nền sáng để in, không phụ thuộc màn hình. Gồm lưới 12 cung
+  (chính tinh có độ sáng, Tứ Hóa, phụ tinh cát/hung, vòng Tràng Sinh, tuổi đại hạn, dấu ĐH/TH/LN của năm xem), ô trung
+  tâm, Tuần/Triệt trên ranh giới, chân ảnh “tham khảo, chiêm nghiệm — đức năng thắng số”.
+- **PDF**: dựng bằng `android.graphics.pdf.PdfDocument` ngay trên máy, khổ A4 (595×842 pt). Không dùng hộp thoại in của
+  WebView, vì chân trang lặp lại mỗi trang trong CSS in không ổn định giữa các bản WebView.
+  - Trang 1: lá số và 11 dòng thông tin.
+  - Từ trang 2: luận trọn đời (tóm tắt, chủ đề, 12 đại vận, 12 cung, Nên/Không nên); sang trang mới là luận năm đang
+    xem (thêm 12 tháng).
+  - Chữ chảy qua trang theo dòng; tiêu đề không đứng trơ cuối trang.
+  - Mỗi trang có chân trang “Tử Vi Tự Xem · Trường phái … · lập ngày … · Trang n” và lời ngỏ (mục 11).
+- **Lưu và gửi**:
+  - Android 10+: lưu qua MediaStore vào Tải xuống/TuViTuXem và Ảnh/TuViTuXem, không cần quyền bộ nhớ.
+  - Android 8–9: lưu vào thư mục riêng của app.
+  - “Gửi” dùng `ShareProvider` (exported = false, chỉ đọc, cấp quyền theo từng lần gửi) và bảng chia sẻ của Android.
+- Máy chủ thử nghiệm trên máy tính dùng hộp thoại in của trình duyệt thay cho PDF.
+
+### D-48 · Màn hình lớn, phóng to, trợ năng
+- **Hai cột**: từ 900 px CSS trở lên (máy tính bảng, điện thoại xoay ngang), lưới 12 cung bên trái (dính khi cuộn), các
+  thẻ bên phải. Bảng cung, thẻ sao trượt ra thành cột phải rộng 460 px. Mục chủ đề của bản luận chia hai cột.
+- **Phóng to lưới**: chụm hai ngón (1–3×, giữ điểm giữa hai ngón đứng yên) hoặc nút −/＋/⟲. Dùng `transform: scale` trên
+  lưới bên trong một khung cuộn, nên toạ độ Tuần/Triệt và đường tam hợp không phải tính lại. Chạm ô vẫn đúng cung.
+- **TalkBack**: mỗi ô là một nút có nhãn gộp đọc theo thứ tự tên cung, can chi, chính tinh (độ sáng), Tứ Hóa, phụ tinh,
+  tuổi đại hạn (mục 13). Nội dung chi tiết của ô ẩn với trình đọc màn hình. Mọi phần tử chạm được có role="button",
+  tabindex và nhận Enter/phím cách. Bảng trượt khi đóng có `visibility: hidden` nên trình đọc không đọc nội dung cũ.
+- **Cổng kiểm tra**:
+  - axe-core (WCAG 2.1 A/AA) trên 9 màn: không lỗi mức serious/critical. Đã sửa độ tương phản điểm đại hạn, ô lịch,
+    nhãn độ tin cậy; sửa nút lồng nút ở danh sách hồ sơ.
+  - Máy ảo: `uiautomator dump` phải thấy nhãn ô Mệnh của ca A.
+- **Cổng ảnh chụp**: 10 ảnh chuẩn trong `tools/apk/uitest/baseline`, so từng điểm ảnh, lệch tối đa 0,5%.
+- **Hiệu năng ngay trên máy**: `AppApi.bench`, selftest ghi dòng BENCH. Ngưỡng máy ảo: lá số < 25 ms, năm < 250 ms,
+  30 ngày < 1 500 ms. Chỉ tiêu S22 ở mục 3 là 5 / 50 / 300 ms.

@@ -30,7 +30,21 @@ import vn.tuvi.core.engine.InvalidBirthInputException
 import vn.tuvi.core.engine.LimitEngine
 import vn.tuvi.core.engine.LimitLayers
 import vn.tuvi.core.engine.PalaceRole
+import vn.tuvi.core.engine.CuMonTable
+import vn.tuvi.core.engine.DaiHanTuHoa
+import vn.tuvi.core.engine.DayBoundary
+import vn.tuvi.core.engine.HoaLinhVariant
+import vn.tuvi.core.engine.KhoiVietVariant
+import vn.tuvi.core.engine.LeapMonthRule
+import vn.tuvi.core.engine.LuuHaVariant
+import vn.tuvi.core.engine.NguyetHanVariant
+import vn.tuvi.core.engine.NhamHoaKhoa
 import vn.tuvi.core.engine.SchoolConfig
+import vn.tuvi.core.engine.ThanChuTy
+import vn.tuvi.core.engine.ThienGiaiVariant
+import vn.tuvi.core.engine.TuHoaVariant
+import vn.tuvi.core.interpret.Event
+import vn.tuvi.core.interpret.PairRelation
 import vn.tuvi.core.engine.SchoolPreset
 import vn.tuvi.core.engine.StarId
 import vn.tuvi.core.engine.TuHoa
@@ -66,6 +80,13 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         val data: JsonElement = when (method) {
             "chart" -> chart(req.jsonObject)
             "reading" -> reading(req.jsonObject)
+            "days" -> Luan.daysJson(buildChart(req.jsonObject), req.jsonObject.need("year", "năm"), req.jsonObject.need("month", "tháng"), expertOf(req.jsonObject))
+            "day" -> Luan.dayJson(buildChart(req.jsonObject), parseDate(req.jsonObject.str("date")), expertOf(req.jsonObject))
+            "star" -> Luan.starJson(buildChart(req.jsonObject), req.jsonObject.str("star") ?: throw IllegalArgumentException("Thiếu tên sao."))
+            "compare" -> compare(req.jsonObject)
+            "rankHours" -> rankHours(req.jsonObject)
+            "configOptions" -> configOptions()
+            "bench" -> Luan.bench()
             "allHours" -> allHours(req.jsonObject)
             "lunarYear" -> lunarYear(req.jsonObject)
             "convert" -> convert(req.jsonObject)
@@ -94,9 +115,94 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
     private fun JsonObject.bool(key: String): Boolean = (this[key] as? JsonPrimitive)?.booleanOrNull ?: false
     private fun JsonObject.need(key: String, label: String): Int = int(key) ?: throw IllegalArgumentException("Chưa nhập $label.")
 
+    /**
+     * Trường phái: `preset` (NAM_PHAI_VN, THIEN_LUONG, TOAN_THU_TRUNG_CHAU) hoặc `preset = CUSTOM` kèm `config`
+     * (từng điểm của SchoolConfig, theo tên enum — Cài đặt → Tùy chỉnh từng điểm).
+     */
     private fun configOf(o: JsonObject): SchoolConfig {
         val key = o.str("preset") ?: return SchoolConfig.DEFAULT
+        if (key == "CUSTOM") {
+            val c = o["config"] as? JsonObject ?: return SchoolConfig.DEFAULT
+            fun <E : Enum<E>> pick(name: String, values: Array<E>, def: E): E = values.firstOrNull { it.name == c.str(name) } ?: def
+            val d = SchoolConfig.DEFAULT
+            return SchoolConfig(
+                tuHoa = pick("tuHoa", TuHoaVariant.entries.toTypedArray(), d.tuHoa),
+                nhamKhoa = pick("nhamKhoa", NhamHoaKhoa.entries.toTypedArray(), d.nhamKhoa),
+                khoiViet = pick("khoiViet", KhoiVietVariant.entries.toTypedArray(), d.khoiViet),
+                hoaLinh = pick("hoaLinh", HoaLinhVariant.entries.toTypedArray(), d.hoaLinh),
+                thienGiai = pick("thienGiai", ThienGiaiVariant.entries.toTypedArray(), d.thienGiai),
+                luuHa = pick("luuHa", LuuHaVariant.entries.toTypedArray(), d.luuHa),
+                leapMonth = pick("leapMonth", LeapMonthRule.entries.toTypedArray(), d.leapMonth),
+                dayBoundary = pick("dayBoundary", DayBoundary.entries.toTypedArray(), d.dayBoundary),
+                nguyetHan = pick("nguyetHan", NguyetHanVariant.entries.toTypedArray(), d.nguyetHan),
+                cuMonTable = pick("cuMonTable", CuMonTable.entries.toTypedArray(), d.cuMonTable),
+                daiHanTuHoa = pick("daiHanTuHoa", DaiHanTuHoa.entries.toTypedArray(), d.daiHanTuHoa),
+                thanChuTy = pick("thanChuTy", ThanChuTy.entries.toTypedArray(), d.thanChuTy),
+            )
+        }
         return SchoolPreset.entries.firstOrNull { it.name == key }?.config ?: SchoolConfig.DEFAULT
+    }
+
+    /** Danh sách điểm tùy chỉnh của trường phái cho màn Cài đặt. */
+    private fun configOptions(): JsonElement {
+        fun field(key: String, label: String, values: List<Pair<String, String>>, def: String) = buildJsonObject {
+            put("key", key); put("label", label); put("default", def)
+            put("options", buildJsonArray { for ((n, v) in values) add(buildJsonObject { put("value", n); put("label", v) }) })
+        }
+        val d = SchoolConfig.DEFAULT
+        return buildJsonArray {
+            add(field("tuHoa", "Tứ Hóa năm Canh", TuHoaVariant.entries.map { it.name to it.vn }, d.tuHoa.name))
+            add(field("nhamKhoa", "Năm Nhâm hóa Khoa", NhamHoaKhoa.entries.map { it.name to it.vn }, d.nhamKhoa.name))
+            add(field("khoiViet", "Khôi Việt tuổi Canh, Tân", KhoiVietVariant.entries.map { it.name to it.vn }, d.khoiViet.name))
+            add(field("hoaLinh", "An Hỏa Tinh, Linh Tinh", HoaLinhVariant.entries.map { it.name to it.vn }, d.hoaLinh.name))
+            add(field("thienGiai", "An Thiên Giải", ThienGiaiVariant.entries.map { it.name to it.vn }, d.thienGiai.name))
+            add(field("luuHa", "An Lưu Hà", LuuHaVariant.entries.map { it.name to it.vn }, d.luuHa.name))
+            add(field("leapMonth", "Sinh tháng nhuận", LeapMonthRule.entries.map { it.name to it.vn }, d.leapMonth.name))
+            add(field("dayBoundary", "Giờ Tý muộn (23:00–23:59)", DayBoundary.entries.map { it.name to it.vn }, d.dayBoundary.name))
+            add(field("nguyetHan", "An nguyệt hạn", NguyetHanVariant.entries.map { it.name to it.vn }, d.nguyetHan.name))
+            add(field("cuMonTable", "Độ sáng Cự Môn", CuMonTable.entries.map { it.name to it.vn }, d.cuMonTable.name))
+            add(field("daiHanTuHoa", "Tứ Hóa theo can đại hạn", DaiHanTuHoa.entries.map { it.name to it.vn }, d.daiHanTuHoa.name))
+            add(field("thanChuTy", "Thân chủ tuổi Tý", ThanChuTy.entries.map { it.name to it.vn }, d.thanChuTy.name))
+        }
+    }
+
+    private fun expertOf(o: JsonObject): Boolean = ((o["input"] as? JsonObject) ?: o).bool("expert") || o.bool("expert")
+
+    private fun parseDate(s: String?): LocalDate = try { LocalDate.parse(s ?: "") } catch (e: Exception) {
+        throw IllegalArgumentException("Ngày không hợp lệ: $s")
+    }
+
+    /** Lá số từ đầu vào form (kể cả lá số thay thế `alt`). */
+    private fun buildChart(o: JsonObject): Chart {
+        val inputObj = (o["input"] as? JsonObject) ?: o
+        val base = ChartEngine.build(parseInput(inputObj), configOf(inputObj))
+        val altIndex = o.int("alt") ?: return base
+        val w = base.warnings.getOrNull(altIndex) ?: throw IllegalArgumentException("Không có lá số thay thế này.")
+        return ChartEngine.buildAlternative(base, w)
+    }
+
+    /** So hai lá số trong hồ sơ: `a`, `b` là đầu vào form; `relation` = VO_CHONG | CHA_ME_CON. */
+    private fun compare(o: JsonObject): JsonElement {
+        val a = o["a"] as? JsonObject ?: throw IllegalArgumentException("Thiếu lá số thứ nhất.")
+        val b = o["b"] as? JsonObject ?: throw IllegalArgumentException("Thiếu lá số thứ hai.")
+        val rel = PairRelation.entries.firstOrNull { it.name == o.str("relation") } ?: PairRelation.VO_CHONG
+        val ca = ChartEngine.build(parseInput(a), configOf(a))
+        val cb = ChartEngine.build(parseInput(b), configOf(b))
+        return Luan.compareJson(ca, cb, rel, a.str("name") ?: "Người thứ nhất", b.str("name") ?: "Người thứ hai")
+    }
+
+    /** Không rõ giờ sinh: xếp 12 giờ theo các sự kiện đã qua (`events` = [{event, year}]). */
+    private fun rankHours(o: JsonObject): JsonElement {
+        val inputObj = (o["input"] as? JsonObject) ?: o
+        val charts = ChartEngine.buildAllHours(parseInput(inputObj), configOf(inputObj))
+        val events = (o["events"] as? JsonArray).orEmpty().mapNotNull { e ->
+            val eo = e as? JsonObject ?: return@mapNotNull null
+            val ev = Event.entries.firstOrNull { it.name == eo.str("event") } ?: return@mapNotNull null
+            val y = eo.int("year") ?: return@mapNotNull null
+            if (y !in 1900..2200) throw IllegalArgumentException("Năm sự kiện phải trong 1900–2200.")
+            ev to y
+        }
+        return Luan.rankJson(charts, events)
     }
 
     private fun regionOf(o: JsonObject): BirthRegion =
@@ -221,12 +327,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
      */
     private fun reading(o: JsonObject): JsonElement {
         val inputObj = (o["input"] as? JsonObject) ?: o
-        val base = ChartEngine.build(parseInput(inputObj), configOf(inputObj))
-        val altIndex = o.int("alt")
-        val chart = if (altIndex != null) {
-            val w = base.warnings.getOrNull(altIndex) ?: throw IllegalArgumentException("Không có lá số thay thế này.")
-            ChartEngine.buildAlternative(base, w)
-        } else base
+        val chart = buildChart(o)
         val viewYear = o.int("viewYear") ?: currentLunarYear()
         if (viewYear !in 1900..2200) throw IllegalArgumentException("Năm xem phải trong 1900–2200.")
         val month = (o.int("month") ?: 1).coerceIn(1, 12)
@@ -274,7 +375,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         put("menhChu", chart.menhChu.vn)
         put("thanChu", chart.thanChu.vn)
         put("preset", chart.config.label)
-        put("presetKey", chart.config.preset?.name ?: "NAM_PHAI_VN")
+        put("presetKey", chart.config.preset?.name ?: "CUSTOM")
         put("viewYear", viewYear)
         put("viewYearCanChi", CanChi.ofYear(viewYear).vn)
         put("tuoiAm", chart.tuoiAm(viewYear))
@@ -413,7 +514,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         val t = today()
         val l = LunarCalendar.solarToLunar(t, 7)
         return buildJsonObject {
-            put("solar", fmtDate(t)); put("year", t.year)
+            put("solar", fmtDate(t)); put("year", t.year); put("iso", t.toString()); put("month", t.monthValue)
             put("lunarYear", l.year); put("lunarMonth", l.month); put("lunar", "${l.day}/${l.month}${if (l.isLeap) " nhuận" else ""}/${l.year}")
             put("lunarYearCanChi", CanChi.ofYear(l.year).vn)
         }

@@ -3,7 +3,7 @@ package vn.tuvi.core.interpret
 import vn.tuvi.core.calendar.Chi
 
 /** Phạm vi một bản luận (mục 2.3). */
-enum class ReadingScope(val vn: String) { TRON_DOI("Trọn đời"), DAI_VAN("Đại vận"), NAM("Năm"), THANG("Tháng") }
+enum class ReadingScope(val vn: String) { TRON_DOI("Trọn đời"), DAI_VAN("Đại vận"), NAM("Năm"), THANG("Tháng"), NGAY("Ngày") }
 
 /**
  * Loại đoạn: LEAD câu mở chủ đề (điểm + mức), PLAIN câu luận một chiều, WEIGH câu cân nhắc gộp hai chiều
@@ -33,6 +33,30 @@ data class AdviceItem(val key: String, val type: AdviceType, val topic: Topic, v
 
 data class MonthScore(val month: Int, val score: Int, val chi: Chi?, val role: String?)
 
+/** Điểm một ngày dương lịch (mục 2.3 tầng 6). */
+data class DayScore(
+    val date: java.time.LocalDate, val lunarDay: Int, val lunarMonth: Int, val lunarLeap: Boolean, val lunarYear: Int,
+    val canChi: String, val score: Int, val nhatHan: Chi?, val role: String?,
+)
+
+/** Điểm một giờ (canh) trong ngày theo cung thời hạn. */
+data class HourScore(val chi: Chi, val label: String, val score: Int, val palace: Chi, val role: String)
+
+/** Quan hệ khi so hai lá số (cẩm nang P.V.4). */
+enum class PairRelation(val vn: String) { VO_CHONG("Vợ chồng"), CHA_ME_CON("Cha mẹ – con") }
+
+/** Kết quả so hai lá số: truyền cung, truyền tinh. */
+data class Comparison(val title: String, val relation: PairRelation, val paragraphs: List<Paragraph>, val closing: String)
+
+/** Một giờ ứng viên khi không rõ giờ sinh, xếp theo mức khớp với các sự kiện đã qua. */
+data class HourRank(val canh: vn.tuvi.core.engine.CanhGio, val score: Int, val details: List<String>)
+
+/** Thẻ sao (mục 13: chạm giữ một sao). */
+data class StarCard(
+    val star: vn.tuvi.core.engine.StarId, val kind: String, val chi: Chi, val role: String, val brightness: String?,
+    val meta: MainMeta?, val natalHoa: List<String>, val meaning: List<Paragraph>, val patterns: List<Why>,
+)
+
 /** Một ô trên dòng thời gian 12 đại vận. */
 data class DecadeItem(
     val index: Int, val from: Int, val to: Int, val chi: Chi, val role: String, val canChi: String, val score: Int, val stance: Stance,
@@ -57,6 +81,7 @@ data class Reading(
     val months: List<MonthScore>,
     val closing: String,
     val kbVersion: String,
+    val hours: List<HourScore> = emptyList(),
 ) {
     /** Mọi đoạn kèm mã khối chứa nó (để kiểm thử). */
     fun allParagraphs(): List<Pair<String, Paragraph>> =
@@ -97,6 +122,10 @@ fun Reading.render(why: Boolean = false): String = buildString {
         appendLine()
         appendLine("[12 đại vận]")
         for (d in timeline) appendLine("  ${if (d.current) "▶" else " "} ${d.from}–${d.to} tuổi · ${d.chi.vn} (${d.role}) · ${d.canChi} · ${d.score}/100 ${d.stance.vn} · ${d.thienThoi} · từ ${d.startYear}")
+    }
+    if (hours.isNotEmpty()) {
+        appendLine()
+        appendLine("[12 giờ] " + hours.joinToString("  ") { "${it.chi.vn}:${it.score}" })
     }
     if (months.isNotEmpty()) {
         appendLine()

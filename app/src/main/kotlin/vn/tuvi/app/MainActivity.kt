@@ -90,7 +90,7 @@ class MainActivity : Activity() {
         view.webViewClient = LocalOnlyClient(this)
         view.webChromeClient = ConsoleToLog()
         val prefs = getSharedPreferences("tuvi_tu_xem", Context.MODE_PRIVATE)
-        view.addJavascriptInterface(Bridge(prefs), "TuViNative")
+        view.addJavascriptInterface(Bridge(this, prefs), "TuViNative")
         web = view
 
         val selfTest = debuggable && intent?.getStringExtra("selftest") != null
@@ -290,8 +290,9 @@ class MainActivity : Activity() {
      * Đối tượng `window.TuViNative` trong JavaScript. Chạy trên luồng JavaBridge, không chạm vào View.
      * Engine được tạo khi gọi lần đầu và mọi lỗi (kể cả lỗi nạp lớp) được trả về giao diện thay vì làm app thoát.
      */
-    class Bridge(private val prefs: SharedPreferences) {
+    class Bridge(activity: Activity, private val prefs: SharedPreferences) {
         @Volatile private var api: AppApi? = null
+        private val activityRef = java.lang.ref.WeakReference(activity)
 
         init {
             // Nạp sẵn knowledge base (luận giải) ở luồng nền để lần mở lá số đầu tiên không phải chờ.
@@ -312,10 +313,39 @@ class MainActivity : Activity() {
 
         @JavascriptInterface
         fun version(): String = APP_VERSION
+
+        /**
+         * Xuất tệp: [kind] = "png" (payload = ảnh PNG base64) | "pdf" (payload = mô hình tài liệu JSON);
+         * [action] = "save" (Tải xuống / Ảnh) | "share" (bảng chia sẻ). Trả về JSON {ok, path, pages, bytes} hoặc {ok:false, error}.
+         */
+        @JavascriptInterface
+        fun exportFile(kind: String?, action: String?, name: String?, payload: String?): String = try {
+            val act = activityRef.get() ?: throw IllegalStateException("màn hình đã đóng")
+            val safeName = (name ?: "la-so").replace(Regex("[^A-Za-z0-9._-]"), "-").take(90)
+            val mime: String
+            val bytes: ByteArray
+            var pages = 1
+            when (kind) {
+                "png" -> { mime = "image/png"; bytes = android.util.Base64.decode(payload ?: "", android.util.Base64.DEFAULT) }
+                "pdf" -> {
+                    mime = "application/pdf"
+                    val pdf = Export.pdf(org.json.JSONObject(payload ?: "{}"))
+                    bytes = pdf.bytes; pages = pdf.pages
+                }
+                else -> throw IllegalArgumentException("không rõ loại tệp $kind")
+            }
+            if (bytes.isEmpty()) throw IllegalArgumentException("tệp rỗng")
+            val path = if (action == "share") { Export.share(act, bytes, safeName, mime); "" } else Export.save(act, bytes, safeName, mime)
+            Log.i(TAG, "exportFile $kind $action ${bytes.size} B, $pages trang → $path")
+            "{\"ok\":true,\"path\":\"" + jsonEscape(path) + "\",\"pages\":" + pages + ",\"bytes\":" + bytes.size + "}"
+        } catch (e: Throwable) {
+            Log.e(TAG, "exportFile($kind, $action)", e)
+            "{\"ok\":false,\"error\":\"" + jsonEscape("Không xuất được tệp (${e.javaClass.simpleName}: ${e.message})") + "\"}"
+        }
     }
 
     companion object {
-        const val APP_VERSION = "0.4.0 (4)"
+        const val APP_VERSION = "0.5.0 (5)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
 

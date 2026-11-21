@@ -504,15 +504,31 @@ class Composer(private val kb: KnowledgeBase) {
     }
 
     /** Tiểu vận / lưu niên một năm: tổng hợp 4 tầng, 7 chuyên đề, sự kiện, Nên/Không nên, tháng thuận (mục 2.3 tầng 4). */
-    fun year(chart: Chart, lunarYear: Int, expert: Boolean = false): Reading {
-        val limits = LimitEngine.forYear(chart, lunarYear)
+    /** Phần tính điểm của luận năm (dùng chung cho bản luận năm, điểm ngày, xếp hạng giờ). */
+    private inner class YearCore(chart: Chart, lunarYear: Int, expert: Boolean) {
+        val limits: LimitLayers = LimitEngine.forYear(chart, lunarYear)
         val eval = engine.evaluate(chart, limits, expert)
         val ctx = Ctx(chart, limits, eval, Scorer(kb))
         val child = limits.tuoiAm < 16
         val its = items(ctx, setOf(Scope.NAM, Scope.DAI_HAN))
         val hits = events(its).filter { !child || it.event in CHILD_EVENTS }
         val topics = YEAR_TOPICS.filter { !child || it in CHILD_TOPICS }.associateWith { t -> ctx.scorer.topicLayered(chart, eval, t, limits, Scorer.YEAR_WEIGHTS) }
-        val (score, layers) = overall(ctx, topics, Scorer.YEAR_WEIGHTS)
+        val overallPair = overall(ctx, topics, Scorer.YEAR_WEIGHTS)
+    }
+
+    /** Điểm tổng của một năm âm (không ghép câu). */
+    fun yearScore(chart: Chart, lunarYear: Int, expert: Boolean = false): Int = YearCore(chart, lunarYear, expert).overallPair.first
+
+    fun year(chart: Chart, lunarYear: Int, expert: Boolean = false): Reading {
+        val core = YearCore(chart, lunarYear, expert)
+        val limits = core.limits
+        val eval = core.eval
+        val ctx = core.ctx
+        val child = core.child
+        val its = core.its
+        val hits = core.hits
+        val topics = core.topics
+        val (score, layers) = core.overallPair
         val stance = Stance.of(score)
 
         val summary = ArrayList<Paragraph>()
@@ -591,5 +607,195 @@ class Composer(private val kb: KnowledgeBase) {
             ReadingScope.THANG, "Tháng $month âm lịch · năm $lunarYear", nh?.let { "Nguyệt hạn tại ${ctx.place(it)}" } ?: "", score, stance, stanceText(stance),
             summary, emptyList(), emptyList(), emptyList(), adv, emptyList(), emptyList(), yearReading.months, closing(), kb.version,
         )
+    }
+
+    // ———————————————————————————— ngày, giờ (mục 2.3 tầng 6, mục 8.5) ————————————————————————————
+
+    private class DayCache(val natal: Evaluation, val scorer: Scorer) {
+        val years = HashMap<Int, Int>()
+        val months = HashMap<String, Int>()
+    }
+
+    private fun dayScore(chart: Chart, date: java.time.LocalDate, expert: Boolean, cache: DayCache): Pair<DayScore, LimitLayers> {
+        val d = LimitEngine.forDate(chart, date)
+        val ld = d.lunarDate ?: throw IllegalStateException("thiếu ngày âm")
+        val ys = cache.years.getOrPut(ld.year) { yearScore(chart, ld.year, expert) }
+        val ms = cache.months.getOrPut("${ld.year}-${ld.month}-${ld.isLeap}") {
+            cache.scorer.month(chart, cache.natal, ys, LimitEngine.forMonth(chart, ld.year, ld.month, ld.isLeap))
+        }
+        val s = cache.scorer.day(chart, cache.natal, ms, d)
+        return DayScore(date, ld.day, ld.month, ld.isLeap, ld.year, d.dayCanChi?.vn ?: "", s, d.nhatHan, d.nhatHan?.let { chart.palace(it).role.vn }) to d
+    }
+
+    /** Điểm từng ngày của một tháng dương lịch (lịch tháng tô màu, mục 13). */
+    fun days(chart: Chart, year: Int, month: Int, expert: Boolean = false): List<DayScore> {
+        val cache = DayCache(engine.evaluate(chart), Scorer(kb))
+        val first = java.time.LocalDate.of(year, month, 1)
+        return (0 until first.lengthOfMonth()).map { i -> dayScore(chart, first.plusDays(i.toLong()), expert, cache).first }
+    }
+
+    private fun hourLabel(h: Chi): String =
+        if (h == Chi.TY) "Tý (23:00–00:59)" else vn.tuvi.core.engine.CanhGio.entries.first { it.chi == h && !it.isLateTy }.vn
+
+    /** Chi tiết một ngày: điểm, nhật hạn, can chi ngày với tuổi, giờ thuận theo cung thời hạn. */
+    fun day(chart: Chart, date: java.time.LocalDate, expert: Boolean = false): Reading {
+        val cache = DayCache(engine.evaluate(chart), Scorer(kb))
+        val (ds, d) = dayScore(chart, date, expert, cache)
+        val ctx = Ctx(chart, d, cache.natal, cache.scorer)
+        val score = ds.score
+        val stance = Stance.of(score)
+        val nh = d.nhatHan
+        val hours = if (nh == null) emptyList() else Chi.entries.map { h ->
+            val pc = nh + h.ordinal
+            val ps = cache.scorer.palace(chart, cache.natal, pc, d.tuoiAm, Overlay(d.luuStars), emptyList()).score
+            HourScore(h, hourLabel(h), (0.5 * score + 0.5 * ps).roundToInt().coerceIn(5, 95), pc, chart.palace(pc).role.vn)
+        }
+        val best = hours.sortedWith(compareByDescending<HourScore> { it.score }.thenBy { it.chi.ordinal }).take(3)
+        val worst = hours.sortedWith(compareBy<HourScore> { it.score }.thenBy { it.chi.ordinal }).take(2)
+        val dateVn = "%02d/%02d/%d".format(date.dayOfMonth, date.monthValue, date.year)
+        val lunarVn = "${ds.lunarDay}/${ds.lunarMonth}${if (ds.lunarLeap) " nhuận" else ""}"
+        val summary = ArrayList<Paragraph>()
+        summary.add(Paragraph("Ngày $dateVn (âm lịch $lunarVn, ngày ${ds.canChi}): ${band(score)} (${score}/100). ${stanceText(stance)}", polOf(score), ParaKind.LEAD, null,
+            listOf("SCORE_NGAY"), listOf(Why("SCORE_NGAY", "Điểm ngày", "Tháng ×0,50 + cung nhật hạn ×0,35 + can chi ngày so với tuổi ×0,15.", emptyList(), "Prompt mục 9 bước 6")), false))
+        if (nh != null) {
+            val ps = cache.scorer.palace(chart, cache.natal, nh, d.tuoiAm, Overlay(d.luuStars), emptyList())
+            summary.add(Paragraph("Nhật hạn tại ${ctx.place(nh)}: việc thuộc lĩnh vực ${Topic.ofRole(chart.palace(nh).role).vn.lowercase()} được chú ý hơn trong ngày.", 0, ParaKind.NOTE, null,
+                listOf("NHAT_HAN"), listOf(Why("NHAT_HAN", "Cung nhật hạn", "Từ cung nguyệt hạn coi là mùng 1, đếm thuận tới ngày âm. Điểm cung ${ps.score}/100.",
+                    ps.top.map { "${it.label}: ${"%+.1f".format(it.value)}" }, "Prompt mục 8.5")), false))
+        }
+        val dayChi = d.dayCanChi?.chi
+        if (dayChi != null) {
+            val rel = when {
+                dayChi.stepsFrom(chart.yearChi) == 6 -> "lục xung"
+                dayChi.tamHopGroup == chart.yearChi.tamHopGroup -> "tam hợp"
+                (dayChi.ordinal + chart.yearChi.ordinal) % 12 == 1 -> "lục hợp"
+                else -> "không xung không hợp"
+            }
+            summary.add(Paragraph("Chi ngày ${dayChi.vn} $rel với tuổi ${chart.yearChi.vn}.", 0, ParaKind.NOTE, null, listOf("CAN_CHI_NGAY"),
+                listOf(Why("CAN_CHI_NGAY", "Can chi ngày so với tuổi", "Lục xung 25 điểm, tam hợp 75, lục hợp 70, còn lại 50 (D-38).", emptyList(), "Prompt mục 9 bước 6")), false))
+        }
+        if (hours.isNotEmpty()) {
+            summary.add(Paragraph("Giờ thuận: ${best.joinToString(", ") { it.label }}. Giờ nên thận trọng: ${worst.joinToString(", ") { it.label }}.", 0, ParaKind.NOTE, null,
+                listOf("GIO_THUAN"), listOf(Why("GIO_THUAN", "Giờ theo cung thời hạn", kb.texts["note.gio"]?.text ?: "",
+                    hours.map { "${it.label}: ${it.score} (cung ${it.role})" }, "Prompt mục 8.5")), false))
+        }
+        note("note.ngay", null)?.let { summary.add(it) }
+        val topicScores = nh?.let { mapOf(Topic.ofRole(chart.palace(it).role) to score) } ?: emptyMap()
+        val child = d.tuoiAm < 16
+        val adv = advice(ctx, emptyList(), topicScores.filterKeys { !child || it in CHILD_TOPICS }, stance, child = child)
+        return Reading(
+            ReadingScope.NGAY, "Ngày $dateVn", "Âm lịch $lunarVn năm ${ds.lunarYear} · ngày ${ds.canChi}", score, stance, stanceText(stance),
+            summary, emptyList(), emptyList(), emptyList(), adv, emptyList(), emptyList(), emptyList(), closing(), kb.version, hours,
+        )
+    }
+
+    // ———————————————————————————— thẻ sao (mục 13) ————————————————————————————
+
+    /** Thẻ sao: ngũ hành, chòm, hóa khí, độ sáng tại cung này, ý nghĩa, Tứ Hóa gốc, cách cục liên quan. */
+    fun starCard(chart: Chart, star: vn.tuvi.core.engine.StarId): StarCard? {
+        val chi = chart.starPositions[star] ?: return null
+        val p = chart.palace(chi)
+        val ps = p.star(star) ?: return null
+        val eval = engine.evaluate(chart)
+        val ctx = Ctx(chart, null, eval, Scorer(kb))
+        val meaning = ArrayList<Paragraph>()
+        val keys = if (ps.kind == vn.tuvi.core.engine.StarKind.CHINH_TINH)
+            listOf("star.${star.name}.${(ps.brightness ?: vn.tuvi.core.engine.Brightness.BINH).code}.${p.role.name}")
+        else listOfNotNull(kb.minorKey(star, p.role))
+        for (k in keys) kb.texts[k]?.let { t ->
+            val pol = if (ps.kind == vn.tuvi.core.engine.StarKind.CHINH_TINH) RuleEngine.brightnessPolarity(ps.brightness) else kb.minorPolarity(star, ps.brightness)
+            meaning.add(Paragraph(ctx.fill(t.text, listOf(chi)), pol, ParaKind.PLAIN, Topic.ofRole(p.role), listOf(k), listOf(Why(k, "Ý nghĩa ${star.vn} tại cung ${p.role.vn}", ctx.fill(t.text, listOf(chi)), emptyList(), t.source)), !t.reviewed))
+        }
+        if (meaning.isEmpty()) note("note.chua_co_luan", Topic.ofRole(p.role))?.let { meaning.add(it) }
+        val hoa = vn.tuvi.core.engine.TuHoaTable.of(chart.yearCan, chart.config).filter { it.value == star }.map { "${it.key.vn} (can năm ${chart.yearCan.vn})" }
+        val patterns = items(ctx, setOf(Scope.GOC)).filter { it.findings.any { f -> f.evidence.any { e -> e.star == star } } }.map { whyOf(ctx, it) }
+        return StarCard(star, star.kind.vn, chi, p.role.vn, ps.brightness?.vn, kb.mainMeta[star], hoa, meaning, patterns)
+    }
+
+    // ———————————————————————————— so hai lá số (cẩm nang P.V.4, mục 10.5) ————————————————————————————
+
+    private fun isBadSet(stars: List<vn.tuvi.core.engine.PlacedStar>, chiA: Chi, chiB: Chi, a: Chart, b: Chart): Boolean {
+        val ids = stars.map { it.id }.toSet()
+        val vuPha = ids == setOf(vn.tuvi.core.engine.StarId.VU_KHUC, vn.tuvi.core.engine.StarId.PHA_QUAN) && (chiA == Chi.TI || chiA == Chi.HOI)
+        val liemTham = ids == setOf(vn.tuvi.core.engine.StarId.LIEM_TRINH, vn.tuvi.core.engine.StarId.THAM_LANG) && stars.any { it.brightness == vn.tuvi.core.engine.Brightness.HAM }
+        val kk = setOf(vn.tuvi.core.engine.StarId.DIA_KHONG, vn.tuvi.core.engine.StarId.DIA_KIEP)
+        val khongKiep = a.palace(chiA).stars.any { it.id in kk } && b.palace(chiB).stars.any { it.id in kk }
+        return vuPha || liemTham || khongKiep
+    }
+
+    /** So hai lá số: [a] là chồng/vợ hoặc cha/mẹ, [b] là người kia hoặc con. */
+    fun compare(a: Chart, b: Chart, relation: PairRelation, nameA: String, nameB: String): Comparison {
+        val paras = ArrayList<Paragraph>()
+        fun text(key: String, cung: String, sao: String = "") = kb.texts[key]?.let { it.text.replace("{cung}", cung).replace("{sao}", sao) to it } 
+        fun add(key: String, cung: String, sao: String, pol: Int, why: String, ev: List<String>) {
+            val (t, entry) = text(key, cung, sao) ?: return
+            paras.add(Paragraph(t, pol, ParaKind.PLAIN, if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO, listOf(key.uppercase().replace('.', '_')),
+                listOf(Why(key, "Truyền cung, truyền tinh", why, ev, entry.source)), !entry.reviewed))
+        }
+        // Hai chiều với vợ chồng; một chiều (cha mẹ → con) với cha mẹ – con.
+        val pairs = if (relation == PairRelation.VO_CHONG) listOf(Triple(a, b, nameA to nameB), Triple(b, a, nameB to nameA)) else listOf(Triple(a, b, nameA to nameB))
+        val role = if (relation == PairRelation.VO_CHONG) PalaceRole.PHU_THE else PalaceRole.TU_TUC
+        for ((x, y, names) in pairs) {
+            val px = x.palace(role)
+            val my = y.palace(PalaceRole.MENH)
+            if (px.chi == my.chi) {
+                add(if (relation == PairRelation.VO_CHONG) "cmp.truyen_cung.vo_chong" else "cmp.truyen_cung.cha_me_con", px.chi.vn, "", 1,
+                    "Cung ${role.vn} của ${names.first} tại ${px.chi.vn}; cung Mệnh của ${names.second} tại ${my.chi.vn}.", emptyList())
+            }
+            val sx = px.chinhTinh
+            val sy = my.chinhTinh
+            val idsX = sx.map { it.id }.toSet()
+            val idsY = sy.map { it.id }.toSet()
+            val sao = sx.joinToString(" – ") { it.id.vn }
+            val ev = listOf("${names.first}: cung ${role.vn} (${px.chi.vn}) có ${sao.ifEmpty { "vô chính diệu" }}",
+                "${names.second}: cung Mệnh (${my.chi.vn}) có ${sy.joinToString(" – ") { it.id.vn }.ifEmpty { "vô chính diệu" }}")
+            if (idsX.isNotEmpty() && idsX == idsY) {
+                when {
+                    isBadSet(sx, px.chi, my.chi, x, y) || isBadSet(sy, my.chi, px.chi, y, x) ->
+                        add("cmp.truyen_tinh.hung", role.vn, sao, -1, "Truyền tinh bộ sao nặng (Vũ Phá tại Tỵ/Hợi, Liêm Tham hãm, Không Kiếp).", ev)
+                    sy.all { RuleEngine.brightnessPolarity(it.brightness) > 0 } -> add("cmp.truyen_tinh.dep", role.vn, sao, 1, "Truyền tinh, sao đều sáng tại cung Mệnh người kia.", ev)
+                    else -> add("cmp.truyen_tinh.trung", role.vn, sao, 0, "Truyền tinh.", ev)
+                }
+            } else if ((idsX intersect idsY).isNotEmpty()) {
+                add("cmp.truyen_tinh.mot_phan", role.vn, (idsX intersect idsY).joinToString(" – ") { it.vn }, 0, "Chung một phần chính tinh.", ev)
+            }
+        }
+        // Mỗi chủ đề không để câu trái chiều: nếu có cả thuận lẫn nặng, gộp phần ngược chiều vào câu cân nhắc.
+        val pos = paras.filter { it.polarity > 0 }
+        val neg = paras.filter { it.polarity < 0 }
+        val out = ArrayList<Paragraph>()
+        if (pos.isNotEmpty() && neg.isNotEmpty()) {
+            out += paras.filter { it.polarity <= 0 }
+            out.add(Paragraph("Có cả điểm gắn bó (${pos.size} dấu hiệu truyền cung/tinh thuận) lẫn điểm cần lưu ý, nghiêng về thận trọng vì bộ sao nặng dễ khuếch đại điểm yếu của nhau.",
+                -1, ParaKind.WEIGH, out.first().topic, pos.flatMap { it.ruleIds }, pos.flatMap { it.why }, pos.any { it.draft }))
+        } else out += paras
+        if (out.isEmpty()) note("cmp.khong", if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO)?.let { out.add(it) }
+        note("cmp.note", null)?.let { out.add(it) }
+        return Comparison("$nameA và $nameB · ${relation.vn}", relation, out, closing())
+    }
+
+    // ———————————————————————————— không rõ giờ: xếp hạng theo sự kiện đã qua (mục 2.3) ————————————————————————————
+
+    /**
+     * Với mỗi giờ ứng viên, đếm mức đồng thanh tương ứng của từng sự kiện người dùng nhớ (năm âm gần đúng):
+     * khả năng cao 3 điểm, có thể 2, dấu hiệu 1. Mức khớp = tổng điểm / tối đa. Luôn chỉ là ước đoán.
+     */
+    fun rankHours(charts: Map<vn.tuvi.core.engine.CanhGio, Chart>, events: List<Pair<Event, Int>>): List<HourRank> {
+        if (events.isEmpty()) return charts.keys.map { HourRank(it, 0, emptyList()) }
+        return charts.map { (canh, chart) ->
+            var pts = 0
+            val det = ArrayList<String>()
+            for ((ev, y) in events) {
+                if (y < chart.lunar.year) { det.add("${ev.short} $y: trước năm sinh"); continue }
+                val limits = LimitEngine.forYear(chart, y)
+                val eval = engine.evaluate(chart, limits)
+                val ctx = Ctx(chart, limits, eval, Scorer(kb))
+                val hit = events(items(ctx, setOf(Scope.NAM, Scope.DAI_HAN))).firstOrNull { it.event == ev }
+                val p = when (hit?.level) { Likelihood.CAO -> 3; Likelihood.CO_THE -> 2; Likelihood.DAU_HIEU -> 1; null -> 0 }
+                pts += p
+                det.add("${ev.short} $y: ${hit?.let { "${it.level.vn} (${it.layers.size} tầng)" } ?: "không thấy dấu hiệu"}")
+            }
+            HourRank(canh, (100.0 * pts / (3 * events.size)).roundToInt(), det)
+        }.sortedWith(compareByDescending<HourRank> { it.score }.thenBy { it.canh.ordinal })
     }
 }

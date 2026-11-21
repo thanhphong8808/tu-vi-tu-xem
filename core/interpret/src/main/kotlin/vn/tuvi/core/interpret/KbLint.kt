@@ -1,5 +1,7 @@
 package vn.tuvi.core.interpret
 
+import vn.tuvi.core.engine.StarId
+
 /**
  * Lint knowledge base (mục 14.3): ID luật duy nhất; mọi luật có `source`; mọi `textKey`/`adviceKey` tồn tại;
  * template chỉ dùng slot hợp lệ; không có từ cấm (mục 11); mọi sao trong luật thuộc danh mục StarId (kiểm khi đọc).
@@ -105,6 +107,10 @@ object KbLint {
             if (kb.advice.values.count { AdviceUse.CHILD in it.uses && it.type == type } < 3) issues.add(Issue("advice#CHILD", "cần ≥ 3 $type cho trẻ nhỏ"))
         }
         if ("note.tre_nho" !in kb.texts) issues.add(Issue("note", "thiếu note.tre_nho"))
+        // Giai đoạn 5: thẻ sao đủ 14 chính tinh; câu so hai lá số; ghi chú ngày, giờ.
+        for (st in StarId.entries.filter { it.kind == vn.tuvi.core.engine.StarKind.CHINH_TINH }) if (st !in kb.mainMeta) issues.add(Issue("chinh#${st.name}", "thiếu thuộc tính thẻ sao"))
+        for (k in listOf("cmp.truyen_cung.vo_chong", "cmp.truyen_cung.cha_me_con", "cmp.truyen_tinh.dep", "cmp.truyen_tinh.trung", "cmp.truyen_tinh.hung",
+            "cmp.truyen_tinh.mot_phan", "cmp.khong", "cmp.note", "note.ngay", "note.gio")) if (k !in kb.texts) issues.add(Issue("text", "thiếu $k"))
         for (st in Stance.entries) for (type in listOf(AdviceType.NEN, AdviceType.KHONG_NEN)) {
             if (kb.advice.values.none { AdviceUse.STANCE in it.uses && it.type == type && (it.stances.isEmpty() || st in it.stances) }) {
                 issues.add(Issue("advice#${st.name}", "thiếu $type theo thế giai đoạn"))

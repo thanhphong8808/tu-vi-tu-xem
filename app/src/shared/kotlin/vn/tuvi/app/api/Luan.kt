@@ -1,6 +1,7 @@
 package vn.tuvi.app.api
 
 import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonElement
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.add
 import kotlinx.serialization.json.buildJsonArray
@@ -68,6 +69,68 @@ object Luan {
         put("paragraphs", JsonArray(s.paragraphs.map { para(it) }))
     }
 
+    fun daysJson(chart: Chart, year: Int, month: Int, expert: Boolean): JsonElement {
+        if (year !in 1900..2200 || month !in 1..12) throw IllegalArgumentException("Tháng xem không hợp lệ.")
+        return buildJsonArray {
+            for (d in all().third.days(chart, year, month, expert)) add(buildJsonObject {
+                put("date", d.date.toString()); put("day", d.date.dayOfMonth); put("dow", d.date.dayOfWeek.value)
+                put("lunarDay", d.lunarDay); put("lunarMonth", d.lunarMonth); put("lunarLeap", d.lunarLeap); put("lunarYear", d.lunarYear)
+                put("canChi", d.canChi); put("score", d.score); put("role", d.role)
+            })
+        }
+    }
+
+    fun dayJson(chart: Chart, date: java.time.LocalDate, expert: Boolean): JsonElement = toJson(all().third.day(chart, date, expert))
+
+    fun starJson(chart: Chart, starName: String): JsonElement {
+        val star = vn.tuvi.core.engine.StarId.entries.firstOrNull { it.name == starName } ?: throw IllegalArgumentException("Không có sao $starName.")
+        val card = all().third.starCard(chart, star) ?: throw IllegalArgumentException("Sao ${star.vn} không có trong lá số.")
+        return buildJsonObject {
+            put("star", card.star.name); put("name", card.star.vn); put("kind", card.kind); put("chi", card.chi.vn); put("role", card.role)
+            put("brightness", card.brightness); put("element", StarStyle.element(card.star)?.vn)
+            put("dau", card.meta?.dau); put("hanh", card.meta?.hanh); put("hoaKhi", card.meta?.hoaKhi); put("dacTinh", card.meta?.dacTinh); put("metaSource", card.meta?.source)
+            put("natalHoa", buildJsonArray { card.natalHoa.forEach { add(it) } })
+            put("meaning", JsonArray(card.meaning.map { para(it) }))
+            put("patterns", buildJsonArray { for (w in card.patterns) add(buildJsonObject { put("id", w.id); put("title", w.title); put("detail", w.detail); put("source", w.source); put("evidence", buildJsonArray { w.evidence.forEach { add(it) } }) }) })
+        }
+    }
+
+    fun compareJson(a: Chart, b: Chart, rel: vn.tuvi.core.interpret.PairRelation, nameA: String, nameB: String): JsonElement {
+        val r = all().third.compare(a, b, rel, nameA, nameB)
+        return buildJsonObject {
+            put("title", r.title); put("relation", r.relation.vn); put("paragraphs", JsonArray(r.paragraphs.map { para(it) })); put("closing", r.closing)
+            put("a", buildJsonObject { put("menh", a.menh.vn); put("phuThe", a.palace(vn.tuvi.core.engine.PalaceRole.PHU_THE).chi.vn); put("tuTuc", a.palace(vn.tuvi.core.engine.PalaceRole.TU_TUC).chi.vn) })
+            put("b", buildJsonObject { put("menh", b.menh.vn); put("phuThe", b.palace(vn.tuvi.core.engine.PalaceRole.PHU_THE).chi.vn); put("tuTuc", b.palace(vn.tuvi.core.engine.PalaceRole.TU_TUC).chi.vn) })
+        }
+    }
+
+    fun rankJson(charts: Map<vn.tuvi.core.engine.CanhGio, Chart>, events: List<Pair<vn.tuvi.core.interpret.Event, Int>>): JsonElement = buildJsonArray {
+        for (r in all().third.rankHours(charts, events)) add(buildJsonObject {
+            val c = charts.getValue(r.canh)
+            put("canh", r.canh.name); put("label", r.canh.vn); put("score", r.score)
+            put("menh", c.menh.vn); put("menhStars", c.palace(c.menh).chinhTinh.joinToString(", ") { it.id.vn }.ifEmpty { "Vô chính diệu" })
+            put("details", buildJsonArray { r.details.forEach { add(it) } })
+        })
+    }
+
+    /** Đo hiệu năng ngay trên máy (mục 3): lập lá số, luận một năm, chấm điểm 30 ngày. */
+    fun bench(): JsonElement {
+        val c = all().third
+        val input = vn.tuvi.core.engine.BirthInput(java.time.LocalDateTime.of(1990, 8, 15, 10, 30), null, vn.tuvi.core.engine.Gender.NAM)
+        var chart = vn.tuvi.core.engine.ChartEngine.build(input)
+        repeat(3) { chart = vn.tuvi.core.engine.ChartEngine.build(input); c.year(chart, 2026); c.days(chart, 2026, 11) }
+        val n = 20
+        var t = System.nanoTime(); repeat(n) { chart = vn.tuvi.core.engine.ChartEngine.build(input) }
+        val chartMs = (System.nanoTime() - t) / 1e6 / n
+        t = System.nanoTime(); repeat(5) { c.year(chart, 2026 + it) }
+        val yearMs = (System.nanoTime() - t) / 1e6 / 5
+        t = System.nanoTime(); repeat(3) { c.days(chart, 2026, 10 + it) }
+        val daysMs = (System.nanoTime() - t) / 1e6 / 3
+        t = System.nanoTime(); c.lifetime(chart)
+        val lifeMs = (System.nanoTime() - t) / 1e6
+        return buildJsonObject { put("chartMs", chartMs); put("yearMs", yearMs); put("days30Ms", daysMs); put("lifetimeMs", lifeMs) }
+    }
+
     fun toJson(r: vn.tuvi.core.interpret.Reading): JsonObject = buildJsonObject {
         put("scope", r.scope.name); put("title", r.title); put("subtitle", r.subtitle); put("score", r.score)
         put("stance", r.stance.name); put("stanceVn", r.stance.vn); put("stanceText", r.stanceText)
@@ -86,6 +149,7 @@ object Luan {
         put("goodMonths", buildJsonArray { r.goodMonths.forEach { add(it) } })
         put("cautionMonths", buildJsonArray { r.cautionMonths.forEach { add(it) } })
         put("months", buildJsonArray { for (m in r.months) add(buildJsonObject { put("month", m.month); put("score", m.score); put("chi", m.chi?.vn); put("role", m.role) }) })
+        put("hours", buildJsonArray { for (h in r.hours) add(buildJsonObject { put("chi", h.chi.vn); put("label", h.label); put("score", h.score); put("palace", h.palace.vn); put("role", h.role) }) })
         put("closing", r.closing); put("kbVersion", r.kbVersion)
     }
 

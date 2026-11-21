@@ -5,10 +5,16 @@ Tuần, Triệt, Mệnh, Thân, Cục, tuổi đại hạn, đại hạn/tiểu 
 cộng các luồng: nhập âm lịch, canh giờ, không rõ giờ, lá số thay thế, lưu/mở/xóa hồ sơ, đổi trường phái, đổi năm.
 Giai đoạn 3: thẻ “Cách cục & dấu hiệu”, dấu hiệu năm, luận giải từng cung, “Vì sao?”, chế độ chuyên sâu, không lọt từ cấm.
 Giai đoạn 4: màn Luận giải (trọn đời, đại vận, năm, tháng): điểm, thế, chủ đề, 12 cung, 12 đại vận, heat-map tháng, Nên/Không nên.
+Giai đoạn 5: tab Ngày (lịch tháng, chi tiết ngày, 12 giờ), thẻ sao (chạm, chạm giữ), phóng to lưới (nút, chụm hai ngón),
+so hai lá số, ước đoán giờ theo sự kiện, tùy chỉnh trường phái từng điểm, xuất ảnh PNG / mô hình PDF, hai cột trên máy tính bảng;
+cổng trợ năng (axe-core: không lỗi mức serious/critical; nhãn TalkBack của ô theo thứ tự tên cung, chính tinh, phụ tinh)
+và cổng ảnh chụp (so từng điểm ảnh với ảnh chuẩn trong tools/apk/uitest/baseline, lệch tối đa 0,5%).
 Chạy: tools/apk/devserver.sh 8765 2026-11-20 &  rồi  python3 tools/apk/uitest/test_ui.py [thư mục ảnh]
+Cần: pip playwright + Chromium, Pillow; axe-core: (cd tools/apk/uitest && npm install). Cập nhật ảnh chuẩn: TUVI_UPDATE_BASELINE=1.
 """
-import asyncio, json, os, re, sys
+import asyncio, json, os, re, shutil, sys, urllib.request
 from playwright.async_api import async_playwright
+from PIL import Image, ImageChops
 
 BASE = os.environ.get('TUVI_BASE', 'http://127.0.0.1:8765/')
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -27,6 +33,17 @@ FORBIDDEN = ['chắc chắn', '100%', 'không thể tránh', 'định mệnh', '
 def forbidden_in(text):
     low = text.lower()
     return [w for w in FORBIDDEN if re.search(r'(?<![\wÀ-ỹ])' + re.escape(w) + r'(?![\wÀ-ỹ])', low)]
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+BASELINE = os.path.join(HERE, 'baseline')
+AXE = os.environ.get('TUVI_AXE') or os.path.join(HERE, 'node_modules/axe-core/axe.min.js')
+UPDATE_BASELINE = os.environ.get('TUVI_UPDATE_BASELINE') == '1'
+
+def api(method, arg):
+    req = urllib.request.Request(BASE + 'api/' + method, data=json.dumps(arg).encode(), headers={'Content-Type': 'application/json'})
+    r = json.loads(urllib.request.urlopen(req).read())
+    assert r['ok'], r
+    return r['data']
 
 failures, checks = [], 0
 def check(cond, msg):
@@ -59,6 +76,49 @@ def parse_input(s):
     m = re.match(r'(Nam|Nữ) (\d+)/(\d+)/(\d+) (\d+):(\d+)', s)
     g, d, mo, y, h, mi = m.groups()
     return {'gender': 'NAM' if g == 'Nam' else 'NU', 'day': str(int(d)), 'month': str(int(mo)), 'year': y, 'hour': str(int(h)), 'minute': str(int(mi))}
+
+# Cổng ảnh chụp: so với ảnh chuẩn (cùng kích thước, ≤ 0,5% điểm ảnh lệch quá 40/255 ở một kênh màu).
+async def shot(page, name, full_page=False):
+    path = f'{SHOTS}/{name}.png'
+    await page.evaluate('document.activeElement && document.activeElement.blur && document.activeElement.blur()')
+    await page.wait_for_timeout(350)
+    await page.screenshot(path=path, full_page=full_page)
+    compare_png(path, name)
+
+def compare_png(path, name):
+    base = os.path.join(BASELINE, name + '.png')
+    if UPDATE_BASELINE or not os.path.exists(base):
+        os.makedirs(BASELINE, exist_ok=True)
+        shutil.copy(path, base)
+        print(f'  (ảnh chuẩn mới: {name})')
+        return
+    a, b = Image.open(path).convert('RGB'), Image.open(base).convert('RGB')
+    if a.size != b.size:
+        check(False, f'Ảnh chụp {name}: kích thước {a.size} khác ảnh chuẩn {b.size}')
+        return
+    diff = ImageChops.difference(a, b).convert('L').point(lambda v: 255 if v > 40 else 0)
+    ratio = diff.histogram()[255] / (a.size[0] * a.size[1])
+    if ratio > 0.005:
+        diff.save(f'{SHOTS}/{name}.diff.png')
+    check(ratio <= 0.005, f'Ảnh chụp {name} lệch ảnh chuẩn {ratio:.2%} (xem {name}.diff.png)')
+
+# Cổng trợ năng: axe-core, các quy tắc WCAG 2.1 A/AA; không được có lỗi mức serious hoặc critical.
+async def axe_check(page, tag):
+    if not os.path.exists(AXE):
+        check(False, f'Thiếu axe-core ({AXE}) — chạy: cd tools/apk/uitest && npm install')
+        return
+    if not await page.evaluate('!!window.axe'):
+        await page.add_script_tag(path=AXE)
+    res = await page.evaluate("""async () => {
+      const r = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'] } });
+      return r.violations.filter(v => v.impact === 'serious' || v.impact === 'critical')
+        .map(v => v.id + ' (' + v.impact + '): ' + v.nodes.slice(0, 3).map(n => n.target.join(' ')).join(' | ') + ' — ' + v.nodes.length + ' chỗ');
+    }""")
+    check(not res, f'Trợ năng {tag}: {res}')
+
+async def pick(page, sel, prefix):
+    v = await page.evaluate("([s, p]) => (Array.from(document.querySelector(s).options).find(o => o.text.startsWith(p)) || {}).value", [sel, prefix])
+    await page.select_option(sel, v)
 
 async def dismiss_modal(page):
     if await page.locator('#modal.open').count():
@@ -363,6 +423,9 @@ async def main():
         await page.evaluate('window.tvBack()')
         await page.click('[data-act="settings"]'); await page.click('[data-act="preset"][data-k="NAM_PHAI_VN"]'); await page.evaluate('window.tvBack()')
 
+        # ———————————————— giai đoạn 5 ————————————————
+        await phase5(page, browser)
+
         check(not errors, f'Lỗi JavaScript: {errors}')
 
         # —— ảnh chụp: tối, ngang ——
@@ -375,10 +438,251 @@ async def main():
         await dp.wait_for_timeout(300)
         await dp.evaluate("document.querySelector('#board').scrollIntoView()")
         await dp.screenshot(path=f'{SHOTS}/dark_landscape.png')
+        check(await dp.evaluate("getComputedStyle(document.querySelector('.chart-2p')).gridTemplateColumns.split(' ').length") == 2,
+              'Màn ngang 915 px: lá số phải chia hai cột')
         await browser.close()
     print(f'\n{checks - len(failures)}/{checks} kiểm tra đạt')
     if failures:
         print('THẤT BẠI:'); [print(' -', f) for f in failures]
         sys.exit(1)
+
+GOLDEN_A_INPUT = {'gender': 'NAM', 'calendar': 'solar', 'day': 15, 'month': 8, 'year': 1990, 'timeMode': 'clock', 'hour': 10, 'minute': 30,
+                  'region': 'VN_BAC', 'preset': 'NAM_PHAI_VN'}
+
+async def phase5(page, browser):
+    print('Giai đoạn 5')
+    all_text = ''
+    # —— trang chủ: nút so hai lá số; lá số Ca A ——
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    # nhãn TalkBack của ô: tên cung → chính tinh → phụ tinh (mục 13)
+    lab = await page.get_attribute('.cell[data-chi="2"]', 'aria-label')
+    check(lab.startswith('Cung Mệnh, Mậu Dần. Chính tinh: Vũ Khúc Vượng, Thiên Tướng Miếu.') and 'Tứ Hóa: Hóa Quyền' in lab and lab.index('Chính tinh') < lab.index('Phụ tinh'),
+          f'Nhãn TalkBack ô Mệnh sai thứ tự hoặc thiếu: {lab}')
+    check('Thiên Việt' in lab and 'Thiên Hình' in lab, f'Nhãn TalkBack phải đọc cả phụ tinh: {lab}')
+    check(await page.get_attribute('.cell[data-chi="2"] .c-in', 'aria-hidden') == 'true', 'Nội dung ô phải ẩn với TalkBack (đọc nhãn gộp)')
+    check(await page.evaluate("Array.from(document.querySelectorAll('#app div[data-act]')).every(e => e.getAttribute('role') === 'button' && e.tabIndex === 0)"),
+          'Mọi phần tử chạm được phải có role=button và tabindex')
+    await shot(page, 'p5_chart_A')
+    await axe_check(page, 'lá số')
+    # bàn phím: Enter trên ô = chạm
+    await page.focus('.cell[data-chi="2"]'); await page.keyboard.press('Enter')
+    await page.wait_for_selector('#sheet.open')
+    check('Cung Mệnh' in await page.inner_text('#sheet'), 'Enter trên ô phải mở bảng cung')
+
+    # —— thẻ sao: chạm sao trong bảng cung ——
+    check(await page.locator('#sheet [data-act="star"]').count() >= 6, 'Bảng cung Mệnh phải có các sao chạm được')
+    await page.click('#sheet [data-act="star"][data-k="VU_KHUC"]')
+    await page.wait_for_selector('#sheet .starcard')
+    sc = await page.inner_text('#sheet')
+    for w in ['Vũ Khúc', 'Chính tinh', 'Dần', 'Vượng', 'Bắc Đẩu', 'Âm Kim', 'Tài Tinh', 'Hóa Quyền (can năm Canh)', 'Ý NGHĨA TẠI CUNG MỆNH']:
+        check(w.lower() in sc.lower(), f'Thẻ sao Vũ Khúc thiếu “{w}”')
+    await shot(page, 'p5_star_vu_khuc')
+    await axe_check(page, 'thẻ sao')
+    all_text += sc
+    await page.click('#sheet [data-act="palace-back"]')
+    check('Cung Mệnh' in await page.inner_text('#sheet'), 'Nút “Về cung Mệnh” phải quay lại bảng cung')
+    # phụ tinh, sao vòng Tràng Sinh cũng có thẻ
+    await page.click('#sheet [data-act="star"][data-k="THIEN_VIET"]'); await page.wait_for_selector('#sheet .starcard[data-star="THIEN_VIET"]')
+    check('Thiên Việt' in await page.inner_text('#sheet'), 'Thẻ sao phụ tinh Thiên Việt')
+    await page.evaluate('window.tvBack()')
+    await page.wait_for_timeout(400)  # chờ bảng trượt xuống hết (chuột thô không tự chờ như click)
+    # chạm giữ một sao trên lưới (0,55 s) → thẻ sao, không mở bảng cung
+    box = await page.locator('.cell[data-chi="2"] .ms[data-k="THIEN_TUONG"]').bounding_box()
+    await page.mouse.move(box['x'] + box['width'] / 2, box['y'] + box['height'] / 2)
+    await page.mouse.down(); await page.wait_for_timeout(800); await page.mouse.up()
+    await page.wait_for_timeout(200)
+    check(await page.locator('#sheet.open .starcard[data-star="THIEN_TUONG"]').count() == 1, 'Chạm giữ Thiên Tướng trên lưới phải mở thẻ sao')
+    await page.evaluate('window.tvBack()')
+    # chạm nhanh vẫn mở bảng cung như cũ
+    await page.click('.cell[data-chi="2"] .ms[data-k="THIEN_TUONG"]'); await page.wait_for_selector('#sheet.open')
+    check(await page.locator('#sheet .starcard').count() == 0 and 'Cung Mệnh' in await page.inner_text('#sheet'), 'Chạm nhanh một sao phải mở bảng cung')
+    await page.evaluate('window.tvBack()')
+
+    # —— phóng to lưới: nút ＋/−/⟲ và chụm hai ngón (CDP touch) ——
+    await page.click('[data-act="zoom"][data-z="1"]'); await page.click('[data-act="zoom"][data-z="1"]')
+    tr = await page.evaluate("document.querySelector('#board').style.transform")
+    check(tr == 'scale(1.5)' and (await page.inner_text('.zv')) == '1,5×', f'Nút ＋ hai lần phải phóng 1,5× ({tr})')
+    check(await page.evaluate("(() => { const w = document.querySelector('#bwrap'); return w.scrollWidth > w.clientWidth + 100; })()"), 'Lưới phóng to phải cuộn ngang được')
+    await page.click('.cell[data-chi="2"]'); await page.wait_for_selector('#sheet.open')
+    check('Cung Mệnh' in await page.inner_text('#sheet'), 'Khi phóng to, chạm ô vẫn mở đúng cung')
+    await page.evaluate('window.tvBack()')
+    await page.click('[data-act="zoom"][data-z="0"]')
+    check(await page.evaluate("document.querySelector('#board').style.transform") == '', 'Nút ⟲ phải về cỡ gốc')
+    await page.evaluate("document.querySelector('#board').scrollIntoView({block: 'center'})")
+    bb = await page.locator('#board').bounding_box()
+    cx, cy = bb['x'] + bb['width'] / 2, bb['y'] + min(bb['height'], 600) / 2
+    cdp = await page.context.new_cdp_session(page)
+    async def touch(t, pts):
+        await cdp.send('Input.dispatchTouchEvent', {'type': t, 'touchPoints': [{'x': x, 'y': y, 'id': i} for i, (x, y) in enumerate(pts)]})
+    await touch('touchStart', [(cx - 40, cy), (cx + 40, cy)])
+    for k in range(1, 6):
+        await touch('touchMove', [(cx - 40 - 8 * k, cy), (cx + 40 + 8 * k, cy)])
+    await touch('touchEnd', [])
+    zv = await page.inner_text('.zv')
+    check(zv in ('2×', '1,99×', '2,01×'), f'Chụm hai ngón (khoảng cách 80 → 160 px) phải phóng ~2×, đang {zv}')
+    await page.click('[data-act="zoom"][data-z="0"]')
+
+    # —— Luận giải: tab Ngày ——
+    await page.click('[data-act="open-reading"][data-s="day"]'); await page.wait_for_selector('.cal')
+    check(await page.locator('.cal .cd:not(.blank)').count() == 30, 'Lịch tháng 11/2026 phải có 30 ngày')
+    check(await page.locator('.cal .cd.blank').count() == 6, 'Ngày 1/11/2026 là Chủ Nhật → 6 ô trống đầu tuần')
+    check(await page.locator('.cal .cd.sel[data-d="2026-11-20"]').count() == 1 and await page.locator('.cal .cd.today').count() == 1, 'Mặc định chọn hôm nay 20/11/2026')
+    check('Ngày 20/11/2026' in await page.inner_text('.rsum') and 'Âm lịch 12/10' in await page.inner_text('.rsum'), 'Chi tiết ngày 20/11/2026 (âm 12/10)')
+    check('Độ tin cậy thấp hơn tầng năm' in await page.inner_text('#cal'), 'Lịch ngày phải ghi rõ độ tin cậy thấp hơn tầng năm')
+    check(await page.locator('#hrs .hr').count() == 12 and await page.locator('#hrs .hr.best').count() == 3, '12 giờ, đánh dấu 3 giờ thuận')
+    day_txt = await page.inner_text('#app')
+    check('Giờ thuận:' in day_txt and 'Chi ngày' in day_txt, 'Chi tiết ngày phải có giờ thuận và can chi ngày so với tuổi')
+    cal_scores = await page.evaluate("Array.from(document.querySelectorAll('.cal .cd:not(.blank) i')).map(e => +e.textContent)")
+    api_scores = [d['score'] for d in api('days', {'input': GOLDEN_A_INPUT, 'year': 2026, 'month': 11})]
+    check(cal_scores == api_scores, 'Điểm trên lịch phải khớp engine')
+    await shot(page, 'p5_day', full_page=True)
+    await axe_check(page, 'tab Ngày')
+    all_text += day_txt
+    await page.click('.cal .cd[data-d="2026-11-03"]')
+    check('Ngày 03/11/2026' in await page.inner_text('.rsum'), 'Chạm ngày 3 phải mở chi tiết ngày 3')
+    await page.click('[data-act="rmon"][data-d="1"]')
+    check('Tháng 12/2026' in await page.inner_text('.yv') and await page.locator('.cal .cd:not(.blank)').count() == 31, 'Sang tháng 12/2026 (31 ngày)')
+    check('Ngày 03/12/2026' in await page.inner_text('.rsum'), 'Sang tháng giữ ngày đang chọn (3/12)')
+    all_text += await page.inner_text('#app')
+    for _ in range(13):
+        await page.click('[data-act="rmon"][data-d="-1"]')
+    check('Tháng 11/2025' in await page.inner_text('.yv'), 'Lùi 13 tháng phải về 11/2025')
+    await page.click('[data-act="rscope"][data-s="year"]')
+    check(await page.locator('.rs').count() == 7, 'Từ tab Ngày về tab Năm vẫn đủ 7 chủ đề')
+    await page.click('[data-act="rscope"][data-s="day"]')
+    check('Tháng 11/2025' in await page.inner_text('.yv'), 'Quay lại tab Ngày giữ tháng đang xem')
+    await page.evaluate('window.tvBack()')
+
+    # —— xuất ảnh PNG, mô hình PDF ——
+    check(await page.locator('#export [data-act="export"]').count() == 4, 'Thẻ xuất phải có 4 nút (lưu/gửi ảnh, PDF)')
+    async with page.expect_download() as dl:
+        await page.click('#export [data-act="export"][data-k="png"][data-a="save"]')
+    d = await dl.value
+    png_path = f'{SHOTS}/export_{d.suggested_filename}'
+    await d.save_as(png_path)
+    check(d.suggested_filename == 'LaSo-Ca-A-2026.png', f'Tên tệp ảnh: {d.suggested_filename}')
+    im = Image.open(png_path)
+    check(im.size == (1256, 1504), f'Ảnh PNG lá số phải 1256×1504, đang {im.size}')
+    compare_png(png_path, 'p5_export_png')
+    m = await page.evaluate('window.tvExport.model()')
+    kinds = [b['t'] for b in m['blocks']]
+    check(kinds.count('h1') == 2 and kinds.count('brk') == 1 and kinds.count('h2') >= 20 and kinds.count('p') >= 40, f'Mô hình PDF: {dict((k, kinds.count(k)) for k in set(kinds))}')
+    check(m['blocks'][1]['x'] == 'Luận giải trọn đời' and len(m['info']) == 11, 'PDF: luận trọn đời sau trang lá số, 11 dòng thông tin')
+    check('Nam phái VN' in m['footer'] and 'di sản văn hóa' in m['footer2'], 'Chân trang PDF: trường phái + lời ngỏ')
+    pdf_text = ' '.join(b['x'] for b in m['blocks'])
+    check(not forbidden_in(pdf_text) and '{' not in pdf_text, f'PDF lọt từ cấm/ô trống: {forbidden_in(pdf_text)}')
+    await page.evaluate('window.tvBack()')
+
+    # —— so hai lá số ——
+    check(await page.locator('[data-act="compare"]').count() == 1, 'Trang chủ phải có nút So hai lá số')
+    await page.click('[data-act="compare"]')
+    await pick(page, '[data-cmp="a"]', 'Ca A')
+    await pick(page, '[data-cmp="b"]', 'Ca B')
+    await page.click('[data-act="cmp-run"]')
+    await page.wait_for_selector('#cmp-res')
+    cr = await page.inner_text('#cmp-res')
+    check('Ca A và Ca B · Vợ chồng' in cr and 'tương tác hai chiều' in cr, f'Kết quả so vợ chồng: {cr[:200]}')
+    check(await page.locator('#cmp-res .rp .rp-why .w').count() >= 2, 'Mỗi đoạn so sánh phải có “Vì sao?”')
+    await shot(page, 'p5_compare')
+    await axe_check(page, 'so hai lá số')
+    all_text += cr
+    await page.click('[data-act="cmp-rel"][data-v="CHA_ME_CON"]')
+    check(await page.locator('#cmp-res').count() == 0 and 'Cha hoặc mẹ' in await page.inner_text('#app'), 'Đổi quan hệ phải xóa kết quả cũ, đổi nhãn')
+    await pick(page, '[data-cmp="b"]', 'Ca C')
+    await page.click('[data-act="cmp-run"]'); await page.wait_for_selector('#cmp-res')
+    check('Cha mẹ – con' in await page.inner_text('#cmp-res'), 'So cha mẹ – con')
+    all_text += await page.inner_text('#cmp-res')
+    await pick(page, '[data-cmp="b"]', 'Ca A')
+    await page.click('[data-act="cmp-run"]')
+    check('hai lá số khác nhau' in await page.inner_text('#cmp-error'), 'Chọn trùng một lá số phải báo lỗi')
+    await page.evaluate('window.tvBack()')
+
+    # —— không rõ giờ: hỏi–đáp sự kiện → xếp hạng 12 giờ ——
+    found = []
+    for y in range(2008, 2027):
+        r = api('reading', {'input': GOLDEN_A_INPUT, 'viewYear': y, 'scope': 'year'})
+        for sct in r['sections']:
+            for p_ in sct['paragraphs']:
+                if p_['kind'] == 'EVENT':
+                    ev = next(i[6:] for i in p_['ids'] if i.startswith('EVENT_'))
+                    lv = 3 if 'khả năng cao' in p_['text'] else 2 if 'có thể' in p_['text'] else 1
+                    found.append((lv, y, ev))
+    q_events = {k for k, _ in [('CUOI_HOI', 0), ('SINH_CON', 0), ('THANG_TIEN', 0), ('DOI_VIEC', 0), ('DUOC_TAI', 0), ('HAO_TAI', 0), ('DI_CHUYEN', 0)]}
+    chosen = {}
+    for lv, y, ev in sorted(found, key=lambda t: (-t[0], t[1])):
+        if ev in q_events and ev not in chosen:
+            chosen[ev] = y
+    chosen = dict(list(chosen.items())[:3])
+    check(len(chosen) >= 2, f'Ca A phải có ít nhất 2 sự kiện để thử xếp hạng giờ: {found[:6]}')
+    await fill_form(page, parse_input(GOLDEN[0]['input']), 'A hỏi giờ', time_mode='unknown')
+    await page.click('[data-act="submit"]')
+    check(await page.locator('#hq .qa input').count() == 7, 'Hỏi–đáp không rõ giờ phải có 7 câu')
+    first_ev = list(chosen)[0]
+    await page.fill(f'[data-q="{first_ev}"]', str(chosen[first_ev]))
+    await page.click('[data-act="rank-hours"]')
+    check('ít nhất 2 câu' in await page.inner_text('#rank-error'), 'Một câu trả lời phải báo cần ít nhất 2')
+    await page.fill('[data-q="SINH_CON"]' if first_ev != 'SINH_CON' else '[data-q="CUOI_HOI"]', '1980')
+    await page.click('[data-act="rank-hours"]')
+    check('năm phải từ 1990' in await page.inner_text('#rank-error'), 'Năm trước năm sinh phải báo lỗi')
+    await page.fill('[data-q="SINH_CON"]' if first_ev != 'SINH_CON' else '[data-q="CUOI_HOI"]', '')
+    for ev, y in chosen.items():
+        await page.fill(f'[data-q="{ev}"]', str(y))
+    await page.click('[data-act="rank-hours"]')
+    await page.wait_for_selector('#rank')
+    rows = await page.evaluate("Array.from(document.querySelectorAll('#rank .h.rk')).map(e => [e.dataset.canh, +e.querySelector('.pct').textContent])")
+    check(len(rows) == 12, f'Xếp hạng phải đủ 12 giờ, đang {len(rows)}')
+    scores = [r_[1] for r_ in rows]
+    check(scores == sorted(scores, reverse=True), f'Xếp hạng phải giảm dần: {scores}')
+    ti = next(r_[1] for r_ in rows if r_[0] == 'TI')
+    check(ti == scores[0] and scores[-1] < ti, f'Giờ thật (Tỵ) phải đứng đầu với sự kiện lấy từ chính lá số: {rows} · sự kiện {chosen}')
+    check('ước đoán' in await page.inner_text('#rank'), 'Xếp hạng giờ phải ghi “ước đoán”')
+    await shot(page, 'p5_hours_rank', full_page=True)
+    await axe_check(page, 'không rõ giờ')
+    await page.click('#rank .h.rk >> nth=0')
+    check(await page.locator('h1:has-text("Xác nhận lá số")').count() == 1, 'Chạm giờ trong bảng xếp hạng phải sang thẻ xác nhận')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+
+    # —— tùy chỉnh trường phái từng điểm ——
+    await page.click('[data-act="settings"]')
+    await page.click('[data-act="preset"][data-k="CUSTOM"]')
+    check(await page.locator('#cfg select').count() == 12, 'Tùy chỉnh trường phái phải có 12 điểm')
+    await page.select_option('[data-cfg="tuHoa"]', 'THIEN_LUONG')
+    await shot(page, 'p5_settings_custom', full_page=True)
+    await axe_check(page, 'cài đặt')
+    await page.evaluate('window.tvBack()')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    b = await page.evaluate(READ_BOARD)
+    check('Tùy chỉnh' in b['center'], 'Ô trung tâm phải ghi “Tùy chỉnh”')
+    check('KHOA' in b['cells'][str(CHI.index('Sửu'))]['hoa'] and 'KY' in b['cells'][str(CHI.index('Hợi'))]['hoa'], 'Tùy chỉnh Tứ Hóa kiểu Thiên Lương: năm Canh Đồng Khoa (Sửu), Âm Kỵ (Hợi)')
+    await page.click('[data-act="open-reading"][data-s="year"]'); await page.wait_for_selector('.rsum')
+    check(await page.locator('.rs').count() == 7, 'Luận năm với trường phái tùy chỉnh')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]'); await page.click('[data-act="preset"][data-k="NAM_PHAI_VN"]')
+    check(await page.locator('#cfg').count() == 0, 'Chọn lại Nam phái phải ẩn bảng tùy chỉnh')
+    await page.evaluate('window.tvBack()')
+    await shot(page, 'p5_home')
+    await axe_check(page, 'trang chủ')
+    await page.click('[data-act="new"]')
+    await axe_check(page, 'form nhập')
+    await page.evaluate('window.tvBack()')
+
+    bad = forbidden_in(all_text)
+    check(not bad and '{' not in all_text, f'Giai đoạn 5 lọt từ cấm hoặc ô trống: {bad}')
+
+    # —— máy tính bảng: hai cột, bảng cung trượt bên phải ——
+    tab = await browser.new_context(viewport={'width': 1280, 'height': 800}, device_scale_factor=1, locale='vi-VN')
+    tp = await tab.new_page()
+    await tp.goto(BASE); await dismiss_modal(tp)
+    await tp.click('.profile:has-text("Ca A")'); await tp.wait_for_selector('#board')
+    check(await tp.evaluate("getComputedStyle(document.querySelector('.chart-2p')).gridTemplateColumns.split(' ').length") == 2, 'Máy tính bảng: lá số hai cột')
+    await shot(tp, 'p5_tablet_chart')
+    await tp.click('.cell[data-chi="2"]'); await tp.wait_for_selector('#sheet.open')
+    sw = await tp.evaluate("document.querySelector('#sheet').getBoundingClientRect().width")
+    check(440 <= sw <= 470, f'Máy tính bảng: bảng cung là cột phải rộng ~460 px, đang {sw}')
+    await shot(tp, 'p5_tablet_sheet')
+    await tp.evaluate('window.tvBack()')
+    await tp.click('[data-act="open-reading"][data-s="year"]'); await tp.wait_for_selector('.rsum')
+    await axe_check(tp, 'máy tính bảng, luận năm')
+    await tab.close()
 
 asyncio.run(main())

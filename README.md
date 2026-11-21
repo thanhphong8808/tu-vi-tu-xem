@@ -9,7 +9,7 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.4.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.4.0.apk) | File cài app Android (bản mới nhất) |
+| [TuViTuXem-0.5.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.5.0.apk) | File cài app Android (bản mới nhất, giai đoạn 5) |
 | [Bản luận mẫu 4 ca golden](docs/tai-ve/BanLuanMau_4CaGolden.txt) | Bản luận trọn đời / đại vận / năm 2026 / tháng của 4 lá số mẫu, để đọc góp ý văn phong |
 | [Báo cáo giai đoạn 4](docs/PHASE4_REPORT.md) | Kết quả kiểm thử, máy ảo, các điểm phải tự quyết |
 | [Mã nguồn (ZIP)](https://github.com/thanhphong8808/tu-vi-tu-xem/archive/refs/heads/main.zip) | Toàn bộ mã nguồn, trừ khóa ký app (xem D-31) |

@@ -516,5 +516,119 @@
    "star": "THAI",
    "polarity": 0
   }
+ ],
+ "chinh": [
+  {
+   "star": "TU_VI",
+   "dau": "Nam Bắc Đẩu",
+   "hanh": "Âm Thổ",
+   "hoaKhi": "Đế Tinh",
+   "dacTinh": "Quyền uy, phúc lộc, tôn quý, giải ách",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THIEN_CO",
+   "dau": "Nam Đẩu",
+   "hanh": "Âm Mộc",
+   "hoaKhi": "Thiện Tinh",
+   "dacTinh": "Mưu lược, trí tuệ, hoạch định, phúc thọ",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THAI_DUONG",
+   "dau": "Trung Thiên",
+   "hanh": "Dương Hỏa",
+   "hoaKhi": "Quý Tinh",
+   "dacTinh": "Quang minh, chính trực, uy quyền; tượng cha, chồng",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "VU_KHUC",
+   "dau": "Bắc Đẩu",
+   "hanh": "Âm Kim",
+   "hoaKhi": "Tài Tinh",
+   "dacTinh": "Quả quyết, tài lộc, cô quả, tài chính ngân hàng",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THIEN_DONG",
+   "dau": "Nam Đẩu",
+   "hanh": "Dương Thủy",
+   "hoaKhi": "Phúc Tinh",
+   "dacTinh": "Nhân hậu, an nhàn, hưởng thụ, cứu giải",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "LIEM_TRINH",
+   "dau": "Bắc Đẩu",
+   "hanh": "Âm Hỏa",
+   "hoaKhi": "Tù Tinh / Đào Hoa thứ",
+   "dacTinh": "Liêm khiết, tư pháp hoặc nghệ thuật thẩm mỹ",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THIEN_PHU",
+   "dau": "Nam Đẩu",
+   "hanh": "Dương Thổ",
+   "hoaKhi": "Tài / Lệnh Tinh",
+   "dacTinh": "Kho tàng ngân khố, bao dung, điền sản tích lũy",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THAI_AM",
+   "dau": "Trung Thiên",
+   "hanh": "Âm Thủy",
+   "hoaKhi": "Phú / Lộc Tinh",
+   "dacTinh": "Nhu thuận, phú túc, điền sản; tượng mẹ, vợ",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THAM_LANG",
+   "dau": "Bắc Đẩu",
+   "hanh": "Thủy đới Mộc",
+   "hoaKhi": "Đào Hoa / Dục Vọng",
+   "dacTinh": "Ngoại giao, linh biến, dục vọng; bạo phát khi gặp Hỏa Linh",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "CU_MON",
+   "dau": "Bắc Đẩu",
+   "hanh": "Âm Thủy",
+   "hoaKhi": "Ám Tinh",
+   "dacTinh": "Hùng biện, phản biện, thị phi, khẩu thiệt",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THIEN_TUONG",
+   "dau": "Nam Đẩu",
+   "hanh": "Dương Thủy",
+   "hoaKhi": "Ấn Tinh",
+   "dacTinh": "Phò tá trung trinh, ấn tín công quyền, trọng nghĩa",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THIEN_LUONG",
+   "dau": "Nam Đẩu",
+   "hanh": "Dương Mộc",
+   "hoaKhi": "Ấm / Thọ Tinh",
+   "dacTinh": "Cứu khốn phò nguy, y dược, giáo dục, gặp hung hóa cát",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "THAT_SAT",
+   "dau": "Nam Đẩu",
+   "hanh": "Dương Kim",
+   "hoaKhi": "Dũng / Quyền Tinh",
+   "dacTinh": "Uy dũng, độc lập, quyết đoán, võ nghiệp",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  },
+  {
+   "star": "PHA_QUAN",
+   "dau": "Bắc Đẩu",
+   "hanh": "Âm Thủy",
+   "hoaKhi": "Hao / Dũng Tinh",
+   "dacTinh": "Tiên phong phá cũ lập mới",
+   "source": "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+  }
  ]
 }

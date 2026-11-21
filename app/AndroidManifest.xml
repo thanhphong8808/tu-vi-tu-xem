@@ -22,5 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Tệp tạm khi chia sẻ ảnh/PDF lá số: chỉ đọc, chỉ cấp quyền theo từng lần gửi. -->
+        <provider
+            android:name="vn.tuvi.app.ShareProvider"
+            android:authorities="vn.tuvi.tuxem.share"
+            android:exported="false"
+            android:grantUriPermissions="true" />
     </application>
 </manifest>

@@ -152,7 +152,7 @@
       if (altBtn) { altBtn.querySelector('[data-act="alt"]').click(); await sleep(100); check(readBoard().center.indexOf('12/2/1985') >= 0, 'Lá số thay thế ca B = 12/2/1985'); }
       window.tvBack(); window.tvBack(); window.tvBack();
       // Mở lại hồ sơ đã lưu + đổi năm
-      const prof = Array.from(document.querySelectorAll('.profile')).find((p) => (p.textContent || '').indexOf('Ca A') >= 0);
+      const prof = Array.from(document.querySelectorAll('.profile .pmain')).find((p) => (p.textContent || '').indexOf('Ca A') >= 0);
       check(!!prof, 'Hồ sơ Ca A phải được lưu');
       if (prof) { prof.click(); await sleep(100); verify(GOLDEN[0], readBoard(), 'Mở lại Ca A'); click('[data-act="year"][data-d="1"]'); check((need('.yv').textContent || '').indexOf('2027') >= 0, 'Nút ▶ sang 2027'); }
       // Giai đoạn 4: màn Luận giải (bản luận ghép câu + chấm điểm chạy trong DEX).
@@ -187,6 +187,8 @@
         click('[data-act="rscope"][data-s="year"]');
         window.scrollTo(0, 0);
       }
+      // ———————— Giai đoạn 5 ————————
+      if (prof) await phase5();
       check(!document.querySelector('.error-box'), 'Không được có hộp lỗi trên màn hình: ' + ((document.querySelector('.error-box') || {}).textContent || ''));
       // Ảnh chụp cuối cùng: màn Luận giải năm (đang mở).
     } catch (e) {
@@ -194,6 +196,128 @@
       log('ERROR ' + e.message + ' ' + (e.stack || ''));
     }
     log(`RESULT pass=${pass} fail=${fail}`);
+    await externalSteps();
+  }
+
+  const txtOf = (s) => (($(s) || {}).textContent) || '';
+  const profileBtn = (name) => Array.from(document.querySelectorAll('.profile .pmain')).find((p) => (p.querySelector('.meta b') || {}).textContent === name);
+  async function phase5() {
+    let txt = '';
+    // Tab Ngày: lịch tháng có điểm từng ngày, chi tiết ngày, 12 giờ.
+    const t0 = performance.now();
+    click('[data-act="rscope"][data-s="day"]');
+    log(`TIME Tab Ngày (30 ngày + chi tiết ngày) ${Math.round(performance.now() - t0)} ms`);
+    const nd = document.querySelectorAll('.cal .cd:not(.blank)').length;
+    check(nd >= 28 && nd <= 31, `Lịch tháng phải có 28–31 ngày, đang ${nd}`);
+    check(txtOf('.rsum').indexOf('Ngày ') >= 0 && txtOf('.rsum').indexOf('Âm lịch') >= 0, 'Chi tiết ngày: ' + txtOf('.rsum').slice(0, 120));
+    check(document.querySelectorAll('#hrs .hr').length === 12 && document.querySelectorAll('#hrs .hr.best').length === 3, '12 giờ, 3 giờ thuận');
+    check(txtOf('#cal').indexOf('Độ tin cậy thấp hơn tầng năm') >= 0, 'Lịch ngày phải ghi độ tin cậy thấp hơn tầng năm');
+    txt += txtOf('#app');
+    const t1 = performance.now();
+    click('[data-act="rmon"][data-d="1"]');
+    log(`TIME Sang tháng sau ${Math.round(performance.now() - t1)} ms`);
+    check(document.querySelectorAll('.cal .cd:not(.blank)').length >= 28, 'Sang tháng sau');
+    const someDay = document.querySelectorAll('.cal .cd:not(.blank)')[9];
+    someDay.click();
+    check(txtOf('.rsum').indexOf('Ngày 10/') >= 0, 'Chạm ngày 10: ' + txtOf('.rsum').slice(0, 60));
+    txt += txtOf('#app');
+    window.tvBack(); await sleep(200);
+    // Thẻ sao: chạm sao trong bảng cung, chạm giữ sao trên lưới.
+    click('.cell[data-chi="2"]'); await sleep(150);
+    click('#sheet [data-act="star"][data-k="VU_KHUC"]'); await sleep(150);
+    const sc = txtOf('#sheet');
+    check(sc.indexOf('Bắc Đẩu') >= 0 && sc.indexOf('Âm Kim') >= 0 && sc.indexOf('Tài Tinh') >= 0 && sc.indexOf('Hóa Quyền (can năm Canh)') >= 0, 'Thẻ sao Vũ Khúc: ' + sc.slice(0, 160));
+    txt += sc;
+    window.tvBack(); await sleep(450);
+    const ms = need('.cell[data-chi="2"] .ms[data-k="THIEN_TUONG"]');
+    const r = ms.getBoundingClientRect();
+    ms.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, clientX: r.x + 4, clientY: r.y + 4, pointerType: 'touch', isPrimary: true }));
+    await sleep(800);
+    ms.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, clientX: r.x + 4, clientY: r.y + 4, pointerType: 'touch', isPrimary: true }));
+    check(!!$('#sheet.open .starcard[data-star="THIEN_TUONG"]'), 'Chạm giữ Thiên Tướng phải mở thẻ sao');
+    window.tvBack(); await sleep(450);
+    // Phóng to lưới.
+    click('[data-act="zoom"][data-z="1"]');
+    check(need('#board').style.transform === 'scale(1.25)', 'Nút ＋ phải phóng 1,25×');
+    click('[data-act="zoom"][data-z="0"]');
+    check(need('#board').style.transform === '', 'Nút ⟲ về cỡ gốc');
+    // Xuất ảnh PNG, PDF A4 (PdfDocument + MediaStore trên máy thật).
+    const exp = async (k) => {
+      const t = performance.now();
+      click(`#export [data-act="export"][data-k="${k}"][data-a="save"]`);
+      let title = '';
+      for (let i = 0; i < 150; i++) { title = txtOf('#modal.open h2'); if (title.indexOf('Đã lưu') === 0 || title.indexOf('Không') === 0) break; await sleep(100); }
+      const m = txtOf('#modal.open').replace(/\s+/g, ' ');
+      log(`EXPORT ${k} ${Math.round(performance.now() - t)} ms · ${m.slice(0, 200)}`);
+      check(title.indexOf('Đã lưu') === 0, `Xuất ${k}: ${m.slice(0, 200)}`);
+      if ($('#modal.open [data-act="modal-cancel"]')) click('#modal [data-act="modal-cancel"]');
+      return m;
+    };
+    const mp = await exp('png');
+    check(mp.indexOf('TuViTuXem/LaSo-Ca-A-2026') >= 0, 'Ảnh lưu vào Ảnh/TuViTuXem: ' + mp);
+    const md = await exp('pdf');
+    const pg = /\((\d+) trang A4\)/.exec(md);
+    check(!!pg && +pg[1] >= 5, 'PDF phải có từ 5 trang A4: ' + md);
+    check(md.indexOf('Tải xuống/TuViTuXem/LaSo-Ca-A-2026') >= 0, 'PDF lưu vào Tải xuống/TuViTuXem: ' + md);
+    // Hiệu năng ngay trên máy (mục 3): lập lá số, luận năm, chấm 30 ngày.
+    const bench = JSON.parse(window.TuViNative.call('bench', '{}')).data;
+    log(`BENCH chart=${bench.chartMs.toFixed(2)} ms year=${bench.yearMs.toFixed(1)} ms days30=${bench.days30Ms.toFixed(1)} ms lifetime=${bench.lifetimeMs.toFixed(1)} ms`);
+    check(bench.chartMs < 25 && bench.yearMs < 250 && bench.days30Ms < 1500, `Hiệu năng vượt ngưỡng máy ảo: ${JSON.stringify(bench)}`);
+    // So hai lá số.
+    window.tvBack(); await sleep(150);
+    const idOf = (name) => { const pb = profileBtn(name); return pb ? pb.dataset.id : ''; };
+    const ida = idOf('Ca A'), idb = idOf('Ca B');
+    click('[data-act="compare"]');
+    setSel('[data-cmp="a"]', ida); setSel('[data-cmp="b"]', idb);
+    click('[data-act="cmp-run"]');
+    check(txtOf('#cmp-res').indexOf('Ca A và Ca B · Vợ chồng') >= 0 && document.querySelectorAll('#cmp-res .rp').length >= 2, 'So hai lá số: ' + txtOf('#app').slice(0, 160));
+    txt += txtOf('#cmp-res');
+    window.tvBack(); await sleep(100);
+    // Không rõ giờ: hỏi–đáp sự kiện → xếp hạng 12 giờ.
+    fillForm(parseInput(GOLDEN[0].input), 'A hỏi giờ', { unknown: true });
+    click('[data-act="submit"]');
+    check(document.querySelectorAll('#hq .qa input').length === 7, 'Hỏi–đáp 7 câu');
+    setText('[data-q="CUOI_HOI"]', '2026'); setText('[data-q="SINH_CON"]', '2012'); setText('[data-q="DI_CHUYEN"]', '2018');
+    const t2 = performance.now();
+    click('[data-act="rank-hours"]');
+    log(`TIME Xếp hạng 12 giờ × 3 sự kiện ${Math.round(performance.now() - t2)} ms`);
+    const rows = Array.from(document.querySelectorAll('#rank .h.rk'));
+    check(rows.length === 12 && rows[0].dataset.canh === 'TI', `Xếp hạng giờ: giờ thật Tỵ phải đứng đầu (${rows.slice(0, 3).map((e) => e.dataset.canh + ':' + txtOf('#rank .h.rk[data-canh="' + e.dataset.canh + '"] .pct'))})`);
+    check(txtOf('#rank').indexOf('ước đoán') >= 0, 'Xếp hạng giờ phải ghi ước đoán');
+    window.tvBack(); window.tvBack(); await sleep(100);
+    // Tùy chỉnh trường phái từng điểm.
+    click('[data-act="settings"]');
+    click('[data-act="preset"][data-k="CUSTOM"]');
+    check(document.querySelectorAll('#cfg select').length === 12, 'Tùy chỉnh 12 điểm');
+    setSel('[data-cfg="tuHoa"]', 'THIEN_LUONG');
+    window.tvBack(); await sleep(100);
+    profileBtn('Ca A').click(); await sleep(150);
+    const b = readBoard();
+    check(b.center.indexOf('Tùy chỉnh') >= 0 && b.cells[CHI.indexOf('Sửu')].hoa.indexOf('KHOA') >= 0 && b.cells[CHI.indexOf('Hợi')].hoa.indexOf('KY') >= 0, 'Tùy chỉnh Tứ Hóa Thiên Lương');
+    window.tvBack(); await sleep(100);
+    click('[data-act="settings"]'); click('[data-act="preset"][data-k="NAM_PHAI_VN"]'); window.tvBack(); await sleep(100);
+    check(forbiddenIn(txt).length === 0 && txt.indexOf('{') < 0, 'Giai đoạn 5 lọt từ cấm/ô trống: ' + forbiddenIn(txt));
+    // Kết thúc ở lá số Ca A (CI đọc cây trợ năng, chạm giữ thật, mở bảng chia sẻ).
+    profileBtn('Ca A').click(); await sleep(300);
+    log('PHASE5 done');
+  }
+
+  // Sau RESULT: các bước CI điều khiển bằng adb trên màn hình thật — chạm giữ một sao, bảng chia sẻ PDF.
+  async function externalSteps() {
+    try {
+      const ms = $('.cell[data-chi="2"] .ms[data-k="THIEN_TUONG"]');
+      if (!ms) { log('LONGPRESS_NO_TARGET'); return; }
+      ms.scrollIntoView({ block: 'center' }); await sleep(400);
+      const r = ms.getBoundingClientRect();
+      log(`LONGPRESS_TARGET x=${(r.x + r.width / 2).toFixed(1)} y=${(r.y + r.height / 2).toFixed(1)} dpr=${window.devicePixelRatio} vw=${window.innerWidth} vh=${window.innerHeight}`);
+      for (let i = 0; i < 180 && !$('#sheet.open .starcard'); i++) await sleep(500);
+      log($('#sheet.open .starcard') ? 'LONGPRESS_SEEN ' + $('#sheet .starcard').dataset.star : 'LONGPRESS_TIMEOUT');
+      await sleep(4000); // CI chụp ảnh thẻ sao
+      window.tvBack(); await sleep(600);
+      click('#export [data-act="export"][data-k="pdf"][data-a="share"]');
+      await sleep(2500);
+      log('SHARE_STARTED');
+    } catch (e) { log('POST_ERROR ' + e.message); }
   }
   run();
 })();

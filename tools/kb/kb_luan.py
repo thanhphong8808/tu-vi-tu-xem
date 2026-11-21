@@ -252,6 +252,32 @@ LEVEL_TAIL = {
 LEVEL_HEAD = {"cao": "từ ba tầng vận hạn trở lên cùng chỉ về", "co_the": "hai tầng vận hạn cùng chỉ về", "dau_hieu": "một tầng vận hạn chỉ về"}
 
 
+# ——————————————————————————— giai đoạn 5: thuộc tính 14 chính tinh (thẻ sao) ———————————————————————————
+# Theo bảng “Thuộc tính 14 chính tinh” của cẩm nang V2 (P.III), có đính chính mục 16 #6 của prompt:
+# Thái Dương, Thái Âm thường xếp Trung Thiên tinh.
+CN_III_TABLE = "Cẩm nang V2 – P.III (bảng thuộc tính 14 chính tinh); Prompt mục 16"
+CHINH_META = [
+    ("TU_VI", "Nam Bắc Đẩu", "Âm Thổ", "Đế Tinh", "Quyền uy, phúc lộc, tôn quý, giải ách"),
+    ("THIEN_CO", "Nam Đẩu", "Âm Mộc", "Thiện Tinh", "Mưu lược, trí tuệ, hoạch định, phúc thọ"),
+    ("THAI_DUONG", "Trung Thiên", "Dương Hỏa", "Quý Tinh", "Quang minh, chính trực, uy quyền; tượng cha, chồng"),
+    ("VU_KHUC", "Bắc Đẩu", "Âm Kim", "Tài Tinh", "Quả quyết, tài lộc, cô quả, tài chính ngân hàng"),
+    ("THIEN_DONG", "Nam Đẩu", "Dương Thủy", "Phúc Tinh", "Nhân hậu, an nhàn, hưởng thụ, cứu giải"),
+    ("LIEM_TRINH", "Bắc Đẩu", "Âm Hỏa", "Tù Tinh / Đào Hoa thứ", "Liêm khiết, tư pháp hoặc nghệ thuật thẩm mỹ"),
+    ("THIEN_PHU", "Nam Đẩu", "Dương Thổ", "Tài / Lệnh Tinh", "Kho tàng ngân khố, bao dung, điền sản tích lũy"),
+    ("THAI_AM", "Trung Thiên", "Âm Thủy", "Phú / Lộc Tinh", "Nhu thuận, phú túc, điền sản; tượng mẹ, vợ"),
+    ("THAM_LANG", "Bắc Đẩu", "Thủy đới Mộc", "Đào Hoa / Dục Vọng", "Ngoại giao, linh biến, dục vọng; bạo phát khi gặp Hỏa Linh"),
+    ("CU_MON", "Bắc Đẩu", "Âm Thủy", "Ám Tinh", "Hùng biện, phản biện, thị phi, khẩu thiệt"),
+    ("THIEN_TUONG", "Nam Đẩu", "Dương Thủy", "Ấn Tinh", "Phò tá trung trinh, ấn tín công quyền, trọng nghĩa"),
+    ("THIEN_LUONG", "Nam Đẩu", "Dương Mộc", "Ấm / Thọ Tinh", "Cứu khốn phò nguy, y dược, giáo dục, gặp hung hóa cát"),
+    ("THAT_SAT", "Nam Đẩu", "Dương Kim", "Dũng / Quyền Tinh", "Uy dũng, độc lập, quyết đoán, võ nghiệp"),
+    ("PHA_QUAN", "Bắc Đẩu", "Âm Thủy", "Hao / Dũng Tinh", "Tiên phong phá cũ lập mới"),
+]
+
+
+def chinh_meta():
+    return [{"star": st, "dau": dau, "hanh": hanh, "hoaKhi": hk, "dacTinh": dt, "source": CN_III_TABLE} for st, dau, hanh, hk, dt in CHINH_META]
+
+
 def luan_texts():
     out = {}
     def put(key, text, source):
@@ -269,5 +295,16 @@ def luan_texts():
     put("note.suc_khoe", "Phần sức khỏe chỉ là gợi ý để chú ý chăm sóc bản thân, không thay cho thăm khám của bác sĩ.", P11 + " quy tắc 3")
     put("note.tai_chinh", "Phần tài chính chỉ nêu khung rủi ro, không phải lời khuyên mua bán tài sản cụ thể.", P11 + " quy tắc 4")
     put("note.tre_nho", "Lá số trẻ nhỏ (dưới 16 tuổi âm): phần luận vận hạn chỉ tập trung vào học tập, sức khỏe, gia đình và an toàn đi lại.", "D-39")
+    put("note.ngay", "Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.", "Prompt mục 2.3 tầng 6, mục 9 bước 6")
+    put("note.gio", "Giờ thuận chọn theo cung thời hạn (từ cung nhật hạn coi là giờ Tý, đếm thuận tới giờ cần xem); độ tin cậy thấp hơn tầng ngày.", "Prompt mục 8.5")
+    # So hai lá số: truyền cung, truyền tinh (Cẩm nang P.V.4; Prompt mục 10.5 — truyền bộ sao hung chỉ nói “dễ khuếch đại điểm yếu của nhau”).
+    put("cmp.truyen_cung.vo_chong", "Cung Phu Thê của một người trùng cung Mệnh của người kia ({cung}): thế truyền cung, theo cẩm nang là dấu hiệu gắn bó.", CN_V + ".4")
+    put("cmp.truyen_cung.cha_me_con", "Cung Tử Tức của cha/mẹ trùng cung Mệnh của con ({cung}): con truyền cung với cha mẹ, thường dễ hiểu nhau.", CN_V + ".4")
+    put("cmp.truyen_tinh.dep", "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia (truyền tinh) và đều sáng: thuận cho sự hòa hợp, gia đạo êm ấm.", CN_V + ".4")
+    put("cmp.truyen_tinh.trung", "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia (truyền tinh): hai người có nhiều nét giống nhau, dễ đồng cảm.", CN_V + ".4")
+    put("cmp.truyen_tinh.hung", "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia, lại là bộ sao nặng (truyền tinh hung): hai người dễ khuếch đại điểm yếu của nhau, cần quy ước rõ ràng và lắng nghe nhiều hơn.", CN_V + ".4; Prompt mục 10.5")
+    put("cmp.truyen_tinh.mot_phan", "Cung {cung} của người này và cung Mệnh của người kia có chung sao {sao} (truyền tinh một phần): có điểm tương đồng về tính cách.", CN_V + ".4")
+    put("cmp.khong", "Hai lá số không có thế truyền cung hay truyền tinh rõ rệt. Đây chỉ là một trong nhiều yếu tố, không quyết định mối quan hệ.", CN_V + ".4")
+    put("cmp.note", "Quan hệ là tương tác hai chiều: những dấu hiệu trên chỉ gợi ý chỗ cần vun đắp, không đổ lỗi cho ai.", P11 + " quy tắc 6")
     put("note.thang", "Điểm tháng tính từ điểm năm, cung nguyệt hạn và Tứ Hóa tháng; độ tin cậy thấp hơn tầng năm.", "Prompt mục 9 bước 6")
     return out

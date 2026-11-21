@@ -223,6 +223,66 @@
    "reviewed": false
   },
   {
+   "key": "note.ngay",
+   "text": "Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.",
+   "source": "Prompt mục 2.3 tầng 6, mục 9 bước 6",
+   "reviewed": false
+  },
+  {
+   "key": "note.gio",
+   "text": "Giờ thuận chọn theo cung thời hạn (từ cung nhật hạn coi là giờ Tý, đếm thuận tới giờ cần xem); độ tin cậy thấp hơn tầng ngày.",
+   "source": "Prompt mục 8.5",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_cung.vo_chong",
+   "text": "Cung Phu Thê của một người trùng cung Mệnh của người kia ({cung}): thế truyền cung, theo cẩm nang là dấu hiệu gắn bó.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_cung.cha_me_con",
+   "text": "Cung Tử Tức của cha/mẹ trùng cung Mệnh của con ({cung}): con truyền cung với cha mẹ, thường dễ hiểu nhau.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_tinh.dep",
+   "text": "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia (truyền tinh) và đều sáng: thuận cho sự hòa hợp, gia đạo êm ấm.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_tinh.trung",
+   "text": "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia (truyền tinh): hai người có nhiều nét giống nhau, dễ đồng cảm.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_tinh.hung",
+   "text": "Bộ sao {sao} ở cung {cung} của người này cũng tọa thủ cung Mệnh của người kia, lại là bộ sao nặng (truyền tinh hung): hai người dễ khuếch đại điểm yếu của nhau, cần quy ước rõ ràng và lắng nghe nhiều hơn.",
+   "source": "Cẩm nang V2 – P.V.4; Prompt mục 10.5",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.truyen_tinh.mot_phan",
+   "text": "Cung {cung} của người này và cung Mệnh của người kia có chung sao {sao} (truyền tinh một phần): có điểm tương đồng về tính cách.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.khong",
+   "text": "Hai lá số không có thế truyền cung hay truyền tinh rõ rệt. Đây chỉ là một trong nhiều yếu tố, không quyết định mối quan hệ.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "cmp.note",
+   "text": "Quan hệ là tương tác hai chiều: những dấu hiệu trên chỉ gợi ý chỗ cần vun đắp, không đổ lỗi cho ai.",
+   "source": "Prompt mục 11 quy tắc 6",
+   "reviewed": false
+  },
+  {
    "key": "note.thang",
    "text": "Điểm tháng tính từ điểm năm, cung nguyệt hạn và Tứ Hóa tháng; độ tin cậy thấp hơn tầng năm.",
    "source": "Prompt mục 9 bước 6",

@@ -1,5 +1,6 @@
 # Cài và chạy thử đúng file APK trong dist/ trên máy ảo Android 11, 14, 15, 16 (và 17 nếu GitHub có ảnh máy ảo).
-# Mỗi máy ảo: mở bản phát hành (không được văng) rồi chạy bản tự kiểm tra (4 ca golden qua giao diện thật).
+# Mỗi máy ảo: mở bản phát hành (không được văng) rồi chạy bản tự kiểm tra (4 ca golden qua giao diện thật),
+# cuối cùng thử trên màn hình thật: cây trợ năng, chạm giữ một sao, bảng chia sẻ, PDF/PNG đã lưu.
 name: Chạy thử trên máy ảo Android
 
 on:
@@ -32,6 +33,9 @@ jobs:
             optional: true
     steps:
       - uses: actions/checkout@v6
+
+      - name: Cài công cụ đọc PDF (vẽ trang PDF xuất từ app thành ảnh để xem trong log)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null
 
       - name: Bật KVM
         run: |

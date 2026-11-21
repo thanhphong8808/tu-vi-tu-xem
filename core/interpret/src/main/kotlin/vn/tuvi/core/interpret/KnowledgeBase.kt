@@ -19,6 +19,9 @@ data class MinorMeta(val star: StarId, val polarity: Int, val polarityDac: Int?,
 /** Bộ đồng cung (KB phần b): hai chính tinh cùng cung. */
 data class Combo(val key: String, val name: String, val stars: Set<StarId>)
 
+/** Thuộc tính một chính tinh cho thẻ sao (cẩm nang P.III): chòm sao, ngũ hành, hóa khí, đặc tính. */
+data class MainMeta(val star: StarId, val dau: String, val hanh: String, val hoaKhi: String, val dacTinh: String, val source: String)
+
 /**
  * Knowledge base có version (`:data:kb`, mục 3): luật cách cục, câu luận, khuyến nghị, câu trả lời mẫu, siêu dữ liệu
  * sao. Tách khỏi code để cập nhật câu luận không cần sửa engine. Đọc bằng JsonElement (không cần plugin serialization).
@@ -33,6 +36,7 @@ class KnowledgeBase(
     val minor: Map<StarId, MinorMeta>,
     /** Mọi file đã đọc, để lint báo đúng chỗ. */
     val files: List<String>,
+    val mainMeta: Map<StarId, MainMeta> = emptyMap(),
 ) {
     private val comboBySet: Map<Set<StarId>, Combo> = combos.associateBy { it.stars }
 
@@ -81,6 +85,7 @@ class KnowledgeBase(
             val faq = ArrayList<FaqEntry>()
             val combos = ArrayList<Combo>()
             val minor = LinkedHashMap<StarId, MinorMeta>()
+            val mainMeta = LinkedHashMap<StarId, MainMeta>()
             val dupTexts = ArrayList<String>()
             for (f in list("rules")) {
                 all.add(f)
@@ -140,6 +145,12 @@ class KnowledgeBase(
                     if (stars.size != 2) throw KbException("$f.combos[$i]: cần 2 sao khác nhau")
                     combos.add(Combo(o.str("key", "$f.combos[$i]"), o.str("name", "$f.combos[$i]"), stars))
                 }
+                (root["chinh"] as? JsonArray)?.forEachIndexed { i, e ->
+                    val o = e.jsonObj("$f.chinh[$i]")
+                    val p = "$f.chinh[$i]"
+                    val s = parseStar(o.str("star", p), p)
+                    mainMeta[s] = MainMeta(s, o.str("dau", p), o.str("hanh", p), o.str("hoaKhi", p), o.str("dacTinh", p), o.str("source", p))
+                }
                 (root["minor"] as? JsonArray)?.forEachIndexed { i, e ->
                     val o = e.jsonObj("$f.minor[$i]")
                     val s = parseStar(o.str("star", "$f.minor[$i]"), "$f.minor[$i]")
@@ -147,7 +158,7 @@ class KnowledgeBase(
                 }
             }
             if (dupTexts.isNotEmpty()) throw KbException("Trùng khóa câu luận: ${dupTexts.take(10)}")
-            return KnowledgeBase(version, rules, texts, advice, faq, combos, minor, all)
+            return KnowledgeBase(version, rules, texts, advice, faq, combos, minor, all, mainMeta)
         }
 
         private fun parseRule(o: JsonObject, file: String): Rule {
