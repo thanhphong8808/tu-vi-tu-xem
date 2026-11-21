@@ -122,7 +122,11 @@ class AiTest {
         assertTrue(wrong.any { st in it && ro in it }, "$st/$ro: $wrong")
         // Quên điểm chung.
         val noScore = good.replace(Regex("\\d+/100"), "").replace(Regex("\\b\\d+\\b"), "")
-        assertTrue(AiGuard.check(json(noScore), p.facts, cfg).issues.any { "điểm chung" in it })
+        // Chỉ quên điểm chung → app tự thêm câu điểm chung vào đầu, câu vẫn được dùng.
+        val fixed = AiGuard.check(json(noScore), p.facts, cfg)
+        assertTrue(fixed.ok && fixed.text.startsWith("Điểm chung: ${p.facts.score}/100."), fixed.issues.toString())
+        // Quên điểm chung cùng một lỗi khác → vẫn trượt.
+        assertFalse(AiGuard.check(json("$noScore Năm 2031 sẽ rất thuận."), p.facts, cfg).ok)
         // Điểm đúng tầng: lấy điểm của tầng khác gán cho đại hạn → trượt.
         val dh = Regex("→ Đại hạn: (\\d+)/100").find(p.facts.text)!!.groupValues[1]
         val other = Regex("→ (Tiểu hạn|Nền gốc|Lưu Thái Tuế|Lưu niên đại hạn): (\\d+)/100").findAll(p.facts.text)

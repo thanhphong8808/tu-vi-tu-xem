@@ -9,9 +9,11 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.7.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.7.0.apk) | File cài app Android (bản mới nhất, ~22 MB). Mục **Hỏi đáp** có thêm **Trợ lý AI chạy trên máy** (Gemma 4 E2B, tải một lần ~2,6 GB qua Wi-Fi): viết lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao — đã đối chiếu với lá số. Cài đè lên bản cũ không mất lá số |
+| [TuViTuXem-0.8.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.8.0.apk) | File cài app Android (bản mới nhất, ~22 MB). Giao diện mới (icon tướng số, sơn mài – kim nhũ); Hỏi đáp có đoạn **Sách bàn** theo *Tử Vi Đẩu Số Toàn Thư* và *Tử Vi Nghiệm Lý*; **Trợ lý AI chạy trên máy** (Gemma 4 E2B, tải một lần ~2,6 GB qua Wi-Fi); số liên hệ 0378 373 373. Cài đè lên bản cũ không mất lá số |
+| [Thiết kế trên Figma](https://www.figma.com/design/kdxoEkGID6PUamNLPzuvyZ) · [ảnh màn mẫu](docs/tai-ve/ThietKe_Figma_ManMau.png) | Hệ thiết kế: màu sáng/tối, kiểu chữ, 22 icon, nút, thẻ, màn Trang chủ và Hỏi đáp |
 | [Chấm 40 câu Trợ lý AI](docs/tai-ve/ai-cham-40-cau.md) | 40 câu hỏi trên 4 lá số, câu AI viết (model thật), câu nào qua/trượt kiểm tra dữ kiện và vì sao, thời gian mỗi câu |
 | [Ảnh thẻ Trợ lý AI](docs/tai-ve/TroLyAI_TheTai.png) | Thẻ tải Trợ lý AI trong mục Hỏi đáp: dung lượng, nguồn tải, chỉ qua Wi-Fi |
+| [Báo cáo bản 0.8.0](docs/PHASE8_REPORT.md) | Kiến thức sách, giao diện mới, kết quả kiểm thử, 5 máy ảo |
 | [Báo cáo giai đoạn 7](docs/PHASE7_REPORT.md) | Trợ lý AI trên máy: cách gắn, kiểm tra đầu ra, kết quả kiểm thử, 5 máy ảo, việc anh cần thử trên S22 Ultra |
 | [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15, bản 0.7.0) sau khi gõ “nam sau tai chinh ra sao” |
 | [Hỏi đáp mẫu (0.6.1)](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app luận trên lá số mẫu, đủ các tầng: gốc, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, tổng hợp |
@@ -36,10 +38,11 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | 5 | UI đầy đủ: tab Ngày, thẻ sao, so hai lá số, ước đoán giờ, trường phái tùy chỉnh, xuất PNG/PDF, hai cột, trợ năng — app 0.5.0 | ✅ Xong — [báo cáo](docs/PHASE5_REPORT.md) |
 | 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), luận đoán theo lá số qua từng tầng vận hạn kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.1 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Đồng bộ Firebase: chờ (D-53) |
 | 7 | Trợ lý AI sinh lời trên máy (Gemma 4 E2B qua LiteRT-LM): tải model qua Wi-Fi, diễn đạt lại câu trả lời Hỏi đáp, kiểm tra dữ kiện trước khi hiện — app 0.7.0 | ✅ Xong — [báo cáo](docs/PHASE7_REPORT.md). Chờ anh đo tốc độ trên S22 Ultra |
+| 8 | Kiến thức từ sách (Toàn Thư, Nghiệm Lý) vào luận giải và Trợ lý AI; giao diện mới thiết kế trên Figma; bỏ nhãn nháp; số liên hệ — app 0.8.0 | ✅ Xong — [báo cáo](docs/PHASE8_REPORT.md) |
 
 ## Cài lên điện thoại Android
 
-1. Tải `TuViTuXem-0.7.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
+1. Tải `TuViTuXem-0.8.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. Từ bản 0.7.0

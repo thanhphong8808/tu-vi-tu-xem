@@ -376,7 +376,7 @@ class MainActivity : Activity() {
     }
 
     companion object {
-        const val APP_VERSION = "0.7.0 (8)"
+        const val APP_VERSION = "0.8.0 (9)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
         /** Một luồng nền cho các lệnh AI (model không chạy song song hai câu). */

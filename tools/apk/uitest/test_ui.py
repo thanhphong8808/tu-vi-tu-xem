@@ -239,7 +239,7 @@ async def main():
 
         # —— luận giải sơ bộ (giai đoạn 3) trên ca A, năm 2026 ——
         rd = await page.inner_text('#reading')
-        check('Bản nháp' in rd and 'chưa qua thẩm định' in rd, 'Thẻ luận giải phải ghi rõ là bản nháp chưa thẩm định')
+        check('nháp' not in rd.lower() and 'thẩm định' not in rd, 'Thẻ luận giải không còn ghi “bản nháp” (D-61)')
         n_items = await page.locator('#reading .rd').count()
         check(n_items >= 3, f'Ca A phải có ít nhất 3 cách cục/dấu hiệu, đang có {n_items}')
         for rid in ['TS_THIEN_TUONG_XET_GIAP', 'TS_AM_DUONG_THUAN_LY']:
@@ -443,6 +443,8 @@ async def main():
         await phase6(page, browser)
         # ———————————————— giai đoạn 7: Trợ lý AI (máy chủ thử dùng model giả lập) ————————————————
         await phase7(page)
+        # ———————————————— 0.8.0: sách bàn, liên hệ, bỏ nhãn nháp, icon ————————————————
+        await phase8(page)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -870,6 +872,33 @@ async def phase7(page):
     check(await page.locator('#ai-card [data-act="ai-download"]').count() == 1, 'Xóa model thì quay về nút tải')
     await page.click('[data-act="ai-log-clear"]')
     check(api('storeGet', {'key': 'aiLog'}) == [], 'Xóa nhật ký AI')
+    await page.evaluate('window.tvBack()')
+
+async def phase8(page):
+    print('0.8.0 — Sách bàn, liên hệ, icon')
+    home = await page.inner_text('#app')
+    check('0378 373 373' in home and await page.locator('a[href="tel:0378373373"]').count() == 1, 'Trang chủ phải có số liên hệ bấm gọi được')
+    check(await page.locator('.brand .logo svg.ic').count() == 1 and await page.locator('[data-act="new"] svg.ic').count() == 1, 'Logo bát quái và icon SVG trên nút')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]')
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào?')
+    await page.wait_for_timeout(700)
+    t = page.locator('.qa-turn').last
+    if await t.locator('[data-act="qa-detail"]').count():
+        await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+    book = t.locator('.rp-book')
+    check(await book.count() == 1 and 'Sách bàn về cung Quan Lộc' in await book.inner_text(), 'Câu trả lời năm phải có đoạn “Sách bàn về cung Quan Lộc”')
+    await book.click()
+    why = await t.locator('.rp-book .rp-why').inner_text()
+    check('Tử Vi Đẩu Số Toàn Thư' in why and 'Căn cứ trên lá số' in why, f'“Vì sao?” của đoạn sách phải ghi sách và căn cứ: {why[:120]}')
+    await book.scroll_into_view_if_needed()
+    await shot(page, 'p8_sach_ban')
+    alltext = await page.inner_text('#app')
+    check('nháp' not in alltext.lower() and 'prompt' not in alltext.lower(), 'Không còn chữ “nháp”/“prompt” trên màn Hỏi đáp')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]')
+    st = await page.inner_text('#app')
+    check('nháp' not in st.lower() and await page.locator('#contact a[href="tel:0378373373"]').count() == 1, 'Cài đặt: có thẻ Liên hệ, không còn chữ nháp')
     await page.evaluate('window.tvBack()')
 
 asyncio.run(main())

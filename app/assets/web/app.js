@@ -37,6 +37,7 @@
     ['DI_CHUYEN', 'Năm chuyển nhà hoặc đi xa lập nghiệp'],
   ];
   const DOW = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN'];
+  const PHONE = '0378 373 373'; // số liên hệ (D-61)
   const ONBOARD = 'Tử Vi Đẩu Số là di sản văn hóa – triết học phương Đông. Nội dung trong ứng dụng mang tính tham khảo và chiêm nghiệm, không thay thế tư vấn y tế, pháp lý hay tài chính. Bạn luôn là người quyết định con đường của mình.';
 
   // ———————————————————————————— cầu nối engine ————————————————————————————
@@ -56,6 +57,7 @@
     if (!r.ok) throw new Error(r.error || 'Lỗi không rõ');
     return r.data;
   }
+  const ic = (name, cls) => (window.TVIcon ? window.TVIcon(name, cls) : ''); // icon SVG (icons.js, D-63)
   function safe(fn, fallback) { try { return fn(); } catch (e) { return fallback; } }
   // Gọi bất đồng bộ (Trợ lý AI, D-57): Android chạy ở luồng nền rồi gọi lại window.tvAsyncDone; máy chủ thử dùng XHR async.
   const ASYNC = {};
@@ -233,12 +235,13 @@
           `<button class="icon-btn" data-act="del-profile" data-id="${esc(p.id)}" aria-label="Xóa lá số ${esc(nm)}">✕</button></div>`;
       }).join('');
     }
-    return `<div class="brand"><h1>Tử Vi Tự Xem</h1><p>Hôm nay ${esc(t.solar)} · Âm lịch ${esc(t.lunar)} · năm ${esc(t.lunarYearCanChi)}</p></div>` +
-      `<button class="btn primary block" data-act="new">＋ Lập lá số mới</button>` +
-      `<div class="card"><h2>Lá số đã lưu</h2>${list}</div>` +
-      `<div class="row"><button class="btn" data-act="settings">⚙ Cài đặt</button>` +
-      (S.profiles.length >= 2 ? `<button class="btn" data-act="compare">⚭ So hai lá số</button>` : '') + `</div>` +
-      `<p class="note">Chạy hoàn toàn trên máy · lá số không rời điện thoại.<br>Đức năng thắng số — lựa chọn của bạn quyết định kết quả.</p>`;
+    return `<div class="brand"><div class="brand-row"><span class="logo">${ic('bat-quai')}</span><h1>Tử Vi Tự Xem</h1></div><p>Hôm nay ${esc(t.solar)} · Âm lịch ${esc(t.lunar)} · năm ${esc(t.lunarYearCanChi)}</p></div>` +
+      `<div class="gold-rule" aria-hidden="true"></div><button class="btn primary block" data-act="new">${ic('lap-la-so')} Lập lá số mới</button>` +
+      `<div class="card"><h2>${ic('la-so', 'h')}Lá số đã lưu</h2>${list}</div>` +
+      `<div class="row"><button class="btn" data-act="settings">${ic('cai-dat')} Cài đặt</button>` +
+      (S.profiles.length >= 2 ? `<button class="btn" data-act="compare">${ic('so-sanh')} So hai lá số</button>` : '') + `</div>` +
+      `<p class="note">${ic('khoa', 'ngoc')} Chạy hoàn toàn trên máy · lá số không rời điện thoại.<br>Đức năng thắng số — lựa chọn của bạn quyết định kết quả.</p>` +
+      `<p class="note contact-line">${ic('dien-thoai')} Liên hệ: <a href="tel:${PHONE.replace(/\s/g, '')}">${PHONE}</a></p>`;
   }
 
   // ——— Form nhập liệu (mục 2.1) ———
@@ -494,12 +497,18 @@
       `<button class="btn block" data-act="bench" style="margin-top:8px">Đo hiệu năng</button>` +
       `<p class="small muted">Đo ngay trên máy: lập lá số, luận một năm, chấm điểm 30 ngày (chỉ tiêu mục 3, đo trên Samsung S22).</p></div>` +
       aiCard(true) +
-      (S.aiLog ? `<div class="card" id="ai-log"><h2>Nhật ký Trợ lý AI</h2><p class="small">${S.aiLog} câu AI viết chưa qua kiểm tra dữ kiện (app đã hiện bản luận gốc). Nhật ký chỉ lưu trên máy để cải thiện lời nhắc, không gửi đi.</p>` +
+      (S.aiLog ? `<div class="card" id="ai-log"><h2>${ic('tro-ly-ai', 'h kim')}Nhật ký Trợ lý AI</h2><p class="small">${S.aiLog} câu AI viết chưa qua kiểm tra dữ kiện (app đã hiện bản luận gốc). Nhật ký chỉ lưu trên máy để cải thiện lời nhắc, không gửi đi.</p>` +
         `<button class="btn block" data-act="ai-log-clear">Xóa nhật ký</button></div>` : '') +
       `<div class="card" id="qa-set"><h2>Hỏi đáp</h2><p class="small">Các câu bạn đã hỏi được lưu trên máy này để gợi ý lại ở mục “Hay hỏi” (${S.qaLog.length} câu). Không gửi đi đâu.</p>` +
       `<button class="btn block" data-act="qa-clear"${S.qaLog.length ? '' : ' disabled'}>Xóa lịch sử hỏi đáp</button></div>` +
-      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — giai đoạn 7: lá số, vận hạn; luận giải trọn đời / đại vận / năm / tháng / ngày với điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, Nên/Không nên, “Vì sao?” cho mọi đoạn; <b>Hỏi đáp</b>: hỏi bằng lời (có dấu hoặc không dấu), app trả lời ngay trên máy từ chính bản luận, kèm căn cứ; <b>Trợ lý AI</b> (tùy chọn, model Gemma 4 E2B tải một lần qua Wi-Fi) viết lại câu trả lời thành lời giải thích từng tầng, đã đối chiếu với lá số; thẻ sao; so hai lá số; ước đoán giờ sinh theo sự kiện; tùy chỉnh trường phái từng điểm; xuất ảnh PNG và PDF A4. Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định.</p>` +
-      `<p class="small muted">${esc(ONBOARD)}</p></div>`;
+      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — lá số, vận hạn; luận giải trọn đời / đại vận / năm / tháng / ngày với điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, Nên/Không nên, “Vì sao?” cho mọi đoạn; <b>Hỏi đáp</b>: hỏi bằng lời (có dấu hoặc không dấu), app trả lời ngay trên máy từ chính bản luận, kèm căn cứ; <b>Trợ lý AI</b> (tùy chọn, model Gemma 4 E2B tải một lần qua Wi-Fi) viết lại câu trả lời thành lời giải thích từng tầng, đã đối chiếu với lá số; thẻ sao; so hai lá số; ước đoán giờ sinh theo sự kiện; tùy chỉnh trường phái từng điểm; xuất ảnh PNG và PDF A4. Luận giải theo <i>Tử Vi Đẩu Số Toàn Thư</i>, <i>Tử Vi Nghiệm Lý</i>, cẩm nang Tử Vi Đẩu Số và khẩu quyết Nam phái.</p>` +
+      `<p class="small muted">${esc(ONBOARD)}</p></div>` +
+      contactCard();
+  }
+  // Liên hệ (anh Phong, D-61): chạm số để gọi (Android mở ứng dụng Điện thoại).
+  function contactCard() {
+    return `<div class="card" id="contact"><h2>${ic('dien-thoai', 'h')}Liên hệ</h2><a class="btn block contact" href="tel:${PHONE.replace(/\s/g, '')}" aria-label="Gọi số ${PHONE}">` +
+      `${ic('dien-thoai')} ${PHONE}</a><p class="small muted">Góp ý nội dung luận giải, báo lỗi app hoặc cần tư vấn thêm.</p></div>`;
   }
 
   function customConfig() {
@@ -545,7 +554,7 @@
       `</div><div class="cl-side">` +
       qaCard() + luanCard(d) + exportCard(d) + readingCard(d) + yearCard(d) + daiHanCard(d) + monthCard(d) +
       `</div></div>` +
-      `<p class="note">Luận giải đang là bản nháp tự sinh, chưa thẩm định. Tử Vi là bản đồ thời tiết — đức năng thắng số, lựa chọn của bạn quyết định kết quả.</p>`;
+      `<p class="note">Tử Vi là bản đồ thời tiết — đức năng thắng số, lựa chọn của bạn quyết định kết quả.</p>`;
   }
 
   function starSpan(s, cls) {
@@ -686,7 +695,7 @@
     });
     const body = groups.map((g) => `<h3>${esc(g.name)} (${g.items.length})</h3>` + g.items.map((it) => rdItem(it, 'n:' + it.id + ':' + it.chi)).join('')).join('');
     return `<div class="card" id="reading"><h2>Cách cục &amp; dấu hiệu lá số</h2>` +
-      `<div class="draft">Bản nháp tự sinh từ ${r.counts.rules} luật của cẩm nang, chưa qua thẩm định — chỉ để tham khảo.${r.expert ? ' Đang bật chế độ chuyên sâu.' : ''} Chạm một mục để xem sao, cung làm căn cứ và gợi ý.</div>` +
+      `<div class="draft">Luận theo ${r.counts.rules} luật.${r.expert ? ' Đang bật chế độ chuyên sâu.' : ''} Chạm một mục để xem sao, cung làm căn cứ và gợi ý.</div>` +
       (body || '<p class="small muted">Không có cách cục nổi bật nào khớp với lá số này.</p>') + `</div>`;
   }
   function yearReading(d) {
@@ -694,15 +703,15 @@
     if (!r || r.error) return '';
     const yr = r.year.map((it) => rdItem(it, 'y:' + it.id + ':' + it.chi)).join('');
     const dh = r.daiHan.map((it) => rdItem(it, 'd:' + it.id + ':' + it.chi)).join('');
-    return `<h3>Dấu hiệu năm ${d.year.lunarYear} (bản nháp)</h3>` + (yr || '<p class="small muted">Không có dấu hiệu nổi bật.</p>') +
-      (dh ? `<h3>Đại hạn đang đi (bản nháp)</h3>${dh}` : '');
+    return `<h3>Dấu hiệu năm ${d.year.lunarYear}</h3>` + (yr || '<p class="small muted">Không có dấu hiệu nổi bật.</p>') +
+      (dh ? `<h3>Đại hạn đang đi</h3>${dh}` : '');
   }
   function palaceReading(d, chi) {
     const r = d.reading;
     if (!r || r.error) return '';
     const lines = (r.palaces[chi] || []).map((x) => `<div class="pl ${polCls(x.pol)}"><b>${esc(x.title)}</b><div>${esc(x.text)}</div></div>`).join('');
     const rules = r.natal.concat(r.daiHan, r.year).filter((it) => (it.chis || [it.chi]).indexOf(chi) >= 0).map((it) => rdItem(it, 'p:' + it.id + ':' + it.chi)).join('');
-    return `<h3>Luận giải sơ bộ (bản nháp)</h3>` + (lines || '<div class="small muted">—</div>') +
+    return `<h3>Luận giải sơ bộ</h3>` + (lines || '<div class="small muted">—</div>') +
       (rules ? `<h3>Cách cục, dấu hiệu tại cung này</h3>${rules}` : '') +
       `<p class="small muted">Câu luận tự sinh, chưa thẩm định. Chấm điểm và tổng hợp theo chủ đề có ở bản sau.</p>`;
   }
@@ -715,7 +724,7 @@
     const y = d.year.lunarYear;
     return `<div class="card" id="luan"><h2>Luận giải</h2><div class="rbtns">` +
       SCOPES.filter(([k]) => k !== 'qa').map(([k, l]) => `<button class="btn" data-act="open-reading" data-s="${k}">${k === 'year' ? 'Năm ' + y : l}</button>`).join('') +
-      `</div><p class="small muted" style="margin:8px 0 0">Điểm 0–100 (50 là mức trung bình), thế Tấn/Giữ/Thủ/Lùi, luận theo chủ đề, Nên/Không nên, “Vì sao?” cho mọi đoạn; Ngày: lịch tháng có điểm từng ngày và giờ thuận. Câu luận đang là bản nháp.</p></div>`;
+      `</div><p class="small muted" style="margin:8px 0 0">Điểm 0–100 (50 là mức trung bình), thế Tấn/Giữ/Thủ/Lùi, luận theo chủ đề, Nên/Không nên, “Vì sao?” cho mọi đoạn; Ngày: lịch tháng có điểm từng ngày và giờ thuận.</p></div>`;
   }
   const cacheBase = () => [S.req && S.req.input, S.req && S.req.alt, S.settings.preset, S.settings.preset === 'CUSTOM' ? S.settings.config : null, !!S.settings.expert];
   function readingKey(rv) {
@@ -765,9 +774,10 @@
     const why = p.why.map((w) => `<div class="w"><b>${esc(w.title)}</b>${w.detail ? `<div>${esc(w.detail)}</div>` : ''}` +
       (w.evidence.length ? `<ul>${w.evidence.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>` : '') +
       (w.source ? `<small>Nguồn: ${esc(w.source)}</small>` : '') + `</div>`).join('');
-    return `<div class="rp k-${p.kind} ${polCls(p.pol)}${open ? ' open' : ''}" data-act="rp" data-key="${esc(key)}">` +
-      (p.title ? `<div class="rp-h">${esc(p.title)}</div>` : '') +
-      `<div class="rp-t">${p.title ? '' : (KIND_ICON[p.kind] || '')}${esc(p.text)}${p.draft ? ' <span class="draft-tag">nháp</span>' : ''}</div>` +
+    const book = p.ids.some((x) => x.indexOf('SACH_') === 0); // đoạn “Sách bàn” (D-62)
+    return `<div class="rp k-${p.kind} ${polCls(p.pol)}${book ? ' rp-book' : ''}${open ? ' open' : ''}" data-act="rp" data-key="${esc(key)}">` +
+      (p.title ? `<div class="rp-h">${book ? ic('sach') + ' ' : ''}${esc(p.title)}</div>` : '') +
+      `<div class="rp-t">${p.title ? '' : (KIND_ICON[p.kind] || '')}${esc(p.text)}</div>` +
       `<div class="rp-why">${why}<small class="ids">Mã: ${esc(p.ids.join(', '))}</small></div>` +
       `<div class="rp-tap">${open ? 'Thu gọn ‹' : 'Vì sao? ›'}</div></div>`;
   }
@@ -890,11 +900,11 @@
     const a = it.ai;
     if (!a || a.state === 'skip') return '';
     if (a.state === 'wait') {
-      return `<div class="qa-ai wait" role="status"><span class="spin" aria-hidden="true"></span> ✨ Trợ lý AI đang viết lời giải thích từ lá số… ` +
+      return `<div class="qa-ai wait" role="status"><span class="spin" aria-hidden="true"></span> ${ic('tro-ly-ai', 'kim')} Trợ lý AI đang viết lời giải thích từ lá số… ` +
         `<span class="small muted">(chạy ngay trên máy, thường 20–60 giây; bản luận chi tiết của app ở dưới)</span></div>`;
     }
     if (a.state === 'done') {
-      return `<div class="qa-ai"><div class="qa-ai-h">✨ Trợ lý AI giải thích <span class="small muted">· đã đối chiếu sao, cung, năm, điểm với lá số${a.ms >= 1000 ? ' · ' + Math.round(a.ms / 1000) + ' giây' : ''}</span></div>` +
+      return `<div class="qa-ai"><div class="qa-ai-h">${ic('tro-ly-ai', 'kim')} Trợ lý AI giải thích <span class="small muted">· đã đối chiếu sao, cung, năm, điểm với lá số${a.ms >= 1000 ? ' · ' + Math.round(a.ms / 1000) + ' giây' : ''}</span></div>` +
         String(a.text).split(/\n+/).map((t) => `<p>${esc(t)}</p>`).join('') + `</div>`;
     }
     return `<div class="qa-ai fail small muted">Trợ lý AI chưa đưa ra được câu trả lời đạt kiểm tra (${esc(a.reason || '')}), nên app hiện bản luận chi tiết.` +
@@ -902,7 +912,7 @@
   }
   function aiCard(full) {
     const a = S.ai || aiRefresh();
-    if (!a || a.state === 'unsupported') return full ? `<div class="card" id="ai-card"><h2>Trợ lý AI</h2><p class="small">${esc((a && a.message) || 'Bản này chưa có model AI trên máy.')}</p></div>` : '';
+    if (!a || a.state === 'unsupported') return full ? `<div class="card" id="ai-card"><h2>${ic('tro-ly-ai', 'h kim')}Trợ lý AI</h2><p class="small">${esc((a && a.message) || 'Bản này chưa có model AI trên máy.')}</p></div>` : '';
     const m = a.model || {};
     const gb = (b) => (b / 1e9).toFixed(1).replace('.', ',') + ' GB';
     const name = esc(m.label || 'model AI');
@@ -929,9 +939,9 @@
         (a.freeBytes ? ` (đang trống ${gb(a.freeBytes)})` : '') + `.</p>` +
         (a.message ? `<p class="small err-t">${esc(a.message)}</p>` : '') +
         (a.wifi === false ? `<p class="small muted">Máy đang không dùng Wi-Fi: bấm tải thì app chờ có Wi-Fi mới tải.</p>` : '') +
-        `<button class="btn primary block" data-act="ai-download">✨ Tải Trợ lý AI (${gb(m.bytes || a.total || 0)}, qua Wi-Fi)</button>`;
+        `<button class="btn primary block" data-act="ai-download">${ic('tro-ly-ai')} Tải Trợ lý AI (${gb(m.bytes || a.total || 0)}, qua Wi-Fi)</button>`;
     }
-    return `<div class="card" id="ai-card"><h2>Trợ lý AI trên máy</h2>${body}</div>`;
+    return `<div class="card" id="ai-card"><h2>${ic('tro-ly-ai', 'h kim')}Trợ lý AI trên máy</h2>${body}</div>`;
   }
   // Theo dõi tiến độ tải / kiểm tra file khi đang ở màn Hỏi đáp hoặc Cài đặt.
   let aiTimer = null;
@@ -974,7 +984,7 @@
       `<button class="icon-btn${it.rate === -1 ? ' on' : ''}" data-act="qa-rate" data-i="${i}" data-v="-1" aria-label="Câu trả lời chưa hữu ích" aria-pressed="${it.rate === -1}">👎</button></span>`;
     const acts = `<div class="qa-acts">` +
       (d.link ? `<button class="btn small" data-act="qa-link" data-i="${i}">${esc(d.link.label)} ›</button>` : '') +
-      (d.compare && S.profiles.length >= 2 ? `<button class="btn small" data-act="compare">⚭ So hai lá số</button>` : '') + rate + `</div>`;
+      (d.compare && S.profiles.length >= 2 ? `<button class="btn small" data-act="compare">${ic('so-sanh')} So hai lá số</button>` : '') + rate + `</div>`;
     const follow = d.followUps.length ? `<div class="chips qa-follow" role="group" aria-label="Hỏi tiếp">` +
       d.followUps.map((f) => `<button class="chip" data-act="qa-ask" data-q="${esc(f)}">${esc(f)}</button>`).join('') + `</div>` : '';
     return `<div class="qa-turn" id="qa-${i}">${me}<div class="qb bot${d.crisis ? ' crisis' : ''}">${head}${aiBlock(it, i)}${paras}${adv}` +
@@ -992,21 +1002,21 @@
       `theo năm, tháng, ngày, tuần, đại vận; “khi nào thuận cho…”; “nên lưu ý gì”; nghĩa của một sao, một cung, một thuật ngữ.</p>` +
       `<p class="small">Mỗi câu trả lời được luận ngay trên lá số này: sao tọa thủ cung của việc bạn hỏi, độ sáng, tam phương; rồi đại hạn, lưu niên đại hạn, tiểu hạn, ` +
       `Lưu Thái Tuế, Tứ Hóa và sao lưu của năm; cuối cùng gộp điểm theo từng tầng.</p>` +
-      `<p class="qa-local">🔒 Trả lời ngay trên máy, lá số không rời điện thoại.</p></div>` +
+      `<p class="qa-local">${ic('khoa')} Trả lời ngay trên máy, lá số không rời điện thoại.</p></div>` +
       aiCard(false) +
       `<div class="qa-log">${th.map(qaTurn).join('')}</div>` +
       chipRow('Hay hỏi', freq) + chipRow(th.length ? 'Gợi ý khác' : 'Câu hỏi gợi ý', sugg) +
       `<div class="qa-form"><label for="qa-in" class="sr-only">Nhập câu hỏi</label>` +
       `<input id="qa-in" class="input" type="text" maxlength="500" enterkeyhint="send" autocomplete="off" placeholder="Ví dụ: Năm sau công việc của tôi thế nào?" value="${esc(S.qa.draft)}">` +
       `<button class="btn primary" data-act="qa-send">Hỏi</button></div>` +
-      `<p class="small muted qa-foot">Luận theo luật của cẩm nang (ý nghĩa sao theo cung và độ sáng, vận hạn từng tầng, đồng thanh tương ứng, điểm 0–100); câu chữ là bản nháp. Chạm một đoạn để xem “Vì sao?”. ` +
+      `<p class="small muted qa-foot">Luận theo luật của cẩm nang (ý nghĩa sao theo cung và độ sáng, vận hạn từng tầng, đồng thanh tương ứng, điểm 0–100). Chạm một đoạn để xem “Vì sao?”. ` +
       `Không thay thế tư vấn y tế, pháp lý, tài chính.</p>`;
   }
   function qaCard() {
     const sg = qaSuggestions().slice(0, 3);
-    return `<div class="card" id="qa-card"><h2>Hỏi đáp</h2><p class="small" style="margin:0 0 4px">Hỏi gì về lá số này, app trả lời theo bản luận, kèm “Vì sao?”.</p>` +
+    return `<div class="card" id="qa-card"><h2>${ic('hoi-dap', 'h')}Hỏi đáp</h2><p class="small" style="margin:0 0 4px">Hỏi gì về lá số này, app trả lời theo bản luận, kèm “Vì sao?”.</p>` +
       `<div class="chips qa-sugg">${sg.map((q) => `<button class="chip" data-act="qa-ask" data-q="${esc(q)}">${esc(q)}</button>`).join('')}</div>` +
-      `<button class="btn primary block" data-act="open-reading" data-s="qa">💬 Đặt câu hỏi</button></div>`;
+      `<button class="btn primary block" data-act="open-reading" data-s="qa">${ic('hoi-dap')} Đặt câu hỏi</button></div>`;
   }
 
   function calendarCard(rv) {
@@ -1189,7 +1199,7 @@
       });
     };
     const life = readingFor('life', d.year.lunarYear), yr = readingFor('year', d.year.lunarYear);
-    add('note', 'Câu luận là bản nháp tự sinh từ cẩm nang, chưa qua thẩm định — chỉ để tham khảo, chiêm nghiệm.');
+    add('note', 'Nội dung mang tính tham khảo, chiêm nghiệm. Liên hệ: 0378 373 373.');
     reading(life, 'Luận giải trọn đời');
     add('brk', '');
     reading(yr, yr.title);
@@ -1420,6 +1430,8 @@
       (c.dacTinh ? `<p class="small" style="margin:8px 0 0">${esc(c.dacTinh)}</p>` : '') +
       (c.natalHoa.length ? `<h3>Tứ Hóa gốc</h3><div class="slist">${c.natalHoa.map((h) => `<span class="tag">${esc(h)}</span>`).join('')}</div>` : '') +
       `<h3>Ý nghĩa tại cung ${esc(c.role)}</h3>` + c.meaning.map((p, i) => rPara(p, 'star:' + c.star + ':' + i)).join('') +
+      (c.books && c.books.length ? `<h3>${ic('sach')} Sách bàn</h3>` + c.books.map((b) => `<div class="pl book"><div>${esc(b.text)}</div>` +
+        `<div class="small muted">${esc(b.source)}</div></div>`).join('') : '') +
       (c.patterns.length ? `<h3>Cách cục liên quan</h3>` + c.patterns.map((w) => `<div class="pl"><b>${esc(w.title)}</b><div>${esc(w.detail)}</div>` +
         (w.source ? `<div class="small muted">Nguồn: ${esc(w.source)}</div>` : '') + `</div>`).join('') : '') +
       (c.metaSource ? `<p class="small muted">Chòm, hành, hóa khí theo: ${esc(c.metaSource)}</p>` : '') +

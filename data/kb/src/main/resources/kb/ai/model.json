@@ -9,7 +9,7 @@
   "minRamMb": 5500,
   "maxTokens": 4096,
   "maxOutputTokens": 700,
-  "contextChars": 6500,
+  "contextChars": 7500,
   "temperature": 0.3,
   "topK": 40,
   "topP": 0.9,

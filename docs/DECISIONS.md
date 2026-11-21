@@ -664,3 +664,46 @@ Mạng đã mở (`dl.google.com`, `maven.google.com`, `huggingface.co`), nên D
 `FakeLlmHost` (DevServer): tải giả ~3 giây, “sinh lời” bằng `AiFake` (ghép lại đúng các câu dữ kiện, luôn qua kiểm
 tra); câu có “thử lỗi AI” trả đầu ra sai để thử đường rơi về bản QaAnalyst. `TUVI_AI=off` để thử như máy không có AI.
 Giao diện thử: thẻ Trợ lý AI, tải, câu AI đạt/trượt, câu khủng hoảng không gọi AI, nhật ký, xóa model.
+
+### D-61 · Bỏ nhãn “bản nháp” và chữ “Prompt” khỏi giao diện; thêm số liên hệ (bản 0.8.0)
+Anh Phong yêu cầu. Giao diện, PDF xuất ra và “Vì sao?” không còn chữ “nháp”, “bản nháp”, “Prompt mục …”, “D-xx”.
+- Nguồn hiển thị đi qua `Luan.src`: “Prompt mục N” → “Hệ quy tắc luận giải Tử Vi Tự Xem”; “Sinh nháp tự động từ cẩm nang
+  V2 …” → “Cẩm nang Tử Vi Đẩu Số V2 …”; bỏ “(bản nháp, cần duyệt)” và mã quyết định. Dữ liệu KB giữ nguyên trường
+  `reviewed` để còn biết mục nào anh đã duyệt (chỉ không hiện ra nữa). Đặc tả mục 9 yêu cầu nhãn nháp; theo lời anh, bỏ.
+- Liên hệ **0378 373 373**: dòng cuối trang chủ, thẻ “Liên hệ” trong Cài đặt (bấm là mở ứng dụng Điện thoại qua `tel:`),
+  ghi chú trong PDF.
+
+### D-62 · Kiến thức từ hai sách vào app, không fine-tune model
+Anh gửi *Tử Vi Đẩu Số Toàn Thư* (Hi Di Trần Đoàn, Vũ Tài Lục dịch, 1973) và *Tử Vi Nghiệm Lý Toàn Thư* (Thiên Lương),
+và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube Tử Vi Học Quán.
+- **Không fine-tune.** Máy build không có GPU (huấn luyện LoRA model 2 tỷ tham số trên 4 nhân CPU mất nhiều ngày); đổi
+  sang `.litertlm` cần bộ công cụ chuyển đổi riêng; model mới 2,6 GB phải có chỗ phát hành (GitHub Releases bị chặn).
+  Quan trọng hơn: model đã fine-tune vẫn có thể nói sai mà không ai kiểm được, trái nguyên tắc “model chỉ diễn đạt lại”
+  (D-58). Đưa kiến thức vào KB thì mỗi câu đều có nguồn, có “Vì sao?”, và `AiGuard` kiểm được.
+- **YouTube bị proxy chặn** (403 cho youtube.com): không xem được video, không vòng đường khác. Cẩm nang V2 hiện có đã
+  hệ thống hóa từ bài giảng của kênh này.
+- **Bản quyền:** hai sách còn bản quyền, repo công khai → **không chép nguyên văn**. Mình đọc phần Thập nhị cung luận
+  (Toàn Thư) và các bài chuyên đề (Nghiệm Lý), diễn giải lại bằng lời của app, ghi nguồn sách + chương. Lời theo quy tắc
+  nội dung của app: bỏ các câu phán nặng (chết, tù, “làm đĩ”, khắc vợ ba lần…), đổi thành mức khả năng và lời khuyên.
+- Dữ liệu: `tools/kb/kb_sach.py` → `kb/sach/sach.json`: 354 câu “cung × sao × điều kiện” (độ sáng, sao đồng cung, sao hội
+  tam phương, có/không sát tinh, chi của cung) cho 12 cung, và 18 ý Nghiệm Lý (Lộc Tồn theo can, Long Phượng Tả Hữu,
+  Khôi Việt với Xương Khúc, Không Kiếp, Hóa Khoa, La Võng, Cô Quả…).
+- `Books.forPalace` chọn câu khớp lá số (câu nhiều điều kiện hơn được ưu tiên; tối đa 2 câu mỗi sao, 4 câu mỗi cung;
+  cùng sao vừa có câu thuận vừa có câu về sát tinh thì nối bằng “Tuy vậy,”). `Books.nghiemLy` thêm tối đa 2 ý.
+- Hiện ở: đoạn **“Sách bàn về cung …”** trong câu trả lời Hỏi đáp (năm, đại vận, trọn đời, câu hỏi về một cung) ngay sau
+  tầng lá số gốc, “Vì sao?” ghi sách, chương và căn cứ trên lá số; mục **Sách bàn** trong thẻ sao. Trợ lý AI nhận đoạn
+  này trong dữ kiện (system prompt: “dẫn thêm ý sách”), khối dữ kiện nới lên 7.500 ký tự.
+- Test `BooksTest`: không từ cấm, có nguồn; câu đúng sao tọa thủ, “sáng”/“hãm” đúng độ sáng; đoạn sách có trong lời nhắc AI.
+
+### D-63 · Hệ thiết kế trên Figma và bộ icon tướng số
+- File Figma “Tử Vi Tự Xem — Hệ thiết kế” (tài khoản của anh): hai bộ biến màu “Màu sáng”/“Màu tối” (gói Starter chỉ
+  cho 1 chế độ mỗi bộ), 5 kiểu chữ (Noto Serif cho tiêu đề, Roboto cho nội dung — đều có sẵn trên Android, app không
+  tải font), 22 icon component, component `nut/chinh`, `nut/phu`, `the/la-so`, hai màn mẫu (Trang chủ, Hỏi đáp có
+  Trợ lý AI và đoạn Sách bàn).
+- Bảng màu: đỏ sơn mài `#7A1726`, vàng kim nhũ `#A87A1E` (trong app dùng `#9A6B12` cho chữ và nền có chữ trắng để đạt tương phản AA), nền giấy `#F6F1E6`; nền tối giữ như cũ, đỏ `#C94F60`, kim
+  `#E0B45A`.
+- Icon tự vẽ (nét 1,7 px, lưới 24 px): bát quái (logo), lá số, lập lá số, luận giải (cuộn), hỏi đáp, trợ lý AI, Bắc Đẩu
+  (sao), lịch, la bàn (năm), trăng (tháng), đại vận, so hai lá số, giờ sinh, cài đặt, chia sẻ, xuất, liên hệ, sách,
+  riêng tư, quay lại, thêm, đóng. Cùng một nguồn SVG cho app (`app/assets/web/icons.js`) và Figma.
+- App: icon SVG thay emoji trên nút và tiêu đề thẻ, logo bát quái ở trang chủ, đường kẻ kim nhũ, tiêu đề chữ có chân,
+  đoạn “Sách bàn” nền vàng nhạt. Ảnh chuẩn giao diện cập nhật có chủ đích.

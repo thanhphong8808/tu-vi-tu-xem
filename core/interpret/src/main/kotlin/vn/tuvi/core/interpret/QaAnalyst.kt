@@ -338,6 +338,19 @@ class QaAnalyst(private val kb: KnowledgeBase) {
     }
 
     /** Năm âm: kết luận + 5 tầng + đồng thanh/cách vận hạn + tổng hợp. */
+    private val books: Books by lazy { Books.load() }
+
+    /**
+     * “Sách bàn về cung …” (D-62): câu của *Tử Vi Đẩu Số Toàn Thư* (Thập nhị cung luận) và *Tử Vi Nghiệm Lý* khớp đúng
+     * sao, độ sáng, sao hội của cung [role] trên lá số gốc. Không có câu nào khớp → null.
+     */
+    fun bookPara(chart: Chart, topic: Topic?, role: PalaceRole): Paragraph? {
+        val lines = books.forPalace(chart, role) + books.nghiemLy(chart, role)
+        if (lines.isEmpty()) return null
+        val whys = lines.mapIndexed { i, l -> Why("SACH_${role.name}_${i + 1}", "Sách bàn", "${l.text} Căn cứ trên lá số: ${l.why}.", emptyList(), l.source) }
+        return Paragraph(lines.joinToString(" ") { it.text }, 0, ParaKind.NOTE, topic, listOf("SACH_${role.name}"), whys, false, "Sách bàn về cung ${role.vn}")
+    }
+
     fun year(chart: Chart, data: Composer.PeriodData, topic: Topic?, event: Event?, relative: String?, compact: Boolean = false): Result {
         val l = data.limits!!
         val role = roleFor(topic, relative)
@@ -353,6 +366,7 @@ class QaAnalyst(private val kb: KnowledgeBase) {
         }
         var n = 0
         out.add(natalPara(chart, data, topic, role, n++))
+        bookPara(chart, topic, role)?.let { out.add(it) }
         for (layer in listOf(Layer.DAI_HAN, Layer.LUU_NIEN, Layer.TIEU_HAN, Layer.LUU_THAI_TUE)) {
             val lbl = when (layer) { Layer.DAI_HAN -> "của đại hạn"; Layer.LUU_NIEN -> "của lưu niên đại hạn"; Layer.TIEU_HAN -> "của tiểu hạn"; else -> "theo Thái Tuế" }
             layerPara(chart, data, layer, topic, role, n, lbl)?.let { out.add(it); n++ }
@@ -454,6 +468,7 @@ class QaAnalyst(private val kb: KnowledgeBase) {
             listOf(Why("AN_KET_LUAN", "Kết luận đại vận", "Đại vận: gốc 0,25 + đại hạn 0,75 (D-38); điểm từng năm theo luận năm.", years.map { "${it.first}: ${it.second}" }, "Prompt mục 9")), false, "Kết luận")
         out.add(concl)
         out.add(natalPara(chart, data, topic, role, 0))
+        bookPara(chart, topic, role)?.let { out.add(it) }
         layerPara(chart, data, Layer.DAI_HAN, topic, role, 1, "của đại hạn")?.let { out.add(it) }
         out.add(summaryPara(chart, data, topic, role, score, layers, 2))
         return Result(out, score, concl)
@@ -479,6 +494,7 @@ class QaAnalyst(private val kb: KnowledgeBase) {
                 decades.map { "${it.first.first}–${it.first.last} (${it.second.vn}): ${it.third}" }, "Prompt mục 9")), false, "Kết luận")
         out.add(concl)
         out.add(natalPara(chart, data, topic, role, 0))
+        bookPara(chart, topic, role)?.let { out.add(it) }
         if (role != PalaceRole.MENH) {
             // Mệnh và Thân: cách người này xử lý chuyện của chủ đề.
             val (cat, hung) = aux(chart, chart.menh, null)

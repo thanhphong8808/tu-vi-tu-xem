@@ -300,7 +300,21 @@ object AiGuard {
         return out
     }
 
+    /**
+     * Kiểm tra; nếu lỗi duy nhất là quên nêu điểm chung thì app tự thêm câu “Điểm chung: N/100.” (dữ kiện của chính app,
+     * không phải lời model) vào đầu rồi kiểm tra lại toàn bộ.
+     */
     fun check(raw: String, facts: AiFacts, cfg: AiModelConfig): AiCheck {
+        val r = checkOnce(raw, facts, cfg)
+        val sc = facts.score ?: return r
+        if (r.issues.size != 1 || !r.issues[0].startsWith("chưa nêu điểm chung")) return r
+        val fixed = "Điểm chung: $sc/100. " + r.text
+        val again = checkOnce(Json.encodeToString(kotlinx.serialization.json.JsonObject.serializer(),
+            kotlinx.serialization.json.buildJsonObject { put("answer", kotlinx.serialization.json.JsonPrimitive(fixed)) }), facts, cfg)
+        return if (again.ok) again else r
+    }
+
+    private fun checkOnce(raw: String, facts: AiFacts, cfg: AiModelConfig): AiCheck {
         val answer = extract(raw) ?: return AiCheck("", listOf("không đọc được JSON {\"answer\": …}"))
         val text = clean(answer)
         val issues = ArrayList<String>()

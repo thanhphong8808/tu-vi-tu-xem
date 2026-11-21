@@ -872,6 +872,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                     (if (hoa.isNotEmpty()) " Tứ Hóa gốc tại Mệnh: ${hoa.joinToString(", ")}." else "") +
                     " Thân cư ${chart.palace(chart.than).role.vn} (${chart.than.vn}).", "FACT_MENH", "Cung Mệnh", "Engine an sao.", p.stars.map { it.toString() }, Topic.TINH_CACH))
                 life(chart, ctx).summary.firstOrNull { it.topic == Topic.TINH_CACH }?.let { paras.add(it) }
+                analyst.bookPara(chart, Topic.TINH_CACH, PalaceRole.MENH)?.let { paras.add(it) }
                 follow += listOf("Tính cách của tôi thế nào?", "Thân cư ${chart.palace(chart.than).role.vn} nghĩa là gì?") +
                     (p.chinhTinh.firstOrNull()?.let { listOf("Sao ${it.id.vn} nghĩa là gì?") } ?: emptyList())
                 link = QaLink(ReadingScope.TRON_DOI, null, null, null, "Xem luận trọn đời")
@@ -955,6 +956,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                     (if (p.hasTuan || p.hasTriet) " Có ${listOfNotNull("Tuần".takeIf { p.hasTuan }, "Triệt".takeIf { p.hasTriet }).joinToString(", ")} án ngữ." else ""),
                     "FACT_CUNG_${role.name}", "Cung ${role.vn}", "Engine an sao.", p.stars.map { it.toString() }, Topic.ofRole(role)))
                 life(chart, ctx).palaces.firstOrNull { it.id == "palace_${role.name}" }?.paragraphs?.filter { it.kind != ParaKind.NOTE }?.take(2)?.let { paras += it }
+                analyst.bookPara(chart, Topic.ofRole(role), role)?.let { paras.add(it) }
                 link = QaLink(ReadingScope.TRON_DOI, null, null, null, "Xem 12 cung trong luận trọn đời")
                 follow += listOf("Năm $y ${SHORT[Topic.ofRole(role)]} thế nào?", "Cung ${role.vn} là gì?")
             }

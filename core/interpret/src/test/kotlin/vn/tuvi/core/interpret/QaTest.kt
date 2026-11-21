@@ -312,7 +312,7 @@ class QaTest {
         val tb = qa.answer(b, q, ctx).paragraphs.map { it.text }
         assertTrue(ta.zip(tb).count { (x, y) -> x != y } >= ta.size - 1, "hai lá số phải cho lời luận khác nhau")
         // Cùng đại vận (2024–2033) thì lá số gốc và đại hạn giống nhau; các tầng của năm phải khác.
-        fun yearly(q: String) = qa.answer(a, q, ctx).paragraphs.filter { p -> listOf("Lá số gốc", "Đại hạn").none { p.title?.contains(it) == true } }.map { it.text }
+        fun yearly(q: String) = qa.answer(a, q, ctx).paragraphs.filter { p -> listOf("Lá số gốc", "Đại hạn", "Sách bàn").none { p.title?.contains(it) == true } }.map { it.text }
         val t27 = yearly("Năm 2027 công việc thế nào?")
         val t30 = yearly("Năm 2030 công việc thế nào?")
         assertTrue(t27.intersect(t30.toSet()).isEmpty(), "hai năm phải khác phần vận hạn: ${t27.intersect(t30.toSet())}")

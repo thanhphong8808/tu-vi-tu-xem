@@ -1,0 +1,2823 @@
+{
+ "version": "1",
+ "sources": {
+  "TT": "Tử Vi Đẩu Số Toàn Thư (Hi Di Trần Đoàn; Vũ Tài Lục dịch và bình chú, Ngân Hà Thư Xã 1973)",
+  "NL": "Tử Vi Nghiệm Lý Toàn Thư (Thiên Lương)"
+ },
+ "note": "Diễn giải lại theo lời của app, không chép nguyên văn sách.",
+ "cung": [
+  {
+   "role": "MENH",
+   "s": "TU_VI",
+   "t": "Tử Vi, có Tả Hữu, Thiên Tướng hội về mà không bị sát tinh: phúc lộc, tiền tài hưng vượng, dễ có danh tiếng",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "THIEN_TUONG"
+   ],
+   "x": false
+  },
+  {
+   "role": "MENH",
+   "s": "TU_VI",
+   "t": "Tử Vi nhưng tam phương gặp Không Kiếp, Kình Đà, Hỏa Linh: lực sao bị kìm, sống thanh đạm, tu dưỡng tâm tính thì giữ được phúc",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân ở Thìn Tuất: dễ giàu mà khó sang, danh tiếng thường hư nhiều thực ít",
+   "c": [
+    "THIN",
+    "TUAT"
+   ],
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp Tham Lang ở Mão Dậu: nên giữ chữ tín, lòng trung, tránh chạy theo lợi trước mắt",
+   "c": [
+    "MAO",
+    "DAU"
+   ],
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ hợp cùng Thái Âm, Thiên Lương, Thái Dương: người bình thường cũng dần khá giả, có nhà cửa; thêm Khoa Quyền Lộc thì chức vị lên cao",
+   "h": [
+    "THAI_AM",
+    "THIEN_LUONG",
+    "THAI_DUONG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ gặp Hóa Kỵ: tiền tài, chức vị dễ đến rồi đi, nên giữ nếp sống giản dị, tránh mạo hiểm",
+   "d": [
+    "HOA_KY"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng, có Quyền Lộc, Khôi Xương, Tả Hữu hội về: phúc thọ dày, dễ giàu sang",
+   "b": "good",
+   "h": [
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "THIEN_KHOI",
+    "VAN_XUONG",
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương ở Sửu Mùi: cần Khoa Quyền Lộc trong tam phương mới phát; thiếu Hóa cát thì phúc mỏng hơn",
+   "c": [
+    "SUU",
+    "MUI"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương hãm gặp Hóa Kỵ: việc hay trục trặc, dễ gặp biến bất ngờ về tiền của; có Hóa Lộc thì đỡ",
+   "b": "bad",
+   "h": [
+    "HOA_KY"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc hóa Quyền, có sao tốt chung quanh: chí khí hơn người, phúc thọ vẹn toàn",
+   "h": [
+    "HOA_QUYEN"
+   ],
+   "x": false
+  },
+  {
+   "role": "MENH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc bị nhiều sát tinh xung phá: dù có của cũng dễ hao hụt, nên giữ của và tránh liều lĩnh",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng sáng: tính ôn hòa tử tế, có phúc lộc, sống lâu, lại có tiếng tăm",
+   "b": "good"
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng gặp cát tinh phò trợ: thông minh lanh lợi, làm việc gì cũng dễ thông",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA",
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng hãm gặp Hỏa Tinh, Đà La: nhiều trở ngại, nên an phận giữ sức, chọn việc vừa tầm",
+   "b": "bad",
+   "h": [
+    "HOA_TINH",
+    "DA_LA"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh sáng: chí khí mạnh, đi lên bằng con đường đấu tranh, đổi mới thì dễ thành đạt",
+   "b": "good"
+  },
+  {
+   "role": "MENH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh gặp Tham Lang, Phá Quân hay Kình Dương: giàu sang dễ bấp bênh, nay còn mai mất, nên giữ chừng mực",
+   "d": [
+    "THAM_LANG",
+    "PHA_QUAN",
+    "KINH_DUONG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh hãm ở Tỵ Hợi: dù có sao tốt vẫn nên cẩn trọng an toàn khi đi lại, lao động",
+   "b": "bad",
+   "c": [
+    "TI",
+    "HOI"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ, hội Quyền Lộc, Khôi Xương, Tả Hữu mà không gặp sát tinh: dễ được người quyền quý nâng đỡ, có chức phận",
+   "h": [
+    "HOA_QUYEN",
+    "HOA_LOC",
+    "THIEN_KHOI",
+    "VAN_XUONG",
+    "TA_PHU",
+    "HUU_BAT"
+   ],
+   "x": false
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ bị Hỏa Linh, Kình Đà vây: đời nhiều lận đận, cần thẳng thắn, giữ chữ tín",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ gặp Không Kiếp: kho dễ thủng, khó tích lũy; hợp đời sống thanh đạm, hướng thiện",
+   "h": [
+    "DIA_KHONG",
+    "DIA_KIEP"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_AM",
+   "t": "Thái Âm ở Dậu, Tuất, Hợi là đất sáng: tiếng tăm hanh thông, phúc lộc tự sinh",
+   "c": [
+    "DAU",
+    "TUAT",
+    "HOI"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: thanh tú, thông minh, tính ôn lương cung kiệm, làm việc công thì thanh liêm hiển đạt",
+   "b": "good"
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_AM",
+   "t": "Thái Âm cùng Thiên Cơ ở Dần: dù có sao tốt cũng khó dựng cơ nghiệp lớn nhanh, nên đi đường dài, bền bỉ",
+   "c": [
+    "DAN"
+   ],
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAI_AM",
+   "t": "Thái Âm hãm gặp Đà La, Hỏa Tinh: dễ túng thiếu, hợp nếp sống giản dị, tu dưỡng",
+   "b": "bad",
+   "h": [
+    "DA_LA",
+    "HOA_TINH"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang ở Tứ Mộ gặp Hỏa Tinh: cách lập công lớn, có uy quyền, danh tiếng vang xa",
+   "c": [
+    "THIN",
+    "TUAT",
+    "SUU",
+    "MUI"
+   ],
+   "h": [
+    "HOA_TINH"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang ở Tứ Mộ gặp Tả Hữu: dễ thành người giàu có; thêm Khoa Quyền Lộc thì văn võ đều giỏi",
+   "c": [
+    "THIN",
+    "TUAT",
+    "SUU",
+    "MUI"
+   ],
+   "h": [
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang cùng Kình Dương: cuộc sống dễ chật vật, nên tránh đầu cơ, giữ nghề chính",
+   "d": [
+    "KINH_DUONG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang đi với Vũ Khúc là tốt; nếu gặp thêm Liêm, Phá, Không Kiếp thì hay đổi nghề, vất vả",
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "CU_MON",
+   "t": "Cự Môn ở Tý Ngọ: dễ vinh hiển; tam phương có Khoa Quyền Lộc thì địa vị cao",
+   "c": [
+    "TY",
+    "NGO"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "CU_MON",
+   "t": "Cự Môn hãm gặp sát tinh: tính nóng, dễ va chạm, khẩu thiệt; nên giữ lời ăn tiếng nói",
+   "b": "bad",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "CU_MON",
+   "t": "Cự Môn gặp Kình Dương, Hỏa Linh: tính gấp, việc hay đảo lộn; nên chậm lại trước quyết định lớn",
+   "h": [
+    "KINH_DUONG",
+    "HOA_TINH",
+    "LINH_TINH"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng không bị sát tinh: người quả quyết, tự chủ, dễ có chức vị và đời sống sung túc",
+   "x": false
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng gặp Vũ Khúc, Phá Quân lại có sát tinh: hợp nghề kỹ thuật, buôn bán hơn đường quan chức",
+   "h": [
+    "VU_KHUC",
+    "PHA_QUAN"
+   ],
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương gặp Tả Hữu, Xương Khúc: dáng ôn lương bệ vệ, dễ có chức phận, phú quý",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương ở Tý, Ngọ, Dần, Thân gặp Thiên Cơ, Thái Dương, Văn Xương: đường quan lộ thanh hiển",
+   "c": [
+    "TY",
+    "NGO",
+    "DAN",
+    "THAN"
+   ],
+   "h": [
+    "THIEN_CO",
+    "THAI_DUONG",
+    "VAN_XUONG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương hãm gặp sát tinh: dễ hao tán, nên lấy nghề chuyên môn làm gốc",
+   "b": "bad",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "THAT_SAT",
+   "t": "Thất Sát ở Dần, Thân, Tý, Ngọ gặp Khôi Việt, Tả Hữu, Văn Xương: người có khí chất anh hùng, danh cao lộc dày",
+   "c": [
+    "DAN",
+    "THAN",
+    "TY",
+    "NGO"
+   ],
+   "h": [
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "THAT_SAT",
+   "t": "Thất Sát hãm gặp sát tinh mà không được chế: như ôm hổ mà ngủ, nên rất cẩn trọng an toàn, tránh nóng vội",
+   "b": "bad",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân ở Tý Ngọ gặp Văn Xương, Tả Hữu: tính khảng khái, tiền bạc dồi dào, dễ làm nên việc lớn",
+   "c": [
+    "TY",
+    "NGO"
+   ],
+   "h": [
+    "VAN_XUONG",
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân có Khoa Quyền Lộc hội về: tốt khác thường",
+   "h": [
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân hãm gặp sát tinh: dễ rời quê đi xa lập nghiệp, cần giữ an toàn thân thể",
+   "b": "bad",
+   "x": true
+  },
+  {
+   "role": "MENH",
+   "s": "KINH_DUONG",
+   "t": "Kình Dương ở Tứ Mộ là đất miếu: tính cứng rắn, có thọ; gặp Tử Phủ thì tiền tài dồi dào",
+   "c": [
+    "THIN",
+    "TUAT",
+    "SUU",
+    "MUI"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "DA_LA",
+   "t": "Đà La ở Tứ Mộ có Tử Vi, Thiên Phủ hội: tiền tài danh vọng đều khá",
+   "c": [
+    "THIN",
+    "TUAT",
+    "SUU",
+    "MUI"
+   ],
+   "h": [
+    "TU_VI",
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "DA_LA",
+   "t": "Đà La hãm: dễ vướng thị phi khẩu thiệt, việc khó toại ý; nên cẩn trọng lời nói",
+   "b": "bad"
+  },
+  {
+   "role": "MENH",
+   "s": "HOA_LOC",
+   "t": "Hóa Lộc: tự nhiên có phúc; làm võ thì nổi tiếng, làm văn thì có danh"
+  },
+  {
+   "role": "MENH",
+   "s": "HOA_QUYEN",
+   "t": "Hóa Quyền được sao tốt phù trợ: sự nghiệp hiên ngang, đảm lược hơn người",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA",
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "MENH",
+   "s": "HOA_KHOA",
+   "t": "Hóa Khoa: văn chương giỏi, thi cử thuận; gặp Xương Khúc, Khôi Việt thì công danh sáng lạng"
+  },
+  {
+   "role": "MENH",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương sáng: chí lớn tài cao, giỏi văn nghệ",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "TU_VI",
+   "t": "Tử Vi sáng, hội Xương Khúc, Tả Hữu, Khôi Việt: chức vị cao, được cấp trên trọng dụng",
+   "b": "good",
+   "h": [
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "TA_PHU",
+    "HUU_BAT",
+    "THIEN_KHOI",
+    "THIEN_VIET"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "TU_VI",
+   "t": "Tử Vi bị Kình Đà, Hỏa Linh: công danh ở mức thường, cần bền bỉ",
+   "x": true
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Phủ: quyền quý, danh lợi đều có; thêm Thiên Tướng thì trong ngoài đều có thế",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: giữa lúc sóng gió mà mình vẫn yên",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ sáng gặp Văn Khúc: làm người tham mưu, giúp việc giỏi",
+   "b": "good",
+   "h": [
+    "VAN_KHUC"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thiên Lương: tài kiêm văn võ",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thái Âm: danh tiếng đi xa",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ hãm: dễ lui chức, đổi việc; nên chuẩn bị kỹ trước khi thay đổi",
+   "b": "bad"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng không bị sát tinh: văn võ đều hay; thêm Tả Hữu, Xương Khúc, Khôi Việt và Khoa Quyền Lộc thì địa vị rất cao",
+   "b": "good",
+   "x": false
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng không gặp sát tinh: văn võ đều có khả năng",
+   "x": false
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Cự Môn: làm ăn trước nhỏ sau lớn",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thiên Lương: có quyền quý",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc sáng có Tả Hữu, Xương Khúc: theo ngành quản lý, kỷ luật dễ làm lớn; thêm Khoa Quyền Lộc thì giàu sang",
+   "b": "good",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Tham Lang: cần giữ liêm chính nơi công việc, tránh lòng tham",
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Phá Quân: hợp gây dựng sự nghiệp nơi môi trường kỷ luật, xông pha",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thất Sát: lập công danh nhờ những dịp đặc biệt",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh sáng: quyền hành trong ngành kỷ cương lâu bền",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Tham Lang: dễ vươn lên trong thời biến động",
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ không gặp sát tinh: văn võ đều hay; cùng Tử Vi thì thành danh, cùng Liêm Trinh, Vũ Khúc thì quyền quý",
+   "x": false
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: quý hiển; hội Thái Dương, Xương Khúc, Tả Hữu thì địa vị khá cao",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAI_AM",
+   "t": "Thái Âm hãm: khó hiển đạt nếu kiêu căng, nên khiêm nhường",
+   "b": "bad"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAM_LANG",
+   "t": "Tham Lang sáng gặp Hỏa Linh: nắm quyền lớn trong ngành võ, quản trị",
+   "b": "good",
+   "h": [
+    "HOA_TINH",
+    "LINH_TINH"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAM_LANG",
+   "t": "Tham Lang hãm: cần giữ liêm khiết nơi công việc; gặp Kình Đà, Không Kiếp thì công danh thường",
+   "b": "bad"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "CU_MON",
+   "t": "Cự Môn sáng: ngành võ, kỹ thuật có quyền; ngành văn khó bền",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thái Dương: tiến thoái thất thường, nên chọn thời điểm",
+   "d": [
+    "THAI_DUONG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thiên Cơ ở Mão: rất tốt cho công danh",
+   "c": [
+    "MAO"
+   ],
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thiên Cơ ở Dậu: tuy hay nhưng khó bền, nên củng cố nền tảng",
+   "c": [
+    "DAU"
+   ],
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "CU_MON",
+   "t": "Cự Môn hãm: công danh lận đận, thêm sát tinh càng phải bền chí",
+   "b": "bad"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng sáng: văn võ đều hay, lộc ăn dồi dào",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng gặp Kình Đà, Hỏa Linh, Không Kiếp: dễ mất chức, nên giữ mình nơi công sở",
+   "x": true
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương ở Ngọ gặp Tả Hữu, Khôi Việt: có tài văn võ",
+   "c": [
+    "NGO"
+   ],
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "THIEN_KHOI",
+    "THIEN_VIET"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Đồng: quyền quý không nhỏ",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAT_SAT",
+   "t": "Thất Sát sáng: ngành võ, quản trị có quyền; ngành văn kém hơn",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "THAT_SAT",
+   "t": "Thất Sát cùng Liêm Trinh: công danh hiển đạt",
+   "d": [
+    "LIEM_TRINH"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân sáng: võ chức hiên ngang; cùng Vũ Khúc thêm quyền lộc, gặp Xương Khúc thì hiển đạt",
+   "b": "good"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân cùng Tử Vi: có tiếng tăm",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương sáng hội Thái Dương: công danh càng hay",
+   "b": "good",
+   "h": [
+    "THAI_DUONG"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn gặp cát tinh: tài và quan đều đẹp",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA",
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "HOA_TINH",
+   "t": "Hỏa Tinh: lớn tuổi công danh mới toại, lúc trẻ thành bại thất thường"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "DA_LA",
+   "t": "Đà La một mình: danh nhiều hơn thực, nên chú trọng việc thật"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "TA_PHU",
+   "t": "Tả Phù: tài văn võ, gặp sao tốt phù trợ thì hiển vinh"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "HUU_BAT",
+   "t": "Hữu Bật: hợp ngành võ, quản trị; cùng Tử Vi, Xương Khúc thì tài quan đều đẹp"
+  },
+  {
+   "role": "QUAN_LOC",
+   "s": "KINH_DUONG",
+   "t": "Kình Dương sáng: lợi cho võ nghiệp; thêm cát tinh thì có quyền",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "TU_VI",
+   "t": "Tử Vi không bị sát tinh: thóc gạo đầy kho",
+   "x": false
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp Kình Đà, Hỏa Linh: tiền bạc không vượng như mong",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: kiếm tiền trước khó sau dễ",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Phủ: no đủ suốt đời; thêm Tả Hữu thì phú quý",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thất Sát: có tài lộc bất ngờ",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ: phải lao tâm tính toán mới sinh tài"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Cự Môn: phải xoay xở nhiều mới kiếm được",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thiên Lương: có thu nhập ngoài nhờ khéo léo",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ gặp Kình Đà, Hỏa Linh: nên giữ vốn cẩn thận, tránh làm ăn liều",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng: no đủ sung túc",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương hãm: kiếm tiền vất vả, nên tích lũy từng bước",
+   "b": "bad"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thái Âm, có Tả Hữu: phát tài lớn",
+   "d": [
+    "THAI_AM"
+   ],
+   "h": [
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương gặp Lộc Tồn: chủ giàu lớn",
+   "h": [
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Cự Môn: thành bại xen kẽ",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc (tài tinh) không bị sát tinh: dễ có của cải lớn",
+   "x": false
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Phá Quân: tiền vào tay phải ra tay trái, nên đặt quỹ dự phòng",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thiên Tướng: gặp nhiều quý nhân giúp về tiền bạc",
+   "d": [
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thất Sát: tay trắng làm nên",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Tham Lang: sau ba mươi tuổi mới phát đạt",
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc gặp Kình Đà, Hỏa Linh, Không Kiếp: tiền khó tụ, nên chi tiêu có kế hoạch",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: tay trắng gây cơ đồ, phát đạt muộn"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Cự Môn: tài khí lúc tiến lúc lui",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thiên Lương: tiền tài vượng",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh ở Dần Thân: nhạy thời cơ mà sinh lợi",
+   "c": [
+    "DAN",
+    "THAN"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Tham Lang: phát nhanh nhưng cũng dễ hao nhanh",
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thất Sát: giỏi xoay sở",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thiên Tướng: sung túc, thừa ăn thừa tiêu",
+   "d": [
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh gặp Không Kiếp, Đại Tiểu Hao: dễ hao tán, nên giữ của",
+   "h": [
+    "DIA_KHONG",
+    "DIA_KIEP",
+    "DAI_HAO",
+    "TIEU_HAO"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ không bị sát tinh: no ấm, có của ăn của để",
+   "x": false
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ gặp Kình Đà, Hỏa Linh, Không Kiếp: tiền bạc thành bại thất thường",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ cùng Liêm Trinh hay Vũ Khúc, thêm Quyền Lộc: có thể thành người giàu có",
+   "d": [
+    "LIEM_TRINH",
+    "VU_KHUC"
+   ],
+   "h": [
+    "HOA_LOC",
+    "HOA_QUYEN"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: tiền bạc đầy kho",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm hãm: tiền tài khó tụ, nên tiết kiệm đều đặn",
+   "b": "bad"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm cùng Thái Dương: trước ít sau nhiều",
+   "d": [
+    "THAI_DUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm cùng Thiên Cơ: tay trắng làm giàu",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm cùng Thiên Đồng: tài vượng",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm gặp Lộc Tồn, Tả Hữu: chủ giàu lớn",
+   "h": [
+    "LOC_TON",
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang sáng: dễ phát nhanh",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang hãm: tiền bạc dễ thiếu hụt, nên làm ăn chắc chắn từng bước",
+   "b": "bad"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang cùng Tử Vi: nên giữ vững, chớ xoay chuyển quá nhiều kẻo hao",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang gặp Hỏa Tinh: sau ba mươi tuổi phát mạnh, trước đó vất vả",
+   "h": [
+    "HOA_TINH"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "CU_MON",
+   "t": "Cự Môn: tay trắng làm giàu nhưng dễ hao vì chủ quan, thiếu tính toán"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thiên Cơ: làm nhiều nghề mà sinh tài",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thái Dương: tiền bạc tích lũy được",
+   "d": [
+    "THAI_DUONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "CU_MON",
+   "t": "Cự Môn gặp sát tinh: dễ hao vốn, tránh đầu tư nóng",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương sáng: thượng đẳng phú quý",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương hãm: làm ăn vất vả",
+   "b": "bad"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Đồng: tay trắng sinh tài",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Cơ: lao tâm mà tiền không nhiều, hay biến đổi",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng không bị sát tinh: sung túc",
+   "x": false
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Tử Vi: tài khí phát mạnh",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Liêm Trinh: hợp buôn bán",
+   "d": [
+    "LIEM_TRINH"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng gặp sát tinh: thành bại thất thường, tiền không tụ",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân ở Tý Ngọ: tiền bạc nhiều, dễ kiếm",
+   "c": [
+    "TY",
+    "NGO"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân hãm: tiền khó tụ",
+   "b": "bad"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân cùng Vũ Khúc ở Tỵ Hợi: tiền vào cửa trước ra cửa sau",
+   "c": [
+    "TI",
+    "HOI"
+   ],
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân cùng Tử Vi: tốn hao nhưng vào nhiều",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân cùng Liêm Trinh: phải vất vả mới kiếm được",
+   "d": [
+    "LIEM_TRINH"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương gặp nhiều cát tinh: tài khí vượng",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA",
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "VAN_KHUC",
+   "t": "Văn Khúc sáng: khá giả, thêm sao tốt thì được quý nhân trợ giúp",
+   "b": "good"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn không bị sát tinh: tiền đến tự nhiên, ít nhọc công",
+   "x": false
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn gặp Kình Đà, Không Kiếp: ban đầu khó, về sau mới có tiền",
+   "x": true
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "KINH_DUONG",
+   "t": "Kình Dương ở Tứ Mộ: thường có tiền bất ngờ",
+   "c": [
+    "THIN",
+    "TUAT",
+    "SUU",
+    "MUI"
+   ]
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "HOA_TINH",
+   "t": "Hỏa Tinh: phát nhanh cũng hao nhanh"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_KHOI",
+   "t": "Thiên Khôi: sống thanh cao mà vẫn đủ đầy, tiền bạc dễ dãi"
+  },
+  {
+   "role": "TAI_BACH",
+   "s": "THIEN_VIET",
+   "t": "Thiên Việt: sống thanh cao mà vẫn đủ đầy, tiền bạc dễ dãi"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp Tả Hữu: ra ngoài được quý nhân giúp, phát phúc",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Phủ: ra vào thông đạt",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Tướng: ra ngoài kiếm được tiền",
+   "d": [
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp sát tinh: ra ngoài kém yên, nên cẩn trọng khi đi xa",
+   "x": true
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ: ra ngoài gặp quý nhân, ở nhà lại hay bị thị phi"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thiên Lương: đi xa xứng ý",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ gặp sát tinh: đi xa nên chuẩn bị kỹ, phòng bất trắc",
+   "x": true
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương: nên ra ngoài mới phát, không hợp ngồi yên một chỗ"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Cự Môn: đi xa lao tâm",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc: đối ngoại nên bình tĩnh, chớ vội vàng lúc gấp"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Tham Lang: hợp kinh doanh lớn",
+   "d": [
+    "THAM_LANG"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc gặp sát tinh: ra ngoài dễ mang tiếng thị phi",
+   "x": true
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: ra ngoài có quý nhân phù trợ"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Cự Môn: đi xa lao tâm khổ trí",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thiên Lương: dễ thân với quý nhân",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh: ra ngoài thông đạt, gần người quyền quý hơn ở trong nhà"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thất Sát: ra ngoài làm ăn ra tiền",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh gặp sát tinh: đi lại cần hết sức cẩn trọng",
+   "x": true
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: ra ngoài có quý nhân phù trợ"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: ra ngoài gặp quý nhân, dễ phát tài",
+   "b": "good"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAI_AM",
+   "t": "Thái Âm hãm: ra ngoài dễ gặp thị phi",
+   "b": "bad"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng cùng Thiên Đồng: đi xa tay trắng làm nên cơ đồ",
+   "b": "good",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAM_LANG",
+   "t": "Tham Lang: ra ngoài vất vả nhưng hay gặp dịp tài lộc bất ngờ"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAM_LANG",
+   "t": "Tham Lang cùng Vũ Khúc: giỏi buôn bán",
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "CU_MON",
+   "t": "Cự Môn: ra ngoài lao tâm, hay gặp thị phi; nên giữ lời"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng: ra ngoài có người đề bạt, nâng đỡ"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Vũ Khúc: phát tài nơi xa",
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương: ra ngoài gần quý nhân"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Cơ: ra đời bằng tài nghệ",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAT_SAT",
+   "t": "Thất Sát: sống bên ngoài nhiều hơn ở nhà"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "THAT_SAT",
+   "t": "Thất Sát gặp sát tinh: dễ lênh đênh xa xứ",
+   "x": true
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân: ra ngoài vất vả, lúc khá lúc kém"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân gặp Xương Khúc: rất tháo vát",
+   "h": [
+    "VAN_XUONG",
+    "VAN_KHUC"
+   ]
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương: ra ngoài gặp quý nhân phát đạt"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn: ra ngoài áo cơm toại ý"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "HUU_BAT",
+   "t": "Hữu Bật: ra ngoài gặp quý nhân, không nên ngồi yên"
+  },
+  {
+   "role": "THIEN_DI",
+   "s": "TA_PHU",
+   "t": "Tả Phù: cần năng động mới dễ gặp quý nhân phù trì"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "TU_VI",
+   "t": "Tử Vi: lập gia đình muộn thì tốt, người phối ngẫu tính cương nghị"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Phủ: đẹp đôi",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: hai người dễ va chạm, cần nhường nhịn",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ: nam hợp người ít tuổi hơn, nữ hợp người đứng tuổi"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ gặp sát tinh: nên lập gia đình muộn cho bền",
+   "x": true
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thái Âm: người phối ngẫu ưa nhìn",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng: lập gia đình muộn thì tốt, nhờ người phối ngẫu mà hiển",
+   "b": "good"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thiên Lương, có Tả Hữu: người phối ngẫu hiền, thông minh, giỏi giang",
+   "d": [
+    "THIEN_LUONG"
+   ],
+   "h": [
+    "TA_PHU",
+    "HUU_BAT"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thái Âm: được người nội trợ tháo vát",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc: nên lập gia đình muộn, hợp người cùng tuổi; cưới rồi làm ăn khá lên"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thất Sát: dễ va chạm, nên chậm lại và nhường nhau",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: nên lập gia đình muộn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thái Âm: người phối ngẫu ưa nhìn",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thiên Lương: hai người cùng tốt",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng gặp sát tinh: dễ xa cách, cần vun đắp",
+   "x": true
+  },
+  {
+   "role": "PHU_THE",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh: đường tình duyên nhiều thay đổi, nên tìm hiểu kỹ"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thiên Phủ: có thể bên nhau đến bạc đầu",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: hai người đều ưa nhìn",
+   "b": "good"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAI_AM",
+   "t": "Thái Âm cùng Thiên Cơ: người phối ngẫu nội trợ giỏi",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAM_LANG",
+   "t": "Tham Lang: tình duyên dễ dang dở nếu vội; nên lập gia đình muộn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAM_LANG",
+   "t": "Tham Lang cùng Tử Vi: hợp người hơn tuổi",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "CU_MON",
+   "t": "Cự Môn: nên chọn người hơn tuổi"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thái Dương, không bị sát tinh: bền lâu",
+   "d": [
+    "THAI_DUONG"
+   ],
+   "x": false
+  },
+  {
+   "role": "PHU_THE",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thiên Đồng: người phối ngẫu thông minh, lanh lợi",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "CU_MON",
+   "t": "Cự Môn gặp sát tinh: dễ bất hòa vì lời nói, cần mềm mỏng",
+   "x": true
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng: người phối ngẫu ưa nhìn và hiền thục"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Tử Vi: bên nhau bền lâu",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Vũ Khúc: hay bất hòa, cần lắng nghe nhau",
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Đồng: hòa thuận",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Cơ: người phối ngẫu ưa nhìn mà hiền",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương gặp sát tinh: dễ lục đục, nên rộng lượng",
+   "x": true
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THAT_SAT",
+   "t": "Thất Sát: dễ va chạm sớm, nên lập gia đình muộn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân: dễ bất đồng, nên tìm người hiểu mình và lập gia đình muộn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân cùng Tử Vi: hợp người hơn tuổi",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHU_THE",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương: người phối ngẫu ít tuổi hơn, thông minh"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "TA_PHU",
+   "t": "Tả Phù: vợ chồng bền lâu"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "HUU_BAT",
+   "t": "Hữu Bật: vợ chồng bền lâu"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_KHOI",
+   "t": "Thiên Khôi: hai người đều ưa nhìn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "THIEN_VIET",
+   "t": "Thiên Việt: hai người đều ưa nhìn"
+  },
+  {
+   "role": "PHU_THE",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn: nên lập gia đình muộn, hợp người ít tuổi hơn"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "TU_VI",
+   "t": "Tử Vi không bị sát tinh: hưởng phúc an lạc",
+   "x": false
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Thiên Phủ: suốt đời tốt lành",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: hay lo nghĩ",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp sát tinh: phúc phận mỏng hơn, nên làm việc thiện vun phúc",
+   "x": true
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương: trong họa gặp phúc"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thái Âm: vui sướng",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thiên Lương: an ổn",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc sáng: an nhiên hưởng phúc",
+   "b": "good"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc hãm: hay lo phiền",
+   "b": "bad"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: an ổn sung sướng"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Cự Môn: buồn nhiều hơn vui, nên giữ tâm an",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thiên Lương: thanh nhàn",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thiên Phủ: an lạc",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Phá Quân: tâm hay bất an",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: an tĩnh hưởng phúc"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ cùng Vũ Khúc: tuổi trẻ gian nan, về sau nhàn nhã",
+   "d": [
+    "VU_KHUC"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAM_LANG",
+   "t": "Tham Lang: lao tâm khổ tứ"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAM_LANG",
+   "t": "Tham Lang cùng Tử Vi: về già nhàn tản",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "CU_MON",
+   "t": "Cự Môn: lao lực, ít được yên"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "CU_MON",
+   "t": "Cự Môn cùng Thiên Đồng: hưởng phúc",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng: an dật, hưởng phúc, có thọ"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng cùng Tử Vi: vui vẻ an lạc",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAT_SAT",
+   "t": "Thất Sát sáng: hưởng phúc",
+   "b": "good"
+  },
+  {
+   "role": "PHUC_DUC",
+   "s": "THAT_SAT",
+   "t": "Thất Sát cùng Tử Vi: trước vất vả sau an nhàn, cuối đời toại ý",
+   "d": [
+    "TU_VI"
+   ]
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "TU_VI",
+   "t": "Tử Vi: quan hệ với cha mẹ êm thuận"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: sớm xa cha mẹ, tự lập",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương hãm: duyên với cha mỏng hơn, nên năng gần gũi, chăm sóc",
+   "b": "bad"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thái Âm, không bị sát tinh: cha mẹ song toàn",
+   "d": [
+    "THAI_AM"
+   ],
+   "x": false
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: tốt cho cha mẹ",
+   "b": "good"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THAI_AM",
+   "t": "Thái Âm hãm: duyên với mẹ mỏng hơn, nên năng gần gũi, chăm sóc",
+   "b": "bad"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: cha mẹ song toàn"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng sáng: tốt cho cha mẹ",
+   "b": "good"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Thái Âm: cha mẹ song toàn",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng cùng Cự Môn: dễ bất đồng với cha mẹ, nên nhẹ lời",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc: dễ va chạm với cha mẹ, ở xa nhau lại êm hơn"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh: khó nối nghiệp cha, hợp tự lập con đường riêng"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng sáng: tốt cho cha mẹ",
+   "b": "good"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân: nên sớm tự lập xa nhà; có Tử Vi thì đỡ"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "CU_MON",
+   "t": "Cự Môn hãm: dễ bất đồng với cha mẹ",
+   "b": "bad"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "TA_PHU",
+   "t": "Tả Phù: nhờ được phúc cha mẹ"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "HUU_BAT",
+   "t": "Hữu Bật: nhờ được phúc cha mẹ"
+  },
+  {
+   "role": "PHU_MAU",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn không bị sát tinh: tốt cho cha mẹ",
+   "x": false
+  },
+  {
+   "role": "NO_BOC",
+   "s": "TU_VI",
+   "t": "Tử Vi: người dưới, cộng sự đắc lực, giúp sinh tài",
+   "x": false
+  },
+  {
+   "role": "NO_BOC",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp sát tinh: dễ gặp người không thật lòng, nên chọn bạn mà chơi",
+   "x": true
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ sáng: người dưới giúp mình",
+   "b": "good"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ hãm: người dưới dễ phàn nàn, cần công bằng",
+   "b": "bad"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng: được người dưới giúp đỡ",
+   "b": "good"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Cự Môn: dễ bị oán trách, nên rõ ràng",
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "NO_BOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc sáng: một tiếng gọi nhiều người hưởng ứng",
+   "b": "good"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thất Sát: dễ bị người dưới phụ lòng",
+   "d": [
+    "THAT_SAT"
+   ]
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: người dưới đắc lực"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: nhiều người theo giúp"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương: nhiều người giúp đỡ"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Đồng: người dưới biết bảo vệ mình",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "NO_BOC",
+   "s": "THAT_SAT",
+   "t": "Thất Sát: cần thận trọng với người dưới, bạn bè làm ăn"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân sáng: người dưới đắc lực",
+   "b": "good"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân hãm: dễ bị phụ lòng",
+   "b": "bad"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "TA_PHU",
+   "t": "Tả Phù: nhiều người hưởng ứng"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "HUU_BAT",
+   "t": "Hữu Bật: có nhiều người giúp"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn: người dưới nhiều, biết bảo vệ mình"
+  },
+  {
+   "role": "NO_BOC",
+   "s": "KINH_DUONG",
+   "t": "Kình Dương: người dưới khó đắc lực"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "TU_VI",
+   "t": "Tử Vi không bị sát tinh: nhà cửa ruộng vườn tốt",
+   "x": false
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "TU_VI",
+   "t": "Tử Vi gặp sát tinh: nhà đất lúc tậu lúc bán",
+   "x": true
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "TU_VI",
+   "t": "Tử Vi cùng Phá Quân: dễ hao tổ nghiệp, nên giữ gìn",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ: tự mình gây dựng nhà cửa"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Cự Môn ở Mão: nhiều nhà đất",
+   "c": [
+    "MAO"
+   ],
+   "d": [
+    "CU_MON"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_CO",
+   "t": "Thiên Cơ cùng Thiên Lương: đứng tuổi mới khá về nhà đất",
+   "d": [
+    "THIEN_LUONG"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương sáng: thừa hưởng tổ nghiệp",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương cùng Thái Âm: nhà cửa nhiều",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương hãm gặp sát tinh: nhà đất khó giữ, nên mua chắc chắn",
+   "b": "bad",
+   "x": true
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc sáng: dễ hưởng di sản",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Phá Quân: dễ bán bớt của tổ tiên",
+   "d": [
+    "PHA_QUAN"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thiên Tướng: hao rồi mới lập lại",
+   "d": [
+    "THIEN_TUONG"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc cùng Thiên Phủ: giữ được gia nghiệp",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: nhà đất trước ít sau nhiều"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng sáng cùng Thái Âm: nhà cửa khang trang",
+   "b": "good",
+   "d": [
+    "THAI_AM"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh: khó giữ tổ nghiệp, hợp tự gây dựng"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "LIEM_TRINH",
+   "t": "Liêm Trinh cùng Thiên Phủ: thành gia nghiệp",
+   "d": [
+    "THIEN_PHU"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: nhiều đất cát"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: nhà cao cửa rộng",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm gặp Lộc Tồn, Hóa Lộc, Hóa Quyền: nhiều ruộng vườn",
+   "h": [
+    "LOC_TON",
+    "HOA_LOC",
+    "HOA_QUYEN"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang hãm: khó giữ tổ nghiệp",
+   "b": "bad"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang sáng: về sau nhà đất mới hay",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THAM_LANG",
+   "t": "Tham Lang gặp Hỏa Linh: nhà đất phát, nhưng nên cẩn thận phòng cháy trong nhà",
+   "h": [
+    "HOA_TINH",
+    "LINH_TINH"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "CU_MON",
+   "t": "Cự Môn sáng: nhà đất phát nhanh",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "CU_MON",
+   "t": "Cự Môn hãm: hay vướng chuyện nhà đất, nên làm giấy tờ rõ ràng",
+   "b": "bad"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng sáng: nhà đất tốt",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương sáng: vượng tổ nghiệp",
+   "b": "good"
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Đồng: ban đầu gian truân, về sau tốt",
+   "d": [
+    "THIEN_DONG"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "THIEN_LUONG",
+   "t": "Thiên Lương cùng Thiên Cơ: sẽ có nhà riêng",
+   "d": [
+    "THIEN_CO"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "PHA_QUAN",
+   "t": "Phá Quân ở Tý Ngọ: tổ nghiệp vinh xương",
+   "c": [
+    "TY",
+    "NGO"
+   ]
+  },
+  {
+   "role": "DIEN_TRACH",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn không bị sát tinh: tổ nghiệp vinh xương",
+   "x": false
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "TU_VI",
+   "t": "Tử Vi: ít tai họa, sức khỏe nền vững"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THIEN_PHU",
+   "t": "Thiên Phủ: khỏe mạnh, gặp nạn dễ qua"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THIEN_DONG",
+   "t": "Thiên Đồng: ít bệnh tật tai họa"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THIEN_TUONG",
+   "t": "Thiên Tướng: ít tai nạn"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THAI_AM",
+   "t": "Thái Âm sáng: khỏe mạnh",
+   "b": "good"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "VAN_XUONG",
+   "t": "Văn Xương: sức khỏe tốt"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "VAN_KHUC",
+   "t": "Văn Khúc có cát tinh trợ: ít tai nạn",
+   "h": [
+    "TA_PHU",
+    "HUU_BAT",
+    "VAN_XUONG",
+    "VAN_KHUC",
+    "THIEN_KHOI",
+    "THIEN_VIET",
+    "HOA_LOC",
+    "HOA_QUYEN",
+    "HOA_KHOA",
+    "LOC_TON"
+   ]
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "VU_KHUC",
+   "t": "Vũ Khúc gặp Kình Đà: hay gặp va quệt nhỏ, nên cẩn thận khi đi lại, lao động",
+   "h": [
+    "KINH_DUONG",
+    "DA_LA"
+   ]
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THAT_SAT",
+   "t": "Thất Sát: lúc nhỏ hay ốm vặt, lớn lên nên giữ an toàn khi vận động"
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "LOC_TON",
+   "t": "Lộc Tồn gặp sát tinh: nên cẩn thận chân tay khi vận động mạnh",
+   "x": true
+  },
+  {
+   "role": "TAT_ACH",
+   "s": "THAI_DUONG",
+   "t": "Thái Dương: nên giữ sức, nghỉ ngơi điều độ và khám định kỳ"
+  },
+  {
+   "role": "HUYNH_DE",
+   "s": "DIA_KHONG",
+   "t": "Địa Không: anh chị em ít nương tựa nhau, nên tự lập"
+  },
+  {
+   "role": "HUYNH_DE",
+   "s": "DIA_KIEP",
+   "t": "Địa Kiếp: anh chị em ít nương tựa nhau, nên tự lập"
+  },
+  {
+   "role": "HUYNH_DE",
+   "s": "HOA_KY",
+   "t": "Hóa Kỵ: anh chị em dễ bất đồng, nên nhường nhịn"
+  },
+  {
+   "role": "HUYNH_DE",
+   "s": "THIEN_HINH",
+   "t": "Thiên Hình: anh chị em dễ va chạm, nên mềm mỏng"
+  },
+  {
+   "role": "HUYNH_DE",
+   "s": "TUONG_QUAN",
+   "t": "Tướng Quân cùng Lộc Tồn hoặc Thiên Mã: có anh chị em làm nên danh phận",
+   "d": [
+    "LOC_TON",
+    "THIEN_MA"
+   ]
+  },
+  {
+   "role": "TU_TUC",
+   "s": "HOA_QUYEN",
+   "t": "Hóa Quyền: con cái hiển vinh"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "HOA_LOC",
+   "t": "Hóa Lộc: con cái hiển vinh"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "THIEN_KHOI",
+   "t": "Thiên Khôi: con cái học hành giỏi"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "THIEN_VIET",
+   "t": "Thiên Việt: con cái học hành giỏi"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "LONG_TRI",
+   "t": "Long Trì: con cái khá giả"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "PHUONG_CAC",
+   "t": "Phượng Các: con cái khá giả"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "HY_THAN",
+   "t": "Hỷ Thần: con cái có tiếng tốt"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "DIA_KHONG",
+   "t": "Địa Không: đường con cái cần kiên nhẫn, chăm sóc kỹ"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "DIA_KIEP",
+   "t": "Địa Kiếp: đường con cái cần kiên nhẫn, chăm sóc kỹ"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "DAU_QUAN",
+   "t": "Đẩu Quân: con cái muộn; có cát tinh hội thì còn nhiều mong đợi"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "CO_THAN",
+   "t": "Cô Thần: việc sinh nở vất vả, nên chăm sóc sức khỏe chu đáo"
+  },
+  {
+   "role": "TU_TUC",
+   "s": "QUA_TU",
+   "t": "Quả Tú: việc sinh nở vất vả, nên chăm sóc sức khỏe chu đáo"
+  }
+ ],
+ "nl": [
+  {
+   "t": "Lộc Tồn ở tuổi Giáp, Ất, Canh, Tân là thuận âm dương: lộc rõ ràng, giữ được bền",
+   "ch": "Những sao Lộc, nhất là Lộc Tồn ban phát ra nên rất chặt chẽ",
+   "g": [
+    [
+     "LOC_TON"
+    ]
+   ],
+   "can": [
+    "GIAP",
+    "AT",
+    "CANH",
+    "TAN"
+   ]
+  },
+  {
+   "t": "Lộc Tồn ở các tuổi còn lại đứng nghịch âm dương: lộc có nhưng phải gắng công gìn giữ",
+   "ch": "Những sao Lộc, nhất là Lộc Tồn ban phát ra nên rất chặt chẽ",
+   "g": [
+    [
+     "LOC_TON"
+    ]
+   ],
+   "can": [
+    "BINH",
+    "DINH",
+    "MAU",
+    "KY",
+    "NHAM",
+    "QUY"
+   ]
+  },
+  {
+   "t": "Long Phượng gặp Tả Hữu: người đa tài, chính danh, làm việc được người tin cậy",
+   "ch": "Danh dự của Long Phượng Tả Hữu Xương Khúc",
+   "g": [
+    [
+     "LONG_TRI",
+     "PHUONG_CAC"
+    ],
+    [
+     "TA_PHU",
+     "HUU_BAT"
+    ]
+   ],
+   "no": [
+    "DIA_KHONG",
+    "DIA_KIEP"
+   ]
+  },
+  {
+   "t": "Long Phượng, Tả Hữu mà gặp Không Kiếp: có tài nhưng khó được dùng đúng chỗ, nên kiên nhẫn chờ thời",
+   "ch": "Danh dự của Long Phượng Tả Hữu Xương Khúc",
+   "g": [
+    [
+     "LONG_TRI",
+     "PHUONG_CAC"
+    ],
+    [
+     "TA_PHU",
+     "HUU_BAT"
+    ],
+    [
+     "DIA_KHONG",
+     "DIA_KIEP"
+    ]
+   ]
+  },
+  {
+   "t": "Xương Khúc chủ văn chương, hiếu học; gặp Thất Sát, Phá Quân, Tham Lang thì kém hay, dễ vướng điều không như ý",
+   "ch": "Danh dự của Long Phượng Tả Hữu Xương Khúc",
+   "g": [
+    [
+     "VAN_XUONG",
+     "VAN_KHUC"
+    ],
+    [
+     "THAT_SAT",
+     "PHA_QUAN",
+     "THAM_LANG"
+    ]
+   ]
+  },
+  {
+   "t": "Hóa Khoa chủ nhân hậu, uyên bác, hay giải trừ tai họa; đứng đầu ba Hóa, mở đường cho Quyền và Lộc",
+   "ch": "Bùa mê thuốc lú Khoa Quyền Lộc",
+   "g": [
+    [
+     "HOA_KHOA"
+    ]
+   ]
+  },
+  {
+   "t": "Khôi Việt gặp Xương Khúc: văn tài nổi bật, dễ đứng đầu nơi thi cử",
+   "ch": "Khôi Việt Thiên Ất quý nhân",
+   "g": [
+    [
+     "THIEN_KHOI",
+     "THIEN_VIET"
+    ],
+    [
+     "VAN_XUONG",
+     "VAN_KHUC"
+    ]
+   ]
+  },
+  {
+   "t": "Khôi Việt gặp Tả Hữu: có khả năng dẫn dắt, lãnh đạo",
+   "ch": "Khôi Việt Thiên Ất quý nhân",
+   "g": [
+    [
+     "THIEN_KHOI",
+     "THIEN_VIET"
+    ],
+    [
+     "TA_PHU",
+     "HUU_BAT"
+    ]
+   ]
+  },
+  {
+   "t": "Khôi Việt gặp Long Phượng: địa vị cao của người chính phái",
+   "ch": "Khôi Việt Thiên Ất quý nhân",
+   "g": [
+    [
+     "THIEN_KHOI",
+     "THIEN_VIET"
+    ],
+    [
+     "LONG_TRI",
+     "PHUONG_CAC"
+    ]
+   ]
+  },
+  {
+   "t": "Quốc Ấn luôn đứng tam hợp với Lộc Tồn: quyền lợi được công nhận rõ ràng, tương xứng công sức",
+   "ch": "Hiệu năng của Quốc Ấn Đường Phù",
+   "g": [
+    [
+     "QUOC_AN"
+    ]
+   ]
+  },
+  {
+   "t": "Thiên Trù là lộc ăn mặc do tổ tiên để lại: đủ cơm áo mà không phải tranh giành",
+   "ch": "Thiên Trù cũng quan hệ lắm sao",
+   "g": [
+    [
+     "THIEN_TRU"
+    ]
+   ]
+  },
+  {
+   "t": "Thiên Riêu đứng cùng Xương Khúc: có tài văn học hiếm thấy",
+   "ch": "Oan trái nghiệp quả Hình Riêu Không Kiếp",
+   "g": [
+    [
+     "THIEN_RIEU"
+    ],
+    [
+     "VAN_XUONG",
+     "VAN_KHUC"
+    ]
+   ]
+  },
+  {
+   "t": "Thiên Hình gặp Kình Dương: nghiêm khắc, quyết liệt; dùng vào việc chính đáng thì thành uy",
+   "ch": "Hùng khí của Lục Sát tinh",
+   "g": [
+    [
+     "THIEN_HINH"
+    ],
+    [
+     "KINH_DUONG"
+    ]
+   ]
+  },
+  {
+   "t": "Không Kiếp hay kìm hãm, Kình Đà dễ gây trắc trở, Linh Hỏa làm hao sức; khi sát tinh đắc địa, được chế hóa thì lại thành người xuất chúng",
+   "ch": "Những sát tinh ngộ chế là đáng quý",
+   "g": [
+    [
+     "DIA_KHONG",
+     "DIA_KIEP",
+     "KINH_DUONG",
+     "DA_LA",
+     "HOA_TINH",
+     "LINH_TINH"
+    ]
+   ]
+  },
+  {
+   "t": "Hóa Kỵ chủ thị phi, hờn ghen: nên giữ lời, tránh tranh chấp",
+   "ch": "Những sát tinh ngộ chế là đáng quý",
+   "g": [
+    [
+     "HOA_KY"
+    ]
+   ]
+  },
+  {
+   "t": "Mệnh ở Thìn Tuất có Đà La (thế La Võng): dễ thấy bị bó buộc, nên kiên nhẫn chờ thời, dựa vào nỗ lực bền bỉ",
+   "ch": "Thế nào là Thiên La Địa Võng",
+   "g": [
+    [
+     "DA_LA"
+    ]
+   ],
+   "role": [
+    "MENH"
+   ],
+   "chi": [
+    "THIN",
+    "TUAT"
+   ]
+  },
+  {
+   "t": "Cô Thần, Quả Tú không đứng chung tam hợp với Thái Tuế: người có Cô Quả nên chủ động gần gũi, tránh tự cô lập",
+   "ch": "Cô Thần Quả Tú không bao giờ góp mặt chung với Thái Tuế",
+   "g": [
+    [
+     "CO_THAN",
+     "QUA_TU"
+    ]
+   ]
+  },
+  {
+   "t": "Thái Tuế chủ người có trách nhiệm với việc chung, nói năng có trọng lượng; được việc khi lấy chính danh làm gốc",
+   "ch": "Bản thể thực chất của Thái Tuế",
+   "g": [
+    [
+     "THAI_TUE"
+    ]
+   ]
+  }
+ ]
+}

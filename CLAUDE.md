@@ -1,7 +1,7 @@
 # Tử Vi Tự Xem — hướng dẫn cho Claude
 
 App Android **offline** lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam) của anh **Thanh Phong** (dùng Samsung S22 Ultra).
-Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.7.0 (8)**, giai đoạn 1–7 đã xong (xem `README.md`, mục Trạng thái).
+Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.0 (9)**, giai đoạn 1–8 đã xong (xem `README.md`, mục Trạng thái).
 
 ## Cách làm việc với anh Phong
 
@@ -13,7 +13,7 @@ Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.7.0 (8)**
   mục “Tải về”. Không gửi file đính kèm trong chat, trừ khóa ký (bí mật). GitHub Releases bị chặn (403): không tạo Release,
   không lách bằng Actions.
 - Đặc tả là `docs/PROMPT_TUVI_APP.md`; cẩm nang là `docs/CAMNANG_TUVI_V2.txt`. **Khi hai tài liệu khác nhau, theo PROMPT.**
-  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-60). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
+  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-63). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
 - Lựa chọn trường phái anh đã chốt: Nhâm hóa Khoa = Tả Phù; sinh tháng nhuận tính như tháng thường; Khôi Việt năm Canh =
   Ngọ/Dần (mặc định Nam phái VN).
 
@@ -51,13 +51,13 @@ Lần đầu trong phiên, chạy `bash tools/setup/doctor.sh`: lệnh này báo
 | --- | --- |
 | `core/calendar` | Lịch âm VN, can chi, giờ mặt trời thật |
 | `core/engine` | An sao (`ChartEngine`, `Tables`, `TuHoaTable`, `SchoolConfig`), vận hạn (`LimitEngine.forYear/forMonth/forDate` → `LimitLayers`) |
-| `data/kb` | Knowledge base JSON (`kb/texts`, `rules`, `advice`, `faq`, `meta`): `star.ID.CODE.ROLE`, `combo.KEY.ROLE`, `phu.ID`, `qa.*`; `kb/ai/model.json` (model AI), `kb/ai/system_prompt_vi.md` |
-| `core/interpret` | `RuleEngine`, `Scoring` (`Scorer.topicLayered`), `Composer` (`yearData/decadeData/lifeData`), `Qa.kt` (`QaEngine`), `QaAnalyst.kt` (luận đoán theo tầng), `QaAi.kt` (`AiPrompt`, `AiGuard`, `AiFake`), `QaPrivacy`, `KbLint` |
+| `data/kb` | Knowledge base JSON (`kb/texts`, `rules`, `advice`, `faq`, `meta`): `star.ID.CODE.ROLE`, `combo.KEY.ROLE`, `phu.ID`, `qa.*`; `kb/ai/model.json` (model AI), `kb/ai/system_prompt_vi.md`; `kb/sach/sach.json` (kiến thức sách, sinh từ `tools/kb/kb_sach.py`) |
+| `core/interpret` | `RuleEngine`, `Scoring` (`Scorer.topicLayered`), `Composer` (`yearData/decadeData/lifeData`), `Qa.kt` (`QaEngine`), `QaAnalyst.kt` (luận đoán theo tầng), `QaAi.kt` (`AiPrompt`, `AiGuard`, `AiFake`), `Books.kt` (câu sách theo lá số), `QaPrivacy`, `KbLint` |
 | `app/src/main` | `MainActivity` (WebView, `APP_VERSION`, `callAsync`), `AndroidLlm` (tải model, LiteRT-LM), `Export` (PNG/PDF), `TuViApp` |
 | `app/src/llm` | `LiteRt.java`: lớp bọc LiteRT-LM (Java), dùng chung cho APK và công cụ chấm 40 câu |
 | `app/src/shared` | Cầu nối JSON giữa WebView và engine (`AppApi`, `Luan`, `Ai.kt`: `LlmHost`, `AiFlow`, `FakeLlmHost`): dùng chung cho APK và máy chủ thử |
 | `app/src/dev` | `DevServer` để thử giao diện trên máy tính |
-| `app/assets/web` | Giao diện `index.html`, `app.js`, `app.css` |
+| `app/assets/web` | Giao diện `index.html`, `app.js`, `app.css`, `icons.js` (bộ icon, cùng nguồn với Figma) |
 | `tools/apk` | `build_apk.sh` (APK không cần Android Studio, D-28), `fetch_ai_deps.sh` (LiteRT-LM, gson, R8, ghim SHA-256), `devserver.sh`, `uitest/`, `selftest/`, `check_api.py` |
 | `tools/ai` | `eval40.sh` + `Eval40.kt`: chấm 40 câu với model thật trên CPU Linux (D-59) |
 | `tools/setup` | `cloud_setup.sh`, `doctor.sh`, `restore_keystore.sh`, `session_start.sh`, `test_all.sh` |
@@ -84,7 +84,7 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
   Khởi động lại devserver giữa các lần chạy. Ảnh chuẩn nằm ở `tools/apk/uitest/baseline`. Cập nhật bằng
   `TUVI_UPDATE_BASELINE=1` (hoặc xóa ảnh rồi chạy hai lần). Chỉ cập nhật khi thay đổi giao diện là cố ý.
 - **Selftest tại chỗ:** `bash tools/apk/selftest/run_local.sh`. Lệnh này chạy 4 ca golden và gõ câu hỏi vào mục Hỏi đáp.
-- **Mốc hiện tại (0.7.0):** xem `docs/PHASE7_REPORT.md`. Riêng `:core:interpret` có 529 test (thêm `AiTest`).
+- **Mốc hiện tại (0.8.0):** xem `docs/PHASE8_REPORT.md`. Riêng `:core:interpret` có 532 test (thêm `AiTest`, `BooksTest`).
 - Gradle cần locale UTF-8 (tên test tiếng Việt): `test_all.sh` tự đặt `LC_ALL=C.UTF-8`.
 - Playwright: nếu bản pip không khớp trình duyệt (không tải được từ `cdn.playwright.dev`), `test_ui.py` và
   `run_local.py` tự dùng Chromium có sẵn ở `/opt/pw-browsers`.
@@ -118,6 +118,16 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
 - Hỏi đáp (D-49…D-54): `QaEngine.parse` hiểu câu hỏi (có dấu hoặc không dấu). `QaAnalyst` dựng câu trả lời từ lá số
   qua các tầng: gốc, đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế, Tứ Hóa, sao lưu. Trọng số năm:
   GOC .10, DAI_HAN .30, LUU_NIEN .25, TIEU_HAN .20, LUU_THAI_TUE .15. Điểm phải trùng với bản luận đầy đủ.
+
+## Kiến thức sách, thiết kế, liên hệ (0.8.0, D-61…D-63)
+
+- Hai sách anh gửi (Toàn Thư, Nghiệm Lý) còn bản quyền: chỉ **diễn giải lại**, không chép nguyên văn vào repo công khai.
+  Sửa/thêm câu trong `tools/kb/kb_sach.py` rồi chạy lại; câu nào cũng phải qua `KbLint`.
+- Không fine-tune model (không GPU, không chỗ phát hành model, trái D-58): kiến thức đi qua KB và lời nhắc AI.
+- YouTube (youtube.com) bị proxy chặn.
+- Giao diện không còn chữ “nháp”/“Prompt”; nguồn hiển thị qua `Luan.src`. Liên hệ: 0378 373 373.
+- Figma (tài khoản anh, gói Starter: 1 chế độ mỗi bộ biến): https://www.figma.com/design/kdxoEkGID6PUamNLPzuvyZ.
+  Icon: `app/assets/web/icons.js` là nguồn; thêm icon thì thêm cả trên Figma.
 
 ## Trợ lý AI trên máy (0.7.0, D-57…D-60)
 
