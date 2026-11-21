@@ -1,0 +1,534 @@
+HỎI ĐÁP MẪU — TỬ VI TỰ XEM 0.6.0 (giai đoạn 6)
+Lá số: Ca A — Nam, 15/08/1990 10:30 (dương lịch), Hà Nội. Ngày hỏi: 21/11/2026 (13/10 âm lịch năm Bính Ngọ).
+Mọi câu trả lời do app tạo ngay trên máy, từ chính bản luận (luật cẩm nang, điểm 0–100, đồng thanh tương ứng).
+Trong app, chạm mỗi đoạn để xem “Vì sao?” (mã luật, sao, cung, nguồn). Câu luận hiện là bản nháp chưa thẩm định.
+Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “Vì sao?”.
+
+
+══════ Theo năm, tháng, ngày, tuần ══════
+
+1. HỎI: Năm nay công việc của tôi thế nào?
+   App hiểu là: Sự nghiệp · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 48/100, thế Thủ
+   • Sự nghiệp năm 2026: cân bằng (48/100).
+     [mã: SCORE_SU_NGHIEP]
+   • Năm 2026 (Bính Ngọ), hai tầng vận hạn cùng chỉ về thăng tiến, nhận trách nhiệm mới: có thể thành hiện thực nếu bạn chủ động.
+     [mã: VH_LTT_QUAN_QUYEN, VH_LNDH_CAT_HOI, EVENT_THANG_TIEN]
+   • Năm 2026 (Bính Ngọ), Lưu Thái Tuế vào cung Quan Lộc: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.
+     [mã: VH_LUU_THAI_TUE_QUAN_LOC]
+   • Có cả điểm thuận (thăng tiến (có thể)) lẫn điểm cần lưu ý (Phá Quân hãm tại Quan Lộc của năm), nghiêng về thuận vì tổng lực các yếu tố thuận lớn hơn.
+     [mã: LUU_CUNG_TIEU_HAN_QUAN_LOC, star.PHA_QUAN.H.QUAN_LOC]
+   ✓ Nên: Giai đoạn nên thủ hơn công: củng cố nền tảng, hoãn quyết định lớn nếu được.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Tháng nào năm 2026 thuận cho công việc? | Năm 2027 công việc thế nào? | Tôi nên lưu ý gì năm 2026?
+
+2. HỎI: nam sau tai chinh ra sao
+   App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100, thế Thủ
+   • Tài chính năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tài Bạch của đại hạn tại Sửu, trên cung gốc Huynh Đệ).
+     [mã: SCORE_TAI_CHINH]
+   • Theo tiểu hạn, cung Tài Bạch của năm rơi vào Sửu (cung gốc Huynh Đệ). Bộ Đồng Cự đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.
+     [mã: LUU_CUNG_TIEU_HAN_TAI_BACH, combo.THIEN_DONG_CU_MON.TAI_BACH]
+   • Có cả điểm thuận (Lưu niên đại hạn hội cát tinh (Tử Tức)) lẫn điểm cần lưu ý (Thiên Đồng hãm – Cự Môn hãm tại Tài Bạch của năm), nghiêng về thận trọng vì điểm tổng hợp 43/100 thấp hơn mức trung bình.
+     [mã: VH_LNDH_CAT_HOI]
+   • Phần tài chính chỉ nêu khung rủi ro, không phải lời khuyên mua bán tài sản cụ thể.
+     [mã: note.tai_chinh]
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem luận năm 2027
+   Hỏi tiếp: Tháng nào năm 2027 thuận cho tài chính? | Năm 2028 tài chính thế nào? | Tôi nên lưu ý gì năm 2027?
+
+3. HỎI: Năm Đinh Mùi tình duyên thế nào?
+   App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100, thế Thủ
+   • Tình duyên, hôn nhân năm 2027: cân bằng (50/100).
+     [mã: SCORE_TINH_DUYEN]
+   • Năm 2027 (Đinh Mùi), một tầng vận hạn chỉ về chuyện tình cảm, cưới hỏi: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.
+     [mã: CD_HAN_HY_TINH_DUYEN, EVENT_CUOI_HOI]
+   • Theo tiểu hạn, cung Phu Thê của năm rơi vào Mão (cung gốc Phụ Mẫu). Bộ Nhật Lương đồng cung tại cung Phu Thê: người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.
+     [mã: LUU_CUNG_TIEU_HAN_PHU_THE, combo.THAI_DUONG_THIEN_LUONG.PHU_THE]
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   → Nút: Xem luận năm 2027
+   Hỏi tiếp: Tháng nào năm 2027 thuận cho tình duyên? | Năm 2028 tình duyên thế nào? | Tôi nên lưu ý gì năm 2027?
+
+4. HỎI: Năm 40 tuổi tôi thế nào?
+   App hiểu là: Tổng quan · năm 2029 (Kỷ Dậu, 40 tuổi âm) · điểm 46/100, thế Thủ
+   • Tổng quan năm 2029 (Kỷ Dậu): cân bằng (46/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NAM]
+   • Năm 2029, tháng thuận nhất (âm lịch): 5 (54), 8 (54), 4 (52); nên thận trọng: 6 (41), 10 (41).
+     [mã: MONTHS_NAM]
+   ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
+   ✓ Nên: Đặt trọng tâm năm vào lĩnh vực của cung được kích hoạt; lên kế hoạch cụ thể cho nó.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   → Nút: Xem luận năm 2029
+   Hỏi tiếp: Tôi nên lưu ý gì năm 2029? | Tháng nào năm 2029 thuận nhất?
+
+5. HỎI: Tháng 3 âm năm 2027 sức khỏe thế nào?
+   App hiểu là: Sức khỏe (lưu ý) · tháng 3 âm lịch năm 2027 · điểm 47/100, thế Thủ
+   • Tháng 3 âm lịch năm 2027 (Đinh Mùi): cân bằng (47/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_THANG]
+   • Nguyệt hạn tại Nô Bộc (Mùi): tháng này việc thuộc lĩnh vực sự nghiệp được chú ý nhiều hơn.
+     [mã: NGUYET_HAN]
+   • Cả năm 2027 — sức khỏe (lưu ý) năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tật Ách của đại hạn tại Tý, trên cung gốc Phu Thê).
+     [mã: SCORE_SUC_KHOE]
+   ✓ Nên: Giảm bớt việc, ưu tiên những gì thật cần trong giai đoạn này.
+   ✓ Nên: Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem luận tháng 3
+   Hỏi tiếp: Tháng 4 âm năm 2027 thế nào? | Ngày nào trong tháng này tốt?
+
+6. HỎI: Tháng sau thế nào?
+   App hiểu là: Tổng quan · tháng 11 âm lịch năm 2026 · điểm 54/100, thế Giữ
+   • Tháng 11 âm lịch năm 2026 (Bính Ngọ): cân bằng (54/100). Thế Giữ: nên củng cố, phát triển vững những gì đang có.
+     [mã: SCORE_THANG]
+   • Nguyệt hạn tại Mệnh (Dần): tháng này việc thuộc lĩnh vực tính cách được chú ý nhiều hơn.
+     [mã: NGUYET_HAN]
+   ✓ Nên: Củng cố những gì đang có: hoàn thiện kỹ năng, chăm sóc khách hàng và các mối quan hệ.
+   ✓ Nên: Ghi lại mục tiêu và rà soát mỗi tháng để điều chỉnh kịp thời.
+   ✓ Không nên: Đổi hướng lớn khi chưa có lý do rõ ràng và phương án dự phòng.
+   → Nút: Xem luận tháng 11
+   Hỏi tiếp: Tháng 12 âm năm 2026 thế nào? | Ngày nào trong tháng này tốt?
+
+7. HỎI: Ngày mai thế nào?
+   App hiểu là: Tổng quan · ngày 22/11/2026 · điểm 46/100, thế Thủ
+   • Ngày 22/11/2026 (âm lịch 14/10, ngày Canh Tý): cân bằng (46/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NGAY]
+   • Nhật hạn tại Mệnh (Dần): việc thuộc lĩnh vực tính cách được chú ý hơn trong ngày.
+     [mã: NHAT_HAN]
+   • Chi ngày Tý lục xung với tuổi Ngọ.
+     [mã: CAN_CHI_NGAY]
+   • Giờ thuận: Dậu (17:00–18:59), Tý (23:00–00:59), Sửu (01:00–02:59). Giờ nên thận trọng: Dần (03:00–04:59), Tuất (19:00–20:59).
+     [mã: GIO_THUAN]
+   • Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.
+     [mã: NOTE_NGAY]
+   ✓ Nên: Dành thời gian lắng nghe góp ý trước khi quyết việc lớn.
+   ✓ Nên: Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.
+   → Nút: Xem chi tiết ngày
+   Hỏi tiếp: Ngày nào trong tháng này tốt? | Tháng này thế nào?
+
+8. HỎI: Tuần sau công việc ra sao
+   App hiểu là: Sự nghiệp · tuần sau (23/11–29/11) · điểm 47/100, thế Thủ
+   • Tuần sau (23/11–29/11): thứ Hai 23/11 (âm 15/10) 50; thứ Ba 24/11 (âm 16/10) 42; thứ Tư 25/11 (âm 17/10) 45; thứ Năm 26/11 (âm 18/10) 47; thứ Sáu 27/11 (âm 19/10) 46; thứ Bảy 28/11 (âm 20/10) 47; Chủ Nhật 29/11 (âm 21/10) 50. Điểm trung bình 47/100.
+     [mã: QA_WEEK]
+   • Ngày thuận nhất: thứ Hai 23/11 (50); nên thận trọng hơn: thứ Ba 24/11 (42).
+     [mã: QA_WEEK_BEST]
+   • Ngày 23/11 — giờ thuận: Thân (15:00–16:59), Tý (23:00–00:59), Hợi (21:00–22:59). Giờ nên thận trọng: Sửu (01:00–02:59), Dậu (17:00–18:59).
+     [mã: GIO_THUAN]
+   • Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.
+     [mã: NOTE_NGAY]
+   ✓ Nên: Củng cố những gì đang có: hoàn thiện kỹ năng, chăm sóc khách hàng và các mối quan hệ.
+   ✓ Không nên: Đổi hướng lớn khi chưa có lý do rõ ràng và phương án dự phòng.
+   → Nút: Xem chi tiết ngày 23/11
+   Hỏi tiếp: Ngày nào trong tháng này tốt? | Tháng này thế nào?
+
+9. HỎI: 15/12 có nên ký hợp đồng không
+   App hiểu là: Pháp lý, thị phi · ngày 15/12/2026 · điểm 49/100, thế Thủ
+   • Ngày 15/12/2026 (âm lịch 7/11, ngày Quý Hợi): cân bằng (49/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NGAY]
+   • Nhật hạn tại Thiên Di (Thân): việc thuộc lĩnh vực di chuyển, xuất ngoại được chú ý hơn trong ngày.
+     [mã: NHAT_HAN]
+   • Chi ngày Hợi không xung không hợp với tuổi Ngọ.
+     [mã: CAN_CHI_NGAY]
+   • Giờ thuận: Mão (05:00–06:59), Ngọ (11:00–12:59), Mùi (13:00–14:59). Giờ nên thận trọng: Thìn (07:00–08:59), Thân (15:00–16:59).
+     [mã: GIO_THUAN]
+   • Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.
+     [mã: NOTE_NGAY]
+   ✓ Nên: Chuẩn bị kỹ giấy tờ, lịch trình và phương án dự phòng trước mỗi chuyến đi xa.
+   ✓ Nên: Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.
+   → Nút: Xem chi tiết ngày
+   Hỏi tiếp: Ngày nào trong tháng này tốt? | Tháng này thế nào?
+
+10. HỎI: Mùng 1 Tết thế nào?
+   App hiểu là: Tổng quan · ngày 06/02/2027 · điểm 44/100, thế Thủ
+   • Ngày 06/02/2027 (âm lịch 1/1, ngày Bính Thìn): cần thận trọng (44/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NGAY]
+   • Nhật hạn tại Điền Trạch (Tỵ): việc thuộc lĩnh vực nhà đất được chú ý hơn trong ngày.
+     [mã: NHAT_HAN]
+   • Chi ngày Thìn không xung không hợp với tuổi Ngọ.
+     [mã: CAN_CHI_NGAY]
+   • Giờ thuận: Dậu (17:00–18:59), Ngọ (11:00–12:59), Sửu (01:00–02:59). Giờ nên thận trọng: Mùi (13:00–14:59), Hợi (21:00–22:59).
+     [mã: GIO_THUAN]
+   • Điểm ngày tính từ điểm tháng, cung nhật hạn và can chi ngày so với tuổi; độ tin cậy thấp hơn tầng năm, chỉ nên dùng để tham khảo khi sắp xếp việc.
+     [mã: NOTE_NGAY]
+   ✓ Nên: Giữ nguyên hiện trạng tài sản lớn; chưa vội mua bán nếu dòng tiền chưa vững.
+   ✓ Nên: Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem chi tiết ngày
+   Hỏi tiếp: Ngày nào trong tháng này tốt? | Tháng này thế nào?
+
+
+══════ Đại vận, trọn đời ══════
+
+11. HỎI: Đại vận hiện tại của tôi thế nào?
+   App hiểu là: Tổng quan · đại vận 35–44 tuổi · điểm 48/100, thế Thủ
+   • Đại vận 35–44 tuổi tại cung Điền Trạch (Tỵ, Tân Tỵ): cân bằng (48/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_DAI_VAN]
+   • Thiên thời: Tuổi khắc đại hạn — vất vả, phải tự lực nhưng giành được (ngũ hành tam hợp, cụ Thiên Lương).
+     [mã: VH_THIEN_THOI_TUOI_KHAC_DAI_HAN]
+   ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
+   ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
+   ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
+   → Nút: Xem luận đại vận
+   Hỏi tiếp: Đại vận tới của tôi thế nào? | Năm 2026 của tôi thế nào?
+
+12. HỎI: 10 năm tới sự nghiệp ra sao
+   App hiểu là: Sự nghiệp · đại vận 35–44 tuổi · điểm 48/100, thế Thủ
+   • Sự nghiệp trong đại vận: cân bằng (48/100).
+     [mã: SCORE_SU_NGHIEP]
+   • Theo đại hạn, cung Quan Lộc của đại vận rơi vào Dậu (cung gốc Tật Ách), vô chính diệu, mượn chính tinh cung Mão. Bộ Nhật Lương đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, danh và tài dễ rực rỡ, hợp học thuật, y tế.
+     [mã: LUU_CUNG_DAI_HAN_QUAN_LOC, combo.THAI_DUONG_THIEN_LUONG.QUAN_LOC]
+   • Đại hạn 10 năm tại cung Điền Trạch — tuổi khắc đại hạn theo ngũ hành tam hợp (cụ Thiên Lương): vất vả, phải tự lực nhưng có thể giành được thành quả.
+     [mã: VH_THIEN_THOI_TUOI_KHAC_DAI_HAN]
+   ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
+   ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
+   ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
+   → Nút: Xem luận đại vận
+   Hỏi tiếp: Năm nào trong đại vận này thuận cho công việc? | Đại vận tới của tôi thế nào? | Năm 2026 của tôi thế nào?
+
+13. HỎI: Hậu vận của tôi ra sao?
+   App hiểu là: Tổng quan · giai đoạn 55–99 tuổi · điểm 50/100, thế Giữ
+   • Tổng quan Mệnh – Thân – Phúc: cân bằng (50/100). Mệnh tại Dần, Thân cư Phu Thê (Tý), Phúc Đức tại Thìn.
+     [mã: SCORE_TONG_QUAN]
+   • Bộ Vũ Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, thực tế, có trách nhiệm, hợp quản lý tài chính.
+     [mã: COMBO_VU_KHUC_THIEN_TUONG@MENH]
+   • Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.
+     [mã: TS_THAN_CU_PHU_THE]
+   • Các đại vận trong giai đoạn 55–99 tuổi: 55–64 tuổi tại Nô Bộc (55/100, Giữ); 65–74 tuổi tại Thiên Di (46/100, Thủ); 75–84 tuổi tại Tật Ách (49/100, Thủ); 85–94 tuổi tại Tài Bạch (54/100, Giữ); 95–104 tuổi tại Tử Tức (61/100, Giữ); 105–114 tuổi tại Phu Thê (41/100, Thủ).
+     [mã: TIMELINE_DAI_VAN]
+   ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
+   ✓ Nên: Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   → Nút: Xem luận trọn đời
+   Hỏi tiếp: Đại vận hiện tại của tôi thế nào? | Cung Mệnh của tôi có sao gì?
+
+14. HỎI: Tính cách của tôi thế nào?
+   App hiểu là: Tính cách · lá số gốc (trọn đời) · điểm 50/100, thế Giữ
+   • Tính cách: khá thuận (55/100). Cung đọc chính: Mệnh (Dần).
+     [mã: SCORE_TINH_CACH]
+   • Âm Dương thuận lý (tuổi và cung Mệnh cùng tính Âm/Dương): nền tảng hài hòa, làm việc thuận chiều.
+     [mã: TS_AM_DUONG_THUAN_LY]
+   • Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.
+     [mã: TS_THAN_CU_PHU_THE]
+   • Thiên Tướng thủ Mệnh: tốt xấu phụ thuộc nhiều vào hai cung kẹp bên (Thiên Lương và Cự Môn); trọng danh dự hơn tiền bạc.
+     [mã: TS_THIEN_TUONG_XET_GIAP]
+   ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
+   ✓ Nên: Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   → Nút: Xem luận trọn đời
+   Hỏi tiếp: Đại vận hiện tại của tôi thế nào? | Cung Mệnh của tôi có sao gì? | Năm 2026 công việc thế nào?
+
+15. HỎI: Tôi có số giàu không?
+   App hiểu là: Tài chính · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
+   • Lá số gốc — tài chính: cân bằng (54/100). Cung đọc chính: Tài Bạch (Tuất).
+     [mã: SCORE_TAI_CHINH]
+   • Bộ Liêm Phủ đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, nguyên tắc nhưng biết giữ của, ổn định.
+     [mã: COMBO_LIEM_TRINH_THIEN_PHU@TAI_BACH]
+   • Năm 2026 — tài chính năm 2026: cần thận trọng (41/100). Áp lực chủ yếu đến từ tiểu hạn (cung Tài Bạch của tiểu hạn tại Tý, trên cung gốc Phu Thê).
+     [mã: SCORE_TAI_CHINH]
+   • Theo tiểu hạn, cung Tài Bạch của năm rơi vào Tý (cung gốc Phu Thê). Tham Lang hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ ham vui, nhiều ham muốn vật chất và tình cảm; cần kỷ luật chi tiêu.
+     [mã: LUU_CUNG_TIEU_HAN_TAI_BACH, star.THAM_LANG.H.TAI_BACH]
+   • Năm 2026 (Bính Ngọ), Hóa Kỵ lưu vào cung Tài Bạch: lĩnh vực này dễ chậm trễ, vướng giấy tờ; nên thận trọng và giữ chứng từ.
+     [mã: VH_KY_LUU_TAI_QUAN]
+   • Năm 2026 chưa thấy tầng vận nào cùng chỉ về tài lộc, dòng tiền cải thiện; điểm tài chính cả năm 41/100.
+     [mã: EVENT_DUOC_TAI_KHONG]
+   ✓ Nên: Lập quỹ dự phòng, chia nhỏ khoản đầu tư.
+   ✓ Không nên: Mở rộng nóng, vay mượn lớn để tăng quy mô.
+   ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Năm nào thuận cho tài lộc? | Tháng nào năm 2026 thuận cho tài chính? | Năm 2027 tài chính thế nào?
+
+
+══════ Khi nào thuận ══════
+
+16. HỎI: Khi nào tôi lấy vợ?
+   App hiểu là: Năm thuận cho chuyện tình cảm, cưới hỏi · dò 2026–2036
+   • 2026 (Bính Ngọ, 37 tuổi): tình cảm, cưới hỏi khả năng cao (3 tầng cùng chỉ: lưu niên, tiểu hạn, Lưu Thái Tuế); điểm tình duyên 49/100.
+     [mã: EVENT_CUOI_HOI, QA_YEAR_2026]
+   • 2035 (Ất Mão, 46 tuổi): tình cảm, cưới hỏi có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tình duyên 46/100.
+     [mã: EVENT_CUOI_HOI, QA_YEAR_2035]
+   • 2033 (Quý Sửu, 44 tuổi): tình cảm, cưới hỏi mới là dấu hiệu (1 tầng cùng chỉ: Lưu Thái Tuế); điểm tình duyên 54/100.
+     [mã: EVENT_CUOI_HOI, QA_YEAR_2033]
+   • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
+     [mã: QA_NOTE_KHA_NANG]
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Năm 2026 tình duyên thế nào? | Tháng nào năm 2026 thuận cho tình duyên? | Đồng thanh tương ứng là gì?
+
+17. HỎI: bao gio toi giau
+   App hiểu là: Năm thuận cho tài lộc, dòng tiền cải thiện · dò 2026–2036
+   • 2034 (Giáp Dần, 45 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tài chính 57/100.
+     [mã: EVENT_DUOC_TAI, QA_YEAR_2034]
+   • 2030 (Canh Tuất, 41 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, tiểu hạn); điểm tài chính 43/100.
+     [mã: EVENT_DUOC_TAI, QA_YEAR_2030]
+   • 2031 (Tân Hợi, 42 tuổi): tài lộc mới là dấu hiệu (1 tầng cùng chỉ: tiểu hạn); điểm tài chính 47/100.
+     [mã: EVENT_DUOC_TAI, QA_YEAR_2031]
+   • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
+     [mã: QA_NOTE_KHA_NANG]
+   → Nút: Xem luận năm 2034
+   Hỏi tiếp: Năm 2034 tài chính thế nào? | Tháng nào năm 2034 thuận cho tài chính? | Đồng thanh tương ứng là gì?
+
+18. HỎI: Khi nào tôi mua được nhà?
+   App hiểu là: Năm thuận cho nhà đất · dò 2026–2036
+   • Nhà đất không có điểm riêng theo năm: app xem kèm điểm tài chính cùng giai đoạn (Điền Trạch là cung phụ của tài chính), nên đây là gợi ý gián tiếp.
+     [mã: QA_NOTE_NHA_DAT]
+   • 2034 (Giáp Dần, 45 tuổi): điểm tài chính 57/100, điểm cả năm 51/100.
+     [mã: QA_YEAR_2034]
+   • 2035 (Ất Mão, 46 tuổi): điểm tài chính 53/100, điểm cả năm 48/100.
+     [mã: QA_YEAR_2035]
+   • 2036 (Bính Thìn, 47 tuổi): điểm tài chính 50/100, điểm cả năm 52/100.
+     [mã: QA_YEAR_2036]
+   • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
+     [mã: QA_NOTE_KHA_NANG]
+   → Nút: Xem luận năm 2034
+   Hỏi tiếp: Năm 2034 tài chính thế nào? | Tháng nào năm 2034 thuận cho tài chính? | Đồng thanh tương ứng là gì?
+
+19. HỎI: Năm nào nên chú ý sức khỏe?
+   App hiểu là: Những năm nên thận trọng về sức khỏe · dò 2026–2036
+   • 2033 (Quý Sửu, 44 tuổi): điểm sức khỏe 40/100, điểm cả năm 48/100.
+     [mã: QA_YEAR_2033]
+   • 2034 (Giáp Dần, 45 tuổi): điểm sức khỏe 42/100, điểm cả năm 51/100.
+     [mã: QA_YEAR_2034]
+   • 2026 (Bính Ngọ, 37 tuổi): điểm sức khỏe 43/100, điểm cả năm 48/100.
+     [mã: QA_YEAR_2026]
+   • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
+     [mã: QA_NOTE_KHA_NANG]
+   → Nút: Xem luận năm 2033
+   Hỏi tiếp: Năm 2033 sức khỏe thế nào? | Tháng nào năm 2033 nên chú ý sức khỏe? | Tôi nên lưu ý gì năm 2033?
+
+20. HỎI: Tháng nào năm sau tốt để cưới?
+   App hiểu là: Tháng thuận năm 2027 · tình duyên, hôn nhân · điểm 49/100, thế Thủ
+   • Năm 2027, tháng thuận nhất (âm lịch): 7 (55), 11 (55), 10 (54); nên thận trọng: 9 (41), 12 (42).
+     [mã: MONTHS_NAM]
+   • Tháng nguyệt hạn vào cung Phu Thê (chủ đề tình duyên, hôn nhân được chú ý hơn): tháng 8 (44).
+     [mã: NGUYET_HAN_CHU_DE]
+   • Cả năm — tình duyên, hôn nhân năm 2027: cân bằng (50/100).
+     [mã: SCORE_TINH_DUYEN]
+   • Năm 2027 (Đinh Mùi), một tầng vận hạn chỉ về chuyện tình cảm, cưới hỏi: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.
+     [mã: CD_HAN_HY_TINH_DUYEN, EVENT_CUOI_HOI]
+   • Điểm tháng là điểm chung của tháng (năm, nguyệt hạn, Tứ Hóa tháng); tháng có nguyệt hạn vào cung của chủ đề thì chủ đề đó được chú ý nhiều hơn.
+     [mã: QA_NOTE_THANG_TONG]
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   → Nút: Xem luận năm 2027 (12 tháng)
+   Hỏi tiếp: Tháng 7 âm năm 2027 thế nào? | Ngày nào trong tháng này tốt? | Năm 2028 thế nào?
+
+21. HỎI: Ngày nào trong tháng này tốt để khai trương?
+   App hiểu là: Ngày thuận trong tháng 11/2026 (dương lịch)
+   • Điểm ngày dưới đây tính theo lá số của bạn (tháng, nhật hạn, can chi ngày so với tuổi), không phải chọn ngày theo Ngọc Hạp; độ tin cậy thấp hơn tầng năm.
+     [mã: QA_CHUYEN_CHON_NGAY]
+   • Tháng 11/2026 (dương lịch), những ngày điểm cao nhất: 23/11 (thứ Hai, âm 15/10): 50; 29/11 (Chủ Nhật, âm 21/10): 50; 30/11 (thứ Hai, âm 22/10): 48; 26/11 (thứ Năm, âm 18/10): 47; 28/11 (thứ Bảy, âm 20/10): 47.
+     [mã: QA_DAYS_GOOD]
+   • Ngày nên thận trọng hơn: 21/11 (thứ Bảy, âm 13/10): 42; 24/11 (thứ Ba, âm 16/10): 42; 25/11 (thứ Tư, âm 17/10): 45.
+     [mã: QA_DAYS_BAD]
+   → Nút: Xem lịch ngày
+   Hỏi tiếp: Ngày 23/11/2026 thế nào? | Tháng này thế nào? | Ngày mai thế nào?
+
+
+══════ Nên / Không nên ══════
+
+22. HỎI: Tôi nên lưu ý gì năm 2027?
+   App hiểu là: Nên / Không nên · năm 2027 · điểm 49/100, thế Thủ
+   • Tổng quan năm 2027 (Đinh Mùi): cân bằng (49/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NAM]
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Nếu có kế hoạch sinh con: chăm sóc thai kỳ kỹ, khám định kỳ theo hướng dẫn của bác sĩ.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
+   ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
+   → Nút: Xem luận năm 2027
+   Hỏi tiếp: Tháng nào năm 2027 thuận nhất? | Năm 2028 của tôi thế nào? | Thế Tấn, Giữ, Thủ, Lùi là gì?
+
+23. HỎI: Lời khuyên về tài chính năm sau
+   App hiểu là: Nên / Không nên · tài chính · năm 2027 · điểm 49/100, thế Thủ
+   • Tổng quan năm 2027 (Đinh Mùi): cân bằng (49/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
+     [mã: SCORE_NAM]
+   • Tài chính năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tài Bạch của đại hạn tại Sửu, trên cung gốc Huynh Đệ).
+     [mã: SCORE_TAI_CHINH]
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Nếu có kế hoạch sinh con: chăm sóc thai kỳ kỹ, khám định kỳ theo hướng dẫn của bác sĩ.
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
+   ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
+   → Nút: Xem luận năm 2027
+   Hỏi tiếp: Tháng nào năm 2027 thuận cho tài chính? | Năm 2028 của tôi thế nào? | Thế Tấn, Giữ, Thủ, Lùi là gì?
+
+
+══════ Dữ kiện lá số, giải nghĩa ══════
+
+24. HỎI: Cung Mệnh của tôi có sao gì?
+   App hiểu là: Dữ kiện lá số: cung Mệnh
+   • Cung Mệnh của bạn ở Dần (Mậu Dần). Chính tinh: Vũ Khúc (Vượng), Thiên Tướng (Miếu). Tứ Hóa gốc tại Mệnh: Hóa Quyền. Thân cư Phu Thê (Tý).
+     [mã: FACT_MENH]
+   • Bộ Vũ Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, thực tế, có trách nhiệm, hợp quản lý tài chính.
+     [mã: COMBO_VU_KHUC_THIEN_TUONG@MENH]
+   → Nút: Xem luận trọn đời
+   Hỏi tiếp: Tính cách của tôi thế nào? | Thân cư Phu Thê nghĩa là gì? | Sao Vũ Khúc nghĩa là gì?
+
+25. HỎI: Tôi mệnh gì?
+   App hiểu là: Dữ kiện lá số: bản mệnh, Cục
+   • Bản mệnh của bạn là Lộ Bàng Thổ (hành Thổ), năm sinh Canh Ngọ. Lá số thuộc Thổ ngũ cục; Cục Mệnh đồng hành — bình ổn.
+     [mã: FACT_CUC]
+   • Bản mệnh là nạp âm của can chi năm sinh (ví dụ Lộ Bàng Thổ, Hải Trung Kim), thuộc một trong năm hành. Tử Vi dùng bản mệnh để xét quan hệ với Cục và với hành của cung, sao.
+     [mã: QA_DEF_BAN_MENH]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Đại vận hiện tại của tôi thế nào?
+
+26. HỎI: Thân cư ở đâu?
+   App hiểu là: Dữ kiện lá số: cung Thân
+   • Thân của bạn cư Phu Thê tại Tý: chính tinh Tham Lang (Hãm).
+     [mã: FACT_THAN]
+   • Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.
+     [mã: TS_THAN_CU_PHU_THE]
+   • Cung Thân cho biết nơi bạn dồn sức khi trưởng thành và hậu vận. Thân luôn đóng ở một trong sáu cung: Mệnh, Phúc Đức, Quan Lộc, Thiên Di, Tài Bạch, Phu Thê (gọi là Thân cư …); ảnh hưởng của Thân rõ hơn từ khoảng 30 tuổi.
+     [mã: QA_DEF_THAN]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Tính cách của tôi thế nào?
+
+27. HỎI: Đại vận của tôi đang ở cung nào?
+   App hiểu là: Đại vận năm 2026
+   • Năm 2026 bạn đang đi đại vận 35–44 tuổi tại cung Điền Trạch (Tỵ, Tân Tỵ); thiên thời: Tuổi khắc đại hạn — vất vả, phải tự lực nhưng giành được. Điểm 10 năm 48/100, thế Thủ.
+     [mã: FACT_DAI_HAN]
+   → Nút: Xem luận đại vận
+   Hỏi tiếp: Đại vận tới của tôi thế nào? | Năm 2026 công việc của tôi thế nào?
+
+28. HỎI: Sao Vũ Khúc nghĩa là gì?
+   App hiểu là: Thẻ sao Vũ Khúc
+   • Sao Vũ Khúc (Chính tinh) ở cung Mệnh (Dần), độ sáng Vượng. Chòm Bắc Đẩu, Âm Kim, hóa khí Tài Tinh — Quả quyết, tài lộc, cô quả, tài chính ngân hàng. Tứ Hóa gốc: Hóa Quyền (can năm Canh).
+     [mã: FACT_SAO_VU_KHUC]
+   • Vũ Khúc vượng địa tại cung Mệnh: về tính cách và xu hướng hành động, sao phát huy mạnh: quả cảm, cương nghị, thực tế, kỷ luật cao, giỏi tài chính.
+     [mã: star.VU_KHUC.V.MENH]
+   • Cách cục liên quan: Phản vi kỳ cách: Thiên Hình đắc địa — Thiên Hình đắc địa thủ Mệnh cùng chính tinh võ hoặc Thiên Lương: quyền uy về pháp luật, y khoa, kỷ luật.
+     [mã: PV_THIEN_HINH_DAC_DIA]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Năm 2026 công việc của tôi thế nào? | Độ sáng của sao là gì?
+
+29. HỎI: Tuần Triệt là gì?
+   App hiểu là: Giải nghĩa: Tuần, Triệt
+   • Tuần (Tuần Không) án ngữ hai cung liền nhau, tính theo can chi năm sinh. Tuần làm giảm lực của sao trong hai cung: cung tốt bớt tốt, cung xấu bớt xấu. Theo quan niệm phổ biến, Tuần tác động rõ hơn ở nửa sau cuộc đời.
+     [mã: QA_DEF_TUAN]
+   • Trong lá số của bạn: Tuần ở Tuất–Hợi (cung Tài Bạch, Tử Tức); Triệt ở Ngọ–Mùi (cung Quan Lộc, Nô Bộc).
+     [mã: FACT_TUAN_TRIET]
+   • Triệt (Triệt Lộ) án ngữ hai cung liền nhau, tính theo can năm sinh. Triệt chặn mạnh: cung tốt khó phát, cung xấu lại được giải. Theo quan niệm phổ biến, Triệt tác động mạnh ở nửa đầu cuộc đời.
+     [mã: QA_DEF_TRIET]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Năm 2026 công việc của tôi thế nào? | Đồng thanh tương ứng là gì?
+
+30. HỎI: Hóa Kỵ là gì?
+   App hiểu là: Giải nghĩa: Hóa Kỵ
+   • Hóa Kỵ chủ vướng mắc, trắc trở, thị phi ở việc mà sao mang hóa đại diện. Gặp Hóa Kỵ chỉ là lời nhắc nên làm kỹ, chậm, rõ ràng hơn ở lĩnh vực đó.
+     [mã: QA_DEF_HOA_KY]
+   • Hóa Kỵ gốc của bạn ở cung Huynh Đệ (Sửu).
+     [mã: FACT_HOA_KY]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Năm 2026 công việc của tôi thế nào? | Đồng thanh tương ứng là gì?
+
+31. HỎI: Đồng thanh tương ứng là gì?
+   App hiểu là: Giải nghĩa: đồng thanh tương ứng
+   • Đồng thanh tương ứng: một sự kiện chỉ được nói mạnh khi nhiều tầng vận (đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế) cùng chỉ về một hướng. App ghi: từ 3 tầng là khả năng cao, 2 tầng là có thể, 1 tầng mới là dấu hiệu.
+     [mã: QA_DEF_DONG_THANH]
+   Hỏi tiếp: Cung Mệnh của tôi có sao gì? | Năm 2026 công việc của tôi thế nào? | Đồng thanh tương ứng là gì?
+
+
+══════ Người thân, chuyện nhạy cảm (app chuyển hướng, không phán) ══════
+
+32. HỎI: Con tôi học hành thế nào?
+   App hiểu là: Gia đạo · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
+   • Lá số đang mở là của bạn, nên chuyện của người thân chỉ đọc gián tiếp qua cung tương ứng (Phu Thê cho vợ chồng, Tử Tức cho con cái, Phụ Mẫu cho cha mẹ, Huynh Đệ cho anh chị em), tức là mối quan hệ của bạn với họ. Muốn xem vận riêng của người đó, hãy thêm ngày giờ sinh của họ vào hồ sơ.
+     [mã: QA_CHUYEN_NGUOI_THAN]
+   • Lá số gốc — gia đạo: cân bằng (52/100). Cung đọc chính: Phụ Mẫu (Mão), Huynh Đệ (Sửu), Tử Tức (Hợi).
+     [mã: SCORE_GIA_DAO]
+   • Bộ Nhật Lương đồng cung tại cung Phụ Mẫu: cha mẹ mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.
+     [mã: COMBO_THAI_DUONG_THIEN_LUONG@PHU_MAU]
+   • Năm 2026 — gia đạo năm 2026: cân bằng (49/100).
+     [mã: SCORE_GIA_DAO]
+   • Theo tiểu hạn, cung Phụ Mẫu của năm rơi vào Tỵ (cung gốc Điền Trạch). Thiên Cơ vượng địa tại cung Phụ Mẫu: cha mẹ thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.
+     [mã: LUU_CUNG_TIEU_HAN_PHU_MAU, star.THIEN_CO.V.PHU_MAU]
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Tháng nào năm 2026 thuận cho gia đạo? | Năm 2027 gia đạo thế nào?
+
+33. HỎI: Vợ tôi có ngoại tình không?
+   App hiểu là: Tình duyên, hôn nhân · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
+   • App không phán chuyện tan vỡ hay chia lìa. Dưới đây là phần luận tình duyên, hôn nhân để bạn biết lúc nào nên vun đắp, lắng nghe nhiều hơn.
+     [mã: QA_CHUYEN_HON_NHAN]
+   • Lá số gốc — tình duyên, hôn nhân: nhiều thử thách (31/100). Cung đọc chính: Phu Thê (Tý).
+     [mã: SCORE_TINH_DUYEN]
+   • Tham Lang hãm địa tại cung Phu Thê: người bạn đời có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.
+     [mã: STAR_THAM_LANG_H@PHU_THE]
+   • Năm 2026 — tình duyên, hôn nhân năm 2026: cân bằng (49/100).
+     [mã: SCORE_TINH_DUYEN]
+   • Năm 2026 (Bính Ngọ), từ ba tầng vận hạn trở lên cùng chỉ về chuyện tình cảm, cưới hỏi: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.
+     [mã: CD_HAN_HY_CUOI_HOI, EVENT_CUOI_HOI]
+   • Theo tiểu hạn, cung Phu Thê của năm rơi vào Dần (cung gốc Mệnh). Bộ Vũ Tướng đồng cung tại cung Phu Thê: người bạn đời mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.
+     [mã: LUU_CUNG_TIEU_HAN_PHU_THE, combo.VU_KHUC_THIEN_TUONG.PHU_THE]
+   ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
+   ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
+   ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Tháng nào năm 2026 thuận cho tình duyên? | Năm 2027 tình duyên thế nào?
+
+34. HỎI: Năm nay có bị bệnh gì không
+   App hiểu là: Sức khỏe (lưu ý) · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 48/100, thế Thủ
+   • App không chẩn đoán bệnh. Phần sức khỏe chỉ là gợi ý giai đoạn nên chăm sóc bản thân kỹ hơn; khi có triệu chứng, hãy đi khám bác sĩ.
+     [mã: QA_CHUYEN_BENH]
+   • Sức khỏe (lưu ý) năm 2026: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tật Ách của đại hạn tại Tý, trên cung gốc Phu Thê).
+     [mã: SCORE_SUC_KHOE]
+   • Dù có điểm thuận (Thái Âm miếu tại Tật Ách của năm), tổng thể vẫn nghiêng về thận trọng vì điểm tổng hợp 43/100 thấp hơn mức trung bình.
+     [mã: LUU_CUNG_TIEU_HAN_TAT_ACH, star.THAI_AM.M.TAT_ACH]
+   • Phần sức khỏe chỉ là gợi ý để chú ý chăm sóc bản thân, không thay cho thăm khám của bác sĩ.
+     [mã: note.suc_khoe]
+   • Năm 2026 chưa thấy tầng vận nào cùng chỉ về cần chăm sóc sức khỏe, an toàn kỹ hơn; điểm sức khỏe (lưu ý) cả năm 43/100.
+     [mã: EVENT_SUC_KHOE_KHONG]
+   ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
+   ✓ Lưu ý: Để ý giấc ngủ, ăn uống, vận động; đi khám khi có dấu hiệu bất thường kéo dài.
+   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
+   → Nút: Xem luận năm 2026
+   Hỏi tiếp: Tháng nào năm 2026 thuận cho sức khỏe? | Năm 2027 sức khỏe thế nào? | Tôi nên lưu ý gì năm 2026?
+
+35. HỎI: Tôi và vợ có hợp tuổi không?
+   App hiểu là: Xem hợp nhau → So hai lá số
+   • Xem tuổi hợp, tam tai, kim lâu nằm ngoài phạm vi bản này. App có mục So hai lá số theo cẩm nang (truyền cung, truyền tinh) khi bạn đã lưu lá số của cả hai người.
+     [mã: QA_CHUYEN_HOP_TUOI]
+   Hỏi tiếp: Tình duyên của tôi thế nào? | Năm nay gia đạo thế nào? | Truyền cung là gì?
+
+
+══════ Ngoài phạm vi và hỗ trợ ══════
+
+36. HỎI: Bao giờ tôi chết?
+   App hiểu là: Ngoài phạm vi trả lời của app
+   • App không bàn chuyện sống được bao lâu hay thời điểm mất của ai. Mình có thể chỉ ra những giai đoạn nên chăm sóc sức khỏe kỹ hơn để bạn chủ động.
+     [mã: QA_TU_CHOI_SONG_LAU]
+   Hỏi tiếp: Năm 2026 sức khỏe cần lưu ý gì? | Năm nào nên chăm sóc sức khỏe kỹ hơn?
+
+37. HỎI: Sinh con trai hay con gái?
+   App hiểu là: Ngoài phạm vi trả lời của app
+   • App không đoán bé là trai hay gái. Pháp luật Việt Nam cấm phổ biến các cách chọn lựa giới tính em bé, nên tính năng này không có trong app. Mình có thể xem chuyện con cái, gia đạo trong lá số của bạn.
+     [mã: QA_TU_CHOI_EM_BE]
+   Hỏi tiếp: Năm nào thuận cho chuyện con cái? | Năm 2026 gia đạo thế nào?
+
+38. HỎI: Cho tôi con số may mắn
+   App hiểu là: Ngoài phạm vi trả lời của app
+   • Tử Vi không dùng để đoán con số, xổ số hay kết quả cá cược, nên mình không trả lời phần này. Bạn có thể hỏi về tài chính, cách giữ tiền trong năm.
+     [mã: QA_TU_CHOI_SO]
+   Hỏi tiếp: Năm 2026 tài chính thế nào? | Tôi nên giữ tiền thế nào năm 2026?
+
+39. HỎI: Có nên cúng sao giải hạn không?
+   App hiểu là: Ngoài phạm vi trả lời của app
+   • App không khuyên các dịch vụ hóa giải vận hạn có thu phí. Theo tinh thần “đức năng thắng số”, cách chủ động nhất là sống điều độ, cẩn trọng ở giai đoạn khó và làm việc thiện.
+     [mã: QA_TU_CHOI_DICH_VU]
+   Hỏi tiếp: Năm 2026 công việc của tôi thế nào? | Năm nào thuận cho chuyện cưới hỏi? | Tôi nên lưu ý gì năm 2026? | Tháng nào năm nay thuận nhất?
+
+40. HỎI: Thời tiết hôm nay thế nào
+   App hiểu là: Ngoài phạm vi trả lời của app
+   • Câu này nằm ngoài Tử Vi nên mình không trả lời được. Bạn có thể hỏi về tính cách, công việc, tài chính, tình duyên, gia đạo, sức khỏe, đi xa, nhà đất… theo năm, tháng, ngày hoặc trọn đời.
+     [mã: QA_TU_CHOI_NGOAI]
+   Hỏi tiếp: Năm 2026 công việc của tôi thế nào? | Năm nào thuận cho chuyện cưới hỏi? | Tôi nên lưu ý gì năm 2026? | Tháng nào năm nay thuận nhất?
+
+41. HỎI: Tôi muốn chết
+   App hiểu là: Mình nghe thấy bạn đang rất khó khăn
+   • Mình rất tiếc vì bạn đang phải trải qua lúc khó khăn như vậy. Lúc này điều quan trọng nhất là bạn được an toàn và có người ở bên. Hãy gọi ngay cho một người thân hoặc bạn bè tin cậy. Nếu bạn đang gặp nguy hiểm, gọi cấp cứu 115. Bạn có thể gọi Đường dây nóng Ngày Mai 096 306 1414 (hỗ trợ tâm lý miễn phí, thường 13:00–20:30 từ thứ Tư đến Chủ Nhật). Trẻ em và người dưới 16 tuổi có thể gọi Tổng đài 111 (miễn phí, cả ngày đêm). Bạn không phải một mình đối mặt với chuyện này.
+     [mã: QA_KHUNG_HOANG]

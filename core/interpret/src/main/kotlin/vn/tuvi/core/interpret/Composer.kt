@@ -519,6 +519,15 @@ class Composer(private val kb: KnowledgeBase) {
     /** Điểm tổng của một năm âm (không ghép câu). */
     fun yearScore(chart: Chart, lunarYear: Int, expert: Boolean = false): Int = YearCore(chart, lunarYear, expert).overallPair.first
 
+    /** Tóm tắt một năm (điểm tổng, điểm từng chủ đề, sự kiện đồng thanh) — để hỏi đáp dò “năm nào…” mà không ghép câu. */
+    fun yearDigest(chart: Chart, lunarYear: Int, expert: Boolean = false): YearDigest {
+        val c = YearCore(chart, lunarYear, expert)
+        return YearDigest(
+            lunarYear, c.overallPair.first, c.topics.mapValues { it.value.score },
+            c.hits.map { h -> YearEvent(h.event, h.level, h.layers.sortedBy { it.ordinal }) }, c.limits.tuoiAm, c.child,
+        )
+    }
+
     fun year(chart: Chart, lunarYear: Int, expert: Boolean = false): Reading {
         val core = YearCore(chart, lunarYear, expert)
         val limits = core.limits

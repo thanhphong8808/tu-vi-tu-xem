@@ -439,3 +439,92 @@ Thân chủ tuổi Tý.
 - **Cổng ảnh chụp**: 10 ảnh chuẩn trong `tools/apk/uitest/baseline`, so từng điểm ảnh, lệch tối đa 0,5%.
 - **Hiệu năng ngay trên máy**: `AppApi.bench`, selftest ghi dòng BENCH. Ngưỡng máy ảo: lá số < 25 ms, năm < 250 ms,
   30 ngày < 1 500 ms. Chỉ tiêu S22 ở mục 3 là 5 / 50 / 300 ms.
+
+## Giai đoạn 6 — Hỏi đáp
+
+### D-49 · Hỏi đáp chạy bằng luật trên máy; model AI để sau
+Mục 12.1 chọn Gemma 4 E2B chạy qua LiteRT-LM. Bản này chưa đóng được phần đó:
+- Thư viện `com.google.ai.edge.litertlm:litertlm-android` chỉ có trên Google Maven (`dl.google.com`). Môi trường build
+  của bản này chặn tên miền đó và cả `repo1.maven.org`, nên không lấy được AAR để đóng vào APK.
+- Model khoảng 2,6 GB (tải từ huggingface.co), phải chấm bộ 40 câu trên chính S22 Ultra (mục 12.1) trước khi chốt.
+
+Vì vậy giai đoạn 6 làm trước con đường dự phòng mà mục 12.2 đã định: phân loại câu hỏi bằng bộ từ khóa, trả lời bằng
+chính các đoạn luận của engine (bước 5: “trượt → hiển thị đoạn rule-based”). Lớp này giữ lại khi gắn model:
+- model chỉ thay bước diễn đạt;
+- câu nào model viết sai kiểm tra 12.3 thì quay về đúng câu trả lời này.
+
+Ưu điểm hiện tại:
+- APK vẫn khoảng 1,5 MB, không xin quyền Internet;
+- trả lời trong khoảng 0,1–0,2 giây;
+- câu nào cũng có mã luật và “Vì sao?”.
+
+### D-50 · Hiểu câu hỏi (`QaEngine.parse`)
+- **Chuẩn hóa.** Chuyển chữ thường, bỏ dấu, đ → d. Câu có dấu và không dấu hiểu như nhau. Có 4 chỗ dấu quyết định nghĩa
+  và được giữ riêng:
+  - Tý / Tỵ;
+  - “tháng sáu”;
+  - “còn tôi”, “chỉ tôi”, “bỏ tôi” (không phải “con tôi”, “chị tôi”, “bố tôi”);
+  - “cưới” (không phải “cuối”).
+- **Thứ tự xét.** Câu trống → khủng hoảng → từ chối → ngoài phạm vi → dữ kiện lá số → giải nghĩa → hợp tuổi → khi nào
+  (dò năm/tháng/ngày) → chọn ngày → nên/không nên → luận theo chủ đề và thời gian → chào hỏi.
+- **Chủ đề và sự kiện.** Theo bảng mục 9: 10 chủ đề và 9 sự kiện đồng thanh. Chọn cái xuất hiện trước trong câu.
+- **Thời gian (âm lịch là chính).**
+  - Năm: số, năm nay/sau/ngoái, N năm nữa, can chi, tuổi âm.
+  - Tháng: tháng N, tháng này/sau/trước, giêng, chạp, dương lịch.
+  - Ngày: dd/mm, mùng N, rằm, Tết, hôm nay/mai/kia, thứ N (tuần sau).
+  - Tuần này, tuần sau, cuối tuần.
+  - Đại vận: này/tới/trước, “10 năm tới”; tiền/trung/hậu vận.
+  - Năm sinh, ngày sinh nhắc trong câu không bị hiểu là thời gian hỏi.
+  - Không nêu năm mà tháng hoặc ngày đã qua thì hiểu là lần tới. Ví dụ hỏi “tháng 7” vào tháng 10 âm là tháng 7 năm sau.
+- **Chủ đề không có điểm theo năm.**
+  - Tính cách, phúc đức chỉ đọc ở lá số gốc.
+  - Nhà đất xem kèm điểm tài chính cùng giai đoạn (Điền Trạch là cung phụ của tài chính) và luôn ghi rõ là gián tiếp
+    (`qa.note.nha_dat`).
+- **Hỏi theo hướng cần thận trọng** (“năm nào nên chú ý sức khỏe”): xếp từ điểm thấp lên.
+- **Hỏi về người thân** (“con tôi”, “mẹ tôi”): lá số đang mở là của người hỏi, nên chỉ đọc qua cung tương ứng và nói
+  rõ điều đó (`qa.chuyen.nguoi_than`). Muốn xem lá số riêng của người khác thì app từ chối và hướng sang thêm hồ sơ.
+
+### D-51 · Trả lời (`QaEngine.answer`)
+Không tự viết câu luận mới. Mỗi câu trả lời chỉ lấy:
+- đoạn của `Composer` (trọn đời, đại vận, năm, tháng, ngày), giữ nguyên ruleIds và “Vì sao?”;
+- điểm, thế, khuyến nghị của đúng bản luận đó;
+- lời của app trong `texts/hoidap.json` (khóa `qa.*`): giải nghĩa 35 thuật ngữ, từ chối, chuyển hướng, ghi chú.
+
+Các dạng câu trả lời:
+- **Luận:** dòng “App hiểu là …”, điểm, thế, các đoạn của chủ đề (tối đa 12 đoạn), Nên/Không nên, nút “Xem luận …”
+  mở bản luận đầy đủ, 2–3 câu hỏi tiếp.
+- **Khi nào thuận:** dò 11 năm.
+  - Có sự kiện: xếp theo mức đồng thanh (khả năng cao / có thể / mới là dấu hiệu), sau đó theo điểm chủ đề. Nhãn tầng
+    rút gọn.
+  - Không có sự kiện, hoặc không năm nào có đồng thanh: xếp theo điểm chủ đề.
+  - Luôn kèm `qa.note.kha_nang`: đây là khả năng, không phải lời khẳng định.
+  - Dò tháng: điểm 12 tháng và tháng nguyệt hạn vào cung của chủ đề. Dò ngày: điểm ngày trong tháng hoặc tuần.
+- **Dữ kiện:** câu tính từ lá số, ví dụ cung Mệnh có sao gì, Thân cư đâu, mệnh/cục, mệnh chủ, tuổi âm, đại vận, tiểu
+  hạn, ngày âm hôm nay.
+- **Giải nghĩa:** định nghĩa, kèm vị trí trên lá số của người hỏi nếu có. Hỏi một sao thì trả về thẻ sao (D-43).
+- **Lá số dưới 16 tuổi âm** (D-39): chỉ trả lời học tập, sức khỏe, gia đình, tính cách, đi lại. Không dò năm cho cưới
+  hỏi, tiền bạc, pháp lý.
+- **Ngoài phạm vi / từ chối:**
+  - không dùng cho: tuổi thọ, thời điểm mất, giới tính thai nhi, xổ số và cá cược, dịch vụ giải hạn có thu phí, lá số
+    của người khác, câu ngoài Tử Vi;
+  - chuyển hướng, vẫn trả lời phần luận phù hợp: ly hôn, ngoại tình, bệnh, tù tội, tai nạn, chọn ngày theo Ngọc Hạp,
+    hợp tuổi (hướng sang So hai lá số).
+
+### D-52 · Khủng hoảng tinh thần
+Câu có dấu hiệu ý định tự hại được xét trước mọi thứ khác, kể cả khi câu có chủ đề hay năm. App không chạy phần luận,
+không chấm điểm, không có nút đánh giá, không lưu câu hỏi. App chỉ hiện lời động viên với:
+- cấp cứu 115;
+- đường dây nóng Ngày Mai 096 306 1414, hỗ trợ tâm lý miễn phí, thường 13:00–20:30 từ thứ Tư đến Chủ Nhật;
+- Tổng đài 111 cho trẻ em và người dưới 16 tuổi, miễn phí, 24/7.
+
+Số đã đối chiếu với nguồn chính thức tháng 11/2026. Lời này nằm trong KB (`qa.khung_hoang`), sửa không cần build lại mã.
+
+### D-53 · Lịch sử câu hỏi trên máy; đồng bộ Firebase chưa bật
+- Mỗi câu hỏi đi qua `QaPrivacy.anonymize` trước khi lưu. Bộ lọc bỏ email, số điện thoại, ngày tháng, giờ, phần sau
+  “sinh …”, họ tên sau “tôi tên / tên tôi là …”, số nhà. Câu còn dãy số dài hoặc @ thì `isSafe = false`.
+- Lịch sử nằm trong SharedPreferences (khóa `qaLog`, tối đa 200 câu). Mỗi bản ghi gồm câu đã ẩn danh, dạng chuẩn hóa để
+  so trùng, ý định, chủ đề, phạm vi, số lần hỏi, 👍/👎, thời điểm.
+- Lịch sử dùng cho chip “Hay hỏi” (câu hỏi từ hai lần, không có phần bị ẩn). Cài đặt có nút xóa toàn bộ.
+- Đồng bộ Firestore (mục 12.6) cần dự án Firebase của chủ app (`google-services.json`, Security Rules, App Check). Bản
+  này chưa có nên chưa gửi gì đi, app vẫn không xin quyền Internet. Dữ liệu đã sẵn đúng các trường mục 12.6, nên khi có
+  dự án chỉ cần thêm lớp gửi và công tắc đồng ý.

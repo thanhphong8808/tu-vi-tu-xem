@@ -57,6 +57,12 @@ data class StarCard(
     val meta: MainMeta?, val natalHoa: List<String>, val meaning: List<Paragraph>, val patterns: List<Why>,
 )
 
+/** Sự kiện đồng thanh của một năm: mức khả năng và các tầng cùng chỉ (mục 9). */
+data class YearEvent(val event: Event, val level: Likelihood, val layers: List<Layer>)
+
+/** Tóm tắt một năm cho hỏi đáp: điểm tổng, điểm 7 chủ đề, sự kiện; [child] = dưới 16 tuổi âm (D-39). */
+data class YearDigest(val lunarYear: Int, val score: Int, val topics: Map<Topic, Int>, val events: List<YearEvent>, val tuoiAm: Int, val child: Boolean)
+
 /** Một ô trên dòng thời gian 12 đại vận. */
 data class DecadeItem(
     val index: Int, val from: Int, val to: Int, val chi: Chi, val role: String, val canChi: String, val score: Int, val stance: Stance,

@@ -5,6 +5,8 @@ Tuần, Triệt, Mệnh, Thân, Cục, tuổi đại hạn, đại hạn/tiểu 
 cộng các luồng: nhập âm lịch, canh giờ, không rõ giờ, lá số thay thế, lưu/mở/xóa hồ sơ, đổi trường phái, đổi năm.
 Giai đoạn 3: thẻ “Cách cục & dấu hiệu”, dấu hiệu năm, luận giải từng cung, “Vì sao?”, chế độ chuyên sâu, không lọt từ cấm.
 Giai đoạn 4: màn Luận giải (trọn đời, đại vận, năm, tháng): điểm, thế, chủ đề, 12 cung, 12 đại vận, heat-map tháng, Nên/Không nên.
+Giai đoạn 6: Hỏi đáp (thẻ trên lá số, tab Hỏi đáp; câu có dấu/không dấu; “App hiểu là”, điểm, “Vì sao?”, Nên/Không nên,
+hỏi tiếp, mở bản luận đầy đủ, 👍/👎, lời hỗ trợ khi khủng hoảng, từ chối, So hai lá số; “Hay hỏi” và xóa lịch sử trong Cài đặt).
 Giai đoạn 5: tab Ngày (lịch tháng, chi tiết ngày, 12 giờ), thẻ sao (chạm, chạm giữ), phóng to lưới (nút, chụm hai ngón),
 so hai lá số, ước đoán giờ theo sự kiện, tùy chỉnh trường phái từng điểm, xuất ảnh PNG / mô hình PDF, hai cột trên máy tính bảng;
 cổng trợ năng (axe-core: không lỗi mức serious/critical; nhãn TalkBack của ô theo thứ tự tên cung, chính tinh, phụ tinh)
@@ -425,6 +427,8 @@ async def main():
 
         # ———————————————— giai đoạn 5 ————————————————
         await phase5(page, browser)
+        # ———————————————— giai đoạn 6 ————————————————
+        await phase6(page, browser)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -690,5 +694,110 @@ async def phase5(page, browser):
     await tp.click('[data-act="open-reading"][data-s="year"]'); await tp.wait_for_selector('.rsum')
     await axe_check(tp, 'máy tính bảng, luận năm')
     await tab.close()
+
+async def qa_ask(page, q):
+    n = await page.locator('.qa-turn').count()
+    await page.fill('#qa-in', q)
+    await page.press('#qa-in', 'Enter')
+    await page.wait_for_function(f"document.querySelectorAll('.qa-turn').length > {n}")
+    return page.locator('.qa-turn').nth(n)
+
+async def phase6(page, browser):
+    print('Giai đoạn 6')
+    all_text = ''
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    card = page.locator('#qa-card')
+    check(await card.count() == 1, 'Lá số phải có thẻ Hỏi đáp')
+    chips = await page.locator('#qa-card [data-act="qa-ask"]').all_inner_texts()
+    check(len(chips) == 3 and chips[0] == 'Năm 2026 công việc của tôi thế nào?', f'Thẻ Hỏi đáp: 3 câu gợi ý theo năm hiện tại: {chips}')
+    # chạm câu gợi ý → sang tab Hỏi đáp và có ngay câu trả lời
+    await page.click('#qa-card [data-act="qa-ask"] >> nth=0')
+    await page.wait_for_selector('.qa-turn')
+    check(await page.locator('.rtabs .chip.on').inner_text() == 'Hỏi đáp', 'Tab Hỏi đáp phải đang chọn')
+    t0 = page.locator('.qa-turn').nth(0)
+    und = await t0.locator('.qa-und').inner_text()
+    check('Sự nghiệp · năm 2026' in und and 'Thế' in und, f'“App hiểu là” phải nêu chủ đề, năm, điểm, thế: {und}')
+    check(await t0.locator('.rp').count() >= 2, 'Câu trả lời phải có các đoạn luận')
+    check(await t0.locator('.qa-adv').count() == 1, 'Câu trả lời luận năm phải có Nên/Không nên')
+    check(await t0.locator('.qa-follow .chip').count() >= 2, 'Phải có câu hỏi tiếp')
+    check('Trả lời ngay trên máy, lá số không rời điện thoại' in await page.inner_text('.qa-intro'), 'Nhãn “trả lời ngay trên máy”')
+    # “Vì sao?”
+    await t0.locator('.rp').nth(0).click()
+    check(await t0.locator('.rp.open').count() == 1 and 'Nguồn' in await t0.locator('.rp.open .rp-why').inner_text(), '“Vì sao?” phải mở căn cứ và nguồn')
+    all_text += await t0.locator('.qb.bot').inner_text()
+    # câu không dấu
+    t1 = await qa_ask(page, 'nam sau tai chinh ra sao')
+    u1 = await t1.locator('.qa-und').inner_text()
+    check('Tài chính · năm 2027' in u1, f'Câu không dấu phải hiểu đúng: {u1}')
+    all_text += await t1.locator('.qb.bot').inner_text()
+    # câu hỏi tiếp
+    f = await t1.locator('.qa-follow .chip').nth(0).inner_text()
+    n = await page.locator('.qa-turn').count()
+    await t1.locator('.qa-follow .chip').nth(0).click()
+    await page.wait_for_function(f"document.querySelectorAll('.qa-turn').length > {n}")
+    check((await page.locator('.qa-turn').nth(n).locator('.qb.me').inner_text()).endswith(f), 'Chạm câu hỏi tiếp phải hỏi đúng câu đó')
+    # khi nào thuận
+    t2 = await qa_ask(page, 'Khi nào tôi lấy vợ?')
+    u2 = await t2.locator('.qa-und').inner_text()
+    tx2 = await t2.locator('.qb.bot').inner_text()
+    check('Năm thuận cho' in u2 and 'tầng cùng chỉ' in tx2 and 'không phải lời khẳng định' in tx2, f'Hỏi “khi nào” phải dò năm theo đồng thanh tương ứng: {u2}')
+    all_text += tx2
+    # đánh giá
+    await t2.locator('[data-act="qa-rate"][data-v="1"]').click()
+    check(await page.locator('.qa-turn').nth(3).locator('[data-act="qa-rate"][data-v="1"]').get_attribute('aria-pressed') == 'true', '👍 phải được ghi nhận')
+    # khủng hoảng
+    t3 = await qa_ask(page, 'Tôi muốn chết')
+    tx3 = await t3.inner_text()
+    check(await t3.locator('.qb.bot.crisis').count() == 1 and '115' in tx3 and '096 306 1414' in tx3 and '111' in tx3,
+          'Câu khủng hoảng phải hiện lời hỗ trợ và số điện thoại')
+    check(await t3.locator('.rp, .sc, [data-act="qa-rate"]').count() == 0, 'Câu khủng hoảng không đi qua phần luận, không chấm điểm, không đánh giá')
+    await t3.scroll_into_view_if_needed()
+    await shot(page, 'p6_qa_crisis')
+    # từ chối, so hai lá số
+    t4 = await qa_ask(page, 'Bao giờ tôi chết?')
+    check('Ngoài phạm vi' in await t4.locator('.qa-und').inner_text() and await t4.locator('.sc').count() == 0, 'Câu hỏi sống chết phải bị từ chối, không chấm điểm')
+    t5 = await qa_ask(page, 'Tôi và vợ có hợp tuổi không?')
+    check(await t5.locator('[data-act="compare"]').count() == 1, 'Câu hợp tuổi phải có nút So hai lá số')
+    t6 = await qa_ask(page, 'Sao Vũ Khúc nghĩa là gì?')
+    check('Thẻ sao Vũ Khúc' in await t6.locator('.qa-und').inner_text() and 'Mệnh' in await t6.inner_text(), 'Hỏi nghĩa sao → thẻ sao trên lá số')
+    for t in (t3, t4, t5, t6): all_text += await t.locator('.qb.bot').inner_text()
+    await axe_check(page, 'hỏi đáp')
+    await page.evaluate("window.scrollTo(0, 0)")
+    await shot(page, 'p6_qa_top')
+    # mở bản luận đầy đủ từ câu trả lời, quay lại vẫn còn hội thoại
+    await page.locator('.qa-turn').nth(1).locator('[data-act="qa-link"]').click()
+    await page.wait_for_selector('.rsum')
+    check(await page.locator('.rtabs .chip.on').inner_text() == 'Năm' and 'Năm 2027' in await page.inner_text('.yv'), 'Nút “Xem luận năm 2027” phải mở luận năm 2027')
+    await page.click('.rtabs [data-s="qa"]')
+    check(await page.locator('.qa-turn').count() == 8, 'Quay lại tab Hỏi đáp phải giữ hội thoại')
+    # “Hay hỏi”: câu hỏi hai lần
+    await qa_ask(page, 'nam sau tai chinh ra sao')
+    await page.evaluate('window.tvBack()')
+    await page.click('[data-act="open-reading"][data-s="year"]'); await page.wait_for_selector('.rsum')
+    await page.click('.rtabs [data-s="qa"]')
+    hay = await page.locator('.qa-sugg:has-text("Hay hỏi") .chip').all_inner_texts()
+    check('nam sau tai chinh ra sao' not in hay, 'Câu đã có trong hội thoại không lặp ở “Hay hỏi”')
+    bad = forbidden_in(all_text)
+    check(not bad and '{' not in all_text, f'Hỏi đáp lọt từ cấm hoặc ô trống: {bad}')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    # Cài đặt: lịch sử hỏi đáp
+    await page.click('[data-act="settings"]')
+    st = await page.inner_text('#qa-set')
+    check('(7 câu)' in st, f'Cài đặt phải đếm câu đã hỏi trên máy (không gồm câu khủng hoảng): {st}')
+    await page.click('[data-act="qa-clear"]'); await page.click('#modal [data-act="modal-ok"]')
+    check('(0 câu)' in await page.inner_text('#qa-set'), 'Xóa lịch sử hỏi đáp')
+    check(api('storeGet', {'key': 'qaLog'}) == [], 'Lịch sử hỏi đáp trong bộ nhớ phải rỗng sau khi xóa')
+    await page.evaluate('window.tvBack()')
+    # tối
+    dark = await browser.new_context(viewport={'width': 412, 'height': 915}, device_scale_factor=2, is_mobile=True, has_touch=True, color_scheme='dark', locale='vi-VN')
+    dp = await dark.new_page()
+    await dp.goto(BASE); await dismiss_modal(dp)
+    await dp.click('.profile:has-text("Ca A")'); await dp.wait_for_selector('#board')
+    await dp.click('#qa-card [data-act="open-reading"]')
+    await qa_ask(dp, 'Tháng sau thế nào?')
+    await dp.evaluate("window.scrollTo(0, 0)")
+    await shot(dp, 'p6_qa_dark')
+    await axe_check(dp, 'hỏi đáp, nền tối')
+    await dark.close()
 
 asyncio.run(main())

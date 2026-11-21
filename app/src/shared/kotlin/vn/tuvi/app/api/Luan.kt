@@ -41,6 +41,49 @@ object Luan {
 
     fun warmUp() { all() }
 
+    @Volatile private var qaEngine: vn.tuvi.core.interpret.QaEngine? = null
+    private fun qa(): vn.tuvi.core.interpret.QaEngine = qaEngine ?: synchronized(this) {
+        qaEngine ?: all().let { vn.tuvi.core.interpret.QaEngine(it.first, it.third) }.also { qaEngine = it }
+    }
+
+    private fun scopeKey(s: vn.tuvi.core.interpret.ReadingScope): String = when (s) {
+        vn.tuvi.core.interpret.ReadingScope.TRON_DOI -> "life"
+        vn.tuvi.core.interpret.ReadingScope.DAI_VAN -> "decade"
+        vn.tuvi.core.interpret.ReadingScope.NAM -> "year"
+        vn.tuvi.core.interpret.ReadingScope.THANG -> "month"
+        vn.tuvi.core.interpret.ReadingScope.NGAY -> "day"
+    }
+
+    /** Hỏi đáp (giai đoạn 6, mục 12): trả lời một câu hỏi trên lá số đang mở. */
+    fun askJson(chart: Chart, question: String, today: java.time.LocalDate, expert: Boolean): JsonObject {
+        val a = qa().answer(chart, question, vn.tuvi.core.interpret.QaContext(today, expert))
+        val p = a.parse
+        return buildJsonObject {
+            put("question", a.question); put("intent", p.intent.name); put("intentVn", p.intent.vn); put("understood", a.understood)
+            val anon = vn.tuvi.core.interpret.QaPrivacy.anonymize(a.question)
+            put("anon", anon); put("anonSafe", vn.tuvi.core.interpret.QaPrivacy.isSafe(anon))
+            put("norm", vn.tuvi.core.interpret.QaEngine.normalize(anon).take(200)); put("topic", p.topics.firstOrNull()?.name); put("event", p.event?.name)
+            put("timeScope", p.time?.scope?.let { scopeKey(it) })
+            put("score", a.score); put("stance", a.stance?.name); put("stanceVn", a.stance?.vn)
+            put("paragraphs", JsonArray(a.paragraphs.map { para(it) }))
+            put("advice", buildJsonArray {
+                for (x in a.advice) add(buildJsonObject { put("key", x.key); put("type", x.type.name); put("topic", x.topic.vn); put("text", x.text); put("because", x.because) })
+            })
+            put("followUps", buildJsonArray { a.followUps.forEach { add(it) } })
+            a.link?.let { l ->
+                put("link", buildJsonObject {
+                    put("scope", scopeKey(l.scope)); put("year", l.lunarYear); put("month", l.month); put("date", l.date?.toString()); put("label", l.label)
+                })
+            }
+            put("closing", a.closing)
+            put("crisis", p.intent == vn.tuvi.core.interpret.QaIntent.CRISIS)
+            put("compare", p.intent == vn.tuvi.core.interpret.QaIntent.COMPARE)
+        }
+    }
+
+    fun qaSuggestJson(chart: Chart, today: java.time.LocalDate): JsonElement =
+        buildJsonArray { qa().suggestions(chart, vn.tuvi.core.interpret.QaContext(today)).forEach { add(it) } }
+
     /** Bản luận một phạm vi: "life" | "decade" | "year" | "month". */
     fun readingJson(chart: Chart, scope: String, lunarYear: Int, month: Int, expert: Boolean, currentLunarYear: Int): JsonObject {
         val c = all().third

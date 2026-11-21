@@ -143,6 +143,32 @@ print(int(wx+x*d), int(wy+y*d))")"
   else
     echo "SHARE_FAIL: selftest không mở bảng chia sẻ"; FAIL=1
   fi
+  # 3c') Hỏi đáp trên màn hình thật (giai đoạn 6): chạm ô nhập, gõ câu không dấu bằng bàn phím, Enter, chụp câu trả lời.
+  if wait_log "QA_INPUT" 45; then
+    Q=$(adb logcat -d -s TuViWeb:V | grep -o "QA_INPUT x=[0-9.]* y=[0-9.]* dpr=[0-9.]*" | tail -1)
+    if [ -n "$WV" ]; then
+      read -r QX QY <<< "$(python3 -c "
+import re
+t='$Q'; wx,wy=map(int,'$WV'.split(','))
+x,y,d=[float(v) for v in re.findall(r'=([0-9.]+)',t)]
+print(int(wx+x*d), int(wy+y*d))")"
+      echo "QA: chạm ô nhập tại ($QX,$QY) — $Q"
+      adb shell input tap "$QX" "$QY"; sleep 2
+      adb shell input text 'nam%ssau%stai%schinh%sra%ssao'; sleep 1
+      adb shell input keyevent KEYCODE_ENTER
+      if wait_log "QA_SCREEN_READY" 25; then
+        L=$(adb logcat -d -s TuViWeb:V | grep -o 'QA_TYPED .*' | tail -1)
+        if echo "$L" | grep -q "Tài chính · năm"; then echo "QA_OK: $L"; else echo "QA_FAIL: hiểu sai câu gõ: $L"; FAIL=1; fi
+        sleep 1; adb exec-out screencap -p > "$OUT/5-qa-api$API.png"; emit_png "qa-api$API" "$OUT/5-qa-api$API.png"
+      else
+        echo "QA_FAIL: gõ câu hỏi bằng bàn phím không ra câu trả lời ($(adb logcat -d -s TuViWeb:V | grep -o 'QA_TYPED_TIMEOUT.*' | tail -1))"; FAIL=1
+      fi
+    else
+      echo "QA_FAIL: thiếu toạ độ WebView"; FAIL=1
+    fi
+  else
+    echo "QA_FAIL: selftest không mở ô nhập hỏi đáp"; FAIL=1
+  fi
   grep -E "exportFile|ShareProvider" "$OUT/logcat-selftest-api$API.txt" | head -5
   adb logcat -d | grep -E "FATAL EXCEPTION|E TuViTuXem" | head -10
   # Chỉ tính lỗi văng của app (“Process: vn.tuvi.tuxem”); công cụ uiautomator đôi khi tự văng, không phải lỗi app.

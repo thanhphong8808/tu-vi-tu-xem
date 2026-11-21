@@ -1,6 +1,6 @@
 """Chạy selftest.js trên máy tính (Chromium + máy chủ thử nghiệm), giả lập cầu nối Android `TuViNative`:
 call → /api, exportFile → kiểm tra dữ liệu gửi sang (ảnh PNG giải mã được, mô hình PDF hợp lệ), bench → /api/bench.
-Cũng tự làm bước “chạm giữ thật” mà CI làm bằng adb (đọc LONGPRESS_TARGET).
+Cũng tự làm các bước CI làm bằng adb: “chạm giữ thật” (đọc LONGPRESS_TARGET) và gõ câu hỏi bằng bàn phím vào ô Hỏi đáp (QA_INPUT).
 Dùng: python3 tools/apk/selftest/run_local.py http://127.0.0.1:8767/   (máy chủ phục vụ thư mục web đã chèn golden vào selftest.js)
 """
 import asyncio, base64, json, re, sys
@@ -31,7 +31,7 @@ async def main():
         ctx = await b.new_context(viewport={'width': 412, 'height': 915}, device_scale_factor=2.625, is_mobile=True, has_touch=True)
         await ctx.add_init_script(MOCK)
         pg = await ctx.new_page()
-        logs, result, share = [], asyncio.Event(), asyncio.Event()
+        logs, result, share, qa_in, qa_done = [], asyncio.Event(), asyncio.Event(), asyncio.Event(), asyncio.Event()
         target = {}
         def on(m):
             t = m.text
@@ -39,6 +39,9 @@ async def main():
                 logs.append(t)
                 if ' RESULT ' in t: result.set()
                 if 'SHARE_STARTED' in t or 'POST_ERROR' in t or 'LONGPRESS_NO_TARGET' in t: share.set()
+                mq = re.search(r'QA_INPUT x=([\d.]+) y=([\d.]+)', t)
+                if mq: target['qa'] = (float(mq.group(1)), float(mq.group(2))); qa_in.set()
+                if 'QA_SCREEN_READY' in t or 'QA_TYPED_TIMEOUT' in t or 'POST_ERROR' in t: qa_done.set()
                 mt = re.search(r'LONGPRESS_TARGET x=([\d.]+) y=([\d.]+)', t)
                 if mt: target['xy'] = (float(mt.group(1)), float(mt.group(2)))
         pg.on('console', on)
@@ -52,13 +55,21 @@ async def main():
             x, y = target['xy']
             await pg.mouse.move(x, y); await pg.mouse.down(); await asyncio.sleep(0.9); await pg.mouse.up()
         await asyncio.wait_for(share.wait(), 120)
+        await asyncio.wait_for(qa_in.wait(), 60)
+        x, y = target['qa']
+        await pg.mouse.click(x, y); await asyncio.sleep(0.5)
+        await pg.keyboard.type('nam sau tai chinh ra sao'); await pg.keyboard.press('Enter')
+        await asyncio.wait_for(qa_done.wait(), 60)
+        await asyncio.sleep(0.5)
+        await pg.screenshot(path='/tmp/selftest_qa.png')
         png = await pg.evaluate('window.__png || ""')
         if png:
             open('/tmp/selftest_export.png', 'wb').write(base64.b64decode(png))
         print('\n'.join(logs))
         print('EXPORTS', await pg.evaluate('JSON.stringify(window.__exports || [])'))
         await b.close()
-        ok = any(re.search(r'RESULT pass=\d+ fail=0', l) for l in logs) and any('LONGPRESS_SEEN' in l for l in logs) and any('SHARE_STARTED' in l for l in logs)
+        ok = any(re.search(r'RESULT pass=\d+ fail=0', l) for l in logs) and any('LONGPRESS_SEEN' in l for l in logs) and any('SHARE_STARTED' in l for l in logs) \
+            and any('QA_TYPED' in l and 'Tài chính · năm' in l for l in logs) and any('QA_SCREEN_READY' in l for l in logs)
         print('LOCAL_SELFTEST', 'ĐẠT' if ok else 'LỖI')
         sys.exit(0 if ok else 1)
 

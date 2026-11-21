@@ -1,0 +1,358 @@
+{
+ "texts": [
+  {
+   "key": "qa.def.tu_vi",
+   "text": "Tử Vi Đẩu Số là môn lý số phương Đông: từ giờ, ngày, tháng, năm sinh âm lịch, an hơn trăm sao vào 12 cung để xem xu hướng tính cách và vận trình. App dùng Tử Vi như bản đồ thời tiết để tham khảo, chiêm nghiệm, không phải lời phán định.",
+   "source": "Prompt mục 1, Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.menh",
+   "text": "Cung Mệnh là cung gốc của lá số: bản chất, tư chất và xu hướng hành động, ảnh hưởng mạnh nhất ở nửa đầu đời. Luôn đọc cùng tam phương tứ chính: Thiên Di (xung chiếu), Quan Lộc và Tài Bạch (tam hợp).",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.than",
+   "text": "Cung Thân cho biết nơi bạn dồn sức khi trưởng thành và hậu vận. Thân luôn đóng ở một trong sáu cung: Mệnh, Phúc Đức, Quan Lộc, Thiên Di, Tài Bạch, Phu Thê (gọi là Thân cư …); ảnh hưởng của Thân rõ hơn từ khoảng 30 tuổi.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.cuc",
+   "text": "Cục (Thủy nhị, Mộc tam, Kim tứ, Thổ ngũ, Hỏa lục) tính từ can năm sinh và cung Mệnh. Số Cục là tuổi bắt đầu đại hạn đầu tiên và dùng để an sao Tử Vi. Quan hệ ngũ hành giữa Cục và bản mệnh (sinh, khắc, đồng hành) cho biết môi trường có nâng đỡ bạn hay không.",
+   "source": "Prompt mục 5, Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.ban_menh",
+   "text": "Bản mệnh là nạp âm của can chi năm sinh (ví dụ Lộ Bàng Thổ, Hải Trung Kim), thuộc một trong năm hành. Tử Vi dùng bản mệnh để xét quan hệ với Cục và với hành của cung, sao.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.chinh_tinh",
+   "text": "Chính tinh là 14 sao chính: Tử Vi, Thiên Cơ, Thái Dương, Vũ Khúc, Thiên Đồng, Liêm Trinh, Thiên Phủ, Thái Âm, Tham Lang, Cự Môn, Thiên Tướng, Thiên Lương, Thất Sát, Phá Quân. Chính tinh quyết định tính chất chính của cung; sao càng sáng càng phát huy mặt tốt.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.phu_tinh",
+   "text": "Phụ tinh là các sao còn lại (lục cát, lục sát, Lộc Tồn, Thiên Mã, Đào Hoa, vòng Tràng Sinh…). Phụ tinh làm cung tốt thêm hoặc kém đi so với tính chất của chính tinh.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.luc_cat",
+   "text": "Lục cát tinh gồm Tả Phù, Hữu Bật, Văn Xương, Văn Khúc, Thiên Khôi, Thiên Việt: chủ được trợ giúp, học hành, quý nhân nâng đỡ.",
+   "source": "Cẩm nang V2 – P.III",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.luc_sat",
+   "text": "Lục sát tinh gồm Kình Dương, Đà La, Hỏa Tinh, Linh Tinh, Địa Không, Địa Kiếp: chủ trở ngại, áp lực, hao hụt. Khi đắc địa hoặc gặp chính tinh hợp cách, sát tinh lại thành động lực mạnh.",
+   "source": "Cẩm nang V2 – P.III; Prompt mục 10.3",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.tu_hoa",
+   "text": "Tứ Hóa (Hóa Lộc, Hóa Quyền, Hóa Khoa, Hóa Kỵ) an theo can năm sinh, làm biến đổi tính chất của sao mang hóa: Lộc là lợi lộc, Quyền là quyền hành, Khoa là danh tiếng và học vấn, Kỵ là vướng mắc. Khi xem vận còn có Tứ Hóa lưu theo can năm, can tháng.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.hoa_loc",
+   "text": "Hóa Lộc chủ lợi lộc, cơ hội tài chính và sự suôn sẻ của việc mà sao mang hóa đại diện.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.hoa_quyen",
+   "text": "Hóa Quyền chủ quyền hành, năng lực quyết đoán, được giao trách nhiệm.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.hoa_khoa",
+   "text": "Hóa Khoa chủ danh tiếng, học vấn, thi cử và quý nhân giải nguy.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.hoa_ky",
+   "text": "Hóa Kỵ chủ vướng mắc, trắc trở, thị phi ở việc mà sao mang hóa đại diện. Gặp Hóa Kỵ chỉ là lời nhắc nên làm kỹ, chậm, rõ ràng hơn ở lĩnh vực đó.",
+   "source": "Cẩm nang V2 – P.IV; Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.tuan",
+   "text": "Tuần (Tuần Không) án ngữ hai cung liền nhau, tính theo can chi năm sinh. Tuần làm giảm lực của sao trong hai cung: cung tốt bớt tốt, cung xấu bớt xấu. Theo quan niệm phổ biến, Tuần tác động rõ hơn ở nửa sau cuộc đời.",
+   "source": "Prompt mục 5, D-38",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.triet",
+   "text": "Triệt (Triệt Lộ) án ngữ hai cung liền nhau, tính theo can năm sinh. Triệt chặn mạnh: cung tốt khó phát, cung xấu lại được giải. Theo quan niệm phổ biến, Triệt tác động mạnh ở nửa đầu cuộc đời.",
+   "source": "Prompt mục 5, D-38",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.dai_han",
+   "text": "Đại hạn (đại vận) là vận 10 năm. Đại hạn đầu ở cung Mệnh, bắt đầu từ tuổi bằng số Cục, rồi mỗi 10 năm sang cung kế (thuận hay nghịch tùy âm dương nam nữ). Cung đại hạn cùng tam phương tứ chính được đọc như “cung Mệnh của 10 năm đó”.",
+   "source": "Prompt mục 8.1",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.tieu_han",
+   "text": "Tiểu hạn là vận từng năm, an theo chi năm sinh và giới tính; cho biết chuyện gì diễn ra trong năm.",
+   "source": "Prompt mục 8.2",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.luu_nien",
+   "text": "Lưu niên đại hạn là cung của năm trong đại hạn: năm đầu ở cung đại hạn, năm sau ở cung xung chiếu, rồi lùi hay tiến theo công thức Tân Biên; cho biết kết cục của năm.",
+   "source": "Prompt mục 8.3",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.thai_tue",
+   "text": "Lưu Thái Tuế là cung mang chi của năm đang xem (năm Ngọ ở cung Ngọ). Cung này cho biết lĩnh vực được “đánh thức” trong năm và là Lưu Mệnh để xếp 12 lưu cung.",
+   "source": "Prompt mục 8.4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.nguyet_han",
+   "text": "Nguyệt hạn là cung của từng tháng âm; nhật hạn và thời hạn là cung của ngày, giờ. Tầng càng nhỏ thì độ tin cậy càng thấp, nên chỉ dùng để sắp xếp việc.",
+   "source": "Prompt mục 8.5",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.tam_phuong",
+   "text": "Tam phương tứ chính của một cung gồm chính cung đó, cung xung chiếu (đối diện) và hai cung tam hợp. Luận một cung luôn xét cả bốn cung này; cung xung chiếu ảnh hưởng mạnh nhất sau chính cung.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.xung_chieu",
+   "text": "Cung xung chiếu là cung đối diện, cách sáu cung (Mệnh đối Thiên Di, Tài Bạch đối Phúc Đức…). Sao ở cung xung chiếu chiếu sang và ảnh hưởng mạnh tới cung đang xét.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.giap",
+   "text": "Giáp cung là hai cung kề hai bên. Hai cung kề có cặp sao tốt (Tả Hữu, Xương Khúc, Khôi Việt, Nhật Nguyệt, Quyền Lộc) là giáp cát, được nâng đỡ; có cặp sát tinh (Kình Đà, Không Kiếp, Hỏa Linh) là giáp hung, dễ bị chèn ép.",
+   "source": "Prompt mục 10",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.nhi_hop",
+   "text": "Nhị hợp là cặp cung có chi lục hợp: Tý–Sửu, Dần–Hợi, Mão–Tuất, Thìn–Dậu, Tỵ–Thân, Ngọ–Mùi. Ảnh hưởng nhẹ hơn tam phương tứ chính.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.vo_chinh_dieu",
+   "text": "Vô chính diệu là cung không có chính tinh. Khi đó mượn chính tinh cung xung chiếu để luận, lực giảm còn khoảng bảy phần. Mệnh vô chính diệu gặp đủ Tuần, Triệt, Thiên Không, Địa Không là cách “vô chính diệu đắc tam không”.",
+   "source": "Prompt mục 10.4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.do_sang",
+   "text": "Độ sáng của sao theo từng cung: Miếu (M), Vượng (V), Đắc (Đ), Bình hòa (B), Hãm (H). Sao miếu vượng phát huy mặt tốt; sao hãm dễ lộ mặt hạn chế, cần sao tốt hội về để đỡ.",
+   "source": "Prompt mục 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.dong_thanh",
+   "text": "Đồng thanh tương ứng: một sự kiện chỉ được nói mạnh khi nhiều tầng vận (đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế) cùng chỉ về một hướng. App ghi: từ 3 tầng là khả năng cao, 2 tầng là có thể, 1 tầng mới là dấu hiệu.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.the",
+   "text": "Thế của giai đoạn theo điểm: từ 70 là Tấn (chủ động mở rộng), 50–69 là Giữ (củng cố), 35–49 là Thủ (tránh rủi ro lớn), dưới 35 là Lùi (hoãn quyết định lớn nếu được).",
+   "source": "Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.diem",
+   "text": "Điểm 0–100 tổng hợp sao tốt, xấu ở các cung đọc chính, có trọng số theo từng tầng vận. 50 là mức trung bình, từ 55 là thuận, từ 45 trở xuống nên thận trọng. Điểm dùng để so sánh tương đối, không phải lời phán.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.thien_thoi",
+   "text": "Thiên thời của đại hạn so hành tam hợp của chi năm sinh với hành tam hợp của chi cung đại hạn: đại hạn sinh tuổi là đắc thiên thời; đồng hành là hòa hợp; tuổi khắc đại hạn thì vất vả nhưng giành được; tuổi sinh đại hạn thì hao tâm tổn sức; đại hạn khắc tuổi là thất thời, nên thủ hơn công.",
+   "source": "Cẩm nang V2 – P.IV",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.sao_luu",
+   "text": "Sao lưu là sao an theo năm (hoặc tháng) đang xem, như Lưu Thái Tuế, Lưu Lộc Tồn, Lưu Kình Dương, Lưu Đào Hoa; chồng lên lá số gốc để xem năm đó. Trên lưới, sao lưu có tiền tố “L.”.",
+   "source": "Prompt mục 8.4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.cach_cuc",
+   "text": "Cách cục là tổ hợp sao và cung có tên riêng, như Tử Phủ Vũ Tướng, Sát Phá Tham, Nhật Nguyệt tịnh minh. Khi một cách cục kích hoạt, app ưu tiên luận theo cách cục thay cho câu luận từng sao.",
+   "source": "Prompt mục 9, 10",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.truyen_cung",
+   "text": "Truyền cung là khi cung Phu Thê (vợ chồng) hoặc Tử Tức (cha mẹ – con) của người này trùng cung Mệnh của người kia; truyền tinh là khi hai cung đó có cùng bộ chính tinh. Xem trong mục So hai lá số.",
+   "source": "Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.menh_chu",
+   "text": "Mệnh chủ an theo chi của cung Mệnh, Thân chủ an theo chi năm sinh; là hai sao đại diện, dùng tham khảo thêm về tính cách và cách hành xử.",
+   "source": "Cẩm nang V2 – P.II",
+   "reviewed": false
+  },
+  {
+   "key": "qa.def.han",
+   "text": "“Hạn” là vận trình theo thời gian: đại hạn 10 năm, tiểu hạn và lưu niên từng năm, nguyệt hạn từng tháng. Năm có nhiều sao xấu chỉ là giai đoạn nên thận trọng hơn, không phải điều nhất định xảy ra.",
+   "source": "Prompt mục 8; Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.em_be",
+   "text": "App không đoán bé là trai hay gái. Pháp luật Việt Nam cấm phổ biến các cách chọn lựa giới tính em bé, nên tính năng này không có trong app. Mình có thể xem chuyện con cái, gia đạo trong lá số của bạn.",
+   "source": "Prompt mục 10.5",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.song_lau",
+   "text": "App không bàn chuyện sống được bao lâu hay thời điểm mất của ai. Mình có thể chỉ ra những giai đoạn nên chăm sóc sức khỏe kỹ hơn để bạn chủ động.",
+   "source": "Prompt mục 11 quy tắc 2",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.so",
+   "text": "Tử Vi không dùng để đoán con số, xổ số hay kết quả cá cược, nên mình không trả lời phần này. Bạn có thể hỏi về tài chính, cách giữ tiền trong năm.",
+   "source": "Prompt mục 11 quy tắc 4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.nguoi_khac",
+   "text": "Mình chỉ luận được lá số đang mở. Muốn xem cho người khác, hãy thêm ngày giờ sinh của người đó vào hồ sơ, rồi mở lá số ấy hoặc dùng mục So hai lá số.",
+   "source": "Prompt mục 12.4 quy tắc 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.ngoai",
+   "text": "Câu này nằm ngoài Tử Vi nên mình không trả lời được. Bạn có thể hỏi về tính cách, công việc, tài chính, tình duyên, gia đạo, sức khỏe, đi xa, nhà đất… theo năm, tháng, ngày hoặc trọn đời.",
+   "source": "Prompt mục 12.4 quy tắc 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.tu_choi.dich_vu",
+   "text": "App không khuyên các dịch vụ hóa giải vận hạn có thu phí. Theo tinh thần “đức năng thắng số”, cách chủ động nhất là sống điều độ, cẩn trọng ở giai đoạn khó và làm việc thiện.",
+   "source": "Prompt mục 11 quy tắc 4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.hon_nhan",
+   "text": "App không phán chuyện tan vỡ hay chia lìa. Dưới đây là phần luận tình duyên, hôn nhân để bạn biết lúc nào nên vun đắp, lắng nghe nhiều hơn.",
+   "source": "Prompt mục 11 quy tắc 2, 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.benh",
+   "text": "App không chẩn đoán bệnh. Phần sức khỏe chỉ là gợi ý giai đoạn nên chăm sóc bản thân kỹ hơn; khi có triệu chứng, hãy đi khám bác sĩ.",
+   "source": "Prompt mục 11 quy tắc 3",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.phap_ly",
+   "text": "App không phán chuyện kiện tụng hay giam giữ. Dưới đây là phần pháp lý, thị phi: những lúc nên cẩn trọng giấy tờ, hợp đồng và hỏi luật sư khi cần.",
+   "source": "Prompt mục 11 quy tắc 2",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.hop_tuoi",
+   "text": "Xem tuổi hợp, tam tai, kim lâu nằm ngoài phạm vi bản này. App có mục So hai lá số theo cẩm nang (truyền cung, truyền tinh) khi bạn đã lưu lá số của cả hai người.",
+   "source": "Prompt mục 1 (phạm vi v1); Cẩm nang V2 – P.V.4",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.chon_ngay",
+   "text": "Điểm ngày dưới đây tính theo lá số của bạn (tháng, nhật hạn, can chi ngày so với tuổi), không phải chọn ngày theo Ngọc Hạp; độ tin cậy thấp hơn tầng năm.",
+   "source": "Prompt mục 1, 2.3",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.nguoi_than",
+   "text": "Lá số đang mở là của bạn, nên chuyện của người thân chỉ đọc gián tiếp qua cung tương ứng (Phu Thê cho vợ chồng, Tử Tức cho con cái, Phụ Mẫu cho cha mẹ, Huynh Đệ cho anh chị em), tức là mối quan hệ của bạn với họ. Muốn xem vận riêng của người đó, hãy thêm ngày giờ sinh của họ vào hồ sơ.",
+   "source": "Prompt mục 9; Prompt mục 12.4 quy tắc 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chuyen.tai_nan",
+   "text": "App không phán tai họa. Dưới đây là các giai đoạn nên cẩn trọng đi lại, vận động hơn thường lệ.",
+   "source": "Prompt mục 11 quy tắc 2",
+   "reviewed": false
+  },
+  {
+   "key": "qa.khung_hoang",
+   "text": "Mình rất tiếc vì bạn đang phải trải qua lúc khó khăn như vậy. Lúc này điều quan trọng nhất là bạn được an toàn và có người ở bên. Hãy gọi ngay cho một người thân hoặc bạn bè tin cậy. Nếu bạn đang gặp nguy hiểm, gọi cấp cứu 115. Bạn có thể gọi Đường dây nóng Ngày Mai 096 306 1414 (hỗ trợ tâm lý miễn phí, thường 13:00–20:30 từ thứ Tư đến Chủ Nhật). Trẻ em và người dưới 16 tuổi có thể gọi Tổng đài 111 (miễn phí, cả ngày đêm). Bạn không phải một mình đối mặt với chuyện này.",
+   "source": "Prompt mục 12.2 bước 6",
+   "reviewed": false
+  },
+  {
+   "key": "qa.gioi_thieu",
+   "text": "Mình là phần hỏi đáp của Tử Vi Tự Xem, trả lời dựa trên lá số đang mở và bản luận app đã tính, ngay trên máy của bạn. Bạn có thể hỏi về tính cách, công việc, tài chính, tình duyên, gia đạo, sức khỏe, đi xa, nhà đất; theo năm, tháng, ngày, đại vận hoặc trọn đời; hỏi khi nào thuận cho một việc; hoặc hỏi nghĩa của một sao, một cung, một thuật ngữ.",
+   "source": "Prompt mục 12",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chua_hieu",
+   "text": "Mình chưa hiểu rõ câu hỏi này. Bạn thử hỏi cụ thể hơn, ví dụ nêu chủ đề (công việc, tiền bạc, tình duyên…) và thời gian (năm nay, năm 2027, tháng 3 âm, ngày mai…), hoặc chọn một câu gợi ý bên dưới.",
+   "source": "Prompt mục 12.4 quy tắc 1",
+   "reviewed": false
+  },
+  {
+   "key": "qa.chua_du",
+   "text": "Lá số chưa đủ dữ kiện để trả lời riêng câu này; dưới đây là phần gần nhất app tính được.",
+   "source": "Prompt mục 12.4 quy tắc 1",
+   "reviewed": false
+  },
+  {
+   "key": "qa.khong_su_kien",
+   "text": "Trong khoảng năm đã dò, chưa thấy năm nào có dấu hiệu đồng thanh rõ cho việc này; dưới đây là những năm chủ đề liên quan có điểm cao nhất.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "qa.note.kha_nang",
+   "text": "Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.",
+   "source": "Prompt mục 9; Prompt mục 11",
+   "reviewed": false
+  },
+  {
+   "key": "qa.note.tre_nho",
+   "text": "Lá số này dưới 16 tuổi âm: phần hỏi đáp chỉ trả lời về học tập, sức khỏe, gia đình và an toàn đi lại.",
+   "source": "D-39",
+   "reviewed": false
+  },
+  {
+   "key": "qa.note.nha_dat",
+   "text": "Nhà đất không có điểm riêng theo năm: app xem kèm điểm tài chính cùng giai đoạn (Điền Trạch là cung phụ của tài chính), nên đây là gợi ý gián tiếp.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "qa.note.khong_diem_nam",
+   "text": "Chủ đề này luận ở lá số gốc, không có điểm riêng theo năm; dưới đây xếp theo điểm cả năm.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
+   "key": "qa.note.thang_tong",
+   "text": "Điểm tháng là điểm chung của tháng (năm, nguyệt hạn, Tứ Hóa tháng); tháng có nguyệt hạn vào cung của chủ đề thì chủ đề đó được chú ý nhiều hơn.",
+   "source": "Prompt mục 9 bước 6",
+   "reviewed": false
+  }
+ ]
+}

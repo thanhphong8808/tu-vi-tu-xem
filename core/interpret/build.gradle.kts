@@ -26,5 +26,6 @@ tasks.register<JavaExec>("findFixtures") {
 // Snapshot bản luận 4 ca golden (cổng giai đoạn 4). Cập nhật khi thay đổi là chủ ý: ./gradlew :core:interpret:test -PupdateSnapshots
 tasks.test {
     systemProperty("tuvi.snapshotDir", project.file("src/test/resources/snapshots").absolutePath)
+    systemProperty("tuvi.src", project.file("src/main/kotlin").absolutePath) // QaTest đối chiếu khóa qa.* trong mã với KB
     if (project.hasProperty("updateSnapshots")) systemProperty("tuvi.updateSnapshots", "true")
 }

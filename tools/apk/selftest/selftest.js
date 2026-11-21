@@ -189,6 +189,8 @@
       }
       // ———————— Giai đoạn 5 ————————
       if (prof) await phase5();
+      // ———————— Giai đoạn 6 ————————
+      if (prof) await phase6();
       check(!document.querySelector('.error-box'), 'Không được có hộp lỗi trên màn hình: ' + ((document.querySelector('.error-box') || {}).textContent || ''));
       // Ảnh chụp cuối cùng: màn Luận giải năm (đang mở).
     } catch (e) {
@@ -307,6 +309,55 @@
     log('PHASE5 done');
   }
 
+  // Giai đoạn 6: Hỏi đáp — câu có dấu và không dấu, khi nào thuận, dữ kiện, giải nghĩa, từ chối, khủng hoảng, hỏi tiếp, mở bản luận.
+  async function phase6() {
+    let txt = '';
+    check(!!$('#qa-card') && document.querySelectorAll('#qa-card [data-act="qa-ask"]').length === 3, 'Thẻ Hỏi đáp trên lá số');
+    const t0 = performance.now();
+    click('#qa-card [data-act="qa-ask"]');
+    log(`TIME Hỏi đáp câu đầu (nạp bộ hỏi đáp + luận năm) ${Math.round(performance.now() - t0)} ms`);
+    check(document.querySelectorAll('.qa-turn').length === 1 && txtOf('.qa-turn .qa-und').indexOf('Sự nghiệp · năm ') >= 0, 'Câu gợi ý đầu: ' + txtOf('.qa-turn .qa-und'));
+    const ask = (q) => {
+      setText('#qa-in', q);
+      const t = performance.now();
+      click('[data-act="qa-send"]');
+      const ms = Math.round(performance.now() - t);
+      const turns = document.querySelectorAll('.qa-turn');
+      return { el: turns[turns.length - 1], ms: ms };
+    };
+    const qs = [['nam sau tai chinh ra sao', 'Tài chính · năm '], ['Khi nào tôi lấy vợ?', 'Năm thuận cho'], ['Tháng nào năm 2027 thuận nhất?', 'Tháng thuận năm 2027'],
+      ['Ngày mai thế nào?', '· ngày '], ['Tuần sau công việc ra sao', 'tuần sau'], ['Tính cách của tôi thế nào?', 'Tính cách'], ['Cung Mệnh của tôi có sao gì?', 'cung Mệnh'],
+      ['Tuần Triệt là gì?', 'Tuần'], ['Khi nào tôi mua được nhà?', 'nhà đất'], ['Bao giờ tôi chết?', 'Ngoài phạm vi']];
+    let maxMs = 0;
+    for (const [q, exp] of qs) {
+      const r = ask(q);
+      maxMs = Math.max(maxMs, r.ms);
+      const u = ((r.el && r.el.querySelector('.qa-und')) || {}).textContent || '';
+      check(u.indexOf(exp) >= 0, `Hỏi “${q}”: ${u}`);
+      txt += ((r.el && r.el.querySelector('.qb.bot')) || {}).textContent || '';
+      log(`QA ${r.ms} ms · ${q} → ${u.replace(/\s+/g, ' ').slice(0, 90)}`);
+    }
+    check(maxMs < 3000, `Mỗi câu trả lời phải dưới 3 giây trên máy ảo, chậm nhất ${maxMs} ms`);
+    const c = ask('Tôi muốn chết');
+    check(!!c.el.querySelector('.qb.bot.crisis') && (c.el.textContent || '').indexOf('096 306 1414') >= 0 && !c.el.querySelector('.rp'), 'Lời hỗ trợ khi khủng hoảng');
+    const rp = need('.qa-turn .rp');
+    rp.click();
+    check(rp.classList.contains('open'), '“Vì sao?” trong hỏi đáp');
+    const n = document.querySelectorAll('.qa-turn').length;
+    click('.qa-turn .qa-follow .chip');
+    check(document.querySelectorAll('.qa-turn').length === n + 1, 'Câu hỏi tiếp');
+    click('.qa-turn [data-act="qa-link"]');
+    check(!!$('.rsum'), 'Nút xem bản luận đầy đủ từ câu trả lời');
+    click('[data-act="rscope"][data-s="qa"]');
+    check(document.querySelectorAll('.qa-turn').length === n + 1, 'Giữ hội thoại khi đổi tab');
+    const lg = JSON.parse(window.TuViNative.call('storeGet', JSON.stringify({ key: 'qaLog' }))).data;
+    check(Array.isArray(lg) && lg.length >= 10 && !lg.some((x) => (x.q || '').indexOf('muốn chết') >= 0), 'Lịch sử hỏi đáp lưu trên máy, không lưu câu khủng hoảng: ' + (lg ? lg.length : lg));
+    check(forbiddenIn(txt).length === 0 && txt.indexOf('{') < 0, 'Hỏi đáp lọt từ cấm/ô trống: ' + forbiddenIn(txt));
+    window.tvBack(); await sleep(200);
+    window.scrollTo(0, 0);
+    log('PHASE6 done');
+  }
+
   // Sau RESULT: các bước CI điều khiển bằng adb trên màn hình thật — chạm giữ một sao, bảng chia sẻ PDF.
   async function externalSteps() {
     try {
@@ -322,6 +373,25 @@
       click('#export [data-act="export"][data-k="pdf"][data-a="share"]');
       await sleep(2500);
       log('SHARE_STARTED');
+      // Hỏi đáp trên màn hình thật: CI chạm ô nhập, gõ câu không dấu bằng bàn phím (adb input text) rồi Enter.
+      await sleep(10000); // CI chụp bảng chia sẻ rồi bấm Quay lại
+      click('#qa-card [data-act="open-reading"]'); await sleep(500);
+      const inp = need('#qa-in');
+      inp.scrollIntoView({ block: 'end' }); await sleep(400);
+      const r2 = inp.getBoundingClientRect();
+      const n0 = document.querySelectorAll('.qa-turn').length;
+      log(`QA_INPUT x=${(r2.x + r2.width / 2).toFixed(1)} y=${(r2.y + r2.height / 2).toFixed(1)} dpr=${window.devicePixelRatio}`);
+      for (let i = 0; i < 120 && document.querySelectorAll('.qa-turn').length === n0; i++) await sleep(500);
+      const turns = document.querySelectorAll('.qa-turn');
+      if (turns.length > n0) {
+        const t = turns[turns.length - 1];
+        log('QA_TYPED ' + ((t.querySelector('.qb.me') || {}).textContent || '').replace('Bạn hỏi: ', '') + ' → ' + (((t.querySelector('.qa-und') || {}).textContent) || '').replace(/\s+/g, ' '));
+        if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+        await sleep(800);
+        t.scrollIntoView({ block: 'start' }); await sleep(400);
+        log('QA_SCREEN_READY');
+        await sleep(5000);
+      } else log('QA_TYPED_TIMEOUT value=' + inp.value);
     } catch (e) { log('POST_ERROR ' + e.message); }
   }
   run();

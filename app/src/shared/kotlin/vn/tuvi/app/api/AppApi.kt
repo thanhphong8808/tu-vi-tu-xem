@@ -87,6 +87,8 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
             "rankHours" -> rankHours(req.jsonObject)
             "configOptions" -> configOptions()
             "bench" -> Luan.bench()
+            "ask" -> ask(req.jsonObject)
+            "qaSuggest" -> Luan.qaSuggestJson(buildChart(req.jsonObject), req.jsonObject.str("today")?.let { parseDate(it) } ?: today())
             "allHours" -> allHours(req.jsonObject)
             "lunarYear" -> lunarYear(req.jsonObject)
             "convert" -> convert(req.jsonObject)
@@ -182,6 +184,14 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
     }
 
     /** So hai lá số trong hồ sơ: `a`, `b` là đầu vào form; `relation` = VO_CHONG | CHA_ME_CON. */
+    /** Hỏi đáp: `question` (≤ 500 ký tự), `today` (ISO, mặc định hôm nay giờ VN) trên lá số `input` (+ `alt`). */
+    private fun ask(o: JsonObject): JsonElement {
+        val q = (o["question"] as? JsonPrimitive)?.contentOrNull?.trim().orEmpty()
+        if (q.length > 500) throw IllegalArgumentException("Câu hỏi dài quá (tối đa 500 ký tự).")
+        val day = o.str("today")?.let { parseDate(it) } ?: today()
+        return Luan.askJson(buildChart(o), q, day, expertOf(o))
+    }
+
     private fun compare(o: JsonObject): JsonElement {
         val a = o["a"] as? JsonObject ?: throw IllegalArgumentException("Thiếu lá số thứ nhất.")
         val b = o["b"] as? JsonObject ?: throw IllegalArgumentException("Thiếu lá số thứ hai.")
@@ -522,7 +532,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
 
     private fun storeKey(o: JsonObject): String {
         val k = o.str("key") ?: throw IllegalArgumentException("Thiếu khóa lưu trữ.")
-        if (k !in setOf("profiles", "settings")) throw IllegalArgumentException("Khóa lưu trữ không hợp lệ.")
+        if (k !in setOf("profiles", "settings", "qaLog")) throw IllegalArgumentException("Khóa lưu trữ không hợp lệ.")
         return k
     }
 

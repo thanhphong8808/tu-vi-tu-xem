@@ -4,9 +4,9 @@ from collections import Counter
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import kb_rules, kb_drafts, kb_luan  # noqa: E402  (kb_luan bổ sung luật, khuyến nghị giai đoạn 4)
+import kb_rules, kb_drafts, kb_luan, kb_hoidap  # noqa: E402  (kb_luan: giai đoạn 4–5; kb_hoidap: màn Hỏi đáp)
 
-VERSION = "0.5.0-nhap"
+VERSION = "0.6.0-nhap"
 ROOT = os.path.dirname(os.path.dirname(HERE))
 OUT = os.path.join(ROOT, "data", "kb", "src", "main", "resources", "kb")
 
@@ -48,6 +48,7 @@ def main():
     files["texts"].append(write("texts/dong_cung.json", {"texts": list(kb_drafts.combo_texts().values())}))
     files["texts"].append(write("texts/phu_tinh.json", {"texts": list(kb_drafts.minor_texts().values())}))
     files["texts"].append(write("texts/luan.json", {"texts": list(kb_luan.luan_texts().values())}))
+    files["texts"].append(write("texts/hoidap.json", {"texts": list(kb_hoidap.hoidap_texts().values())}))
     files["advice"].append(write("advice/advice.json", {"advice": list(kb_rules.ADVICE.values())}))
     files["faq"].append(write("faq/faq.json", {"faq": kb_drafts.faq_entries()}))
     files["meta"].append(write("meta/sao.json", {"combos": kb_drafts.combo_meta(), "minor": kb_drafts.minor_meta(), "chinh": kb_luan.chinh_meta()}))
@@ -61,6 +62,7 @@ def main():
         "textsPhuTinh": len(kb_drafts.minor_texts()),
         "phuTinh": len(kb_drafts.MINOR),
         "textsLuan": len(kb_luan.luan_texts()),
+        "textsHoiDap": len(kb_hoidap.hoidap_texts()),
         "advice": len(kb_rules.ADVICE),
         "adviceByType": dict(Counter(a["type"] for a in kb_rules.ADVICE.values())),
         "events": len([r for r in kb_rules.RULES if r["effect"].get("event")]),
