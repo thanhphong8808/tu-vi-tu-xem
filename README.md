@@ -9,9 +9,12 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.4.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.4.0.apk) | File cài app Android (bản mới nhất) |
+| [TuViTuXem-0.5.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.5.0.apk) | File cài app Android (bản mới nhất, giai đoạn 5), cài đè lên bản cũ không mất lá số |
+| [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
+| [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |
+| [Bản luận mẫu giai đoạn 5](docs/tai-ve/BanLuanMau_GiaiDoan5.txt) | Lịch ngày, chi tiết ngày + 12 giờ, thẻ sao, so hai lá số, xếp hạng giờ khi không rõ giờ sinh |
 | [Bản luận mẫu 4 ca golden](docs/tai-ve/BanLuanMau_4CaGolden.txt) | Bản luận trọn đời / đại vận / năm 2026 / tháng của 4 lá số mẫu, để đọc góp ý văn phong |
-| [Báo cáo giai đoạn 4](docs/PHASE4_REPORT.md) | Kết quả kiểm thử, máy ảo, các điểm phải tự quyết |
+| [Báo cáo giai đoạn 5](docs/PHASE5_REPORT.md) | Kết quả kiểm thử, 5 máy ảo, hiệu năng, các điểm phải tự quyết |
 | [Mã nguồn (ZIP)](https://github.com/thanhphong8808/tu-vi-tu-xem/archive/refs/heads/main.zip) | Toàn bộ mã nguồn, trừ khóa ký app (xem D-31) |
 
 ## Trạng thái
@@ -23,25 +26,28 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | 2B | Bản chạy thử cài lên điện thoại (file APK) | ✅ Xong — [báo cáo](docs/PHASE2B_REPORT.md) |
 | 3 | Knowledge base + RuleEngine (`:data:kb`, `:core:interpret`) + luận giải sơ bộ trong app 0.3.0 | ✅ Xong — [báo cáo](docs/PHASE3_REPORT.md) |
 | 4 | Luận giải + khuyến nghị (chấm điểm, tổng hợp tầng, ghép câu, Nên/Không nên) + màn Luận giải trong app 0.4.0 | ✅ Xong — [báo cáo](docs/PHASE4_REPORT.md) |
-| 5 | UI Android đầy đủ | Chưa làm |
+| 5 | UI đầy đủ: tab Ngày, thẻ sao, so hai lá số, ước đoán giờ, trường phái tùy chỉnh, xuất PNG/PDF, hai cột, trợ năng — app 0.5.0 | ✅ Xong — [báo cáo](docs/PHASE5_REPORT.md) |
 | 6 | Trợ lý AI trên máy + câu hỏi thường gặp (Firebase) + phát hành | Chưa làm |
 
 ## Cài lên điện thoại Android
 
-1. Chép file `TuViTuXem-0.4.0.apk` (trong `dist/`) vào điện thoại (Zalo, Google Drive, cáp USB…).
+1. Tải `TuViTuXem-0.5.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. App không xin
    quyền nào, kể cả Internet.
 
-Cần Android 8.0 trở lên. Bản sau cài đè lên bản trước, không mất lá số đã lưu, vì cùng khóa ký trong `app/keystore` (D-31).
+Cần Android 8.0 trở lên. Bản sau cài đè lên bản trước, không mất lá số đã lưu, vì cùng một khóa ký (D-31). Khóa ký không
+đưa lên GitHub công khai; bản sao nằm trong các file mã nguồn ZIP đã gửi riêng.
 
 Mỗi lần đẩy mã lên GitHub, workflow “Chạy thử trên máy ảo Android” cài file trong `dist/` lên máy ảo Android 11–17
-(cài đè lên bản trước như người dùng sẽ làm): mở app, bắt lỗi văng, rồi chạy 4 ca golden và kiểm tra phần luận giải
-ngay trong app (`ci/emulator_test.sh`).
+(cài đè lên bản trước như người dùng sẽ làm): mở app, bắt lỗi văng, chạy 4 ca golden và kiểm tra phần luận giải
+ngay trong app, rồi thử trên màn hình thật: cây trợ năng TalkBack, chạm giữ một sao, bảng chia sẻ, PDF/PNG đã lưu
+(`ci/emulator_test.sh`).
 
 Build lại APK (Linux, không cần Android Studio): `bash tools/apk/build_apk.sh`. Lệnh này ra bản phát hành và bản tự kiểm tra. Công cụ cần có ghi ở đầu script.
-Kiểm thử giao diện: `tools/apk/devserver.sh 8765 &` rồi chạy `python3 tools/apk/uitest/test_ui.py`.
+Kiểm thử giao diện: `(cd tools/apk/uitest && npm install)` (axe-core) một lần, rồi `tools/apk/devserver.sh 8765 2026-11-20 &`
+và `python3 tools/apk/uitest/test_ui.py` (so ảnh với `tools/apk/uitest/baseline`, cập nhật bằng `TUVI_UPDATE_BASELINE=1`).
 
 ## Chạy test
 

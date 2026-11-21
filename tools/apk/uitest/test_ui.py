@@ -568,6 +568,8 @@ async def phase5(page, browser):
     kinds = [b['t'] for b in m['blocks']]
     check(kinds.count('h1') == 2 and kinds.count('brk') == 1 and kinds.count('h2') >= 20 and kinds.count('p') >= 40, f'Mô hình PDF: {dict((k, kinds.count(k)) for k in set(kinds))}')
     check(m['blocks'][1]['x'] == 'Luận giải trọn đời' and len(m['info']) == 11, 'PDF: luận trọn đời sau trang lá số, 11 dòng thông tin')
+    scores = [b['x'] for b in m['blocks'] if b['t'] == 'score']
+    check(len(scores) == 2 and all(x.count('Điểm') == 1 for x in scores) and all(x.count('Thế') <= 1 for x in scores), f'Dòng điểm PDF không lặp chữ: {scores}')
     check('Nam phái VN' in m['footer'] and 'di sản văn hóa' in m['footer2'], 'Chân trang PDF: trường phái + lời ngỏ')
     pdf_text = ' '.join(b['x'] for b in m['blocks'])
     check(not forbidden_in(pdf_text) and '{' not in pdf_text, f'PDF lọt từ cấm/ô trống: {forbidden_in(pdf_text)}')

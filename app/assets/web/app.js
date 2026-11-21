@@ -941,7 +941,7 @@
     const reading = (r, title) => {
       add('h1', title);
       add('sub', r.subtitle);
-      add('score', `Điểm ${r.score}/100 · ${r.stanceText}`);
+      add('score', r.stanceText.indexOf('Thế') === 0 ? `Điểm ${r.score}/100 · ${r.stanceText}` : r.stanceText);
       r.summary.forEach((p) => add(p.kind === 'NOTE' ? 'note' : 'p', p.text, { pol: p.pol }));
       r.sections.forEach((sct) => { add('h2', sct.title + (sct.score != null ? ` · ${sct.score}/100` : '')); sct.paragraphs.forEach((p) => add(p.kind === 'NOTE' ? 'note' : 'p', p.text, { pol: p.pol })); });
       if (r.timeline.length) { add('h2', '12 đại vận'); r.timeline.forEach((t) => add('li', `${t.from}–${t.to} tuổi · ${t.chiVn} (cung ${t.role}) · ${t.score}/100 · ${t.stance} · ${t.thienThoi}${t.current ? ' · đang đi' : ''}`)); }
