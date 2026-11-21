@@ -598,3 +598,68 @@ môi trường mạng Custom. Hướng dẫn cho anh Phong: `docs/BAN_GIAO_MOI_T
 - `tools/setup/test_all.sh` chạy một lần đủ Gradle, APK, giao diện và selftest. `doctor.sh` báo mạng, công cụ, khóa.
 - Hook SessionStart (`.claude/settings.json`) chỉ chạy trên đám mây: khôi phục khóa, cài nền công cụ nếu môi trường
   chưa có setup script, cài axe-core.
+
+### D-57 · Trợ lý AI sinh lời trên máy: Gemma 4 E2B qua LiteRT-LM (bản 0.7.0)
+Mạng đã mở (`dl.google.com`, `maven.google.com`, `huggingface.co`), nên D-55 được gỡ. Đã kiểm tra trước khi gắn:
+- **Model** `litert-community/gemma-4-E2B-it-litert-lm`, file `gemma-4-E2B-it.litertlm` (2.588.147.712 byte,
+  SHA-256 `181938…139a63c`). Giấy phép **Apache 2.0, không gated**: app tải ẩn danh được, không cần tài khoản.
+  Ghim theo commit `2e12bfd…` của kho trên Hugging Face, nên file không đổi dưới chân app.
+- **Runtime** LiteRT-LM 0.19.1 (`com.google.ai.edge.litertlm:litertlm-android`, Google Maven, Apache 2.0). AAR gồm
+  `classes.jar` (Kotlin 2.4, bytecode Java 21) và `liblitertlm_jni.so` cho arm64-v8a và x86_64. Phụ thuộc: gson
+  (bắt buộc), kotlinx-coroutines và kotlin-reflect (chỉ dùng cho API Flow và công cụ, app không gọi → không đóng gói).
+- Đã chạy thật trên máy build (CPU 4 nhân, `litertlm-jvm`): nạp model ~8 giây, mỗi câu ~20–30 giây, tiếng Việt tốt.
+
+**Cách gắn (giữ hệ thống build D-28, không chuyển sang Gradle/AGP):**
+- `tools/apk/fetch_ai_deps.sh` tải AAR, gson 2.14.0 và R8 8.13.19 (Google Maven) một lần, kiểm SHA-256.
+- Lớp bọc `app/src/llm/java/vn/tuvi/app/llm/LiteRt.java` viết bằng Java: kotlinc 2.0 của dự án không phải đọc
+  metadata Kotlin 2.4 của thư viện. Cùng file này chạy trong APK và trên máy tính (công cụ chấm 40 câu).
+- Code của app vẫn qua `dx` (classes.dex). Thư viện AI (bytecode Java 21 có lambda, nối chuỗi `invokedynamic`,
+  `switch` theo mẫu) đi qua **D8 của R8 8.13.19** thành `classes2.dex`. D8 trong build-tools 35 (8.6) còn sót một
+  `invoke-custom` (`SwitchBootstraps.typeSwitch`); R8 8.13 chuyển hết. `build_apk.sh` kiểm 0 `invoke-custom` ở cả hai DEX.
+- `lib/arm64-v8a` (điện thoại) và `lib/x86_64` (máy ảo CI) nén trong APK, `extractNativeLibs="true"`. APK tăng từ
+  1,5 MB lên khoảng 22 MB (riêng x86_64 khoảng 11 MB, giữ để máy ảo CI cài và nạp được thư viện thật).
+- Manifest: `uses-native-library` libOpenCL.so / libvndksupport.so với `required="false"` (GPU nếu máy có).
+
+**Thay đổi sản phẩm (anh cần biết):**
+- App xin quyền **INTERNET** và **ACCESS_NETWORK_STATE**. Chỉ dùng khi người dùng bấm “Tải Trợ lý AI”. WebView vẫn
+  bị chặn mọi yêu cầu http/https (`LocalOnlyClient.shouldInterceptRequest`), nên lá số và câu hỏi không ra mạng.
+- Tải bằng `DownloadManager` của hệ thống: **chỉ Wi-Fi** (`NETWORK_WIFI`, không mạng trả tiền, không chuyển vùng),
+  có thông báo tiến độ, tắt app vẫn tải, đứt mạng tự tải tiếp. File vào `Android/data/vn.tuvi.tuxem/files/models`
+  (bộ nhớ riêng của app, gỡ app là mất). Trước khi tải kiểm chỗ trống (≥ dung lượng + 300 MB); tải xong kiểm SHA-256
+  rồi mới đổi tên thành file model. Có nút Hủy tải và Xóa model.
+- Máy dưới 5,5 GB RAM thì không cho bật (S22 Ultra có 12 GB). Sao lưu tự động bỏ thư mục model (`backup_rules.xml`).
+- Nạp model: thử **GPU** trước; lỗi thì **CPU**. Ghi cờ `trying` trước khi nạp GPU: nếu tiến trình chết giữa chừng
+  (lỗi trong thư viện máy), lần sau bỏ qua GPU. Thiếu RAM (`onTrimMemory`) thì giải phóng model.
+
+### D-58 · Model chỉ diễn đạt lại; kiểm tra đầu ra mục 12.3 (`AiGuard`)
+- `AiPrompt.build` dựng lời nhắc từ **chính câu trả lời của QaAnalyst** (D-54): câu hỏi, “app hiểu là”, năm hiện
+  tại, điểm chung và thế, các đoạn ① gốc → ⑦ tổng hợp, Nên/Không nên. Khối dữ kiện tối đa 6.500 ký tự (~2.000 token).
+  System prompt ở `kb/ai/system_prompt_vi.md`, cấu hình model ở `kb/ai/model.json` (đổi model không sửa code).
+- Mỗi câu hỏi một hội thoại mới, nhiệt độ 0,3, tối đa 700 token ra. Model trả JSON `{"answer": "…"}`.
+  Không yêu cầu model trả `ruleIds`: “Vì sao?” vẫn lấy từ các đoạn của QaAnalyst (vẫn mở được dưới câu AI).
+- `AiGuard.check` — trượt bất kỳ điều nào thì app hiện bản QaAnalyst, ghi nhật ký trên máy (`aiLog`, 30 mục):
+  1. đọc được JSON đúng dạng;
+  2. 60–380 chữ; chỉ tiếng Việt (không chữ Hán/Kirin/Thái, không câu tiếng Anh);
+  3. không từ cấm (`KbLint.FORBIDDEN`);
+  4. mọi tên sao, tên cung có trong dữ kiện;
+  5. **sao gắn đúng cung**: cặp (sao, cung hoặc “tại + chi”) trong một câu phải cùng có trong một câu dữ kiện;
+  6. mọi con số có trong dữ kiện hoặc câu hỏi; “N/100” phải là điểm có trong dữ kiện; **điểm đúng tầng** (điểm nói
+     là của đại hạn phải bằng “→ Đại hạn: N/100”…); câu trả lời phải nêu điểm chung.
+  Độ dài nới từ 60–150 chữ (mục 12.4) lên 60–380 vì anh muốn giải thích chi tiết từng tầng, sao nào ở cung nào.
+- Không gọi model với câu khủng hoảng (mục 12.2 bước 6), câu từ chối, chào hỏi, chưa hiểu.
+- Giao diện: câu của QaAnalyst hiện ngay; khung “✨ Trợ lý AI đang viết…” chạy nền (`TuViNative.callAsync`, một luồng
+  riêng); đạt kiểm tra thì hiện lời AI, bản luận chi tiết thu gọn dưới nút; trượt thì ghi một dòng và mở bản luận.
+
+### D-59 · Chấm bộ 40 câu trên Linux; máy ảo CI kiểm thư viện máy
+- `tools/ai/eval40.sh <model>` chạy 40 câu (`tools/ai/eval40_questions.json`: 4 lá số, đủ chủ đề, năm đã qua và năm
+  tới, câu có dấu/không dấu) qua đúng `AppApi.askAi` với model thật trên CPU. Báo cáo: `docs/tai-ve/ai-cham-40-cau.md`.
+- Máy ảo CI (x86_64, 2 GB RAM) không chạy được model 2,6 GB và không đánh giá được tốc độ. Selftest trên máy ảo kiểm:
+  `aiStatus` đúng dạng; nạp `liblitertlm_jni.so` thật và gọi `Engine.initialize` với một file giả phải ném lỗi gọn
+  (không văng app); `askAi` khi chưa có model trả “chưa dùng AI”.
+- Thời gian ra token đầu tiên và token/giây trên S22 Ultra (GPU/CPU) cần anh chạy trên máy thật; app hiện số giây
+  của từng câu AI.
+
+### D-60 · Máy chủ thử giao diện có model giả lập
+`FakeLlmHost` (DevServer): tải giả ~3 giây, “sinh lời” bằng `AiFake` (ghép lại đúng các câu dữ kiện, luôn qua kiểm
+tra); câu có “thử lỗi AI” trả đầu ra sai để thử đường rơi về bản QaAnalyst. `TUVI_AI=off` để thử như máy không có AI.
+Giao diện thử: thẻ Trợ lý AI, tải, câu AI đạt/trượt, câu khủng hoảng không gọi AI, nhật ký, xóa model.

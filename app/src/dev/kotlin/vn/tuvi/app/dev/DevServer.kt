@@ -3,6 +3,7 @@ package vn.tuvi.app.dev
 import com.sun.net.httpserver.HttpExchange
 import com.sun.net.httpserver.HttpServer
 import vn.tuvi.app.api.AppApi
+import vn.tuvi.app.api.FakeLlmHost
 import vn.tuvi.app.api.MemoryStore
 import java.io.File
 import java.net.InetSocketAddress
@@ -18,7 +19,10 @@ fun main(args: Array<String>) {
     val root = File(args[0]).canonicalFile
     val port = args.getOrNull(1)?.toInt() ?: 8765
     val fixed = args.getOrNull(2)?.let { LocalDate.parse(it) }
-    val api = AppApi(MemoryStore()) { fixed ?: LocalDate.now(ZoneOffset.ofHours(7)) }
+    // Trợ lý AI giả lập (D-57): thử luồng tải model, sinh lời, kiểm tra và rơi về bản QaAnalyst mà không cần model thật.
+    // TUVI_AI=off → như máy không có AI.
+    val llm = if (System.getenv("TUVI_AI") == "off") null else FakeLlmHost()
+    val api = AppApi(MemoryStore(), { fixed ?: LocalDate.now(ZoneOffset.ofHours(7)) }, llm)
     val server = HttpServer.create(InetSocketAddress("127.0.0.1", port), 0)
     server.createContext("/api/") { ex ->
         val method = ex.requestURI.path.removePrefix("/api/")
@@ -38,6 +42,7 @@ fun main(args: Array<String>) {
             send(ex, 200, type, file.readBytes())
         }
     }
+    server.executor = java.util.concurrent.Executors.newFixedThreadPool(4)
     server.start()
     println("DevServer http://127.0.0.1:$port/ (web: $root)")
 }

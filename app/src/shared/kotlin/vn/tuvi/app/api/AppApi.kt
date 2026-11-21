@@ -73,7 +73,12 @@ class MemoryStore : KeyValueStore {
  * `@JavascriptInterface` trên Android và máy chủ thử nghiệm trên máy tính. Không bao giờ ném lỗi ra ngoài:
  * lỗi trả về dạng `{"ok":false,"error":"…"}` để giao diện hiện cho người dùng.
  */
-class AppApi(private val store: KeyValueStore, private val today: () -> LocalDate = { LocalDate.now(ZoneOffset.ofHours(7)) }) {
+class AppApi(
+    private val store: KeyValueStore,
+    private val today: () -> LocalDate = { LocalDate.now(ZoneOffset.ofHours(7)) },
+    /** Model AI trên máy (D-57); null = bản không có AI, Hỏi đáp chỉ dùng câu của QaAnalyst. */
+    private val llm: LlmHost? = null,
+) {
 
     fun call(method: String, arg: String?): String = try {
         val req: JsonElement = if (arg.isNullOrBlank()) JsonObject(emptyMap()) else Json.parseToJsonElement(arg)
@@ -88,6 +93,9 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
             "configOptions" -> configOptions()
             "bench" -> Luan.bench()
             "ask" -> ask(req.jsonObject)
+            "askAi" -> askAi(req.jsonObject)
+            "aiStatus" -> AiFlow.status(llm)
+            "aiAction" -> aiAction(req.jsonObject)
             "qaSuggest" -> Luan.qaSuggestJson(buildChart(req.jsonObject), req.jsonObject.str("today")?.let { parseDate(it) } ?: today())
             "allHours" -> allHours(req.jsonObject)
             "lunarYear" -> lunarYear(req.jsonObject)
@@ -190,6 +198,26 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
         if (q.length > 500) throw IllegalArgumentException("Câu hỏi dài quá (tối đa 500 ký tự).")
         val day = o.str("today")?.let { parseDate(it) } ?: today()
         return Luan.askJson(buildChart(o), q, day, expertOf(o))
+    }
+
+    /**
+     * Hỏi đáp qua Trợ lý AI (D-57): cùng đầu vào với `ask`; model diễn đạt lại câu trả lời của QaAnalyst, qua kiểm tra
+     * mục 12.3 mới trả `text`. Gọi bất đồng bộ từ giao diện (có thể mất vài chục giây).
+     */
+    private fun askAi(o: JsonObject): JsonElement {
+        val q = (o["question"] as? JsonPrimitive)?.contentOrNull?.trim().orEmpty()
+        if (q.length > 500) throw IllegalArgumentException("Câu hỏi dài quá (tối đa 500 ký tự).")
+        val day = o.str("today")?.let { parseDate(it) } ?: today()
+        val a = Luan.askAnswer(buildChart(o), q, day, expertOf(o))
+        return AiFlow.answer(llm, a, LunarCalendar.solarToLunar(day, 7).year, store)
+    }
+
+    private fun aiAction(o: JsonObject): JsonElement {
+        val name = o.str("name") ?: throw IllegalArgumentException("Thiếu thao tác.")
+        if (name !in setOf("download", "cancel", "delete", "probe")) throw IllegalArgumentException("Thao tác không hợp lệ.")
+        val h = llm ?: return AiFlow.status(null)
+        h.action(name)
+        return AiFlow.status(h)
     }
 
     private fun compare(o: JsonObject): JsonElement {
@@ -532,7 +560,7 @@ class AppApi(private val store: KeyValueStore, private val today: () -> LocalDat
 
     private fun storeKey(o: JsonObject): String {
         val k = o.str("key") ?: throw IllegalArgumentException("Thiếu khóa lưu trữ.")
-        if (k !in setOf("profiles", "settings", "qaLog")) throw IllegalArgumentException("Khóa lưu trữ không hợp lệ.")
+        if (k !in setOf("profiles", "settings", "qaLog", "aiLog")) throw IllegalArgumentException("Khóa lưu trữ không hợp lệ.")
         return k
     }
 

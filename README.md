@@ -9,14 +9,16 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.6.1.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.6.1.apk) | File cài app Android (bản mới nhất). Mục **Hỏi đáp** luận ngay trên lá số: sao tọa thủ, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, Tứ Hóa. Cài đè lên bản cũ không mất lá số |
+| [TuViTuXem-0.7.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.7.0.apk) | File cài app Android (bản mới nhất, ~22 MB). Mục **Hỏi đáp** có thêm **Trợ lý AI chạy trên máy** (Gemma 4 E2B, tải một lần ~2,6 GB qua Wi-Fi): viết lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao — đã đối chiếu với lá số. Cài đè lên bản cũ không mất lá số |
+| [Chấm 40 câu Trợ lý AI](docs/tai-ve/ai-cham-40-cau.md) | 40 câu hỏi trên 4 lá số, câu AI viết (model thật), câu nào qua/trượt kiểm tra dữ kiện và vì sao, thời gian mỗi câu |
+| [Báo cáo giai đoạn 7](docs/PHASE7_REPORT.md) | Trợ lý AI trên máy: cách gắn, kiểm tra đầu ra, kết quả kiểm thử, 5 máy ảo, việc anh cần thử trên S22 Ultra |
 | [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15) sau khi gõ “nam sau tai chinh ra sao” |
 | [Hỏi đáp mẫu (0.6.1)](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app luận trên lá số mẫu, đủ các tầng: gốc, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, tổng hợp |
 | [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |
 | [Bản luận mẫu giai đoạn 5](docs/tai-ve/BanLuanMau_GiaiDoan5.txt) | Lịch ngày, chi tiết ngày + 12 giờ, thẻ sao, so hai lá số, xếp hạng giờ khi không rõ giờ sinh |
 | [Bản luận mẫu 4 ca golden](docs/tai-ve/BanLuanMau_4CaGolden.txt) | Bản luận trọn đời / đại vận / năm 2026 / tháng của 4 lá số mẫu, để đọc góp ý văn phong |
-| [Làm tiếp ở môi trường mới](docs/BAN_GIAO_MOI_TRUONG_MOI.md) | Hướng dẫn từng bước chuyển sang phiên Claude Code mới (claude.ai/code) có mở `dl.google.com` và `huggingface.co` để gắn AI sinh lời; khóa ký đi kèm gói riêng gửi trong chat |
+| [Làm tiếp ở môi trường mới](docs/BAN_GIAO_MOI_TRUONG_MOI.md) | Hướng dẫn từng bước dựng môi trường Claude Code (claude.ai/code) có mở `dl.google.com` và `huggingface.co`; khóa ký đi kèm gói riêng gửi trong chat |
 | [Báo cáo giai đoạn 6](docs/PHASE6_REPORT.md) | Mục Hỏi đáp, kết quả kiểm thử, 5 máy ảo, phần còn chờ (model AI, Firebase) |
 | [Báo cáo giai đoạn 5](docs/PHASE5_REPORT.md) | Kết quả kiểm thử, 5 máy ảo, hiệu năng, các điểm phải tự quyết |
 | [Mã nguồn (ZIP)](https://github.com/thanhphong8808/tu-vi-tu-xem/archive/refs/heads/main.zip) | Toàn bộ mã nguồn, trừ khóa ký app (xem D-31) |
@@ -31,15 +33,16 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | 3 | Knowledge base + RuleEngine (`:data:kb`, `:core:interpret`) + luận giải sơ bộ trong app 0.3.0 | ✅ Xong — [báo cáo](docs/PHASE3_REPORT.md) |
 | 4 | Luận giải + khuyến nghị (chấm điểm, tổng hợp tầng, ghép câu, Nên/Không nên) + màn Luận giải trong app 0.4.0 | ✅ Xong — [báo cáo](docs/PHASE4_REPORT.md) |
 | 5 | UI đầy đủ: tab Ngày, thẻ sao, so hai lá số, ước đoán giờ, trường phái tùy chỉnh, xuất PNG/PDF, hai cột, trợ năng — app 0.5.0 | ✅ Xong — [báo cáo](docs/PHASE5_REPORT.md) |
-| 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), luận đoán theo lá số qua từng tầng vận hạn kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.1 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Model AI trên máy và đồng bộ Firebase: chờ (D-49, D-53) |
+| 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), luận đoán theo lá số qua từng tầng vận hạn kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.1 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Đồng bộ Firebase: chờ (D-53) |
+| 7 | Trợ lý AI sinh lời trên máy (Gemma 4 E2B qua LiteRT-LM): tải model qua Wi-Fi, diễn đạt lại câu trả lời Hỏi đáp, kiểm tra dữ kiện trước khi hiện — app 0.7.0 | ✅ Xong — [báo cáo](docs/PHASE7_REPORT.md). Chờ anh đo tốc độ trên S22 Ultra |
 
 ## Cài lên điện thoại Android
 
-1. Tải `TuViTuXem-0.6.1.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
+1. Tải `TuViTuXem-0.7.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
-3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. App không xin
-   quyền nào, kể cả Internet.
+3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. Từ bản 0.7.0
+   app có quyền Internet **chỉ để tải model Trợ lý AI** khi bạn bấm tải (qua Wi-Fi); lá số và câu hỏi không gửi đi đâu.
 
 Cần Android 8.0 trở lên. Bản sau cài đè lên bản trước, không mất lá số đã lưu, vì cùng một khóa ký (D-31). Khóa ký không
 đưa lên GitHub công khai; bản sao nằm trong gói riêng `GoiRieng_KhoaKy_TuViTuXem.zip` gửi trong chat.

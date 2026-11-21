@@ -23,6 +23,7 @@ import android.webkit.JavascriptInterface
 import android.webkit.RenderProcessGoneDetail
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
+import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.Button
@@ -36,7 +37,8 @@ import vn.tuvi.app.api.KeyValueStore
 
 /**
  * Màn hình duy nhất: WebView hiển thị giao diện trong assets/web, gọi engine qua [Bridge].
- * Không xin quyền Internet — mọi tính toán chạy trên máy.
+ * Mọi tính toán chạy trên máy. Quyền Internet chỉ dùng để tải model Trợ lý AI khi người dùng bấm tải (D-57);
+ * WebView không được tải gì từ mạng ([LocalOnlyClient] chặn mọi yêu cầu http/https).
  * Nếu lần chạy trước bị lỗi, màn hình đầu tiên là báo cáo lỗi (CrashLog) để người dùng chụp gửi lại.
  */
 class MainActivity : Activity() {
@@ -90,7 +92,7 @@ class MainActivity : Activity() {
         view.webViewClient = LocalOnlyClient(this)
         view.webChromeClient = ConsoleToLog()
         val prefs = getSharedPreferences("tuvi_tu_xem", Context.MODE_PRIVATE)
-        view.addJavascriptInterface(Bridge(this, prefs), "TuViNative")
+        view.addJavascriptInterface(Bridge(this, prefs, view), "TuViNative")
         web = view
 
         val selfTest = debuggable && intent?.getStringExtra("selftest") != null
@@ -263,6 +265,15 @@ class MainActivity : Activity() {
             return true
         }
 
+        /** Lá số không rời máy: trang nội bộ không được gọi ra mạng (kể cả khi app có quyền Internet để tải model). */
+        override fun shouldInterceptRequest(view: WebView, request: WebResourceRequest): WebResourceResponse? {
+            val scheme = request.url.scheme
+            if (scheme == "http" || scheme == "https") {
+                return WebResourceResponse("text/plain", "utf-8", 403, "Blocked", emptyMap(), java.io.ByteArrayInputStream(ByteArray(0)))
+            }
+            return null
+        }
+
         override fun onRenderProcessGone(view: WebView, detail: RenderProcessGoneDetail): Boolean {
             CrashLog.recordText(activity, "Tiến trình hiển thị WebView dừng (didCrash=${detail.didCrash()}).")
             activity.recreate()
@@ -290,9 +301,11 @@ class MainActivity : Activity() {
      * Đối tượng `window.TuViNative` trong JavaScript. Chạy trên luồng JavaBridge, không chạm vào View.
      * Engine được tạo khi gọi lần đầu và mọi lỗi (kể cả lỗi nạp lớp) được trả về giao diện thay vì làm app thoát.
      */
-    class Bridge(activity: Activity, private val prefs: SharedPreferences) {
+    class Bridge(activity: Activity, private val prefs: SharedPreferences, web: WebView) {
         @Volatile private var api: AppApi? = null
         private val activityRef = java.lang.ref.WeakReference(activity)
+        private val webRef = java.lang.ref.WeakReference(web)
+        private fun appApi(): AppApi = api ?: AppApi(PrefsStore(prefs), llm = AndroidLlm.get(activityRef.get() ?: throw IllegalStateException("màn hình đã đóng"))).also { api = it }
 
         init {
             // Nạp sẵn knowledge base (luận giải) ở luồng nền để lần mở lá số đầu tiên không phải chờ.
@@ -303,8 +316,7 @@ class MainActivity : Activity() {
 
         @JavascriptInterface
         fun call(method: String?, arg: String?): String = try {
-            val a = api ?: AppApi(PrefsStore(prefs)).also { api = it }
-            a.call(method ?: "", arg)
+            appApi().call(method ?: "", arg)
         } catch (e: Throwable) {
             Log.e(TAG, "Bridge.call($method)", e)
             val trace = Log.getStackTraceString(e).lineSequence().take(8).joinToString(" | ")
@@ -313,6 +325,25 @@ class MainActivity : Activity() {
 
         @JavascriptInterface
         fun version(): String = APP_VERSION
+
+        /**
+         * Gọi bất đồng bộ (Trợ lý AI có thể mất vài chục giây): chạy [method] ở luồng nền riêng, xong thì gọi
+         * `window.tvAsyncDone(id, json)` trên luồng giao diện. Các lệnh AI chạy lần lượt trên một luồng.
+         */
+        @JavascriptInterface
+        fun callAsync(id: Int, method: String?, arg: String?) {
+            AI_EXEC.execute {
+                val out = call(method, arg)
+                val view = webRef.get() ?: return@execute
+                view.post {
+                    try {
+                        view.evaluateJavascript("window.tvAsyncDone && window.tvAsyncDone($id, " + org.json.JSONObject.quote(out) + ")", null)
+                    } catch (e: Throwable) {
+                        Log.i(TAG, "callAsync: WebView đã đóng")
+                    }
+                }
+            }
+        }
 
         /**
          * Xuất tệp: [kind] = "png" (payload = ảnh PNG base64) | "pdf" (payload = mô hình tài liệu JSON);
@@ -345,9 +376,11 @@ class MainActivity : Activity() {
     }
 
     companion object {
-        const val APP_VERSION = "0.6.1 (7)"
+        const val APP_VERSION = "0.7.0 (8)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
+        /** Một luồng nền cho các lệnh AI (model không chạy song song hai câu). */
+        val AI_EXEC: java.util.concurrent.ExecutorService = java.util.concurrent.Executors.newSingleThreadExecutor()
 
         fun jsonEscape(s: String): String {
             val b = StringBuilder(s.length + 16)

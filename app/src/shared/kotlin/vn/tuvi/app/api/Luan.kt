@@ -54,6 +54,10 @@ object Luan {
         vn.tuvi.core.interpret.ReadingScope.NGAY -> "day"
     }
 
+    /** Câu trả lời của QaAnalyst (để Trợ lý AI diễn đạt lại, D-57). */
+    fun askAnswer(chart: Chart, question: String, today: java.time.LocalDate, expert: Boolean): vn.tuvi.core.interpret.QaAnswer =
+        qa().answer(chart, question, vn.tuvi.core.interpret.QaContext(today, expert))
+
     /** Hỏi đáp (giai đoạn 6, mục 12): trả lời một câu hỏi trên lá số đang mở. */
     fun askJson(chart: Chart, question: String, today: java.time.LocalDate, expert: Boolean): JsonObject {
         val a = qa().answer(chart, question, vn.tuvi.core.interpret.QaContext(today, expert))

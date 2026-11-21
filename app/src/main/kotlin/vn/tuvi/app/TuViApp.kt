@@ -16,6 +16,13 @@ class TuViApp : Application() {
         super.onCreate()
         CrashLog.install(this)
     }
+
+    /** Máy thiếu RAM: giải phóng model Trợ lý AI (khoảng 2–3 GB); lần hỏi sau tự nạp lại (D-57). */
+    @Suppress("DEPRECATION")
+    override fun onTrimMemory(level: Int) {
+        super.onTrimMemory(level)
+        if (level >= TRIM_MEMORY_RUNNING_CRITICAL) AndroidLlm.peek()?.release()
+    }
 }
 
 /**

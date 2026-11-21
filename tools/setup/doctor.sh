@@ -30,10 +30,13 @@ command -v dexdump >/dev/null 2>&1 && ok dexdump || warn "dexdump (không bắt 
 for v in KOTLIN_STDLIB ANDROID_JAR_26 ANDROID_JAR_35; do
   [ -s "${!v:-}" ] && ok "$v" || miss "$v chưa có"
 done
-for j in ${SERIALIZATION_JARS//:/ }; do [ -s "$j" ] && ok "$(basename "$j")" || miss "thiếu $j"; done
+SJ=${SERIALIZATION_JARS:-}
+for j in ${SJ//:/ }; do [ -s "$j" ] && ok "$(basename "$j")" || miss "thiếu $j"; done
 [ -n "${SERIALIZATION_JARS:-}" ] || miss "SERIALIZATION_JARS chưa đặt"
 if [ -n "${ANDROID_HOME:-}" ] && [ -d "$ANDROID_HOME/platforms/android-35" ]; then ok "Android SDK: $ANDROID_HOME"
 else warn "Android SDK chưa có (chỉ cần khi gắn thư viện từ Google Maven / LiteRT-LM)"; fi
+D=${TUVI_AI_DEPS:-${TUVI_TK:-$HOME/.cache/tuvi-tk}/ai-deps}
+[ -f "$D/litertlm-android/classes.jar" ] && ok "thư viện Trợ lý AI (LiteRT-LM, gson, R8) đã tải: $D" || warn "thư viện Trợ lý AI chưa tải (build_apk.sh tự tải từ Google Maven / Maven Central)"
 python3 -c 'import playwright, PIL' 2>/dev/null && ok "playwright + Pillow (Python)" || miss "playwright/Pillow (pip install playwright pillow)"
 [ -f "$ROOT/tools/apk/uitest/node_modules/axe-core/axe.min.js" ] && ok "axe-core" || warn "axe-core chưa cài: (cd tools/apk/uitest && npm ci)"
 [ -e /dev/kvm ] && ok "/dev/kvm (chạy được máy ảo Android tại chỗ)" || warn "không có /dev/kvm: máy ảo Android chạy trên GitHub Actions (android-emulator.yml)"

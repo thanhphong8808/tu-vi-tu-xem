@@ -373,3 +373,17 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 /* tiêu đề nhỏ của đoạn luận đoán theo tầng */
 .rp-h { font-size: 12.5px; font-weight: 700; letter-spacing: .02em; color: var(--muted); margin: 0 0 2px; }
 .qb.bot .rp + .rp { margin-top: 8px; }
+/* Trợ lý AI trên máy (D-57) */
+.qa-ai { margin: 8px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--card2); border-left: 3px solid var(--accent); }
+.qa-ai p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; }
+.qa-ai-h { font-weight: 700; font-size: 13.5px; }
+.qa-ai.wait { font-size: 14px; display: block; }
+.qa-ai.fail { border-left-color: var(--line2); font-size: 13px; }
+.qa-more { margin: 4px 0 2px; }
+.qa-detail { margin-top: 4px; }
+.spin { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--line2); border-top-color: var(--accent); border-radius: 50%; animation: tvspin 0.9s linear infinite; vertical-align: -1px; }
+@keyframes tvspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+.bar-p { height: 8px; border-radius: 4px; background: var(--card2); overflow: hidden; border: 1px solid var(--line2); }
+.bar-p i { display: block; height: 100%; background: var(--accent); }
+.err-t { color: var(--danger); }

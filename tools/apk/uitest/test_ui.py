@@ -176,9 +176,21 @@ def verify_golden(g, board, tag):
     check(('TUẦN · TRIỆT' in board['tt'] or 'TUẦN·TRIỆT' in board['tt']) if tuan_same else ('TUẦN' in board['tt'] and any(t.startswith('TRI') for t in board['tt'])),
           f'{tag}: thiếu nhãn Tuần/Triệt trên lưới ({board["tt"]})')
 
+async def launch_chromium(p):
+    """Chromium của Playwright; nếu bản Playwright không khớp trình duyệt đã cài (máy không tải được trình duyệt mới),
+    dùng Chromium có sẵn của máy (TUVI_CHROMIUM hoặc /opt/pw-browsers)."""
+    try:
+        return await p.chromium.launch()
+    except Exception as e:
+        for exe in (os.environ.get('TUVI_CHROMIUM'), '/opt/pw-browsers/chromium_headless_shell', '/opt/pw-browsers/chromium'):
+            if exe and os.path.exists(exe):
+                print(f'  (dùng Chromium có sẵn: {exe})')
+                return await p.chromium.launch(executable_path=exe)
+        raise e
+
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch()
+        browser = await launch_chromium(p)
         ctx = await browser.new_context(viewport={'width': 412, 'height': 915}, device_scale_factor=2, is_mobile=True, has_touch=True, locale='vi-VN')
         page = await ctx.new_page()
         errors = []
@@ -429,6 +441,8 @@ async def main():
         await phase5(page, browser)
         # ———————————————— giai đoạn 6 ————————————————
         await phase6(page, browser)
+        # ———————————————— giai đoạn 7: Trợ lý AI (máy chủ thử dùng model giả lập) ————————————————
+        await phase7(page)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -804,5 +818,58 @@ async def phase6(page, browser):
     await shot(dp, 'p6_qa_dark')
     await axe_check(dp, 'hỏi đáp, nền tối')
     await dark.close()
+
+async def phase7(page):
+    print('Giai đoạn 7 — Trợ lý AI')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]'); await page.wait_for_selector('#ai-card')
+    card = await page.inner_text('#ai-card')
+    check('chỉ qua Wi-Fi' in card and 'huggingface.co' in card and '2,6 GB' in card and 'không gửi đi' in card,
+          f'Thẻ Trợ lý AI phải nói rõ dung lượng, nguồn tải, chỉ Wi-Fi, không gửi lá số: {card[:200]}')
+    await page.evaluate("window.scrollTo(0, 0)")
+    await shot(page, 'p7_ai_card')
+    await page.click('[data-act="ai-download"]')
+    check('huggingface.co' in await page.inner_text('#modal'), 'Bấm tải phải hỏi lại trước khi tải')
+    await page.click('#modal [data-act="modal-ok"]')
+    check(await page.locator('#ai-card .bar-p').count() == 1 and 'Đang tải' in await page.inner_text('#ai-card'), 'Đang tải phải hiện tiến độ')
+    await page.wait_for_selector('#ai-card [data-act="ai-toggle"]', timeout=15000)
+    check('đang bật' in await page.inner_text('#ai-card'), 'Tải xong thì Trợ lý AI tự bật')
+    # câu đạt kiểm tra: hiện lời AI, bản luận của app thu gọn dưới nút
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào?')
+    check(await t.locator('.qa-ai.wait').count() == 1, 'Đang chờ AI phải hiện dòng “đang viết”')
+    await t.locator('.qa-ai-h').wait_for(timeout=15000)
+    t = page.locator('.qa-turn').last
+    ai = await t.locator('.qa-ai').inner_text()
+    check('Trợ lý AI giải thích' in ai and '/100' in ai and 'Quan Lộc' in ai, f'Câu AI phải nêu điểm và cung của chủ đề: {ai[:160]}')
+    check(not forbidden_in(ai), f'Câu AI lọt từ cấm: {forbidden_in(ai)}')
+    check(await t.locator('.rp').count() == 0 and await t.locator('[data-act="qa-detail"]').count() == 1, 'Có câu AI thì bản luận chi tiết thu gọn')
+    await page.evaluate("[...document.querySelectorAll('.qa-turn')].pop().scrollIntoView({block: 'start'})")
+    await shot(page, 'p7_ai_answer')
+    await t.locator('[data-act="qa-detail"]').click()
+    t = page.locator('.qa-turn').last
+    check(await t.locator('.rp').count() >= 5, 'Mở bản luận chi tiết phải thấy các tầng')
+    await axe_check(page, 'hỏi đáp có Trợ lý AI')
+    # câu AI trượt kiểm tra → hiện bản luận của app
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào? (thử lỗi AI)')
+    await t.locator('.qa-ai.fail').wait_for(timeout=15000)
+    t = page.locator('.qa-turn').last
+    check(await t.locator('.rp').count() >= 5 and 'chưa đưa ra được câu trả lời đạt kiểm tra' in await t.inner_text(),
+          'Câu AI sai dữ kiện không được hiện; app hiện bản luận gốc')
+    check('2099' not in await t.inner_text(), 'Lời AI sai không được lọt ra màn hình')
+    # khủng hoảng: không gọi AI
+    t = await qa_ask(page, 'Tôi muốn chết')
+    await page.wait_for_timeout(800)
+    check(await page.locator('.qa-turn').last.locator('.qa-ai').count() == 0, 'Câu khủng hoảng không gọi Trợ lý AI')
+    # Cài đặt: nhật ký câu trượt, xóa model
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]')
+    check('1 câu AI viết chưa qua kiểm tra' in await page.inner_text('#ai-log'), 'Cài đặt phải đếm câu AI trượt kiểm tra')
+    log = api('storeGet', {'key': 'aiLog'})
+    check(isinstance(log, list) and len(log) == 1 and log[0]['issues'], f'Nhật ký AI trên máy phải ghi lý do trượt: {log}')
+    await page.click('#ai-card [data-act="ai-delete"]'); await page.click('#modal [data-act="modal-ok"]')
+    check(await page.locator('#ai-card [data-act="ai-download"]').count() == 1, 'Xóa model thì quay về nút tải')
+    await page.click('[data-act="ai-log-clear"]')
+    check(api('storeGet', {'key': 'aiLog'}) == [], 'Xóa nhật ký AI')
+    await page.evaluate('window.tvBack()')
 
 asyncio.run(main())

@@ -8,6 +8,8 @@
 set -uo pipefail
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$ROOT" || exit 1
+# Tên test tiếng Việt: Gradle/kotlinc cần locale UTF-8 (môi trường đám mây mặc định không đặt LANG).
+case "${LC_ALL:-${LANG:-}}" in *UTF-8*|*utf8*) ;; *) export LC_ALL=C.UTF-8 LANG=C.UTF-8 ;; esac
 declare -a RESULT=()
 run() { # tên, lệnh...
   local name=$1; shift

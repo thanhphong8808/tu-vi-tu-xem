@@ -57,6 +57,29 @@
     return r.data;
   }
   function safe(fn, fallback) { try { return fn(); } catch (e) { return fallback; } }
+  // Gọi bất đồng bộ (Trợ lý AI, D-57): Android chạy ở luồng nền rồi gọi lại window.tvAsyncDone; máy chủ thử dùng XHR async.
+  const ASYNC = {};
+  let asyncSeq = 0;
+  window.tvAsyncDone = function (id, raw) { const f = ASYNC[id]; delete ASYNC[id]; if (f) f(raw); };
+  function apiAsync(method, arg) {
+    return new Promise((resolve, reject) => {
+      const body = JSON.stringify(arg == null ? {} : arg);
+      const done = (raw) => {
+        try { const r = JSON.parse(raw); if (r.ok) resolve(r.data); else reject(new Error(r.error || 'Lỗi không rõ')); } catch (e) { reject(e); }
+      };
+      if (window.TuViNative && window.TuViNative.callAsync) {
+        const id = ++asyncSeq; ASYNC[id] = done;
+        window.TuViNative.callAsync(id, method, body);
+      } else {
+        const x = new XMLHttpRequest();
+        x.open('POST', 'api/' + method, true);
+        x.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+        x.onload = () => done(x.responseText);
+        x.onerror = () => reject(new Error('Không gọi được máy chủ thử'));
+        x.send(body);
+      }
+    });
+  }
 
   // ———————————————————————————— trạng thái ————————————————————————————
   const S = {
@@ -92,6 +115,8 @@
     bench: null,
     qa: { threads: {}, draft: '', sugg: null, suggKey: '', seq: 0 }, // hỏi đáp: hội thoại theo lá số
     qaLog: [], // lịch sử câu hỏi trên máy (gợi ý “hay hỏi”), không gửi đi đâu
+    ai: null, // trạng thái Trợ lý AI (D-57): {state, done, total, model…}
+    aiLog: 0, // số câu AI trượt kiểm tra (nhật ký chỉ trên máy)
   };
 
   function defaultForm() {
@@ -113,6 +138,8 @@
     S.profiles = Array.isArray(pr) ? pr : [];
     const ql = safe(() => api('storeGet', { key: 'qaLog' }), null);
     S.qaLog = Array.isArray(ql) ? ql.filter((x) => x && typeof x === 'object') : [];
+    const al = safe(() => api('storeGet', { key: 'aiLog' }), null);
+    S.aiLog = Array.isArray(al) ? al.length : 0;
   }
   function saveSettings() { safe(() => api('storeSet', { key: 'settings', value: S.settings })); }
   function saveProfiles() { safe(() => api('storeSet', { key: 'profiles', value: S.profiles })); }
@@ -156,6 +183,8 @@
   function render(scrollTop) {
     const v = top();
     const app = $('#app');
+    const aiView = v === 'settings' || (v === 'reading' && S.rv && S.rv.scope === 'qa');
+    if (aiView) aiRefresh();
     let html = '';
     if (v === 'home') html = viewHome();
     else if (v === 'form') html = viewForm();
@@ -169,6 +198,7 @@
     a11y(app);
     if (scrollTop) window.scrollTo(0, 0);
     if (v === 'chart') afterChart();
+    if (aiView) aiWatch();
     if (v === 'form') afterForm();
   }
 
@@ -463,9 +493,12 @@
         .map(([k, v, lim]) => `<dt>${k}</dt><dd>${v < 10 ? v.toFixed(2).replace('.', ',') : Math.round(v)} ms${lim ? (v <= lim ? ` <span class="ok">✓ chỉ tiêu ${lim} ms</span>` : ` <span class="bad">vượt chỉ tiêu ${lim} ms</span>`) : ''}</dd>`).join('') + `</dl>` : '') +
       `<button class="btn block" data-act="bench" style="margin-top:8px">Đo hiệu năng</button>` +
       `<p class="small muted">Đo ngay trên máy: lập lá số, luận một năm, chấm điểm 30 ngày (chỉ tiêu mục 3, đo trên Samsung S22).</p></div>` +
+      aiCard(true) +
+      (S.aiLog ? `<div class="card" id="ai-log"><h2>Nhật ký Trợ lý AI</h2><p class="small">${S.aiLog} câu AI viết chưa qua kiểm tra dữ kiện (app đã hiện bản luận gốc). Nhật ký chỉ lưu trên máy để cải thiện lời nhắc, không gửi đi.</p>` +
+        `<button class="btn block" data-act="ai-log-clear">Xóa nhật ký</button></div>` : '') +
       `<div class="card" id="qa-set"><h2>Hỏi đáp</h2><p class="small">Các câu bạn đã hỏi được lưu trên máy này để gợi ý lại ở mục “Hay hỏi” (${S.qaLog.length} câu). Không gửi đi đâu.</p>` +
       `<button class="btn block" data-act="qa-clear"${S.qaLog.length ? '' : ' disabled'}>Xóa lịch sử hỏi đáp</button></div>` +
-      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — giai đoạn 6: lá số, vận hạn; luận giải trọn đời / đại vận / năm / tháng / ngày với điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, Nên/Không nên, “Vì sao?” cho mọi đoạn; <b>Hỏi đáp</b>: hỏi bằng lời (có dấu hoặc không dấu), app trả lời ngay trên máy từ chính bản luận, kèm căn cứ; thẻ sao; so hai lá số; ước đoán giờ sinh theo sự kiện; tùy chỉnh trường phái từng điểm; xuất ảnh PNG và PDF A4. Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định.</p>` +
+      `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — giai đoạn 7: lá số, vận hạn; luận giải trọn đời / đại vận / năm / tháng / ngày với điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, Nên/Không nên, “Vì sao?” cho mọi đoạn; <b>Hỏi đáp</b>: hỏi bằng lời (có dấu hoặc không dấu), app trả lời ngay trên máy từ chính bản luận, kèm căn cứ; <b>Trợ lý AI</b> (tùy chọn, model Gemma 4 E2B tải một lần qua Wi-Fi) viết lại câu trả lời thành lời giải thích từng tầng, đã đối chiếu với lá số; thẻ sao; so hai lá số; ước đoán giờ sinh theo sự kiện; tùy chỉnh trường phái từng điểm; xuất ảnh PNG và PDF A4. Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định.</p>` +
       `<p class="small muted">${esc(ONBOARD)}</p></div>`;
   }
 
@@ -818,13 +851,103 @@
     try { d = api('ask', { input: withPreset(S.req.input), alt: S.req.alt, question: q.slice(0, 500), today: S.today && S.today.iso }); }
     catch (e) { d = { error: e.message }; }
     const th = qaThread();
-    th.push({ id: ++S.qa.seq, q: q.slice(0, 500), d: d, rate: 0 });
+    const it = { id: ++S.qa.seq, q: q.slice(0, 500), d: d, rate: 0, ai: null };
+    th.push(it);
     if (th.length > 30) th.shift();
     S.qa.draft = '';
     if (!d.error) qaLogAdd(q, d);
+    if (!d.error && !d.crisis && aiOn()) aiAnswer(it, { input: withPreset(S.req.input), alt: S.req.alt, question: it.q, today: S.today && S.today.iso });
     render(false);
     const turns = document.querySelectorAll('.qa-turn');
     if (turns.length) turns[turns.length - 1].scrollIntoView({ block: 'start' });
+  }
+
+  // ——— Trợ lý AI trên máy (D-57): model diễn đạt lại câu trả lời của app, qua kiểm tra dữ kiện mới hiện ———
+  const aiOn = () => S.ai && S.ai.state === 'ready' && S.settings.ai !== false;
+  function aiRefresh() { S.ai = safe(() => api('aiStatus'), { state: 'unsupported' }); return S.ai; }
+  function aiAnswer(it, req) {
+    it.ai = { state: 'wait', t0: Date.now() };
+    apiAsync('askAi', req).then((r) => {
+      it.ai = r.used ? { state: 'done', text: r.text, ms: r.ms } : { state: r.skip ? 'skip' : 'fail', reason: r.reason, issues: r.issues || [], ms: r.ms };
+      if (!r.used && !r.skip) S.aiLog++;
+      if (!r.used) it.detail = true;
+      qaRedraw(it);
+    }, (e) => { it.ai = { state: 'fail', reason: e.message, issues: [] }; it.detail = true; qaRedraw(it); });
+  }
+  function qaRedraw(it) {
+    const th = qaThread();
+    const i = th.indexOf(it);
+    const el = i >= 0 && $('#qa-' + i);
+    if (!el) return;
+    const box = document.createElement('div');
+    box.innerHTML = qaTurn(it, i);
+    const fresh = box.firstElementChild;
+    el.replaceWith(fresh);
+    a11y(fresh);
+    console.log('QA_AI ' + (it.ai ? it.ai.state : 'none') + (it.ai && it.ai.ms ? ' ms=' + it.ai.ms : ''));
+  }
+  function aiBlock(it, i) {
+    const a = it.ai;
+    if (!a || a.state === 'skip') return '';
+    if (a.state === 'wait') {
+      return `<div class="qa-ai wait" role="status"><span class="spin" aria-hidden="true"></span> ✨ Trợ lý AI đang viết lời giải thích từ lá số… ` +
+        `<span class="small muted">(chạy ngay trên máy, thường 20–60 giây; bản luận chi tiết của app ở dưới)</span></div>`;
+    }
+    if (a.state === 'done') {
+      return `<div class="qa-ai"><div class="qa-ai-h">✨ Trợ lý AI giải thích <span class="small muted">· đã đối chiếu sao, cung, năm, điểm với lá số${a.ms >= 1000 ? ' · ' + Math.round(a.ms / 1000) + ' giây' : ''}</span></div>` +
+        String(a.text).split(/\n+/).map((t) => `<p>${esc(t)}</p>`).join('') + `</div>`;
+    }
+    return `<div class="qa-ai fail small muted">Trợ lý AI chưa đưa ra được câu trả lời đạt kiểm tra (${esc(a.reason || '')}), nên app hiện bản luận chi tiết.` +
+      (S.settings.expert && a.issues && a.issues.length ? ` Lý do: ${a.issues.map(esc).join('; ')}.` : '') + `</div>`;
+  }
+  function aiCard(full) {
+    const a = S.ai || aiRefresh();
+    if (!a || a.state === 'unsupported') return full ? `<div class="card" id="ai-card"><h2>Trợ lý AI</h2><p class="small">${esc((a && a.message) || 'Bản này chưa có model AI trên máy.')}</p></div>` : '';
+    const m = a.model || {};
+    const gb = (b) => (b / 1e9).toFixed(1).replace('.', ',') + ' GB';
+    const name = esc(m.label || 'model AI');
+    let body = '';
+    if (a.state === 'lowram') body = `<p class="small">${esc(a.message || 'Máy chưa đủ RAM cho Trợ lý AI.')} App vẫn trả lời bằng bản luận đầy đủ.</p>`;
+    else if (a.state === 'ready') {
+      const on = S.settings.ai !== false;
+      body = `<div class="opt ${on ? 'on' : ''}" data-act="ai-toggle" aria-pressed="${on}"><b>Trợ lý AI ${on ? '· đang bật' : '· đang tắt'}</b>` +
+        `<span>${name} chạy ngay trên máy${a.backend ? ' (' + esc(a.backend) + ')' : ''}: diễn đạt lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao. ` +
+        `Câu nào sai dữ kiện lá số thì app không hiện.</span></div>` +
+        (full ? `<button class="btn block" data-act="ai-delete" style="margin-top:8px">Xóa model (giải phóng ${gb(m.bytes || a.total || 0)})</button>` : '');
+    } else if (a.state === 'downloading') {
+      const pct = a.total ? Math.floor((a.done || 0) * 100 / a.total) : 0;
+      body = `<p class="small">Đang tải ${name}: <b>${gb(a.done || 0)} / ${gb(a.total || m.bytes || 0)}</b> (${pct}%)${a.waitingWifi ? ' — <b>đang chờ Wi-Fi</b>' : ''}. ` +
+        `Tải trong nền, tắt app vẫn tải tiếp; đứt mạng thì tự tải lại khi có Wi-Fi.</p>` +
+        `<div class="bar-p" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}"><i style="width:${pct}%"></i></div>` +
+        `<button class="btn block" data-act="ai-cancel" style="margin-top:8px">Hủy tải</button>`;
+    } else if (a.state === 'verifying') {
+      body = `<p class="small">Đang kiểm tra file model (SHA-256) ${a.pct || 0}%…</p>`;
+    } else {
+      body = `<p class="small">Bật thêm <b>Trợ lý AI</b> để câu trả lời được viết thành lời trò chuyện, giải thích chi tiết từng tầng: lá số gốc, đại hạn, tiểu hạn, Lưu Thái Tuế, Tứ Hóa — sao nào đứng ở cung nào và kết quả ra sao. ` +
+        `Model ${name} khoảng <b>${gb(m.bytes || a.total || 0)}</b>, tải một lần từ ${esc(m.source || 'huggingface.co')}, <b>chỉ qua Wi-Fi</b>, lưu trong bộ nhớ riêng của app (gỡ app là xóa). ` +
+        `App chỉ dùng mạng để tải model; lá số và câu hỏi không gửi đi đâu. Máy cần còn trống khoảng ${gb((m.bytes || 0) + 3e8)}` +
+        (a.freeBytes ? ` (đang trống ${gb(a.freeBytes)})` : '') + `.</p>` +
+        (a.message ? `<p class="small err-t">${esc(a.message)}</p>` : '') +
+        (a.wifi === false ? `<p class="small muted">Máy đang không dùng Wi-Fi: bấm tải thì app chờ có Wi-Fi mới tải.</p>` : '') +
+        `<button class="btn primary block" data-act="ai-download">✨ Tải Trợ lý AI (${gb(m.bytes || a.total || 0)}, qua Wi-Fi)</button>`;
+    }
+    return `<div class="card" id="ai-card"><h2>Trợ lý AI trên máy</h2>${body}</div>`;
+  }
+  // Theo dõi tiến độ tải / kiểm tra file khi đang ở màn Hỏi đáp hoặc Cài đặt.
+  let aiTimer = null;
+  function aiWatch() {
+    if (aiTimer) return;
+    const busy = () => S.ai && (S.ai.state === 'downloading' || S.ai.state === 'verifying');
+    if (!busy()) return;
+    aiTimer = setTimeout(function tick() {
+      aiTimer = null;
+      const v = top();
+      if (!(v === 'settings' || (v === 'reading' && S.rv && S.rv.scope === 'qa'))) return;
+      aiRefresh();
+      const el = $('#ai-card');
+      if (el) { const box = document.createElement('div'); box.innerHTML = aiCard(v === 'settings'); const f = box.firstElementChild; if (f) { el.replaceWith(f); a11y(f); } }
+      if (busy()) aiTimer = setTimeout(tick, 1500);
+    }, 1500);
   }
   function qaTurn(it, i) {
     const d = it.d;
@@ -834,8 +957,14 @@
       (d.score != null ? `<span class="sc ${bandCls(d.score)}" aria-label="${d.score} trên 100 điểm">${d.score}</span>` +
         (d.stanceVn ? ` <span class="stance ${STANCE_CLS[d.stance] || ''}">Thế ${esc(d.stanceVn)}</span>` : '') : '') + `</div>`;
     // Lời hỗ trợ khi khủng hoảng: hiện thẳng, không “Vì sao?”, không chấm điểm.
-    const paras = d.crisis ? d.paragraphs.map((p) => `<p class="qa-help">${esc(p.text)}</p>`).join('')
+    let paras = d.crisis ? d.paragraphs.map((p) => `<p class="qa-help">${esc(p.text)}</p>`).join('')
       : d.paragraphs.map((p, j) => rPara(p, 'qa:' + it.id + ':' + j)).join('');
+    // Có câu AI đạt kiểm tra: bản luận chi tiết của app thu gọn dưới nút (vẫn đủ “Vì sao?”).
+    const aiDone = it.ai && it.ai.state === 'done';
+    if (aiDone) {
+      paras = `<button class="btn small qa-more" data-act="qa-detail" data-i="${i}" aria-expanded="${!!it.detail}">${it.detail ? '▾ Ẩn' : '▸ Xem'} bản luận chi tiết của app (từng tầng, “Vì sao?”)</button>` +
+        (it.detail ? `<div class="qa-detail">${paras}</div>` : '');
+    }
     const adv = d.advice.length ? `<div class="qa-adv">` + [['NEN', 'Nên'], ['KHONG_NEN', 'Không nên'], ['LUU_Y', 'Lưu ý']].map(([k, l]) => {
       const xs = d.advice.filter((a) => a.type === k);
       return xs.length ? `<div class="adv-${k}"><b>${l}:</b> ${xs.map((a) => esc(a.text)).join(' · ')}</div>` : '';
@@ -848,7 +977,7 @@
       (d.compare && S.profiles.length >= 2 ? `<button class="btn small" data-act="compare">⚭ So hai lá số</button>` : '') + rate + `</div>`;
     const follow = d.followUps.length ? `<div class="chips qa-follow" role="group" aria-label="Hỏi tiếp">` +
       d.followUps.map((f) => `<button class="chip" data-act="qa-ask" data-q="${esc(f)}">${esc(f)}</button>`).join('') + `</div>` : '';
-    return `<div class="qa-turn" id="qa-${i}">${me}<div class="qb bot${d.crisis ? ' crisis' : ''}">${head}${paras}${adv}` +
+    return `<div class="qa-turn" id="qa-${i}">${me}<div class="qb bot${d.crisis ? ' crisis' : ''}">${head}${aiBlock(it, i)}${paras}${adv}` +
       (d.closing ? `<p class="small muted qa-close">${esc(d.closing)}</p>` : '') + acts + `</div>${follow}</div>`;
   }
   function viewQa() {
@@ -864,6 +993,7 @@
       `<p class="small">Mỗi câu trả lời được luận ngay trên lá số này: sao tọa thủ cung của việc bạn hỏi, độ sáng, tam phương; rồi đại hạn, lưu niên đại hạn, tiểu hạn, ` +
       `Lưu Thái Tuế, Tứ Hóa và sao lưu của năm; cuối cùng gộp điểm theo từng tầng.</p>` +
       `<p class="qa-local">🔒 Trả lời ngay trên máy, lá số không rời điện thoại.</p></div>` +
+      aiCard(false) +
       `<div class="qa-log">${th.map(qaTurn).join('')}</div>` +
       chipRow('Hay hỏi', freq) + chipRow(th.length ? 'Gợi ý khác' : 'Câu hỏi gợi ý', sugg) +
       `<div class="qa-form"><label for="qa-in" class="sr-only">Nhập câu hỏi</label>` +
@@ -1450,6 +1580,25 @@
         const sy = window.scrollY; render(false); window.scrollTo(0, sy);
         break;
       }
+      case 'qa-detail': {
+        const it = qaThread()[+el.dataset.i];
+        if (it) { it.detail = !it.detail; qaRedraw(it); }
+        break;
+      }
+      case 'ai-toggle': S.settings.ai = S.settings.ai === false; saveSettings(); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
+      case 'ai-download':
+        openModal('Tải Trợ lý AI?', 'App sẽ tải model khoảng ' + ((S.ai && S.ai.model && S.ai.model.bytes) ? (S.ai.model.bytes / 1e9).toFixed(1).replace('.', ',') : '2,6') +
+          ' GB từ huggingface.co, chỉ qua Wi-Fi, lưu trong bộ nhớ riêng của app. Đây là lần duy nhất app dùng mạng; lá số và câu hỏi không gửi đi. Tải xong, Trợ lý AI tự bật trong Hỏi đáp.', 'Tải', () => {
+          S.ai = safe(() => api('aiAction', { name: 'download' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } aiWatch();
+        });
+        break;
+      case 'ai-cancel': S.ai = safe(() => api('aiAction', { name: 'cancel' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
+      case 'ai-delete':
+        openModal('Xóa model Trợ lý AI?', 'Xóa file model khỏi máy để giải phóng bộ nhớ. Hỏi đáp vẫn trả lời bằng bản luận của app; muốn dùng lại thì tải lại.', 'Xóa', () => {
+          S.ai = safe(() => api('aiAction', { name: 'delete' }), S.ai); render(false);
+        });
+        break;
+      case 'ai-log-clear': safe(() => api('storeSet', { key: 'aiLog', value: [] })); S.aiLog = 0; render(false); break;
       case 'qa-clear':
         openModal('Xóa lịch sử hỏi đáp?', 'Xóa các câu đã hỏi lưu trên máy này (dùng để gợi ý “Hay hỏi”) và các cuộc hỏi đáp đang mở. Không hoàn tác được.', 'Xóa', () => {
           S.qaLog = []; saveQaLog(); S.qa.threads = {}; render(false);

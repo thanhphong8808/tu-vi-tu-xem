@@ -75,6 +75,12 @@ android_sdk() {
 }
 
 ui_test_tools() {
+  # Môi trường đã có sẵn Playwright + Chromium (/opt/pw-browsers): không nâng bản Playwright (bản mới đòi trình duyệt
+  # mới, phải tải từ cdn.playwright.dev); test_ui.py tự dùng Chromium có sẵn nếu cần.
+  if python3 -c "import playwright" 2>/dev/null && [ -e /opt/pw-browsers/chromium_headless_shell ]; then
+    python3 -c "import PIL" 2>/dev/null || python3 -m pip install -q --break-system-packages pillow >/dev/null 2>&1
+    log "Playwright + Chromium có sẵn — xong"; return 0
+  fi
   python3 -m pip install -q --break-system-packages playwright pillow >/dev/null 2>&1 \
     || python3 -m pip install -q playwright pillow >/dev/null 2>&1 || { log "LỖI pip playwright"; return 0; }
   python3 -m playwright install --with-deps chromium >/dev/null 2>&1 \

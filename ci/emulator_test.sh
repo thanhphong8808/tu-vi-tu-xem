@@ -86,7 +86,7 @@ if [ -z "$RES" ] && adb logcat -d -b events 2>/dev/null | grep -q "am_kill.*vn.t
   sleep 10
   run_selftest 2
 fi
-grep -nE "TUVI_SELFTEST|FATAL EXCEPTION|AndroidRuntime|TuViTuXem|VerifyError|NoClassDefFound" "$OUT/logcat-selftest-api$API.txt" | head -250
+grep -nE "TUVI_SELFTEST|FATAL EXCEPTION|AndroidRuntime|TuViTuXem|TuViAI|litert|VerifyError|NoClassDefFound|UnsatisfiedLink" "$OUT/logcat-selftest-api$API.txt" | head -300
 echo "SELFTEST: ${RES:-KHONG_CO_KET_QUA}"
 case "$RES" in *" fail=0") ;; *) FAIL=1 ;; esac
 emit_png "selftest-api$API" "$OUT/2-selftest-api$API.png"

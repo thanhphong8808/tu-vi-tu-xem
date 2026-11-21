@@ -10,6 +10,7 @@ BASE = sys.argv[1] if len(sys.argv) > 1 else 'http://127.0.0.1:8767/'
 MOCK = r"""
 window.TuViNative = {
   version: () => 'thử trên máy tính',
+  callAsync: (id, m, a) => { const x = new XMLHttpRequest(); x.open('POST', 'api/' + m, true); x.setRequestHeader('Content-Type', 'application/json; charset=utf-8'); x.onload = () => window.tvAsyncDone(id, x.responseText); x.send(a); },
   call: (m, a) => { const x = new XMLHttpRequest(); x.open('POST', 'api/' + m, false); x.setRequestHeader('Content-Type', 'application/json; charset=utf-8'); x.send(a); return x.responseText; },
   exportFile: (kind, action, name, payload) => {
     window.__exports = (window.__exports || []).concat([{ kind, action, name, size: payload.length }]);
@@ -27,7 +28,12 @@ window.TuViNative = {
 
 async def main():
     async with async_playwright() as p:
-        b = await p.chromium.launch()
+        try:
+            b = await p.chromium.launch()
+        except Exception:  # Playwright không khớp trình duyệt đã cài → Chromium có sẵn của máy
+            import os
+            exe = next(e for e in (os.environ.get('TUVI_CHROMIUM'), '/opt/pw-browsers/chromium_headless_shell', '/opt/pw-browsers/chromium') if e and os.path.exists(e))
+            b = await p.chromium.launch(executable_path=exe)
         ctx = await b.new_context(viewport={'width': 412, 'height': 915}, device_scale_factor=2.625, is_mobile=True, has_touch=True)
         await ctx.add_init_script(MOCK)
         pg = await ctx.new_page()
