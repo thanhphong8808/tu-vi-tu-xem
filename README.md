@@ -3,6 +3,17 @@
 App Android lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam), chạy offline.
 Đặc tả đầy đủ: [`docs/PROMPT_TUVI_APP.md`](docs/PROMPT_TUVI_APP.md) · Cẩm nang: [`docs/CAMNANG_TUVI_V2.txt`](docs/CAMNANG_TUVI_V2.txt)
 
+## Tải về
+
+Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download raw file** ⤓ ở góc phải nếu không tự tải):
+
+| File | Nội dung |
+| --- | --- |
+| [TuViTuXem-0.4.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.4.0.apk) | File cài app Android (bản mới nhất) |
+| [Bản luận mẫu 4 ca golden](docs/tai-ve/BanLuanMau_4CaGolden.txt) | Bản luận trọn đời / đại vận / năm 2026 / tháng của 4 lá số mẫu, để đọc góp ý văn phong |
+| [Báo cáo giai đoạn 4](docs/PHASE4_REPORT.md) | Kết quả kiểm thử, máy ảo, các điểm phải tự quyết |
+| [Mã nguồn (ZIP)](https://github.com/thanhphong8808/tu-vi-tu-xem/archive/refs/heads/main.zip) | Toàn bộ mã nguồn, trừ khóa ký app (xem D-31) |
+
 ## Trạng thái
 
 | Giai đoạn | Nội dung | Trạng thái |
