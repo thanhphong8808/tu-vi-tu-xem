@@ -16,6 +16,7 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |
 | [Bản luận mẫu giai đoạn 5](docs/tai-ve/BanLuanMau_GiaiDoan5.txt) | Lịch ngày, chi tiết ngày + 12 giờ, thẻ sao, so hai lá số, xếp hạng giờ khi không rõ giờ sinh |
 | [Bản luận mẫu 4 ca golden](docs/tai-ve/BanLuanMau_4CaGolden.txt) | Bản luận trọn đời / đại vận / năm 2026 / tháng của 4 lá số mẫu, để đọc góp ý văn phong |
+| [Làm tiếp ở môi trường mới](docs/BAN_GIAO_MOI_TRUONG_MOI.md) | Hướng dẫn từng bước chuyển sang phiên Claude Code mới (claude.ai/code) có mở `dl.google.com` và `huggingface.co` để gắn AI sinh lời; khóa ký đi kèm gói riêng gửi trong chat |
 | [Báo cáo giai đoạn 6](docs/PHASE6_REPORT.md) | Mục Hỏi đáp, kết quả kiểm thử, 5 máy ảo, phần còn chờ (model AI, Firebase) |
 | [Báo cáo giai đoạn 5](docs/PHASE5_REPORT.md) | Kết quả kiểm thử, 5 máy ảo, hiệu năng, các điểm phải tự quyết |
 | [Mã nguồn (ZIP)](https://github.com/thanhphong8808/tu-vi-tu-xem/archive/refs/heads/main.zip) | Toàn bộ mã nguồn, trừ khóa ký app (xem D-31) |
@@ -41,14 +42,15 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
    quyền nào, kể cả Internet.
 
 Cần Android 8.0 trở lên. Bản sau cài đè lên bản trước, không mất lá số đã lưu, vì cùng một khóa ký (D-31). Khóa ký không
-đưa lên GitHub công khai; bản sao nằm trong các file mã nguồn ZIP đã gửi riêng.
+đưa lên GitHub công khai; bản sao nằm trong gói riêng `GoiRieng_KhoaKy_TuViTuXem.zip` gửi trong chat.
 
 Mỗi lần đẩy mã lên GitHub, workflow “Chạy thử trên máy ảo Android” cài file trong `dist/` lên máy ảo Android 11–17
 (cài đè lên bản trước như người dùng sẽ làm): mở app, bắt lỗi văng, chạy 4 ca golden và kiểm tra phần luận giải
 ngay trong app (cả mục Hỏi đáp), rồi thử trên màn hình thật: cây trợ năng TalkBack, chạm giữ một sao, bảng chia sẻ,
 PDF/PNG đã lưu, gõ câu hỏi bằng bàn phím vào mục Hỏi đáp (`ci/emulator_test.sh`).
 
-Build lại APK (Linux, không cần Android Studio): `bash tools/apk/build_apk.sh`. Lệnh này ra bản phát hành và bản tự kiểm tra. Công cụ cần có ghi ở đầu script.
+Build lại APK (Linux, không cần Android Studio): `bash tools/apk/build_apk.sh`. Lệnh này ra bản phát hành và bản tự kiểm tra. Công cụ cần có ghi ở đầu script; ở môi trường mới, `tools/setup/cloud_setup.sh` cài hết. Script dừng nếu thiếu khóa ký thật hoặc khóa sai, để không ra APK không cài đè được.
+Chạy mọi kiểm thử tại chỗ bằng một lệnh: `bash tools/setup/test_all.sh`. Kiểm tra môi trường: `bash tools/setup/doctor.sh`.
 Kiểm thử giao diện: `(cd tools/apk/uitest && npm install)` (axe-core) một lần, rồi `tools/apk/devserver.sh 8765 2026-11-20 &`
 và `python3 tools/apk/uitest/test_ui.py` (so ảnh với `tools/apk/uitest/baseline`, cập nhật bằng `TUVI_UPDATE_BASELINE=1`).
 

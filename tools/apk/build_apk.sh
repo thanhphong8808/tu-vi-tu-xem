@@ -10,6 +10,8 @@
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
+# Công cụ do tools/setup/cloud_setup.sh cài (môi trường mới), rồi tới cấu hình riêng của máy (nếu có).
+[ -f "${TUVI_TK:-/opt/tuvi-tk}/env.sh" ] && source "${TUVI_TK:-/opt/tuvi-tk}/env.sh"
 ENV_FILE="$ROOT/tools/apk/env.local.sh"
 [ -f "$ENV_FILE" ] && source "$ENV_FILE"
 
@@ -88,11 +90,26 @@ step "6/7 Kiểm tra lời gọi API hệ thống trong DEX (android.jar API 35)
 python3 "$ROOT/tools/apk/check_api.py" "$OUT/dex/classes.dex" "$ANDROID_JAR_35"
 
 step "7/7 Ký (apksigner v1 + v2 + v3)"
+# Khóa ký thật (D-31) không có trên GitHub. Ở môi trường mới, khóa lấy từ biến TUVI_KEYSTORE_B64 (xem
+# docs/BAN_GIAO_MOI_TRUONG_MOI.md). Thiếu khóa thật thì DỪNG: APK ký bằng khóa khác không cài đè được lên app
+# đã cài trên điện thoại. Chỉ CI (bản tạm, không phát hành) hoặc ALLOW_NEW_KEY=1 mới được ký bằng khóa tạm.
 if [ ! -f "$KEYSTORE" ]; then
-  mkdir -p "$(dirname "$KEYSTORE")"
-  keytool -genkeypair -keystore "$KEYSTORE" -alias tuvi -keyalg RSA -keysize 2048 -validity 10950 \
-    -storepass "$KS_PASS" -keypass "$KS_PASS" -dname "CN=Tu Vi Tu Xem, O=Thanh Phong, C=VN" >/dev/null 2>&1
-  echo "   đã tạo khóa ký mới: $KEYSTORE"
+  bash "$ROOT/tools/setup/restore_keystore.sh" "$KEYSTORE" || true
+fi
+if [ ! -f "$KEYSTORE" ]; then
+  if [ "${CI:-}" = "true" ] || [ "${ALLOW_NEW_KEY:-}" = "1" ]; then
+    mkdir -p "$(dirname "$KEYSTORE")"
+    keytool -genkeypair -keystore "$KEYSTORE" -alias tuvi -keyalg RSA -keysize 2048 -validity 10950 \
+      -storepass "$KS_PASS" -keypass "$KS_PASS" -dname "CN=Tu Vi Tu Xem, O=Thanh Phong, C=VN" >/dev/null 2>&1
+    echo "   CẢNH BÁO: ký bằng khóa TẠM ($KEYSTORE) — APK này không cài đè được lên app thật, không đưa vào dist/"
+  else
+    echo "LỖI: thiếu khóa ký thật $KEYSTORE. Đặt biến TUVI_KEYSTORE_B64 hoặc chép file khóa vào đó"
+    echo "     (docs/BAN_GIAO_MOI_TRUONG_MOI.md, mục 3). Chỉ để thử: ALLOW_NEW_KEY=1 bash tools/apk/build_apk.sh"
+    exit 4
+  fi
+else
+  bash "$ROOT/tools/setup/restore_keystore.sh" --verify "$KEYSTORE" || {
+    [ "${CI:-}" = "true" ] || [ "${ALLOW_NEW_KEY:-}" = "1" ] || exit 4; }
 fi
 sign() { # $1 = tên trung gian, $2 = file ra
   apksigner sign --ks "$KEYSTORE" --ks-key-alias tuvi --ks-pass "pass:$KS_PASS" --key-pass "pass:$KS_PASS" \

@@ -585,3 +585,16 @@ bị chặn từ môi trường build. Vì vậy không lấy được thư vi�
 Không gắn một model chưa chạy thử vào app. Lớp luận đoán D-54 làm phần nội dung. Khi có mạng, model chỉ làm việc diễn
 đạt lại kết quả của lớp này, và mọi câu model viết phải qua kiểm tra mục 12.3. Câu nào trượt kiểm tra thì app hiện lại
 câu của D-54.
+
+### D-56 · Bàn giao sang môi trường mới (claude.ai/code)
+Môi trường cũ không mở được `dl.google.com` và `huggingface.co` (D-55), nên dự án chuyển sang một phiên Claude Code có
+môi trường mạng Custom. Hướng dẫn cho anh Phong: `docs/BAN_GIAO_MOI_TRUONG_MOI.md`. Bối cảnh cho Claude: `CLAUDE.md`.
+- `tools/setup/cloud_setup.sh` dựng lại công cụ build vào `/opt/tuvi-tk`, ghi `env.sh`. `build_apk.sh` và `devserver.sh`
+  tự nạp file này, nên không cần `env.local.sh`.
+- Khóa ký vẫn không lên GitHub. Ở môi trường mới, khóa đi qua biến `TUVI_KEYSTORE_B64` của môi trường cá nhân.
+  `restore_keystore.sh` giải mã và so dấu vân tay SHA-256 với khóa thật.
+- `build_apk.sh` không còn tự tạo khóa mới khi thiếu khóa: thiếu hoặc sai khóa thì dừng (mã 4). Chỉ CI hoặc
+  `ALLOW_NEW_KEY=1` mới ký bằng khóa tạm. Lý do: APK ký bằng khóa khác không cài đè được lên app đang dùng.
+- `tools/setup/test_all.sh` chạy một lần đủ Gradle, APK, giao diện và selftest. `doctor.sh` báo mạng, công cụ, khóa.
+- Hook SessionStart (`.claude/settings.json`) chỉ chạy trên đám mây: khôi phục khóa, cài nền công cụ nếu môi trường
+  chưa có setup script, cài axe-core.
