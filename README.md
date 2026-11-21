@@ -10,6 +10,7 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | File | Nội dung |
 | --- | --- |
 | [TuViTuXem-0.8.1.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.8.1.apk) | File cài app Android (bản mới nhất, ~22 MB). Mới ở 0.8.1: Hỏi đáp **đoán năm cưới** theo lá số (“Có thể đoán được năm cưới của tôi không?”, “Tuổi kết hôn của tôi?”), đối chiếu các năm đã qua, và “Tôi đã cưới năm 2015, lá số có khớp không?”. Vẫn có: giao diện tướng số, đoạn **Sách bàn**, **Trợ lý AI chạy trên máy** (Gemma 4 E2B, tải một lần ~2,6 GB qua Wi-Fi), số liên hệ 0378 373 373. Cài đè lên bản cũ không mất lá số |
+| [Ảnh Hỏi đáp “đoán năm cưới”](docs/tai-ve/HoiDap_DoanNamCuoi.png) | Câu trả lời 0.8.1 cho “Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?” (lá số mẫu Ca A) |
 | [Thiết kế trên Figma](https://www.figma.com/design/kdxoEkGID6PUamNLPzuvyZ) · [ảnh màn mẫu](docs/tai-ve/ThietKe_Figma_ManMau.png) | Hệ thiết kế: màu sáng/tối, kiểu chữ, 22 icon, nút, thẻ, màn Trang chủ và Hỏi đáp |
 | [Chấm 40 câu Trợ lý AI](docs/tai-ve/ai-cham-40-cau.md) | 40 câu hỏi trên 4 lá số, câu AI viết (model thật), câu nào qua/trượt kiểm tra dữ kiện và vì sao, thời gian mỗi câu |
 | [Ảnh thẻ Trợ lý AI](docs/tai-ve/TroLyAI_TheTai.png) | Thẻ tải Trợ lý AI trong mục Hỏi đáp: dung lượng, nguồn tải, chỉ qua Wi-Fi |

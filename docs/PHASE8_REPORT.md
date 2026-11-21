@@ -140,3 +140,19 @@ Tuế — xem tầng nào vào cung Phu Thê gặp sao tình duyên (Hồng Loan
 lưu tình duyên (Đào Hoa, Hồng Loan, Hỷ Thần lưu) chiếu Mệnh, Thân — luật “Hạn hỷ” trong kho luận giải. Ba tầng cùng
 chỉ là “khả năng cao”, hai tầng “có thể”, một tầng “mới là dấu hiệu”. Đây là mức khả năng, không phải lời khẳng định.
 Giờ sinh lệch thì năm lệch theo; vì vậy đoạn “đối chiếu năm đã qua” giúp kiểm lại giờ sinh.
+
+Ảnh câu trả lời (lá số Ca A, chụp trên máy chủ thử): [docs/tai-ve/HoiDap_DoanNamCuoi.png](tai-ve/HoiDap_DoanNamCuoi.png).
+
+## Máy ảo Android 0.8.1 (CI)
+
+Workflow “Chạy thử trên máy ảo Android”, commit `9aaf4ca`
+([run 44927583277](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44927583277)) — **đạt cả 5 máy ngay lần đầu**.
+Workflow “Kiem tra” (Gradle + APK khóa tạm) đạt cả lượt push và lượt PR.
+
+| Máy ảo | Cài đè 0.8.0 → 0.8.1 | Selftest | LiteRT-LM (probe) | Gõ câu hỏi, trợ năng, chạm giữ, chia sẻ, PDF, PNG | Luận một năm |
+| --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 23 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 92 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 85 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 99 ms |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 174 ms |
