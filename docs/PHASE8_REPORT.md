@@ -47,7 +47,16 @@ Ngày 21/11/2026. Quyết định chi tiết: `docs/DECISIONS.md` D-61 … D-63.
 
 ## Trợ lý AI chấm lại 40 câu (model thật, CPU máy build)
 
-Chi tiết từng câu: [docs/tai-ve/ai-cham-40-cau.md](tai-ve/ai-cham-40-cau.md). Kết quả mới nhất: _(điền sau lần chấm cuối)_.
+Chi tiết từng câu: [docs/tai-ve/ai-cham-40-cau.md](tai-ve/ai-cham-40-cau.md).
+
+| Lần | Thay đổi | Qua kiểm tra | Trung vị / lâu nhất |
+| --- | --- | --- | --- |
+| 0.7.0 | (bản trước) | 36/40 | 19,6 / 28,7 giây |
+| 0.8.0 – 1 | Thêm đoạn Sách bàn vào dữ kiện | 36/40 | 20,1 giây (câu đầu 171 giây do dựng lại bộ đệm model) |
+| 0.8.0 – 2 | Ghi rõ “(lá số có …)” trong câu sách | 35/40 (4 câu quên điểm chung) | 20,6 / 30,0 giây |
+| 0.8.0 – 3 | App tự thêm câu điểm chung khi đó là lỗi duy nhất | **39/40** | 20,0 / 28,8 giây |
+
+Câu còn trượt: “Tôi có số giàu không?” — model bịa điểm 38/100; app hiện bản luận gốc. 7/39 câu AI dẫn ý sách.
 
 - Đoạn “Sách bàn” đi vào dữ kiện của Trợ lý AI; câu AI có dẫn ý sách (“Sách cổ bàn rằng…”).
 - Model hay quên nêu điểm chung. App biết điểm này, nên nếu đó là lỗi duy nhất thì app tự thêm câu “Điểm chung: N/100.”
@@ -66,7 +75,22 @@ Chi tiết từng câu: [docs/tai-ve/ai-cham-40-cau.md](tai-ve/ai-cham-40-cau.md
 
 ## Máy ảo Android (CI)
 
-_(ghi sau khi workflow chạy xong)_
+Workflow “Chạy thử trên máy ảo Android”, commit `9cea98b`
+([run 44922395019](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44922395019)) — **đạt cả 5 máy ngay lần đầu**:
+
+| Máy ảo | Cài đè 0.7.0 → 0.8.0 | Selftest | LiteRT-LM (probe) | Trợ năng, chạm giữ, chia sẻ, gõ câu hỏi, PDF, PNG | Luận một năm |
+| --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 32 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 217 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 44 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 81 ms |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 151 ms |
+
+Ảnh màn hình thật: [trang chủ (Android 15)](tai-ve/TrangChu_MayAo_API35.png) — logo bát quái, tiêu đề Noto Serif, số liên
+hệ; [Hỏi đáp (Android 15)](tai-ve/HoiDap_MayAo_API35.png).
+
+Lượt “Kiem tra” chạy theo PR có lần đỏ vì Maven Central trả lỗi khi tải kotlinx-serialization (lượt push cùng commit
+xanh). Đã sửa `build.yml`: tải bằng `curl -f`, tải lại 5 lần, kiểm SHA-256.
 
 ## Việc còn lại
 

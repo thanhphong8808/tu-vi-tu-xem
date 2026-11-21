@@ -60,14 +60,16 @@ jobs:
       - name: Tải Kotlin 2.0.21, android.jar API 26/35, kotlinx-serialization 1.6.2
         run: |
           mkdir -p "$HOME/tk" && cd "$HOME/tk"
-          curl -sSLo kotlin.zip https://github.com/JetBrains/kotlin/releases/download/v2.0.21/kotlin-compiler-2.0.21.zip
+          curl -fsSL --retry 4 -o kotlin.zip https://github.com/JetBrains/kotlin/releases/download/v2.0.21/kotlin-compiler-2.0.21.zip
           unzip -q kotlin.zip
           for a in 26 35; do
-            curl -sSLo "android-$a.jar" "https://raw.githubusercontent.com/Sable/android-platforms/master/android-$a/android.jar"
+            curl -fsSL --retry 4 -o "android-$a.jar" "https://raw.githubusercontent.com/Sable/android-platforms/master/android-$a/android.jar"
           done
           M=https://repo1.maven.org/maven2/org/jetbrains/kotlinx
-          curl -sSLO "$M/kotlinx-serialization-core-jvm/1.6.2/kotlinx-serialization-core-jvm-1.6.2.jar"
-          curl -sSLO "$M/kotlinx-serialization-json-jvm/1.6.2/kotlinx-serialization-json-jvm-1.6.2.jar"
+          # Maven Central đôi khi trả 404/429 cho máy chủ CI: -f để không lưu trang lỗi thành jar, tải lại, kiểm SHA-256.
+          get() { for i in 1 2 3 4 5; do curl -fsSLo "$1" "$2" && echo "$3  $1" | sha256sum -c --status && return 0; echo "tải lại $1 ($i)"; sleep $((i*15)); done; return 1; }
+          get kotlinx-serialization-core-jvm-1.6.2.jar "$M/kotlinx-serialization-core-jvm/1.6.2/kotlinx-serialization-core-jvm-1.6.2.jar" 8e6fc04e1a2efd2acbbc5503a1dc9d988166f99e4f1f51ef6b91c3a52077bdb1
+          get kotlinx-serialization-json-jvm-1.6.2.jar "$M/kotlinx-serialization-json-jvm/1.6.2/kotlinx-serialization-json-jvm-1.6.2.jar" 8d2718bb042e830b12b7fb10af26d0fba43de1f1f9ffe0a6b131d4d251aac2cc
 
       - name: Build APK
         run: |
