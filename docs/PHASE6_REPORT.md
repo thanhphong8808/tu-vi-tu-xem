@@ -35,7 +35,22 @@ chủ đề trong bản luận đầy đủ. Xem [41 câu hỏi đáp mẫu](tai
   - 2 lá số × 11 năm × 5 câu hỏi có sự kiện, không lọt từ cấm.
 - Giao diện: 670/670, gồm kiểm tra đủ 7 tiêu đề tầng và căn cứ khi dò năm; axe-core sáng và tối không lỗi nặng.
 - Tự kiểm tra trong app (chạy thử trên máy tính): 520/520, mỗi câu 0,1–0,25 giây; gõ phím thật vào ô Hỏi đáp đạt.
-- Máy ảo: xem mục “Máy ảo Android (CI) — 0.6.1” bên dưới.
+- **Máy ảo Android:** lần chạy 44888650887 (commit `16b183a`) đạt cả 5 máy. Mỗi máy:
+  - cài 0.6.0 trước rồi cài đè 0.6.1;
+  - chạy tự kiểm tra trong app: 520/520, có kiểm đủ các tầng luận;
+  - gõ câu hỏi bằng bàn phím thật;
+  - kiểm trợ năng, chạm giữ, chia sẻ.
+
+| Máy ảo | Tự kiểm tra | Gõ “nam sau tai chinh ra sao” | Câu chậm nhất |
+| --- | --- | --- | --- |
+| Android 11 (API 30) | 520/520 | ✓ Tài chính · năm 2027 | 0,42 giây |
+| Android 14 (API 34) | 520/520 | ✓ | 2,39 giây (dò 11 năm “khi nào lấy vợ”) |
+| Android 15 (API 35) | 520/520 | ✓ | 1,41 giây |
+| Android 16 (API 36) | 520/520 | ✓ | 1,60 giây |
+| Android 17 (API 37) | 520/520 | ✓ | 0,40 giây |
+
+Câu dò “năm nào…” chậm nhất vì phải luận 11 năm. Máy ảo trên CI chậm hơn S22 Ultra nhiều.
+[Ảnh màn Hỏi đáp trên máy ảo Android 15](tai-ve/HoiDap_MayAo_API35.png).
 
 **Model AI sinh lời (LLM).** Đã kiểm tra lại: các máy chủ tải thư viện và model (`dl.google.com`, `maven.google.com`,
 `huggingface.co`) vẫn bị chặn từ môi trường build, nên chưa gắn và chưa thử được model (D-55). Phần luận đoán ở trên chạy
