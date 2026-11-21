@@ -445,6 +445,8 @@ async def main():
         await phase7(page)
         # ———————————————— 0.8.0: sách bàn, liên hệ, bỏ nhãn nháp, icon ————————————————
         await phase8(page)
+        # ———————————————— 0.8.1: đoán năm cưới, đối chiếu năm đã cưới ————————————————
+        await phase81(page)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -900,5 +902,27 @@ async def phase8(page):
     st = await page.inner_text('#app')
     check('nháp' not in st.lower() and await page.locator('#contact a[href="tel:0378373373"]').count() == 1, 'Cài đặt: có thẻ Liên hệ, không còn chữ nháp')
     await page.evaluate('window.tvBack()')
+
+async def phase81(page):
+    print('0.8.1 — Đoán năm cưới')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]')
+
+    async def full(q):
+        await qa_ask(page, q)
+        await page.wait_for_timeout(500)
+        t = page.locator('.qa-turn').last
+        if await t.locator('[data-act="qa-detail"]').count():
+            await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+        return await t.inner_text()
+
+    t = await full('Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?')
+    check('Năm thuận cho chuyện tình cảm, cưới hỏi' in t and '2026 (Bính Ngọ' in t and 'Đối chiếu các năm đã qua' in t,
+          f'Câu “đoán năm cưới” phải dò năm cưới và đối chiếu năm đã qua: {t[:200]}')
+    await shot(page, 'p81_doan_nam_cuoi')
+    t = await full('Tôi đã cưới năm 2015, lá số có khớp không?')
+    check('Đối chiếu năm 2015 với lá số' in t and 'năm bạn nêu' in t and '2013 (Quý Tỵ' in t and '2017 (Đinh Dậu' in t,
+          f'Câu “đã cưới năm 2015” phải đối chiếu năm đó và hai năm mỗi bên: {t[:200]}')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
 
 asyncio.run(main())

@@ -319,6 +319,12 @@
    "reviewed": false
   },
   {
+   "key": "qa.truoc_nam_sinh",
+   "text": "Năm bạn hỏi đứng trước năm sinh của lá số đang mở nên chưa có vận hạn để xem. Bạn thử hỏi một năm từ năm sinh trở đi, hoặc mở đúng lá số của người cần xem.",
+   "source": "Mục 8 (vận hạn tính từ năm sinh)",
+   "reviewed": false
+  },
+  {
    "key": "qa.khong_su_kien",
    "text": "Trong khoảng năm đã dò, chưa thấy năm nào có dấu hiệu đồng thanh rõ cho việc này; dưới đây là những năm chủ đề liên quan có điểm cao nhất.",
    "source": "Prompt mục 9",

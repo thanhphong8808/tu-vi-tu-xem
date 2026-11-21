@@ -88,6 +88,11 @@ class QaTest {
         for ((key, g) in leads.groupBy { it.topic to it.text.substringBefore(" — ", "") }) {
             assertFalse(g.any { it.polarity > 0 } && g.any { it.polarity < 0 }, "$label: câu chính ngược chiều $key")
         }
+        // Năm trước năm sinh của lá số: chỉ có lời nhắc, không luận (D-64).
+        if (ans.paragraphs.any { "QA_TRUOC_NAM_SINH" in it.ruleIds }) {
+            assertTrue(ans.score == null && ans.paragraphs.size == 1 && (ans.parse.time?.lunarYear ?: 0) < 3000, "$label: năm trước năm sinh")
+            return
+        }
         when (ans.parse.intent) {
             QaIntent.CRISIS -> {
                 assertEquals(listOf("QA_KHUNG_HOANG"), ans.paragraphs.flatMap { it.ruleIds }, "$label: khủng hoảng chỉ có lời hỗ trợ")
@@ -349,6 +354,48 @@ class QaTest {
         assertTrue(para(dec, "Đại hạn") != null && dec.paragraphs.first().text.contains("năm thuận nhất là"))
         val wed = qa.answer(a, "Khi nào tôi lấy vợ?", ctx)
         assertTrue(wed.paragraphs.filter { it.kind == ParaKind.EVENT }.all { "Căn cứ:" in it.text })
+    }
+
+    /** D-64: hỏi đoán năm cưới → dò năm tới và đối chiếu các năm đã qua; kể năm đã cưới → đối chiếu năm đó với lá số. */
+    @Test
+    fun `đoán năm cưới và đối chiếu năm đã cưới`() {
+        for (q in listOf("Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?", "co the doan duoc nam cuoi cua toi khong", "Năm nào tôi cưới?")) {
+            val ans = qa.answer(a, q, ctx)
+            assertEquals(QaIntent.TIMING, ans.parse.intent, q)
+            assertEquals(Event.CUOI_HOI, ans.parse.event, q)
+            assertTrue(ans.understood.startsWith("Năm thuận cho chuyện tình cảm, cưới hỏi"), ans.understood)
+            assertTrue(ans.paragraphs.any { it.kind == ParaKind.EVENT && it.text.startsWith("2026") || it.text.matches(Regex("^20[2-3]\\d .*")) }, q)
+            val past = ans.paragraphs.firstOrNull { "EVENT_CUOI_HOI_DA_QUA" in it.ruleIds }
+            assertTrue(past != null && past.text.startsWith("Đối chiếu các năm đã qua"), q)
+            // Năm đã qua: từ 18 tuổi âm, trước năm hiện tại.
+            for (y in Regex("\\b(\\d{4}) \\(").findAll(past!!.text).map { it.groupValues[1].toInt() }) assertTrue(y in 2007 until 2026, "$q: $y")
+            checkAnswer(ans, q)
+        }
+        // Có nêu khoảng thời gian thì không dò năm đã qua.
+        assertTrue(qa.answer(a, "10 năm tới năm nào tôi cưới?", ctx).paragraphs.none { "EVENT_CUOI_HOI_DA_QUA" in it.ruleIds })
+
+        val v = qa.answer(a, "Tôi đã cưới năm 2015, lá số có khớp không?", ctx)
+        assertTrue(v.parse.verify && v.parse.intent == QaIntent.TIMING, v.parse.toString())
+        assertEquals("Đối chiếu năm 2015 với lá số · chuyện tình cảm, cưới hỏi", v.understood)
+        assertTrue(v.paragraphs.first().text.startsWith("Năm 2015"), v.paragraphs.first().text)
+        val years = v.paragraphs.filter { it.kind == ParaKind.EVENT }.map { it.text.take(4).toInt() }
+        assertEquals((2013..2017).toList(), years)
+        assertTrue(v.paragraphs.any { "năm bạn nêu" in it.text })
+        assertEquals(2015, v.link?.lunarYear)
+        checkAnswer(v, "đối chiếu 2015")
+        // Năm tương lai, hoặc không có ý đối chiếu: vẫn là luận năm như cũ.
+        assertFalse(qa.parse("Năm 2015 tình duyên của tôi thế nào?", a, ctx).verify)
+        assertFalse(qa.parse("Năm 2028 tôi có cưới không?", a, ctx).verify)
+        val c = ChartEngine.build(ReadingTest.GOLDEN.getValue("C"))
+        for (q in listOf("Năm 2015 thế nào?", "Tôi đã cưới năm 2015, có khớp không?", "Tháng 3 năm 2020 tài chính ra sao?"))
+            assertTrue(qa.answer(c, q, ctx).paragraphs.single().ruleIds == listOf("QA_TRUOC_NAM_SINH"), "ca C · $q")
+        // Mọi lá số người lớn, mọi năm đối chiếu: không lỗi, không từ cấm.
+        for (id in listOf("A", "B", "D")) {
+            val ch = ChartEngine.build(ReadingTest.GOLDEN.getValue(id))
+            for (y in listOf(2005, 2010, 2018, 2025)) for (q in listOf("Tôi đã cưới năm $y, có khớp không?", "Năm $y tôi đã có con, lá số có đúng không?", "Tôi đã đổi việc năm $y, có trùng không?"))
+                checkAnswer(qa.answer(ch, q, ctx), "ca $id · $q")
+            checkAnswer(qa.answer(ch, "Đoán năm cưới của tôi", ctx), "ca $id · đoán năm cưới")
+        }
     }
 
     private fun checkWeird(ans: QaAnswer, q: String) {

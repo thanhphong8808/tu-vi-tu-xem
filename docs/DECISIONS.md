@@ -707,3 +707,21 @@ và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube T
   riêng tư, quay lại, thêm, đóng. Cùng một nguồn SVG cho app (`app/assets/web/icons.js`) và Figma.
 - App: icon SVG thay emoji trên nút và tiêu đề thẻ, logo bát quái ở trang chủ, đường kẻ kim nhũ, tiêu đề chữ có chân,
   đoạn “Sách bàn” nền vàng nhạt. Ảnh chuẩn giao diện cập nhật có chủ đích.
+
+### D-64 · Hỏi đoán năm cưới, đối chiếu năm đã xảy ra (0.8.1)
+- Anh hỏi: “Làm sao để app trả lời khi tôi hỏi có thể xem từ lá số và đoán được năm cưới của tôi không?”. Trước đây câu
+  “Năm nào tôi cưới?” đã chạy (dò năm theo đồng thanh tương ứng, mục 9), nhưng câu đúng lời anh bị hiểu thành “tình duyên
+  năm nay”, vì bộ hiểu câu hỏi chỉ nhận “năm nào / khi nào / bao giờ…”.
+- **Hiểu câu hỏi:** thêm các cách hỏi mốc năm: “năm cưới”, “tuổi kết hôn”, “năm lấy vợ/chồng”, “năm lập gia đình”, “năm có
+  con”, “đoán (được) năm …”, “biết năm …”, “báo trước năm …”. “cưới” đã được đổi thành “cưới hỏi” trước khi bỏ dấu, nên
+  “năm cưới” không lẫn với “năm cuối”. Không dấu: “đã cưới”, “vừa cưới” cũng nhận là cưới hỏi.
+- **Dò cả các năm đã qua:** câu hỏi mốc năm của một việc (không nêu khoảng thời gian) vẫn dò 10 năm tới như cũ, thêm đoạn
+  **“Đối chiếu các năm đã qua”**: các năm từ 18 tuổi âm (tối đa 20 năm) có từ hai tầng vận cùng chỉ về việc đó. Người đã
+  cưới so với năm thật: trùng hoặc lệch một năm là lá số, giờ sinh khá khớp; lệch xa thì nên xem lại giờ sinh.
+- **Đối chiếu năm đã kể:** “Tôi đã cưới năm 2015, lá số có khớp không?” (năm đã qua + việc + “đã/vừa/có khớp/đúng không/
+  đối chiếu…”) → câu trả lời “Đối chiếu năm 2015 với lá số”: câu kết luận (khớp / khớp một phần / tín hiệu gần nhất là năm
+  nào), rồi năm đó và hai năm mỗi bên, mỗi năm có mức khả năng, tầng cùng chỉ, điểm chủ đề và căn cứ. Năm tương lai hoặc
+  câu không có ý đối chiếu vẫn là luận năm như cũ.
+- Sửa kèm: hỏi một năm trước năm sinh của lá số đang mở (vd. lá số sinh 2023 hỏi “năm 2015”) trước đây làm app báo lỗi;
+  nay trả lời bằng lời nhắc `qa.truoc_nam_sinh`.
+- Lời vẫn là mức khả năng (“khả năng cao / có thể / mới là dấu hiệu”), không khẳng định, kèm ghi chú `qa.note.kha_nang`.

@@ -98,3 +98,45 @@ xanh). Đã sửa `build.yml`: tải bằng `curl -f`, tải lại 5 lần, ki�
 - Anh duyệt dần câu sách (trong `tools/kb/kb_sach.py`) nếu muốn chỉnh lời.
 - YouTube Tử Vi Học Quán: cần mở tên miền youtube.com cho môi trường. Kể cả mở được, video cũng phải chép lời (phụ đề)
   rồi mới diễn giải lại được.
+
+---
+
+# Bản 0.8.1 — Hỏi đoán năm cưới
+
+Quyết định: D-64.
+
+## Anh hỏi gì, đã làm gì
+
+Anh hỏi: *“Làm cách nào để app có thể trả lời tôi khi tôi hỏi là có thể xem từ lá số của tôi và đoán được năm cưới của
+tôi không?”*
+
+| Cách hỏi | Bản 0.8.0 | Bản 0.8.1 |
+| --- | --- | --- |
+| “Năm nào tôi cưới?”, “Khi nào tôi lấy vợ?” | Dò 10 năm tới | Dò 10 năm tới **và** đối chiếu các năm đã qua |
+| “Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?” | Hiểu nhầm thành “tình duyên năm nay” | Dò năm cưới như trên |
+| “Tuổi kết hôn của tôi là bao nhiêu?”, “Lá số có đoán được năm tôi có con không?” | Hiểu nhầm | Dò năm như trên |
+| “Tôi đã cưới năm 2015, lá số có khớp không?” | Chỉ luận tình duyên năm 2015 | **Đối chiếu năm 2015** và hai năm mỗi bên |
+
+## Câu trả lời mẫu (lá số Ca A: nam, 15/8/1990 10:30)
+
+**“Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?”** → *Năm thuận cho chuyện tình cảm, cưới hỏi · dò
+2026–2036*
+
+- 2026 (Bính Ngọ, 37 tuổi): khả năng cao (3 tầng cùng chỉ: lưu niên, tiểu hạn, Lưu Thái Tuế). Căn cứ: Hạn hỷ: năm thuận
+  cưới hỏi (tiểu hạn)…
+- 2035 (Ất Mão): có thể (2 tầng). 2033 (Quý Sửu): mới là dấu hiệu (1 tầng).
+- Đối chiếu các năm đã qua: lá số cũng từng nổi tín hiệu vào 2008 (Mậu Tý, 19 tuổi) — khả năng cao. Nếu bạn đã trải qua
+  việc này, hãy so với năm thật…
+
+**“Tôi đã cưới năm 2015, lá số có khớp không?”** → *Đối chiếu năm 2015 với lá số*
+
+- Kết luận: năm 2015 lá số có tín hiệu cưới hỏi ở mức mới là dấu hiệu (1 tầng) — khớp một phần.
+- Từng năm 2013 → 2017: mức khả năng, tầng cùng chỉ, điểm tình duyên, căn cứ (sao lưu, Tứ Hóa lưu vào cung Phu Thê…).
+
+## App đoán năm cưới dựa vào đâu
+
+Phép **đồng thanh tương ứng** (mục 9): mỗi năm app xét bốn tầng vận — đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái
+Tuế — xem tầng nào vào cung Phu Thê gặp sao tình duyên (Hồng Loan, Thiên Hỷ, Đào Hoa, Long Trì, Phượng Các), hoặc có sao
+lưu tình duyên (Đào Hoa, Hồng Loan, Hỷ Thần lưu) chiếu Mệnh, Thân — luật “Hạn hỷ” trong kho luận giải. Ba tầng cùng
+chỉ là “khả năng cao”, hai tầng “có thể”, một tầng “mới là dấu hiệu”. Đây là mức khả năng, không phải lời khẳng định.
+Giờ sinh lệch thì năm lệch theo; vì vậy đoạn “đối chiếu năm đã qua” giúp kiểm lại giờ sinh.

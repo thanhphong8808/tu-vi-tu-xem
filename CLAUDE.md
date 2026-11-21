@@ -1,7 +1,7 @@
 # Tử Vi Tự Xem — hướng dẫn cho Claude
 
 App Android **offline** lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam) của anh **Thanh Phong** (dùng Samsung S22 Ultra).
-Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.0 (9)**, giai đoạn 1–8 đã xong (xem `README.md`, mục Trạng thái).
+Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.1 (10)**, giai đoạn 1–8 đã xong (xem `README.md`, mục Trạng thái).
 
 ## Cách làm việc với anh Phong
 
@@ -13,7 +13,7 @@ Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.0 (9)**
   mục “Tải về”. Không gửi file đính kèm trong chat, trừ khóa ký (bí mật). GitHub Releases bị chặn (403): không tạo Release,
   không lách bằng Actions.
 - Đặc tả là `docs/PROMPT_TUVI_APP.md`; cẩm nang là `docs/CAMNANG_TUVI_V2.txt`. **Khi hai tài liệu khác nhau, theo PROMPT.**
-  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-63). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
+  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-64). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
 - Lựa chọn trường phái anh đã chốt: Nhâm hóa Khoa = Tả Phù; sinh tháng nhuận tính như tháng thường; Khôi Việt năm Canh =
   Ngọ/Dần (mặc định Nam phái VN).
 
@@ -118,6 +118,9 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
 - Hỏi đáp (D-49…D-54): `QaEngine.parse` hiểu câu hỏi (có dấu hoặc không dấu). `QaAnalyst` dựng câu trả lời từ lá số
   qua các tầng: gốc, đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế, Tứ Hóa, sao lưu. Trọng số năm:
   GOC .10, DAI_HAN .30, LUU_NIEN .25, TIEU_HAN .20, LUU_THAI_TUE .15. Điểm phải trùng với bản luận đầy đủ.
+- Hỏi mốc năm (D-64, 0.8.1): “đoán năm cưới”, “tuổi kết hôn”… → TIMING; không nêu thời gian thì thêm đoạn “Đối chiếu các
+  năm đã qua”. “Đã cưới năm 2015, có khớp không?” → `QaParse.verify`, `verifyYear` (năm đó ± 2). Năm trước năm sinh →
+  `qa.truoc_nam_sinh`.
 
 ## Kiến thức sách, thiết kế, liên hệ (0.8.0, D-61…D-63)
 
