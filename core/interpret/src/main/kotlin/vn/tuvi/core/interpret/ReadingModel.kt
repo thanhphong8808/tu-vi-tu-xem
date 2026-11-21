@@ -24,6 +24,8 @@ data class Paragraph(
     val why: List<Why>,
     /** Có câu chữ lấy từ KB chưa duyệt → app gắn nhãn “bản nháp”. */
     val draft: Boolean,
+    /** Tiêu đề nhỏ của đoạn (luận đoán theo tầng trong Hỏi đáp: “Lá số gốc”, “Đại hạn 35–44 tuổi”…). */
+    val title: String? = null,
 )
 
 data class Section(val id: String, val title: String, val topic: Topic?, val score: Int?, val subtitle: String?, val paragraphs: List<Paragraph>)

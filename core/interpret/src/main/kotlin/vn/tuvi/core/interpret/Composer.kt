@@ -528,6 +528,72 @@ class Composer(private val kb: KnowledgeBase) {
         )
     }
 
+    // ———————————————————— số liệu cho luận đoán trong Hỏi đáp (D-54) ————————————————————
+
+    /** Một luật đã kích hoạt, dạng công khai: tên, loại, tầng chấm điểm, chiều, cung neo, câu luận đã điền, căn cứ. */
+    data class RuleHit(
+        val ruleId: String, val name: String, val kind: String, val layer: Layer, val topics: Set<Topic>, val polarity: Int,
+        val strength: Double, val palaces: List<Chi>, val text: String, val why: Why,
+    )
+
+    /** Số liệu một giai đoạn (không ghép câu): điểm, điểm tầng, điểm chủ đề theo từng tầng, sự kiện đồng thanh, luật kích hoạt. */
+    class PeriodData(
+        val scope: ReadingScope, val limits: LimitLayers?, val score: Int, val layers: List<LayerScore>,
+        val topics: Map<Topic, TopicScore>, val events: List<YearEvent>, val hits: List<RuleHit>, val child: Boolean,
+        val advice: List<AdviceItem> = emptyList(),
+    )
+
+    private fun hitsOf(ctx: Ctx, its: List<Item>): List<RuleHit> = its.map { it ->
+        val p = pieceOf(ctx, it)
+        RuleHit(it.rule.id, it.rule.name, it.rule.type.vn, it.rule.scoringLayer(), it.topics, it.polarity, it.strength, it.palaces, p.text, p.why.first())
+    }
+
+    /** Năm âm [lunarYear]: cùng phép tính với [year], thêm điểm năm của Nhà đất, Tính cách, Phúc đức. */
+    fun yearData(chart: Chart, lunarYear: Int, expert: Boolean = false): PeriodData {
+        val c = YearCore(chart, lunarYear, expert)
+        val extra = listOf(Topic.NHA_DAT, Topic.TINH_CACH, Topic.PHUC_DUC).filter { it !in c.topics && (!c.child || it in CHILD_TOPICS) }
+            .associateWith { t -> c.ctx.scorer.topicLayered(chart, c.eval, t, c.limits, Scorer.YEAR_WEIGHTS) }
+        val (score, layers) = c.overallPair
+        val natal = items(c.ctx, setOf(Scope.GOC))
+        return PeriodData(ReadingScope.NAM, c.limits, score, layers, c.topics + extra,
+            c.hits.map { h -> YearEvent(h.event, h.level, h.layers.sortedBy { it.ordinal }) }, hitsOf(c.ctx, c.its + natal), c.child)
+    }
+
+    /** Đại vận chứa năm âm [lunarYear]: cùng phép tính với [decade], cho mọi chủ đề. */
+    fun decadeData(chart: Chart, lunarYear: Int, expert: Boolean = false): PeriodData {
+        val viewLimits = LimitEngine.forYear(chart, lunarYear)
+        val period = viewLimits.daiHanPeriod
+        val firstYear = chart.lunar.year + period.ages.first - 1
+        val limits = if (viewLimits.beforeFirstDaiHan) viewLimits else LimitEngine.forYear(chart, firstYear)
+        val raw = engine.evaluate(chart, limits, expert)
+        val eval = raw.copy(findings = raw.findings.filter { it.scope != Scope.NAM })
+        val ctx = Ctx(chart, limits, eval, Scorer(kb))
+        val child = period.ages.first < 14
+        val topics = Topic.entries.filter { !child || it in CHILD_TOPICS }.associateWith { t -> ctx.scorer.topicLayered(chart, eval, t, limits, Scorer.DECADE_WEIGHTS) }
+        val forScore = topics.filterKeys { it == Topic.TINH_CACH || it in YEAR_TOPICS }
+        val (score, layers) = if (viewLimits.beforeFirstDaiHan) 50 to emptyList() else overall(ctx, forScore, Scorer.DECADE_WEIGHTS)
+        return PeriodData(ReadingScope.DAI_VAN, viewLimits, score, layers, topics, emptyList(), hitsOf(ctx, items(ctx, setOf(Scope.DAI_HAN, Scope.GOC))), child)
+    }
+
+    /** Lá số gốc: cùng phép tính với [lifetime]. */
+    fun lifeData(chart: Chart, expert: Boolean = false): PeriodData {
+        val eval = engine.evaluate(chart, null, expert)
+        val ctx = Ctx(chart, null, eval, Scorer(kb))
+        val sc = ctx.scorer
+        val menhS = sc.palace(chart, eval, chart.menh)
+        val thanS = sc.palace(chart, eval, chart.than)
+        val phucChi = chart.palace(PalaceRole.PHUC_DUC).chi
+        val phucS = sc.palace(chart, eval, phucChi)
+        val score = (0.45 * menhS.score + 0.2 * thanS.score + 0.35 * phucS.score).roundToInt().coerceIn(5, 95)
+        val topics = Topic.entries.associateWith { t ->
+            val s = sc.topic(chart, eval, t, Scorer.frame(chart.menh), null, null, eval.findings, chart.than)
+            TopicScore(t, s.score, listOf(LayerScore(Layer.GOC, 1.0, chart.palace(Scorer.TOPICS.getValue(t).main.first()).chi, s)))
+        }
+        val its = items(ctx, setOf(Scope.GOC))
+        return PeriodData(ReadingScope.TRON_DOI, null, score, listOf(LayerScore(Layer.GOC, 1.0, chart.menh, menhS)), topics, emptyList(),
+            hitsOf(ctx, its), false, advice(ctx, its, topics.mapValues { it.value.score }, Stance.of(score)))
+    }
+
     fun year(chart: Chart, lunarYear: Int, expert: Boolean = false): Reading {
         val core = YearCore(chart, lunarYear, expert)
         val limits = core.limits

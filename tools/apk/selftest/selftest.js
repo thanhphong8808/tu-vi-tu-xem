@@ -317,6 +317,8 @@
     click('#qa-card [data-act="qa-ask"]');
     log(`TIME Hỏi đáp câu đầu (nạp bộ hỏi đáp + luận năm) ${Math.round(performance.now() - t0)} ms`);
     check(document.querySelectorAll('.qa-turn').length === 1 && txtOf('.qa-turn .qa-und').indexOf('Sự nghiệp · năm ') >= 0, 'Câu gợi ý đầu: ' + txtOf('.qa-turn .qa-und'));
+    const heads = Array.from(document.querySelectorAll('.qa-turn .rp-h')).map((e) => e.textContent);
+    check(['Kết luận', 'Lá số gốc', 'Đại hạn', 'Tiểu hạn', 'Lưu Thái Tuế', 'Tổng hợp'].every((k) => heads.some((h) => h.indexOf(k) >= 0)), 'Luận đủ các tầng: ' + heads.join(' | '));
     const ask = (q) => {
       setText('#qa-in', q);
       const t = performance.now();

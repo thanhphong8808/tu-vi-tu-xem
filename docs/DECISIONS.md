@@ -528,3 +528,60 @@ Số đã đối chiếu với nguồn chính thức tháng 11/2026. Lời này 
 - Đồng bộ Firestore (mục 12.6) cần dự án Firebase của chủ app (`google-services.json`, Security Rules, App Check). Bản
   này chưa có nên chưa gửi gì đi, app vẫn không xin quyền Internet. Dữ liệu đã sẵn đúng các trường mục 12.6, nên khi có
   dự án chỉ cần thêm lớp gửi và công tắc đồng ý.
+
+### D-54 · Bản 0.6.1: câu trả lời Hỏi đáp là phần luận đoán dựng từ lá số
+Người dùng nhận xét bản 0.6.0 trả lời như “cài sẵn”. Lý do là bản đó chủ yếu chọn lại các đoạn của bản luận năm.
+
+Bản 0.6.1 thêm `QaAnalyst`. Với mỗi câu hỏi, app đi qua lá số như một người xem tử vi, theo đúng chủ đề và đúng người
+được hỏi.
+
+**Cung của câu hỏi:**
+- Tài chính → Tài Bạch, Sự nghiệp → Quan Lộc, Tình duyên → Phu Thê…
+- Hỏi về con thì đọc Tử Tức, hỏi về cha mẹ thì đọc Phụ Mẫu.
+
+**Câu hỏi theo năm đi qua các tầng:**
+
+| # | Tầng | Nội dung |
+| --- | --- | --- |
+| ① | Lá số gốc | Cung an ở đâu; chính tinh và độ sáng; nghĩa của sao tại đúng cung đó theo độ sáng (KB); cát tinh, sát tinh, Tứ Hóa gốc (ghi sao được hóa); Tuần/Triệt; cung Thân; vô chính diệu (mượn sao xung chiếu); xung chiếu, tam hợp; cách cục gốc liên quan |
+| ② | Đại hạn | Cung đại hạn, các năm, thiên thời; cung của chủ đề khi xoay 12 vai trò từ đại hạn và sao tại đó; Tứ Hóa đại hạn nếu trường phái bật |
+| ③ | Lưu niên đại hạn | Năm thứ mấy của đại hạn, cung của chủ đề trong khung lưu niên — cho biết kết quả cuối năm |
+| ④ | Tiểu hạn | Cung tiểu hạn, cung của chủ đề trong khung tiểu hạn — cho biết diễn biến trong năm |
+| ⑤ | Lưu Thái Tuế | Tứ Hóa theo can năm (sao nào hóa gì, rơi cung nào); sao lưu theo chủ đề (Lộc Tồn, Kình, Đà, Mã, Hồng Loan, Thiên Hỷ, Đào Hoa, Tang Môn, Bạch Hổ…) tọa thủ, xung chiếu hay tam hợp cung của chủ đề; Tứ Hóa lưu nhập thẳng cung gốc |
+| ⑥ | Đồng thanh tương ứng | Mức khả năng theo số tầng; các cách vận hạn kích hoạt kèm tầng và cung |
+| ⑦ | Tổng hợp | Điểm từng tầng × trọng số mục 9 = điểm chủ đề; nhận xét các tầng đồng thuận hay không |
+
+**Kết luận đặt lên đầu:**
+- điểm và mức;
+- điểm tựa và áp lực, nêu tầng nào, cung nào, sao gì; các tầng cùng rơi một cung thì gộp lại;
+- xu hướng đầu năm và cuối năm;
+- câu hỏi có sự kiện (“có cưới được không”) thì trả lời thẳng mức khả năng, kèm điểm chung.
+
+**Các phạm vi khác:**
+- Tháng: nguyệt hạn (cung, sao), Tứ Hóa tháng chạm cung chủ đề, nền của năm.
+- Đại vận: gốc, đại hạn, năm thuận nhất và năm cần giữ trong 10 năm.
+- Trọn đời: gốc, Mệnh và Thân, điểm chủ đề của từng đại vận, giai đoạn thuận nhất và cần giữ. Câu “có số giàu không”,
+  “số tôi có làm quan không” giờ hiểu là trọn đời.
+- Dò “năm nào…”: mỗi năm kèm **căn cứ** (cách vận hạn, Tứ Hóa lưu, sao lưu chạm cung chủ đề) và phần **cần lưu ý**.
+  Câu hỏi theo hướng thận trọng thì đảo lại: nêu yếu tố xấu là căn cứ, yếu tố tốt là mặt đỡ.
+- Nhà đất có điểm riêng theo cung Điền Trạch trên mọi tầng, không xem kèm tài chính nữa (bỏ D-50 phần nhà đất).
+
+**Điểm số.** Mọi điểm lấy từ `Scorer` qua `Composer.yearData` / `decadeData` / `lifeData`, nên trùng với điểm chủ đề
+trong bản luận đầy đủ. Test kiểm điều này.
+
+**Mỗi đoạn có tiêu đề** (`Paragraph.title`) và “Vì sao?”: công thức, các yếu tố cộng trừ điểm lớn nhất của tầng, Tứ Hóa,
+sao lưu.
+
+**Test (`QaTest`):**
+- các tầng khớp dữ kiện lá số: cung gốc, cung đại hạn, tiểu hạn, lưu niên, Thái Tuế, Tứ Hóa năm theo can;
+- dòng tổng hợp cộng đúng;
+- hai lá số khác nhau, hoặc hai năm khác nhau, phải cho lời khác nhau;
+- chạy trên 4 lá số golden × 3 năm × 10 chủ đề, cộng tháng, đại vận, trọn đời, dò năm.
+
+### D-55 · Model AI sinh lời (LLM) vẫn chưa gắn được
+Đã kiểm tra lại mạng ngày 21/11/2026: `dl.google.com`, `maven.google.com`, `repo1.maven.org`, `huggingface.co` vẫn
+bị chặn từ môi trường build. Vì vậy không lấy được thư viện LiteRT-LM, không lấy được model, không chạy thử được.
+
+Không gắn một model chưa chạy thử vào app. Lớp luận đoán D-54 làm phần nội dung. Khi có mạng, model chỉ làm việc diễn
+đạt lại kết quả của lớp này, và mọi câu model viết phải qua kiểm tra mục 12.3. Câu nào trượt kiểm tra thì app hiện lại
+câu của D-54.

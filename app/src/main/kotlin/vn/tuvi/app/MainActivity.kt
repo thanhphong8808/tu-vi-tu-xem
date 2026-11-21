@@ -345,7 +345,7 @@ class MainActivity : Activity() {
     }
 
     companion object {
-        const val APP_VERSION = "0.6.0 (6)"
+        const val APP_VERSION = "0.6.1 (7)"
         const val TAG = "TuViTuXem"
         const val WEB_TAG = "TuViWeb"
 

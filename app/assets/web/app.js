@@ -733,7 +733,8 @@
       (w.evidence.length ? `<ul>${w.evidence.map((e) => `<li>${esc(e)}</li>`).join('')}</ul>` : '') +
       (w.source ? `<small>Nguồn: ${esc(w.source)}</small>` : '') + `</div>`).join('');
     return `<div class="rp k-${p.kind} ${polCls(p.pol)}${open ? ' open' : ''}" data-act="rp" data-key="${esc(key)}">` +
-      `<div class="rp-t">${KIND_ICON[p.kind] || ''}${esc(p.text)}${p.draft ? ' <span class="draft-tag">nháp</span>' : ''}</div>` +
+      (p.title ? `<div class="rp-h">${esc(p.title)}</div>` : '') +
+      `<div class="rp-t">${p.title ? '' : (KIND_ICON[p.kind] || '')}${esc(p.text)}${p.draft ? ' <span class="draft-tag">nháp</span>' : ''}</div>` +
       `<div class="rp-why">${why}<small class="ids">Mã: ${esc(p.ids.join(', '))}</small></div>` +
       `<div class="rp-tap">${open ? 'Thu gọn ‹' : 'Vì sao? ›'}</div></div>`;
   }
@@ -860,13 +861,15 @@
     return `<div class="card qa-intro"><h2>Hỏi gì về lá số này?</h2>` +
       `<p class="small">Gõ câu hỏi bằng lời của bạn, có dấu hay không dấu đều được: công việc, tiền bạc, tình duyên, gia đạo, sức khỏe, đi xa, nhà đất… ` +
       `theo năm, tháng, ngày, tuần, đại vận; “khi nào thuận cho…”; “nên lưu ý gì”; nghĩa của một sao, một cung, một thuật ngữ.</p>` +
+      `<p class="small">Mỗi câu trả lời được luận ngay trên lá số này: sao tọa thủ cung của việc bạn hỏi, độ sáng, tam phương; rồi đại hạn, lưu niên đại hạn, tiểu hạn, ` +
+      `Lưu Thái Tuế, Tứ Hóa và sao lưu của năm; cuối cùng gộp điểm theo từng tầng.</p>` +
       `<p class="qa-local">🔒 Trả lời ngay trên máy, lá số không rời điện thoại.</p></div>` +
       `<div class="qa-log">${th.map(qaTurn).join('')}</div>` +
       chipRow('Hay hỏi', freq) + chipRow(th.length ? 'Gợi ý khác' : 'Câu hỏi gợi ý', sugg) +
       `<div class="qa-form"><label for="qa-in" class="sr-only">Nhập câu hỏi</label>` +
       `<input id="qa-in" class="input" type="text" maxlength="500" enterkeyhint="send" autocomplete="off" placeholder="Ví dụ: Năm sau công việc của tôi thế nào?" value="${esc(S.qa.draft)}">` +
       `<button class="btn primary" data-act="qa-send">Hỏi</button></div>` +
-      `<p class="small muted qa-foot">Câu trả lời lấy từ bản luận của app (luật cẩm nang, điểm 0–100, đồng thanh tương ứng), câu luận là bản nháp. Chạm một đoạn để xem “Vì sao?”. ` +
+      `<p class="small muted qa-foot">Luận theo luật của cẩm nang (ý nghĩa sao theo cung và độ sáng, vận hạn từng tầng, đồng thanh tương ứng, điểm 0–100); câu chữ là bản nháp. Chạm một đoạn để xem “Vì sao?”. ` +
       `Không thay thế tư vấn y tế, pháp lý, tài chính.</p>`;
   }
   function qaCard() {

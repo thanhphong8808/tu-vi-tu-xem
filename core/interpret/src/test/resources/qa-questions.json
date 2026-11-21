@@ -132,5 +132,7 @@
 {"q": "Cuối năm nay tiền bạc thế nào", "intent": "FORECAST", "topic": "TAI_CHINH", "event": null, "scope": "NAM", "year": 2026},
 {"q": "Năm nay tôi có bị mất việc không", "intent": "FORECAST", "topic": "SU_NGHIEP", "event": "DOI_VIEC", "scope": "NAM", "year": 2026},
 {"q": "30/4 thế nào", "intent": "FORECAST", "scope": "NGAY", "date": "2027-04-30"},
-{"q": "Mùng 1 tết thế nào", "intent": "FORECAST", "scope": "NGAY", "date": "2027-02-06"}
+{"q": "Mùng 1 tết thế nào", "intent": "FORECAST", "scope": "NGAY", "date": "2027-02-06"},
+{"q": "Tôi có số giàu không?", "intent": "FORECAST", "topic": "TAI_CHINH", "scope": "TRON_DOI"},
+{"q": "Số tôi có làm quan không", "intent": "FORECAST", "topic": "SU_NGHIEP", "scope": "TRON_DOI"}
 ]

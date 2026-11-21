@@ -1,5 +1,51 @@
 # Báo cáo Giai đoạn 6 — Hỏi đáp
 
+## Bản 0.6.1 (21/11/2026): câu trả lời luận đoán theo lá số
+
+Bản 0.6.0 trả lời bằng cách chọn lại các đoạn của bản luận năm nên đọc như câu cài sẵn. Từ 0.6.1, mỗi câu hỏi được
+**luận ngay trên lá số đang mở**, theo trình tự người xem tử vi vẫn làm (D-54):
+
+| Tầng | App xét gì |
+| --- | --- |
+| Kết luận | Điểm và mức; điểm tựa và áp lực (tầng nào, cung nào, sao gì); xu hướng đầu năm và cuối năm; câu hỏi “có… không” thì trả lời thẳng mức khả năng |
+| ① Lá số gốc | Cung của câu hỏi an ở đâu; chính tinh và độ sáng; nghĩa của sao tại đúng cung đó; cát tinh, sát tinh, Tứ Hóa gốc; Tuần/Triệt; cung Thân; vô chính diệu; xung chiếu, tam hợp; cách cục gốc |
+| ② Đại hạn | Cung đại hạn, 10 năm, thiên thời; cung của câu hỏi khi xoay 12 cung từ đại hạn và sao tại đó |
+| ③ Lưu niên đại hạn | Năm thứ mấy của đại hạn, cung của câu hỏi trong khung lưu niên (kết quả cuối năm) |
+| ④ Tiểu hạn | Cung tiểu hạn, cung của câu hỏi trong khung tiểu hạn (diễn biến trong năm) |
+| ⑤ Lưu Thái Tuế | Tứ Hóa năm (sao nào hóa gì, rơi cung nào), sao lưu (Lộc Tồn, Kình, Đà, Mã, Hồng Loan, Đào Hoa, Tang Môn, Bạch Hổ…) chạm cung của câu hỏi |
+| ⑥ Đồng thanh tương ứng | Mức khả năng theo số tầng; cách vận hạn kích hoạt kèm cung |
+| ⑦ Tổng hợp | Điểm từng tầng × trọng số = điểm của câu trả lời; các tầng đồng thuận hay không |
+
+Phạm vi khác:
+- Tháng: nguyệt hạn và sao ở đó, Tứ Hóa tháng chạm cung chủ đề, nền của năm.
+- Đại vận: gốc, đại hạn, năm thuận nhất và năm cần giữ.
+- Trọn đời (cả câu “có số giàu không”): gốc, Mệnh và Thân, điểm từng đại vận.
+- “Năm nào…”: mỗi năm kèm căn cứ và phần cần lưu ý.
+- Hỏi về người thân: đọc đúng cung của người đó (con → Tử Tức, cha mẹ → Phụ Mẫu…).
+
+Mỗi đoạn có tiêu đề và “Vì sao?”: công thức, các yếu tố cộng trừ điểm lớn nhất, Tứ Hóa, sao lưu. Điểm trùng với điểm
+chủ đề trong bản luận đầy đủ. Xem [41 câu hỏi đáp mẫu](tai-ve/HoiDapMau_GiaiDoan6.txt).
+
+**Kiểm thử 0.6.1:**
+- Test lõi: 522/522. Bài mới kiểm:
+  - từng tầng khớp dữ kiện lá số (cung gốc, đại hạn, lưu niên, tiểu hạn, Thái Tuế, Tứ Hóa theo can năm);
+  - dòng tổng hợp cộng đúng;
+  - hai lá số hoặc hai năm khác nhau phải cho lời khác nhau;
+  - 4 lá số × 3 năm × 10 chủ đề, cộng tháng, đại vận, trọn đời, dò năm;
+  - 2 lá số × 11 năm × 5 câu hỏi có sự kiện, không lọt từ cấm.
+- Giao diện: 670/670, gồm kiểm tra đủ 7 tiêu đề tầng và căn cứ khi dò năm; axe-core sáng và tối không lỗi nặng.
+- Tự kiểm tra trong app (chạy thử trên máy tính): 520/520, mỗi câu 0,1–0,25 giây; gõ phím thật vào ô Hỏi đáp đạt.
+- Máy ảo: xem mục “Máy ảo Android (CI) — 0.6.1” bên dưới.
+
+**Model AI sinh lời (LLM).** Đã kiểm tra lại: các máy chủ tải thư viện và model (`dl.google.com`, `maven.google.com`,
+`huggingface.co`) vẫn bị chặn từ môi trường build, nên chưa gắn và chưa thử được model (D-55). Phần luận đoán ở trên chạy
+hoàn toàn bằng luật cẩm nang trên máy. Khi mở được mạng, model chỉ diễn đạt lại kết quả này, và câu nào sai kiểm tra
+thì app quay về câu luận đoán.
+
+---
+
+## Bản 0.6.0
+
 Ngày 21/11/2026. Sản phẩm: `TuViTuXem-0.6.0.apk`. Bản này cài đè được lên 0.5.0 mà không mất lá số đã lưu. Knowledge
 base lên bản 0.6.0 (vẫn là bản nháp chưa thẩm định). Quyết định thiết kế ghi ở D-49 → D-53 trong `docs/DECISIONS.md`.
 

@@ -718,6 +718,11 @@ async def phase6(page, browser):
     und = await t0.locator('.qa-und').inner_text()
     check('Sự nghiệp · năm 2026' in und and 'Thế' in und, f'“App hiểu là” phải nêu chủ đề, năm, điểm, thế: {und}')
     check(await t0.locator('.rp').count() >= 2, 'Câu trả lời phải có các đoạn luận')
+    heads = await t0.locator('.rp-h').all_inner_texts()
+    check(all(any(k in h for h in heads) for k in ('Kết luận', 'Lá số gốc', 'Đại hạn', 'Lưu niên đại hạn', 'Tiểu hạn', 'Lưu Thái Tuế', 'Tổng hợp')),
+          f'Câu trả lời năm phải luận đủ các tầng: {heads}')
+    g = await t0.locator('.rp:has(.rp-h:has-text("Lá số gốc")) .rp-t').inner_text()
+    check(g.startswith('Cung Quan Lộc an tại') and '/100' in g, f'Tầng gốc phải nêu cung Quan Lộc, sao tọa thủ và điểm: {g[:80]}')
     check(await t0.locator('.qa-adv').count() == 1, 'Câu trả lời luận năm phải có Nên/Không nên')
     check(await t0.locator('.qa-follow .chip').count() >= 2, 'Phải có câu hỏi tiếp')
     check('Trả lời ngay trên máy, lá số không rời điện thoại' in await page.inner_text('.qa-intro'), 'Nhãn “trả lời ngay trên máy”')
@@ -740,7 +745,7 @@ async def phase6(page, browser):
     t2 = await qa_ask(page, 'Khi nào tôi lấy vợ?')
     u2 = await t2.locator('.qa-und').inner_text()
     tx2 = await t2.locator('.qb.bot').inner_text()
-    check('Năm thuận cho' in u2 and 'tầng cùng chỉ' in tx2 and 'không phải lời khẳng định' in tx2, f'Hỏi “khi nào” phải dò năm theo đồng thanh tương ứng: {u2}')
+    check('Năm thuận cho' in u2 and 'tầng cùng chỉ' in tx2 and 'không phải lời khẳng định' in tx2 and 'Căn cứ:' in tx2, f'Hỏi “khi nào” phải dò năm theo đồng thanh tương ứng, có căn cứ: {u2}')
     all_text += tx2
     # đánh giá
     await t2.locator('[data-act="qa-rate"][data-v="1"]').click()

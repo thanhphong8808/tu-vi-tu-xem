@@ -1,6 +1,6 @@
-HỎI ĐÁP MẪU — TỬ VI TỰ XEM 0.6.0 (giai đoạn 6)
+HỎI ĐÁP MẪU — TỬ VI TỰ XEM 0.6.1 (giai đoạn 6, luận đoán theo lá số)
 Lá số: Ca A — Nam, 15/08/1990 10:30 (dương lịch), Hà Nội. Ngày hỏi: 21/11/2026 (13/10 âm lịch năm Bính Ngọ).
-Mọi câu trả lời do app tạo ngay trên máy, từ chính bản luận (luật cẩm nang, điểm 0–100, đồng thanh tương ứng).
+Mọi câu trả lời do app luận ngay trên máy từ chính lá số: sao tọa thủ cung của việc được hỏi, độ sáng, tam phương, rồi đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế, Tứ Hóa và sao lưu, cuối cùng gộp điểm theo từng tầng (mục 9).
 Trong app, chạm mỗi đoạn để xem “Vì sao?” (mã luật, sao, cung, nguồn). Câu luận hiện là bản nháp chưa thẩm định.
 Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “Vì sao?”.
 
@@ -9,29 +9,45 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 1. HỎI: Năm nay công việc của tôi thế nào?
    App hiểu là: Sự nghiệp · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 48/100, thế Thủ
-   • Sự nghiệp năm 2026: cân bằng (48/100).
-     [mã: SCORE_SU_NGHIEP]
-   • Năm 2026 (Bính Ngọ), hai tầng vận hạn cùng chỉ về thăng tiến, nhận trách nhiệm mới: có thể thành hiện thực nếu bạn chủ động.
-     [mã: VH_LTT_QUAN_QUYEN, VH_LNDH_CAT_HOI, EVENT_THANG_TIEN]
-   • Năm 2026 (Bính Ngọ), Lưu Thái Tuế vào cung Quan Lộc: các việc trong năm có xu hướng xoay quanh lĩnh vực của cung này.
-     [mã: VH_LUU_THAI_TUE_QUAN_LOC]
-   • Có cả điểm thuận (thăng tiến (có thể)) lẫn điểm cần lưu ý (Phá Quân hãm tại Quan Lộc của năm), nghiêng về thuận vì tổng lực các yếu tố thuận lớn hơn.
-     [mã: LUU_CUNG_TIEU_HAN_QUAN_LOC, star.PHA_QUAN.H.QUAN_LOC]
+   • [Kết luận] Sự nghiệp năm 2026 (Bính Ngọ, 37 tuổi âm): 48/100 — trung bình, có lên có xuống. Điểm tựa: lưu niên đại hạn (cung Quan Lộc tại Dần: Vũ Khúc vượng – Thiên Tướng miếu). Áp lực: tiểu hạn (cung Quan Lộc tại Thân: Phá Quân hãm); đại hạn (cung Quan Lộc tại Dậu: vô chính diệu (mượn Thái Dương vượng – Thiên Lương vượng), gặp Kình Dương hãm). Diễn biến đầu có thể vất vả nhưng kết quả cuối năm nghiêng về tốt.
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Quan Lộc an tại Ngọ (có Triệt): Tử Vi miếu — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối. Cát tinh: Thiên Khôi. Sát/hung tinh: Hỏa Tinh đắc, Địa Không hãm. Xung chiếu từ Phu Thê (Tý): Tham Lang hãm; tam hợp Tài Bạch (Tuất) và Mệnh (Dần). Cách cục gốc liên quan: Quan Lộc: bộ Tử Phủ Vũ Tướng Liêm hội cát (cát); Tọa quý hướng quý (cát cách). → Nền gốc: 59/100 (thuận).
+     [mã: AN_GOC_QUAN_LOC]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Quan Lộc của đại hạn rơi vào Dậu (cung gốc Tật Ách): vô chính diệu, mượn Thái Dương vượng – Thiên Lương vượng từ Mão — danh và tài dễ rực rỡ, hợp học thuật, y tế. Cát tinh tại đó: Tả Phù, Văn Khúc, Tam Thai. Sát/hung tinh: Kình Dương hãm. → Đại hạn: 44/100 (cần thận trọng), nền 10 năm.
+     [mã: AN_DAI_HAN_QUAN_LOC]
+   • [③ Lưu niên đại hạn] Năm thứ 3 của đại hạn: lưu niên đại hạn tại Tuất (cung gốc Tài Bạch). Xoay 12 cung từ đây, cung Quan Lộc của lưu niên đại hạn rơi vào Dần (cung gốc Mệnh): Vũ Khúc vượng – Thiên Tướng miếu. → Lưu niên đại hạn: 56/100 (thuận), kết quả của năm.
+     [mã: AN_LUU_NIEN_QUAN_LOC]
+   • [④ Tiểu hạn 2026] Tiểu hạn năm 2026 tại Thìn (cung gốc Phúc Đức: Thất Sát hãm). Xoay 12 cung từ đây, cung Quan Lộc của tiểu hạn rơi vào Thân (cung gốc Thiên Di): Phá Quân hãm — dễ lộ mặt trái là liều lĩnh, ngang tàng, tiêu tiền phóng tay; nên chọn môi trường ổn định, hợp đổi mới, khởi nghiệp, kỹ thuật, quân sự. Cát tinh tại đó: Lộc Tồn, Thiên Mã. → Tiểu hạn: 37/100 (cần thận trọng), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_QUAN_LOC]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Bính Ngọ: Thái Tuế đóng tại Ngọ (cung gốc Quan Lộc). Xoay 12 cung từ đây, cung Quan Lộc theo Thái Tuế rơi vào Tuất (cung gốc Tài Bạch): Liêm Trinh miếu – Thiên Phủ vượng. Sát/hung tinh: Linh Tinh hãm, Quan Phù. Tứ Hóa năm Bính: Hóa Lộc → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Quyền → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Khoa → Văn Xương tại Điền Trạch (Tỵ); Hóa Kỵ → Liêm Trinh tại Tài Bạch (Tuất). Chạm cung Quan Lộc năm và tam phương: Hóa Kỵ lưu (tọa thủ), Kình Dương lưu (tam hợp), Đà La lưu (xung chiếu). → Lưu Thái Tuế: 50/100 (trung bình, có lên có xuống), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_QUAN_LOC]
+   • [⑥ Đồng thanh tương ứng] Năm 2026 — đồng thanh tương ứng: thăng tiến có thể (2 tầng: lưu niên đại hạn, Lưu Thái Tuế). Cách vận hạn kích hoạt: Lưu Thái Tuế vào Quan Lộc có Quyền, Khôi Việt (Lưu Thái Tuế tại Ngọ, cát); Lưu niên đại hạn hội cát tinh (lưu niên đại hạn tại Tuất, cát).
+     [mã: AN_DONG_THANH, VH_LTT_QUAN_QUYEN, VH_LNDH_CAT_HOI]
+   • [⑦ Tổng hợp] gốc 59×0,10 + đại hạn 44×0,30 + lưu niên đại hạn 56×0,25 + tiểu hạn 37×0,20 + Lưu Thái Tuế 50×0,15 = 48/100. Các tầng không đồng thuận — thuận ở gốc, lưu niên đại hạn, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Giai đoạn nên thủ hơn công: củng cố nền tảng, hoãn quyết định lớn nếu được.
    ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
    → Nút: Xem luận năm 2026
    Hỏi tiếp: Tháng nào năm 2026 thuận cho công việc? | Năm 2027 công việc thế nào? | Tôi nên lưu ý gì năm 2026?
 
 2. HỎI: nam sau tai chinh ra sao
-   App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100, thế Thủ
-   • Tài chính năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tài Bạch của đại hạn tại Sửu, trên cung gốc Huynh Đệ).
-     [mã: SCORE_TAI_CHINH]
-   • Theo tiểu hạn, cung Tài Bạch của năm rơi vào Sửu (cung gốc Huynh Đệ). Bộ Đồng Cự đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, dễ bất đồng trong lời nói, cần học cách diễn đạt mềm.
-     [mã: LUU_CUNG_TIEU_HAN_TAI_BACH, combo.THIEN_DONG_CU_MON.TAI_BACH]
-   • Có cả điểm thuận (Lưu niên đại hạn hội cát tinh (Tử Tức)) lẫn điểm cần lưu ý (Thiên Đồng hãm – Cự Môn hãm tại Tài Bạch của năm), nghiêng về thận trọng vì điểm tổng hợp 43/100 thấp hơn mức trung bình.
-     [mã: VH_LNDH_CAT_HOI]
-   • Phần tài chính chỉ nêu khung rủi ro, không phải lời khuyên mua bán tài sản cụ thể.
-     [mã: note.tai_chinh]
+   App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 43/100, thế Thủ
+   • [Kết luận] Tài chính năm 2027 (Đinh Mùi, 38 tuổi âm): 43/100 — cần thận trọng. Điểm tựa: Lưu Thái Tuế (cung Tài Bạch tại Mão: Thái Dương vượng – Thiên Lương vượng). Áp lực: đại hạn và tiểu hạn (cung Tài Bạch cùng rơi vào Sửu: Thiên Đồng hãm – Cự Môn hãm, gặp Hóa Kỵ (Thiên Đồng)).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Tài Bạch an tại Tuất (có Tuần): Liêm Trinh miếu – Thiên Phủ vượng — nguyên tắc nhưng biết giữ của, ổn định. Sát/hung tinh: Linh Tinh hãm. Xung chiếu từ Phúc Đức (Thìn): Thất Sát hãm; tam hợp Mệnh (Dần) và Quan Lộc (Ngọ). Cách cục gốc liên quan: Lộc Mã giao trì (cát cách); Kho lộ (hung cách). → Nền gốc: 54/100 (trung bình, có lên có xuống).
+     [mã: AN_GOC_TAI_BACH]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Tài Bạch của đại hạn rơi vào Sửu (cung gốc Huynh Đệ): Thiên Đồng hãm – Cự Môn hãm — dễ bất đồng trong lời nói, cần học cách diễn đạt mềm. Sát/hung tinh: Hóa Kỵ (Thiên Đồng). → Đại hạn: 33/100 (khó khăn, nên giữ), nền 10 năm.
+     [mã: AN_DAI_HAN_TAI_BACH]
+   • [③ Lưu niên đại hạn] Năm thứ 4 của đại hạn: lưu niên đại hạn tại Hợi (cung gốc Tử Tức). Xoay 12 cung từ đây, cung Tài Bạch của lưu niên đại hạn rơi vào Mùi (cung gốc Nô Bộc): vô chính diệu, mượn Thiên Đồng hãm – Cự Môn hãm từ Sửu. → Lưu niên đại hạn: 50/100 (trung bình, có lên có xuống), kết quả của năm.
+     [mã: AN_LUU_NIEN_TAI_BACH]
+   • [④ Tiểu hạn 2027] Tiểu hạn năm 2027 tại Tỵ (cung gốc Điền Trạch: Thiên Cơ vượng). Xoay 12 cung từ đây, cung Tài Bạch của tiểu hạn rơi vào Sửu (cung gốc Huynh Đệ): Thiên Đồng hãm – Cự Môn hãm — dễ bất đồng trong lời nói, cần học cách diễn đạt mềm. Sát/hung tinh: Hóa Kỵ (Thiên Đồng). → Tiểu hạn: 33/100 (khó khăn, nên giữ), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_TAI_BACH]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Đinh Mùi: Thái Tuế đóng tại Mùi (cung gốc Nô Bộc). Xoay 12 cung từ đây, cung Tài Bạch theo Thái Tuế rơi vào Mão (cung gốc Phụ Mẫu): Thái Dương vượng – Thiên Lương vượng. Cát tinh tại đó: Hóa Lộc (Thái Dương). Tứ Hóa năm Đinh: Hóa Lộc → Thái Âm tại Tử Tức (Hợi); Hóa Quyền → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Khoa → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Kỵ → Cự Môn tại Huynh Đệ (Sửu). Chạm cung Tài Bạch năm và tam phương: Hóa Lộc lưu (tam hợp), Kình Dương lưu (tam hợp). → Lưu Thái Tuế: 55/100 (thuận), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_TAI_BACH]
+   • [⑥ Đồng thanh tương ứng] Năm 2027 — cách vận hạn kích hoạt: Lưu niên đại hạn hội cát tinh (lưu niên đại hạn tại Hợi, cát).
+     [mã: AN_DONG_THANH, VH_LNDH_CAT_HOI]
+   • [⑦ Tổng hợp] gốc 54×0,10 + đại hạn 33×0,30 + lưu niên đại hạn 50×0,25 + tiểu hạn 33×0,20 + Lưu Thái Tuế 55×0,15 = 43/100. Các tầng không đồng thuận — thuận ở Lưu Thái Tuế, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
    ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
    Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
@@ -39,13 +55,23 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
    Hỏi tiếp: Tháng nào năm 2027 thuận cho tài chính? | Năm 2028 tài chính thế nào? | Tôi nên lưu ý gì năm 2027?
 
 3. HỎI: Năm Đinh Mùi tình duyên thế nào?
-   App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100, thế Thủ
-   • Tình duyên, hôn nhân năm 2027: cân bằng (50/100).
-     [mã: SCORE_TINH_DUYEN]
-   • Năm 2027 (Đinh Mùi), một tầng vận hạn chỉ về chuyện tình cảm, cưới hỏi: mới là dấu hiệu, nên lưu ý để không bỏ lỡ.
-     [mã: CD_HAN_HY_TINH_DUYEN, EVENT_CUOI_HOI]
-   • Theo tiểu hạn, cung Phu Thê của năm rơi vào Mão (cung gốc Phụ Mẫu). Bộ Nhật Lương đồng cung tại cung Phu Thê: người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.
-     [mã: LUU_CUNG_TIEU_HAN_PHU_THE, combo.THAI_DUONG_THIEN_LUONG.PHU_THE]
+   App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 50/100, thế Giữ
+   • [Kết luận] Tình duyên, hôn nhân năm 2027 (Đinh Mùi, 38 tuổi âm): 50/100 — trung bình, có lên có xuống. Điểm tựa: đại hạn và tiểu hạn (cung Phu Thê cùng rơi vào Mão: Thái Dương vượng – Thiên Lương vượng). Áp lực: Lưu Thái Tuế (cung Phu Thê tại Tỵ: Thiên Cơ vượng).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Phu Thê an tại Tý (là cung Thân): Tham Lang hãm — người bạn đời có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu. Xung chiếu từ Quan Lộc (Ngọ): Tử Vi miếu; tam hợp Phúc Đức (Thìn) và Thiên Di (Thân). → Nền gốc: 31/100 (khó khăn, nên giữ).
+     [mã: AN_GOC_PHU_THE]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Phu Thê của đại hạn rơi vào Mão (cung gốc Phụ Mẫu): Thái Dương vượng – Thiên Lương vượng — người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế. Cát tinh tại đó: Hóa Lộc (Thái Dương), Thiên Hỷ. → Đại hạn: 58/100 (thuận), nền 10 năm.
+     [mã: AN_DAI_HAN_PHU_THE]
+   • [③ Lưu niên đại hạn] Năm thứ 4 của đại hạn: lưu niên đại hạn tại Hợi (cung gốc Tử Tức). Xoay 12 cung từ đây, cung Phu Thê của lưu niên đại hạn rơi vào Dậu (cung gốc Tật Ách): vô chính diệu, mượn Thái Dương vượng – Thiên Lương vượng từ Mão. → Lưu niên đại hạn: 47/100 (trung bình, có lên có xuống), kết quả của năm.
+     [mã: AN_LUU_NIEN_PHU_THE]
+   • [④ Tiểu hạn 2027] Tiểu hạn năm 2027 tại Tỵ (cung gốc Điền Trạch: Thiên Cơ vượng). Xoay 12 cung từ đây, cung Phu Thê của tiểu hạn rơi vào Mão (cung gốc Phụ Mẫu): Thái Dương vượng – Thiên Lương vượng — người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế. Cát tinh tại đó: Hóa Lộc (Thái Dương), Thiên Hỷ. → Tiểu hạn: 58/100 (thuận), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_PHU_THE]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Đinh Mùi: Thái Tuế đóng tại Mùi (cung gốc Nô Bộc). Xoay 12 cung từ đây, cung Phu Thê theo Thái Tuế rơi vào Tỵ (cung gốc Điền Trạch): Thiên Cơ vượng. Cát tinh tại đó: Hữu Bật, Văn Xương. Tứ Hóa năm Đinh: Hóa Lộc → Thái Âm tại Tử Tức (Hợi); Hóa Quyền → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Khoa → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Kỵ → Cự Môn tại Huynh Đệ (Sửu). Chạm cung Phu Thê năm và tam phương: Hóa Lộc lưu (xung chiếu), Hóa Quyền lưu (tam hợp), Hóa Khoa lưu (tọa thủ), Hóa Kỵ lưu (tam hợp), Đà La lưu (tọa thủ). → Lưu Thái Tuế: 42/100 (cần thận trọng), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_PHU_THE]
+   • [⑥ Đồng thanh tương ứng] Năm 2027 — đồng thanh tương ứng: tình cảm, cưới hỏi mới là dấu hiệu (1 tầng: Lưu Thái Tuế). Cách vận hạn kích hoạt: Hạn hỷ: sao lưu tình duyên kích hoạt (Lưu Thái Tuế tại Dần, cát).
+     [mã: AN_DONG_THANH, CD_HAN_HY_TINH_DUYEN]
+   • [⑦ Tổng hợp] gốc 31×0,10 + đại hạn 58×0,30 + lưu niên đại hạn 47×0,25 + tiểu hạn 58×0,20 + Lưu Thái Tuế 42×0,15 = 50/100. Các tầng không đồng thuận — thuận ở đại hạn, tiểu hạn, yếu ở gốc, Lưu Thái Tuế — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
    ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
    ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
@@ -54,8 +80,22 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 4. HỎI: Năm 40 tuổi tôi thế nào?
    App hiểu là: Tổng quan · năm 2029 (Kỷ Dậu, 40 tuổi âm) · điểm 46/100, thế Thủ
-   • Tổng quan năm 2029 (Kỷ Dậu): cân bằng (46/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
-     [mã: SCORE_NAM]
+   • [Kết luận] Vận chung năm 2029 (Kỷ Dậu, 40 tuổi âm): 46/100 — trung bình, có lên có xuống. Áp lực: lưu niên đại hạn (cung Mệnh tại Sửu: Thiên Đồng hãm – Cự Môn hãm, gặp Hóa Kỵ (Thiên Đồng)); đại hạn (cung Mệnh tại Tỵ: Thiên Cơ vượng).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Mệnh an tại Dần: Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt. Xung chiếu từ Thiên Di (Thân): Phá Quân hãm; tam hợp Quan Lộc (Ngọ) và Tài Bạch (Tuất). Cách cục gốc liên quan: Lộc Mã giao trì (cát cách); Quan Lộc: bộ Tử Phủ Vũ Tướng Liêm hội cát (cát). → Nền gốc: 62/100 (thuận).
+     [mã: AN_GOC_MENH]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Sao tại cung này: Thiên Cơ vượng — thông minh, giỏi phân tích, ứng biến và hoạch định. Cát tinh tại đó: Hữu Bật, Văn Xương. → Đại hạn: 44/100 (cần thận trọng), nền 10 năm.
+     [mã: AN_DAI_HAN_MENH]
+   • [③ Lưu niên đại hạn] Năm thứ 6 của đại hạn: lưu niên đại hạn tại Sửu (cung gốc Huynh Đệ). Sao tại cung này: Thiên Đồng hãm – Cự Môn hãm. → Lưu niên đại hạn: 42/100 (cần thận trọng), kết quả của năm.
+     [mã: AN_LUU_NIEN_MENH]
+   • [④ Tiểu hạn 2029] Tiểu hạn năm 2029 tại Mùi (cung gốc Nô Bộc: vô chính diệu (mượn Thiên Đồng hãm – Cự Môn hãm)). Sao tại cung này: vô chính diệu, mượn Thiên Đồng hãm – Cự Môn hãm từ Sửu — dễ bất đồng trong lời nói, cần học cách diễn đạt mềm. Sát/hung tinh: Đà La đắc. → Tiểu hạn: 49/100 (trung bình, có lên có xuống), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_MENH]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Kỷ Dậu: Thái Tuế đóng tại Dậu (cung gốc Tật Ách). Xoay 12 cung từ đây, cung Mệnh theo Thái Tuế rơi vào Dậu (cung gốc Tật Ách): vô chính diệu, mượn Thái Dương vượng – Thiên Lương vượng từ Mão. Cát tinh tại đó: Tả Phù, Văn Khúc. Sát/hung tinh: Kình Dương hãm. Tứ Hóa năm Kỷ: Hóa Lộc → Vũ Khúc tại Mệnh (Dần); Hóa Quyền → Tham Lang tại Phu Thê (Tý); Hóa Khoa → Thiên Lương tại Phụ Mẫu (Mão); Hóa Kỵ → Văn Khúc tại Tật Ách (Dậu). Chạm cung Mệnh năm và tam phương: Hóa Khoa lưu (xung chiếu), Hóa Kỵ lưu (tọa thủ), Đà La lưu (tam hợp). Hóa Lộc lưu còn nhập thẳng cung Mệnh gốc (Dần). → Lưu Thái Tuế: 44/100 (cần thận trọng), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_MENH]
+   • [⑥ Đồng thanh tương ứng] Năm 2029 — đồng thanh tương ứng: tài lộc mới là dấu hiệu (1 tầng: Lưu Thái Tuế). Cách vận hạn kích hoạt: Mệnh Vũ Khúc gặp năm Vũ Khúc hóa Lộc (Lưu Thái Tuế tại Dần, cát); Hóa Lộc lưu vào Mệnh (Lưu Thái Tuế tại Dần, cát).
+     [mã: AN_DONG_THANH, VH_MENH_VU_KHUC_LOC_LUU, VH_LOC_LUU_MENH]
+   • [⑦ Tổng hợp] gốc 62×0,10 + đại hạn 44×0,30 + lưu niên đại hạn 42×0,25 + tiểu hạn 49×0,20 + Lưu Thái Tuế 44×0,15 = 46/100. Các tầng không đồng thuận — thuận ở gốc, yếu ở đại hạn, lưu niên đại hạn, Lưu Thái Tuế — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    • Năm 2029, tháng thuận nhất (âm lịch): 5 (54), 8 (54), 4 (52); nên thận trọng: 6 (41), 10 (41).
      [mã: MONTHS_NAM]
    ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
@@ -66,25 +106,30 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 5. HỎI: Tháng 3 âm năm 2027 sức khỏe thế nào?
    App hiểu là: Sức khỏe (lưu ý) · tháng 3 âm lịch năm 2027 · điểm 47/100, thế Thủ
-   • Tháng 3 âm lịch năm 2027 (Đinh Mùi): cân bằng (47/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
-     [mã: SCORE_THANG]
-   • Nguyệt hạn tại Nô Bộc (Mùi): tháng này việc thuộc lĩnh vực sự nghiệp được chú ý nhiều hơn.
-     [mã: NGUYET_HAN]
-   • Cả năm 2027 — sức khỏe (lưu ý) năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tật Ách của đại hạn tại Tý, trên cung gốc Phu Thê).
-     [mã: SCORE_SUC_KHOE]
+   • [Kết luận] Tháng 3 âm năm 2027 (Giáp Thìn): 47/100 — trung bình, có lên có xuống. Nền sức khỏe của cả năm: 43/100. Nguyệt hạn không chạm cung Tật Ách gốc.
+     [mã: AN_KET_LUAN]
+   • [① Nguyệt hạn] Nguyệt hạn tại Mùi (cung gốc Nô Bộc): vô chính diệu, mượn Thiên Đồng hãm – Cự Môn hãm từ Sửu — bạn bè, cộng sự mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm. Sát/hung tinh: Đà La đắc. Tháng này việc thuộc cung Nô Bộc được chú ý nhiều hơn.
+     [mã: AN_NGUYET_HAN]
+   • [② Tứ Hóa tháng] Tứ Hóa tháng (can Giáp): Hóa Lộc → Liêm Trinh tại Tài Bạch (Tuất); Hóa Quyền → Phá Quân tại Thiên Di (Thân); Hóa Khoa → Vũ Khúc tại Mệnh (Dần); Hóa Kỵ → Thái Dương tại Phụ Mẫu (Mão). Chạm cung Tật Ách gốc (Dậu): Hóa Kỵ (xung chiếu).
+     [mã: AN_TU_HOA_THANG]
+   • [③ Nền của năm 2027] gốc 47×0,10 + đại hạn 31×0,30 + lưu niên đại hạn 55×0,25 + tiểu hạn 31×0,20 + Lưu Thái Tuế 63×0,15 = 43/100. Các tầng không đồng thuận — thuận ở lưu niên đại hạn, Lưu Thái Tuế, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Giảm bớt việc, ưu tiên những gì thật cần trong giai đoạn này.
    ✓ Nên: Ưu tiên an toàn: giữ dòng tiền, hoàn tất việc dang dở trước khi mở việc mới.
    ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
-   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
    → Nút: Xem luận tháng 3
    Hỏi tiếp: Tháng 4 âm năm 2027 thế nào? | Ngày nào trong tháng này tốt?
 
 6. HỎI: Tháng sau thế nào?
    App hiểu là: Tổng quan · tháng 11 âm lịch năm 2026 · điểm 54/100, thế Giữ
-   • Tháng 11 âm lịch năm 2026 (Bính Ngọ): cân bằng (54/100). Thế Giữ: nên củng cố, phát triển vững những gì đang có.
-     [mã: SCORE_THANG]
-   • Nguyệt hạn tại Mệnh (Dần): tháng này việc thuộc lĩnh vực tính cách được chú ý nhiều hơn.
-     [mã: NGUYET_HAN]
+   • [Kết luận] Tháng 11 âm năm 2026 (Canh Tý): 54/100 — trung bình, có lên có xuống. Nguyệt hạn đi đúng vào cung Mệnh nên tháng này chuyện vận chung nổi lên rõ.
+     [mã: AN_KET_LUAN]
+   • [① Nguyệt hạn] Nguyệt hạn tại Dần (cung gốc Mệnh): Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt. Tháng này việc thuộc cung Mệnh được chú ý nhiều hơn.
+     [mã: AN_NGUYET_HAN]
+   • [② Tứ Hóa tháng] Tứ Hóa tháng (can Canh): Hóa Lộc → Thái Dương tại Phụ Mẫu (Mão); Hóa Quyền → Vũ Khúc tại Mệnh (Dần); Hóa Khoa → Thái Âm tại Tử Tức (Hợi); Hóa Kỵ → Thiên Đồng tại Huynh Đệ (Sửu). Chạm cung Mệnh gốc (Dần): Hóa Quyền (tọa thủ).
+     [mã: AN_TU_HOA_THANG]
+   • [③ Nền của năm 2026] gốc 62×0,10 + đại hạn 44×0,30 + lưu niên đại hạn 52×0,25 + tiểu hạn 42×0,20 + Lưu Thái Tuế 50×0,15 = 48/100. Các tầng không đồng thuận — thuận ở gốc, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Củng cố những gì đang có: hoàn thiện kỹ năng, chăm sóc khách hàng và các mối quan hệ.
    ✓ Nên: Ghi lại mục tiêu và rà soát mỗi tháng để điều chỉnh kịp thời.
    ✓ Không nên: Đổi hướng lớn khi chưa có lý do rõ ràng và phương án dự phòng.
@@ -163,10 +208,14 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 11. HỎI: Đại vận hiện tại của tôi thế nào?
    App hiểu là: Tổng quan · đại vận 35–44 tuổi · điểm 48/100, thế Thủ
-   • Đại vận 35–44 tuổi tại cung Điền Trạch (Tỵ, Tân Tỵ): cân bằng (48/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
-     [mã: SCORE_DAI_VAN]
-   • Thiên thời: Tuổi khắc đại hạn — vất vả, phải tự lực nhưng giành được (ngũ hành tam hợp, cụ Thiên Lương).
-     [mã: VH_THIEN_THOI_TUOI_KHAC_DAI_HAN]
+   • [Kết luận] Vận chung trong đại vận 35–44 tuổi: 48/100 — trung bình, có lên có xuống. Trong 10 năm này, năm thuận nhất là 2025 (51/100), năm cần giữ nhất là 2032 (45/100).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Mệnh an tại Dần: Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt. Xung chiếu từ Thiên Di (Thân): Phá Quân hãm; tam hợp Quan Lộc (Ngọ) và Tài Bạch (Tuất). Cách cục gốc liên quan: Lộc Mã giao trì (cát cách); Quan Lộc: bộ Tử Phủ Vũ Tướng Liêm hội cát (cát). → Nền gốc: 62/100 (thuận).
+     [mã: AN_GOC_MENH]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Sao tại cung này: Thiên Cơ vượng — thông minh, giỏi phân tích, ứng biến và hoạch định. Cát tinh tại đó: Hữu Bật, Văn Xương. → Đại hạn: 44/100 (cần thận trọng), nền 10 năm.
+     [mã: AN_DAI_HAN_MENH]
+   • [③ Tổng hợp] gốc 62×0,25 + đại hạn 44×0,75 = 48/100. Các tầng không đồng thuận — thuận ở gốc, yếu ở đại hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
    ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
    ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
@@ -175,12 +224,14 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 12. HỎI: 10 năm tới sự nghiệp ra sao
    App hiểu là: Sự nghiệp · đại vận 35–44 tuổi · điểm 48/100, thế Thủ
-   • Sự nghiệp trong đại vận: cân bằng (48/100).
-     [mã: SCORE_SU_NGHIEP]
-   • Theo đại hạn, cung Quan Lộc của đại vận rơi vào Dậu (cung gốc Tật Ách), vô chính diệu, mượn chính tinh cung Mão. Bộ Nhật Lương đồng cung tại cung Quan Lộc: trong công việc, sự nghiệp, danh và tài dễ rực rỡ, hợp học thuật, y tế.
-     [mã: LUU_CUNG_DAI_HAN_QUAN_LOC, combo.THAI_DUONG_THIEN_LUONG.QUAN_LOC]
-   • Đại hạn 10 năm tại cung Điền Trạch — tuổi khắc đại hạn theo ngũ hành tam hợp (cụ Thiên Lương): vất vả, phải tự lực nhưng có thể giành được thành quả.
-     [mã: VH_THIEN_THOI_TUOI_KHAC_DAI_HAN]
+   • [Kết luận] Sự nghiệp trong đại vận 35–44 tuổi: 48/100 — trung bình, có lên có xuống. Trong 10 năm này, năm thuận nhất là 2027 (49/100), năm cần giữ nhất là 2028 (39/100).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Quan Lộc an tại Ngọ (có Triệt): Tử Vi miếu — điềm đạm, đôn hậu, có tài tổ chức và lãnh đạo, giàu lòng vị tha; hợp vai trò quản trị, điều phối. Cát tinh: Thiên Khôi. Sát/hung tinh: Hỏa Tinh đắc, Địa Không hãm. Xung chiếu từ Phu Thê (Tý): Tham Lang hãm; tam hợp Tài Bạch (Tuất) và Mệnh (Dần). Cách cục gốc liên quan: Quan Lộc: bộ Tử Phủ Vũ Tướng Liêm hội cát (cát); Tọa quý hướng quý (cát cách). → Nền gốc: 59/100 (thuận).
+     [mã: AN_GOC_QUAN_LOC]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Quan Lộc của đại hạn rơi vào Dậu (cung gốc Tật Ách): vô chính diệu, mượn Thái Dương vượng – Thiên Lương vượng từ Mão — danh và tài dễ rực rỡ, hợp học thuật, y tế. Cát tinh tại đó: Tả Phù, Văn Khúc, Tam Thai. Sát/hung tinh: Kình Dương hãm. → Đại hạn: 44/100 (cần thận trọng), nền 10 năm.
+     [mã: AN_DAI_HAN_QUAN_LOC]
+   • [③ Tổng hợp] gốc 59×0,25 + đại hạn 44×0,75 = 48/100. Các tầng không đồng thuận — thuận ở gốc, yếu ở đại hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Chủ động tự lực, xây nền tảng vững từng bước thay vì trông chờ hoàn cảnh.
    ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
    ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
@@ -189,13 +240,13 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 13. HỎI: Hậu vận của tôi ra sao?
    App hiểu là: Tổng quan · giai đoạn 55–99 tuổi · điểm 50/100, thế Giữ
-   • Tổng quan Mệnh – Thân – Phúc: cân bằng (50/100). Mệnh tại Dần, Thân cư Phu Thê (Tý), Phúc Đức tại Thìn.
-     [mã: SCORE_TONG_QUAN]
-   • Bộ Vũ Tướng đồng cung tại cung Mệnh: về tính cách và xu hướng hành động, thực tế, có trách nhiệm, hợp quản lý tài chính.
-     [mã: COMBO_VU_KHUC_THIEN_TUONG@MENH]
-   • Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.
-     [mã: TS_THAN_CU_PHU_THE]
-   • Các đại vận trong giai đoạn 55–99 tuổi: 55–64 tuổi tại Nô Bộc (55/100, Giữ); 65–74 tuổi tại Thiên Di (46/100, Thủ); 75–84 tuổi tại Tật Ách (49/100, Thủ); 85–94 tuổi tại Tài Bạch (54/100, Giữ); 95–104 tuổi tại Tử Tức (61/100, Giữ); 105–114 tuổi tại Phu Thê (41/100, Thủ).
+   • [Kết luận] Vận chung theo lá số gốc: 50/100 — trung bình, có lên có xuống. Mệnh tại Dần (Vũ Khúc vượng – Thiên Tướng miếu), Thân cư Phu Thê, Lộ Bàng Thổ — Thổ ngũ cục. Giai đoạn thuận nhất cho mặt này: 15–24 tuổi (đại hạn tại Mão, 60/100); giai đoạn cần giữ: 25–34 tuổi (41/100).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Mệnh an tại Dần: Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt. Xung chiếu từ Thiên Di (Thân): Phá Quân hãm; tam hợp Quan Lộc (Ngọ) và Tài Bạch (Tuất). Cách cục gốc liên quan: Lộc Mã giao trì (cát cách); Quan Lộc: bộ Tử Phủ Vũ Tướng Liêm hội cát (cát). → Nền gốc: 76/100 (rất thuận).
+     [mã: AN_GOC_MENH]
+   • [② Dòng đại vận] Điểm chung theo từng đại vận — 5–14: 60; 15–24: 60; 25–34: 41; 35–44: 48 (hiện tại); 45–54: 54; 55–64: 55; 65–74: 46; 75–84: 49.
+     [mã: AN_DONG_DAI_VAN]
+   • Trong giai đoạn 55–99 tuổi: 55–64 tuổi, đại hạn tại Nô Bộc (Mùi) vô chính diệu (mượn Thiên Đồng hãm – Cự Môn hãm): 55/100; 65–74 tuổi, đại hạn tại Thiên Di (Thân) Phá Quân hãm: 46/100; 75–84 tuổi, đại hạn tại Tật Ách (Dậu) vô chính diệu (mượn Thái Dương vượng – Thiên Lương vượng): 49/100.
      [mã: TIMELINE_DAI_VAN]
    ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
    ✓ Nên: Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.
@@ -204,15 +255,13 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
    Hỏi tiếp: Đại vận hiện tại của tôi thế nào? | Cung Mệnh của tôi có sao gì?
 
 14. HỎI: Tính cách của tôi thế nào?
-   App hiểu là: Tính cách · lá số gốc (trọn đời) · điểm 50/100, thế Giữ
-   • Tính cách: khá thuận (55/100). Cung đọc chính: Mệnh (Dần).
-     [mã: SCORE_TINH_CACH]
-   • Âm Dương thuận lý (tuổi và cung Mệnh cùng tính Âm/Dương): nền tảng hài hòa, làm việc thuận chiều.
-     [mã: TS_AM_DUONG_THUAN_LY]
-   • Thân cư Phu Thê: chịu ảnh hưởng sâu từ người bạn đời; buồn vui gắn liền với gia đạo. Từ khoảng 30 tuổi, cung Thân dần có trọng lượng lớn hơn cung Mệnh.
-     [mã: TS_THAN_CU_PHU_THE]
-   • Thiên Tướng thủ Mệnh: tốt xấu phụ thuộc nhiều vào hai cung kẹp bên (Thiên Lương và Cự Môn); trọng danh dự hơn tiền bạc.
-     [mã: TS_THIEN_TUONG_XET_GIAP]
+   App hiểu là: Tính cách · lá số gốc (trọn đời) · điểm 55/100, thế Giữ
+   • [Kết luận] Tính cách theo lá số gốc: 55/100 — thuận. Mệnh tại Dần (Vũ Khúc vượng – Thiên Tướng miếu), Thân cư Phu Thê, Lộ Bàng Thổ — Thổ ngũ cục. Giai đoạn thuận nhất cho mặt này: 15–24 tuổi (đại hạn tại Mão, 56/100); giai đoạn cần giữ: 25–34 tuổi (38/100).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Mệnh an tại Dần: Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt, Thiên Hình. Xung chiếu từ Thiên Di (Thân): Phá Quân hãm; tam hợp Quan Lộc (Ngọ) và Tài Bạch (Tuất). Cách cục gốc liên quan: Âm Dương thuận lý (cát). → Nền gốc: 55/100 (thuận).
+     [mã: AN_GOC_MENH]
+   • [② Dòng đại vận] Điểm tính cách theo từng đại vận — 5–14: 55; 15–24: 56; 25–34: 38; 35–44: 47 (hiện tại); 45–54: 49; 55–64: 47; 65–74: 48; 75–84: 52.
+     [mã: AN_DONG_DAI_VAN]
    ✓ Nên: Tận dụng cơ hội đi xa, công tác, mở thị trường mới.
    ✓ Nên: Nhận vai trò điều phối, dẫn dắt nhóm khi có cơ hội; xây đội ngũ tin cậy quanh mình.
    ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
@@ -220,36 +269,30 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
    Hỏi tiếp: Đại vận hiện tại của tôi thế nào? | Cung Mệnh của tôi có sao gì? | Năm 2026 công việc thế nào?
 
 15. HỎI: Tôi có số giàu không?
-   App hiểu là: Tài chính · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
-   • Lá số gốc — tài chính: cân bằng (54/100). Cung đọc chính: Tài Bạch (Tuất).
-     [mã: SCORE_TAI_CHINH]
-   • Bộ Liêm Phủ đồng cung tại cung Tài Bạch: về tiền bạc và cách xoay xở tài chính, nguyên tắc nhưng biết giữ của, ổn định.
-     [mã: COMBO_LIEM_TRINH_THIEN_PHU@TAI_BACH]
-   • Năm 2026 — tài chính năm 2026: cần thận trọng (41/100). Áp lực chủ yếu đến từ tiểu hạn (cung Tài Bạch của tiểu hạn tại Tý, trên cung gốc Phu Thê).
-     [mã: SCORE_TAI_CHINH]
-   • Theo tiểu hạn, cung Tài Bạch của năm rơi vào Tý (cung gốc Phu Thê). Tham Lang hãm địa tại cung Tài Bạch: tiền bạc dễ thăng trầm vì dễ ham vui, nhiều ham muốn vật chất và tình cảm; cần kỷ luật chi tiêu.
-     [mã: LUU_CUNG_TIEU_HAN_TAI_BACH, star.THAM_LANG.H.TAI_BACH]
-   • Năm 2026 (Bính Ngọ), Hóa Kỵ lưu vào cung Tài Bạch: lĩnh vực này dễ chậm trễ, vướng giấy tờ; nên thận trọng và giữ chứng từ.
-     [mã: VH_KY_LUU_TAI_QUAN]
-   • Năm 2026 chưa thấy tầng vận nào cùng chỉ về tài lộc, dòng tiền cải thiện; điểm tài chính cả năm 41/100.
-     [mã: EVENT_DUOC_TAI_KHONG]
-   ✓ Nên: Lập quỹ dự phòng, chia nhỏ khoản đầu tư.
-   ✓ Không nên: Mở rộng nóng, vay mượn lớn để tăng quy mô.
-   ✓ Lưu ý: Dòng tiền có thể căng vào một số thời điểm: theo dõi thu chi hằng tháng.
-   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
-   → Nút: Xem luận năm 2026
-   Hỏi tiếp: Năm nào thuận cho tài lộc? | Tháng nào năm 2026 thuận cho tài chính? | Năm 2027 tài chính thế nào?
+   App hiểu là: Tài chính · trọn đời · điểm 54/100, thế Giữ
+   • [Kết luận] Tài chính theo lá số gốc: 54/100 — trung bình, có lên có xuống. Mệnh tại Dần (Vũ Khúc vượng – Thiên Tướng miếu), Thân cư Phu Thê, Lộ Bàng Thổ — Thổ ngũ cục. Giai đoạn thuận nhất cho mặt này: 15–24 tuổi (đại hạn tại Mão, 66/100); giai đoạn cần giữ: 25–34 tuổi (30/100).
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Tài Bạch an tại Tuất (có Tuần): Liêm Trinh miếu – Thiên Phủ vượng — nguyên tắc nhưng biết giữ của, ổn định. Sát/hung tinh: Linh Tinh hãm. Xung chiếu từ Phúc Đức (Thìn): Thất Sát hãm; tam hợp Mệnh (Dần) và Quan Lộc (Ngọ). Cách cục gốc liên quan: Lộc Mã giao trì (cát cách); Kho lộ (hung cách). → Nền gốc: 54/100 (trung bình, có lên có xuống).
+     [mã: AN_GOC_TAI_BACH]
+   • [② Mệnh và Thân] Mệnh tại Dần: Vũ Khúc vượng – Thiên Tướng miếu — thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh: Hóa Quyền (Vũ Khúc), Thiên Việt. Thân cư Phu Thê (Tý): sau khoảng 30 tuổi, đời sống dồn nhiều về việc của cung Phu Thê.
+     [mã: AN_GOC_MENH]
+   • [③ Dòng đại vận] Điểm tài chính theo từng đại vận — 15–24: 66; 25–34: 30; 35–44: 38 (hiện tại); 45–54: 59; 55–64: 60; 65–74: 33; 75–84: 44.
+     [mã: AN_DONG_DAI_VAN]
+   ✓ Nên: Giữ kỷ luật chi tiêu, ghi chép dòng tiền đều đặn.
+   ✓ Không nên: Cho vay lớn, bảo lãnh hay đầu cơ dùng đòn bẩy.
+   → Nút: Xem luận trọn đời
+   Hỏi tiếp: Năm 2026 tài chính thế nào? | Đại vận hiện tại của tôi thế nào? | Cung Mệnh của tôi có sao gì?
 
 
 ══════ Khi nào thuận ══════
 
 16. HỎI: Khi nào tôi lấy vợ?
    App hiểu là: Năm thuận cho chuyện tình cảm, cưới hỏi · dò 2026–2036
-   • 2026 (Bính Ngọ, 37 tuổi): tình cảm, cưới hỏi khả năng cao (3 tầng cùng chỉ: lưu niên, tiểu hạn, Lưu Thái Tuế); điểm tình duyên 49/100.
+   • [Năm 2026] 2026 (Bính Ngọ, 37 tuổi): tình cảm, cưới hỏi khả năng cao (3 tầng cùng chỉ: lưu niên, tiểu hạn, Lưu Thái Tuế); điểm tình duyên 49/100. Căn cứ: Hạn hỷ: năm thuận cưới hỏi (tiểu hạn). Cần lưu ý: Hóa Kỵ lưu xung chiếu cung Phu Thê; Đà La lưu tại cung Phu Thê.
      [mã: EVENT_CUOI_HOI, QA_YEAR_2026]
-   • 2035 (Ất Mão, 46 tuổi): tình cảm, cưới hỏi có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tình duyên 46/100.
+   • [Năm 2035] 2035 (Ất Mão, 46 tuổi): tình cảm, cưới hỏi có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tình duyên 46/100. Căn cứ: Lưu niên đại hạn vào Phu Thê gặp sao tình duyên (lưu niên đại hạn); Hạn hỷ: sao lưu tình duyên kích hoạt (Lưu Thái Tuế); Hóa Khoa lưu xung chiếu cung Phu Thê.
      [mã: EVENT_CUOI_HOI, QA_YEAR_2035]
-   • 2033 (Quý Sửu, 44 tuổi): tình cảm, cưới hỏi mới là dấu hiệu (1 tầng cùng chỉ: Lưu Thái Tuế); điểm tình duyên 54/100.
+   • [Năm 2033] 2033 (Quý Sửu, 44 tuổi): tình cảm, cưới hỏi mới là dấu hiệu (1 tầng cùng chỉ: Lưu Thái Tuế); điểm tình duyên 54/100. Căn cứ: Hạn hỷ: sao lưu tình duyên kích hoạt (Lưu Thái Tuế); Hóa Khoa lưu nhập cung Phu Thê năm. Cần lưu ý: Hóa Kỵ lưu nhập cung Phu Thê gốc; Đà La lưu tại cung Phu Thê.
      [mã: EVENT_CUOI_HOI, QA_YEAR_2033]
    • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
      [mã: QA_NOTE_KHA_NANG]
@@ -258,11 +301,11 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 17. HỎI: bao gio toi giau
    App hiểu là: Năm thuận cho tài lộc, dòng tiền cải thiện · dò 2026–2036
-   • 2034 (Giáp Dần, 45 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tài chính 57/100.
+   • [Năm 2034] 2034 (Giáp Dần, 45 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, Lưu Thái Tuế); điểm tài chính 57/100. Căn cứ: Thiên thời: Đại hạn đồng hành (đại hạn); Hóa Lộc lưu vào Tài Bạch (Lưu Thái Tuế); Lưu niên đại hạn hội cát tinh (lưu niên đại hạn).
      [mã: EVENT_DUOC_TAI, QA_YEAR_2034]
-   • 2030 (Canh Tuất, 41 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, tiểu hạn); điểm tài chính 43/100.
+   • [Năm 2030] 2030 (Canh Tuất, 41 tuổi): tài lộc có thể (2 tầng cùng chỉ: lưu niên, tiểu hạn); điểm tài chính 43/100. Căn cứ: Lưu niên đại hạn hội cát tinh (lưu niên đại hạn); Thiên Di có Lưu Thiên Mã gặp Lộc (Lưu Thái Tuế); Tiểu hạn gặp Lộc (tiểu hạn).
      [mã: EVENT_DUOC_TAI, QA_YEAR_2030]
-   • 2031 (Tân Hợi, 42 tuổi): tài lộc mới là dấu hiệu (1 tầng cùng chỉ: tiểu hạn); điểm tài chính 47/100.
+   • [Năm 2031] 2031 (Tân Hợi, 42 tuổi): tài lộc mới là dấu hiệu (1 tầng cùng chỉ: tiểu hạn); điểm tài chính 47/100. Căn cứ: Lưu niên đại hạn hội cát tinh (lưu niên đại hạn); Tiểu hạn gặp Lộc (tiểu hạn); Hóa Lộc lưu xung chiếu cung Tài Bạch. Cần lưu ý: Kình Dương lưu tại cung Tài Bạch.
      [mã: EVENT_DUOC_TAI, QA_YEAR_2031]
    • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
      [mã: QA_NOTE_KHA_NANG]
@@ -271,26 +314,24 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 18. HỎI: Khi nào tôi mua được nhà?
    App hiểu là: Năm thuận cho nhà đất · dò 2026–2036
-   • Nhà đất không có điểm riêng theo năm: app xem kèm điểm tài chính cùng giai đoạn (Điền Trạch là cung phụ của tài chính), nên đây là gợi ý gián tiếp.
-     [mã: QA_NOTE_NHA_DAT]
-   • 2034 (Giáp Dần, 45 tuổi): điểm tài chính 57/100, điểm cả năm 51/100.
+   • [Năm 2028] 2028 (Mậu Thân, 39 tuổi): điểm nhà đất 52/100, điểm cả năm 46/100. Căn cứ: Hóa Quyền lưu nhập cung Điền Trạch năm; Hóa Khoa lưu nhập cung Điền Trạch gốc; Lộc Tồn lưu tại cung Điền Trạch. Cần lưu ý: Hóa Kỵ lưu nhập cung Điền Trạch gốc.
+     [mã: QA_YEAR_2028]
+   • [Năm 2034] 2034 (Giáp Dần, 45 tuổi): điểm nhà đất 52/100, điểm cả năm 51/100. Căn cứ: tiểu hạn 58/100 (cung Điền Trạch tại Mão: Thái Dương vượng – Thiên Lương vượng).
      [mã: QA_YEAR_2034]
-   • 2035 (Ất Mão, 46 tuổi): điểm tài chính 53/100, điểm cả năm 48/100.
-     [mã: QA_YEAR_2035]
-   • 2036 (Bính Thìn, 47 tuổi): điểm tài chính 50/100, điểm cả năm 52/100.
+   • [Năm 2036] 2036 (Bính Thìn, 47 tuổi): điểm nhà đất 52/100, điểm cả năm 52/100. Căn cứ: Hóa Lộc lưu xung chiếu cung Điền Trạch; Hóa Quyền lưu nhập cung Điền Trạch gốc; Hóa Khoa lưu nhập cung Điền Trạch gốc.
      [mã: QA_YEAR_2036]
    • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
      [mã: QA_NOTE_KHA_NANG]
-   → Nút: Xem luận năm 2034
-   Hỏi tiếp: Năm 2034 tài chính thế nào? | Tháng nào năm 2034 thuận cho tài chính? | Đồng thanh tương ứng là gì?
+   → Nút: Xem luận năm 2028
+   Hỏi tiếp: Năm 2028 nhà đất thế nào? | Tháng nào năm 2028 thuận cho nhà đất? | Đồng thanh tương ứng là gì?
 
 19. HỎI: Năm nào nên chú ý sức khỏe?
    App hiểu là: Những năm nên thận trọng về sức khỏe · dò 2026–2036
-   • 2033 (Quý Sửu, 44 tuổi): điểm sức khỏe 40/100, điểm cả năm 48/100.
+   • [Năm 2033] 2033 (Quý Sửu, 44 tuổi): điểm sức khỏe 40/100, điểm cả năm 48/100. Căn cứ: Tật Ách có Kình Dương/Thiên Hình gặp Lưu Bạch Hổ (Lưu Thái Tuế); Bạch Hổ lưu tại cung Tật Ách. Mặt đỡ: Hóa Lộc lưu nhập cung Tật Ách năm.
      [mã: QA_YEAR_2033]
-   • 2034 (Giáp Dần, 45 tuổi): điểm sức khỏe 42/100, điểm cả năm 51/100.
+   • [Năm 2034] 2034 (Giáp Dần, 45 tuổi): điểm sức khỏe 42/100, điểm cả năm 51/100. Căn cứ: Hóa Kỵ lưu xung chiếu cung Tật Ách.
      [mã: QA_YEAR_2034]
-   • 2026 (Bính Ngọ, 37 tuổi): điểm sức khỏe 43/100, điểm cả năm 48/100.
+   • [Năm 2026] 2026 (Bính Ngọ, 37 tuổi): điểm sức khỏe 43/100, điểm cả năm 48/100. Căn cứ: đại hạn 31/100 (cung Tật Ách tại Tý: Tham Lang hãm). Mặt đỡ: Hóa Lộc lưu nhập cung Tật Ách năm.
      [mã: QA_YEAR_2026]
    • Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.
      [mã: QA_NOTE_KHA_NANG]
@@ -330,8 +371,10 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 22. HỎI: Tôi nên lưu ý gì năm 2027?
    App hiểu là: Nên / Không nên · năm 2027 · điểm 49/100, thế Thủ
-   • Tổng quan năm 2027 (Đinh Mùi): cân bằng (49/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
-     [mã: SCORE_NAM]
+   • [Kết luận] Vận chung năm 2027 (Đinh Mùi, 38 tuổi âm): 49/100 — trung bình, có lên có xuống. Điểm tựa: lưu niên đại hạn (cung Mệnh tại Hợi: Thái Âm miếu). Áp lực: đại hạn và tiểu hạn (cung Mệnh cùng rơi vào Tỵ: Thiên Cơ vượng). Diễn biến đầu có thể vất vả nhưng kết quả cuối năm nghiêng về tốt.
+     [mã: AN_KET_LUAN]
+   • [② Tổng hợp] gốc 62×0,10 + đại hạn 44×0,30 + lưu niên đại hạn 58×0,25 + tiểu hạn 44×0,20 + Lưu Thái Tuế 48×0,15 = 49/100. Các tầng không đồng thuận — thuận ở gốc, lưu niên đại hạn, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
    ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
    ✓ Nên: Nếu có kế hoạch sinh con: chăm sóc thai kỳ kỹ, khám định kỳ theo hướng dẫn của bác sĩ.
@@ -344,10 +387,10 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 
 23. HỎI: Lời khuyên về tài chính năm sau
    App hiểu là: Nên / Không nên · tài chính · năm 2027 · điểm 49/100, thế Thủ
-   • Tổng quan năm 2027 (Đinh Mùi): cân bằng (49/100). Thế Thủ: nên tránh rủi ro lớn, ưu tiên an toàn.
-     [mã: SCORE_NAM]
-   • Tài chính năm 2027: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tài Bạch của đại hạn tại Sửu, trên cung gốc Huynh Đệ).
-     [mã: SCORE_TAI_CHINH]
+   • [Kết luận] Tài chính năm 2027 (Đinh Mùi, 38 tuổi âm): 43/100 — cần thận trọng. Điểm tựa: Lưu Thái Tuế (cung Tài Bạch tại Mão: Thái Dương vượng – Thiên Lương vượng). Áp lực: đại hạn và tiểu hạn (cung Tài Bạch cùng rơi vào Sửu: Thiên Đồng hãm – Cự Môn hãm, gặp Hóa Kỵ (Thiên Đồng)).
+     [mã: AN_KET_LUAN]
+   • [② Tổng hợp] gốc 54×0,10 + đại hạn 33×0,30 + lưu niên đại hạn 50×0,25 + tiểu hạn 33×0,20 + Lưu Thái Tuế 55×0,15 = 43/100. Các tầng không đồng thuận — thuận ở Lưu Thái Tuế, yếu ở đại hạn, tiểu hạn — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
    ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
    ✓ Nên: Nếu có kế hoạch sinh con: chăm sóc thai kỳ kỹ, khám định kỳ theo hướng dẫn của bác sĩ.
@@ -433,17 +476,23 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
 ══════ Người thân, chuyện nhạy cảm (app chuyển hướng, không phán) ══════
 
 32. HỎI: Con tôi học hành thế nào?
-   App hiểu là: Gia đạo · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
+   App hiểu là: Gia đạo · năm 2026 (Bính Ngọ) · điểm 49/100, thế Thủ
    • Lá số đang mở là của bạn, nên chuyện của người thân chỉ đọc gián tiếp qua cung tương ứng (Phu Thê cho vợ chồng, Tử Tức cho con cái, Phụ Mẫu cho cha mẹ, Huynh Đệ cho anh chị em), tức là mối quan hệ của bạn với họ. Muốn xem vận riêng của người đó, hãy thêm ngày giờ sinh của họ vào hồ sơ.
      [mã: QA_CHUYEN_NGUOI_THAN]
-   • Lá số gốc — gia đạo: cân bằng (52/100). Cung đọc chính: Phụ Mẫu (Mão), Huynh Đệ (Sửu), Tử Tức (Hợi).
-     [mã: SCORE_GIA_DAO]
-   • Bộ Nhật Lương đồng cung tại cung Phụ Mẫu: cha mẹ mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế.
-     [mã: COMBO_THAI_DUONG_THIEN_LUONG@PHU_MAU]
-   • Năm 2026 — gia đạo năm 2026: cân bằng (49/100).
-     [mã: SCORE_GIA_DAO]
-   • Theo tiểu hạn, cung Phụ Mẫu của năm rơi vào Tỵ (cung gốc Điền Trạch). Thiên Cơ vượng địa tại cung Phụ Mẫu: cha mẹ thường thông minh, khéo léo, chu đáo; quan hệ có xu hướng thuận.
-     [mã: LUU_CUNG_TIEU_HAN_PHU_MAU, star.THIEN_CO.V.PHU_MAU]
+   • [Kết luận] Gia đạo (qua cung Tử Tức) năm 2026 (Bính Ngọ, 37 tuổi âm): 49/100 — trung bình, có lên có xuống.
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Tử Tức an tại Hợi (có Tuần): Thái Âm miếu — con cái thường dịu dàng, tinh tế, biết thu vén; quan hệ có xu hướng thuận. Cát tinh: Hóa Khoa (Thái Âm), Nguyệt Đức. Xung chiếu từ Điền Trạch (Tỵ): Thiên Cơ vượng; tam hợp Phụ Mẫu (Mão) và Nô Bộc (Mùi). Cách cục gốc liên quan: Hóa Kỵ ở Tứ Mộ (phản vi kỳ cách); Phụ Mẫu: Nhật Nguyệt sáng (cát). → Nền gốc: 52/100 (trung bình, có lên có xuống).
+     [mã: AN_GOC_TU_TUC]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Tử Tức của đại hạn rơi vào Dần (cung gốc Mệnh): Vũ Khúc vượng – Thiên Tướng miếu — con cái mang nét thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh tại đó: Hóa Quyền (Vũ Khúc), Thiên Việt. → Đại hạn: 48/100 (trung bình, có lên có xuống), nền 10 năm.
+     [mã: AN_DAI_HAN_TU_TUC]
+   • [③ Lưu niên đại hạn] Năm thứ 3 của đại hạn: lưu niên đại hạn tại Tuất (cung gốc Tài Bạch). Xoay 12 cung từ đây, cung Tử Tức của lưu niên đại hạn rơi vào Mùi (cung gốc Nô Bộc): vô chính diệu, mượn Thiên Đồng hãm – Cự Môn hãm từ Sửu. → Lưu niên đại hạn: 48/100 (trung bình, có lên có xuống), kết quả của năm.
+     [mã: AN_LUU_NIEN_TU_TUC]
+   • [④ Tiểu hạn 2026] Tiểu hạn năm 2026 tại Thìn (cung gốc Phúc Đức: Thất Sát hãm). Xoay 12 cung từ đây, cung Tử Tức của tiểu hạn rơi vào Sửu (cung gốc Huynh Đệ): Thiên Đồng hãm – Cự Môn hãm — con cái mang nét dễ bất đồng trong lời nói, cần học cách diễn đạt mềm. Sát/hung tinh: Hóa Kỵ (Thiên Đồng). → Tiểu hạn: 47/100 (trung bình, có lên có xuống), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_TU_TUC]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Bính Ngọ: Thái Tuế đóng tại Ngọ (cung gốc Quan Lộc). Xoay 12 cung từ đây, cung Tử Tức theo Thái Tuế rơi vào Mão (cung gốc Phụ Mẫu): Thái Dương vượng – Thiên Lương vượng. Cát tinh tại đó: Hóa Lộc (Thái Dương), Thiên Đức. Tứ Hóa năm Bính: Hóa Lộc → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Quyền → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Khoa → Văn Xương tại Điền Trạch (Tỵ); Hóa Kỵ → Liêm Trinh tại Tài Bạch (Tuất). Không có Tứ Hóa lưu hay sao lưu lớn chạm cung Tử Tức năm. → Lưu Thái Tuế: 54/100 (trung bình, có lên có xuống), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_TU_TUC]
+   • [⑥ Tổng hợp] gốc 52×0,10 + đại hạn 48×0,30 + lưu niên đại hạn 48×0,25 + tiểu hạn 47×0,20 + Lưu Thái Tuế 54×0,15 = 49/100. Các tầng ở quanh mức trung bình: không có biến động lớn ở mặt này.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
    ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
    ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
@@ -451,43 +500,54 @@ Dòng [mã: …] dưới mỗi đoạn là mã căn cứ hiển thị trong “V
    Hỏi tiếp: Tháng nào năm 2026 thuận cho gia đạo? | Năm 2027 gia đạo thế nào?
 
 33. HỎI: Vợ tôi có ngoại tình không?
-   App hiểu là: Tình duyên, hôn nhân · lá số gốc và năm 2026 · điểm 48/100, thế Thủ
+   App hiểu là: Tình duyên, hôn nhân · năm 2026 (Bính Ngọ) · điểm 49/100, thế Thủ
    • App không phán chuyện tan vỡ hay chia lìa. Dưới đây là phần luận tình duyên, hôn nhân để bạn biết lúc nào nên vun đắp, lắng nghe nhiều hơn.
      [mã: QA_CHUYEN_HON_NHAN]
-   • Lá số gốc — tình duyên, hôn nhân: nhiều thử thách (31/100). Cung đọc chính: Phu Thê (Tý).
-     [mã: SCORE_TINH_DUYEN]
-   • Tham Lang hãm địa tại cung Phu Thê: người bạn đời có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu.
-     [mã: STAR_THAM_LANG_H@PHU_THE]
-   • Năm 2026 — tình duyên, hôn nhân năm 2026: cân bằng (49/100).
-     [mã: SCORE_TINH_DUYEN]
-   • Năm 2026 (Bính Ngọ), từ ba tầng vận hạn trở lên cùng chỉ về chuyện tình cảm, cưới hỏi: khả năng cao đây là điểm sáng của năm, nên chủ động đón lấy.
-     [mã: CD_HAN_HY_CUOI_HOI, EVENT_CUOI_HOI]
-   • Theo tiểu hạn, cung Phu Thê của năm rơi vào Dần (cung gốc Mệnh). Bộ Vũ Tướng đồng cung tại cung Phu Thê: người bạn đời mang nét thực tế, có trách nhiệm, hợp quản lý tài chính.
-     [mã: LUU_CUNG_TIEU_HAN_PHU_THE, combo.VU_KHUC_THIEN_TUONG.PHU_THE]
+   • [Kết luận] Tình duyên, hôn nhân năm 2026 (Bính Ngọ, 37 tuổi âm): 49/100 — trung bình, có lên có xuống. Điểm tựa: tiểu hạn (cung Phu Thê tại Dần: Vũ Khúc vượng – Thiên Tướng miếu); đại hạn (cung Phu Thê tại Mão: Thái Dương vượng – Thiên Lương vượng). Áp lực: Lưu Thái Tuế (cung Phu Thê tại Thìn: Thất Sát hãm, gặp Địa Kiếp hãm); lưu niên đại hạn (cung Phu Thê tại Thân: Phá Quân hãm, gặp Cô Thần). Khởi đầu thuận, cần giữ thành quả đến cuối năm.
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Phu Thê an tại Tý (là cung Thân): Tham Lang hãm — người bạn đời có thể ham vui, khó nắm bắt; quan hệ cần thêm sự thấu hiểu. Xung chiếu từ Quan Lộc (Ngọ): Tử Vi miếu; tam hợp Phúc Đức (Thìn) và Thiên Di (Thân). → Nền gốc: 31/100 (khó khăn, nên giữ).
+     [mã: AN_GOC_PHU_THE]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Phu Thê của đại hạn rơi vào Mão (cung gốc Phụ Mẫu): Thái Dương vượng – Thiên Lương vượng — người bạn đời mang nét danh và tài dễ rực rỡ, hợp học thuật, y tế. Cát tinh tại đó: Hóa Lộc (Thái Dương), Thiên Hỷ. → Đại hạn: 58/100 (thuận), nền 10 năm.
+     [mã: AN_DAI_HAN_PHU_THE]
+   • [③ Lưu niên đại hạn] Năm thứ 3 của đại hạn: lưu niên đại hạn tại Tuất (cung gốc Tài Bạch). Xoay 12 cung từ đây, cung Phu Thê của lưu niên đại hạn rơi vào Thân (cung gốc Thiên Di): Phá Quân hãm. → Lưu niên đại hạn: 45/100 (cần thận trọng), kết quả của năm.
+     [mã: AN_LUU_NIEN_PHU_THE]
+   • [④ Tiểu hạn 2026] Tiểu hạn năm 2026 tại Thìn (cung gốc Phúc Đức: Thất Sát hãm). Xoay 12 cung từ đây, cung Phu Thê của tiểu hạn rơi vào Dần (cung gốc Mệnh): Vũ Khúc vượng – Thiên Tướng miếu — người bạn đời mang nét thực tế, có trách nhiệm, hợp quản lý tài chính. Cát tinh tại đó: Hóa Quyền (Vũ Khúc), Thiên Việt. → Tiểu hạn: 65/100 (thuận), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_PHU_THE]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Bính Ngọ: Thái Tuế đóng tại Ngọ (cung gốc Quan Lộc). Xoay 12 cung từ đây, cung Phu Thê theo Thái Tuế rơi vào Thìn (cung gốc Phúc Đức): Thất Sát hãm. Cát tinh tại đó: Phượng Các. Sát/hung tinh: Địa Kiếp hãm, Quả Tú. Tứ Hóa năm Bính: Hóa Lộc → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Quyền → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Khoa → Văn Xương tại Điền Trạch (Tỵ); Hóa Kỵ → Liêm Trinh tại Tài Bạch (Tuất). Chạm cung Phu Thê năm và tam phương: Hóa Kỵ lưu (xung chiếu), Đà La lưu (tọa thủ). → Lưu Thái Tuế: 31/100 (khó khăn, nên giữ), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_PHU_THE]
+   • [⑥ Đồng thanh tương ứng] Năm 2026 — đồng thanh tương ứng: tình cảm, cưới hỏi khả năng cao (3 tầng: lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế). Cách vận hạn kích hoạt: Hạn hỷ: năm thuận cưới hỏi (tiểu hạn tại Thìn, cát).
+     [mã: AN_DONG_THANH, CD_HAN_HY_CUOI_HOI]
+   • [⑦ Tổng hợp] gốc 31×0,10 + đại hạn 58×0,30 + lưu niên đại hạn 45×0,25 + tiểu hạn 65×0,20 + Lưu Thái Tuế 31×0,15 = 49/100. Các tầng không đồng thuận — thuận ở đại hạn, tiểu hạn, yếu ở gốc, lưu niên đại hạn, Lưu Thái Tuế — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Nên: Chủ động gặp gỡ, mở rộng quan hệ; thuận để bàn chuyện cưới hỏi nếu hai bên đã sẵn sàng.
    ✓ Nên: Đọc kỹ hợp đồng, lưu chứng từ, hỏi người có chuyên môn pháp lý khi cần.
    ✓ Không nên: Đổi việc vì cảm xúc nhất thời, nhất là trong tháng có Kình Dương, Đà La lưu.
-   Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
    → Nút: Xem luận năm 2026
    Hỏi tiếp: Tháng nào năm 2026 thuận cho tình duyên? | Năm 2027 tình duyên thế nào?
 
 34. HỎI: Năm nay có bị bệnh gì không
-   App hiểu là: Sức khỏe (lưu ý) · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 48/100, thế Thủ
+   App hiểu là: Sức khỏe (lưu ý) · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 43/100, thế Thủ
    • App không chẩn đoán bệnh. Phần sức khỏe chỉ là gợi ý giai đoạn nên chăm sóc bản thân kỹ hơn; khi có triệu chứng, hãy đi khám bác sĩ.
      [mã: QA_CHUYEN_BENH]
-   • Sức khỏe (lưu ý) năm 2026: cần thận trọng (43/100). Áp lực chủ yếu đến từ đại hạn (cung Tật Ách của đại hạn tại Tý, trên cung gốc Phu Thê).
-     [mã: SCORE_SUC_KHOE]
-   • Dù có điểm thuận (Thái Âm miếu tại Tật Ách của năm), tổng thể vẫn nghiêng về thận trọng vì điểm tổng hợp 43/100 thấp hơn mức trung bình.
-     [mã: LUU_CUNG_TIEU_HAN_TAT_ACH, star.THAI_AM.M.TAT_ACH]
-   • Phần sức khỏe chỉ là gợi ý để chú ý chăm sóc bản thân, không thay cho thăm khám của bác sĩ.
-     [mã: note.suc_khoe]
-   • Năm 2026 chưa thấy tầng vận nào cùng chỉ về cần chăm sóc sức khỏe, an toàn kỹ hơn; điểm sức khỏe (lưu ý) cả năm 43/100.
-     [mã: EVENT_SUC_KHOE_KHONG]
+   • [Kết luận] Sức khỏe năm 2026 (Bính Ngọ, 37 tuổi âm): 43/100 — cần thận trọng. Điểm tựa: tiểu hạn (cung Tật Ách tại Hợi: Thái Âm miếu). Áp lực: đại hạn (cung Tật Ách tại Tý: Tham Lang hãm); lưu niên đại hạn (cung Tật Ách tại Tỵ: Thiên Cơ vượng). Khởi đầu thuận, cần giữ thành quả đến cuối năm. Riêng chuyện sức khỏe: năm này chưa thấy tầng vận hạn nào chỉ rõ.
+     [mã: AN_KET_LUAN]
+   • [① Lá số gốc] Cung Tật Ách an tại Dậu: vô chính diệu, mượn Thái Dương vượng – Thiên Lương vượng từ Mão — nên giữ nhịp sống điều độ, khám định kỳ; có dấu hiệu bất thường thì đi khám. Cát tinh: Tả Phù, Văn Khúc. Sát/hung tinh: Kình Dương hãm. Kình Dương tại cung Tật Ách: cẩn trọng va chạm khi vận động. Xung chiếu từ Phụ Mẫu (Mão): Thái Dương vượng – Thiên Lương vượng; tam hợp Huynh Đệ (Sửu) và Điền Trạch (Tỵ). Cách cục gốc liên quan: Tật Ách có Kình Dương, Thiên Hình (hung). → Nền gốc: 47/100 (trung bình, có lên có xuống).
+     [mã: AN_GOC_TAT_ACH]
+   • [② Đại hạn 35–44 tuổi] Giai đoạn 2024–2033, đại hạn tại Tỵ, cung gốc Điền Trạch (Thiên Cơ vượng), can chi Tân Tỵ, thiên thời tuổi khắc đại hạn. Xoay 12 cung từ đây, cung Tật Ách của đại hạn rơi vào Tý (cung gốc Phu Thê): Tham Lang hãm — nên điều độ ăn uống, nghỉ ngơi; có dấu hiệu bất thường thì nên đi khám, đừng chủ quan. Cát tinh tại đó: Địa Giải. → Đại hạn: 31/100 (khó khăn, nên giữ), nền 10 năm.
+     [mã: AN_DAI_HAN_TAT_ACH]
+   • [③ Lưu niên đại hạn] Năm thứ 3 của đại hạn: lưu niên đại hạn tại Tuất (cung gốc Tài Bạch). Xoay 12 cung từ đây, cung Tật Ách của lưu niên đại hạn rơi vào Tỵ (cung gốc Điền Trạch): Thiên Cơ vượng. → Lưu niên đại hạn: 42/100 (cần thận trọng), kết quả của năm.
+     [mã: AN_LUU_NIEN_TAT_ACH]
+   • [④ Tiểu hạn 2026] Tiểu hạn năm 2026 tại Thìn (cung gốc Phúc Đức: Thất Sát hãm). Xoay 12 cung từ đây, cung Tật Ách của tiểu hạn rơi vào Hợi (cung gốc Tử Tức): Thái Âm miếu — nên giữ nhịp sinh hoạt đều đặn; có dấu hiệu bất thường thì nên đi khám. Cát tinh tại đó: Hóa Khoa (Thái Âm). → Tiểu hạn: 62/100 (thuận), diễn biến trong năm.
+     [mã: AN_TIEU_HAN_TAT_ACH]
+   • [⑤ Lưu Thái Tuế, Tứ Hóa năm] Năm Bính Ngọ: Thái Tuế đóng tại Ngọ (cung gốc Quan Lộc). Xoay 12 cung từ đây, cung Tật Ách theo Thái Tuế rơi vào Sửu (cung gốc Huynh Đệ): Thiên Đồng hãm – Cự Môn hãm. Cát tinh tại đó: Thiên Giải. Sát/hung tinh: Hóa Kỵ (Thiên Đồng). Tứ Hóa năm Bính: Hóa Lộc → Thiên Đồng tại Huynh Đệ (Sửu); Hóa Quyền → Thiên Cơ tại Điền Trạch (Tỵ); Hóa Khoa → Văn Xương tại Điền Trạch (Tỵ); Hóa Kỵ → Liêm Trinh tại Tài Bạch (Tuất). Chạm cung Tật Ách năm và tam phương: Hóa Lộc lưu (tọa thủ), Hóa Quyền lưu (tam hợp), Hóa Khoa lưu (tam hợp). → Lưu Thái Tuế: 43/100 (cần thận trọng), việc bị đánh thức trong năm.
+     [mã: AN_LUU_THAI_TUE_TAT_ACH]
+   • [⑥ Tổng hợp] gốc 47×0,10 + đại hạn 31×0,30 + lưu niên đại hạn 42×0,25 + tiểu hạn 62×0,20 + Lưu Thái Tuế 43×0,15 = 43/100. Các tầng không đồng thuận — thuận ở tiểu hạn, yếu ở đại hạn, lưu niên đại hạn, Lưu Thái Tuế — nên kết quả phụ thuộc nhiều vào cách bạn chọn thời điểm.
+     [mã: AN_TONG_HOP]
    ✓ Không nên: Bỏ qua dấu hiệu bất thường kéo dài hoặc tự ý dùng thuốc.
    ✓ Lưu ý: Để ý giấc ngủ, ăn uống, vận động; đi khám khi có dấu hiệu bất thường kéo dài.
    Đức năng thắng số: Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
    → Nút: Xem luận năm 2026
-   Hỏi tiếp: Tháng nào năm 2026 thuận cho sức khỏe? | Năm 2027 sức khỏe thế nào? | Tôi nên lưu ý gì năm 2026?
+   Hỏi tiếp: Năm nào thuận cho sức khỏe? | Tháng nào năm 2026 thuận cho sức khỏe? | Năm 2027 sức khỏe thế nào?
 
 35. HỎI: Tôi và vợ có hợp tuổi không?
    App hiểu là: Xem hợp nhau → So hai lá số

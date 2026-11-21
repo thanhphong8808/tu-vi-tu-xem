@@ -98,6 +98,7 @@ object Luan {
 
     private fun para(p: Paragraph) = buildJsonObject {
         put("text", p.text); put("pol", p.polarity); put("kind", p.kind.name); put("topic", p.topic?.name); put("draft", p.draft)
+        p.title?.let { put("title", it) }
         put("ids", buildJsonArray { p.ruleIds.forEach { add(it) } })
         put("why", buildJsonArray {
             for (w in p.why) add(buildJsonObject {

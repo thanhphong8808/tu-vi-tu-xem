@@ -9,9 +9,9 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.6.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.6.0.apk) | File cài app Android (bản mới nhất, giai đoạn 6, có mục **Hỏi đáp**), cài đè lên bản cũ không mất lá số |
+| [TuViTuXem-0.6.1.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.6.1.apk) | File cài app Android (bản mới nhất). Mục **Hỏi đáp** luận ngay trên lá số: sao tọa thủ, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, Tứ Hóa. Cài đè lên bản cũ không mất lá số |
 | [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15) sau khi gõ “nam sau tai chinh ra sao” |
-| [Hỏi đáp mẫu giai đoạn 6](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app tạo trên lá số mẫu: theo năm/tháng/ngày/tuần, khi nào thuận, nên/không nên, dữ kiện, giải nghĩa, từ chối, hỗ trợ |
+| [Hỏi đáp mẫu (0.6.1)](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app luận trên lá số mẫu, đủ các tầng: gốc, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, tổng hợp |
 | [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |
 | [Bản luận mẫu giai đoạn 5](docs/tai-ve/BanLuanMau_GiaiDoan5.txt) | Lịch ngày, chi tiết ngày + 12 giờ, thẻ sao, so hai lá số, xếp hạng giờ khi không rõ giờ sinh |
@@ -30,11 +30,11 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | 3 | Knowledge base + RuleEngine (`:data:kb`, `:core:interpret`) + luận giải sơ bộ trong app 0.3.0 | ✅ Xong — [báo cáo](docs/PHASE3_REPORT.md) |
 | 4 | Luận giải + khuyến nghị (chấm điểm, tổng hợp tầng, ghép câu, Nên/Không nên) + màn Luận giải trong app 0.4.0 | ✅ Xong — [báo cáo](docs/PHASE4_REPORT.md) |
 | 5 | UI đầy đủ: tab Ngày, thẻ sao, so hai lá số, ước đoán giờ, trường phái tùy chỉnh, xuất PNG/PDF, hai cột, trợ năng — app 0.5.0 | ✅ Xong — [báo cáo](docs/PHASE5_REPORT.md) |
-| 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), trả lời từ bản luận kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.0 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Model AI trên máy và đồng bộ Firebase: chờ (D-49, D-53) |
+| 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), luận đoán theo lá số qua từng tầng vận hạn kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.1 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Model AI trên máy và đồng bộ Firebase: chờ (D-49, D-53) |
 
 ## Cài lên điện thoại Android
 
-1. Tải `TuViTuXem-0.6.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
+1. Tải `TuViTuXem-0.6.1.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. App không xin
