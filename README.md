@@ -10,6 +10,7 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | File | Nội dung |
 | --- | --- |
 | [TuViTuXem-0.6.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.6.0.apk) | File cài app Android (bản mới nhất, giai đoạn 6, có mục **Hỏi đáp**), cài đè lên bản cũ không mất lá số |
+| [Ảnh mục Hỏi đáp trên máy ảo](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15) sau khi gõ “nam sau tai chinh ra sao” |
 | [Hỏi đáp mẫu giai đoạn 6](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app tạo trên lá số mẫu: theo năm/tháng/ngày/tuần, khi nào thuận, nên/không nên, dữ kiện, giải nghĩa, từ chối, hỗ trợ |
 | [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |

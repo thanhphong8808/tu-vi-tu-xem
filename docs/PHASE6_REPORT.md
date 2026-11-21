@@ -100,7 +100,25 @@ Hiệu năng trên JVM: câu đầu khoảng 200 ms (lập bản luận năm), c
 
 ## Máy ảo Android (CI)
 
-Kết quả lần chạy cuối ghi ở mục dưới, sau khi workflow “Chạy thử trên máy ảo Android” chạy xong trên API 30, 34, 35, 36, 37.
+Workflow “Chạy thử trên máy ảo Android”, lần chạy 44879531386 (commit `1d1a348`): **đạt cả 5 máy ảo**. Mỗi máy:
+- cài 0.5.0 trước;
+- cài đè 0.6.0 như người dùng sẽ làm;
+- mở app, bắt lỗi văng;
+- chạy tự kiểm tra trong app;
+- thử trên màn hình thật.
+
+| Máy ảo | Tự kiểm tra trong app | Gõ câu hỏi bằng bàn phím | Câu trả lời chậm nhất | Câu hỏi đầu | Trợ năng, chạm giữ, chia sẻ |
+| --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | 519/519 | ✓ “nam sau tai chinh ra sao” → Tài chính · năm 2027 | 480 ms | 98 ms | ✓ ✓ ✓ |
+| Android 14 (API 34) | 519/519 | ✓ | 750 ms | 162 ms | ✓ ✓ ✓ |
+| Android 15 (API 35) | 519/519 | ✓ | 842 ms | 134 ms | ✓ ✓ ✓ |
+| Android 16 (API 36) | 519/519 | ✓ | 442 ms | 90 ms | ✓ ✓ ✓ |
+| Android 17 (API 37) | 519/519 | ✓ | 393 ms | 62 ms | ✓ ✓ ✓ |
+
+“Câu trả lời chậm nhất” tính trọn một câu: gọi engine, ghép câu trả lời và vẽ lại màn hình. Câu chậm nhất thường là câu
+dò năm hoặc câu cần luận trọn đời lần đầu. Máy ảo trên CI chậm hơn S22 Ultra nhiều.
+
+[Ảnh chụp màn hình máy ảo Android 15](tai-ve/HoiDap_MayAo_API35.png): ngay sau khi adb gõ câu hỏi và bấm Enter.
 
 ## Chưa làm được và lý do
 
