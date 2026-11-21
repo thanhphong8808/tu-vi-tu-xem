@@ -725,3 +725,6 @@ và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube T
 - Sửa kèm: hỏi một năm trước năm sinh của lá số đang mở (vd. lá số sinh 2023 hỏi “năm 2015”) trước đây làm app báo lỗi;
   nay trả lời bằng lời nhắc `qa.truoc_nam_sinh`.
 - Lời vẫn là mức khả năng (“khả năng cao / có thể / mới là dấu hiệu”), không khẳng định, kèm ghi chú `qa.note.kha_nang`.
+- Hiệu năng: dò năm đã qua dùng `Composer.yearEvents` (chỉ tính sự kiện đồng thanh, bỏ phần chấm điểm chủ đề và ghép
+  câu) và chạy song song các năm. Lần đầu dùng `yearData` cho từng năm, máy ảo Android 16 có lượt mất 4,4 giây cho
+  “Khi nào tôi lấy vợ?” (chỉ tiêu dưới 3 giây); sau khi sửa, trên máy build từ 415 ms còn khoảng 200 ms.

@@ -528,6 +528,18 @@ class Composer(private val kb: KnowledgeBase) {
         )
     }
 
+    /**
+     * Chỉ sự kiện đồng thanh của một năm (cùng phép tính với [yearData], bỏ phần chấm điểm chủ đề và ghép câu): để Hỏi đáp
+     * dò nhanh nhiều năm đã qua (D-64).
+     */
+    fun yearEvents(chart: Chart, lunarYear: Int, expert: Boolean = false): List<YearEvent> {
+        val limits = LimitEngine.forYear(chart, lunarYear)
+        val ctx = Ctx(chart, limits, engine.evaluate(chart, limits, expert), Scorer(kb))
+        val child = limits.tuoiAm < 16
+        return events(items(ctx, setOf(Scope.NAM, Scope.DAI_HAN))).filter { !child || it.event in CHILD_EVENTS }
+            .map { h -> YearEvent(h.event, h.level, h.layers.sortedBy { it.ordinal }) }
+    }
+
     // ———————————————————— số liệu cho luận đoán trong Hỏi đáp (D-54) ————————————————————
 
     /** Một luật đã kích hoạt, dạng công khai: tên, loại, tầng chấm điểm, chiều, cung neo, câu luận đã điền, căn cứ. */

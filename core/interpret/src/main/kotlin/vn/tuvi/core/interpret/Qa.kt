@@ -1346,7 +1346,12 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         val curY = ctx.lunarYear
         val from = maxOf(chart.lunar.year + 17, curY - 20)
         if (from >= curY) return null
-        val hits = (from until curY).mapNotNull { y -> yData(chart, y, ctx).events.firstOrNull { it.event == ev && pts(it.level) >= 2 }?.let { y to it } }
+        // Mỗi năm tính độc lập (không trạng thái chung) → chạy song song; ghi lại vào bộ nhớ tạm cho lần hỏi sau.
+        val all = cached(chart, "yev-past" to (from to curY)) {
+            (from until curY).toList().parallelStream().map { y -> y to composer.yearEvents(chart, y, ctx.expert) }
+                .collect(java.util.stream.Collectors.toList()).sortedBy { it.first }
+        }
+        val hits = all.mapNotNull { (y, es) -> es.firstOrNull { it.event == ev && pts(it.level) >= 2 }?.let { y to it } }
         if (hits.isEmpty()) return null
         val top = hits.sortedWith(compareByDescending<Pair<Int, YearEvent>> { pts(it.second.level) }.thenByDescending { it.first }).take(4).sortedBy { it.first }
         return Paragraph(
