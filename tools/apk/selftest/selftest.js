@@ -295,7 +295,12 @@
     const b = readBoard();
     check(b.center.indexOf('Tùy chỉnh') >= 0 && b.cells[CHI.indexOf('Sửu')].hoa.indexOf('KHOA') >= 0 && b.cells[CHI.indexOf('Hợi')].hoa.indexOf('KY') >= 0, 'Tùy chỉnh Tứ Hóa Thiên Lương');
     window.tvBack(); await sleep(100);
-    click('[data-act="settings"]'); click('[data-act="preset"][data-k="NAM_PHAI_VN"]'); window.tvBack(); await sleep(100);
+    click('[data-act="settings"]'); click('[data-act="preset"][data-k="NAM_PHAI_VN"]');
+    click('[data-act="bench"]');
+    for (let i = 0; i < 100 && !$('#bench dl.kv'); i++) await sleep(100);
+    check(!!$('#bench dl.kv'), 'Nút Đo hiệu năng trong Cài đặt');
+    log('BENCH_UI ' + txtOf('#bench dl.kv').replace(/\s+/g, ' '));
+    window.tvBack(); await sleep(100);
     check(forbiddenIn(txt).length === 0 && txt.indexOf('{') < 0, 'Giai đoạn 5 lọt từ cấm/ô trống: ' + forbiddenIn(txt));
     // Kết thúc ở lá số Ca A (CI đọc cây trợ năng, chạm giữ thật, mở bảng chia sẻ).
     profileBtn('Ca A').click(); await sleep(300);

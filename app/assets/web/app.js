@@ -89,6 +89,7 @@
     cfgOptions: null,
     zoom: 1,
     lpFired: false,
+    bench: null,
   };
 
   function defaultForm() {
@@ -451,6 +452,11 @@
       `<div class="card"><h2>Luận giải</h2><div class="opt ${S.settings.expert ? 'on' : ''}" data-act="expert"><b>Chế độ chuyên sâu ${S.settings.expert ? '· đang bật' : '· đang tắt'}</b>` +
       `<span>Hiện thêm các luật độ tin cậy thấp (C), còn nhiều tranh luận giữa các trường phái.</span></div>` +
       `<p class="small muted">Áp dụng cho các lá số mở sau khi đổi.</p></div>` +
+      `<div class="card" id="bench"><h2>Hiệu năng trên máy này</h2>` +
+      (S.bench ? `<dl class="kv">` + [['Lập lá số', S.bench.chartMs, 5], ['Luận một năm', S.bench.yearMs, 50], ['Chấm điểm 30 ngày', S.bench.days30Ms, 300], ['Luận trọn đời', S.bench.lifetimeMs, 0]]
+        .map(([k, v, lim]) => `<dt>${k}</dt><dd>${v < 10 ? v.toFixed(2).replace('.', ',') : Math.round(v)} ms${lim ? (v <= lim ? ` <span class="ok">✓ chỉ tiêu ${lim} ms</span>` : ` <span class="bad">vượt chỉ tiêu ${lim} ms</span>`) : ''}</dd>`).join('') + `</dl>` : '') +
+      `<button class="btn block" data-act="bench" style="margin-top:8px">Đo hiệu năng</button>` +
+      `<p class="small muted">Đo ngay trên máy: lập lá số, luận một năm, chấm điểm 30 ngày (chỉ tiêu mục 3, đo trên Samsung S22).</p></div>` +
       `<div class="card"><h2>Về ứng dụng</h2><p class="small">Tử Vi Tự Xem ${esc(ver)} — giai đoạn 5: lá số, vận hạn; luận giải trọn đời / đại vận / năm / tháng / ngày (lịch tháng có điểm từng ngày, giờ thuận) với điểm 0–100, thế Tấn/Giữ/Thủ/Lùi, Nên/Không nên, “Vì sao?” cho mọi đoạn; thẻ sao (chạm giữ một sao); so hai lá số (truyền cung, truyền tinh); ước đoán giờ sinh theo sự kiện; tùy chỉnh trường phái từng điểm; xuất ảnh PNG và PDF A4. Câu luận hiện là bản nháp tự sinh, chưa qua thẩm định.</p>` +
       `<p class="small muted">${esc(ONBOARD)}</p></div>`;
   }
@@ -935,7 +941,7 @@
     const reading = (r, title) => {
       add('h1', title);
       add('sub', r.subtitle);
-      add('score', `Điểm ${r.score}/100 · Thế ${r.stanceVn} — ${r.stanceText}`);
+      add('score', `Điểm ${r.score}/100 · ${r.stanceText}`);
       r.summary.forEach((p) => add(p.kind === 'NOTE' ? 'note' : 'p', p.text, { pol: p.pol }));
       r.sections.forEach((sct) => { add('h2', sct.title + (sct.score != null ? ` · ${sct.score}/100` : '')); sct.paragraphs.forEach((p) => add(p.kind === 'NOTE' ? 'note' : 'p', p.text, { pol: p.pol })); });
       if (r.timeline.length) { add('h2', '12 đại vận'); r.timeline.forEach((t) => add('li', `${t.from}–${t.to} tuổi · ${t.chiVn} (cung ${t.role}) · ${t.score}/100 · ${t.stance} · ${t.thienThoi}${t.current ? ' · đang đi' : ''}`)); }
@@ -1307,6 +1313,13 @@
       }
       case 'preset': S.settings.preset = el.dataset.k; saveSettings(); render(false); break;
       case 'expert': S.settings.expert = !S.settings.expert; saveSettings(); render(false); break;
+      case 'bench': {
+        openModal('Đang đo…', 'Lập lá số, luận năm, chấm 30 ngày — vài giây.', 'Đóng', null, null);
+        setTimeout(() => {
+          try { S.bench = api('bench'); closeModal(); const sy = window.scrollY; render(false); window.scrollTo(0, sy); } catch (err) { openModal('Không đo được', err.message, 'Đóng', null, null); }
+        }, 40);
+        break;
+      }
       case 'open-reading': openReading(el.dataset.s); break;
       case 'rscope': openReading(el.dataset.s, S.rv.year, S.rv.month); break;
       case 'ryear': openReading(S.rv.scope, Math.max(1900, Math.min(2200, S.rv.year + parseInt(el.dataset.d, 10))), S.rv.month); break;

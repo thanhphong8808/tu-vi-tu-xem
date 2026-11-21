@@ -14,6 +14,7 @@ OUT=out
 mkdir -p "$OUT"
 FAIL=0
 emit_png() { echo "BEGIN_PNG $1"; base64 -w 0 "$2" | fold -w 3000; echo; echo "END_PNG"; }
+emit_file() { echo "BEGIN_FILE $1"; base64 -w 0 "$2" | fold -w 3000; echo; echo "END_FILE"; }
 
 echo "== Máy ảo: Android $(adb shell getprop ro.build.version.release | tr -d '\r') · API $(adb shell getprop ro.build.version.sdk | tr -d '\r')"
 adb shell dumpsys webviewupdate 2>/dev/null | grep -m2 -iE "Current WebView package|versionName" || true
@@ -147,6 +148,7 @@ PY
       pdftoppm -r 60 -f 1 -l 3 -png "$OUT/laso-api$API.pdf" "$OUT/pdf-api$API" && for f in "$OUT"/pdf-api$API-*.png; do emit_png "$(basename "$f" .png)" "$f"; done
       pdftotext -l 3 "$OUT/laso-api$API.pdf" - 2>/dev/null | head -40
     fi
+    [ "$API" = "35" ] && emit_file "laso-api$API.pdf" "$OUT/laso-api$API.pdf"  # bản PDF mẫu (kho artifact không tải được từ mọi nơi)
   else
     echo "PDF_FAIL: không thấy PDF trong Tải xuống/TuViTuXem"; FAIL=1
   fi

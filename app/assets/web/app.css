@@ -316,8 +316,8 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 .meter i { display: block; height: 100%; background: var(--moc); }
 .hours .h.rk b { white-space: nowrap; }
 .cfg { margin-top: 6px; border-top: 1px solid var(--line2); }
-/* máy tính bảng, màn ngang: hai cột */
-@media (min-width: 900px) {
+/* máy tính bảng, điện thoại xoay ngang (S22 Ultra ngang ≈ 840–880 px CSS): hai cột */
+@media (min-width: 760px) {
   #app { max-width: 1280px; }
   .chart-2p { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 16px; align-items: start; }
   .chart-2p .cl-board { position: sticky; top: 64px; }
@@ -330,3 +330,4 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
   .hrs { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 }
 @media print { .bar, .zoombar, #export, .rbtns { display: none !important; } }
+.kv .ok { color: var(--good-ink); font-weight: 700; } .kv .bad { color: var(--bad-ink); font-weight: 700; }
