@@ -610,7 +610,8 @@ Mạng đã mở (`dl.google.com`, `maven.google.com`, `huggingface.co`), nên D
 - Đã chạy thật trên máy build (CPU 4 nhân, `litertlm-jvm`): nạp model ~8 giây, mỗi câu ~20–30 giây, tiếng Việt tốt.
 
 **Cách gắn (giữ hệ thống build D-28, không chuyển sang Gradle/AGP):**
-- `tools/apk/fetch_ai_deps.sh` tải AAR, gson 2.14.0 và R8 8.13.19 (Google Maven) một lần, kiểm SHA-256.
+- `tools/apk/fetch_ai_deps.sh` tải AAR và R8 8.13.19 (Google Maven) một lần, kiểm SHA-256. gson 2.14.0 (313 KB) nằm sẵn
+  trong `tools/apk/vendor/` vì Maven Central có lúc trả 404/429 cho máy chủ CI.
 - Lớp bọc `app/src/llm/java/vn/tuvi/app/llm/LiteRt.java` viết bằng Java: kotlinc 2.0 của dự án không phải đọc
   metadata Kotlin 2.4 của thư viện. Cùng file này chạy trong APK và trên máy tính (công cụ chấm 40 câu).
 - Code của app vẫn qua `dx` (classes.dex). Thư viện AI (bytecode Java 21 có lambda, nối chuỗi `invokedynamic`,

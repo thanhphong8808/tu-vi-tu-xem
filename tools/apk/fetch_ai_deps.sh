@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Tải (một lần, có kiểm SHA-256) các thư viện cho Trợ lý AI trên máy (D-57) vào thư mục đệm, in đường dẫn thư mục.
 #   litertlm-android 0.19.1 (Google Maven) — AAR: classes.jar + liblitertlm_jni.so arm64-v8a / x86_64
-#   gson 2.14.0 (Maven Central)             — LiteRT-LM cần
+#   gson 2.14.0 (Maven Central, có sẵn trong tools/apk/vendor) — LiteRT-LM cần
 #   r8 8.13.19 (Google Maven)                — D8 chuyển thư viện Java 21 (lambda, nối chuỗi, switch mẫu) sang DEX
 #   litertlm-jvm 0.19.1 (Google Maven)       — chỉ khi gọi với đối số "jvm": chạy model trên máy tính (chấm 40 câu)
 # Dùng: DIR=$(bash tools/apk/fetch_ai_deps.sh [jvm])
@@ -24,6 +24,9 @@ get() { # tên_file url sha256
 
 get litertlm-android-0.19.1.aar "$G/com/google/ai/edge/litertlm/litertlm-android/0.19.1/litertlm-android-0.19.1.aar" \
   341f66349ac962e0b6733b8da419b045a4834fca2f7db0bd13e049ce1cfcca72
+# gson nằm sẵn trong repo (tools/apk/vendor, 313 KB): Maven Central đôi khi trả 404/429 cho máy chủ CI.
+ROOT=$(cd "$(dirname "$0")/../.." && pwd)
+[ -f "$DIR/gson-2.14.0.jar" ] || cp "$ROOT/tools/apk/vendor/gson-2.14.0.jar" "$DIR/" 2>/dev/null || true
 get gson-2.14.0.jar "$C/com/google/code/gson/gson/2.14.0/gson-2.14.0.jar" \
   2cbd119bf1961c28788310963dc80ba65f58cdeec1dd139c8bdb1240faa2c36f
 get r8-8.13.19.jar "$G/com/android/tools/r8/8.13.19/r8-8.13.19.jar" \
