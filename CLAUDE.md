@@ -1,7 +1,7 @@
 # Tử Vi Tự Xem — hướng dẫn cho Claude
 
 App Android **offline** lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam) của anh **Thanh Phong** (dùng Samsung S22 Ultra).
-Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.1 (10)**, giai đoạn 1–8 đã xong (xem `README.md`, mục Trạng thái).
+Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.9.0 (11)**, giai đoạn 1–9 đã xong (xem `README.md`, mục Trạng thái).
 
 ## Cách làm việc với anh Phong
 
@@ -13,7 +13,7 @@ Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.8.1 (10)*
   mục “Tải về”. Không gửi file đính kèm trong chat, trừ khóa ký (bí mật). GitHub Releases bị chặn (403): không tạo Release,
   không lách bằng Actions.
 - Đặc tả là `docs/PROMPT_TUVI_APP.md`; cẩm nang là `docs/CAMNANG_TUVI_V2.txt`. **Khi hai tài liệu khác nhau, theo PROMPT.**
-  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-64). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
+  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-68). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
 - Lựa chọn trường phái anh đã chốt: Nhâm hóa Khoa = Tả Phù; sinh tháng nhuận tính như tháng thường; Khôi Việt năm Canh =
   Ngọ/Dần (mặc định Nam phái VN).
 
@@ -84,7 +84,7 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
   Khởi động lại devserver giữa các lần chạy. Ảnh chuẩn nằm ở `tools/apk/uitest/baseline`. Cập nhật bằng
   `TUVI_UPDATE_BASELINE=1` (hoặc xóa ảnh rồi chạy hai lần). Chỉ cập nhật khi thay đổi giao diện là cố ý.
 - **Selftest tại chỗ:** `bash tools/apk/selftest/run_local.sh`. Lệnh này chạy 4 ca golden và gõ câu hỏi vào mục Hỏi đáp.
-- **Mốc hiện tại (0.8.0):** xem `docs/PHASE8_REPORT.md`. Riêng `:core:interpret` có 532 test (thêm `AiTest`, `BooksTest`).
+- **Mốc hiện tại (0.9.0):** xem `docs/PHASE9_REPORT.md`. Riêng `:core:interpret` có 552 test.
 - Gradle cần locale UTF-8 (tên test tiếng Việt): `test_all.sh` tự đặt `LC_ALL=C.UTF-8`.
 - Playwright: nếu bản pip không khớp trình duyệt (không tải được từ `cdn.playwright.dev`), `test_ui.py` và
   `run_local.py` tự dùng Chromium có sẵn ở `/opt/pw-browsers`.
@@ -121,6 +121,11 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
 - Hỏi mốc năm (D-64, 0.8.1): “đoán năm cưới”, “tuổi kết hôn”… → TIMING; không nêu thời gian thì thêm đoạn “Đối chiếu các
   năm đã qua”. “Đã cưới năm 2015, có khớp không?” → `QaParse.verify`, `verifyYear` (năm đó ± 2). Năm trước năm sinh →
   `qa.truoc_nam_sinh`.
+- Luận chi tiết (D-65): `QaAnalyst.starDetailPara` (từng sao trong cung), `triggers`/`concretePara`/`concreteAdvice` (Tứ Hóa
+  lưu, sao lưu chạm cung chủ đề → kho `ct.*` trong `tools/kb/kb_chitiet.py`), `topicMonths`, `personalityPara`.
+  Lời khuyên chỉ lấy đúng chủ đề. Việc đã qua (D-66): `QaParse.past`, `pastYear`, `milestones`.
+- So hai lá số (D-67): `Synastry` (bản mệnh, can, chi, cung Mệnh, Cục, chính tinh; câu `hop.*`).
+- KB sinh từ `tools/kb/build_kb.py` (đừng sửa tay file JSON trong `data/kb`).
 
 ## Kiến thức sách, thiết kế, liên hệ (0.8.0, D-61…D-63)
 
@@ -134,7 +139,9 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
 
 ## Trợ lý AI trên máy (0.7.0, D-57…D-60)
 
-- Model Gemma 4 E2B (`litert-community/gemma-4-E2B-it-litert-lm`, Apache 2.0, không gated), LiteRT-LM 0.19.1.
+- Hai model (D-68, `kb/ai/model.json`): **Nhanh** Gemma 4 E2B (`litert-community/gemma-4-E2B-it-litert-lm`, 2,6 GB) và
+  **Mạnh** Gemma 4 E4B (`litert-community/gemma-4-E4B-it-litert-lm`, 3,7 GB, RAM ≥ 7 GB); Apache 2.0, không gated,
+  LiteRT-LM 0.19.1. Người dùng chọn trong thẻ Trợ lý AI (`aiAction select:<id>`); `eval40.sh` chọn cấu hình theo tên file.
   App tải bằng DownloadManager, chỉ Wi-Fi, kiểm SHA-256; xin quyền INTERNET chỉ cho việc này, WebView vẫn chặn mạng.
 - Model **chỉ diễn đạt lại** câu của `QaAnalyst`; `AiGuard` (mục 12.3) kiểm JSON, độ dài, từ cấm, tên sao/cung,
   sao gắn đúng cung, số và điểm đúng tầng. Trượt thì hiện câu của `QaAnalyst`, ghi `aiLog` trên máy.
