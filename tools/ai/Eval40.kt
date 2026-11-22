@@ -70,6 +70,7 @@ fun main(args: Array<String>) {
             put("score", ask["score"] ?: JsonPrimitive(null as String?))
             put("used", d["used"] ?: JsonPrimitive(false)); put("skip", d["skip"] ?: JsonPrimitive(false))
             put("ms", d["ms"] ?: JsonPrimitive(0)); put("words", d["words"] ?: JsonPrimitive(0))
+            put("repaired", d["repaired"] ?: JsonPrimitive(0)); put("retried", d["retried"] ?: JsonPrimitive(false))
             put("text", d["text"] ?: JsonPrimitive(null as String?)); put("reason", d["reason"] ?: JsonPrimitive(null as String?))
             put("issues", d["issues"] ?: JsonArray(emptyList())); put("raw", llm.lastRaw)
             put("analyst", (ask["paragraphs"]?.jsonArray?.firstOrNull()?.jsonObject?.get("text")?.jsonPrimitive?.contentOrNull ?: "").take(400))

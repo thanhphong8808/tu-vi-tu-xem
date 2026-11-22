@@ -128,3 +128,59 @@ Quá trình:
 
 - Anh đo tốc độ hai model trên S22 Ultra (GPU/CPU) và cho mình biết model nào anh thích hơn để đặt mặc định.
 - Đồng bộ Firebase (D-53) vẫn cần `google-services.json` từ dự án Firebase của anh.
+
+---
+
+# Bản 0.9.1 — Câu Trợ lý AI lệch lá số
+
+Quyết định: D-69.
+
+## Anh gặp gì
+
+Ảnh anh gửi (S22 Ultra, câu “Nhà đất năm nay”): “Trợ lý AI chưa đưa ra được câu trả lời đạt kiểm tra… Lý do: gán “Đà La”
+với “Mùi” không khớp dữ kiện; số 599, 1000, 32021, 203030, 1 không có trong dữ kiện”.
+
+- App đã làm đúng việc chính: câu AI sai thì không hiện, chỉ hiện bản luận của app.
+- Nhưng các số như 599, 32021, 203030 không phải lỗi diễn đạt bình thường. Nhiều khả năng model sinh chữ số bị hỏng khi
+  chạy GPU trên máy anh. Mình không có đầu ra gốc trên máy anh nên chưa khẳng định được.
+- Thông báo lộ chữ kỹ thuật, khó hiểu.
+
+## Đã sửa
+
+| Việc | Cách làm |
+| --- | --- |
+| Tự sửa câu AI | Bỏ đúng những câu sai (số lạ, gán sao sai cung…), phần còn lại đủ ý thì kiểm tra lại toàn bộ rồi hiện, ghi “đã bỏ N câu chưa khớp lá số” |
+| Đầu ra hỏng | Từ hai số dài vô nghĩa trở lên hoặc chữ nước ngoài → nếu đang chạy GPU thì tự chuyển sang CPU và viết lại |
+| Viết lại | Vẫn trượt thì cho model viết lại một lần, kèm danh sách lỗi của lần trước |
+| Chọn phần cứng | Cài đặt → Trợ lý AI: “Chạy bằng GPU / Chạy bằng CPU” |
+| Thông báo | “Lần này Trợ lý AI viết chưa khớp hoàn toàn với lá số, nên app không hiện câu đó. Bản luận chi tiết của app ở ngay dưới…”; chi tiết kỹ thuật thu gọn |
+| Nhật ký | Cài đặt → Nhật ký Trợ lý AI → “Xem 5 lần gần nhất”: câu hỏi, lỗi, câu AI viết. Còn lỗi thì anh chụp màn hình này gửi mình |
+
+## Chấm lại 40 câu (Gemma 4 E2B, CPU máy build)
+
+| Bản | Qua kiểm tra | Trung vị |
+| --- | --- | --- |
+| 0.9.0 | 37/40 | 26,2 giây |
+| 0.9.1 | **40/40** | 31,5 giây |
+
+Chỉ một câu cần viết lại (mất khoảng 76 giây); các câu khác đạt ngay hoặc nhờ tự sửa, không tốn thêm thời gian. Chi tiết:
+[ai-cham-40-cau.md](tai-ve/ai-cham-40-cau.md).
+
+## Kiểm thử tại chỗ
+
+| Bước | Kết quả |
+| --- | --- |
+| Gradle test | 894/894 (`:core:interpret` 553 — thêm test tự sửa, nhận diện đầu ra hỏng) |
+| Build APK | Đạt, ký khóa thật |
+| Giao diện | 715/715 — thêm: câu AI sai được cho viết lại, chi tiết kỹ thuật thu gọn, xem nhật ký AI, chọn GPU/CPU |
+| Selftest | 523/523 |
+
+## Máy ảo Android 0.9.1 (CI)
+
+(điền sau khi workflow chạy xong)
+
+## Anh cần thử
+
+- Cài 0.9.1, hỏi lại “Nhà đất năm nay thế nào?”.
+- Nếu vẫn hiện “viết chưa khớp”: vào Cài đặt → Trợ lý AI → chọn **Chạy bằng CPU** rồi hỏi lại; và chụp “Xem 5 lần gần
+  nhất” trong Nhật ký Trợ lý AI gửi mình.

@@ -1,7 +1,7 @@
 # Tử Vi Tự Xem — hướng dẫn cho Claude
 
 App Android **offline** lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam) của anh **Thanh Phong** (dùng Samsung S22 Ultra).
-Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.9.0 (11)**, giai đoạn 1–9 đã xong (xem `README.md`, mục Trạng thái).
+Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.9.1 (12)**, giai đoạn 1–9 đã xong (xem `README.md`, mục Trạng thái).
 
 ## Cách làm việc với anh Phong
 
@@ -13,7 +13,7 @@ Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.9.0 (11)*
   mục “Tải về”. Không gửi file đính kèm trong chat, trừ khóa ký (bí mật). GitHub Releases bị chặn (403): không tạo Release,
   không lách bằng Actions.
 - Đặc tả là `docs/PROMPT_TUVI_APP.md`; cẩm nang là `docs/CAMNANG_TUVI_V2.txt`. **Khi hai tài liệu khác nhau, theo PROMPT.**
-  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-68). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
+  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-69). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
 - Lựa chọn trường phái anh đã chốt: Nhâm hóa Khoa = Tả Phù; sinh tháng nhuận tính như tháng thường; Khôi Việt năm Canh =
   Ngọ/Dần (mặc định Nam phái VN).
 
@@ -144,7 +144,8 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
   LiteRT-LM 0.19.1. Người dùng chọn trong thẻ Trợ lý AI (`aiAction select:<id>`); `eval40.sh` chọn cấu hình theo tên file.
   App tải bằng DownloadManager, chỉ Wi-Fi, kiểm SHA-256; xin quyền INTERNET chỉ cho việc này, WebView vẫn chặn mạng.
 - Model **chỉ diễn đạt lại** câu của `QaAnalyst`; `AiGuard` (mục 12.3) kiểm JSON, độ dài, từ cấm, tên sao/cung,
-  sao gắn đúng cung, số và điểm đúng tầng. Trượt thì hiện câu của `QaAnalyst`, ghi `aiLog` trên máy.
+  sao gắn đúng cung, số và điểm đúng tầng. D-69: `checkAndRepair` bỏ câu sai; đầu ra rác (`looksGarbled`) trên GPU →
+  `fallbackToCpu`; còn trượt thì viết lại một lần kèm lỗi. Vẫn trượt thì hiện câu của `QaAnalyst`, ghi `aiLog` trên máy.
 - Máy chủ thử dùng `FakeLlmHost` (`TUVI_AI=off` để tắt). Máy ảo CI chỉ kiểm thư viện máy nạp được (probe).
 - Còn chờ: anh đo tốc độ, chấm chất lượng trên S22 Ultra (GPU/CPU); đồng bộ Firebase (D-53) cần
   `google-services.json` từ dự án Firebase của anh.

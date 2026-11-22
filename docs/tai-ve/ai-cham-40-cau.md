@@ -7,18 +7,16 @@ Câu nào trượt kiểm tra thì app hiện câu của QaAnalyst (không hiệ
 | Chỉ số | Kết quả |
 | --- | --- |
 | Câu hỏi | 40 (bỏ qua không gọi model: 0) |
-| Qua kiểm tra, hiện câu AI | **37/40** |
-| Trượt kiểm tra → hiện câu QaAnalyst | 3 |
-| Nạp model lần đầu | 0.801 giây |
-| Thời gian một câu (trung vị / lâu nhất) | 26.177 / 36.238 giây |
-
-Lý do trượt (đếm theo loại): gán × 2; quá dài × 1
+| Qua kiểm tra, hiện câu AI | **40/40** |
+| Trượt kiểm tra → hiện câu QaAnalyst | 0 |
+| Nạp model lần đầu | 39.442 giây |
+| Thời gian một câu (trung vị / lâu nhất) | 31.47 / 218.605 giây |
 
 ## 1. Năm sau sự nghiệp của tôi thế nào? — lá số A
 
 App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100
 
-**Đạt** (28.376 giây, 344 chữ). Câu AI:
+**Đạt** (218.605 giây, 344 chữ). Câu AI:
 
 > Chào bạn. Dựa trên dữ kiện lá số của bạn, sự nghiệp năm 2027 được dự đoán là có mức trung bình, có lúc thuận lợi có lúc gặp trở ngại, với điểm số là 49/100. Điều này phản ánh sự kết hợp giữa nền tảng gốc của bạn và các yếu tố hạn chế từ đại hạn và tiểu hạn.
 > 
@@ -36,7 +34,7 @@ App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 38 tuổi âm) · điể
 
 App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 50/100
 
-**Đạt** (20.057 giây, 248 chữ). Câu AI:
+**Đạt** (24.185 giây, 248 chữ). Câu AI:
 
 > Chào bạn, về tình duyên năm 2027, theo dữ kiện, kết quả tổng thể là 50/100, tức là mức trung bình, có lúc thuận lợi có lúc gặp trở ngại. Điểm tựa của bạn nằm ở đại hạn và tiểu hạn, vì cung Phu Thê của đại hạn và tiểu hạn đều rơi vào Mão, với Thái Dương vượng và Thiên Lương vượng, cho thấy người bạn đời có thể mang nét danh và tài năng, hợp học thuật hoặc y tế. Tuy nhiên, Lưu Thái Tuế năm Đinh Mùi lại cho thấy mức độ cần thận trọng hơn, với điểm số là 42/100. Trong năm 2027, có những dấu hiệu cho thấy quan hệ có thể được người xung quanh ủng hộ, dễ có người mai mối do Hóa Khoa lưu nhập cung Phu Thê theo Thái Tuế. Nhưng đồng thời, Đà La lưu cũng cho thấy chuyện tình cảm có thể chậm, dây dưa và khó dứt điểm. Thiên Mã lưu lại gợi ý rằng tình cảm có thể gắn liền với việc đi lại, như yêu xa hoặc cùng nhau chuyển chỗ ở. Để tình duyên tốt hơn, bạn nên chủ động gặp gỡ, mở rộng quan hệ và giới thiệu người ấy với gia đình, bạn bè. Lưu ý là bạn cần đặt ra những mốc rõ ràng cho mối quan hệ của mình. Bạn nên chủ động gặp gỡ và thuận để bàn chuyện cưới hỏi nếu cả hai bên đã sẵn sàng.
 
@@ -44,7 +42,7 @@ App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 38 tuổi âm
 
 App hiểu là: Tài chính · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm 41/100
 
-**Đạt** (28.435 giây, 332 chữ). Câu AI:
+**Đạt** (33.299 giây, 332 chữ). Câu AI:
 
 > Chào bạn. Dựa trên dữ kiện lá số của bạn, tình hình tài chính năm 2026 có điểm chung là 41/100, và kết luận là cần thận trọng. Điều này là do các tầng không đồng thuận, thuận ở Lưu Thái Tuế nhưng yếu ở đại hạn và tiểu hạn.
 > 
@@ -68,7 +66,7 @@ App hiểu là: Tài chính · năm 2026 (Bính Ngọ, 37 tuổi âm) · điểm
 
 App hiểu là: Sự nghiệp · đại vận 35–44 tuổi · điểm 48/100
 
-**Đạt** (25.804 giây, 347 chữ). Câu AI:
+**Đạt** (31.19 giây, 347 chữ). Câu AI:
 
 > Chào bạn. Về công việc trong đại vận 35 đến 44 tuổi, kết quả được đánh giá là trung bình, có lúc thuận lợi có lúc gặp trở ngại, với điểm số là 48/100. Điều này cho thấy sự nghiệp của bạn sẽ có những lúc lên và có lúc xuống trong giai đoạn này.
 > 
@@ -90,7 +88,7 @@ App hiểu là: Sự nghiệp · đại vận 35–44 tuổi · điểm 48/100
 
 App hiểu là: Sự nghiệp · năm 2020 (Canh Tý, 31 tuổi âm) · điểm 38/100
 
-**Đạt** (34.168 giây, 436 chữ). Câu AI:
+**Đạt** (42.596 giây, 436 chữ). Câu AI:
 
 > Chào bạn, tôi sẽ xem xét công việc của bạn trong năm 2020 dựa trên dữ kiện Tử Vi Tự Xem này nhé. Điểm chung cho sự nghiệp năm 2020 là 38/100, và bạn cần thận trọng.
 > 
@@ -112,7 +110,7 @@ App hiểu là: Sự nghiệp · năm 2020 (Canh Tý, 31 tuổi âm) · điểm 
 
 App hiểu là: Năm thuận cho tài lộc, dòng tiền cải thiện · dò 2026–2036
 
-**Đạt** (22.431 giây, 276 chữ). Câu AI:
+**Đạt** (26.92 giây, 276 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện bạn cung cấp, chúng ta sẽ xem xét các năm có khả năng tài lộc tốt nhất trong giai đoạn 2026 đến 2036 nhé.
 > 
@@ -132,7 +130,7 @@ App hiểu là: Năm thuận cho tài lộc, dòng tiền cải thiện · dò 2
 
 App hiểu là: Dữ kiện lá số: cung Mệnh
 
-**Đạt** (18.879 giây, 292 chữ). Câu AI:
+**Đạt** (22.698 giây, 292 chữ). Câu AI:
 
 > Chào bạn, về cung Mệnh của bạn, chúng ta sẽ xem xét các sao và ý nghĩa dựa trên dữ kiện nhé. Cung Mệnh của bạn tọa tại Dần, có Chính tinh là Vũ Khúc đang ở vị trí Vượng và Thiên Tướng đang ở vị trí Miếu. Điều này cho thấy tính cách của bạn có sự thực tế, có trách nhiệm trong việc quản lý tài chính và xu hướng hành động hướng đến thực tế. Bộ Vũ Tướng đồng cung tại cung Mệnh càng nhấn mạnh điều này, cho thấy bạn có tính cách hợp quản lý tài chính và có xu hướng hành động cụ thể.
 > 
@@ -146,7 +144,7 @@ App hiểu là: Dữ kiện lá số: cung Mệnh
 
 App hiểu là: Sự nghiệp · tháng 3 âm lịch năm 2027 · điểm 47/100
 
-**Đạt** (19.374 giây, 245 chữ). Câu AI:
+**Đạt** (22.349 giây, 245 chữ). Câu AI:
 
 > Chào bạn, về công việc trong tháng 3 âm lịch năm 2027, theo dữ kiện, kết quả được đánh giá là 47/100, tức là mức trung bình, có lúc lên có lúc xuống. Nền sự nghiệp của cả năm 2027 được dự đoán là 49/100. Chúng ta sẽ xem xét từng khía cạnh nhé.
 > 
@@ -162,7 +160,7 @@ App hiểu là: Sự nghiệp · tháng 3 âm lịch năm 2027 · điểm 47/100
 
 App hiểu là: Nên / Không nên · sức khỏe (lưu ý) · năm 2027 · điểm 49/100
 
-**Đạt** (20.677 giây, 273 chữ). Câu AI:
+**Đạt** (25.148 giây, 273 chữ). Câu AI:
 
 > Điểm chung: 49/100. Chào bạn, dựa trên dữ kiện của bạn, về sức khỏe trong năm 2027, kết quả tổng thể được đánh giá là 43/100, cần phải thận trọng. Điều này là do các tầng không đồng thuận, thuận ở lưu niên đại hạn và Lưu Thái Tuế, nhưng yếu ở đại hạn và tiểu hạn, nên kết quả sẽ phụ thuộc nhiều vào cách bạn lựa chọn thời điểm.
 > 
@@ -178,7 +176,7 @@ App hiểu là: Nên / Không nên · sức khỏe (lưu ý) · năm 2027 · đi
 
 App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 38 tuổi âm) · điểm 49/100
 
-**Đạt** (36.137 giây, 450 chữ). Câu AI:
+**Đạt** (42.071 giây, 450 chữ). Câu AI:
 
 > Chào bạn, dựa trên dữ kiện Tử Vi của bạn, tôi xin luận giải về việc đổi việc trong năm 2027 như sau. Điểm chung cho sự nghiệp năm 2027 là 49/100, tức là trung bình, có lúc lên lúc xuống. Điều này cho thấy sự nghiệp của bạn sẽ có những biến động nhất định.
 > 
@@ -204,7 +202,7 @@ App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 38 tuổi âm) · điể
 
 App hiểu là: Tài chính · năm 2025 (Ất Tỵ, 36 tuổi âm) · điểm 45/100
 
-**Đạt** (27.907 giây, 325 chữ). Câu AI:
+**Đạt** (31.866 giây, 325 chữ). Câu AI:
 
 > Chào bạn, về tình hình tài chính của bạn trong năm 2025, theo dữ kiện, kết quả tổng thể được đánh giá là 45/100, và bạn cần phải thận trọng. Điều này xuất phát từ sự không đồng thuận giữa các tầng vận hạn khác nhau.
 > 
@@ -224,7 +222,7 @@ App hiểu là: Tài chính · năm 2025 (Ất Tỵ, 36 tuổi âm) · điểm 4
 
 App hiểu là: Tài chính · trọn đời · điểm 54/100
 
-**Đạt** (20.982 giây, 261 chữ). Câu AI:
+**Đạt** (24.867 giây, 261 chữ). Câu AI:
 
 > Chào bạn, về vấn đề tài chính trọn đời của bạn, dựa vào lá số Tử Vi Tự Xem này, điểm chung cho tài chính theo lá số gốc là 54/100, tức là mức trung bình, có lúc lên lúc xuống. Mệnh của bạn tại Dần, có Vũ Khúc vượng và Thiên Tướng miếu, điều này cho thấy bạn có khả năng quản lý tài chính và có trách nhiệm trong việc điều hành tiền bạc.
 > 
@@ -240,7 +238,7 @@ App hiểu là: Tài chính · trọn đời · điểm 54/100
 
 App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 43 tuổi âm) · điểm 52/100
 
-**Đạt** (29.08 giây, 363 chữ). Câu AI:
+**Đạt** (34.832 giây, 363 chữ). Câu AI:
 
 > Chào bạn, về tình duyên của bạn trong năm 2027, theo dữ kiện, kết quả được đánh giá là 52/100, tức là mức trung bình, có lúc tốt có lúc không tốt. Điều này là do điểm tựa của bạn được tính toán từ nhiều yếu tố khác nhau.
 > 
@@ -264,7 +262,7 @@ App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 43 tuổi âm
 
 App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 43 tuổi âm) · điểm 52/100
 
-**Đạt** (30.74 giây, 382 chữ). Câu AI:
+**Đạt** (37.414 giây, 382 chữ). Câu AI:
 
 > Chào bạn, về vấn đề cưới hỏi vào năm 2027, dựa trên dữ kiện lá số của bạn, kết quả tình duyên, hôn nhân được đánh giá ở mức 52/100, tức là trung bình, có lúc thuận lợi có lúc khó khăn.
 > 
@@ -288,7 +286,7 @@ App hiểu là: Tình duyên, hôn nhân · năm 2027 (Đinh Mùi, 43 tuổi âm
 
 App hiểu là: Gia đạo · năm 2026 (Bính Ngọ, 42 tuổi âm) · điểm 52/100
 
-**Đạt** (27.13 giây, 341 chữ). Câu AI:
+**Đạt** (33.17 giây, 341 chữ). Câu AI:
 
 > Chào bạn, về gia đạo của bạn trong năm 2026, dựa trên dữ kiện, kết quả tổng thể cho thấy điểm số là 52/100, tức là trung bình, có lúc thuận lợi có lúc gặp trở ngại. Điều này là do các tầng vận hạn không hoàn toàn đồng thuận, thuận ở Lưu Thái Tuế nhưng yếu ở nền gốc.
 > 
@@ -308,7 +306,7 @@ App hiểu là: Gia đạo · năm 2026 (Bính Ngọ, 42 tuổi âm) · điểm 
 
 App hiểu là: Tài chính · đại vận 45–54 tuổi · điểm 58/100
 
-**Đạt** (19.392 giây, 250 chữ). Câu AI:
+**Đạt** (23.591 giây, 250 chữ). Câu AI:
 
 > Chào bạn. Về vấn đề tài chính trong đại vận 45 đến 54 tuổi, dựa trên dữ kiện, kết luận là tài chính trong giai đoạn này có mức độ thuận lợi là 58/100. Điều này cho thấy nhìn chung là một giai đoạn tốt để tích lũy và phát triển tài chính.
 > 
@@ -326,7 +324,7 @@ App hiểu là: Tài chính · đại vận 45–54 tuổi · điểm 58/100
 
 App hiểu là: Sự nghiệp · năm 2023 (Quý Mão, 39 tuổi âm) · điểm 46/100
 
-**Đạt** (30.023 giây, 374 chữ). Câu AI:
+**Đạt** (35.749 giây, 374 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện về sự nghiệp của bạn trong năm 2023, chúng ta sẽ xem xét các yếu tố liên quan nhé.
 > 
@@ -350,7 +348,7 @@ App hiểu là: Sự nghiệp · năm 2023 (Quý Mão, 39 tuổi âm) · điểm
 
 App hiểu là: Năm thuận cho nhà đất · dò 2026–2036
 
-**Đạt** (17.846 giây, 221 chữ). Câu AI:
+**Đạt** (20.86 giây, 221 chữ). Câu AI:
 
 > Chào bạn, để xem năm nào thuận lợi cho việc mua nhà trong giai đoạn 2026 đến 2036, chúng ta sẽ xem xét các năm có điểm số tốt nhất cho cung Điền Trạch. Dựa trên dữ kiện, năm 2028 có điểm nhà đất là 60/100, đây là mức điểm cao nhất trong các năm được đề cập, và có sự hỗ trợ từ Hóa Lộc lưu xung chiếu cung Điền Trạch cùng với Hóa Quyền lưu nhập cung Điền Trạch năm, điều này cho thấy cơ hội tốt cho việc mua nhà. Năm 2032 cũng có điểm nhà đất là 56/100, với Hóa Lộc lưu nhập cung Điền Trạch năm và Hóa Quyền lưu nhập cung Điền Trạch gốc, cũng là một lựa chọn đáng cân nhắc. Năm 2033 có điểm nhà đất là 54/100, tuy nhiên, đại hạn của năm này có điểm 58/100, và cần lưu ý đến Hóa Kỵ lưu xung chiếu cung Điền Trạch. Tóm lại, năm 2028 có vẻ là năm có nhiều yếu tố tích cực hỗ trợ nhất cho việc này. Lưu ý rằng đây chỉ là mức khả năng theo số tầng vận cùng, quyết định cuối cùng vẫn là của bạn. Nên lưu ý đến các yếu tố xung chiếu của Hóa Kỵ tại cung Điền Trạch trong các năm đó.
 
@@ -358,7 +356,7 @@ App hiểu là: Năm thuận cho nhà đất · dò 2026–2036
 
 App hiểu là: Gia đạo · năm 2028 (Mậu Thân, 44 tuổi âm) · điểm 53/100
 
-**Đạt** (24.163 giây, 304 chữ). Câu AI:
+**Đạt** (29.118 giây, 304 chữ). Câu AI:
 
 > Chào bạn, về vấn đề con cái trong năm 2028, dựa trên dữ kiện của lá số, kết quả tổng thể cho gia đạo năm 2028 là 53/100, tức là trung bình, có những lúc thuận lợi và có những lúc cần điều chỉnh. Điều này là sự kết hợp của nhiều yếu tố khác nhau.
 > 
@@ -374,7 +372,7 @@ App hiểu là: Gia đạo · năm 2028 (Mậu Thân, 44 tuổi âm) · điểm 
 
 App hiểu là: Dữ kiện lá số: cung Phu Thê
 
-**Đạt** (21.918 giây, 323 chữ). Câu AI:
+**Đạt** (26.517 giây, 323 chữ). Câu AI:
 
 > Chào bạn, tôi sẽ luận giải cung Phu Thê của bạn dựa trên dữ kiện này nhé. Cung Phu Thê của bạn tọa tại cung Sửu, có Chính tinh là Thiên Đồng đang ở trạng thái Hãm, và có Phụ tinh là Cự Môn cũng đang ở trạng thái Hãm. Các phụ tinh khác bao gồm Hoa Cái, Phá Toái, Phục Binh, Thái Tuế và Suy.
 > 
@@ -392,7 +390,7 @@ App hiểu là: Dữ kiện lá số: cung Phu Thê
 
 App hiểu là: Tài chính · năm 2028 (Mậu Thân, 44 tuổi âm) · điểm 49/100
 
-**Đạt** (26.479 giây, 324 chữ). Câu AI:
+**Đạt** (31.47 giây, 324 chữ). Câu AI:
 
 > Chào bạn. Dựa trên dữ kiện về lá số của bạn, tài chính trong năm 2028 được dự đoán là mức trung bình, có lên có xuống, với điểm số là 49/100. Điều này phản ánh sự kết hợp giữa các yếu tố thuận lợi và áp lực trong năm.
 > 
@@ -410,7 +408,7 @@ App hiểu là: Tài chính · năm 2028 (Mậu Thân, 44 tuổi âm) · điểm
 
 App hiểu là: Nên / Không nên · năm 2027 · điểm 47/100
 
-**Đạt** (26.177 giây, 394 chữ). Câu AI:
+**Đạt** (32.026 giây, 394 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện về vận chung năm 2027, tôi xin chia sẻ những điều bạn nên lưu ý nhé. Điểm chung của vận chung năm 2027 là 47/100, mức độ trung bình, có lúc thuận lợi có lúc gặp áp lực.
 > 
@@ -428,7 +426,7 @@ App hiểu là: Nên / Không nên · năm 2027 · điểm 47/100
 
 App hiểu là: Sức khỏe (lưu ý) · tháng 6 âm lịch năm 2026 · điểm 48/100
 
-**Đạt** (22.745 giây, 309 chữ). Câu AI:
+**Đạt** (26.944 giây, 309 chữ). Câu AI:
 
 > Chào bạn, tôi sẽ xem xét sức khỏe của bạn trong tháng 6 năm nay, tức tháng 6 âm lịch năm 2026, dựa trên dữ kiện lá số của bạn nhé.
 > 
@@ -448,7 +446,7 @@ App hiểu là: Sức khỏe (lưu ý) · tháng 6 âm lịch năm 2026 · đi�
 
 App hiểu là: Tính cách · lá số gốc (trọn đời) · điểm 75/100
 
-**Đạt** (19.701 giây, 262 chữ). Câu AI:
+**Đạt** (24.337 giây, 262 chữ). Câu AI:
 
 > Chào bạn, dựa vào lá số gốc của bạn, tính cách của bạn được đánh giá là rất thuận lợi với điểm số 75/100, thể hiện sự rất thuận lợi. Điều này đến từ việc Mệnh tại Mão với Thái Dương vượng và Thiên Lương vượng, cho thấy bạn có khả năng về danh tiếng và tài lộc dễ rực rỡ, cũng như hợp với các lĩnh vực học thuật và y tế. Bạn có sự kết hợp của các cát tinh như Hóa Quyền, Lộc Tồn, giúp sự nghiệp của bạn trở nên hiên ngang và đảm lược hơn người. Thiên Lương gặp Tả Hữu và Xương Khúc cho thấy bạn có dáng vẻ ôn lương, bệ vệ, dễ có được chức phận và phú quý. Bạn cũng có sự thông minh, giỏi phân tích và ứng biến nhờ Phúc Đức có Thiên Cơ vượng. Tuy nhiên, có một số yếu tố cần lưu ý. Sao Hỏa Tinh đắc địa trong cung Mệnh cho thấy bạn có xu hướng nóng vội và quyết đoán, đôi khi có thể bất ngờ. Ngoài ra, Lộc Tồn bị Kình Đà kẹp nên bạn có thể có xu hướng dè dặt một chút trong việc giữ của cải. Giai đoạn cần giữ là từ 35 đến 44 tuổi với điểm số 46/100. Để phát huy tốt nhất, bạn nên tập trung vào việc phát huy sự uy quyền và năng lực quản lý mà Hóa Quyền mang lại. Lưu ý là bạn cần giữ sự bình tĩnh để tránh sự nóng vội của Hỏa Tinh.
 
@@ -456,7 +454,7 @@ App hiểu là: Tính cách · lá số gốc (trọn đời) · điểm 75/100
 
 App hiểu là: Nên / Không nên · sức khỏe (lưu ý) · năm 2027 · điểm 40/100
 
-**Đạt** (22.597 giây, 300 chữ). Câu AI:
+**Đạt** (28.903 giây, 300 chữ). Câu AI:
 
 > Điểm chung: 40/100. Chào bạn, dựa vào dữ kiện lá số của bạn, về sức khỏe trong năm 2027, bạn cần lưu ý một số điểm. Điểm chung cho sức khỏe năm 2027 được đánh giá là 38/100, cho thấy bạn cần phải thận trọng.
 > 
@@ -478,7 +476,7 @@ App hiểu là: Nên / Không nên · sức khỏe (lưu ý) · năm 2027 · đi
 
 App hiểu là: Tổng quan · giai đoạn 55–99 tuổi · điểm 36/100
 
-**Đạt** (21.669 giây, 237 chữ). Câu AI:
+**Đạt** (27.048 giây, 237 chữ). Câu AI:
 
 > Chào bạn, tôi sẽ xem xét hậu vận của bạn dựa trên dữ kiện này nhé. Điểm chung cho tổng quan là 36/100, bạn cần thận trọng trong giai đoạn này.
 > 
@@ -498,7 +496,7 @@ App hiểu là: Tổng quan · giai đoạn 55–99 tuổi · điểm 36/100
 
 App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 65 tuổi âm) · điểm 40/100
 
-**Đạt** (30.133 giây, 367 chữ). Câu AI:
+**Đạt** (36.266 giây, 367 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện Tử Vi Tự Xem, tôi xin luận giải về tình hình tài chính của bạn trong năm 2027, tức năm Đinh Mùi, khi bạn 65 tuổi âm.
 > 
@@ -522,27 +520,23 @@ App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 65 tuổi âm) · điểm 
 
 App hiểu là: Gia đạo · năm 2026 (Bính Ngọ) · điểm 41/100
 
-**Trượt** (25.182 giây): gán “Hóa Kỵ” với “Ngọ” không khớp dữ kiện
+**Đạt** (30.991 giây, 261 chữ). Câu AI:
 
-Đầu ra thô của model (app không hiện):
-
-> {"answer": "Chào bạn. Về vấn đề con cái của bạn, chúng ta sẽ xem xét dựa trên các thông tin trong lá số này nhé.\n\nTrước hết, điểm chung của lá số này là 41/100, cho thấy bạn cần phải thận trọng.\n\nChúng ta xem xét cung Phụ Mẫu, vì đây là cung liên quan đến cha mẹ và cũng là nền tảng cho việc sinh sản và giáo dục con cái.\n\nỞ cung Phụ Mẫu tại Mùi, có Liêm Trinh đắc và Thất Sát đắc. Liêm Trinh đắc thuộc Âm Hỏa, mang ý nghĩa về sự hóa khí, tư pháp hoặc nghệ thuật thẩm mỹ. Thất Sát đắc thuộc Dương Kim, mang lại sự uy dũng, độc lập và quyết đoán.\n\nNền gốc của cung Phụ Mẫu cho thấy cha mẹ bạn mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động. Cách cục gốc liên quan đến Phụ Mẫu cho thấy có sự khó khăn trong việc nối nghiệp cha, có thể là con đường riêng của con cái sẽ cần sự tự lập.\n\nTrong năm 2026 này, có một Lưu Thái Tuế đóng tại Ngọ, và Hóa Kỵ lưu vào cung Phụ Mẫu gốc, điều này cho thấy trong nhà có thể dễ xảy ra những hiểu lầm hoặc chuyện cũ được nhắc lại.\n\nTiểu hạn năm 2026 tại Tuất, cung Phụ Mẫu rơi vào Hợi, có Vũ Khúc hãm và Phá Quân hãm, điều này cho thấy cha mẹ có thể mang nét tiền bạc tụ tán mạnh, dễ liều.\n\nNhìn chung, các yếu tố cho thấy bạn cần phải thận trọng trong việc vun vén cho gia đình.\n\nNên bạn nên chăm lo việc nhà đều đặn.\n\nLưu ý là, Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả."}
+> Chào bạn. Về vấn đề con cái của bạn, chúng ta sẽ xem xét dựa trên các thông tin trong lá số này nhé. Trước hết, điểm chung của lá số này là 41/100, cho thấy bạn cần phải thận trọng. Chúng ta xem xét cung Phụ Mẫu, vì đây là cung liên quan đến cha mẹ và cũng là nền tảng cho việc sinh sản và giáo dục con cái. Ở cung Phụ Mẫu tại Mùi, có Liêm Trinh đắc và Thất Sát đắc. Liêm Trinh đắc thuộc Âm Hỏa, mang ý nghĩa về sự hóa khí, tư pháp hoặc nghệ thuật thẩm mỹ. Thất Sát đắc thuộc Dương Kim, mang lại sự uy dũng, độc lập và quyết đoán. Nền gốc của cung Phụ Mẫu cho thấy cha mẹ bạn mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại, vận động. Cách cục gốc liên quan đến Phụ Mẫu cho thấy có sự khó khăn trong việc nối nghiệp cha, có thể là con đường riêng của con cái sẽ cần sự tự lập. Tiểu hạn năm 2026 tại Tuất, cung Phụ Mẫu rơi vào Hợi, có Vũ Khúc hãm và Phá Quân hãm, điều này cho thấy cha mẹ có thể mang nét tiền bạc tụ tán mạnh, dễ liều. Nhìn chung, các yếu tố cho thấy bạn cần phải thận trọng trong việc vun vén cho gia đình. Nên bạn nên chăm lo việc nhà đều đặn. Lưu ý là, Tử Vi là bản đồ thời tiết, lựa chọn của bạn quyết định kết quả.
 
 ## 29. Năm 2024 gia đạo thế nào? — lá số D
 
 App hiểu là: Gia đạo · năm 2024 (Giáp Thìn, 62 tuổi âm) · điểm 40/100
 
-**Trượt** (31.084 giây): gán “Cô Thần” với “Tỵ” không khớp dữ kiện
+**Đạt** (38.988 giây, 354 chữ). Câu AI:
 
-Đầu ra thô của model (app không hiện):
-
-> {"answer": "Chào bạn. Dựa trên dữ kiện bạn cung cấp, về gia đạo trong năm 2024 (Giáp Thìn, 62 tuổi âm), kết luận chung là 40/100, bạn cần thận trọng. Điều này xuất phát từ sự kết hợp của nhiều yếu tố vận hạn khác nhau.\n\nỞ tầng lá số gốc, cung Phụ Mẫu tại Mùi có Liêm Trinh đắc và Thất Sát đắc, cho thấy cha mẹ bạn mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại và vận động. Cách cục gốc liên quan đến việc nối nghiệp cha, khó nối nghiệp cha, nhưng Tử Tức có sao tốt.\n\nVề đại hạn, giai đoạn 2018–2027, đại hạn tại Hợi, cung Phụ Mẫu của đại hạn rơi vào Tý với Thái Dương hãm, cho thấy cha mẹ có thể nóng tính hoặc hay lo việc người, quan hệ cần thêm sự thấu hiểu.\n\nTiểu hạn năm 2024 tại Tý, cung Phụ Mẫu rơi vào Sửu với Thiên Phủ bình hòa, cha mẹ mang nét chu đáo, biết vun vén, nhưng đôi khi có thể bảo thủ, hay giữ ý. Tuy nhiên, tiểu hạn này có Kình Dương đắc và Quả Tú, cho thấy diễn biến trong năm có thể có những vấn đề cần chú ý.\n\nVề Lưu Thái Tuế năm Giáp Thìn, cung Phụ Mẫu theo Thái Tuế rơi vào Tỵ với Thiên Tướng đắc, mang lại sự tốt đẹp, nhưng cũng có Cô Thần.\n\nVề các sự kiện cụ thể trong năm 2024, có Hóa Lộc lưu nhập cung Phụ Mẫu gốc, cho thấy gia đình có thể đón tin vui hoặc có thêm tài sản chung. Thiên Hỷ lưu nhập cung Phụ Mẫu theo Thái Tuế, nhà có chuyện vui như cưới hỏi, đón thành viên mới hoặc tân gia. Đà La lưu nhập cung Phụ Mẫu của tiểu hạn, cho thấy việc nhà có thể dây dưa, khó dứt điểm.\n\nLời khuyên cho bạn là nên dành thời gian thăm hỏi, quan tâm sức khỏe cha m
+> Chào bạn. Dựa trên dữ kiện bạn cung cấp, về gia đạo trong năm 2024 (Giáp Thìn, 62 tuổi âm), kết luận chung là 40/100, bạn cần thận trọng. Điều này xuất phát từ sự kết hợp của nhiều yếu tố vận hạn khác nhau. Ở tầng lá số gốc, cung Phụ Mẫu tại Mùi có Liêm Trinh đắc và Thất Sát đắc, cho thấy cha mẹ bạn mang nét mạnh mẽ nhưng cần cẩn trọng khi đi lại và vận động. Cách cục gốc liên quan đến việc nối nghiệp cha, khó nối nghiệp cha, nhưng Tử Tức có sao tốt. Về đại hạn, giai đoạn 2018–2027, đại hạn tại Hợi, cung Phụ Mẫu của đại hạn rơi vào Tý với Thái Dương hãm, cho thấy cha mẹ có thể nóng tính hoặc hay lo việc người, quan hệ cần thêm sự thấu hiểu. Tiểu hạn năm 2024 tại Tý, cung Phụ Mẫu rơi vào Sửu với Thiên Phủ bình hòa, cha mẹ mang nét chu đáo, biết vun vén, nhưng đôi khi có thể bảo thủ, hay giữ ý. Tuy nhiên, tiểu hạn này có Kình Dương đắc và Quả Tú, cho thấy diễn biến trong năm có thể có những vấn đề cần chú ý. Về các sự kiện cụ thể trong năm 2024, có Hóa Lộc lưu nhập cung Phụ Mẫu gốc, cho thấy gia đình có thể đón tin vui hoặc có thêm tài sản chung. Thiên Hỷ lưu nhập cung Phụ Mẫu theo Thái Tuế, nhà có chuyện vui như cưới hỏi, đón thành viên mới hoặc tân gia. Đà La lưu nhập cung Phụ Mẫu của tiểu hạn, cho thấy việc nhà có thể dây dưa, khó dứt điểm. Lời khuyên cho bạn là nên dành thời gian thăm hỏi, quan tâm sức khỏe cha mẹ. Nên chủ động ở tháng 5, 6, 11 để chủ động hơn, và nên giữ nhịp ở tháng 8, 10 để giữ sự ổn định. Lưu ý là cần thận trọng trong các quyết định lớn vì có Hóa Quyền lưu xung chiếu, dễ có bất đồng ý kiến trong nhà.
 
 ## 30. Năm nào tôi nên giữ gìn sức khỏe? — lá số D
 
 App hiểu là: Năm thuận cho sức khỏe · dò 2026–2036
 
-**Đạt** (20.212 giây, 246 chữ). Câu AI:
+**Đạt** (25.999 giây, 246 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện bạn cung cấp, chúng ta sẽ xem xét các năm có điểm sức khỏe được đề cập để bạn cân nhắc giữ gìn sức khỏe nhé. Điểm chung là các năm được đề cập đều có điểm sức khỏe dao động từ 43/100 đến 44/100.
 > 
@@ -560,7 +554,7 @@ App hiểu là: Năm thuận cho sức khỏe · dò 2026–2036
 
 App hiểu là: Gia đạo · đại vận 56–65 tuổi · điểm 37/100
 
-**Đạt** (24.307 giây, 306 chữ). Câu AI:
+**Đạt** (30.113 giây, 306 chữ). Câu AI:
 
 > Chào bạn, về vấn đề gia đạo trong đại vận 56 đến 65 tuổi, theo dữ kiện, kết quả được đánh giá là 37/100, mức độ cần thận trọng. Điều này là do có tầng yếu ở cả cung gốc và đại hạn.
 > 
@@ -578,17 +572,21 @@ App hiểu là: Gia đạo · đại vận 56–65 tuổi · điểm 37/100
 
 App hiểu là: Nhà đất · năm 2027 (Đinh Mùi, 65 tuổi âm) · điểm 36/100
 
-**Trượt** (36.238 giây): quá dài (455 chữ, tối đa 450)
+**Đạt** (75.599 giây, 321 chữ). Câu AI:
 
-Đầu ra thô của model (app không hiện):
-
-> {"answer": "Chào bạn, dựa trên dữ kiện bạn cung cấp, về vấn đề nhà đất năm 2027 (Đinh Mùi, 65 tuổi âm), kết luận chung là cần thận trọng, với điểm số là 36/100. Điều này là do có áp lực từ đại hạn và lưu niên đại hạn tác động lên cung Điền Trạch.\n\nChúng ta hãy xem xét từng tầng nhé.\n\nỞ lá số gốc, cung Điền Trạch của bạn an tại Dậu, có vô chính diệu, mượn Tử Vi bình hòa – Tham Lang hãm từ Mão, cho thấy đất đai và tài sản cố định có sự giằng co giữa mong muốn vật chất và hướng về tâm linh. Cát tinh là Thiên Tài, cho thấy bạn có tài năng và khéo léo trong việc quản lý tài chính.\n\nĐại hạn 56–65 tuổi, giai đoạn 2018–2027, cung Điền Trạch của bạn rơi vào Dần, có Thiên Cơ hãm và Thái Âm hãm. Điều này cho thấy trong giai đoạn này, việc liên quan đến đất đai và tài sản cố định có thể cần sự khéo léo, tinh tế và có xu hướng thay đổi môi trường.\n\nLưu niên đại hạn năm thứ 10 của đại hạn cũng rơi vào Dần, với Thiên Cơ hãm và Thái Âm hãm, cho thấy sự khó khăn và cần giữ gìn.\n\nTiểu hạn năm 2027, cung Điền Trạch của bạn rơi vào Tý, có Thái Dương hãm, dễ bị lộ mặt trái là bộc trực quá mức, dễ hao tổn vì người khác, và danh chưa tương xứng công sức. Tuy nhiên, có Lộc Tồn là cát tinh, cho thấy vẫn có cơ hội tích lũy.\n\nVề Lưu Thái Tuế và Tứ Hóa năm Đinh Mùi, có Hóa Quyền lưu nhập cung Điền Trạch, cho thấy bạn có thể nắm quyền quyết định về tiền bạc, quản lý ngân sách hoặc khoản đầu tư.\n\nCụ thể trong năm 2027, có Tang Môn lưu nhập cung Điền Trạch gốc, dễ phát sinh chi phí cho sức kh
+> Chào bạn. Về vấn đề nhà đất năm 2027, dựa trên dữ kiện, kết luận chung là cần thận trọng với mức độ 36/100. Điều này xuất phát từ áp lực của đại hạn và lưu niên đại hạn tại cung Điền Trạch, nơi có Thiên Cơ hãm và Thái Âm hãm. Cụ thể, đại hạn và lưu niên đại hạn đều cho thấy mức độ khó khăn, nên bạn cần giữ an toàn trong kế hoạch liên quan đến bất động sản trong giai đoạn này.
+> 
+> Xét về tiểu hạn năm 2027, cung Điền Trạch rơi vào Tý, có Thái Dương hãm, điều này cho thấy bạn cần cẩn trọng vì dễ bị lộ mặt trái là bộc trực quá mức, hoặc dễ hao tổn vì người khác, và danh chưa tương xứng với công sức bỏ ra. Tuy nhiên, có Lộc Tồn tại cung này, cho thấy vẫn có cơ hội tích lũy được điều gì đó.
+> 
+> Trong năm 2027, có những sự kiện cụ thể cần lưu ý: Hóa Quyền lưu tại Thiên Đồng nhập cung Điền Trạch theo Thái Tuế, cho thấy bạn có thể nắm quyền quyết định về tiền bạc hoặc khoản đầu tư. Đồng thời, Tang Môn lưu nhập cung Điền Trạch gốc, có thể phát sinh chi phí cho sức khỏe, việc gia đình hoặc sửa chữa. Ngoài ra, Đào Hoa lưu nhập cung Điền Trạch của tiểu hạn, cho thấy chi tiêu cho tiệc tùng, quà cáp, chuyện vui có thể tăng lên.
+> 
+> Theo tháng, bạn nên chủ động ở tháng 2, 3, 8 và giữ nhịp ở tháng 1, 5. Tháng 5 là tháng nguyệt hạn đi vào cung Điền Trạch, nên cần đặc biệt chú ý. Để thuận lợi, bạn nên quyết đoán nhưng phải có kế hoạch rõ ràng và ghi chép chi tiết. Lưu ý là cần giữ quỹ dự phòng và cân nhắc bảo hiểm phù hợp.
 
 ## 33. Năm 2015 tôi gặp chuyện gì? — lá số E
 
 App hiểu là: Năm 2015 (Ất Mùi) theo lá số · đã có gì · điểm 53/100
 
-**Đạt** (28.491 giây, 391 chữ). Câu AI:
+**Đạt** (34.069 giây, 391 chữ). Câu AI:
 
 > Chào bạn, dựa vào dữ kiện lá số, chúng ta sẽ xem xét những gì đã xảy ra trong năm 2015 nhé. Điểm chung cho năm 2015 là 53/100, với thế Giữ. Vận chung của năm này được đánh giá là trung bình, có lúc thuận lợi có lúc khó khăn.
 > 
@@ -610,7 +608,7 @@ App hiểu là: Năm 2015 (Ất Mùi) theo lá số · đã có gì · điểm 5
 
 App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 40 tuổi âm) · điểm 50/100
 
-**Đạt** (29.258 giây, 357 chữ). Câu AI:
+**Đạt** (35.629 giây, 357 chữ). Câu AI:
 
 > Chào bạn, dựa trên dữ kiện bạn cung cấp, về việc bạn có thăng chức vào năm 2027 hay không, kết quả được đánh giá là trung bình, có lên có xuống, với điểm số là 50/100. Điều này cho thấy sự nghiệp của bạn sẽ có những biến động.
 > 
@@ -634,7 +632,7 @@ App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 40 tuổi âm) · điể
 
 App hiểu là: Di chuyển, xuất ngoại · năm 2028 (Mậu Thân, 41 tuổi âm) · điểm 58/100
 
-**Đạt** (27.043 giây, 347 chữ). Câu AI:
+**Đạt** (32.57 giây, 347 chữ). Câu AI:
 
 > Chào bạn, dựa trên dữ kiện lá số của bạn, việc đi xa lập nghiệp vào năm 2028 được đánh giá là thuận lợi với điểm số 58/100. Điều này xuất phát từ sự kết hợp của nhiều yếu tố tích cực ở các tầng vận hạn khác nhau.
 > 
@@ -654,7 +652,7 @@ App hiểu là: Di chuyển, xuất ngoại · năm 2028 (Mậu Thân, 41 tuổi
 
 App hiểu là: Tình duyên, hôn nhân · đại vận 34–43 tuổi · điểm 55/100
 
-**Đạt** (18.172 giây, 220 chữ). Câu AI:
+**Đạt** (22.379 giây, 220 chữ). Câu AI:
 
 > Chào bạn, về tình duyên trong đại vận 34 đến 43 tuổi, kết quả tổng hợp cho thấy mức độ thuận là 55/100, thuộc mức thuận. Điều này dựa trên sự kết hợp giữa lá số gốc và đại hạn.
 > 
@@ -674,7 +672,7 @@ App hiểu là: Tình duyên, hôn nhân · đại vận 34–43 tuổi · đi�
 
 App hiểu là: Sự nghiệp · năm 2019 (Kỷ Hợi, 32 tuổi âm) · điểm 49/100
 
-**Đạt** (25.287 giây, 315 chữ). Câu AI:
+**Đạt** (30.784 giây, 315 chữ). Câu AI:
 
 > Chào bạn, dựa trên dữ kiện bạn cung cấp, sự nghiệp của bạn trong năm 2019 được đánh giá là trung bình, có lên có xuống, với điểm số là 49/100. Điều này phản ánh một giai đoạn có cả cơ hội và những lúc cần phải nỗ lực hơn.
 > 
@@ -692,7 +690,7 @@ App hiểu là: Sự nghiệp · năm 2019 (Kỷ Hợi, 32 tuổi âm) · điể
 
 App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 40 tuổi âm) · điểm 50/100
 
-**Đạt** (26.713 giây, 338 chữ). Câu AI:
+**Đạt** (33.995 giây, 338 chữ). Câu AI:
 
 > Chào bạn, dựa trên dữ kiện bạn cung cấp, về sự nghiệp của bạn bè đồng nghiệp trong năm 2027 (Đinh Mùi, 40 tuổi âm), kết quả được đánh giá là trung bình, có lên có xuống với điểm số là 50/100. Điều này phản ánh sự kết hợp giữa các yếu tố khác nhau trong lá số của họ.
 > 
@@ -710,7 +708,7 @@ App hiểu là: Sự nghiệp · năm 2027 (Đinh Mùi, 40 tuổi âm) · điể
 
 App hiểu là: Sự nghiệp · năm 2026 (Bính Ngọ) · điểm 54/100
 
-**Đạt** (31.677 giây, 410 chữ). Câu AI:
+**Đạt** (42.07 giây, 410 chữ). Câu AI:
 
 > Chào bạn, tôi sẽ phân tích cung Quan Lộc của bạn dựa trên dữ kiện bạn cung cấp nhé. Điểm chung cho sự nghiệp năm 2026 là 54/100, với thế Giữ, cho thấy sự nghiệp của bạn có xu hướng lên xuống, cần sự chủ động.
 > 
@@ -732,7 +730,7 @@ App hiểu là: Sự nghiệp · năm 2026 (Bính Ngọ) · điểm 54/100
 
 App hiểu là: Tài chính · năm 2027 (Đinh Mùi, 40 tuổi âm) · điểm 59/100
 
-**Đạt** (28.351 giây, 354 chữ). Câu AI:
+**Đạt** (36.764 giây, 354 chữ). Câu AI:
 
 > Chào bạn. Dựa trên dữ kiện của lá số, về vấn đề đầu tư tài chính trong năm 2027, tổng thể nhìn chung là thuận lợi với điểm số là 59/100. Điều này cho thấy có xu hướng tốt trong tài chính năm đó.
 > 

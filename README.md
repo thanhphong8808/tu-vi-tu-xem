@@ -9,8 +9,8 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 
 | File | Nội dung |
 | --- | --- |
-| [TuViTuXem-0.9.0.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.9.0.apk) | File cài app Android (bản mới nhất, ~22 MB). Mới ở 0.9.0: luận giải **chi tiết hơn** (từng sao trong cung, việc cụ thể dễ gặp trong năm theo Tứ Hóa lưu và sao lưu, tháng nên chủ động, lời khuyên đúng chủ đề); hỏi **việc đã xảy ra** (“Năm 2015 tôi gặp chuyện gì?”, “Những mốc quan trọng đã qua?”); **so hai lá số** có tương sinh tương khắc; Trợ lý AI chọn được model **Nhanh** (Gemma 4 E2B, 2,6 GB) hoặc **Mạnh** (Gemma 4 E4B, 3,7 GB). Vẫn có: đoán năm cưới, Sách bàn, số liên hệ 0378 373 373. Cài đè lên bản cũ không mất lá số |
-| [Báo cáo bản 0.9.0](docs/PHASE9_REPORT.md) | Luận chi tiết, việc đã qua, tương sinh tương khắc, Trợ lý AI Nhanh/Mạnh, chấm 40 câu hai model, 5 máy ảo |
+| [TuViTuXem-0.9.1.apk](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/dist/TuViTuXem-0.9.1.apk) | File cài app Android (bản mới nhất, ~22 MB). Mới ở 0.9.1: Trợ lý AI tự sửa câu lệch lá số, cho viết lại một lần, tự chuyển CPU khi GPU sinh lỗi, chọn chạy GPU/CPU, thông báo dễ hiểu. Từ 0.9.0: luận giải **chi tiết hơn** (từng sao trong cung, việc cụ thể dễ gặp trong năm theo Tứ Hóa lưu và sao lưu, tháng nên chủ động, lời khuyên đúng chủ đề); hỏi **việc đã xảy ra** (“Năm 2015 tôi gặp chuyện gì?”, “Những mốc quan trọng đã qua?”); **so hai lá số** có tương sinh tương khắc; Trợ lý AI chọn được model **Nhanh** (Gemma 4 E2B, 2,6 GB) hoặc **Mạnh** (Gemma 4 E4B, 3,7 GB). Vẫn có: đoán năm cưới, Sách bàn, số liên hệ 0378 373 373. Cài đè lên bản cũ không mất lá số |
+| [Báo cáo bản 0.9.0 / 0.9.1](docs/PHASE9_REPORT.md) | Luận chi tiết, việc đã qua, tương sinh tương khắc, Trợ lý AI Nhanh/Mạnh, chấm 40 câu hai model, 5 máy ảo |
 | [Ảnh “Năm 2015 tôi gặp chuyện gì?”](docs/tai-ve/HoiDap_NamDaQua.png) · [ảnh so hai lá số](docs/tai-ve/SoHaiLaSo_TuongSinhKhac.png) · [ảnh chọn model AI](docs/tai-ve/TroLyAI_ChonModel.png) | Màn hình 0.9.0 (lá số mẫu Ca A, Ca B) |
 | [Chấm 40 câu — model Mạnh (E4B)](docs/tai-ve/ai-cham-40-cau-e4b.md) | 40 câu hỏi, câu AI viết bằng Gemma 4 E4B, qua/trượt kiểm tra và vì sao |
 | [Ảnh Hỏi đáp “đoán năm cưới”](docs/tai-ve/HoiDap_DoanNamCuoi.png) | Câu trả lời 0.8.1 cho “Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?” (lá số mẫu Ca A) |
@@ -43,11 +43,11 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | 6 | Hỏi đáp trên máy: hỏi bằng lời (có dấu/không dấu), luận đoán theo lá số qua từng tầng vận hạn kèm “Vì sao?”, lịch sử câu hỏi ẩn danh — app 0.6.1 | ✅ Xong phần hỏi đáp — [báo cáo](docs/PHASE6_REPORT.md). Đồng bộ Firebase: chờ (D-53) |
 | 7 | Trợ lý AI sinh lời trên máy (Gemma 4 E2B qua LiteRT-LM): tải model qua Wi-Fi, diễn đạt lại câu trả lời Hỏi đáp, kiểm tra dữ kiện trước khi hiện — app 0.7.0 | ✅ Xong — [báo cáo](docs/PHASE7_REPORT.md). Chờ anh đo tốc độ trên S22 Ultra |
 | 8 | Kiến thức từ sách (Toàn Thư, Nghiệm Lý) vào luận giải và Trợ lý AI; giao diện mới thiết kế trên Figma; bỏ nhãn nháp; số liên hệ — app 0.8.0; hỏi đoán năm cưới, đối chiếu năm đã qua — app 0.8.1 | ✅ Xong — [báo cáo](docs/PHASE8_REPORT.md) |
-| 9 | Luận giải chi tiết (từng sao, cụ thể trong năm, theo tháng), hỏi việc đã qua, so hai lá số tương sinh tương khắc, Trợ lý AI chọn model Nhanh/Mạnh — app 0.9.0 | ✅ Xong — [báo cáo](docs/PHASE9_REPORT.md) |
+| 9 | Luận giải chi tiết (từng sao, cụ thể trong năm, theo tháng), hỏi việc đã qua, so hai lá số tương sinh tương khắc, Trợ lý AI chọn model Nhanh/Mạnh — app 0.9.0; AI tự sửa, viết lại, chuyển CPU — app 0.9.1 | ✅ Xong — [báo cáo](docs/PHASE9_REPORT.md) |
 
 ## Cài lên điện thoại Android
 
-1. Tải `TuViTuXem-0.9.0.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
+1. Tải `TuViTuXem-0.9.1.apk` ở mục **Tải về** ngay trên điện thoại (hoặc chép vào máy qua Zalo, Google Drive, cáp USB…).
 2. Mở file trên điện thoại → **Cài đặt**. Lần đầu Android sẽ hỏi quyền cài app từ nguồn này: bật **Cho phép** cho ứng dụng
    đang dùng để mở file (Files, Zalo, Chrome…), quay lại và bấm Cài đặt.
 3. Nếu Google Play Protect cảnh báo “ứng dụng không xác định”, chọn **Chi tiết khác → Vẫn cài đặt**. Từ bản 0.7.0
