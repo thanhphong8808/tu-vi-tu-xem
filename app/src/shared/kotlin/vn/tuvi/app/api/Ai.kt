@@ -35,6 +35,9 @@ interface LlmHost {
 
     /** Sinh lời (chặn luồng). Ném lỗi nếu model chưa sẵn sàng. */
     fun generate(system: String, user: String, cfg: AiModelConfig): String
+
+    /** Đầu ra có dấu hiệu hỏng khi chạy GPU: chuyển sang CPU cho các lần sau (D-69). true = đã chuyển, nên sinh lại. */
+    fun fallbackToCpu(): Boolean = false
 }
 
 /** Luồng một câu hỏi qua AI: dựng lời nhắc → model → kiểm tra mục 12.3 → đạt thì trả câu AI, trượt thì báo dùng bản app. */
@@ -70,22 +73,50 @@ object AiFlow {
         val cfg = config()
         val p = AiPrompt.build(a, currentLunarYear, cfg)
         val t0 = System.nanoTime()
-        val raw = try {
-            host.generate(p.system, p.user, cfg)
+        fun gen(user: String): String = host.generate(p.system, user, cfg)
+        var raw = try {
+            gen(p.user)
         } catch (e: Throwable) {
             return buildJsonObject { put("used", false); put("reason", "Model chưa chạy được: ${e.message ?: e.javaClass.simpleName}") }
         }
+        // D-69: (1) tự sửa — bỏ đúng những câu sai; (2) đầu ra hỏng trên GPU → chuyển CPU, sinh lại;
+        // (3) vẫn trượt → cho model viết lại một lần, kèm danh sách lỗi của lần trước.
+        var r = AiGuard.checkAndRepair(raw, p.facts, cfg)
+        var cpu = false
+        var retried = false
+        try {
+            if (!r.ok && AiGuard.looksGarbled(r) && host.fallbackToCpu()) {
+                cpu = true
+                raw = gen(p.user)
+                r = AiGuard.checkAndRepair(raw, p.facts, cfg)
+            }
+            if (!r.ok && (System.nanoTime() - t0) / 1_000_000 < RETRY_WITHIN_MS) {
+                retried = true
+                val fix = p.user + "\n<loi_lan_truoc>" + r.issues.take(6).joinToString("; ") + "</loi_lan_truoc>\n" +
+                    "Bản trước có các lỗi trên. Viết lại câu trả lời: chỉ dùng số, sao, cung có trong <du_kien>; sao nào ở cung nào phải đúng như dữ kiện; " +
+                    "không viết số nào khác."
+                val raw2 = gen(fix)
+                val r2 = AiGuard.checkAndRepair(raw2, p.facts, cfg)
+                if (r2.ok || r2.issues.size < r.issues.size) { r = r2; raw = raw2 }
+            }
+        } catch (e: Throwable) {
+            // Lần sinh lại lỗi: giữ kết quả lần đầu.
+        }
         val ms = (System.nanoTime() - t0) / 1_000_000
-        val r = AiGuard.check(raw, p.facts, cfg)
-        if (!r.ok) log(store, a.question, r.issues, raw)
+        // Nhật ký một mục cho mỗi câu trượt (ghi cả việc đã chuyển CPU, đã viết lại).
+        if (!r.ok) log(store, a.question, listOfNotNull("đã chuyển sang CPU".takeIf { cpu }, "đã cho viết lại".takeIf { retried }) + r.issues, raw)
         return buildJsonObject {
             put("used", r.ok); put("ms", ms); put("words", AiGuard.words(r.text))
+            put("repaired", r.removed.size); put("retried", retried); put("cpu", cpu)
             if (r.ok) put("text", r.text) else {
-                put("reason", "Câu AI viết chưa qua kiểm tra dữ kiện, app hiện bản luận gốc.")
+                put("reason", "Câu AI viết còn lệch với lá số")
                 put("issues", buildJsonArray { r.issues.take(6).forEach { add(it) } })
             }
         }
     }
+
+    /** Chỉ cho viết lại khi lần đầu không quá lâu (trên máy chậm, chờ gấp đôi không đáng). */
+    private const val RETRY_WITHIN_MS = 90_000L
 
     /** Nhật ký câu AI trượt kiểm tra (mục 12.3): chỉ lưu trên máy, tối đa 30 mục, câu hỏi đã ẩn danh. */
     private fun log(store: KeyValueStore, question: String, issues: List<String>, raw: String) {
@@ -108,6 +139,7 @@ class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
     @Volatile private var done = 0L
     @Volatile private var started = 0L
     @Volatile private var probe: String? = null
+    @Volatile private var gpu: String? = null
 
     override fun status(): JsonObject {
         val total = AiFlow.config().bytes
@@ -120,7 +152,8 @@ class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
             put("have", buildJsonArray { have.forEach { add(it) } })
             put("state", state); put("done", done); put("total", total); put("wifi", true); put("fake", true)
             put("ramMb", 12000); put("freeBytes", 100_000_000_000L)
-            if (state == "ready") put("backend", "giả lập")
+            if (state == "ready") put("backend", if (gpu == "off") "CPU (giả lập)" else "GPU (giả lập)")
+            put("gpu", gpu ?: "chưa thử")
             probe?.let { put("probe", it) }
         }
     }
@@ -131,6 +164,8 @@ class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
             "cancel" -> { state = if (AiFlow.config().id in have) "ready" else "absent"; done = 0 }
             "delete" -> { have -= AiFlow.config().id; state = "absent"; done = 0 }
             "probe" -> probe = "probe-ok: giả lập"
+            "backend:cpu" -> gpu = "off"
+            "backend:gpu" -> gpu = null
             else -> if (name.startsWith("select:") && state != "downloading") {
                 AiFlow.select(name.removePrefix("select:"))
                 state = if (AiFlow.config().id in have) "ready" else "absent"

@@ -782,3 +782,19 @@ và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube T
   tầng → tháng → từng sao → sách → tổng hợp), rồi giữ thứ tự gốc. System prompt yêu cầu nói rõ việc cụ thể dễ xảy ra,
   tháng nên chủ động, nghĩa các sao chính, kể lại khi là năm đã qua; độ dài lấy theo model.
 - `AiGuard` giữ nguyên: câu nào sai sao, sai cung, bịa số, có từ cấm thì app hiện bản luận của app.
+
+### D-69 · Câu AI lệch lá số: tự sửa, viết lại, chuyển CPU, thông báo dễ hiểu (0.9.1)
+- Anh gửi ảnh trên S22 Ultra: câu “Nhà đất năm nay” — Trợ lý AI trượt kiểm tra vì gán Đà La sai cung và viết các số
+  vô nghĩa (599, 1000, 32021, 203030), thông báo hiện cả chữ kỹ thuật. App đã làm đúng việc không hiện câu sai, nhưng
+  AI trượt thì gần như vô dụng và thông báo khó hiểu.
+- **Tự sửa** (`AiGuard.checkAndRepair`): bỏ đúng những câu có lỗi nội dung (số lạ, sao/cung lạ, gán sao sai cung, từ
+  cấm, điểm sai tầng); phần còn lại đủ ≥ 60% số câu và đủ số chữ tối thiểu thì kiểm tra lại toàn bộ như câu mới (thiếu
+  câu điểm chung thì app tự thêm). Câu AI hiện kèm “đã bỏ N câu chưa khớp lá số”.
+- **Đầu ra hỏng → CPU** (`AiGuard.looksGarbled`, `LlmHost.fallbackToCpu`): từ hai số dài vô nghĩa trở lên (không phải năm)
+  hoặc chữ nước ngoài là dấu hiệu phần cứng sinh sai. Đang chạy GPU thì app đóng model, ghi nhớ không dùng GPU, nạp lại
+  bằng CPU và sinh lại.
+- **Viết lại một lần**: vẫn trượt và lần đầu chưa quá 90 giây thì gửi lại cho model kèm danh sách lỗi của lần trước.
+- **Chọn phần cứng**: thẻ Trợ lý AI (Cài đặt) có “Chạy bằng GPU / Chạy bằng CPU”; nếu app đã tự chuyển thì ghi rõ.
+- **Thông báo**: “Lần này Trợ lý AI viết chưa khớp hoàn toàn với lá số…, bản luận chi tiết của app ở ngay dưới”; chi tiết
+  kỹ thuật thu gọn. Cài đặt có mục xem 5 lần trượt gần nhất (câu hỏi, lỗi, câu AI) để chụp gửi người hỗ trợ.
+- Nhật ký trên máy một mục cho mỗi câu trượt, ghi cả việc đã chuyển CPU, đã cho viết lại.

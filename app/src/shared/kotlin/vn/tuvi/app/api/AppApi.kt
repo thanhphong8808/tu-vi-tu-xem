@@ -215,7 +215,7 @@ class AppApi(
     private fun aiAction(o: JsonObject): JsonElement {
         val name = o.str("name") ?: throw IllegalArgumentException("Thiếu thao tác.")
         val okSelect = name.startsWith("select:") && AiFlow.models().any { it.id == name.removePrefix("select:") }
-        if (name !in setOf("download", "cancel", "delete", "probe") && !okSelect) throw IllegalArgumentException("Thao tác không hợp lệ.")
+        if (name !in setOf("download", "cancel", "delete", "probe", "backend:cpu", "backend:gpu") && !okSelect) throw IllegalArgumentException("Thao tác không hợp lệ.")
         val h = llm ?: return AiFlow.status(null)
         h.action(name)
         return AiFlow.status(h)

@@ -165,6 +165,28 @@ class AiTest {
         assertTrue(issues("Năm sau ổn.").any { "ngắn" in it })
     }
 
+    /** D-69: bỏ đúng câu sai (số lạ, gán sao sai cung) rồi kiểm lại; đầu ra rác (nhiều số dài vô nghĩa) → nhận ra để chạy lại CPU. */
+    @Test
+    fun repairDropsBadSentencesAndDetectsGarbage() {
+        val (p, good) = goodAnswer()
+        val near = AiGuard.starPlaces(p.facts.lines)
+        val st = near.keys.first { ' ' in it }
+        val ro = vn.tuvi.core.engine.PalaceRole.entries.map { it.vn }.first { it in p.facts.text && it != "Phúc Đức" && it !in near.getValue(st) }
+        // Hai câu sai chen vào một câu trả lời đúng: tự sửa bỏ đúng hai câu đó.
+        val bad = "$good Năm đó có 599 việc lớn. $st đóng tại cung $ro."
+        assertFalse(AiGuard.check(json(bad), p.facts, cfg).ok)
+        val fixed = AiGuard.checkAndRepair(json(bad), p.facts, cfg)
+        assertTrue(fixed.ok, fixed.issues.toString())
+        assertEquals(2, fixed.removed.size, fixed.removed.toString())
+        assertTrue("599" !in fixed.text && "$st đóng tại cung $ro" !in fixed.text)
+        // Câu trả lời sai quá nửa: không cố sửa.
+        val mostlyBad = "Điểm chung: ${p.facts.score}/100. Năm 32021 rất lạ. Có 203030 điều. Lại 1000 việc. Thêm 599 chuyện."
+        assertFalse(AiGuard.checkAndRepair(json(mostlyBad), p.facts, cfg).ok)
+        // Nhiều số dài vô nghĩa → coi là đầu ra hỏng; một năm lạ thì không.
+        assertTrue(AiGuard.looksGarbled(AiGuard.check(json("$good Có 599 và 32021 và 203030."), p.facts, cfg)))
+        assertFalse(AiGuard.looksGarbled(AiGuard.check(json("$good Năm 2031 sẽ rất thuận."), p.facts, cfg)))
+    }
+
     @Test
     fun nearestPlaceDecidesStarPalacePair() {
         val facts = AiFacts(listOf(

@@ -166,7 +166,7 @@ data class AiFacts(val lines: List<String>, val score: Int?, val question: Strin
 }
 
 /** Kết quả kiểm tra: [text] là câu trả lời đã làm sạch (khi đạt); [issues] rỗng = đạt. */
-data class AiCheck(val text: String, val issues: List<String>) {
+data class AiCheck(val text: String, val issues: List<String>, val removed: List<String> = emptyList()) {
     val ok: Boolean get() = issues.isEmpty()
 }
 
@@ -395,6 +395,43 @@ object AiGuard {
         val n = words(text)
         if (n < cfg.minWords) issues += "quá ngắn ($n chữ, tối thiểu ${cfg.minWords})"
         if (n > cfg.maxWords) issues += "quá dài ($n chữ, tối đa ${cfg.maxWords})"
+        issues += contentIssues(text, facts)
+        facts.score?.let { sc ->
+            if (!Regex("(?<!\\d)$sc\\s*(/\\s*100|điểm)|điểm\\s*(chung\\s*)?(là\\s*)?$sc(?!\\d)").containsMatchIn(text)) issues += "chưa nêu điểm chung $sc/100"
+        }
+        return AiCheck(text, issues.distinct())
+    }
+
+    /**
+     * Tự sửa (D-69): model nhỏ thường viết đúng phần lớn nhưng sai vài câu (bịa số, gán sao sai cung). Bỏ đúng những câu
+     * có lỗi nội dung, giữ nguyên các câu còn lại; nếu phần giữ lại còn đủ dài (≥ [AiModelConfig.minWords] chữ và ≥ 60%
+     * số câu) thì kiểm tra lại TOÀN BỘ như câu mới. Câu đã bỏ ghi trong [AiCheck.removed].
+     */
+    fun checkAndRepair(raw: String, facts: AiFacts, cfg: AiModelConfig): AiCheck {
+        val first = check(raw, facts, cfg)
+        if (first.ok) return first
+        val answer = extract(raw) ?: return first
+        val sens = clean(answer).split(Regex("(?<=[.!?…])\\s+")).filter { it.isNotBlank() }
+        if (sens.size < 3) return first
+        val bad = sens.filter { contentIssues(it, facts).isNotEmpty() }
+        val kept = sens - bad.toSet()
+        if (bad.isEmpty() || kept.size < (sens.size * 0.6).toInt().coerceAtLeast(2) || words(kept.joinToString(" ")) < cfg.minWords) return first
+        var text = kept.joinToString(" ")
+        val sc = facts.score
+        if (sc != null && !Regex("(?<!\\d)$sc\\s*(/\\s*100|điểm)").containsMatchIn(text)) text = "Điểm chung: $sc/100. $text"
+        val again = checkOnce(Json.encodeToString(kotlinx.serialization.json.JsonObject.serializer(),
+            kotlinx.serialization.json.buildJsonObject { put("answer", kotlinx.serialization.json.JsonPrimitive(text)) }), facts, cfg)
+        return if (again.ok) again.copy(removed = bad.map { s -> s.take(160) + " ← " + contentIssues(s, facts).joinToString("; ") }) else first
+    }
+
+    /** Đầu ra có dấu hiệu hỏng (nhiều số dài vô nghĩa, chữ nước ngoài): thường do phần cứng sinh sai, nên thử lại trên CPU. */
+    fun looksGarbled(c: AiCheck): Boolean =
+        c.issues.count { Regex("^số \\d{3,} không có").containsMatchIn(it) && !Regex("^số (19|20)\\d\\d ").containsMatchIn(it) } >= 2 ||
+            c.issues.any { "không phải tiếng Việt" in it || "tiếng Anh" in it }
+
+    /** Lỗi nội dung của một đoạn (dùng cho cả câu trả lời lẫn từng câu): chữ nước ngoài, từ cấm, sao/cung lạ, gán sai, số lạ, điểm sai tầng. */
+    private fun contentIssues(text: String, facts: AiFacts): List<String> {
+        val issues = ArrayList<String>()
         if (FOREIGN_SCRIPT.containsMatchIn(text)) issues += "có chữ không phải tiếng Việt"
         val en = ENGLISH.findAll(text).count()
         if (en >= 3) issues += "có câu tiếng Anh ($en từ)"
@@ -425,10 +462,7 @@ object AiGuard {
         val ctxScores = Regex("(\\d+)/100").findAll(ctx).map { it.groupValues[1] }.toSet()
         Regex("(\\d+)\\s*/\\s*100").findAll(text).map { it.groupValues[1] }.filter { it !in ctxScores }.forEach { issues += "điểm $it/100 không có trong dữ kiện" }
         layerScoreIssues(text, facts).forEach { issues += it }
-        facts.score?.let { sc ->
-            if (!Regex("(?<!\\d)$sc\\s*(/\\s*100|điểm)|điểm\\s*(chung\\s*)?(là\\s*)?$sc(?!\\d)").containsMatchIn(text)) issues += "chưa nêu điểm chung $sc/100"
-        }
-        return AiCheck(text, issues.distinct())
+        return issues.distinct()
     }
 }
 

@@ -859,8 +859,10 @@ async def phase7(page):
     t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào? (thử lỗi AI)')
     await t.locator('.qa-ai.fail').wait_for(timeout=15000)
     t = page.locator('.qa-turn').last
-    check(await t.locator('.rp').count() >= 5 and 'chưa đưa ra được câu trả lời đạt kiểm tra' in await t.inner_text(),
-          'Câu AI sai dữ kiện không được hiện; app hiện bản luận gốc')
+    tt = await t.inner_text()
+    check(await t.locator('.rp').count() >= 5 and 'viết chưa khớp hoàn toàn với lá số' in tt and 'đã cho viết lại một lần' in tt,
+          f'Câu AI sai dữ kiện không được hiện; app cho viết lại rồi hiện bản luận gốc: {tt[:200]}')
+    check(await t.locator('details.ai-why').count() == 1, 'Chi tiết kỹ thuật phải thu gọn')
     check('2099' not in await t.inner_text(), 'Lời AI sai không được lọt ra màn hình')
     # khủng hoảng: không gọi AI
     t = await qa_ask(page, 'Tôi muốn chết')
@@ -871,7 +873,13 @@ async def phase7(page):
     await page.click('[data-act="settings"]')
     check('1 câu AI viết chưa qua kiểm tra' in await page.inner_text('#ai-log'), 'Cài đặt phải đếm câu AI trượt kiểm tra')
     log = api('storeGet', {'key': 'aiLog'})
-    check(isinstance(log, list) and len(log) == 1 and log[0]['issues'], f'Nhật ký AI trên máy phải ghi lý do trượt: {log}')
+    check(isinstance(log, list) and len(log) == 1 and log[0]['issues'] and 'đã cho viết lại' in log[0]['issues'], f'Nhật ký AI trên máy phải ghi lý do trượt: {log}')
+    # D-69: xem nhật ký ngay trên máy; chọn chạy GPU / CPU.
+    check(await page.locator('#ai-log details.ai-why').count() == 1, 'Cài đặt phải cho xem nhật ký AI')
+    check(await page.locator('#ai-card [data-act="ai-hw"]').count() == 2, 'Cài đặt phải cho chọn chạy GPU hoặc CPU')
+    await page.click('#ai-card [data-act="ai-hw"][data-k="cpu"]')
+    check(await page.get_attribute('#ai-card [data-act="ai-hw"][data-k="cpu"]', 'aria-pressed') == 'true' and 'CPU' in await page.inner_text('#ai-card'), 'Chọn CPU phải được ghi nhận')
+    await page.click('#ai-card [data-act="ai-hw"][data-k="gpu"]')
     await page.click('#ai-card [data-act="ai-delete"]'); await page.click('#modal [data-act="modal-ok"]')
     check(await page.locator('#ai-card [data-act="ai-download"]').count() == 1, 'Xóa model thì quay về nút tải')
     await page.click('[data-act="ai-log-clear"]')

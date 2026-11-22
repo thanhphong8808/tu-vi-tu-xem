@@ -139,6 +139,9 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
                 "cancel" -> cancel()
                 "delete" -> { cancel(); closeEngine(); modelFile.delete(); okFile.delete(); partFile.delete() }
                 "probe" -> probe()
+                // Người dùng chọn phần cứng chạy model (D-69): GPU (thử GPU trước) hoặc CPU.
+                "backend:cpu" -> { closeEngine(); prefs.edit().putString(GPU_KEY, "off").commit() }
+                "backend:gpu" -> { closeEngine(); prefs.edit().remove(GPU_KEY).commit() }
                 else -> if (name.startsWith("select:")) select(name.removePrefix("select:"))
             }
         }
@@ -265,7 +268,7 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
         if (!verified()) throw IllegalStateException("chưa tải model")
         val cache = File(ctx.cacheDir, "litertlm").also { it.mkdirs() }.path
         val gpu = prefs.getString(GPU_KEY, null)
-        if (gpu != "bad") {
+        if (gpu != "bad" && gpu != "off") {
             prefs.edit().putString(GPU_KEY, "trying").commit()
             try {
                 val e = LiteRt.open(modelFile.path, true, cache, cfg.maxTokens)
@@ -282,6 +285,16 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
         engine = e
         Log.i(TAG, "Đã nạp model trên CPU")
         return e
+    }
+
+    /** Đầu ra hỏng khi chạy GPU (D-69): đóng model, ghi nhớ không dùng GPU nữa, lần sinh sau nạp lại trên CPU. */
+    override fun fallbackToCpu(): Boolean = synchronized(genLock) {
+        val e = engine ?: return@synchronized false
+        if (e.backend() != "GPU") return@synchronized false
+        closeEngine()
+        prefs.edit().putString(GPU_KEY, "bad").commit()
+        Log.i(TAG, "Đầu ra GPU có dấu hiệu hỏng, chuyển sang CPU")
+        true
     }
 
     override fun generate(system: String, user: String, cfg: AiModelConfig): String {

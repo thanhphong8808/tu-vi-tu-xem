@@ -498,6 +498,7 @@
       `<p class="small muted">Đo ngay trên máy: lập lá số, luận một năm, chấm điểm 30 ngày (chỉ tiêu mục 3, đo trên Samsung S22).</p></div>` +
       aiCard(true) +
       (S.aiLog ? `<div class="card" id="ai-log"><h2>${ic('tro-ly-ai', 'h kim')}Nhật ký Trợ lý AI</h2><p class="small">${S.aiLog} câu AI viết chưa qua kiểm tra dữ kiện (app đã hiện bản luận gốc). Nhật ký chỉ lưu trên máy để cải thiện lời nhắc, không gửi đi.</p>` +
+        aiLogView() +
         `<button class="btn block" data-act="ai-log-clear">Xóa nhật ký</button></div>` : '') +
       `<div class="card" id="qa-set"><h2>Hỏi đáp</h2><p class="small">Các câu bạn đã hỏi được lưu trên máy này để gợi ý lại ở mục “Hay hỏi” (${S.qaLog.length} câu). Không gửi đi đâu.</p>` +
       `<button class="btn block" data-act="qa-clear"${S.qaLog.length ? '' : ' disabled'}>Xóa lịch sử hỏi đáp</button></div>` +
@@ -878,7 +879,8 @@
   function aiAnswer(it, req) {
     it.ai = { state: 'wait', t0: Date.now() };
     apiAsync('askAi', req).then((r) => {
-      it.ai = r.used ? { state: 'done', text: r.text, ms: r.ms } : { state: r.skip ? 'skip' : 'fail', reason: r.reason, issues: r.issues || [], ms: r.ms };
+      it.ai = r.used ? { state: 'done', text: r.text, ms: r.ms, repaired: r.repaired || 0, retried: !!r.retried, cpu: !!r.cpu }
+        : { state: r.skip ? 'skip' : 'fail', reason: r.reason, issues: r.issues || [], ms: r.ms, retried: !!r.retried, cpu: !!r.cpu };
       if (!r.used && !r.skip) S.aiLog++;
       if (!r.used) it.detail = true;
       qaRedraw(it);
@@ -904,11 +906,21 @@
         `<span class="small muted">(chạy ngay trên máy, thường 20–60 giây; bản luận chi tiết của app ở dưới)</span></div>`;
     }
     if (a.state === 'done') {
-      return `<div class="qa-ai"><div class="qa-ai-h">${ic('tro-ly-ai', 'kim')} Trợ lý AI giải thích <span class="small muted">· đã đối chiếu sao, cung, năm, điểm với lá số${a.ms >= 1000 ? ' · ' + Math.round(a.ms / 1000) + ' giây' : ''}</span></div>` +
+      return `<div class="qa-ai"><div class="qa-ai-h">${ic('tro-ly-ai', 'kim')} Trợ lý AI giải thích <span class="small muted">· đã đối chiếu sao, cung, năm, điểm với lá số` +
+        (a.repaired ? ` · đã bỏ ${a.repaired} câu chưa khớp lá số` : '') + (a.ms >= 1000 ? ' · ' + Math.round(a.ms / 1000) + ' giây' : '') + `</span></div>` +
         String(a.text).split(/\n+/).map((t) => `<p>${esc(t)}</p>`).join('') + `</div>`;
     }
-    return `<div class="qa-ai fail small muted">Trợ lý AI chưa đưa ra được câu trả lời đạt kiểm tra (${esc(a.reason || '')}), nên app hiện bản luận chi tiết.` +
-      (S.settings.expert && a.issues && a.issues.length ? ` Lý do: ${a.issues.map(esc).join('; ')}.` : '') + `</div>`;
+    // Câu AI chưa khớp lá số: nói ngắn, dễ hiểu; chi tiết kỹ thuật thu gọn (D-69).
+    return `<div class="qa-ai fail small muted">${ic('tro-ly-ai', 'kim')} Lần này Trợ lý AI viết chưa khớp hoàn toàn với lá số` +
+      (a.retried ? ' (đã cho viết lại một lần)' : '') + `, nên app không hiện câu đó. Bản luận chi tiết của app ở ngay dưới, đầy đủ căn cứ.` +
+      (a.cpu ? ' App đã chuyển Trợ lý AI sang chạy bằng CPU cho các câu sau.' : '') +
+      (a.issues && a.issues.length ? `<details class="ai-why"><summary>Chi tiết kỹ thuật</summary>${a.issues.map(esc).join('; ')}.</details>` : '') + `</div>`;
+  }
+  function aiLogView() {
+    const log = safe(() => api('storeGet', { key: 'aiLog' }), null);
+    if (!Array.isArray(log) || !log.length) return '';
+    return `<details class="ai-why"><summary>Xem 5 lần gần nhất (chụp màn hình gửi người hỗ trợ nếu cần)</summary>` + log.slice(-5).reverse().map((e) =>
+      `<p class="small"><b>${esc(e.q || '')}</b><br>Lỗi: ${esc((e.issues || []).join('; '))}<br><span class="muted">Câu AI: ${esc(String(e.raw || '').slice(0, 400))}</span></p>`).join('') + `</details>`;
   }
   function aiCard(full) {
     const a = S.ai || aiRefresh();
@@ -927,6 +939,12 @@
         (x.tier === 'Mạnh' ? 'giải thích kỹ hơn, chậm hơn khoảng gấp đôi' : 'trả lời nhanh') +
         (have.includes(x.id) ? ' · <b>đã tải</b>' : '') + (low ? ' · máy chưa đủ RAM' : '') + `</span></div>`;
     }).join('') + `</div>`;
+    // Chạy bằng GPU hay CPU (D-69). GPU có máy sinh lời lỗi; CPU chậm hơn nhưng ổn định.
+    const cpuOn = a.gpu === 'off' || a.gpu === 'bad';
+    const hw = `<div class="ai-models" role="group" aria-label="Phần cứng chạy Trợ lý AI">` +
+      `<div class="opt ${cpuOn ? '' : 'on'}" aria-pressed="${!cpuOn}" data-act="ai-hw" data-k="gpu"><b>Chạy bằng GPU</b><span>nhanh hơn nếu máy hỗ trợ tốt</span></div>` +
+      `<div class="opt ${cpuOn ? 'on' : ''}" aria-pressed="${cpuOn}" data-act="ai-hw" data-k="cpu"><b>Chạy bằng CPU</b><span>chậm hơn nhưng ổn định` +
+      (a.gpu === 'bad' ? ' · app đã tự chuyển sang CPU vì GPU của máy sinh lời lỗi' : '') + `</span></div></div>`;
     let body = '';
     if (a.state === 'lowram') body = `<p class="small">${esc(a.message || 'Máy chưa đủ RAM cho Trợ lý AI.')} App vẫn trả lời bằng bản luận đầy đủ.</p>` + choose;
     else if (a.state === 'ready') {
@@ -934,7 +952,7 @@
       body = `<div class="opt ${on ? 'on' : ''}" data-act="ai-toggle" aria-pressed="${on}"><b>Trợ lý AI ${on ? '· đang bật' : '· đang tắt'}</b>` +
         `<span>${name} chạy ngay trên máy${a.backend ? ' (' + esc(a.backend) + ')' : ''}: diễn đạt lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao. ` +
         `Câu nào sai dữ kiện lá số thì app không hiện.</span></div>` +
-        (full ? choose + `<button class="btn block" data-act="ai-delete" style="margin-top:8px">Xóa model (giải phóng ${gb(m.bytes || a.total || 0)})</button>` : '');
+        (full ? choose + hw + `<button class="btn block" data-act="ai-delete" style="margin-top:8px">Xóa model (giải phóng ${gb(m.bytes || a.total || 0)})</button>` : '');
     } else if (a.state === 'downloading') {
       const pct = a.total ? Math.floor((a.done || 0) * 100 / a.total) : 0;
       body = `<p class="small">Đang tải ${name}: <b>${gb(a.done || 0)} / ${gb(a.total || m.bytes || 0)}</b> (${pct}%)${a.waitingWifi ? ' — <b>đang chờ Wi-Fi</b>' : ''}. ` +
@@ -1615,6 +1633,7 @@
           S.ai = safe(() => api('aiAction', { name: 'download' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } aiWatch();
         });
         break;
+      case 'ai-hw': S.ai = safe(() => api('aiAction', { name: 'backend:' + el.dataset.k }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
       case 'ai-model': S.ai = safe(() => api('aiAction', { name: 'select:' + el.dataset.k }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
       case 'ai-cancel': S.ai = safe(() => api('aiAction', { name: 'cancel' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
       case 'ai-delete':

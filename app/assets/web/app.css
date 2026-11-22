@@ -417,3 +417,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 /* Chọn model Trợ lý AI (D-68) */
 .ai-models { display: grid; gap: 8px; margin: 10px 0; }
 .ai-models .opt { margin: 0; }
+
+/* Chi tiết kỹ thuật thu gọn (D-69) */
+.ai-why { margin-top: 6px; }
+.ai-why summary { cursor: pointer; color: var(--accent); }
