@@ -1070,12 +1070,12 @@
         `<dt>${esc(c.names[1])}</dt><dd>Mệnh ${esc(r.b.menh)}${vc ? ' · Phu Thê ' + esc(r.b.phuThe) : ''}</dd></dl>` +
         r.paragraphs.map((p, i) => rPara(p, 'cmp:' + i)).join('') + `<p class="note">${esc(r.closing)}</p></div>`;
     }
-    return bar('So hai lá số', 'Truyền cung · truyền tinh') + `<div class="card">` +
+    return bar('So hai lá số', 'Truyền cung, truyền tinh · tương sinh tương khắc') + `<div class="card">` +
       `<div class="field"><span class="label">Quan hệ</span>${segAct('cmp-rel', [['VO_CHONG', 'Vợ chồng'], ['CHA_ME_CON', 'Cha mẹ – con']], c.rel)}</div>` +
       `<div class="field"><label for="cmp-a">${vc ? 'Người thứ nhất' : 'Cha hoặc mẹ'}</label><select id="cmp-a" class="input" data-cmp="a">${opt(c.a)}</select></div>` +
       `<div class="field"><label for="cmp-b">${vc ? 'Người thứ hai' : 'Con'}</label><select id="cmp-b" class="input" data-cmp="b">${opt(c.b)}</select></div>` +
       `<button class="btn primary block" data-act="cmp-run">So sánh</button>` +
-      `<p class="small muted">Theo cẩm nang P.V.4: cung ${vc ? 'Phu Thê' : 'Tử Tức'} của ${vc ? 'người này' : 'cha mẹ'} trùng cung Mệnh của ${vc ? 'người kia' : 'con'} là truyền cung; cùng bộ chính tinh là truyền tinh. Chỉ là một yếu tố tham khảo.</p></div>` + res;
+      `<p class="small muted">Theo cẩm nang P.V.4: cung ${vc ? 'Phu Thê' : 'Tử Tức'} của ${vc ? 'người này' : 'cha mẹ'} trùng cung Mệnh của ${vc ? 'người kia' : 'con'} là truyền cung; cùng bộ chính tinh là truyền tinh. App xét thêm tương sinh tương khắc: ngũ hành bản mệnh, can chi năm sinh, cung Mệnh, Cục. Chỉ là yếu tố tham khảo.</p></div>` + res;
   }
   function runCompare() {
     const c = S.cmp;

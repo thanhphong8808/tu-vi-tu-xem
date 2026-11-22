@@ -138,7 +138,7 @@ class Synastry(private val kb: KnowledgeBase) {
         }
         // Từng yếu tố là một mặt để cân nhắc (có hợp có khắc), câu tổng ở trên mới là kết luận → loại NOTE.
         for (l in links) paras += Paragraph(l.text, if (l.points > 0) 1 else if (l.points < 0) -1 else 0, ParaKind.NOTE, topic,
-            listOf(l.key.uppercase().replace('.', '_')), listOf(Why(l.key.uppercase().replace('.', '_'), "Tương sinh tương khắc", l.text, listOf(l.evidence), src)), false, "Tương sinh tương khắc")
+            listOf(l.key.uppercase().replace('.', '_')), listOf(Why(l.key.uppercase().replace('.', '_'), "Tương sinh tương khắc", l.text, listOf(l.evidence), src)), false)
         t("hop.note")?.let { paras += Paragraph(it, 0, ParaKind.NOTE, topic, listOf("HOP_NOTE"), listOf(Why("HOP_NOTE", "Ghi chú", it, emptyList(), src)), false) }
         return Result(links, score, paras)
     }

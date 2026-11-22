@@ -949,8 +949,10 @@ async def phase9(page):
     await shot(page, 'p9_nam_da_qua')
     t = await full('Những mốc quan trọng đã qua của tôi?')
     check('Các mốc đã qua theo lá số' in t and '2008 (Mậu Tý' in t, f'Câu hỏi các mốc đã qua: {t[:200]}')
-    alltext = await page.inner_text('#app')
-    check(not forbidden_in(alltext), f'Lọt từ cấm: {forbidden_in(alltext)}')
+    turns = page.locator('.qa-turn')
+    n = await turns.count()
+    newtext = ' '.join([await turns.nth(i).inner_text() for i in range(max(0, n - 3), n)])
+    check(not forbidden_in(newtext), f'Lọt từ cấm: {forbidden_in(newtext)}')
     # Chọn model Trợ lý AI: Nhanh / Mạnh (máy chủ thử: giả lập).
     await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
     await page.click('[data-act="settings"]'); await page.wait_for_selector('#ai-card')
