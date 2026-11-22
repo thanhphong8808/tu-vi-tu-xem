@@ -41,6 +41,23 @@ object Luan {
 
     fun warmUp() { all() }
 
+    /**
+     * Nguồn hiển thị cho người xem (“Vì sao?”, thẻ sao): ghi tài liệu gốc, bỏ mã nội bộ của đặc tả và quyết định
+     * (“Prompt mục …”, “D-38”) và các chữ “nháp” (anh Phong yêu cầu, D-61).
+     */
+    fun src(s: String?): String {
+        if (s.isNullOrBlank()) return ""
+        var t = s
+        t = t.replace(Regex("Sinh nháp tự động từ\\s*"), "")
+        t = t.replace(Regex("\\s*\\((bản )?nháp[^)]*\\)"), "")
+        t = t.replace(Regex("Prompt mục [0-9.–\\-, ]+(bước [0-9–\\-, ]+)?"), "Hệ quy tắc luận giải Tử Vi Tự Xem")
+        t = t.replace(Regex("\\s*\\(D-\\d+\\)"), "")
+        t = t.replace(Regex("[;,]?\\s*D-\\d+"), "")
+        t = t.replace(Regex("[Cc]ẩm nang V2"), "Cẩm nang Tử Vi Đẩu Số V2")
+        t = t.replace(Regex("(Hệ quy tắc luận giải Tử Vi Tự Xem)([;,]\\s*\\1)+"), "$1")
+        return t.trim().trim(';', ',').trim()
+    }
+
     @Volatile private var qaEngine: vn.tuvi.core.interpret.QaEngine? = null
     private fun qa(): vn.tuvi.core.interpret.QaEngine = qaEngine ?: synchronized(this) {
         qaEngine ?: all().let { vn.tuvi.core.interpret.QaEngine(it.first, it.third) }.also { qaEngine = it }
@@ -53,6 +70,10 @@ object Luan {
         vn.tuvi.core.interpret.ReadingScope.THANG -> "month"
         vn.tuvi.core.interpret.ReadingScope.NGAY -> "day"
     }
+
+    /** Câu trả lời của QaAnalyst (để Trợ lý AI diễn đạt lại, D-57). */
+    fun askAnswer(chart: Chart, question: String, today: java.time.LocalDate, expert: Boolean): vn.tuvi.core.interpret.QaAnswer =
+        qa().answer(chart, question, vn.tuvi.core.interpret.QaContext(today, expert))
 
     /** Hỏi đáp (giai đoạn 6, mục 12): trả lời một câu hỏi trên lá số đang mở. */
     fun askJson(chart: Chart, question: String, today: java.time.LocalDate, expert: Boolean): JsonObject {
@@ -102,7 +123,7 @@ object Luan {
         put("ids", buildJsonArray { p.ruleIds.forEach { add(it) } })
         put("why", buildJsonArray {
             for (w in p.why) add(buildJsonObject {
-                put("id", w.id); put("title", w.title); put("detail", w.detail); put("source", w.source)
+                put("id", w.id); put("title", w.title); put("detail", src(w.detail)); put("source", src(w.source))
                 put("evidence", buildJsonArray { w.evidence.forEach { add(it) } })
             })
         })
@@ -132,10 +153,16 @@ object Luan {
         return buildJsonObject {
             put("star", card.star.name); put("name", card.star.vn); put("kind", card.kind); put("chi", card.chi.vn); put("role", card.role)
             put("brightness", card.brightness); put("element", StarStyle.element(card.star)?.vn)
-            put("dau", card.meta?.dau); put("hanh", card.meta?.hanh); put("hoaKhi", card.meta?.hoaKhi); put("dacTinh", card.meta?.dacTinh); put("metaSource", card.meta?.source)
+            put("dau", card.meta?.dau); put("hanh", card.meta?.hanh); put("hoaKhi", card.meta?.hoaKhi); put("dacTinh", card.meta?.dacTinh); put("metaSource", card.meta?.source?.let { src(it) })
             put("natalHoa", buildJsonArray { card.natalHoa.forEach { add(it) } })
             put("meaning", JsonArray(card.meaning.map { para(it) }))
-            put("patterns", buildJsonArray { for (w in card.patterns) add(buildJsonObject { put("id", w.id); put("title", w.title); put("detail", w.detail); put("source", w.source); put("evidence", buildJsonArray { w.evidence.forEach { add(it) } }) }) })
+            // Sách bàn về sao này ở đúng cung của nó (D-62).
+            put("books", buildJsonArray {
+                val role = chart.palace(card.chi).role
+                for (l in vn.tuvi.core.interpret.Books.load().forPalace(chart, role, max = 3, perStar = 3, only = card.star))
+                    add(buildJsonObject { put("text", l.text); put("source", l.source); put("why", l.why) })
+            })
+            put("patterns", buildJsonArray { for (w in card.patterns) add(buildJsonObject { put("id", w.id); put("title", w.title); put("detail", src(w.detail)); put("source", src(w.source)); put("evidence", buildJsonArray { w.evidence.forEach { add(it) } }) }) })
         }
     }
 
@@ -261,7 +288,7 @@ object Luan {
                 }
             })
             put("rel", rule.reliability.name)
-            put("source", rule.source)
+            put("source", src(rule.source))
             put("reviewed", rule.reviewed)
         }
 

@@ -61,6 +61,10 @@ data class QaParse(
     val caution: Boolean = false,
     /** Hỏi về người thân (con tôi, mẹ tôi…): chỉ đọc gián tiếp qua cung tương ứng trên lá số đang mở. */
     val relative: String? = null,
+    /** Đối chiếu một năm đã qua: người hỏi kể việc đã xảy ra năm [time] và muốn xem lá số có khớp không. */
+    val verify: Boolean = false,
+    /** Hỏi việc đã xảy ra: một năm đã qua (“năm 2015 tôi gặp chuyện gì”) hoặc các mốc đã qua (D-66). */
+    val past: Boolean = false,
 )
 
 /** Mở bản luận đầy đủ tương ứng trong app. */
@@ -143,8 +147,24 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         private val DEF_Q = rx("la gi|nghia la gi|nghia la sao|co nghia la|nghia gi|y nghia|giai thich|hieu the nao|hieu nhu the nao|la the nao|la sao|la cai gi|dinh nghia")
         private val TIMING_Q = rx(
             "khi nao|bao gio|nam nao|luc nao|tuoi nao|may tuoi thi|nam may|thoi diem nao|giai doan nao|bao lau nua|den bao gio|den khi nao|" +
-                "thang nao|ngay nao|hom nao|gio nao|nam bao nhieu|tuoi bao nhieu thi|som nhat|chung nao|dip nao",
+                "thang nao|ngay nao|hom nao|gio nao|nam bao nhieu|tuoi bao nhieu thi|som nhat|chung nao|dip nao|" +
+                // “đoán được năm cưới của tôi”, “tuổi kết hôn”: hỏi mốc năm của một việc (D-64). “cưới” đã đổi thành “cưới hỏi”
+                // nên “năm cưới hỏi” không lẫn với “năm cuối”.
+                "nam cuoi hoi|tuoi cuoi hoi|nam ket hon|tuoi ket hon|nam lay (?:vo|chong)|tuoi lay (?:vo|chong)|nam lap gia dinh|nam (?:sinh|co) con|" +
+                "(?:doan|du doan|biet|bao truoc)(?: duoc| ra| giup toi| cho toi)? (?:nam|tuoi)(?! nay| sau| toi(?! (?:co|se|duoc|lay|cuoi|sinh|ket|doi|gap|phat|thang|di|mua|xay)(?![a-z]))| ngoai| truoc| roi| qua| hien tai| \\d)",
         )
+        /** “Năm 2015 tôi gặp chuyện gì?”: kể lại tín hiệu của một năm (D-66). */
+        private val PAST_Q = rx(
+            "chuyen gi|viec gi|su kien gi|bien co|bien dong|gap gi|co gi dac biet|co gi noi bat|da xay ra|xay ra gi|xay ra chuyen|gap chuyen|" +
+                "co chuyen gi|gap phai|trai qua|nhung gi|ra sao roi|the nao roi|noi bat gi",
+        )
+        /** “Những mốc quan trọng đã qua của tôi?”: dò các năm đã qua có việc lớn (D-66). */
+        private val MILESTONE_Q = rx(
+            "moc quan trong|cac moc|nhung moc|moc lon|nhung nam bien dong|nam nao bien dong|bien co lon|nhung chuyen da qua|nhung nam da qua|" +
+                "nhung viec da xay ra|da trai qua nhung gi|qua khu cua toi|nhung su kien lon|chuyen lon da qua|nhung nam quan trong",
+        )
+        /** “Tôi đã cưới năm 2015, có khớp không?”: đối chiếu một năm đã qua với lá số (D-64). */
+        private val VERIFY_Q = rx("co khop|khop khong|khop voi|dung khong|co dung|kiem chung|kiem tra|doi chieu|nghiem lai|ung nghiem|trung khong|co trung|co dung voi|da|vua")
         private val ADVICE_Q = rx(
             "nen lam gi|can lam gi|luu y gi|luu y nhung gi|nen tranh|can tranh|kieng|kieng ky|tranh gi|lam gi de|nen chu y|chu y gi|chu y nhung gi|" +
                 "loi khuyen|khuyen|nen va khong nen|nen gi|khong nen lam gi|can luu y|phai lam sao|lam sao de|lam the nao de|nen the nao|nen ra sao|can chuan bi",
@@ -214,7 +234,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         /** Sự kiện (mục 9, đồng thanh tương ứng) → từ khóa không dấu. */
         private val EVENT_RX: List<Pair<Event, Regex>> = listOf(
             Event.CUOI_HOI to rx(
-                "cuoi(?! nam| thang| tuan| cung| doi| ky| gio| ngay| moi| nhe| nhieu)|(?:nen|duoc|se|dinh|muon|sap|chua|kip|lo|tinh) cuoi|ket hon|lay vo|lay chong|cuoi hoi|dam cuoi|thanh hon|co nguoi yeu|" +
+                "cuoi(?! nam| thang| tuan| cung| doi| ky| gio| ngay| moi| nhe| nhieu)|(?:nen|duoc|se|dinh|muon|sap|chua|kip|lo|tinh|da|vua) cuoi|ket hon|lay vo|lay chong|cuoi hoi|dam cuoi|thanh hon|co nguoi yeu|" +
                     "gap duoc nguoi thuong|gap nguoi yeu|gap duoc nguoi yeu|tim duoc nguoi yeu|tim nguoi yeu|gap duoc ban doi|thoat e|co vo|co chong|lap gia dinh|ve chung nha|hen ho|yeu duong|co ban trai|co ban gai|co nguoi thuong|ban doi",
             ),
             Event.SINH_CON to rx("sinh con|co con|them con|co em be|co bau|mang thai|co thai|sinh em be|de con|sinh no|hiem muon|dua con dau|con dau long|sinh them|duoc con|lam me|lam bo|lam cha"),
@@ -335,10 +355,12 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         val n = normalize(lower)
         var caution = false
         var relative: String? = null
+        var verify = false
+        var past = false
         fun res(intent: QaIntent, topics: List<Topic> = emptyList(), event: Event? = null, time: QaTime? = null, unit: ReadingScope? = null,
                 fact: String? = null, terms: List<String> = emptyList(), star: StarId? = null, role: PalaceRole? = null,
                 refuse: String? = null, reframe: String? = null, yesNo: Boolean = false) =
-            QaParse(question, n, intent, topics, event, time, unit, fact, terms, star, role, refuse, reframe, yesNo, caution, relative)
+            QaParse(question, n, intent, topics, event, time, unit, fact, terms, star, role, refuse, reframe, yesNo, caution, relative, verify, past)
 
         if (n.isBlank()) return res(QaIntent.GREETING)
         if (CRISIS.containsMatchIn(n)) return res(QaIntent.CRISIS)
@@ -402,6 +424,22 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
 
         if (RF_HOP_TUOI.containsMatchIn(n)) return res(QaIntent.COMPARE, topics, reframe = "qa.chuyen.hop_tuoi")
 
+        // Việc đã xảy ra ở một năm đã qua (“đã cưới năm 2015”) → đối chiếu năm đó và các năm lân cận với lá số.
+        val pastY = time?.lunarYear?.takeIf { time.scope == ReadingScope.NAM && it < ctx.lunarYear && it >= chart.lunar.year }
+        if (event != null && pastY != null && VERIFY_Q.containsMatchIn(n)) {
+            verify = true
+            return res(QaIntent.TIMING, topics, event, time, ReadingScope.NAM, yesNo = yesNo)
+        }
+        // Hỏi việc đã xảy ra: các mốc đã qua (không nêu năm), hoặc một năm đã qua / năm nay chưa nêu việc cụ thể (D-66).
+        if (MILESTONE_Q.containsMatchIn(n) && time == null) {
+            past = true
+            return res(QaIntent.TIMING, topics, event, null, ReadingScope.NAM)
+        }
+        val askY = time?.lunarYear?.takeIf { time.scope == ReadingScope.NAM && it <= ctx.lunarYear && it >= chart.lunar.year }
+        if (askY != null && event == null && topics.isEmpty() && PAST_Q.containsMatchIn(n)) {
+            past = true
+            return res(QaIntent.FORECAST, topics, null, time, yesNo = yesNo)
+        }
         val timing = TIMING_Q.containsMatchIn(n)
         if (timing && (event != null || topics.isNotEmpty() || RF_CHON_NGAY.containsMatchIn(n) || OVERALL_Q.containsMatchIn(n) ||
                 Regex("(?<![a-z])(?:tot|thuan|dep|hop|nen)(?![a-z])").containsMatchIn(n))) {
@@ -698,6 +736,10 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
     fun answer(chart: Chart, question: String, ctx: QaContext): QaAnswer {
         val q = question.trim().take(500)
         val parse = parse(q, chart, ctx)
+        // Năm trước năm sinh của lá số: chưa có vận hạn (trước đây ném lỗi khi luận năm).
+        if (parse.intent in setOf(QaIntent.FORECAST, QaIntent.ADVICE, QaIntent.TIMING) && (parse.time?.lunarYear ?: Int.MAX_VALUE) < chart.lunar.year &&
+            parse.time?.scope in setOf(ReadingScope.NAM, ReadingScope.THANG, ReadingScope.NGAY))
+            return simple(q, parse, "qa.truoc_nam_sinh", "Năm ${parse.time?.lunarYear} · trước năm sinh của lá số", suggestions(chart, ctx).take(4))
         return when (parse.intent) {
             QaIntent.CRISIS -> crisis(q, parse)
             QaIntent.REFUSE -> refuse(chart, q, parse, ctx)
@@ -872,6 +914,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                     (if (hoa.isNotEmpty()) " Tứ Hóa gốc tại Mệnh: ${hoa.joinToString(", ")}." else "") +
                     " Thân cư ${chart.palace(chart.than).role.vn} (${chart.than.vn}).", "FACT_MENH", "Cung Mệnh", "Engine an sao.", p.stars.map { it.toString() }, Topic.TINH_CACH))
                 life(chart, ctx).summary.firstOrNull { it.topic == Topic.TINH_CACH }?.let { paras.add(it) }
+                analyst.bookPara(chart, Topic.TINH_CACH, PalaceRole.MENH)?.let { paras.add(it) }
                 follow += listOf("Tính cách của tôi thế nào?", "Thân cư ${chart.palace(chart.than).role.vn} nghĩa là gì?") +
                     (p.chinhTinh.firstOrNull()?.let { listOf("Sao ${it.id.vn} nghĩa là gì?") } ?: emptyList())
                 link = QaLink(ReadingScope.TRON_DOI, null, null, null, "Xem luận trọn đời")
@@ -955,6 +998,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                     (if (p.hasTuan || p.hasTriet) " Có ${listOfNotNull("Tuần".takeIf { p.hasTuan }, "Triệt".takeIf { p.hasTriet }).joinToString(", ")} án ngữ." else ""),
                     "FACT_CUNG_${role.name}", "Cung ${role.vn}", "Engine an sao.", p.stars.map { it.toString() }, Topic.ofRole(role)))
                 life(chart, ctx).palaces.firstOrNull { it.id == "palace_${role.name}" }?.paragraphs?.filter { it.kind != ParaKind.NOTE }?.take(2)?.let { paras += it }
+                analyst.bookPara(chart, Topic.ofRole(role), role)?.let { paras.add(it) }
                 link = QaLink(ReadingScope.TRON_DOI, null, null, null, "Xem 12 cung trong luận trọn đời")
                 follow += listOf("Năm $y ${SHORT[Topic.ofRole(role)]} thế nào?", "Cung ${role.vn} là gì?")
             }
@@ -978,8 +1022,8 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
     private fun adviceFor(r: Reading, topics: List<Topic>, max: Int = 3): List<AdviceItem> = adviceFrom(r.advice, topics, max)
 
     private fun adviceFrom(all: List<AdviceItem>, topics: List<Topic>, max: Int = 3): List<AdviceItem> {
-        val byTopic = if (topics.isEmpty()) emptyList() else all.filter { it.topic in topics }
-        val pool = if (byTopic.size >= 2) byTopic else (byTopic + all).distinct()
+        // Có chủ đề thì chỉ lấy lời khuyên của đúng chủ đề đó (D-65: trước đây độn lời khuyên chủ đề khác cho đủ số).
+        val pool = if (topics.isEmpty()) all else all.filter { it.topic in topics }
         val nen = pool.filter { it.type == AdviceType.NEN }.take(2)
         val khong = pool.filter { it.type == AdviceType.KHONG_NEN }.take(1)
         val luuY = pool.filter { it.type == AdviceType.LUU_Y }.take(1)
@@ -1035,6 +1079,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
     }
 
     private fun forecast(chart: Chart, q: String, parse: QaParse, ctx: QaContext): QaAnswer {
+        if (parse.past && parse.time?.lunarYear != null) return pastYear(chart, q, parse, ctx, parse.time.lunarYear)
         val curY = ctx.lunarYear
         val topics = parse.topics.take(2)
         // Chỉ hỏi tính cách, phúc đức mà không nêu thời gian → luận trọn đời.
@@ -1059,15 +1104,15 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                 childNote?.let { paras.add(it) }
                 val t0 = tp.firstOrNull()
                 val ev = parse.event?.takeIf { e -> t0 == null || e.topic == t0 || tp.contains(e.topic) }
-                val r = analyst.year(chart, d, t0, ev, parse.relative)
+                val r = analyst.year(chart, d, t0, ev, parse.relative, past = y < curY)
                 paras += r.paragraphs
                 tp.getOrNull(1)?.let { t1 ->
                     paras += analyst.year(chart, d, t1, null, parse.relative, compact = true).paragraphs.map { p -> p.copy(title = "${SHORT[t1]!!.replaceFirstChar { c -> c.uppercase() }} · ${p.title ?: ""}") }
                 }
                 val yr = yearR(chart, y, ctx)
-                if (t0 == null) paras.add(monthsLine(yr, y))
+                if (t0 == null) paras.add(monthsLine(yr, y)) else periodTopic(t0)?.let { topicMonths(yr, it, y) }?.let { paras.add(it) }
                 score = r.score; stance = Stance.of(r.score)
-                advice = adviceFor(yr, tp.mapNotNull { periodTopic(it) })
+                advice = ((if (y < curY) emptyList() else analyst.concreteAdvice(chart, d, tp, parse.relative, 2)) + adviceFor(yr, tp.mapNotNull { periodTopic(it) })).distinctBy { it.text }.take(4)
                 link = QaLink(ReadingScope.NAM, y, null, null, "Xem luận năm $y")
                 follow += followFor(t0, y, curY)
                 parse.event?.let { follow.add(0, "Năm nào thuận cho ${it.short}?") }
@@ -1180,6 +1225,21 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
             .filter { !it.date.isBefore(start) && !it.date.isAfter(end) }
     }
 
+    /** Tháng nên chủ động / nên giữ cho một chủ đề: điểm tháng, nguyệt hạn đi vào cung chính của chủ đề (D-65). */
+    private fun topicMonths(yr: Reading, topic: Topic, y: Int): Paragraph? {
+        if (yr.months.isEmpty()) return null
+        val roles = Scorer.TOPICS.getValue(topic).main.map { it.vn }
+        val hit = yr.months.filter { it.role in roles }
+        val good = (hit.filter { it.score >= 50 } + yr.months.sortedByDescending { it.score }).distinctBy { it.month }.take(3).sortedBy { it.month }
+        val bad = (hit.filter { it.score < 50 } + yr.months.sortedBy { it.score }).distinctBy { it.month }.filter { m -> good.none { it.month == m.month } }.take(2).sortedBy { it.month }
+        val t = "${SHORT[topic]!!.replaceFirstChar { it.uppercase() }} năm $y theo tháng (âm lịch): nên chủ động ở tháng ${good.joinToString(", ") { "${it.month} (${it.score})" }}; " +
+            "nên giữ nhịp ở tháng ${bad.joinToString(", ") { "${it.month} (${it.score})" }}." +
+            (if (hit.isNotEmpty()) " Tháng nguyệt hạn đi vào cung ${roles.joinToString(", ")} (việc ${SHORT[topic]} nổi lên rõ): ${hit.joinToString(", ") { "tháng ${it.month}" }}." else "")
+        return Paragraph(t, 0, ParaKind.NOTE, topic, listOf("MONTHS_CHU_DE"),
+            listOf(Why("MONTHS_CHU_DE", "Tháng theo chủ đề", "Điểm tháng = năm ×0,50 + nguyệt hạn ×0,35 + Tứ Hóa tháng ×0,15; ưu tiên tháng nguyệt hạn vào cung chính của chủ đề.",
+                yr.months.map { "T${it.month}: ${it.score}${it.role?.let { r -> " (nguyệt hạn $r)" } ?: ""}" }, "Mục 8.5, 9")), false, "Theo tháng")
+    }
+
     private fun monthsLine(yr: Reading, y: Int): Paragraph {
         val good = yr.months.sortedWith(compareByDescending<MonthScore> { it.score }.thenBy { it.month }).take(3)
         val caution = yr.months.sortedWith(compareBy<MonthScore> { it.score }.thenBy { it.month }).take(2)
@@ -1207,15 +1267,26 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         parse.reframe?.let { textPara(it) }?.let { paras.add(it) }
         if (time == null || time.scope == ReadingScope.NAM) {
             val d = yData(chart, y, ctx)
-            if (topics.isEmpty()) paras += analyst.year(chart, d, null, null, parse.relative, compact = true).paragraphs
-            else for (t in topics) paras += analyst.year(chart, d, t, null, parse.relative, compact = true).paragraphs
+            if (topics.isEmpty()) {
+                paras += analyst.year(chart, d, null, null, parse.relative, compact = true).paragraphs
+                analyst.concretePara(chart, d, null, parse.relative)?.let { paras.add(it) }
+            } else for (t in topics) {
+                val role = analyst.roleFor(t, parse.relative)
+                val yp = analyst.year(chart, d, t, null, parse.relative, compact = true).paragraphs
+                paras += yp.first()
+                analyst.starDetailPara(chart, t, role)?.let { paras.add(it) }
+                analyst.concretePara(chart, d, t, parse.relative)?.let { paras.add(it) }
+                periodTopic(t)?.let { topicMonths(r, it, y) }?.let { paras.add(it) }
+                paras += yp.drop(1)
+            }
         } else {
             r.summary.firstOrNull()?.let { paras.add(it) }
             for (t in topics) paras += periodParas(chart, ctx, r, t, null, 1)
         }
         val adviceTopics = topics.mapNotNull { periodTopic(it) }
-        val byTopic = if (adviceTopics.isEmpty()) emptyList() else r.advice.filter { it.topic in adviceTopics }
-        val pool = (byTopic + r.advice).distinct()
+        val byTopic = if (adviceTopics.isEmpty()) r.advice else r.advice.filter { it.topic in adviceTopics }
+        val concrete = if (time == null || time.scope == ReadingScope.NAM) analyst.concreteAdvice(chart, yData(chart, y, ctx), topics, parse.relative, 3) else emptyList()
+        val pool = (concrete + byTopic).distinctBy { it.text }
         val adv = pool.filter { it.type == AdviceType.NEN }.take(3) + pool.filter { it.type == AdviceType.KHONG_NEN }.take(3) + pool.filter { it.type == AdviceType.LUU_Y }.take(1)
         val tl = if (topics.isEmpty()) "" else topics.joinToString(", ") { it.vn.lowercase() } + " · "
         val t0 = adviceTopics.firstOrNull()
@@ -1227,6 +1298,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
     // ———————————————————————————— khi nào ————————————————————————————
 
     private fun timing(chart: Chart, q: String, parse: QaParse, ctx: QaContext): QaAnswer {
+        if (parse.past) return milestones(chart, q, parse, ctx)
         // Lá số dưới 16 tuổi âm: không dò năm cho chuyện người lớn (cưới hỏi, tiền bạc, pháp lý…).
         val asked = parse.event?.topic ?: parse.topics.firstOrNull()
         if (chart.tuoiAm(ctx.lunarYear) < 16 && asked != null && asked !in CHILD_TOPICS)
@@ -1246,6 +1318,7 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
     }
 
     private fun timingYears(chart: Chart, q: String, parse: QaParse, ctx: QaContext): QaAnswer {
+        if (parse.verify && parse.event != null && parse.time?.lunarYear != null) return verifyYear(chart, q, parse, ctx, parse.event, parse.time.lunarYear)
         val curY = ctx.lunarYear
         val t = parse.time
         val range: IntRange = when {
@@ -1262,26 +1335,33 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         val asked = ev?.topic ?: parse.topics.firstOrNull()
         // Tính cách, phúc đức không có điểm theo năm → xếp theo điểm cả năm.
         val topic = asked?.let { periodTopic(it) }
-        val datas = range.filter { it >= chart.lunar.year }.map { it to yData(chart, it, ctx) }
+        // Xếp hạng bằng bản tóm tắt năm (điểm + sự kiện, không ghép câu), tính song song; chỉ năm được chọn mới tính đầy đủ.
+        val yrs = range.filter { it >= chart.lunar.year }
+        val digests = cached(chart, "ydig" to (yrs.firstOrNull() to yrs.lastOrNull())) {
+            yrs.parallelStream().map { y -> y to composer.yearDigest(chart, y, ctx.expert) }.collect(java.util.stream.Collectors.toList()).sortedBy { it.first }
+        }
         val paras = ArrayList<Paragraph>()
         parse.reframe?.let { textPara(it) }?.let { paras.add(it) }
         if (asked != null && topic == null) textPara("qa.note.khong_diem_nam", topic = asked)?.let { paras.add(it) }
-        fun pts(l: Likelihood?) = when (l) { Likelihood.CAO -> 3; Likelihood.CO_THE -> 2; Likelihood.DAU_HIEU -> 1; null -> 0 }
         val what = ev?.vn ?: asked?.let { SHORT[it] } ?: "mọi việc"
         val negative = (ev?.polarity ?: 0) < 0 || (parse.caution && (ev == null || ev.polarity <= 0))
         val role = analyst.roleFor(topic, parse.relative)
         fun topicScore(d: Composer.PeriodData) = topic?.let { d.topics[it]?.score } ?: d.score
+        // Nhà đất chỉ có điểm năm trong bản đầy đủ: lấy điểm từ yData cho chủ đề đó.
+        val fullOnly = topic != null && digests.none { topic in it.second.topics }
+        fun digScore(g: YearDigest) = if (fullOnly) yData(chart, g.lunarYear, ctx).topics[topic]?.score ?: g.score else topic?.let { g.topics[it] } ?: g.score
         fun why(y: Int, d: Composer.PeriodData, extra: List<String>) = Why("QA_YEAR_$y", "Năm $y theo các tầng", 
             "Điểm ${topic?.let { SHORT[it] } ?: "cả năm"} gộp 5 tầng (mục 9 bước 6). ${analyst.yearReason(chart, d, topic, parse.relative, negative)}.",
             (topic?.let { d.topics[it]?.layers } ?: d.layers).map { "${it.layer.vn}: ${it.score.score} (cung ${role.vn} tại ${it.palace.vn})" } + extra, "Prompt mục 8, 9")
         var best: Int? = null
         if (ev != null) {
-            val hits = datas.mapNotNull { (y, d) -> d.events.firstOrNull { it.event == ev }?.let { e -> Triple(y, e, d) } }
-                .sortedWith(compareByDescending<Triple<Int, YearEvent, Composer.PeriodData>> { pts(it.second.level) }.thenByDescending { topicScore(it.third) }.thenBy { it.first })
+            val hits = digests.mapNotNull { (y, g) -> g.events.firstOrNull { it.event == ev }?.let { e -> Triple(y, e, g) } }
+                .sortedWith(compareByDescending<Triple<Int, YearEvent, YearDigest>> { pts(it.second.level) }.thenByDescending { digScore(it.third) }.thenBy { it.first })
             if (hits.isEmpty()) {
                 textPara("qa.khong_su_kien")?.let { paras.add(it) }
             } else {
-                for ((y, e, d) in hits.take(3)) {
+                for ((y, e, _) in hits.take(3)) {
+                    val d = yData(chart, y, ctx)
                     val s = topicScore(d)
                     paras.add(Paragraph(
                         "${yearTag(chart, y)}: ${ev.short} ${e.level.vn} (${e.layers.size} tầng cùng chỉ: ${e.layers.joinToString(", ") { LAYER_SHORT.getValue(it) }}); điểm ${SHORT[ev.topic]} $s/100. " +
@@ -1293,9 +1373,10 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
             }
         }
         if (best == null) {
-            val ranked = datas.filter { topic == null || it.second.topics.containsKey(topic) }
-                .sortedWith(if (negative) compareBy<Pair<Int, Composer.PeriodData>> { topicScore(it.second) }.thenBy { it.first } else compareByDescending<Pair<Int, Composer.PeriodData>> { topicScore(it.second) }.thenBy { it.first })
-            for ((y, d) in ranked.take(3)) {
+            val ranked = digests.filter { topic == null || fullOnly || it.second.topics.containsKey(topic) }
+                .sortedWith(if (negative) compareBy<Pair<Int, YearDigest>> { digScore(it.second) }.thenBy { it.first } else compareByDescending<Pair<Int, YearDigest>> { digScore(it.second) }.thenBy { it.first })
+            for ((y, _) in ranked.take(3)) {
+                val d = yData(chart, y, ctx)
                 val s = topicScore(d)
                 paras.add(Paragraph("${yearTag(chart, y)}: ${topic?.let { "điểm ${SHORT[it]}" } ?: "điểm cả năm"} $s/100${if (topic != null) ", điểm cả năm ${d.score}/100" else ""}. " +
                     "${analyst.yearReason(chart, d, topic, parse.relative, negative)}.",
@@ -1303,6 +1384,8 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
             }
             best = ranked.firstOrNull()?.first
         }
+        // Không nêu thời gian: dò thêm các năm đã qua để người đã trải qua việc đó tự đối chiếu (D-64).
+        if (ev != null && t == null) pastHits(chart, ev, ctx)?.let { paras.add(it) }
         textPara("qa.note.kha_nang")?.let { paras.add(it) }
         val head = if (negative) "Những năm nên thận trọng về $what" else "Năm thuận cho $what"
         val y0 = best ?: curY
@@ -1311,6 +1394,158 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
                 topic?.let { if (negative) "Tháng nào năm $y0 nên chú ý ${SHORT[it]}?" else "Tháng nào năm $y0 thuận cho ${SHORT[it]}?" } ?: "Tháng nào năm $y0 thuận nhất?",
                 if (negative) "Tôi nên lưu ý gì năm $y0?" else "Đồng thanh tương ứng là gì?"),
             QaLink(ReadingScope.NAM, y0, null, null, "Xem luận năm $y0"), null)
+    }
+
+    private fun pts(l: Likelihood?) = when (l) { Likelihood.CAO -> 3; Likelihood.CO_THE -> 2; Likelihood.DAU_HIEU -> 1; null -> 0 }
+
+    /**
+     * Các năm đã qua (từ 18 tuổi âm, tối đa 20 năm) có ít nhất hai tầng cùng chỉ về [ev]: liệt kê theo thứ tự thời gian để
+     * người đã cưới, đã có con… so với năm thật. Năm khớp nhiều là một cách kiểm giờ sinh (D-64).
+     */
+    private fun pastHits(chart: Chart, ev: Event, ctx: QaContext): Paragraph? {
+        val curY = ctx.lunarYear
+        val from = maxOf(chart.lunar.year + 17, curY - 20)
+        if (from >= curY) return null
+        val all = pastEvents(chart, from, curY, ctx)
+        val hits = all.mapNotNull { (y, es) -> es.firstOrNull { it.event == ev && pts(it.level) >= 2 }?.let { y to it } }
+        if (hits.isEmpty()) return null
+        val top = hits.sortedWith(compareByDescending<Pair<Int, YearEvent>> { pts(it.second.level) }.thenByDescending { it.first }).take(4).sortedBy { it.first }
+        return Paragraph(
+            "Đối chiếu các năm đã qua: lá số cũng từng nổi tín hiệu ${ev.short} vào ${top.joinToString("; ") { (y, e) -> "${yearTag(chart, y)} — ${e.level.vn}" }}. " +
+                "Nếu bạn đã trải qua việc này, hãy so với năm thật: trùng hoặc lệch một năm là lá số và giờ sinh khá khớp; lệch xa thì nên xem lại giờ sinh.",
+            0, ParaKind.NOTE, ev.topic, listOf("EVENT_${ev.name}_DA_QUA"),
+            listOf(Why("EVENT_${ev.name}_DA_QUA", "Các năm đã qua có tín hiệu ${ev.short}", "Dò từ ${from} đến ${curY - 1}: năm có từ hai tầng vận hạn cùng chỉ về ${ev.vn} (đồng thanh tương ứng).",
+                top.map { (y, e) -> "$y: ${e.level.vn} — ${e.layers.joinToString(", ") { it.vn }}" }, "Mục 9 (đồng thanh tương ứng)")),
+            false, "Các năm đã qua")
+    }
+
+    /** Sự kiện đồng thanh của các năm [from] ≤ năm < [until]: mỗi năm tính độc lập (không trạng thái chung) → chạy song song. */
+    private fun pastEvents(chart: Chart, from: Int, until: Int, ctx: QaContext): List<Pair<Int, List<YearEvent>>> =
+        cached(chart, "yev-past" to (from to until)) {
+            (from until until).toList().parallelStream().map { y -> y to composer.yearEvents(chart, y, ctx.expert) }
+                .collect(java.util.stream.Collectors.toList()).sortedBy { it.first }
+        }
+
+    /**
+     * “Năm 2015 tôi gặp chuyện gì?” (D-66): kể lại tín hiệu của một năm — các mặt nổi bật nhất (điểm chủ đề), việc được
+     * nhiều tầng cùng chỉ, Tứ Hóa lưu và sao lưu chạm cung nào, Tứ Hóa năm vào những lĩnh vực nào, tháng nổi bật.
+     */
+    private fun pastYear(chart: Chart, q: String, parse: QaParse, ctx: QaContext, y: Int): QaAnswer {
+        val curY = ctx.lunarYear
+        val d = yData(chart, y, ctx)
+        val l = d.limits!!
+        val cc = CanChi.ofYear(y)
+        val paras = ArrayList<Paragraph>()
+        val shown = d.topics.filterKeys { it !in TIMELESS && it != Topic.NHA_DAT }.mapValues { it.value.score }
+        val highs = shown.entries.filter { it.value >= 55 }.sortedByDescending { it.value }.take(2)
+        val lows = shown.entries.filter { it.value <= 45 }.sortedBy { it.value }.take(2)
+        val verb = if (y < curY) "nổi lên" else "nổi lên trong năm"
+        val lead = StringBuilder("Năm $y (${cc.vn}, ${chart.tuoiAm(y)} tuổi âm): vận chung ${d.score}/100 — ${QaAnalyst.band(d.score)}. ")
+        if (highs.isNotEmpty()) lead.append("Mặt thuận $verb: ${highs.joinToString(", ") { "${SHORT[it.key]} ${it.value}/100" }}. ")
+        if (lows.isNotEmpty()) lead.append("Mặt vướng $verb: ${lows.joinToString(", ") { "${SHORT[it.key]} ${it.value}/100" }}. ")
+        if (highs.isEmpty() && lows.isEmpty()) lead.append("Các mặt đều quanh mức trung bình, không có mặt nào lệch hẳn. ")
+        paras.add(Paragraph(lead.toString().trim(), QaAnalyst.pol(d.score), ParaKind.LEAD, null, listOf("AN_NAM_DA_QUA"),
+            listOf(Why("AN_NAM_DA_QUA", "Năm $y theo các tầng", "Điểm từng chủ đề gộp 5 tầng (gốc, đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế) theo mục 9 bước 6.",
+                shown.map { "${it.key.vn}: ${it.value}" }, "Mục 9")), false, "Kết luận"))
+        // Việc được nhiều tầng cùng chỉ.
+        val evs = d.events.sortedByDescending { when (it.level) { Likelihood.CAO -> 3; Likelihood.CO_THE -> 2; Likelihood.DAU_HIEU -> 1 } }
+        paras.add(Paragraph(
+            if (evs.isEmpty()) "Năm $y không có việc nào được tầng vận hạn nào chỉ rõ." else
+                "Việc được các tầng vận hạn chỉ tới: " + evs.joinToString("; ") { e -> "${e.event.vn} — ${e.level.vn} (${e.layers.size} tầng: ${e.layers.joinToString(", ") { LAYER_SHORT.getValue(it) }})" } + ".",
+            0, ParaKind.NOTE, null, listOf("AN_DONG_THANH"),
+            listOf(Why("AN_DONG_THANH", "Đồng thanh tương ứng", "Ba tầng cùng chỉ một việc: khả năng cao; hai tầng: có thể; một tầng: mới là dấu hiệu (mục 9).",
+                evs.map { "${it.event.vn}: ${it.layers.joinToString(", ") { l2 -> l2.vn }}" }, "Mục 9")), false, "Việc nổi lên"))
+        analyst.concretePara(chart, d, null, parse.relative, past = true, title = "Tứ Hóa lưu, sao lưu chạm vào đâu")?.let { paras.add(it) }
+        // Tứ Hóa năm vào lĩnh vực nào trên lá số gốc.
+        val hoaStars = vn.tuvi.core.engine.TuHoaTable.of(l.yearCanChi.can, chart.config)
+        val hoaWord = mapOf(vn.tuvi.core.engine.TuHoa.LOC to "thuận, thêm lợi", vn.tuvi.core.engine.TuHoa.QUYEN to "thêm quyền, thêm việc",
+            vn.tuvi.core.engine.TuHoa.KHOA to "tiếng tốt, có quý nhân", vn.tuvi.core.engine.TuHoa.KY to "vướng, phải lo nhiều")
+        val hoaLine = vn.tuvi.core.engine.TuHoa.entries.mapNotNull { h ->
+            val c = l.luuTuHoa[h] ?: return@mapNotNull null
+            val role = chart.palace(c).role
+            "${h.vn} (${hoaStars[h]?.vn ?: ""}) vào ${role.vn} — ${analyst.ROLE_AREA[role]}: ${hoaWord[h]}"
+        }
+        if (hoaLine.isNotEmpty()) paras.add(Paragraph("Tứ Hóa năm ${l.yearCanChi.can.vn} trên lá số gốc: ${hoaLine.joinToString("; ")}.", 0, ParaKind.NOTE, null, listOf("AN_TU_HOA_NAM"),
+            listOf(Why("AN_TU_HOA_NAM", "Tứ Hóa theo can năm", "Bốn sao được hóa theo can năm ${l.yearCanChi.can.vn}; cung chứa sao được hóa là lĩnh vực được kích hoạt trong năm.", hoaLine, "Mục 8.4")),
+            false, "Tứ Hóa năm vào đâu"))
+        // Vì sao các mặt nổi bật.
+        val why = (highs + lows).map { (t, v) -> "${SHORT[t]!!.replaceFirstChar { it.uppercase() }} $v/100 — ${analyst.yearReason(chart, d, t, parse.relative, v <= 45)}" }
+        if (why.isNotEmpty()) paras.add(Paragraph(why.joinToString(". ") + ".", 0, ParaKind.NOTE, null, listOf("AN_VI_SAO_NOI"),
+            listOf(Why("AN_VI_SAO_NOI", "Căn cứ của các mặt nổi bật", "Cách vận hạn kích hoạt, Tứ Hóa lưu và sao lưu chạm cung chính của từng chủ đề.", emptyList(), "Mục 8, 9")),
+            false, "Vì sao các mặt này nổi lên"))
+        paras.add(monthsLine(yearR(chart, y, ctx), y))
+        textPara("qa.note.doi_chieu")?.let { paras.add(it) }
+        val t1 = (highs + lows).firstOrNull()?.key
+        return QaAnswer(q, parse, "Năm $y (${cc.vn}) theo lá số · đã có gì", d.score, Stance.of(d.score), paras, emptyList(),
+            listOfNotNull(t1?.let { "Năm $y ${SHORT[it]} thế nào?" }, "Những mốc quan trọng đã qua của tôi?", "Năm ${y + 1} tôi gặp chuyện gì?".takeIf { y + 1 <= curY }),
+            QaLink(ReadingScope.NAM, y, null, null, "Xem luận năm $y"), null)
+    }
+
+    /**
+     * “Những mốc quan trọng đã qua?” (D-66): các năm đã qua (từ 15 tuổi âm, tối đa 30 năm) có việc được từ hai tầng vận
+     * cùng chỉ; có nêu chủ đề hay việc thì chỉ xét chủ đề, việc đó. Liệt kê theo thời gian để người dùng đối chiếu.
+     */
+    private fun milestones(chart: Chart, q: String, parse: QaParse, ctx: QaContext): QaAnswer {
+        val curY = ctx.lunarYear
+        val from = maxOf(chart.lunar.year + 14, curY - 30)
+        if (from >= curY) return simple(q, parse, "qa.note.tre_nho", "Lá số chưa đủ tuổi để dò mốc đã qua", suggestions(chart, ctx).take(4))
+        val topics = (parse.topics + listOfNotNull(parse.event?.topic)).toSet()
+        fun pts(l: Likelihood) = when (l) { Likelihood.CAO -> 3; Likelihood.CO_THE -> 2; Likelihood.DAU_HIEU -> 1 }
+        val rows = pastEvents(chart, from, curY, ctx).map { (y, es) ->
+            y to es.filter { pts(it.level) >= 2 && (parse.event?.let { e -> it.event == e } ?: (topics.isEmpty() || it.event.topic in topics)) }
+        }.filter { it.second.isNotEmpty() }
+        val top = rows.sortedWith(compareByDescending<Pair<Int, List<YearEvent>>> { r -> r.second.sumOf { pts(it.level) } }.thenByDescending { it.first }).take(8).sortedBy { it.first }
+        val paras = ArrayList<Paragraph>()
+        val what = parse.event?.vn ?: topics.takeIf { it.isNotEmpty() }?.joinToString(", ") { SHORT[it] ?: it.vn.lowercase() }
+        paras.add(Paragraph(
+            "Dò từ $from đến ${curY - 1} (${chart.tuoiAm(from)}–${chart.tuoiAm(curY - 1)} tuổi âm)${what?.let { " cho $it" } ?: ""}: " +
+                (if (top.isEmpty()) "chưa có năm nào được từ hai tầng vận cùng chỉ một việc." else "${rows.size} năm có việc được từ hai tầng vận cùng chỉ; dưới đây là ${top.size} năm nổi rõ nhất, theo thứ tự thời gian."),
+            0, ParaKind.LEAD, null, listOf("AN_MOC_DA_QUA"),
+            listOf(Why("AN_MOC_DA_QUA", "Các mốc đã qua", "Mỗi năm xét bốn tầng vận (đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế); việc được từ hai tầng cùng chỉ được tính là mốc (mục 9).",
+                emptyList(), "Mục 9")), false, "Kết luận"))
+        for ((y, es) in top) {
+            val cc = CanChi.ofYear(y)
+            val s = es.sortedByDescending { pts(it.level) }
+            paras.add(Paragraph("${y} (${cc.vn}, ${chart.tuoiAm(y)} tuổi): " + s.joinToString("; ") { "${it.event.vn} — ${it.level.vn}" } + ".",
+                if (s.any { it.event.polarity > 0 }) 1 else if (s.all { it.event.polarity < 0 }) -1 else 0, ParaKind.EVENT, s.first().event.topic, listOf("QA_YEAR_$y"),
+                listOf(Why("QA_YEAR_$y", "Năm $y", "Các tầng cùng chỉ từng việc.", s.map { "${it.event.vn}: ${it.layers.joinToString(", ") { l -> l.vn }}" }, "Mục 9")), false, "Năm $y"))
+        }
+        textPara("qa.note.doi_chieu")?.let { paras.add(it) }
+        val y0 = top.lastOrNull()?.first ?: (curY - 1)
+        return QaAnswer(q, parse, "Các mốc đã qua theo lá số${what?.let { " · $it" } ?: ""} · dò $from–${curY - 1}", null, null, paras, emptyList(),
+            listOf("Năm $y0 tôi gặp chuyện gì?", "Năm nào tôi cưới?", "Năm $curY của tôi thế nào?"), QaLink(ReadingScope.NAM, y0, null, null, "Xem luận năm $y0"), null)
+    }
+
+    /** “Tôi đã cưới năm 2015, có khớp không?”: tín hiệu của năm đó và hai năm mỗi bên, theo thứ tự thời gian. */
+    private fun verifyYear(chart: Chart, q: String, parse: QaParse, ctx: QaContext, ev: Event, y: Int): QaAnswer {
+        val curY = ctx.lunarYear
+        val range = maxOf(y - 2, chart.lunar.year)..minOf(y + 2, curY)
+        val rows = range.map { yy -> val d = yData(chart, yy, ctx); Triple(yy, d, d.events.firstOrNull { it.event == ev }) }
+        val at = rows.first { it.first == y }.third
+        val near = rows.filter { it.first != y && it.third != null }.sortedWith(compareByDescending<Triple<Int, Composer.PeriodData, YearEvent?>> { pts(it.third?.level) }.thenBy { kotlin.math.abs(it.first - y) })
+        val lead = when {
+            at != null && pts(at.level) >= 2 -> "Năm $y lá số có tín hiệu ${ev.short} ở mức ${at.level.vn} (${at.layers.size} tầng cùng chỉ) — khớp với điều bạn kể."
+            at != null -> "Năm $y lá số có tín hiệu ${ev.short} ở mức ${at.level.vn} (${at.layers.size} tầng) — khớp một phần."
+            near.isNotEmpty() -> "Năm $y lá số chưa nổi tín hiệu ${ev.short}; tín hiệu gần nhất là năm ${near.first().first} (${near.first().third!!.level.vn}). Lệch một, hai năm vẫn thường gặp, nhất là khi giờ sinh chưa thật chắc."
+            else -> "Từ ${range.first} đến ${range.last} lá số chưa nổi tín hiệu ${ev.short}. Việc vẫn có thể xảy ra do lựa chọn và hoàn cảnh; nếu nhiều việc lớn đều không khớp, nên xem lại giờ sinh."
+        }
+        val paras = ArrayList<Paragraph>()
+        paras.add(Paragraph(lead, if (at != null) 1 else 0, ParaKind.LEAD, ev.topic, listOf("QA_VERIFY_${ev.name}"),
+            listOf(Why("QA_VERIFY_${ev.name}", "Đối chiếu năm $y", "So sự kiện bạn kể với các tầng vận hạn (đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế) của năm $y và hai năm mỗi bên.",
+                rows.map { (yy, _, e) -> "$yy: ${e?.let { "${it.level.vn} — ${it.layers.joinToString(", ") { l -> l.vn }}" } ?: "không tầng nào chỉ"}" }, "Mục 9 (đồng thanh tương ứng)")), false, "Kết luận"))
+        for ((yy, d, e) in rows) {
+            val s = d.topics[ev.topic]?.score
+            val sig = e?.let { "${ev.short} ${it.level.vn} (${it.layers.joinToString(", ") { l -> LAYER_SHORT.getValue(l) }})" } ?: "chưa thấy tầng nào chỉ về ${ev.short}"
+            paras.add(Paragraph("${yearTag(chart, yy)}${if (yy == y) " — năm bạn nêu" else ""}: $sig${s?.let { "; điểm ${SHORT[ev.topic]} $it/100" } ?: ""}. " +
+                "${analyst.yearReason(chart, d, ev.topic, parse.relative, false)}.",
+                if (e != null) 1 else 0, ParaKind.EVENT, ev.topic, listOf("QA_YEAR_$yy"),
+                listOf(Why("QA_YEAR_$yy", "Năm $yy theo các tầng", "Điểm ${SHORT[ev.topic]} gộp 5 tầng (mục 9 bước 6).",
+                    (d.topics[ev.topic]?.layers ?: d.layers).map { "${it.layer.vn}: ${it.score.score} (tại ${it.palace.vn})" }, "Mục 8, 9")), false, "Năm $yy"))
+        }
+        textPara("qa.note.kha_nang")?.let { paras.add(it) }
+        return QaAnswer(q, parse, "Đối chiếu năm $y với lá số · ${ev.vn}", null, null, paras, emptyList(),
+            listOf("Năm nào thuận cho ${ev.short}?", "Năm $y của tôi thế nào?", "Đồng thanh tương ứng là gì?"),
+            QaLink(ReadingScope.NAM, y, null, null, "Xem luận năm $y"), null)
     }
 
     private fun timingMonths(chart: Chart, q: String, parse: QaParse, ctx: QaContext): QaAnswer {

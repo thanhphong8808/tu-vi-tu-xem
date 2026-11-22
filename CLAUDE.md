@@ -1,7 +1,7 @@
 # Tử Vi Tự Xem — hướng dẫn cho Claude
 
 App Android **offline** lập lá số và luận giải Tử Vi Đẩu Số (Nam phái Việt Nam) của anh **Thanh Phong** (dùng Samsung S22 Ultra).
-Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.6.1 (7)**, giai đoạn 1–6 đã xong (xem `README.md`, mục Trạng thái).
+Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.9.1 (12)**, giai đoạn 1–9 đã xong (xem `README.md`, mục Trạng thái).
 
 ## Cách làm việc với anh Phong
 
@@ -13,7 +13,7 @@ Repo công khai `thanhphong8808/tu-vi-tu-xem`. Bản hiện tại: **0.6.1 (7)**
   mục “Tải về”. Không gửi file đính kèm trong chat, trừ khóa ký (bí mật). GitHub Releases bị chặn (403): không tạo Release,
   không lách bằng Actions.
 - Đặc tả là `docs/PROMPT_TUVI_APP.md`; cẩm nang là `docs/CAMNANG_TUVI_V2.txt`. **Khi hai tài liệu khác nhau, theo PROMPT.**
-  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-56). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
+  Mọi quyết định thiết kế ghi vào `docs/DECISIONS.md` (đang tới D-69). Mỗi giai đoạn có `docs/PHASEn_REPORT.md`.
 - Lựa chọn trường phái anh đã chốt: Nhâm hóa Khoa = Tả Phù; sinh tháng nhuận tính như tháng thường; Khôi Việt năm Canh =
   Ngọ/Dần (mặc định Nam phái VN).
 
@@ -51,18 +51,21 @@ Lần đầu trong phiên, chạy `bash tools/setup/doctor.sh`: lệnh này báo
 | --- | --- |
 | `core/calendar` | Lịch âm VN, can chi, giờ mặt trời thật |
 | `core/engine` | An sao (`ChartEngine`, `Tables`, `TuHoaTable`, `SchoolConfig`), vận hạn (`LimitEngine.forYear/forMonth/forDate` → `LimitLayers`) |
-| `data/kb` | Knowledge base JSON (`kb/texts`, `rules`, `advice`, `faq`, `meta`): `star.ID.CODE.ROLE`, `combo.KEY.ROLE`, `phu.ID`, `qa.*` |
-| `core/interpret` | `RuleEngine`, `Scoring` (`Scorer.topicLayered`), `Composer` (`yearData/decadeData/lifeData`), `Qa.kt` (`QaEngine`), `QaAnalyst.kt` (luận đoán theo tầng), `QaPrivacy`, `KbLint` |
-| `app/src/main` | `MainActivity` (WebView, `APP_VERSION`), `Export` (PNG/PDF), `TuViApp` |
-| `app/src/shared` | Cầu nối JSON giữa WebView và engine (`AppApi`, `Luan`): dùng chung cho APK và máy chủ thử |
+| `data/kb` | Knowledge base JSON (`kb/texts`, `rules`, `advice`, `faq`, `meta`): `star.ID.CODE.ROLE`, `combo.KEY.ROLE`, `phu.ID`, `qa.*`; `kb/ai/model.json` (model AI), `kb/ai/system_prompt_vi.md`; `kb/sach/sach.json` (kiến thức sách, sinh từ `tools/kb/kb_sach.py`) |
+| `core/interpret` | `RuleEngine`, `Scoring` (`Scorer.topicLayered`), `Composer` (`yearData/decadeData/lifeData`), `Qa.kt` (`QaEngine`), `QaAnalyst.kt` (luận đoán theo tầng), `QaAi.kt` (`AiPrompt`, `AiGuard`, `AiFake`), `Books.kt` (câu sách theo lá số), `QaPrivacy`, `KbLint` |
+| `app/src/main` | `MainActivity` (WebView, `APP_VERSION`, `callAsync`), `AndroidLlm` (tải model, LiteRT-LM), `Export` (PNG/PDF), `TuViApp` |
+| `app/src/llm` | `LiteRt.java`: lớp bọc LiteRT-LM (Java), dùng chung cho APK và công cụ chấm 40 câu |
+| `app/src/shared` | Cầu nối JSON giữa WebView và engine (`AppApi`, `Luan`, `Ai.kt`: `LlmHost`, `AiFlow`, `FakeLlmHost`): dùng chung cho APK và máy chủ thử |
 | `app/src/dev` | `DevServer` để thử giao diện trên máy tính |
-| `app/assets/web` | Giao diện `index.html`, `app.js`, `app.css` |
-| `tools/apk` | `build_apk.sh` (APK không cần Android Studio, D-28), `devserver.sh`, `uitest/`, `selftest/`, `check_api.py` |
+| `app/assets/web` | Giao diện `index.html`, `app.js`, `app.css`, `icons.js` (bộ icon, cùng nguồn với Figma) |
+| `tools/apk` | `build_apk.sh` (APK không cần Android Studio, D-28), `fetch_ai_deps.sh` (LiteRT-LM, gson, R8, ghim SHA-256), `devserver.sh`, `uitest/`, `selftest/`, `check_api.py` |
+| `tools/ai` | `eval40.sh` + `Eval40.kt`: chấm 40 câu với model thật trên CPU Linux (D-59) |
 | `tools/setup` | `cloud_setup.sh`, `doctor.sh`, `restore_keystore.sh`, `session_start.sh`, `test_all.sh` |
 | `ci/` | `emulator_test.sh` (adb trên máy ảo), `regression/` (APK bản trước để thử cài đè) |
 
 Gradle chỉ build các module lõi (JVM). App Android build bằng `tools/apk/build_apk.sh`:
-kotlinc → dx → aapt → zipalign → apksigner. Lý do ở D-28.
+kotlinc → dx → aapt → zipalign → apksigner. Lý do ở D-28. Thư viện AI (LiteRT-LM, bytecode Java 21) đi qua D8 của
+R8 8.13.19 thành `classes2.dex`; `.so` arm64-v8a + x86_64 nén trong APK (D-57).
 
 ## Lệnh hằng ngày
 
@@ -81,8 +84,11 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
   Khởi động lại devserver giữa các lần chạy. Ảnh chuẩn nằm ở `tools/apk/uitest/baseline`. Cập nhật bằng
   `TUVI_UPDATE_BASELINE=1` (hoặc xóa ảnh rồi chạy hai lần). Chỉ cập nhật khi thay đổi giao diện là cố ý.
 - **Selftest tại chỗ:** `bash tools/apk/selftest/run_local.sh`. Lệnh này chạy 4 ca golden và gõ câu hỏi vào mục Hỏi đáp.
-- **Mốc hiện tại (0.6.1):** giao diện 670/670, selftest 520/520 + bước gõ câu hỏi, CI xanh trên 5 máy ảo.
-  Riêng `:core:interpret` có 522 test, trong đó `QaTest` kiểm tra luận đoán khớp điểm của bản luận đầy đủ.
+- **Mốc hiện tại (0.9.0):** xem `docs/PHASE9_REPORT.md`. Riêng `:core:interpret` có 552 test.
+- Gradle cần locale UTF-8 (tên test tiếng Việt): `test_all.sh` tự đặt `LC_ALL=C.UTF-8`.
+- Playwright: nếu bản pip không khớp trình duyệt (không tải được từ `cdn.playwright.dev`), `test_ui.py` và
+  `run_local.py` tự dùng Chromium có sẵn ở `/opt/pw-browsers`.
+- **Chấm model thật:** tải model theo `kb/ai/model.json` (2,6 GB) rồi `bash tools/ai/eval40.sh <model>` (~16 phút CPU).
 - **CI:** mỗi lần push chạy hai workflow:
   - `build.yml`: Gradle test + APK khóa tạm;
   - `android-emulator.yml`: cài `ci/regression/*.apk` rồi cài đè `dist/*.apk`, chạy selftest, trợ năng, chạm giữ,
@@ -112,26 +118,34 @@ bash tools/setup/test_all.sh                     # tất cả: Gradle + APK + gi
 - Hỏi đáp (D-49…D-54): `QaEngine.parse` hiểu câu hỏi (có dấu hoặc không dấu). `QaAnalyst` dựng câu trả lời từ lá số
   qua các tầng: gốc, đại hạn, lưu niên đại hạn, tiểu hạn, Lưu Thái Tuế, Tứ Hóa, sao lưu. Trọng số năm:
   GOC .10, DAI_HAN .30, LUU_NIEN .25, TIEU_HAN .20, LUU_THAI_TUE .15. Điểm phải trùng với bản luận đầy đủ.
+- Hỏi mốc năm (D-64, 0.8.1): “đoán năm cưới”, “tuổi kết hôn”… → TIMING; không nêu thời gian thì thêm đoạn “Đối chiếu các
+  năm đã qua”. “Đã cưới năm 2015, có khớp không?” → `QaParse.verify`, `verifyYear` (năm đó ± 2). Năm trước năm sinh →
+  `qa.truoc_nam_sinh`.
+- Luận chi tiết (D-65): `QaAnalyst.starDetailPara` (từng sao trong cung), `triggers`/`concretePara`/`concreteAdvice` (Tứ Hóa
+  lưu, sao lưu chạm cung chủ đề → kho `ct.*` trong `tools/kb/kb_chitiet.py`), `topicMonths`, `personalityPara`.
+  Lời khuyên chỉ lấy đúng chủ đề. Việc đã qua (D-66): `QaParse.past`, `pastYear`, `milestones`.
+- So hai lá số (D-67): `Synastry` (bản mệnh, can, chi, cung Mệnh, Cục, chính tinh; câu `hop.*`).
+- KB sinh từ `tools/kb/build_kb.py` (đừng sửa tay file JSON trong `data/kb`).
 
-## Việc tiếp theo (đang chờ mạng — D-55)
+## Kiến thức sách, thiết kế, liên hệ (0.8.0, D-61…D-63)
 
-Anh muốn câu trả lời Hỏi đáp có **AI sinh lời** chạy trên máy. Kế hoạch đã thống nhất:
+- Hai sách anh gửi (Toàn Thư, Nghiệm Lý) còn bản quyền: chỉ **diễn giải lại**, không chép nguyên văn vào repo công khai.
+  Sửa/thêm câu trong `tools/kb/kb_sach.py` rồi chạy lại; câu nào cũng phải qua `KbLint`.
+- Không fine-tune model (không GPU, không chỗ phát hành model, trái D-58): kiến thức đi qua KB và lời nhắc AI.
+- YouTube (youtube.com) bị proxy chặn.
+- Giao diện không còn chữ “nháp”/“Prompt”; nguồn hiển thị qua `Luan.src`. Liên hệ: 0378 373 373.
+- Figma (tài khoản anh, gói Starter: 1 chế độ mỗi bộ biến): https://www.figma.com/design/kdxoEkGID6PUamNLPzuvyZ.
+  Icon: `app/assets/web/icons.js` là nguồn; thêm icon thì thêm cả trên Figma.
 
-1. `doctor.sh` phải thấy `dl.google.com`, `maven.google.com`, `huggingface.co` mở. Nếu còn chặn, báo anh và dừng.
-2. Lấy `com.google.ai.edge.litertlm:litertlm-android` (Google Maven) và xem AAR gồm những gì (classes.jar, `.so`
-   arm64-v8a, manifest). Có hai hướng:
-   - mở rộng `build_apk.sh` để đóng AAR: dex classes.jar, đưa `lib/arm64-v8a/*.so` vào APK không nén và căn trang;
-   - chuyển app sang Gradle + AGP.
+## Trợ lý AI trên máy (0.7.0, D-57…D-60)
 
-   Ghi lựa chọn vào DECISIONS và báo anh trước khi đổi hệ thống build.
-3. Model: PROMPT mục 12.1 chọn Gemma 4 E2B qua LiteRT-LM (~2,6 GB, tải trên điện thoại từ huggingface). Cần kiểm tra
-   **giấy phép / gated** (model Gemma trên HF thường phải chấp nhận điều khoản, nên app không tải ẩn danh được).
-   Nếu bị gated, đề xuất phương án và hỏi anh. Tải model cần quyền INTERNET; app hiện không xin quyền nào, nên đây là
-   thay đổi sản phẩm, phải nói rõ với anh. Màn tải cần: chỉ tải qua Wi-Fi, hiện dung lượng, tải tiếp khi đứt,
-   lưu trong bộ nhớ riêng của app.
-4. Model **chỉ diễn đạt lại** kết quả `QaAnalyst`. Câu nào trượt kiểm tra mục 12.3 (sai dữ kiện lá số, từ cấm, thiếu
-   căn cứ) thì app hiện lại đúng câu của `QaAnalyst`. Không gắn model chưa chạy thử.
-5. Chấm bộ 40 câu (mục 12.1) trước trên máy Linux (LiteRT-LM CPU) nếu được, rồi nhờ anh chạy trên S22 Ultra. Máy ảo CI
-   x86 không đủ để đánh giá model.
-
-Còn chờ khác: đồng bộ Firebase cho lịch sử câu hỏi (D-53) cần `google-services.json` từ dự án Firebase của anh.
+- Hai model (D-68, `kb/ai/model.json`): **Nhanh** Gemma 4 E2B (`litert-community/gemma-4-E2B-it-litert-lm`, 2,6 GB) và
+  **Mạnh** Gemma 4 E4B (`litert-community/gemma-4-E4B-it-litert-lm`, 3,7 GB, RAM ≥ 7 GB); Apache 2.0, không gated,
+  LiteRT-LM 0.19.1. Người dùng chọn trong thẻ Trợ lý AI (`aiAction select:<id>`); `eval40.sh` chọn cấu hình theo tên file.
+  App tải bằng DownloadManager, chỉ Wi-Fi, kiểm SHA-256; xin quyền INTERNET chỉ cho việc này, WebView vẫn chặn mạng.
+- Model **chỉ diễn đạt lại** câu của `QaAnalyst`; `AiGuard` (mục 12.3) kiểm JSON, độ dài, từ cấm, tên sao/cung,
+  sao gắn đúng cung, số và điểm đúng tầng. D-69: `checkAndRepair` bỏ câu sai; đầu ra rác (`looksGarbled`) trên GPU →
+  `fallbackToCpu`; còn trượt thì viết lại một lần kèm lỗi. Vẫn trượt thì hiện câu của `QaAnalyst`, ghi `aiLog` trên máy.
+- Máy chủ thử dùng `FakeLlmHost` (`TUVI_AI=off` để tắt). Máy ảo CI chỉ kiểm thư viện máy nạp được (probe).
+- Còn chờ: anh đo tốc độ, chấm chất lượng trên S22 Ultra (GPU/CPU); đồng bộ Firebase (D-53) cần
+  `google-services.json` từ dự án Firebase của anh.

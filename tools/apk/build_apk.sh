@@ -34,6 +34,10 @@ step() { printf '\n== %s\n' "$*"; }
 rm -rf "$OUT"
 mkdir -p "$OUT/classes/core" "$OUT/classes/app" "$OUT/libs" "$OUT/dex" "$OUT/javares"
 
+# Thư viện Trợ lý AI trên máy (D-57): LiteRT-LM (AAR), gson, R8/D8 — tải một lần, kiểm SHA-256.
+AI_DEPS=$(bash "$ROOT/tools/apk/fetch_ai_deps.sh")
+LITERT_JAR="$AI_DEPS/litertlm-android/classes.jar"
+
 step "1/7 Biên dịch engine + luận giải + cầu nối (:core:calendar, :core:engine, :core:interpret, app/src/shared) với android.jar API 26 (minSdk)"
 "$KOTLINC" "${KFLAGS[@]}" -no-jdk -classpath "$ANDROID_JAR_26:$SERIALIZATION_JARS" -d "$OUT/classes/core" \
   $(find "$ROOT/core/calendar/src/main/kotlin" "$ROOT/core/engine/src/main/kotlin" "$ROOT/core/interpret/src/main/kotlin" "$ROOT/app/src/shared/kotlin" -name '*.kt')
@@ -41,8 +45,10 @@ cp "$ROOT/core/engine/src/main/resources/brightness.json" "$OUT/javares/"
 # Knowledge base (giai đoạn 3): đọc bằng Class.getResourceAsStream("/kb/…") như trên JVM.
 cp -r "$ROOT/data/kb/src/main/resources/kb" "$OUT/javares/kb"
 
-step "2/7 Biên dịch Activity với android.jar API 35 (targetSdk; API mới đều có kiểm tra phiên bản)"
-"$KOTLINC" "${KFLAGS[@]}" -no-jdk -classpath "$ANDROID_JAR_35:$OUT/classes/core:$SERIALIZATION_JARS" -d "$OUT/classes/app" \
+step "2/7 Biên dịch lớp bọc LiteRT-LM (Java) và Activity với android.jar API 35 (targetSdk; API mới đều có kiểm tra phiên bản)"
+mkdir -p "$OUT/classes/llm"
+javac -nowarn --release 8 -cp "$ANDROID_JAR_35:$LITERT_JAR:$KOTLIN_STDLIB" -d "$OUT/classes/llm" $(find "$ROOT/app/src/llm/java" -name '*.java')
+"$KOTLINC" "${KFLAGS[@]}" -no-jdk -classpath "$ANDROID_JAR_35:$OUT/classes/core:$OUT/classes/llm:$SERIALIZATION_JARS" -d "$OUT/classes/app" \
   $(find "$ROOT/app/src/main/kotlin" -name '*.kt')
 
 step "3/7 Chuẩn bị thư viện cho Android (bỏ module-info; thay 5 hàm dùng invokedynamic của kotlin-stdlib)"
@@ -54,15 +60,27 @@ for jar in "$KOTLIN_STDLIB" ${SERIALIZATION_JARS//:/ }; do
   java -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -cp "$KLIB_DIR/kotlin-compiler.jar:$OUT/tools" vn.tuvi.indyfix.StripIndy "$jar" "$OUT/libs/$(basename "$jar")"
 done
 
-step "4/7 Chuyển bytecode sang DEX (dx, minSdk 26)"
+step "4/7 Chuyển bytecode sang DEX: app (dx, minSdk 26) + thư viện AI (D8 của R8 8.13, classes2.dex)"
 dalvik-exchange --dex --min-sdk-version=26 --output="$OUT/dex/classes.dex" \
-  "$OUT/classes/core" "$OUT/classes/app" "$OUT/classes/indyfix" "$OUT"/libs/*.jar
-ls -l "$OUT/dex/classes.dex"
+  "$OUT/classes/core" "$OUT/classes/app" "$OUT/classes/llm" "$OUT/classes/indyfix" "$OUT"/libs/*.jar
+# LiteRT-LM biên dịch cho Java 21 (lambda, nối chuỗi, switch theo mẫu = invokedynamic): dx không đọc được, D8 chuyển
+# hết về lệnh Android chạy được. kotlin-stdlib chỉ làm classpath (đã có trong classes.dex).
+mkdir -p "$OUT/dex2"
+java -Dstdout.encoding=UTF-8 -cp "$AI_DEPS/r8-8.13.19.jar" com.android.tools.r8.D8 --release --min-api 26 \
+  --lib "$ANDROID_JAR_35" --classpath "$KOTLIN_STDLIB" --output "$OUT/dex2" "$LITERT_JAR" "$AI_DEPS/gson-2.14.0.jar" 2>&1 \
+  | grep -vE "kotlin.Metadata|kotlin metadata|Kotlin metadata|^\s+at |Should never be called|^Warning: An error|^Info:" || true
+mv "$OUT/dex2/classes.dex" "$OUT/dex/classes2.dex"
+ls -l "$OUT/dex/"*.dex
 if command -v dexdump >/dev/null; then
-  BAD=$(dexdump -d "$OUT/dex/classes.dex" 2>/dev/null | grep -cE "invoke-(custom|polymorphic)" || true)
-  [ "$BAD" = "0" ] || { echo "LỖI: DEX còn $BAD lệnh invoke-custom/polymorphic (Android không chạy được)"; exit 3; }
+  for d in classes.dex classes2.dex; do
+    BAD=$(dexdump -d "$OUT/dex/$d" 2>/dev/null | grep -cE "invoke-(custom|polymorphic)" || true)
+    [ "$BAD" = "0" ] || { echo "LỖI: $d còn $BAD lệnh invoke-custom/polymorphic (Android không chạy được)"; exit 3; }
+  done
   echo "   kiểm tra DEX: 0 invoke-custom/polymorphic"
 fi
+# Thư viện máy của LiteRT-LM: arm64-v8a (điện thoại) và x86_64 (máy ảo CI). Nén trong APK, Android giải nén khi cài.
+rm -rf "$OUT/native" && mkdir -p "$OUT/native/lib"
+cp -r "$AI_DEPS/litertlm-android/jni/arm64-v8a" "$AI_DEPS/litertlm-android/jni/x86_64" "$OUT/native/lib/"
 
 # aapt 1 không đọc được resources.arsc của API 35 → liên kết tài nguyên với API 26 (ID tài nguyên framework không đổi).
 step "5/7 Đóng gói manifest, tài nguyên, giao diện web (aapt): bản phát hành + bản tự kiểm tra"
@@ -79,8 +97,9 @@ package() { # $1 = tên, $2 = thư mục assets, $3.. = cờ aapt thêm
   aapt package -f -M "$ROOT/app/AndroidManifest.xml" -S "$ROOT/app/res" -A "$assets" -I "$ANDROID_JAR_26" \
     --min-sdk-version 26 --target-sdk-version 35 --version-code "$VERSION_CODE" --version-name "$VERSION_NAME" "$@" \
     -F "$OUT/$name-unsigned.apk"
-  (cd "$OUT/dex" && aapt add -k "$OUT/$name-unsigned.apk" classes.dex >/dev/null)
-  (cd "$OUT/javares" && aapt add "$OUT/$name-unsigned.apk" brightness.json $(find kb -type f -name '*.json' | sort) >/dev/null)
+  (cd "$OUT/dex" && aapt add -k "$OUT/$name-unsigned.apk" classes.dex classes2.dex >/dev/null)
+  (cd "$OUT/native" && aapt add "$OUT/$name-unsigned.apk" $(cd "$OUT/native" && find lib -name '*.so' | sort) >/dev/null)
+  (cd "$OUT/javares" && aapt add "$OUT/$name-unsigned.apk" brightness.json $(find kb -type f \( -name '*.json' -o -name '*.md' \) | sort) >/dev/null)
   zipalign -p -f 4 "$OUT/$name-unsigned.apk" "$OUT/$name-aligned.apk"
 }
 package release "$ROOT/app/assets"
@@ -88,6 +107,7 @@ package selftest "$OUT/assets-selftest" --debug-mode
 
 step "6/7 Kiểm tra lời gọi API hệ thống trong DEX (android.jar API 35)"
 python3 "$ROOT/tools/apk/check_api.py" "$OUT/dex/classes.dex" "$ANDROID_JAR_35"
+python3 "$ROOT/tools/apk/check_api.py" "$OUT/dex/classes2.dex" "$ANDROID_JAR_35"
 
 step "7/7 Ký (apksigner v1 + v2 + v3)"
 # Khóa ký thật (D-31) không có trên GitHub. Ở môi trường mới, khóa lấy từ biến TUVI_KEYSTORE_B64 (xem

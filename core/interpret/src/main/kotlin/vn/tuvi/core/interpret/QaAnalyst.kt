@@ -338,7 +338,20 @@ class QaAnalyst(private val kb: KnowledgeBase) {
     }
 
     /** Năm âm: kết luận + 5 tầng + đồng thanh/cách vận hạn + tổng hợp. */
-    fun year(chart: Chart, data: Composer.PeriodData, topic: Topic?, event: Event?, relative: String?, compact: Boolean = false): Result {
+    private val books: Books by lazy { Books.load() }
+
+    /**
+     * “Sách bàn về cung …” (D-62): câu của *Tử Vi Đẩu Số Toàn Thư* (Thập nhị cung luận) và *Tử Vi Nghiệm Lý* khớp đúng
+     * sao, độ sáng, sao hội của cung [role] trên lá số gốc. Không có câu nào khớp → null.
+     */
+    fun bookPara(chart: Chart, topic: Topic?, role: PalaceRole): Paragraph? {
+        val lines = books.forPalace(chart, role) + books.nghiemLy(chart, role)
+        if (lines.isEmpty()) return null
+        val whys = lines.mapIndexed { i, l -> Why("SACH_${role.name}_${i + 1}", "Sách bàn", "${l.text} Căn cứ trên lá số: ${l.why}.", emptyList(), l.source) }
+        return Paragraph(lines.joinToString(" ") { it.text }, 0, ParaKind.NOTE, topic, listOf("SACH_${role.name}"), whys, false, "Sách bàn về cung ${role.vn}")
+    }
+
+    fun year(chart: Chart, data: Composer.PeriodData, topic: Topic?, event: Event?, relative: String?, compact: Boolean = false, past: Boolean = false): Result {
         val l = data.limits!!
         val role = roleFor(topic, relative)
         val ts = topic?.let { data.topics[it] }
@@ -353,6 +366,8 @@ class QaAnalyst(private val kb: KnowledgeBase) {
         }
         var n = 0
         out.add(natalPara(chart, data, topic, role, n++))
+        bookPara(chart, topic, role)?.let { out.add(it) }
+        if (topic != null) starDetailPara(chart, topic, role)?.let { out.add(it) }
         for (layer in listOf(Layer.DAI_HAN, Layer.LUU_NIEN, Layer.TIEU_HAN, Layer.LUU_THAI_TUE)) {
             val lbl = when (layer) { Layer.DAI_HAN -> "của đại hạn"; Layer.LUU_NIEN -> "của lưu niên đại hạn"; Layer.TIEU_HAN -> "của tiểu hạn"; else -> "theo Thái Tuế" }
             layerPara(chart, data, layer, topic, role, n, lbl)?.let { out.add(it); n++ }
@@ -371,6 +386,7 @@ class QaAnalyst(private val kb: KnowledgeBase) {
                     evs.map { "${it.event.vn}: ${it.layers.joinToString(", ") { l2 -> l2.vn }}" }, "Prompt mục 9")) + yearHits.map { it.why },
                 yearHits.isNotEmpty(), "${CIRC[n++]} Đồng thanh tương ứng"))
         }
+        concretePara(chart, data, topic, relative, past)?.let { out.add(it) }
         out.add(summaryPara(chart, data, topic, role, score, layers, n))
         return Result(out, score, conclusion)
     }
@@ -454,6 +470,8 @@ class QaAnalyst(private val kb: KnowledgeBase) {
             listOf(Why("AN_KET_LUAN", "Kết luận đại vận", "Đại vận: gốc 0,25 + đại hạn 0,75 (D-38); điểm từng năm theo luận năm.", years.map { "${it.first}: ${it.second}" }, "Prompt mục 9")), false, "Kết luận")
         out.add(concl)
         out.add(natalPara(chart, data, topic, role, 0))
+        bookPara(chart, topic, role)?.let { out.add(it) }
+        starDetailPara(chart, topic, role)?.let { out.add(it) }
         layerPara(chart, data, Layer.DAI_HAN, topic, role, 1, "của đại hạn")?.let { out.add(it) }
         out.add(summaryPara(chart, data, topic, role, score, layers, 2))
         return Result(out, score, concl)
@@ -479,6 +497,9 @@ class QaAnalyst(private val kb: KnowledgeBase) {
                 decades.map { "${it.first.first}–${it.first.last} (${it.second.vn}): ${it.third}" }, "Prompt mục 9")), false, "Kết luận")
         out.add(concl)
         out.add(natalPara(chart, data, topic, role, 0))
+        bookPara(chart, topic, role)?.let { out.add(it) }
+        starDetailPara(chart, topic, role)?.let { out.add(it) }
+        if (topic == Topic.TINH_CACH || (topic == null && role == PalaceRole.MENH)) out.add(personalityPara(chart))
         if (role != PalaceRole.MENH) {
             // Mệnh và Thân: cách người này xử lý chuyện của chủ đề.
             val (cat, hung) = aux(chart, chart.menh, null)
@@ -543,6 +564,183 @@ class QaAnalyst(private val kb: KnowledgeBase) {
         out.add(year(chart, yearData, topic, null, relative, compact = true).paragraphs.last().copy(title = "③ Nền của năm ${m.lunarYear}"))
         return Result(out, monthScore, concl)
     }
+
+    // ———————————————————————————— chi tiết (D-65) ————————————————————————————
+
+    /** Lĩnh vực đời sống của từng cung (dùng khi nói Tứ Hóa lưu vào cung nào). */
+    val ROLE_AREA: Map<PalaceRole, String> = mapOf(
+        PalaceRole.MENH to "bản thân", PalaceRole.HUYNH_DE to "anh chị em, bạn thân", PalaceRole.PHU_THE to "vợ chồng, tình cảm",
+        PalaceRole.TU_TUC to "con cái", PalaceRole.TAI_BACH to "tiền bạc", PalaceRole.TAT_ACH to "sức khỏe",
+        PalaceRole.THIEN_DI to "đi xa, ra ngoài", PalaceRole.NO_BOC to "bạn bè, đồng nghiệp", PalaceRole.QUAN_LOC to "công việc",
+        PalaceRole.DIEN_TRACH to "nhà cửa, đất đai", PalaceRole.PHUC_DUC to "tinh thần, họ hàng", PalaceRole.PHU_MAU to "cha mẹ, cấp trên, giấy tờ",
+    )
+
+    private val TOPIC_SHORT = mapOf(
+        Topic.SU_NGHIEP to "Công việc", Topic.TAI_CHINH to "Tiền bạc", Topic.TINH_DUYEN to "Tình cảm", Topic.SUC_KHOE to "Sức khỏe",
+        Topic.GIA_DAO to "Gia đạo", Topic.DI_CHUYEN to "Đi xa", Topic.PHAP_LY to "Giấy tờ", Topic.NHA_DAT to "Nhà đất",
+    )
+
+    /** Chủ đề có kho câu “cụ thể” (nhà đất đọc theo tài chính; tính cách, phúc đức không có theo năm). */
+    private fun ctTopic(t: Topic): Topic? = when (t) {
+        Topic.NHA_DAT -> Topic.TAI_CHINH
+        Topic.TINH_CACH, Topic.PHUC_DUC -> null
+        else -> t
+    }
+
+    private val TRIG_LUU = mapOf(
+        StarId.LOC_TON to "LOC_TON", StarId.THIEN_MA to "THIEN_MA", StarId.KINH_DUONG to "KINH_DUONG", StarId.DA_LA to "DA_LA",
+        StarId.DAO_HOA to "DAO_HONG_HY", StarId.HONG_LOAN to "DAO_HONG_HY", StarId.THIEN_HY to "DAO_HONG_HY", StarId.HY_THAN to "DAO_HONG_HY",
+        StarId.TANG_MON to "TANG_HO", StarId.BACH_HO to "TANG_HO", StarId.THIEN_KHOC to "KHOC_HU", StarId.THIEN_HU to "KHOC_HU",
+    )
+    private val TRIG_POL = mapOf(
+        "HOA_LOC" to 1, "HOA_QUYEN" to 1, "HOA_KHOA" to 1, "HOA_KY" to -1, "LOC_TON" to 1, "THIEN_MA" to 0, "KINH_DUONG" to -1,
+        "DA_LA" to -1, "DAO_HONG_HY" to 1, "TANG_HO" to -1, "KHOC_HU" to -1,
+    )
+
+    /** Một tác nhân của năm chạm cung chủ đề: [key] là khóa kho câu (`ct.CHỦ_ĐỀ.KEY`), [label] “Hóa Lộc lưu (Thái Âm)”. */
+    data class Trigger(val topic: Topic, val key: String, val label: String, val where: String, val polarity: Int, val weight: Double) {
+        val textKey: String get() = "ct.${topic.name}.$key"
+    }
+
+    /**
+     * Tứ Hóa lưu và sao lưu của năm [l] chạm cung của chủ đề [topic]: trên lá số gốc, theo Thái Tuế, theo tiểu hạn, theo
+     * lưu niên đại hạn. Tọa thủ nặng hơn xung chiếu. Mỗi tác nhân giữ lần chạm mạnh nhất.
+     */
+    fun triggers(chart: Chart, l: LimitLayers, topic: Topic, relative: String? = null): List<Trigger> {
+        val tp = ctTopic(topic) ?: return emptyList()
+        val role = roleFor(topic, relative)
+        val frames = listOfNotNull(
+            Triple(chart.palace(role).chi, "cung ${role.vn} gốc", 1.0),
+            Triple(l.luuThaiTue + role.ordinal, "cung ${role.vn} theo Thái Tuế", 1.0),
+            Triple(l.tieuHan + role.ordinal, "cung ${role.vn} của tiểu hạn", 0.9),
+            if (l.beforeFirstDaiHan) null else Triple(l.luuNienDaiHan + role.ordinal, "cung ${role.vn} của lưu niên đại hạn", 0.85),
+        )
+        val hoaStars = TuHoaTable.of(l.yearCanChi.can, chart.config)
+        val sources = TuHoa.entries.mapNotNull { h -> l.luuTuHoa[h]?.let { c -> Triple("HOA_${h.name}", "${h.vn} lưu (${hoaStars[h]?.vn ?: ""})", c) } } +
+            l.luuStars.mapNotNull { (id, c) -> TRIG_LUU[id]?.let { Triple(it, "${id.vn} lưu", c) } }
+        val best = LinkedHashMap<String, Trigger>()
+        for ((key, label, c) in sources) {
+            if ("ct.${tp.name}.$key" !in kb.texts) continue
+            for ((fc, fname, fw) in frames) {
+                val (w, verb) = when (c) {
+                    fc -> fw to "nhập"
+                    fc.opposite -> fw * 0.6 to "xung chiếu"
+                    else -> continue
+                }
+                val t = Trigger(tp, key, label, "$verb $fname (${fc.vn})", TRIG_POL[key] ?: 0, w)
+                if ((best[key]?.weight ?: -1.0) < w) best[key] = t
+            }
+        }
+        return best.values.sortedWith(compareByDescending<Trigger> { it.weight }.thenByDescending { kotlin.math.abs(it.polarity) })
+    }
+
+    /**
+     * “Cụ thể trong năm”: điều dễ xảy ra khi Tứ Hóa lưu, sao lưu chạm cung của chủ đề (kho câu `ct.*`). Không có chủ đề
+     * thì lấy các tác nhân mạnh nhất qua mọi chủ đề. [past] = năm đã qua (giọng kể lại, không kèm lời khuyên).
+     */
+    fun concretePara(chart: Chart, data: Composer.PeriodData, topic: Topic?, relative: String?, past: Boolean = false, title: String? = null): Paragraph? {
+        val l = data.limits ?: return null
+        if (data.child && topic !in setOf(Topic.SUC_KHOE, Topic.DI_CHUYEN, Topic.GIA_DAO)) return null
+        val trigs: List<Trigger> = if (topic != null) triggers(chart, l, topic, relative).take(4)
+        else TOPIC_SHORT.keys.filter { it != Topic.NHA_DAT }.flatMap { triggers(chart, l, it).take(2) }
+            .sortedByDescending { it.weight }.distinctBy { it.topic to it.key }.take(5)
+        val head = if (past) "Năm ${l.lunarYear} lá số cho thấy" else "Cụ thể năm ${l.lunarYear}"
+        if (trigs.isEmpty()) {
+            if (topic == null || ctTopic(topic) == null) return null
+            val role = roleFor(topic, relative)
+            return Paragraph("$head: không có Tứ Hóa lưu hay sao lưu lớn nào chạm thẳng cung ${role.vn}; diễn biến chủ yếu theo các tầng vận hạn ở trên, ít biến động bất ngờ.",
+                0, ParaKind.NOTE, topic, listOf("CT_KHONG"), listOf(Why("CT_KHONG", "Tác nhân của năm", "Đã xét Tứ Hóa lưu và các sao lưu (Lộc Tồn, Thiên Mã, Kình Dương, Đà La, Đào Hoa, Hồng Loan, Thiên Hỷ, Tang Môn, Bạch Hổ, Thiên Khốc, Thiên Hư) với cung ${role.vn} gốc, theo Thái Tuế, tiểu hạn, lưu niên đại hạn.", emptyList(), SRC_CT)),
+                false, title ?: (if (past) "Năm ${l.lunarYear} đã có gì" else "Cụ thể trong năm"))
+        }
+        val parts = trigs.map { t ->
+            val what = kb.texts.getValue(t.textKey).text
+            (if (topic == null) "${TOPIC_SHORT[t.topic]} — " else "") + "${t.label} ${t.where}: $what."
+        }
+        val pol = trigs.sumOf { it.polarity }.coerceIn(-1, 1)
+        val whys = trigs.map { t -> Why("CT_${t.topic.name}_${t.key}", t.label, "${t.label} ${t.where}. ${kb.texts.getValue(t.textKey).text}.", emptyList(), kb.texts.getValue(t.textKey).source) }
+        return Paragraph("$head: ${parts.joinToString(" ")}", pol, ParaKind.WEIGH, topic, trigs.map { "CT_${it.topic.name}_${it.key}" }, whys,
+            false, title ?: (if (past) "Năm ${l.lunarYear} đã có gì" else "Cụ thể trong năm"))
+    }
+
+    /** Lời khuyên theo đúng tác nhân của năm cho chủ đề (câu `.nen`): thuận → Nên, cần phòng → Lưu ý. */
+    fun concreteAdvice(chart: Chart, data: Composer.PeriodData, topics: List<Topic>, relative: String?, max: Int = 3): List<AdviceItem> {
+        val l = data.limits ?: return emptyList()
+        return topics.flatMap { triggers(chart, l, it, relative).take(3) }.mapNotNull { t ->
+            val e = kb.texts["${t.textKey}.nen"] ?: return@mapNotNull null
+            AdviceItem("${t.textKey}.nen", if (t.polarity < 0) AdviceType.LUU_Y else AdviceType.NEN, t.topic,
+                e.text.replaceFirstChar { it.uppercase() } + ".", "${t.label} ${t.where}", listOf("CT_${t.topic.name}_${t.key}"))
+        }.distinctBy { it.key }.take(max)
+    }
+
+    private val ORGANS = mapOf(
+        "Kim" to "phổi, đường hô hấp, da", "Mộc" to "gan, mật, gân cơ, mắt", "Thủy" to "thận, bàng quang, đường tiết niệu",
+        "Hỏa" to "tim, mạch máu, huyết áp", "Thổ" to "dạ dày, tỳ vị, đường tiêu hóa",
+    )
+
+    /**
+     * “Từng sao trong cung …”: chính tinh (hành, hóa khí, đặc tính), từng phụ tinh trong cung với nghĩa của nó tại cung này,
+     * sao lớn chiếu về từ tam phương tứ chính; cung Tật Ách nêu thêm phần cơ thể theo ngũ hành của chính tinh.
+     */
+    fun starDetailPara(chart: Chart, topic: Topic?, role: PalaceRole): Paragraph? {
+        val p = chart.palace(role)
+        val items = ArrayList<String>()
+        val mains = p.chinhTinh.ifEmpty { chart.palace(p.chi.opposite).chinhTinh }
+        for (s in mains) {
+            val m = kb.mainMeta[s.id] ?: continue
+            items += "${s.id.vn}${bright(s.brightness)?.let { " ($it)" } ?: ""} thuộc ${m.hanh}, hóa khí ${m.hoaKhi}: ${m.dacTinh.lowercase()}" +
+                (if (p.chinhTinh.isEmpty()) " (mượn từ ${p.chi.opposite.vn})" else "")
+        }
+        val extra = topic?.let { TOPIC_STARS[it] }.orEmpty()
+        fun rank(id: StarId) = when (id) { in HOA_STARS -> 0; in CORE_CAT -> 1; in CORE_SAT -> 2; in extra -> 3; else -> 4 }
+        val minors = p.stars.filter { it.kind != StarKind.CHINH_TINH }.sortedBy { rank(it.id) }
+        var n = 0
+        for (s in minors) {
+            if (n >= 8) break
+            val key = kb.minorKey(s.id, role) ?: continue
+            val t = kb.texts[key] ?: continue
+            // Câu chung của phụ tinh có khi nhắc cung khác (“…; ở Phu Thê cản trở hôn nhân”): bỏ vế không thuộc cung đang xem.
+            val rest = t.text.substringAfter(": ", t.text).trimEnd('.').split("; ")
+                .filter { part -> PalaceRole.entries.none { r -> r != role && part.startsWith("ở ${r.vn}") } }.joinToString("; ")
+            items += "${s.id.vn}${bright(s.brightness)?.takeIf { s.brightness == Brightness.DAC || s.brightness == Brightness.HAM }?.let { " ($it)" } ?: ""}: $rest"
+            n++
+        }
+        // Sao lớn chiếu về.
+        val around = listOf(p.chi.opposite to "xung chiếu", (p.chi + 4) to "tam hợp", (p.chi + 8) to "tam hợp").mapNotNull { (c, r) ->
+            val big = chart.palace(c).stars.filter { it.id in HOA_STARS || it.id in CORE_CAT || it.id in CORE_SAT }.map { it.id.vn }
+            if (big.isEmpty()) null else "${big.joinToString(", ")} từ ${chart.palace(c).role.vn} ($r)"
+        }
+        if (items.isEmpty() && around.isEmpty()) return null
+        val sb = StringBuilder()
+        if (items.isNotEmpty()) sb.append(items.joinToString(". ") { it.replaceFirstChar { c -> c.uppercase() } }).append(". ")
+        if (around.isNotEmpty()) sb.append("Chiếu về cung này: ${around.joinToString("; ")}. ")
+        if (role == PalaceRole.TAT_ACH && mains.isNotEmpty()) {
+            val hs = mains.mapNotNull { kb.mainMeta[it.id]?.hanh?.substringAfterLast(' ') }.distinct()
+            val org = hs.mapNotNull { h -> ORGANS[h]?.let { "$h: $it" } }
+            if (org.isNotEmpty()) sb.append("Theo ngũ hành của chính tinh, nên để ý ${org.joinToString("; ")}; đi khám khi có dấu hiệu kéo dài. ")
+        }
+        return Paragraph(sb.toString().trim(), 0, ParaKind.NOTE, topic, listOf("AN_SAO_${role.name}"),
+            listOf(Why("AN_SAO_${role.name}", "Từng sao trong cung ${role.vn}", "Sao tọa thủ cung ${role.vn} (${p.chi.vn}) và nghĩa của từng sao tại cung này; sao lớn ở tam phương tứ chính.",
+                p.stars.map { it.id.vn + (bright(it.brightness)?.let { b -> " $b" } ?: "") }, "Cẩm nang V2 P.II–P.III")), false, "Từng sao trong cung ${role.vn} (${p.chi.vn})")
+    }
+
+    /** Tính cách sâu: bản mệnh và Cục, Mệnh chủ – Thân chủ, cung Thân, cung Phúc Đức. */
+    fun personalityPara(chart: Chart): Paragraph {
+        val rel = vn.tuvi.core.engine.CucMenhRelation.of(chart.cuc.element, chart.banMenh.element)
+        val than = chart.palace(chart.than)
+        val pd = chart.palace(PalaceRole.PHUC_DUC)
+        val pdMean = meaning(chart, pd.chi, PalaceRole.PHUC_DUC)
+        val thanMean = meaning(chart, than.chi, than.role)
+        val t = "Bản mệnh ${chart.banMenh.name} (${chart.banMenh.element.vn}), ${chart.cuc.vn}: ${rel.vn.replaceFirstChar { it.lowercase() }}. " +
+            "Mệnh chủ ${chart.menhChu.vn}, Thân chủ ${chart.thanChu.vn}. " +
+            "Thân cư ${than.role.vn} (${than.chi.vn}): ${mainStars(chart, than.chi)}${thanMean?.let { " — ${it.text}" } ?: ""}; từ khoảng 30 tuổi cách sống dồn về việc của cung này. " +
+            "Phúc Đức (${pd.chi.vn}): ${mainStars(chart, pd.chi)}${pdMean?.let { " — ${it.text}" } ?: ""}."
+        return Paragraph(t, 0, ParaKind.NOTE, Topic.TINH_CACH, listOf("AN_TINH_CACH_SAU"),
+            listOf(Why("AN_TINH_CACH_SAU", "Bản mệnh, Cục, Thân, Phúc Đức", "Tương quan Cục – bản Mệnh (cẩm nang P.I.4); Thân là nơi đời sống dồn về sau tuổi 30; Phúc Đức là nền tinh thần.",
+                listOf("Bản mệnh: ${chart.banMenh.name}", "Cục: ${chart.cuc.vn}", "Thân: ${than.role.vn} (${than.chi.vn})"), "Cẩm nang V2 P.I")),
+            (pdMean?.draft ?: false) || (thanMean?.draft ?: false), "Bản mệnh, Thân và Phúc Đức")
+    }
+
+    private val SRC_CT = "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung)"
 
     /**
      * Lý do cho một năm khi dò “năm nào…”: cách vận hạn kích hoạt, Tứ Hóa lưu và sao lưu chạm cung chủ đề (gốc và theo

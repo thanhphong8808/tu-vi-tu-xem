@@ -1,0 +1,203 @@
+{
+ "today": "2026-11-21",
+ "charts": {
+  "A": {
+   "name": "A (Nam 15/08/1990 10:30)",
+   "gender": "NAM",
+   "day": 15,
+   "month": 8,
+   "year": 1990,
+   "hour": 10,
+   "minute": 30
+  },
+  "B": {
+   "name": "B (Nữ 03/03/1985 23:30)",
+   "gender": "NU",
+   "day": 3,
+   "month": 3,
+   "year": 1985,
+   "hour": 23,
+   "minute": 30
+  },
+  "D": {
+   "name": "D (Nữ 10/02/1964 14:00)",
+   "gender": "NU",
+   "day": 10,
+   "month": 2,
+   "year": 1964,
+   "hour": 14,
+   "minute": 0
+  },
+  "E": {
+   "name": "E (Nam 15/06/1988 09:30)",
+   "gender": "NAM",
+   "day": 15,
+   "month": 6,
+   "year": 1988,
+   "hour": 9,
+   "minute": 30
+  }
+ },
+ "questions": [
+  {
+   "chart": "A",
+   "q": "Năm sau sự nghiệp của tôi thế nào?"
+  },
+  {
+   "chart": "A",
+   "q": "Tình duyên năm 2027 ra sao?"
+  },
+  {
+   "chart": "A",
+   "q": "Năm nay tài chính của tôi thế nào?"
+  },
+  {
+   "chart": "A",
+   "q": "Đại vận này công việc ra sao?"
+  },
+  {
+   "chart": "A",
+   "q": "Năm 2020 công việc của tôi thế nào?"
+  },
+  {
+   "chart": "A",
+   "q": "Năm nào tôi dễ có tiền nhất?"
+  },
+  {
+   "chart": "A",
+   "q": "Cung Mệnh của tôi có sao gì?"
+  },
+  {
+   "chart": "A",
+   "q": "Tháng 3 âm năm sau công việc thế nào?"
+  },
+  {
+   "chart": "A",
+   "q": "nam sau suc khoe can luu y gi"
+  },
+  {
+   "chart": "A",
+   "q": "Tôi có nên đổi việc năm 2027 không?"
+  },
+  {
+   "chart": "A",
+   "q": "Năm 2025 tiền bạc của tôi thế nào?"
+  },
+  {
+   "chart": "A",
+   "q": "Tôi có số giàu không?"
+  },
+  {
+   "chart": "B",
+   "q": "Năm sau tình duyên của tôi thế nào?"
+  },
+  {
+   "chart": "B",
+   "q": "Năm 2027 có cưới được không?"
+  },
+  {
+   "chart": "B",
+   "q": "Gia đạo năm nay ra sao?"
+  },
+  {
+   "chart": "B",
+   "q": "Đại vận tới tài chính thế nào?"
+  },
+  {
+   "chart": "B",
+   "q": "Năm 2023 sự nghiệp của tôi ra sao?"
+  },
+  {
+   "chart": "B",
+   "q": "Năm nào thuận để mua nhà?"
+  },
+  {
+   "chart": "B",
+   "q": "Con cái năm 2028 thế nào?"
+  },
+  {
+   "chart": "B",
+   "q": "Cung Phu Thê của tôi có sao gì?"
+  },
+  {
+   "chart": "B",
+   "q": "tai chinh nam 2028 the nao"
+  },
+  {
+   "chart": "B",
+   "q": "Tôi nên lưu ý gì năm 2027?"
+  },
+  {
+   "chart": "B",
+   "q": "Tháng 6 năm nay sức khỏe thế nào?"
+  },
+  {
+   "chart": "B",
+   "q": "Tính cách của tôi thế nào?"
+  },
+  {
+   "chart": "D",
+   "q": "Năm sau sức khỏe của tôi cần lưu ý gì?"
+  },
+  {
+   "chart": "D",
+   "q": "Hậu vận của tôi thế nào?"
+  },
+  {
+   "chart": "D",
+   "q": "Năm 2027 tài chính ra sao?"
+  },
+  {
+   "chart": "D",
+   "q": "Con cái của tôi thế nào?"
+  },
+  {
+   "chart": "D",
+   "q": "Năm 2024 gia đạo thế nào?"
+  },
+  {
+   "chart": "D",
+   "q": "Năm nào tôi nên giữ gìn sức khỏe?"
+  },
+  {
+   "chart": "D",
+   "q": "Đại vận này gia đạo thế nào?"
+  },
+  {
+   "chart": "D",
+   "q": "Nhà đất năm sau có thuận không?"
+  },
+  {
+   "chart": "E",
+   "q": "Năm 2015 tôi gặp chuyện gì?"
+  },
+  {
+   "chart": "E",
+   "q": "Năm 2027 tôi có thăng chức không?"
+  },
+  {
+   "chart": "E",
+   "q": "Đi xa lập nghiệp năm 2028 được không?"
+  },
+  {
+   "chart": "E",
+   "q": "Tình duyên đại vận này thế nào?"
+  },
+  {
+   "chart": "E",
+   "q": "Năm 2019 công việc của tôi thế nào?"
+  },
+  {
+   "chart": "E",
+   "q": "Bạn bè đồng nghiệp năm sau ra sao?"
+  },
+  {
+   "chart": "E",
+   "q": "Cung Quan Lộc của tôi tốt hay xấu?"
+  },
+  {
+   "chart": "E",
+   "q": "nam 2027 co nen dau tu khong"
+  }
+ ]
+}

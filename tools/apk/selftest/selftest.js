@@ -191,6 +191,8 @@
       if (prof) await phase5();
       // ———————— Giai đoạn 6 ————————
       if (prof) await phase6();
+      // ———————— Giai đoạn 7: Trợ lý AI ————————
+      await phase7();
       check(!document.querySelector('.error-box'), 'Không được có hộp lỗi trên màn hình: ' + ((document.querySelector('.error-box') || {}).textContent || ''));
       // Ảnh chụp cuối cùng: màn Luận giải năm (đang mở).
     } catch (e) {
@@ -358,6 +360,30 @@
     window.tvBack(); await sleep(200);
     window.scrollTo(0, 0);
     log('PHASE6 done');
+  }
+
+  // Trợ lý AI (D-57): thư viện LiteRT-LM thật nạp được trên máy này (x86_64 trên máy ảo, arm64 trên điện thoại) và gọi vào
+  // mã máy với một file không phải model phải báo lỗi gọn, không văng app. Máy ảo không đủ RAM/không tải model 2,6 GB.
+  async function phase7() {
+    const call = (m, a) => JSON.parse(window.TuViNative.call(m, JSON.stringify(a || {})));
+    const st = call('aiStatus');
+    check(st.ok && st.data && typeof st.data.state === 'string' && st.data.model && st.data.model.bytes > 1e9, 'aiStatus: ' + JSON.stringify(st).slice(0, 200));
+    log(`AI status state=${st.data && st.data.state} ramMb=${st.data && st.data.ramMb} wifi=${st.data && st.data.wifi}`);
+    const t0 = performance.now();
+    const pr = await new Promise((resolve) => {
+      const id = 900001;
+      const prev = window.tvAsyncDone;
+      window.tvAsyncDone = function (i, raw) { if (i === id) { window.tvAsyncDone = prev; resolve(JSON.parse(raw)); } else if (prev) prev(i, raw); };
+      window.TuViNative.callAsync(id, 'aiAction', JSON.stringify({ name: 'probe' }));
+      setTimeout(() => resolve({ ok: false, error: 'hết giờ' }), 30000);
+    });
+    const msg = (pr.data && pr.data.probe) || pr.error || '';
+    log(`AI probe ${Math.round(performance.now() - t0)} ms → ${msg}`);
+    check(pr.ok && msg.indexOf('probe-ok') === 0, 'LiteRT-LM nạp được thư viện máy và báo lỗi gọn với file giả: ' + msg);
+    // Câu hỏi khi chưa có model: askAi trả “chưa dùng AI”, Hỏi đáp vẫn trả lời bằng bản luận.
+    const ai = call('askAi', { input: { gender: 'NAM', day: 15, month: 8, year: 1990, hour: 10, minute: 30 }, question: 'Năm sau sự nghiệp thế nào?' });
+    check(ai.ok && ai.data && ai.data.used === false, 'askAi khi chưa tải model: ' + JSON.stringify(ai).slice(0, 160));
+    log('PHASE7 done');
   }
 
   // Sau RESULT: các bước CI điều khiển bằng adb trên màn hình thật — chạm giữ một sao, bảng chia sẻ PDF.

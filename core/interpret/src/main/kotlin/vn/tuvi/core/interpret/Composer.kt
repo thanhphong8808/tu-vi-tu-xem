@@ -391,7 +391,7 @@ class Composer(private val kb: KnowledgeBase) {
                 (menhS.top + phucS.top).map { "${it.label}: ${"%+.1f".format(it.value)}" }, "Prompt mục 2.3, 9")), false,
         ))
         mainStarPiece(ctx, chart.menh)?.let { summary.add(Paragraph(it.text, it.polarity, ParaKind.PLAIN, Topic.TINH_CACH, it.ruleIds, it.why, it.draft)) }
-            ?: summary.add(Paragraph("Mệnh vô chính diệu: mượn chính tinh cung Thiên Di (${chart.menh.opposite.vn}) để luận, lực giảm còn khoảng bảy phần.", 0, ParaKind.NOTE, Topic.TINH_CACH, listOf("VCD_MENH"), listOf(Why("VCD_MENH", "Vô chính diệu", "Prompt mục 9 bước 2: mượn chính tinh cung xung chiếu, hệ số 0,7.", emptyList(), "Prompt mục 9")), false))
+            ?: summary.add(Paragraph("Mệnh vô chính diệu: mượn chính tinh cung Thiên Di (${chart.menh.opposite.vn}) để luận, lực giảm còn khoảng bảy phần.", 0, ParaKind.NOTE, Topic.TINH_CACH, listOf("VCD_MENH"), listOf(Why("VCD_MENH", "Vô chính diệu", "Mượn chính tinh cung xung chiếu để luận, hệ số 0,7.", emptyList(), "Prompt mục 9")), false))
         its.firstOrNull { it.rule.id.startsWith("TS_THAN_CU_") }?.let { summary.add(Paragraph(pieceOf(ctx, it).text, 0, ParaKind.NOTE, null, listOf(it.rule.id), listOf(whyOf(ctx, it)), true)) }
         mainStarPiece(ctx, phucChi)?.let { summary.add(Paragraph(it.text, it.polarity, ParaKind.PLAIN, Topic.PHUC_DUC, it.ruleIds, it.why, it.draft)) }
 
@@ -432,7 +432,7 @@ class Composer(private val kb: KnowledgeBase) {
         val extra = ArrayList<Piece>()
         if (main != null) extra.add(main) else paras.add(Paragraph(
             "Cung vô chính diệu: mượn chính tinh cung xung chiếu ${ctx.place(chi.opposite)} để luận, lực giảm còn khoảng bảy phần.",
-            0, ParaKind.NOTE, topic, listOf("VCD_${p.role.name}"), listOf(Why("VCD_${p.role.name}", "Vô chính diệu", "Prompt mục 9 bước 2.", emptyList(), "Prompt mục 9")), false,
+            0, ParaKind.NOTE, topic, listOf("VCD_${p.role.name}"), listOf(Why("VCD_${p.role.name}", "Vô chính diệu", "Cung không có chính tinh: mượn chính tinh cung xung chiếu để luận, lực giảm còn khoảng bảy phần.", emptyList(), "Prompt mục 9")), false,
         ))
         val rulePieces = its.filter { chi in it.palaces && it.rule.anchor !is Anchor.Layer }.map { pieceOf(ctx, it) }
         val minor = ctx.eval.findings.filter { it.palace == chi && it.ruleId.startsWith("PHU_") }.mapNotNull { f ->
@@ -526,6 +526,18 @@ class Composer(private val kb: KnowledgeBase) {
             lunarYear, c.overallPair.first, c.topics.mapValues { it.value.score },
             c.hits.map { h -> YearEvent(h.event, h.level, h.layers.sortedBy { it.ordinal }) }, c.limits.tuoiAm, c.child,
         )
+    }
+
+    /**
+     * Chỉ sự kiện đồng thanh của một năm (cùng phép tính với [yearData], bỏ phần chấm điểm chủ đề và ghép câu): để Hỏi đáp
+     * dò nhanh nhiều năm đã qua (D-64).
+     */
+    fun yearEvents(chart: Chart, lunarYear: Int, expert: Boolean = false): List<YearEvent> {
+        val limits = LimitEngine.forYear(chart, lunarYear)
+        val ctx = Ctx(chart, limits, engine.evaluate(chart, limits, expert), Scorer(kb))
+        val child = limits.tuoiAm < 16
+        return events(items(ctx, setOf(Scope.NAM, Scope.DAI_HAN))).filter { !child || it.event in CHILD_EVENTS }
+            .map { h -> YearEvent(h.event, h.level, h.layers.sortedBy { it.ordinal }) }
     }
 
     // ———————————————————— số liệu cho luận đoán trong Hỏi đáp (D-54) ————————————————————
@@ -845,6 +857,8 @@ class Composer(private val kb: KnowledgeBase) {
                 -1, ParaKind.WEIGH, out.first().topic, pos.flatMap { it.ruleIds }, pos.flatMap { it.why }, pos.any { it.draft }))
         } else out += paras
         if (out.isEmpty()) note("cmp.khong", if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO)?.let { out.add(it) }
+        // Tương sinh tương khắc: ngũ hành bản mệnh, can chi năm sinh, cung Mệnh, Cục, chính tinh Mệnh (D-67).
+        out += Synastry(kb).analyze(a, b, nameA, nameB, if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO).paragraphs
         note("cmp.note", null)?.let { out.add(it) }
         return Comparison("$nameA và $nameB · ${relation.vn}", relation, out, closing())
     }

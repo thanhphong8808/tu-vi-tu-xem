@@ -1,7 +1,7 @@
 /* Tử Vi Tự Xem — giao diện chạy trong WebView, offline. */
 :root {
-  --bg: #f6f2e9; --card: #fffdf8; --card2: #fbf6ea; --ink: #1f1b16; --muted: #6b6358; --line: #dccfb8; --line2: #ebe2d2;
-  --accent: #6e1423; --accent-ink: #fff; --gold: #9a6b12; --sel: #fff0c2; --tam: #fdf4dc; --danger: #b3261e;
+  --bg: #f6f1e6; --card: #fffdf8; --card2: #fbf5e8; --ink: #1f1a15; --muted: #6b6358; --line: #dccfb8; --line2: #e6dcc8;
+  --accent: #7a1726; --accent-ink: #fff; --gold: #9a6b12; --kim-nhat: #f3e6c4; --sel: #fff0c2; --tam: #fdf4dc; --danger: #b3261e;
   --kim: #5f6672; --moc: #2e7d32; --thuy: #1d3f9e; --hoa: #b71c1c; --tho: #8a5a00;
   --luu: #0f766e; --ring: #6b6358;
   --hoa-loc: #2e7d32; --hoa-quyen: #8e24aa; --hoa-khoa: #1565c0; --hoa-ky: #424242;
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #14161b; --card: #1c1f26; --card2: #20242c; --ink: #ece7de; --muted: #a59d90; --line: #3a404c; --line2: #2b3039;
-    --accent: #c94f60; --accent-ink: #fff; --gold: #e0b45a; --sel: #3a3220; --tam: #272519; --danger: #ff8a80;
+    --accent: #c94f60; --accent-ink: #fff; --gold: #e0b45a; --kim-nhat: #3a3220; --sel: #3a3220; --tam: #272519; --danger: #ff8a80;
     --kim: #c3c9d2; --moc: #74d17a; --thuy: #8fb5ff; --hoa: #ff7f7f; --tho: #e3b45a;
     --luu: #4fd1c5; --ring: #a59d90;
     --hoa-loc: #66bb6a; --hoa-quyen: #ce93d8; --hoa-khoa: #64b5f6; --hoa-ky: #bdbdbd;
@@ -373,3 +373,51 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 /* tiêu đề nhỏ của đoạn luận đoán theo tầng */
 .rp-h { font-size: 12.5px; font-weight: 700; letter-spacing: .02em; color: var(--muted); margin: 0 0 2px; }
 .qb.bot .rp + .rp { margin-top: 8px; }
+/* Trợ lý AI trên máy (D-57) */
+.qa-ai { margin: 8px 0 6px; padding: 10px 12px; border-radius: 12px; background: var(--card2); border-left: 3px solid var(--accent); }
+.qa-ai p { margin: 6px 0 0; font-size: 15px; line-height: 1.55; }
+.qa-ai-h { font-weight: 700; font-size: 13.5px; }
+.qa-ai.wait { font-size: 14px; display: block; }
+.qa-ai.fail { border-left-color: var(--line2); font-size: 13px; }
+.qa-more { margin: 4px 0 2px; }
+.qa-detail { margin-top: 4px; }
+.spin { display: inline-block; width: 12px; height: 12px; border: 2px solid var(--line2); border-top-color: var(--accent); border-radius: 50%; animation: tvspin 0.9s linear infinite; vertical-align: -1px; }
+@keyframes tvspin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }
+.bar-p { height: 8px; border-radius: 4px; background: var(--card2); overflow: hidden; border: 1px solid var(--line2); }
+.bar-p i { display: block; height: 100%; background: var(--accent); }
+.err-t { color: var(--danger); }
+/* Liên hệ (D-61) */
+.contact { font-size: 18px; font-weight: 700; letter-spacing: .5px; text-decoration: none; text-align: center; }
+.contact-line a { color: var(--accent); font-weight: 700; text-decoration: none; }
+
+/* Hệ thiết kế (D-63, Figma “Tử Vi Tự Xem — Hệ thiết kế”): icon SVG nét mảnh, tiêu đề chữ có chân, viền kim nhũ */
+.ic { width: 1.2em; height: 1.2em; vertical-align: -0.24em; flex: none; }
+.ic.h { margin-right: 8px; color: var(--gold); }
+.ic.kim { color: var(--gold); }
+.ic.ngoc { color: var(--luu); }
+.btn .ic { margin-right: 4px; }
+.btn.primary .ic { color: var(--accent-ink); }
+.brand h1, .card h2, .bar h1, .rsum h2, .modal h2 { font-family: "Noto Serif", "Noto Serif Display", Georgia, serif; }
+.card h2 { display: flex; align-items: center; letter-spacing: .1px; }
+.brand-row { display: flex; align-items: center; gap: 12px; }
+.brand .logo { color: var(--gold); display: inline-flex; }
+.brand .logo .ic { width: 44px; height: 44px; vertical-align: 0; }
+.gold-rule { height: 2px; margin: 4px 0 12px; border-radius: 2px; background: linear-gradient(90deg, transparent, var(--gold) 15%, var(--gold) 85%, transparent); opacity: .65; }
+.btn.primary { box-shadow: 0 2px 8px rgba(122, 23, 38, .22); }
+.qa-ai { border-left-color: var(--gold); }
+.qa-ai-h .ic { margin-right: 2px; }
+.rp-book { background: var(--kim-nhat); border-left-color: var(--gold) !important; border-radius: 0 10px 10px 0; padding-right: 10px; }
+.rp-book .rp-h { color: var(--accent); display: flex; align-items: center; gap: 4px; }
+.pl.book { background: var(--kim-nhat); border-radius: 10px; padding: 8px 10px; margin: 6px 0; }
+.qa-local .ic, .note .ic { color: var(--luu); }
+.contact-line .ic, #contact .btn .ic { color: var(--accent); }
+.btn:not(.primary) .ic { color: var(--accent); }
+
+/* Chọn model Trợ lý AI (D-68) */
+.ai-models { display: grid; gap: 8px; margin: 10px 0; }
+.ai-models .opt { margin: 0; }
+
+/* Chi tiết kỹ thuật thu gọn (D-69) */
+.ai-why { margin-top: 6px; }
+.ai-why summary { cursor: pointer; color: var(--accent); }

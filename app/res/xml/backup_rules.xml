@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sao lưu tự động: giữ hồ sơ lá số, bỏ model Trợ lý AI (2,6 GB — vượt hạn mức 25 MB làm hỏng cả bản sao lưu). -->
+<full-backup-content>
+    <exclude domain="external" path="models/" />
+    <exclude domain="sharedpref" path="tuvi_ai.xml" />
+</full-backup-content>

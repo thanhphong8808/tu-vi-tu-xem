@@ -598,3 +598,203 @@ môi trường mạng Custom. Hướng dẫn cho anh Phong: `docs/BAN_GIAO_MOI_T
 - `tools/setup/test_all.sh` chạy một lần đủ Gradle, APK, giao diện và selftest. `doctor.sh` báo mạng, công cụ, khóa.
 - Hook SessionStart (`.claude/settings.json`) chỉ chạy trên đám mây: khôi phục khóa, cài nền công cụ nếu môi trường
   chưa có setup script, cài axe-core.
+
+### D-57 · Trợ lý AI sinh lời trên máy: Gemma 4 E2B qua LiteRT-LM (bản 0.7.0)
+Mạng đã mở (`dl.google.com`, `maven.google.com`, `huggingface.co`), nên D-55 được gỡ. Đã kiểm tra trước khi gắn:
+- **Model** `litert-community/gemma-4-E2B-it-litert-lm`, file `gemma-4-E2B-it.litertlm` (2.588.147.712 byte,
+  SHA-256 `181938…139a63c`). Giấy phép **Apache 2.0, không gated**: app tải ẩn danh được, không cần tài khoản.
+  Ghim theo commit `2e12bfd…` của kho trên Hugging Face, nên file không đổi dưới chân app.
+- **Runtime** LiteRT-LM 0.19.1 (`com.google.ai.edge.litertlm:litertlm-android`, Google Maven, Apache 2.0). AAR gồm
+  `classes.jar` (Kotlin 2.4, bytecode Java 21) và `liblitertlm_jni.so` cho arm64-v8a và x86_64. Phụ thuộc: gson
+  (bắt buộc), kotlinx-coroutines và kotlin-reflect (chỉ dùng cho API Flow và công cụ, app không gọi → không đóng gói).
+- Đã chạy thật trên máy build (CPU 4 nhân, `litertlm-jvm`): nạp model ~8 giây, mỗi câu ~20–30 giây, tiếng Việt tốt.
+
+**Cách gắn (giữ hệ thống build D-28, không chuyển sang Gradle/AGP):**
+- `tools/apk/fetch_ai_deps.sh` tải AAR và R8 8.13.19 (Google Maven) một lần, kiểm SHA-256. gson 2.14.0 (313 KB) nằm sẵn
+  trong `tools/apk/vendor/` vì Maven Central có lúc trả 404/429 cho máy chủ CI.
+- Lớp bọc `app/src/llm/java/vn/tuvi/app/llm/LiteRt.java` viết bằng Java: kotlinc 2.0 của dự án không phải đọc
+  metadata Kotlin 2.4 của thư viện. Cùng file này chạy trong APK và trên máy tính (công cụ chấm 40 câu).
+- Code của app vẫn qua `dx` (classes.dex). Thư viện AI (bytecode Java 21 có lambda, nối chuỗi `invokedynamic`,
+  `switch` theo mẫu) đi qua **D8 của R8 8.13.19** thành `classes2.dex`. D8 trong build-tools 35 (8.6) còn sót một
+  `invoke-custom` (`SwitchBootstraps.typeSwitch`); R8 8.13 chuyển hết. `build_apk.sh` kiểm 0 `invoke-custom` ở cả hai DEX.
+- `lib/arm64-v8a` (điện thoại) và `lib/x86_64` (máy ảo CI) nén trong APK, `extractNativeLibs="true"`. APK tăng từ
+  1,5 MB lên khoảng 22 MB (riêng x86_64 khoảng 11 MB, giữ để máy ảo CI cài và nạp được thư viện thật).
+- Manifest: `uses-native-library` libOpenCL.so / libvndksupport.so với `required="false"` (GPU nếu máy có).
+
+**Thay đổi sản phẩm (anh cần biết):**
+- App xin quyền **INTERNET** và **ACCESS_NETWORK_STATE**. Chỉ dùng khi người dùng bấm “Tải Trợ lý AI”. WebView vẫn
+  bị chặn mọi yêu cầu http/https (`LocalOnlyClient.shouldInterceptRequest`), nên lá số và câu hỏi không ra mạng.
+- Tải bằng `DownloadManager` của hệ thống: **chỉ Wi-Fi** (`NETWORK_WIFI`, không mạng trả tiền, không chuyển vùng),
+  có thông báo tiến độ, tắt app vẫn tải, đứt mạng tự tải tiếp. File vào `Android/data/vn.tuvi.tuxem/files/models`
+  (bộ nhớ riêng của app, gỡ app là mất). Trước khi tải kiểm chỗ trống (≥ dung lượng + 300 MB); tải xong kiểm SHA-256
+  rồi mới đổi tên thành file model. Có nút Hủy tải và Xóa model.
+- Máy dưới 5,5 GB RAM thì không cho bật (S22 Ultra có 12 GB). Sao lưu tự động bỏ thư mục model (`backup_rules.xml`).
+- Nạp model: thử **GPU** trước; lỗi thì **CPU**. Ghi cờ `trying` trước khi nạp GPU: nếu tiến trình chết giữa chừng
+  (lỗi trong thư viện máy), lần sau bỏ qua GPU. Thiếu RAM (`onTrimMemory`) thì giải phóng model.
+
+### D-58 · Model chỉ diễn đạt lại; kiểm tra đầu ra mục 12.3 (`AiGuard`)
+- `AiPrompt.build` dựng lời nhắc từ **chính câu trả lời của QaAnalyst** (D-54): câu hỏi, “app hiểu là”, năm hiện
+  tại, điểm chung và thế, các đoạn ① gốc → ⑦ tổng hợp, Nên/Không nên. Khối dữ kiện tối đa 6.500 ký tự (~2.000 token).
+  System prompt ở `kb/ai/system_prompt_vi.md`, cấu hình model ở `kb/ai/model.json` (đổi model không sửa code).
+- Mỗi câu hỏi một hội thoại mới, nhiệt độ 0,3, tối đa 700 token ra. Model trả JSON `{"answer": "…"}`.
+  Không yêu cầu model trả `ruleIds`: “Vì sao?” vẫn lấy từ các đoạn của QaAnalyst (vẫn mở được dưới câu AI).
+- `AiGuard.check` — trượt bất kỳ điều nào thì app hiện bản QaAnalyst, ghi nhật ký trên máy (`aiLog`, 30 mục):
+  1. đọc được JSON đúng dạng;
+  2. 60–380 chữ; chỉ tiếng Việt (không chữ Hán/Kirin/Thái, không câu tiếng Anh);
+  3. không từ cấm (`KbLint.FORBIDDEN`);
+  4. mọi tên sao, tên cung có trong dữ kiện;
+  5. **sao gắn đúng cung**: cặp (sao, cung hoặc “tại + chi”) trong một câu phải cùng có trong một câu dữ kiện;
+  6. mọi con số có trong dữ kiện hoặc câu hỏi; “N/100” phải là điểm có trong dữ kiện; **điểm đúng tầng** (điểm nói
+     là của đại hạn phải bằng “→ Đại hạn: N/100”…); câu trả lời phải nêu điểm chung.
+  Độ dài nới từ 60–150 chữ (mục 12.4) lên 60–380 vì anh muốn giải thích chi tiết từng tầng, sao nào ở cung nào.
+- Không gọi model với câu khủng hoảng (mục 12.2 bước 6), câu từ chối, chào hỏi, chưa hiểu.
+- Giao diện: câu của QaAnalyst hiện ngay; khung “✨ Trợ lý AI đang viết…” chạy nền (`TuViNative.callAsync`, một luồng
+  riêng); đạt kiểm tra thì hiện lời AI, bản luận chi tiết thu gọn dưới nút; trượt thì ghi một dòng và mở bản luận.
+
+### D-59 · Chấm bộ 40 câu trên Linux; máy ảo CI kiểm thư viện máy
+- `tools/ai/eval40.sh <model>` chạy 40 câu (`tools/ai/eval40_questions.json`: 4 lá số, đủ chủ đề, năm đã qua và năm
+  tới, câu có dấu/không dấu) qua đúng `AppApi.askAi` với model thật trên CPU. Báo cáo: `docs/tai-ve/ai-cham-40-cau.md`.
+- Máy ảo CI (x86_64, 2 GB RAM) không chạy được model 2,6 GB và không đánh giá được tốc độ. Selftest trên máy ảo kiểm:
+  `aiStatus` đúng dạng; nạp `liblitertlm_jni.so` thật và gọi `Engine.initialize` với một file giả phải ném lỗi gọn
+  (không văng app); `askAi` khi chưa có model trả “chưa dùng AI”.
+- Thời gian ra token đầu tiên và token/giây trên S22 Ultra (GPU/CPU) cần anh chạy trên máy thật; app hiện số giây
+  của từng câu AI.
+
+### D-60 · Máy chủ thử giao diện có model giả lập
+`FakeLlmHost` (DevServer): tải giả ~3 giây, “sinh lời” bằng `AiFake` (ghép lại đúng các câu dữ kiện, luôn qua kiểm
+tra); câu có “thử lỗi AI” trả đầu ra sai để thử đường rơi về bản QaAnalyst. `TUVI_AI=off` để thử như máy không có AI.
+Giao diện thử: thẻ Trợ lý AI, tải, câu AI đạt/trượt, câu khủng hoảng không gọi AI, nhật ký, xóa model.
+
+### D-61 · Bỏ nhãn “bản nháp” và chữ “Prompt” khỏi giao diện; thêm số liên hệ (bản 0.8.0)
+Anh Phong yêu cầu. Giao diện, PDF xuất ra và “Vì sao?” không còn chữ “nháp”, “bản nháp”, “Prompt mục …”, “D-xx”.
+- Nguồn hiển thị đi qua `Luan.src`: “Prompt mục N” → “Hệ quy tắc luận giải Tử Vi Tự Xem”; “Sinh nháp tự động từ cẩm nang
+  V2 …” → “Cẩm nang Tử Vi Đẩu Số V2 …”; bỏ “(bản nháp, cần duyệt)” và mã quyết định. Dữ liệu KB giữ nguyên trường
+  `reviewed` để còn biết mục nào anh đã duyệt (chỉ không hiện ra nữa). Đặc tả mục 9 yêu cầu nhãn nháp; theo lời anh, bỏ.
+- Liên hệ **0378 373 373**: dòng cuối trang chủ, thẻ “Liên hệ” trong Cài đặt (bấm là mở ứng dụng Điện thoại qua `tel:`),
+  ghi chú trong PDF.
+
+### D-62 · Kiến thức từ hai sách vào app, không fine-tune model
+Anh gửi *Tử Vi Đẩu Số Toàn Thư* (Hi Di Trần Đoàn, Vũ Tài Lục dịch, 1973) và *Tử Vi Nghiệm Lý Toàn Thư* (Thiên Lương),
+và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube Tử Vi Học Quán.
+- **Không fine-tune.** Máy build không có GPU (huấn luyện LoRA model 2 tỷ tham số trên 4 nhân CPU mất nhiều ngày); đổi
+  sang `.litertlm` cần bộ công cụ chuyển đổi riêng; model mới 2,6 GB phải có chỗ phát hành (GitHub Releases bị chặn).
+  Quan trọng hơn: model đã fine-tune vẫn có thể nói sai mà không ai kiểm được, trái nguyên tắc “model chỉ diễn đạt lại”
+  (D-58). Đưa kiến thức vào KB thì mỗi câu đều có nguồn, có “Vì sao?”, và `AiGuard` kiểm được.
+- **YouTube bị proxy chặn** (403 cho youtube.com): không xem được video, không vòng đường khác. Cẩm nang V2 hiện có đã
+  hệ thống hóa từ bài giảng của kênh này.
+- **Bản quyền:** hai sách còn bản quyền, repo công khai → **không chép nguyên văn**. Mình đọc phần Thập nhị cung luận
+  (Toàn Thư) và các bài chuyên đề (Nghiệm Lý), diễn giải lại bằng lời của app, ghi nguồn sách + chương. Lời theo quy tắc
+  nội dung của app: bỏ các câu phán nặng (chết, tù, “làm đĩ”, khắc vợ ba lần…), đổi thành mức khả năng và lời khuyên.
+- Dữ liệu: `tools/kb/kb_sach.py` → `kb/sach/sach.json`: 354 câu “cung × sao × điều kiện” (độ sáng, sao đồng cung, sao hội
+  tam phương, có/không sát tinh, chi của cung) cho 12 cung, và 18 ý Nghiệm Lý (Lộc Tồn theo can, Long Phượng Tả Hữu,
+  Khôi Việt với Xương Khúc, Không Kiếp, Hóa Khoa, La Võng, Cô Quả…).
+- `Books.forPalace` chọn câu khớp lá số (câu nhiều điều kiện hơn được ưu tiên; tối đa 2 câu mỗi sao, 4 câu mỗi cung;
+  cùng sao vừa có câu thuận vừa có câu về sát tinh thì nối bằng “Tuy vậy,”). `Books.nghiemLy` thêm tối đa 2 ý.
+- Hiện ở: đoạn **“Sách bàn về cung …”** trong câu trả lời Hỏi đáp (năm, đại vận, trọn đời, câu hỏi về một cung) ngay sau
+  tầng lá số gốc, “Vì sao?” ghi sách, chương và căn cứ trên lá số; mục **Sách bàn** trong thẻ sao. Trợ lý AI nhận đoạn
+  này trong dữ kiện (system prompt: “dẫn thêm ý sách”), khối dữ kiện nới lên 7.500 ký tự.
+- Test `BooksTest`: không từ cấm, có nguồn; câu đúng sao tọa thủ, “sáng”/“hãm” đúng độ sáng; đoạn sách có trong lời nhắc AI.
+
+### D-63 · Hệ thiết kế trên Figma và bộ icon tướng số
+- File Figma “Tử Vi Tự Xem — Hệ thiết kế” (tài khoản của anh): hai bộ biến màu “Màu sáng”/“Màu tối” (gói Starter chỉ
+  cho 1 chế độ mỗi bộ), 5 kiểu chữ (Noto Serif cho tiêu đề, Roboto cho nội dung — đều có sẵn trên Android, app không
+  tải font), 22 icon component, component `nut/chinh`, `nut/phu`, `the/la-so`, hai màn mẫu (Trang chủ, Hỏi đáp có
+  Trợ lý AI và đoạn Sách bàn).
+- Bảng màu: đỏ sơn mài `#7A1726`, vàng kim nhũ `#A87A1E` (trong app dùng `#9A6B12` cho chữ và nền có chữ trắng để đạt tương phản AA), nền giấy `#F6F1E6`; nền tối giữ như cũ, đỏ `#C94F60`, kim
+  `#E0B45A`.
+- Icon tự vẽ (nét 1,7 px, lưới 24 px): bát quái (logo), lá số, lập lá số, luận giải (cuộn), hỏi đáp, trợ lý AI, Bắc Đẩu
+  (sao), lịch, la bàn (năm), trăng (tháng), đại vận, so hai lá số, giờ sinh, cài đặt, chia sẻ, xuất, liên hệ, sách,
+  riêng tư, quay lại, thêm, đóng. Cùng một nguồn SVG cho app (`app/assets/web/icons.js`) và Figma.
+- App: icon SVG thay emoji trên nút và tiêu đề thẻ, logo bát quái ở trang chủ, đường kẻ kim nhũ, tiêu đề chữ có chân,
+  đoạn “Sách bàn” nền vàng nhạt. Ảnh chuẩn giao diện cập nhật có chủ đích.
+
+### D-64 · Hỏi đoán năm cưới, đối chiếu năm đã xảy ra (0.8.1)
+- Anh hỏi: “Làm sao để app trả lời khi tôi hỏi có thể xem từ lá số và đoán được năm cưới của tôi không?”. Trước đây câu
+  “Năm nào tôi cưới?” đã chạy (dò năm theo đồng thanh tương ứng, mục 9), nhưng câu đúng lời anh bị hiểu thành “tình duyên
+  năm nay”, vì bộ hiểu câu hỏi chỉ nhận “năm nào / khi nào / bao giờ…”.
+- **Hiểu câu hỏi:** thêm các cách hỏi mốc năm: “năm cưới”, “tuổi kết hôn”, “năm lấy vợ/chồng”, “năm lập gia đình”, “năm có
+  con”, “đoán (được) năm …”, “biết năm …”, “báo trước năm …”. “cưới” đã được đổi thành “cưới hỏi” trước khi bỏ dấu, nên
+  “năm cưới” không lẫn với “năm cuối”. Không dấu: “đã cưới”, “vừa cưới” cũng nhận là cưới hỏi.
+- **Dò cả các năm đã qua:** câu hỏi mốc năm của một việc (không nêu khoảng thời gian) vẫn dò 10 năm tới như cũ, thêm đoạn
+  **“Đối chiếu các năm đã qua”**: các năm từ 18 tuổi âm (tối đa 20 năm) có từ hai tầng vận cùng chỉ về việc đó. Người đã
+  cưới so với năm thật: trùng hoặc lệch một năm là lá số, giờ sinh khá khớp; lệch xa thì nên xem lại giờ sinh.
+- **Đối chiếu năm đã kể:** “Tôi đã cưới năm 2015, lá số có khớp không?” (năm đã qua + việc + “đã/vừa/có khớp/đúng không/
+  đối chiếu…”) → câu trả lời “Đối chiếu năm 2015 với lá số”: câu kết luận (khớp / khớp một phần / tín hiệu gần nhất là năm
+  nào), rồi năm đó và hai năm mỗi bên, mỗi năm có mức khả năng, tầng cùng chỉ, điểm chủ đề và căn cứ. Năm tương lai hoặc
+  câu không có ý đối chiếu vẫn là luận năm như cũ.
+- Sửa kèm: hỏi một năm trước năm sinh của lá số đang mở (vd. lá số sinh 2023 hỏi “năm 2015”) trước đây làm app báo lỗi;
+  nay trả lời bằng lời nhắc `qa.truoc_nam_sinh`.
+- Lời vẫn là mức khả năng (“khả năng cao / có thể / mới là dấu hiệu”), không khẳng định, kèm ghi chú `qa.note.kha_nang`.
+- Hiệu năng: dò năm đã qua dùng `Composer.yearEvents` (chỉ tính sự kiện đồng thanh, bỏ phần chấm điểm chủ đề và ghép
+  câu) và chạy song song các năm. Lần đầu dùng `yearData` cho từng năm, máy ảo Android 16 có lượt mất 4,4 giây cho
+  “Khi nào tôi lấy vợ?” (chỉ tiêu dưới 3 giây); sau khi sửa, trên máy build từ 415 ms còn khoảng 200 ms.
+
+### D-65 · Luận giải chi tiết hơn từng câu hỏi (0.9.0)
+- Anh nhận xét phần luận còn ít và chung chung. Mình đọc lại câu trả lời mẫu và thấy bốn chỗ yếu: lời khuyên bị độn từ
+  chủ đề khác (hỏi sức khỏe lại khuyên cưới hỏi, đọc hợp đồng); câu hỏi sức khỏe chỉ có hai đoạn; chưa giải thích từng
+  sao trong cung; chưa nói “cụ thể trong năm dễ gặp gì”.
+- **Từng sao trong cung …** (`QaAnalyst.starDetailPara`): chính tinh kèm hành, hóa khí, đặc tính; từng phụ tinh trong
+  cung với nghĩa tại cung đó (bỏ vế câu nói về cung khác); sao lớn chiếu về từ tam phương tứ chính. Cung Tật Ách nêu
+  thêm phần cơ thể nên để ý theo ngũ hành của chính tinh, kèm “đi khám khi có dấu hiệu kéo dài”.
+- **Cụ thể trong năm** (`QaAnalyst.triggers`, `concretePara`): Tứ Hóa lưu và sao lưu (Lộc Tồn, Thiên Mã, Kình Dương,
+  Đà La, Đào Hoa/Hồng Loan/Thiên Hỷ/Hỷ Thần, Tang Môn/Bạch Hổ, Thiên Khốc/Thiên Hư) chạm cung của chủ đề — trên lá số
+  gốc, theo Thái Tuế, theo tiểu hạn, theo lưu niên đại hạn; tọa thủ nặng hơn xung chiếu. Mỗi tác nhân một câu “dễ xảy
+  ra gì” và một câu “nên làm gì” theo đúng chủ đề (kho mới `texts/chi_tiet.json`, sinh từ `tools/kb/kb_chitiet.py`,
+  7 chủ đề × 11 tác nhân). Hỏi tổng quan thì lấy các tác nhân mạnh nhất qua mọi chủ đề.
+- **Theo tháng**: tháng nên chủ động / nên giữ cho chủ đề, tháng nguyệt hạn đi vào cung chính của chủ đề.
+- **Lời khuyên**: chỉ lấy đúng chủ đề được hỏi; thêm lời khuyên theo tác nhân của năm (không thêm cho năm đã qua).
+- **Tính cách**: thêm đoạn bản mệnh – Cục (tương quan), Mệnh chủ – Thân chủ, cung Thân, cung Phúc Đức.
+- Câu hỏi “nên / lưu ý” (vd. sức khỏe) nay có: kết luận, từng sao, cụ thể trong năm, theo tháng, tổng hợp.
+- Giới hạn độ dài câu trả lời trong test nâng từ 12 lên 16 đoạn.
+
+### D-66 · Hỏi việc đã xảy ra (0.9.0)
+- “Năm 2015 tôi gặp chuyện gì?”, “Năm 2019 có biến động gì không?” (năm đã qua hoặc năm nay, chưa nêu việc cụ thể) →
+  `QaParse.past`, câu trả lời `pastYear`: các mặt thuận / vướng nổi bật nhất (điểm chủ đề), việc được các tầng vận
+  chỉ tới, Tứ Hóa lưu và sao lưu chạm vào đâu (giọng kể lại, không kèm lời khuyên), Tứ Hóa năm vào lĩnh vực nào trên
+  lá số gốc, căn cứ của các mặt nổi bật, tháng nổi bật, lời nhắc đối chiếu (`qa.note.doi_chieu`).
+- “Những mốc quan trọng đã qua của tôi?” (có thể kèm chủ đề, vd. tình duyên) → `milestones`: dò từ 15 tuổi âm (tối
+  đa 30 năm) các năm có việc được từ hai tầng vận cùng chỉ, chọn 8 năm nổi rõ nhất, xếp theo thời gian. Dùng chung
+  phần tính sự kiện song song của D-64.
+- Hỏi theo chủ đề cho năm đã qua (“Năm 2020 công việc thế nào?”) vẫn là luận năm, nhưng đoạn cụ thể đổi thành “Năm
+  2020 lá số cho thấy…” và không kèm lời khuyên theo tác nhân.
+
+### D-67 · So hai lá số: tương sinh tương khắc (0.9.0)
+- Trước đây chỉ có truyền cung, truyền tinh. Thêm `Synastry`: ngũ hành bản mệnh (sinh / khắc / cùng hành, kèm hành
+  trung gian khi khắc), thiên can năm sinh (ngũ hợp, sinh, khắc, cùng hành), địa chi năm sinh (tam hợp, lục hợp, lục
+  xung, lục hại, tương hình, cùng tuổi), vị trí cung Mệnh hai người, Cục người này với bản mệnh người kia (hai chiều),
+  hành chính tinh cung Mệnh.
+- Mỗi quan hệ một câu (`hop.*`) và một mức điểm nhỏ; câu tổng nêu số điểm hợp, số điểm khắc xung và mức hòa hợp
+  (50 + 6 × tổng, từ 10 đến 95), chia ba bậc: nhiều điểm hòa hợp / vừa hợp vừa khắc / cần vun đắp. Lời luôn là góc nhìn
+  tham khảo, không phán quan hệ thành hay không; câu khắc đều kèm cách dung hòa.
+- Các câu từng yếu tố là loại NOTE (mặt để cân nhắc), câu tổng là WEIGH, nên không phạm quy tắc “không câu một chiều
+  trái nhau”.
+
+### D-68 · Trợ lý AI: chọn model Nhanh / Mạnh, lời nhắc ưu tiên phần cụ thể (0.9.0)
+- Anh muốn AI mạnh nhất có thể. Trong giới hạn hiện có (chạy trên máy, không fine-tune — D-62, không chỗ phát hành
+  model riêng), cách mạnh nhất là cho chọn model lớn hơn cùng họ: **Gemma 4 E4B** (`litert-community/gemma-4-E4B-it-litert-lm`,
+  Apache 2.0, không gated, 3,66 GB, ghim commit và SHA-256), bên cạnh **Gemma 4 E2B** (2,6 GB) hiện có.
+- `kb/ai/model.json` nay có danh sách `models` và `default`. E4B: cần RAM khoảng 7 GB (S22 Ultra đủ), cửa sổ 6.144
+  token, khối dữ kiện 10.500 ký tự, tối đa 1.000 token đầu ra, câu trả lời 80–500 chữ. E2B giữ nguyên.
+- Thẻ Trợ lý AI có hai lựa chọn (Nhanh / Mạnh), ghi dung lượng, RAM cần, đã tải hay chưa; máy thiếu RAM cho E4B vẫn
+  chọn lại được E2B. Hai model có thể cùng nằm trên máy; đổi model khi đang tải thì app báo hủy tải trước.
+  `AndroidLlm` nhớ lựa chọn, đóng model cũ khỏi RAM khi đổi.
+- Lời nhắc: khi dữ kiện vượt ngân sách, chọn đoạn theo độ ưu tiên (kết luận → cụ thể trong năm → đồng thanh → các
+  tầng → tháng → từng sao → sách → tổng hợp), rồi giữ thứ tự gốc. System prompt yêu cầu nói rõ việc cụ thể dễ xảy ra,
+  tháng nên chủ động, nghĩa các sao chính, kể lại khi là năm đã qua; độ dài lấy theo model.
+- `AiGuard` giữ nguyên: câu nào sai sao, sai cung, bịa số, có từ cấm thì app hiện bản luận của app.
+
+### D-69 · Câu AI lệch lá số: tự sửa, viết lại, chuyển CPU, thông báo dễ hiểu (0.9.1)
+- Anh gửi ảnh trên S22 Ultra: câu “Nhà đất năm nay” — Trợ lý AI trượt kiểm tra vì gán Đà La sai cung và viết các số
+  vô nghĩa (599, 1000, 32021, 203030), thông báo hiện cả chữ kỹ thuật. App đã làm đúng việc không hiện câu sai, nhưng
+  AI trượt thì gần như vô dụng và thông báo khó hiểu.
+- **Tự sửa** (`AiGuard.checkAndRepair`): bỏ đúng những câu có lỗi nội dung (số lạ, sao/cung lạ, gán sao sai cung, từ
+  cấm, điểm sai tầng); phần còn lại đủ ≥ 60% số câu và đủ số chữ tối thiểu thì kiểm tra lại toàn bộ như câu mới (thiếu
+  câu điểm chung thì app tự thêm). Câu AI hiện kèm “đã bỏ N câu chưa khớp lá số”.
+- **Đầu ra hỏng → CPU** (`AiGuard.looksGarbled`, `LlmHost.fallbackToCpu`): từ hai số dài vô nghĩa trở lên (không phải năm)
+  hoặc chữ nước ngoài là dấu hiệu phần cứng sinh sai. Đang chạy GPU thì app đóng model, ghi nhớ không dùng GPU, nạp lại
+  bằng CPU và sinh lại.
+- **Viết lại một lần**: vẫn trượt và lần đầu chưa quá 90 giây thì gửi lại cho model kèm danh sách lỗi của lần trước.
+- **Chọn phần cứng**: thẻ Trợ lý AI (Cài đặt) có “Chạy bằng GPU / Chạy bằng CPU”; nếu app đã tự chuyển thì ghi rõ.
+- **Thông báo**: “Lần này Trợ lý AI viết chưa khớp hoàn toàn với lá số…, bản luận chi tiết của app ở ngay dưới”; chi tiết
+  kỹ thuật thu gọn. Cài đặt có mục xem 5 lần trượt gần nhất (câu hỏi, lỗi, câu AI) để chụp gửi người hỗ trợ.
+- Nhật ký trên máy một mục cho mỗi câu trượt, ghi cả việc đã chuyển CPU, đã cho viết lại.

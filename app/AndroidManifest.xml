@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="vn.tuvi.tuxem">
 
+    <!-- Chỉ để tải model Trợ lý AI khi người dùng bấm tải (D-57). Lá số và câu hỏi không gửi đi đâu. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name="vn.tuvi.app.TuViApp"
         android:label="@string/app_name"
@@ -9,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme"
         android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:fullBackupContent="@xml/backup_rules"
         android:hardwareAccelerated="true">
 
         <activity
@@ -22,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- LiteRT-LM chạy model trên GPU qua OpenCL của máy (không có thì tự dùng CPU). -->
+        <uses-native-library android:name="libOpenCL.so" android:required="false" />
+        <uses-native-library android:name="libvndksupport.so" android:required="false" />
 
         <!-- Tệp tạm khi chia sẻ ảnh/PDF lá số: chỉ đọc, chỉ cấp quyền theo từng lần gửi. -->
         <provider

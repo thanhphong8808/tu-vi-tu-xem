@@ -1,0 +1,183 @@
+package vn.tuvi.app.api
+
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonArray
+import kotlinx.serialization.json.JsonElement
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.add
+import kotlinx.serialization.json.buildJsonArray
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
+import vn.tuvi.core.interpret.AiFake
+import vn.tuvi.core.interpret.AiGuard
+import vn.tuvi.core.interpret.AiModelConfig
+import vn.tuvi.core.interpret.AiPrompt
+import vn.tuvi.core.interpret.QaAnswer
+import vn.tuvi.core.interpret.QaPrivacy
+
+/**
+ * Model AI sinh lời do nền tảng cung cấp (D-57): Android dùng LiteRT-LM + model tải về; máy chủ thử dùng bản giả lập.
+ * Mọi hàm chạy ở luồng nền ([generate] có thể mất vài chục giây).
+ */
+interface LlmHost {
+    /**
+     * Trạng thái cho giao diện: `state` = unsupported | lowram | absent | downloading | verifying | ready | error,
+     * kèm `done`/`total` (byte), `wifi`, `waitingWifi`, `freeBytes`, `ramMb`, `backend`, `message`.
+     */
+    fun status(): JsonObject
+
+    /**
+     * `download` | `cancel` | `delete` | `probe` (thử nạp thư viện máy, dùng cho tự kiểm tra) | `select:<id>` (chọn model
+     * Nhanh/Mạnh, D-68; không đổi được khi đang tải). Trả về trạng thái mới; `have` = id các model đã tải và kiểm xong.
+     */
+    fun action(name: String): JsonObject
+
+    /** Sinh lời (chặn luồng). Ném lỗi nếu model chưa sẵn sàng. */
+    fun generate(system: String, user: String, cfg: AiModelConfig): String
+
+    /** Đầu ra có dấu hiệu hỏng khi chạy GPU: chuyển sang CPU cho các lần sau (D-69). true = đã chuyển, nên sinh lại. */
+    fun fallbackToCpu(): Boolean = false
+}
+
+/** Luồng một câu hỏi qua AI: dựng lời nhắc → model → kiểm tra mục 12.3 → đạt thì trả câu AI, trượt thì báo dùng bản app. */
+object AiFlow {
+    @Volatile private var cfgCache: AiModelConfig? = null
+    @Volatile private var selected: String? = null
+    fun config(): AiModelConfig = cfgCache?.takeIf { selected == null || it.id == selected } ?: AiModelConfig.load(selected).also { cfgCache = it }
+
+    /** Mọi model chọn được (Nhanh, Mạnh). */
+    fun models(): List<AiModelConfig> = AiModelConfig.all()
+
+    /** Chọn model theo id (D-68); id lạ → giữ model mặc định. */
+    fun select(id: String?) {
+        selected = id?.takeIf { want -> models().any { it.id == want } }
+        cfgCache = null
+    }
+
+    private fun info(c: AiModelConfig): JsonObject = buildJsonObject {
+        put("id", c.id); put("tier", c.tier); put("label", c.label); put("runtime", c.runtime); put("bytes", c.bytes); put("minRamMb", c.minRamMb)
+        put("source", c.url.substringAfter("https://").substringBefore("/"))
+    }
+
+    fun modelInfo(): JsonObject = info(config())
+
+    fun status(host: LlmHost?): JsonObject {
+        val s = host?.status() ?: buildJsonObject { put("state", "unsupported"); put("message", "Bản này chưa có model AI trên máy.") }
+        return JsonObject(s + ("model" to modelInfo()) + ("models" to JsonArray(models().map { info(it) })))
+    }
+
+    fun answer(host: LlmHost?, a: QaAnswer, currentLunarYear: Int, store: KeyValueStore): JsonObject {
+        AiPrompt.skipReason(a)?.let { return buildJsonObject { put("used", false); put("skip", true); put("reason", it) } }
+        if (host == null) return buildJsonObject { put("used", false); put("reason", "Bản này chưa có model AI trên máy.") }
+        val cfg = config()
+        val p = AiPrompt.build(a, currentLunarYear, cfg)
+        val t0 = System.nanoTime()
+        fun gen(user: String): String = host.generate(p.system, user, cfg)
+        var raw = try {
+            gen(p.user)
+        } catch (e: Throwable) {
+            return buildJsonObject { put("used", false); put("reason", "Model chưa chạy được: ${e.message ?: e.javaClass.simpleName}") }
+        }
+        // D-69: (1) tự sửa — bỏ đúng những câu sai; (2) đầu ra hỏng trên GPU → chuyển CPU, sinh lại;
+        // (3) vẫn trượt → cho model viết lại một lần, kèm danh sách lỗi của lần trước.
+        var r = AiGuard.checkAndRepair(raw, p.facts, cfg)
+        var cpu = false
+        var retried = false
+        try {
+            if (!r.ok && AiGuard.looksGarbled(r) && host.fallbackToCpu()) {
+                cpu = true
+                raw = gen(p.user)
+                r = AiGuard.checkAndRepair(raw, p.facts, cfg)
+            }
+            if (!r.ok && (System.nanoTime() - t0) / 1_000_000 < RETRY_WITHIN_MS) {
+                retried = true
+                val fix = p.user + "\n<loi_lan_truoc>" + r.issues.take(6).joinToString("; ") + "</loi_lan_truoc>\n" +
+                    "Bản trước có các lỗi trên. Viết lại câu trả lời: chỉ dùng số, sao, cung có trong <du_kien>; sao nào ở cung nào phải đúng như dữ kiện; " +
+                    "không viết số nào khác."
+                val raw2 = gen(fix)
+                val r2 = AiGuard.checkAndRepair(raw2, p.facts, cfg)
+                if (r2.ok || r2.issues.size < r.issues.size) { r = r2; raw = raw2 }
+            }
+        } catch (e: Throwable) {
+            // Lần sinh lại lỗi: giữ kết quả lần đầu.
+        }
+        val ms = (System.nanoTime() - t0) / 1_000_000
+        // Nhật ký một mục cho mỗi câu trượt (ghi cả việc đã chuyển CPU, đã viết lại).
+        if (!r.ok) log(store, a.question, listOfNotNull("đã chuyển sang CPU".takeIf { cpu }, "đã cho viết lại".takeIf { retried }) + r.issues, raw)
+        return buildJsonObject {
+            put("used", r.ok); put("ms", ms); put("words", AiGuard.words(r.text))
+            put("repaired", r.removed.size); put("retried", retried); put("cpu", cpu)
+            if (r.ok) put("text", r.text) else {
+                put("reason", "Câu AI viết còn lệch với lá số")
+                put("issues", buildJsonArray { r.issues.take(6).forEach { add(it) } })
+            }
+        }
+    }
+
+    /** Chỉ cho viết lại khi lần đầu không quá lâu (trên máy chậm, chờ gấp đôi không đáng). */
+    private const val RETRY_WITHIN_MS = 90_000L
+
+    /** Nhật ký câu AI trượt kiểm tra (mục 12.3): chỉ lưu trên máy, tối đa 30 mục, câu hỏi đã ẩn danh. */
+    private fun log(store: KeyValueStore, question: String, issues: List<String>, raw: String) {
+        val old = try { store.get("aiLog")?.let { Json.parseToJsonElement(it) as? JsonArray } } catch (e: Exception) { null } ?: JsonArray(emptyList())
+        val item = buildJsonObject {
+            put("t", System.currentTimeMillis()); put("q", QaPrivacy.anonymize(question).take(200))
+            put("issues", buildJsonArray { issues.take(8).forEach { add(it) } }); put("raw", raw.take(800))
+        }
+        store.put("aiLog", JsonArray((old.takeLast(29) + item) as List<JsonElement>).toString())
+    }
+}
+
+/**
+ * Model giả lập cho máy chủ thử giao diện: tải giả trong khoảng 3 giây, rồi “sinh lời” bằng [AiFake].
+ * Câu hỏi có chữ “thử lỗi AI” → trả đầu ra hỏng để thử đường rơi về bản QaAnalyst.
+ */
+class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
+    private val have = java.util.Collections.synchronizedSet(HashSet<String>())
+    @Volatile private var state = "absent"
+    @Volatile private var done = 0L
+    @Volatile private var started = 0L
+    @Volatile private var probe: String? = null
+    @Volatile private var gpu: String? = null
+
+    override fun status(): JsonObject {
+        val total = AiFlow.config().bytes
+        if (state == "downloading") {
+            // Tải giả trong khoảng 3 giây.
+            done = minOf(total, total * (System.currentTimeMillis() - started) / 3000)
+            if (done >= total) { state = "ready"; have += AiFlow.config().id }
+        }
+        return buildJsonObject {
+            put("have", buildJsonArray { have.forEach { add(it) } })
+            put("state", state); put("done", done); put("total", total); put("wifi", true); put("fake", true)
+            put("ramMb", 12000); put("freeBytes", 100_000_000_000L)
+            if (state == "ready") put("backend", if (gpu == "off") "CPU (giả lập)" else "GPU (giả lập)")
+            put("gpu", gpu ?: "chưa thử")
+            probe?.let { put("probe", it) }
+        }
+    }
+
+    override fun action(name: String): JsonObject {
+        when (name) {
+            "download" -> if (state == "absent") { state = "downloading"; done = 0; started = System.currentTimeMillis() }
+            "cancel" -> { state = if (AiFlow.config().id in have) "ready" else "absent"; done = 0 }
+            "delete" -> { have -= AiFlow.config().id; state = "absent"; done = 0 }
+            "probe" -> probe = "probe-ok: giả lập"
+            "backend:cpu" -> gpu = "off"
+            "backend:gpu" -> gpu = null
+            else -> if (name.startsWith("select:") && state != "downloading") {
+                AiFlow.select(name.removePrefix("select:"))
+                state = if (AiFlow.config().id in have) "ready" else "absent"
+            }
+
+        }
+        return status()
+    }
+
+    override fun generate(system: String, user: String, cfg: AiModelConfig): String {
+        if (state != "ready") throw IllegalStateException("model chưa tải")
+        Thread.sleep(delayMs)
+        return if ("thử lỗi AI" in user) "{\"answer\": \"Năm 2099 chắc chắn rất tốt.\"}" else AiFake.generate(user)
+    }
+}

@@ -176,9 +176,21 @@ def verify_golden(g, board, tag):
     check(('TUẦN · TRIỆT' in board['tt'] or 'TUẦN·TRIỆT' in board['tt']) if tuan_same else ('TUẦN' in board['tt'] and any(t.startswith('TRI') for t in board['tt'])),
           f'{tag}: thiếu nhãn Tuần/Triệt trên lưới ({board["tt"]})')
 
+async def launch_chromium(p):
+    """Chromium của Playwright; nếu bản Playwright không khớp trình duyệt đã cài (máy không tải được trình duyệt mới),
+    dùng Chromium có sẵn của máy (TUVI_CHROMIUM hoặc /opt/pw-browsers)."""
+    try:
+        return await p.chromium.launch()
+    except Exception as e:
+        for exe in (os.environ.get('TUVI_CHROMIUM'), '/opt/pw-browsers/chromium_headless_shell', '/opt/pw-browsers/chromium'):
+            if exe and os.path.exists(exe):
+                print(f'  (dùng Chromium có sẵn: {exe})')
+                return await p.chromium.launch(executable_path=exe)
+        raise e
+
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch()
+        browser = await launch_chromium(p)
         ctx = await browser.new_context(viewport={'width': 412, 'height': 915}, device_scale_factor=2, is_mobile=True, has_touch=True, locale='vi-VN')
         page = await ctx.new_page()
         errors = []
@@ -227,7 +239,7 @@ async def main():
 
         # —— luận giải sơ bộ (giai đoạn 3) trên ca A, năm 2026 ——
         rd = await page.inner_text('#reading')
-        check('Bản nháp' in rd and 'chưa qua thẩm định' in rd, 'Thẻ luận giải phải ghi rõ là bản nháp chưa thẩm định')
+        check('nháp' not in rd.lower() and 'thẩm định' not in rd, 'Thẻ luận giải không còn ghi “bản nháp” (D-61)')
         n_items = await page.locator('#reading .rd').count()
         check(n_items >= 3, f'Ca A phải có ít nhất 3 cách cục/dấu hiệu, đang có {n_items}')
         for rid in ['TS_THIEN_TUONG_XET_GIAP', 'TS_AM_DUONG_THUAN_LY']:
@@ -429,6 +441,14 @@ async def main():
         await phase5(page, browser)
         # ———————————————— giai đoạn 6 ————————————————
         await phase6(page, browser)
+        # ———————————————— giai đoạn 7: Trợ lý AI (máy chủ thử dùng model giả lập) ————————————————
+        await phase7(page)
+        # ———————————————— 0.8.0: sách bàn, liên hệ, bỏ nhãn nháp, icon ————————————————
+        await phase8(page)
+        # ———————————————— 0.8.1: đoán năm cưới, đối chiếu năm đã cưới ————————————————
+        await phase81(page)
+        # ———————————————— 0.9.0: luận chi tiết, việc đã qua, chọn model AI, tương sinh tương khắc ————————————————
+        await phase9(page)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -804,5 +824,166 @@ async def phase6(page, browser):
     await shot(dp, 'p6_qa_dark')
     await axe_check(dp, 'hỏi đáp, nền tối')
     await dark.close()
+
+async def phase7(page):
+    print('Giai đoạn 7 — Trợ lý AI')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]'); await page.wait_for_selector('#ai-card')
+    card = await page.inner_text('#ai-card')
+    check('chỉ qua Wi-Fi' in card and 'huggingface.co' in card and '2,6 GB' in card and 'không gửi đi' in card,
+          f'Thẻ Trợ lý AI phải nói rõ dung lượng, nguồn tải, chỉ Wi-Fi, không gửi lá số: {card[:200]}')
+    await page.evaluate("window.scrollTo(0, 0)")
+    await shot(page, 'p7_ai_card')
+    await page.click('[data-act="ai-download"]')
+    check('huggingface.co' in await page.inner_text('#modal'), 'Bấm tải phải hỏi lại trước khi tải')
+    await page.click('#modal [data-act="modal-ok"]')
+    check(await page.locator('#ai-card .bar-p').count() == 1 and 'Đang tải' in await page.inner_text('#ai-card'), 'Đang tải phải hiện tiến độ')
+    await page.wait_for_selector('#ai-card [data-act="ai-toggle"]', timeout=15000)
+    check('đang bật' in await page.inner_text('#ai-card'), 'Tải xong thì Trợ lý AI tự bật')
+    # câu đạt kiểm tra: hiện lời AI, bản luận của app thu gọn dưới nút
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào?')
+    check(await t.locator('.qa-ai.wait').count() == 1, 'Đang chờ AI phải hiện dòng “đang viết”')
+    await t.locator('.qa-ai-h').wait_for(timeout=15000)
+    t = page.locator('.qa-turn').last
+    ai = await t.locator('.qa-ai').inner_text()
+    check('Trợ lý AI giải thích' in ai and '/100' in ai and 'Quan Lộc' in ai, f'Câu AI phải nêu điểm và cung của chủ đề: {ai[:160]}')
+    check(not forbidden_in(ai), f'Câu AI lọt từ cấm: {forbidden_in(ai)}')
+    check(await t.locator('.rp').count() == 0 and await t.locator('[data-act="qa-detail"]').count() == 1, 'Có câu AI thì bản luận chi tiết thu gọn')
+    await page.evaluate("[...document.querySelectorAll('.qa-turn')].pop().scrollIntoView({block: 'start'})")
+    await shot(page, 'p7_ai_answer')
+    await t.locator('[data-act="qa-detail"]').click()
+    t = page.locator('.qa-turn').last
+    check(await t.locator('.rp').count() >= 5, 'Mở bản luận chi tiết phải thấy các tầng')
+    await axe_check(page, 'hỏi đáp có Trợ lý AI')
+    # câu AI trượt kiểm tra → hiện bản luận của app
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào? (thử lỗi AI)')
+    await t.locator('.qa-ai.fail').wait_for(timeout=15000)
+    t = page.locator('.qa-turn').last
+    tt = await t.inner_text()
+    check(await t.locator('.rp').count() >= 5 and 'viết chưa khớp hoàn toàn với lá số' in tt and 'đã cho viết lại một lần' in tt,
+          f'Câu AI sai dữ kiện không được hiện; app cho viết lại rồi hiện bản luận gốc: {tt[:200]}')
+    check(await t.locator('details.ai-why').count() == 1, 'Chi tiết kỹ thuật phải thu gọn')
+    check('2099' not in await t.inner_text(), 'Lời AI sai không được lọt ra màn hình')
+    # khủng hoảng: không gọi AI
+    t = await qa_ask(page, 'Tôi muốn chết')
+    await page.wait_for_timeout(800)
+    check(await page.locator('.qa-turn').last.locator('.qa-ai').count() == 0, 'Câu khủng hoảng không gọi Trợ lý AI')
+    # Cài đặt: nhật ký câu trượt, xóa model
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]')
+    check('1 câu AI viết chưa qua kiểm tra' in await page.inner_text('#ai-log'), 'Cài đặt phải đếm câu AI trượt kiểm tra')
+    log = api('storeGet', {'key': 'aiLog'})
+    check(isinstance(log, list) and len(log) == 1 and log[0]['issues'] and 'đã cho viết lại' in log[0]['issues'], f'Nhật ký AI trên máy phải ghi lý do trượt: {log}')
+    # D-69: xem nhật ký ngay trên máy; chọn chạy GPU / CPU.
+    check(await page.locator('#ai-log details.ai-why').count() == 1, 'Cài đặt phải cho xem nhật ký AI')
+    check(await page.locator('#ai-card [data-act="ai-hw"]').count() == 2, 'Cài đặt phải cho chọn chạy GPU hoặc CPU')
+    await page.click('#ai-card [data-act="ai-hw"][data-k="cpu"]')
+    check(await page.get_attribute('#ai-card [data-act="ai-hw"][data-k="cpu"]', 'aria-pressed') == 'true' and 'CPU' in await page.inner_text('#ai-card'), 'Chọn CPU phải được ghi nhận')
+    await page.click('#ai-card [data-act="ai-hw"][data-k="gpu"]')
+    await page.click('#ai-card [data-act="ai-delete"]'); await page.click('#modal [data-act="modal-ok"]')
+    check(await page.locator('#ai-card [data-act="ai-download"]').count() == 1, 'Xóa model thì quay về nút tải')
+    await page.click('[data-act="ai-log-clear"]')
+    check(api('storeGet', {'key': 'aiLog'}) == [], 'Xóa nhật ký AI')
+    await page.evaluate('window.tvBack()')
+
+async def phase8(page):
+    print('0.8.0 — Sách bàn, liên hệ, icon')
+    home = await page.inner_text('#app')
+    check('0378 373 373' in home and await page.locator('a[href="tel:0378373373"]').count() == 1, 'Trang chủ phải có số liên hệ bấm gọi được')
+    check(await page.locator('.brand .logo svg.ic').count() == 1 and await page.locator('[data-act="new"] svg.ic').count() == 1, 'Logo bát quái và icon SVG trên nút')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]')
+    t = await qa_ask(page, 'Năm sau sự nghiệp của tôi thế nào?')
+    await page.wait_for_timeout(700)
+    t = page.locator('.qa-turn').last
+    if await t.locator('[data-act="qa-detail"]').count():
+        await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+    book = t.locator('.rp-book')
+    check(await book.count() == 1 and 'Sách bàn về cung Quan Lộc' in await book.inner_text(), 'Câu trả lời năm phải có đoạn “Sách bàn về cung Quan Lộc”')
+    await book.click()
+    why = await t.locator('.rp-book .rp-why').inner_text()
+    check('Tử Vi Đẩu Số Toàn Thư' in why and 'Căn cứ trên lá số' in why, f'“Vì sao?” của đoạn sách phải ghi sách và căn cứ: {why[:120]}')
+    await book.scroll_into_view_if_needed()
+    await shot(page, 'p8_sach_ban')
+    alltext = await page.inner_text('#app')
+    check('nháp' not in alltext.lower() and 'prompt' not in alltext.lower(), 'Không còn chữ “nháp”/“prompt” trên màn Hỏi đáp')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]')
+    st = await page.inner_text('#app')
+    check('nháp' not in st.lower() and await page.locator('#contact a[href="tel:0378373373"]').count() == 1, 'Cài đặt: có thẻ Liên hệ, không còn chữ nháp')
+    await page.evaluate('window.tvBack()')
+
+async def phase81(page):
+    print('0.8.1 — Đoán năm cưới')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]')
+
+    async def full(q):
+        await qa_ask(page, q)
+        await page.wait_for_timeout(500)
+        t = page.locator('.qa-turn').last
+        if await t.locator('[data-act="qa-detail"]').count():
+            await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+        return await t.inner_text()
+
+    t = await full('Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?')
+    check('Năm thuận cho chuyện tình cảm, cưới hỏi' in t and '2026 (Bính Ngọ' in t and 'Đối chiếu các năm đã qua' in t,
+          f'Câu “đoán năm cưới” phải dò năm cưới và đối chiếu năm đã qua: {t[:200]}')
+    await shot(page, 'p81_doan_nam_cuoi')
+    t = await full('Tôi đã cưới năm 2015, lá số có khớp không?')
+    check('Đối chiếu năm 2015 với lá số' in t and 'năm bạn nêu' in t and '2013 (Quý Tỵ' in t and '2017 (Đinh Dậu' in t,
+          f'Câu “đã cưới năm 2015” phải đối chiếu năm đó và hai năm mỗi bên: {t[:200]}')
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+
+async def phase9(page):
+    print('0.9.0 — Luận chi tiết, việc đã qua, model AI, tương sinh tương khắc')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]'); await page.wait_for_selector('#ai-card')
+
+    async def full(q):
+        await qa_ask(page, q)
+        await page.wait_for_timeout(500)
+        t = page.locator('.qa-turn').last
+        if await t.locator('[data-act="qa-detail"]').count():
+            await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+        return await t.inner_text()
+
+    t = await full('Năm sau sự nghiệp của tôi thế nào?')
+    check('Từng sao trong cung Quan Lộc' in t and 'Cụ thể năm 2027' in t and 'nên chủ động ở tháng' in t,
+          f'Câu trả lời năm phải có từng sao, cụ thể trong năm, theo tháng: {t[:200]}')
+    t = await full('Năm 2015 tôi gặp chuyện gì?')
+    check('đã có gì' in t and 'Tứ Hóa năm Ất trên lá số gốc' in t and 'Việc được các tầng vận hạn chỉ tới' in t,
+          f'Câu hỏi năm đã qua phải kể lại tín hiệu năm đó: {t[:200]}')
+    await shot(page, 'p9_nam_da_qua')
+    t = await full('Những mốc quan trọng đã qua của tôi?')
+    check('Các mốc đã qua theo lá số' in t and '2008 (Mậu Tý' in t, f'Câu hỏi các mốc đã qua: {t[:200]}')
+    turns = page.locator('.qa-turn')
+    n = await turns.count()
+    newtext = ' '.join([await turns.nth(i).inner_text() for i in range(max(0, n - 3), n)])
+    check(not forbidden_in(newtext), f'Lọt từ cấm: {forbidden_in(newtext)}')
+    # Chọn model Trợ lý AI: Nhanh / Mạnh (máy chủ thử: giả lập).
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]'); await page.wait_for_selector('#ai-card')
+    models = page.locator('#ai-card [data-act="ai-model"]')
+    check(await models.count() == 2, 'Cài đặt: thẻ Trợ lý AI phải cho chọn 2 model (Nhanh, Mạnh)')
+    txt = await page.inner_text('#ai-card')
+    check('Nhanh · Gemma 4 E2B' in txt and 'Mạnh · Gemma 4 E4B' in txt, f'Tên hai model: {txt[:200]}')
+    await page.click('#ai-card [data-act="ai-model"][data-k="gemma-4-E4B-it"]')
+    check(await page.get_attribute('#ai-card [data-act="ai-model"][data-k="gemma-4-E4B-it"]', 'aria-pressed') == 'true', 'Chọn model Mạnh phải được ghi nhận')
+    check('3,7 GB' in await page.inner_text('#ai-card'), 'Chọn Mạnh thì nút tải ghi 3,7 GB')
+    await shot(page, 'p9_chon_model')
+    await page.click('#ai-card [data-act="ai-model"][data-k="gemma-4-E2B-it"]')
+    await page.evaluate('window.tvBack()')
+    # So hai lá số: tương sinh tương khắc.
+    await page.click('[data-act="compare"]')
+    await pick(page, '[data-cmp="a"]', 'Ca A')
+    await pick(page, '[data-cmp="b"]', 'Ca B')
+    await page.click('[data-act="cmp-run"]')
+    await page.wait_for_selector('#cmp-res')
+    cr = await page.inner_text('#cmp-res')
+    check('mức hòa hợp' in cr and 'Bản mệnh Ca A (Thổ) sinh bản mệnh Ca B (Kim)' in cr and 'ngũ hợp' in cr,
+          f'So hai lá số phải có tương sinh tương khắc: {cr[:300]}')
+    await shot(page, 'p9_tuong_sinh_khac')
+    await page.evaluate('window.tvBack()')
 
 asyncio.run(main())

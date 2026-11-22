@@ -134,5 +134,13 @@
 {"q": "30/4 thế nào", "intent": "FORECAST", "scope": "NGAY", "date": "2027-04-30"},
 {"q": "Mùng 1 tết thế nào", "intent": "FORECAST", "scope": "NGAY", "date": "2027-02-06"},
 {"q": "Tôi có số giàu không?", "intent": "FORECAST", "topic": "TAI_CHINH", "scope": "TRON_DOI"},
-{"q": "Số tôi có làm quan không", "intent": "FORECAST", "topic": "SU_NGHIEP", "scope": "TRON_DOI"}
+{"q": "Số tôi có làm quan không", "intent": "FORECAST", "topic": "SU_NGHIEP", "scope": "TRON_DOI"},
+{"q": "Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?", "intent": "TIMING", "event": "CUOI_HOI", "unit": "NAM"},
+{"q": "Tuổi kết hôn của tôi là bao nhiêu?", "intent": "TIMING", "event": "CUOI_HOI", "unit": "NAM"},
+{"q": "Lá số có đoán được năm tôi có con không?", "intent": "TIMING", "event": "SINH_CON", "unit": "NAM"},
+{"q": "Tôi đã cưới năm 2015, lá số có khớp không?", "intent": "TIMING", "event": "CUOI_HOI", "year": 2015, "unit": "NAM"},
+{"q": "Năm 2015 tôi gặp chuyện gì?", "intent": "FORECAST", "scope": "NAM", "year": 2015},
+{"q": "Năm 2019 có biến động gì không?", "intent": "FORECAST", "scope": "NAM", "year": 2019},
+{"q": "Những mốc quan trọng đã qua của tôi?", "intent": "TIMING", "unit": "NAM"},
+{"q": "Những năm biến động lớn trong tình duyên của tôi?", "intent": "TIMING", "topic": "TINH_DUYEN", "unit": "NAM"}
 ]

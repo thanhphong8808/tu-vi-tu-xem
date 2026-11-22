@@ -139,6 +139,25 @@ class Phase5Test {
             }
         }
         assertTrue(tinh > 0, "phải gặp truyền tinh trong 400 cặp")
+        // D-67: tương sinh tương khắc — có câu tổng (mức hòa hợp), bản mệnh, can, chi; mức hòa hợp trải đủ ba bậc.
+        val tong = HashSet<String>()
+        for (i in 0 until 120) {
+            val cmp = composer.compare(pool[i], pool[399 - i], PairRelation.VO_CHONG, "X", "Y")
+            val ids = cmp.paragraphs.flatMap { it.ruleIds }
+            assertTrue("HOP_TONG" in ids && ids.any { it.startsWith("HOP_MENH_") } && ids.any { it.startsWith("HOP_CAN_") } && ids.any { it.startsWith("HOP_CHI_") }, ids.toString())
+            val t = cmp.paragraphs.first { "HOP_TONG" in it.ruleIds }
+            assertTrue(Regex("mức hòa hợp (\\d+)/100").containsMatchIn(t.text), t.text)
+            tong += t.text.substringBefore(" (")
+        }
+        assertEquals(3, tong.size, tong.toString())
+        // Ngũ hợp, lục hợp, lục xung, lục hại đúng bảng.
+        assertEquals("luc_hop", Synastry.chiRelation(vn.tuvi.core.calendar.Chi.DAN, vn.tuvi.core.calendar.Chi.HOI))
+        assertEquals("tam_hop", Synastry.chiRelation(vn.tuvi.core.calendar.Chi.THAN, vn.tuvi.core.calendar.Chi.THIN))
+        assertEquals("xung", Synastry.chiRelation(vn.tuvi.core.calendar.Chi.TY, vn.tuvi.core.calendar.Chi.NGO))
+        assertEquals("hai", Synastry.chiRelation(vn.tuvi.core.calendar.Chi.TY, vn.tuvi.core.calendar.Chi.MUI))
+        assertEquals("hinh", Synastry.chiRelation(vn.tuvi.core.calendar.Chi.TY, vn.tuvi.core.calendar.Chi.MAO))
+        assertEquals(vn.tuvi.core.engine.NguHanh.KIM, Synastry.canElement(vn.tuvi.core.calendar.Can.CANH))
+        assertEquals(vn.tuvi.core.engine.NguHanh.THUY, Synastry.elementOf("Thủy đới Mộc"))
     }
 
     @Test
