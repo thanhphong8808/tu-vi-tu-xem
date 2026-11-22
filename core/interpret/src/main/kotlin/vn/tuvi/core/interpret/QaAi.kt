@@ -60,7 +60,7 @@ data class AiModelConfig(
 
         /** System prompt chế độ HOI_DAP trong `kb/ai/system_prompt_vi.md` (mục 12.4). */
         fun systemPrompt(cfg: AiModelConfig? = null): String = res("ai/system_prompt_vi.md").trim().let { s ->
-            if (cfg == null) s else s.replace("{minWords}", (cfg.minWords + 40).toString()).replace("{maxWords}", (cfg.maxWords - 60).toString())
+            if (cfg == null) s else s.replace("{minWords}", (cfg.minWords + 40).toString()).replace("{maxWords}", (cfg.maxWords - 100).toString())
         }
 
         fun parse(text: String): AiModelConfig {
@@ -197,13 +197,43 @@ object AiGuard {
         if (s.startsWith("```")) s = s.substringAfter('\n', "").substringBeforeLast("```").trim()
         val start = s.indexOf('{')
         val end = s.lastIndexOf('}')
-        if (start < 0 || end <= start) return null
-        return try {
-            val o = Json.parseToJsonElement(s.substring(start, end + 1)) as? JsonObject ?: return null
-            (o["answer"] as? JsonPrimitive)?.takeIf { it.isString }?.content?.trim()?.takeIf { it.isNotEmpty() }
+        val strict = if (start < 0 || end <= start) null else try {
+            val o = Json.parseToJsonElement(s.substring(start, end + 1)) as? JsonObject
+            (o?.get("answer") as? JsonPrimitive)?.takeIf { it.isString }?.content?.trim()?.takeIf { it.isNotEmpty() }
         } catch (e: Exception) {
             null
         }
+        return strict ?: lenient(s)
+    }
+
+    /**
+     * Model nhỏ đôi khi viết đúng `{"answer": "…` nhưng quên đóng chuỗi hoặc thừa ký tự cuối (D-68). Lấy phần chuỗi sau
+     * `"answer": "` tới dấu nháy kép cuối cùng chưa thoát (hoặc hết đầu ra), rồi giải mã \n, \", \\. Nội dung vẫn đi qua
+     * toàn bộ kiểm tra như thường.
+     */
+    private fun lenient(s: String): String? {
+        val m = Regex("\"answer\"\\s*:\\s*\"").find(s) ?: return null
+        val body = s.substring(m.range.last + 1)
+        var endQ = -1
+        var i = 0
+        while (i < body.length) {
+            when (body[i]) {
+                '\\' -> i++
+                '"' -> endQ = i
+            }
+            i++
+        }
+        val raw = if (endQ >= 0) body.substring(0, endQ) else body
+        val out = StringBuilder()
+        var k = 0
+        while (k < raw.length) {
+            val c = raw[k]
+            if (c == '\\' && k + 1 < raw.length) {
+                when (raw[k + 1]) { 'n' -> out.append('\n'); 't' -> out.append(' '); '"' -> out.append('"'); '\\' -> out.append('\\'); '/' -> out.append('/'); else -> out.append(raw[k + 1]) }
+                k += 2
+            } else { out.append(c); k++ }
+        }
+        return out.toString().trim().trimEnd('}', ',', ' ', '"').trim().takeIf { it.length >= 20 }
     }
 
     /** Làm sạch: bỏ ký hiệu markdown, gộp khoảng trắng; giữ xuống đoạn. */
@@ -285,11 +315,20 @@ object AiGuard {
         val m = HashMap<String, MutableSet<String>>()
         for (line in lines) {
             val sens = factSentences(stripNotStar(line))
+            // Đoạn liệt kê sao của MỘT cung (D-68): “[Từng sao trong cung X (chi)] …” và “[① Lá số gốc] Cung X an tại Y: …”.
+            // Câu không tự nêu nơi chốn thì thuộc cung đó.
+            val title = Regex("^\\[([^\\]]+)]").find(line)?.groupValues?.get(1).orEmpty()
+            val ctx: Set<String> = when {
+                "Từng sao trong cung" in title -> mentions(title, ROLE_NAMES) + mentions(title, CHI_NAMES)
+                "Lá số gốc" in title && sens.isNotEmpty() -> sens[0].substringBefore(":").let { mentions(it, ROLE_NAMES) + mentions(it, CHI_NAMES) }
+                else -> emptySet()
+            }
             for ((i, sen) in sens.withIndex()) {
                 val stars = mentions(sen, STAR_NAMES)
                 if (stars.isEmpty()) continue
                 val win = if (i > 0) sens[i - 1] + " " + sen else sen
-                val pl = mentions(win, ROLE_NAMES) + mentions(win, CHI_NAMES)
+                val own = mentions(sen, ROLE_NAMES) + mentions(sen, CHI_NAMES)
+                val pl = mentions(win, ROLE_NAMES) + mentions(win, CHI_NAMES) + (if (own.isEmpty() || i == 0) ctx else emptySet())
                 for (st in stars) m.getOrPut(st) { HashSet() } += pl
             }
         }

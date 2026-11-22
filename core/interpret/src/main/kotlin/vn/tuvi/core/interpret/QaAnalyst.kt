@@ -720,7 +720,7 @@ class QaAnalyst(private val kb: KnowledgeBase) {
         }
         return Paragraph(sb.toString().trim(), 0, ParaKind.NOTE, topic, listOf("AN_SAO_${role.name}"),
             listOf(Why("AN_SAO_${role.name}", "Từng sao trong cung ${role.vn}", "Sao tọa thủ cung ${role.vn} (${p.chi.vn}) và nghĩa của từng sao tại cung này; sao lớn ở tam phương tứ chính.",
-                p.stars.map { it.id.vn + (bright(it.brightness)?.let { b -> " $b" } ?: "") }, "Cẩm nang V2 P.II–P.III")), false, "Từng sao trong cung ${role.vn}")
+                p.stars.map { it.id.vn + (bright(it.brightness)?.let { b -> " $b" } ?: "") }, "Cẩm nang V2 P.II–P.III")), false, "Từng sao trong cung ${role.vn} (${p.chi.vn})")
     }
 
     /** Tính cách sâu: bản mệnh và Cục, Mệnh chủ – Thân chủ, cung Thân, cung Phúc Đức. */

@@ -44,7 +44,7 @@ class AiTest {
         assertTrue(e4.url.contains("gemma-4-E4B-it-litert-lm/resolve/") && e4.sha256.length == 64)
         assertEquals(cfg.id, AiModelConfig.load("không có").id)
         val s4 = AiModelConfig.systemPrompt(e4)
-        assertTrue("${e4.minWords + 40}–${e4.maxWords - 60} chữ" in s4 && "{" !in s4.substringBefore("TRẢ VỀ"), s4)
+        assertTrue("${e4.minWords + 40}–${e4.maxWords - 100} chữ" in s4 && "{" !in s4.substringBefore("TRẢ VỀ"), s4)
     }
 
     @Test
@@ -125,6 +125,11 @@ class AiTest {
         // JSON hỏng hoặc thiếu khóa answer.
         assertFalse(AiGuard.check(good, p.facts, cfg).ok)
         assertFalse(AiGuard.check("{\"text\": \"$good\"}", p.facts, cfg).ok)
+        // Model quên đóng chuỗi / thừa ký tự cuối: vẫn đọc được, nội dung vẫn kiểm đủ (D-68).
+        val esc = good.replace("\"", "\\\"")
+        assertTrue(AiGuard.check("{\"answer\": \"$esc\n", p.facts, cfg).ok)
+        assertTrue(AiGuard.check("{\"answer\": \"$esc\", \"}}", p.facts, cfg).ok)
+        assertFalse(AiGuard.check("{\"answer\": \"$esc Năm 2031 sẽ rất thuận.", p.facts, cfg).ok)
         // Chấp nhận ```json … ``` và markdown đơn giản (được làm sạch).
         assertTrue(AiGuard.check("```json\n" + json("**" + good + "**") + "\n```", p.facts, cfg).ok)
         // Bịa năm, bịa điểm.
