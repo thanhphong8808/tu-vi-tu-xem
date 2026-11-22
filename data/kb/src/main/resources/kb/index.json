@@ -18,7 +18,8 @@
   "textsPhuTinh": 100,
   "phuTinh": 73,
   "textsLuan": 48,
-  "textsHoiDap": 59,
+  "textsHoiDap": 61,
+  "textsChiTiet": 179,
   "advice": 91,
   "adviceByType": {
    "NEN": 48,
@@ -45,7 +46,8 @@
    "texts/dong_cung.json",
    "texts/phu_tinh.json",
    "texts/luan.json",
-   "texts/hoidap.json"
+   "texts/hoidap.json",
+   "texts/chi_tiet.json"
   ],
   "advice": [
    "advice/advice.json"

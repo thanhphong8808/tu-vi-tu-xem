@@ -857,6 +857,8 @@ class Composer(private val kb: KnowledgeBase) {
                 -1, ParaKind.WEIGH, out.first().topic, pos.flatMap { it.ruleIds }, pos.flatMap { it.why }, pos.any { it.draft }))
         } else out += paras
         if (out.isEmpty()) note("cmp.khong", if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO)?.let { out.add(it) }
+        // Tương sinh tương khắc: ngũ hành bản mệnh, can chi năm sinh, cung Mệnh, Cục, chính tinh Mệnh (D-67).
+        out += Synastry(kb).analyze(a, b, nameA, nameB, if (relation == PairRelation.VO_CHONG) Topic.TINH_DUYEN else Topic.GIA_DAO).paragraphs
         note("cmp.note", null)?.let { out.add(it) }
         return Comparison("$nameA và $nameB · ${relation.vn}", relation, out, closing())
     }

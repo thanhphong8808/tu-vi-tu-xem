@@ -11,6 +11,9 @@ object KbLint {
 
     val ALLOWED_SLOTS = setOf("cung", "sao", "doSang", "tuoi", "nam")
 
+    /** Câu so hai lá số (`hop.*`, D-67): tên hai người, hành, chi tiết. */
+    val HOP_SLOTS = setOf("a", "b", "ha", "hb", "x", "y")
+
     /**
      * Từ/cụm cấm (mục 11 quy tắc 1, 2, 7 và mục 10.5): nói định mệnh, phán tử vong/bệnh/ly hôn/tù tội,
      * quảng bá giải hạn, “con dị bào”, dự đoán giới tính thai nhi. So khớp không phân biệt hoa thường, theo ranh giới từ.
@@ -67,7 +70,8 @@ object KbLint {
             val w = "${t.file}#${t.key}"
             if (t.source.isBlank()) issues.add(Issue(w, "câu luận thiếu source"))
             if (t.text.isBlank()) issues.add(Issue(w, "câu luận rỗng"))
-            for (s in slotsIn(t.text)) if (s !in ALLOWED_SLOTS) issues.add(Issue(w, "slot không hợp lệ {$s}"))
+            val slots = if (t.key.startsWith("hop.")) HOP_SLOTS else ALLOWED_SLOTS
+            for (s in slotsIn(t.text)) if (s !in slots) issues.add(Issue(w, "slot không hợp lệ {$s}"))
             val bad = forbiddenIn(t.text)
             if (bad.isNotEmpty()) issues.add(Issue(w, "có từ cấm $bad"))
         }

@@ -35,6 +35,29 @@ class AiTest {
         assertTrue(cfg.minWords < cfg.maxWords)
         val sys = AiModelConfig.systemPrompt()
         assertTrue("<du_kien>" in sys && "{\"answer\"" in sys, sys)
+        // D-68: hai model — Nhanh (E2B, mặc định) và Mạnh (E4B), cấu hình riêng; system prompt điền độ dài theo model.
+        val all = AiModelConfig.all()
+        assertEquals(listOf("Nhanh", "Mạnh"), all.map { it.tier })
+        val e4 = AiModelConfig.load("gemma-4-E4B-it")
+        assertEquals("gemma-4-E2B-it", cfg.id)
+        assertTrue(e4.bytes > cfg.bytes && e4.contextChars > cfg.contextChars && e4.maxTokens > cfg.maxTokens && e4.maxWords > cfg.maxWords)
+        assertTrue(e4.url.contains("gemma-4-E4B-it-litert-lm/resolve/") && e4.sha256.length == 64)
+        assertEquals(cfg.id, AiModelConfig.load("không có").id)
+        val s4 = AiModelConfig.systemPrompt(e4)
+        assertTrue("${e4.minWords + 40}–${e4.maxWords - 60} chữ" in s4 && "{" !in s4.substringBefore("TRẢ VỀ"), s4)
+    }
+
+    @Test
+    fun promptKeepsConcreteParagraphsWithinBudget() {
+        // Khối dữ kiện nhỏ: vẫn giữ Kết luận và đoạn “Cụ thể trong năm” trước các đoạn từng sao, sách.
+        val (ans, _) = prompt("Năm sau sự nghiệp của tôi thế nào?")
+        val small = AiPrompt.build(ans, ctx.lunarYear, cfg.copy(contextChars = 1800))
+        val block = small.user.substringAfter("<du_kien>")
+        assertTrue("[Cụ thể trong năm]" in block, block)
+        assertTrue("[Sách bàn" !in block)
+        // Thứ tự gốc được giữ.
+        val iKl = block.indexOf("[Kết luận]"); val iCt = block.indexOf("[Cụ thể trong năm]")
+        assertTrue(iKl in 0 until iCt)
     }
 
     @Test

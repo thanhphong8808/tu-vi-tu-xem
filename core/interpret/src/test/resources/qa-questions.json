@@ -138,5 +138,9 @@
 {"q": "Có thể xem từ lá số của tôi và đoán được năm cưới của tôi không?", "intent": "TIMING", "event": "CUOI_HOI", "unit": "NAM"},
 {"q": "Tuổi kết hôn của tôi là bao nhiêu?", "intent": "TIMING", "event": "CUOI_HOI", "unit": "NAM"},
 {"q": "Lá số có đoán được năm tôi có con không?", "intent": "TIMING", "event": "SINH_CON", "unit": "NAM"},
-{"q": "Tôi đã cưới năm 2015, lá số có khớp không?", "intent": "TIMING", "event": "CUOI_HOI", "year": 2015, "unit": "NAM"}
+{"q": "Tôi đã cưới năm 2015, lá số có khớp không?", "intent": "TIMING", "event": "CUOI_HOI", "year": 2015, "unit": "NAM"},
+{"q": "Năm 2015 tôi gặp chuyện gì?", "intent": "FORECAST", "scope": "NAM", "year": 2015},
+{"q": "Năm 2019 có biến động gì không?", "intent": "FORECAST", "scope": "NAM", "year": 2019},
+{"q": "Những mốc quan trọng đã qua của tôi?", "intent": "TIMING", "unit": "NAM"},
+{"q": "Những năm biến động lớn trong tình duyên của tôi?", "intent": "TIMING", "topic": "TINH_DUYEN", "unit": "NAM"}
 ]

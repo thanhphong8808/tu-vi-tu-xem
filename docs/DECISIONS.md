@@ -728,3 +728,57 @@ và muốn “đào tạo thêm” Gemma 4 E2B, tham khảo cả kênh YouTube T
 - Hiệu năng: dò năm đã qua dùng `Composer.yearEvents` (chỉ tính sự kiện đồng thanh, bỏ phần chấm điểm chủ đề và ghép
   câu) và chạy song song các năm. Lần đầu dùng `yearData` cho từng năm, máy ảo Android 16 có lượt mất 4,4 giây cho
   “Khi nào tôi lấy vợ?” (chỉ tiêu dưới 3 giây); sau khi sửa, trên máy build từ 415 ms còn khoảng 200 ms.
+
+### D-65 · Luận giải chi tiết hơn từng câu hỏi (0.9.0)
+- Anh nhận xét phần luận còn ít và chung chung. Mình đọc lại câu trả lời mẫu và thấy bốn chỗ yếu: lời khuyên bị độn từ
+  chủ đề khác (hỏi sức khỏe lại khuyên cưới hỏi, đọc hợp đồng); câu hỏi sức khỏe chỉ có hai đoạn; chưa giải thích từng
+  sao trong cung; chưa nói “cụ thể trong năm dễ gặp gì”.
+- **Từng sao trong cung …** (`QaAnalyst.starDetailPara`): chính tinh kèm hành, hóa khí, đặc tính; từng phụ tinh trong
+  cung với nghĩa tại cung đó (bỏ vế câu nói về cung khác); sao lớn chiếu về từ tam phương tứ chính. Cung Tật Ách nêu
+  thêm phần cơ thể nên để ý theo ngũ hành của chính tinh, kèm “đi khám khi có dấu hiệu kéo dài”.
+- **Cụ thể trong năm** (`QaAnalyst.triggers`, `concretePara`): Tứ Hóa lưu và sao lưu (Lộc Tồn, Thiên Mã, Kình Dương,
+  Đà La, Đào Hoa/Hồng Loan/Thiên Hỷ/Hỷ Thần, Tang Môn/Bạch Hổ, Thiên Khốc/Thiên Hư) chạm cung của chủ đề — trên lá số
+  gốc, theo Thái Tuế, theo tiểu hạn, theo lưu niên đại hạn; tọa thủ nặng hơn xung chiếu. Mỗi tác nhân một câu “dễ xảy
+  ra gì” và một câu “nên làm gì” theo đúng chủ đề (kho mới `texts/chi_tiet.json`, sinh từ `tools/kb/kb_chitiet.py`,
+  7 chủ đề × 11 tác nhân). Hỏi tổng quan thì lấy các tác nhân mạnh nhất qua mọi chủ đề.
+- **Theo tháng**: tháng nên chủ động / nên giữ cho chủ đề, tháng nguyệt hạn đi vào cung chính của chủ đề.
+- **Lời khuyên**: chỉ lấy đúng chủ đề được hỏi; thêm lời khuyên theo tác nhân của năm (không thêm cho năm đã qua).
+- **Tính cách**: thêm đoạn bản mệnh – Cục (tương quan), Mệnh chủ – Thân chủ, cung Thân, cung Phúc Đức.
+- Câu hỏi “nên / lưu ý” (vd. sức khỏe) nay có: kết luận, từng sao, cụ thể trong năm, theo tháng, tổng hợp.
+- Giới hạn độ dài câu trả lời trong test nâng từ 12 lên 16 đoạn.
+
+### D-66 · Hỏi việc đã xảy ra (0.9.0)
+- “Năm 2015 tôi gặp chuyện gì?”, “Năm 2019 có biến động gì không?” (năm đã qua hoặc năm nay, chưa nêu việc cụ thể) →
+  `QaParse.past`, câu trả lời `pastYear`: các mặt thuận / vướng nổi bật nhất (điểm chủ đề), việc được các tầng vận
+  chỉ tới, Tứ Hóa lưu và sao lưu chạm vào đâu (giọng kể lại, không kèm lời khuyên), Tứ Hóa năm vào lĩnh vực nào trên
+  lá số gốc, căn cứ của các mặt nổi bật, tháng nổi bật, lời nhắc đối chiếu (`qa.note.doi_chieu`).
+- “Những mốc quan trọng đã qua của tôi?” (có thể kèm chủ đề, vd. tình duyên) → `milestones`: dò từ 15 tuổi âm (tối
+  đa 30 năm) các năm có việc được từ hai tầng vận cùng chỉ, chọn 8 năm nổi rõ nhất, xếp theo thời gian. Dùng chung
+  phần tính sự kiện song song của D-64.
+- Hỏi theo chủ đề cho năm đã qua (“Năm 2020 công việc thế nào?”) vẫn là luận năm, nhưng đoạn cụ thể đổi thành “Năm
+  2020 lá số cho thấy…” và không kèm lời khuyên theo tác nhân.
+
+### D-67 · So hai lá số: tương sinh tương khắc (0.9.0)
+- Trước đây chỉ có truyền cung, truyền tinh. Thêm `Synastry`: ngũ hành bản mệnh (sinh / khắc / cùng hành, kèm hành
+  trung gian khi khắc), thiên can năm sinh (ngũ hợp, sinh, khắc, cùng hành), địa chi năm sinh (tam hợp, lục hợp, lục
+  xung, lục hại, tương hình, cùng tuổi), vị trí cung Mệnh hai người, Cục người này với bản mệnh người kia (hai chiều),
+  hành chính tinh cung Mệnh.
+- Mỗi quan hệ một câu (`hop.*`) và một mức điểm nhỏ; câu tổng nêu số điểm hợp, số điểm khắc xung và mức hòa hợp
+  (50 + 6 × tổng, từ 10 đến 95), chia ba bậc: nhiều điểm hòa hợp / vừa hợp vừa khắc / cần vun đắp. Lời luôn là góc nhìn
+  tham khảo, không phán quan hệ thành hay không; câu khắc đều kèm cách dung hòa.
+- Các câu từng yếu tố là loại NOTE (mặt để cân nhắc), câu tổng là WEIGH, nên không phạm quy tắc “không câu một chiều
+  trái nhau”.
+
+### D-68 · Trợ lý AI: chọn model Nhanh / Mạnh, lời nhắc ưu tiên phần cụ thể (0.9.0)
+- Anh muốn AI mạnh nhất có thể. Trong giới hạn hiện có (chạy trên máy, không fine-tune — D-62, không chỗ phát hành
+  model riêng), cách mạnh nhất là cho chọn model lớn hơn cùng họ: **Gemma 4 E4B** (`litert-community/gemma-4-E4B-it-litert-lm`,
+  Apache 2.0, không gated, 3,66 GB, ghim commit và SHA-256), bên cạnh **Gemma 4 E2B** (2,6 GB) hiện có.
+- `kb/ai/model.json` nay có danh sách `models` và `default`. E4B: cần RAM khoảng 7 GB (S22 Ultra đủ), cửa sổ 6.144
+  token, khối dữ kiện 10.500 ký tự, tối đa 1.000 token đầu ra, câu trả lời 80–500 chữ. E2B giữ nguyên.
+- Thẻ Trợ lý AI có hai lựa chọn (Nhanh / Mạnh), ghi dung lượng, RAM cần, đã tải hay chưa; máy thiếu RAM cho E4B vẫn
+  chọn lại được E2B. Hai model có thể cùng nằm trên máy; đổi model khi đang tải thì app báo hủy tải trước.
+  `AndroidLlm` nhớ lựa chọn, đóng model cũ khỏi RAM khi đổi.
+- Lời nhắc: khi dữ kiện vượt ngân sách, chọn đoạn theo độ ưu tiên (kết luận → cụ thể trong năm → đồng thanh → các
+  tầng → tháng → từng sao → sách → tổng hợp), rồi giữ thứ tự gốc. System prompt yêu cầu nói rõ việc cụ thể dễ xảy ra,
+  tháng nên chủ động, nghĩa các sao chính, kể lại khi là năm đã qua; độ dài lấy theo model.
+- `AiGuard` giữ nguyên: câu nào sai sao, sai cung, bịa số, có từ cấm thì app hiện bản luận của app.

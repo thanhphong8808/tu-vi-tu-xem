@@ -916,14 +916,25 @@
     const m = a.model || {};
     const gb = (b) => (b / 1e9).toFixed(1).replace('.', ',') + ' GB';
     const name = esc(m.label || 'model AI');
+    // Chọn model: Nhanh (E2B) hoặc Mạnh (E4B) — D-68. Không đổi khi đang tải hay đang kiểm file.
+    const ms = a.models || [];
+    const have = a.have || [];
+    const choose = ms.length < 2 ? '' : `<div class="ai-models" role="group" aria-label="Chọn model Trợ lý AI">` + ms.map((x) => {
+      const sel = x.id === m.id;
+      const low = a.ramMb && a.ramMb < x.minRamMb;
+      return `<div class="opt ${sel ? 'on' : ''}" aria-pressed="${sel}" data-act="ai-model" data-k="${esc(x.id)}">` +
+        `<b>${esc(x.tier)} · ${esc((x.label || '').replace(/ \(.*$/, ''))}</b><span>${gb(x.bytes)}, cần RAM khoảng ${Math.ceil(x.minRamMb / 1024)} GB · ` +
+        (x.tier === 'Mạnh' ? 'giải thích kỹ hơn, chậm hơn khoảng gấp đôi' : 'trả lời nhanh') +
+        (have.includes(x.id) ? ' · <b>đã tải</b>' : '') + (low ? ' · máy chưa đủ RAM' : '') + `</span></div>`;
+    }).join('') + `</div>`;
     let body = '';
-    if (a.state === 'lowram') body = `<p class="small">${esc(a.message || 'Máy chưa đủ RAM cho Trợ lý AI.')} App vẫn trả lời bằng bản luận đầy đủ.</p>`;
+    if (a.state === 'lowram') body = `<p class="small">${esc(a.message || 'Máy chưa đủ RAM cho Trợ lý AI.')} App vẫn trả lời bằng bản luận đầy đủ.</p>` + choose;
     else if (a.state === 'ready') {
       const on = S.settings.ai !== false;
       body = `<div class="opt ${on ? 'on' : ''}" data-act="ai-toggle" aria-pressed="${on}"><b>Trợ lý AI ${on ? '· đang bật' : '· đang tắt'}</b>` +
         `<span>${name} chạy ngay trên máy${a.backend ? ' (' + esc(a.backend) + ')' : ''}: diễn đạt lại câu trả lời thành lời giải thích từng tầng — sao nào ở cung nào, kết quả ra sao. ` +
         `Câu nào sai dữ kiện lá số thì app không hiện.</span></div>` +
-        (full ? `<button class="btn block" data-act="ai-delete" style="margin-top:8px">Xóa model (giải phóng ${gb(m.bytes || a.total || 0)})</button>` : '');
+        (full ? choose + `<button class="btn block" data-act="ai-delete" style="margin-top:8px">Xóa model (giải phóng ${gb(m.bytes || a.total || 0)})</button>` : '');
     } else if (a.state === 'downloading') {
       const pct = a.total ? Math.floor((a.done || 0) * 100 / a.total) : 0;
       body = `<p class="small">Đang tải ${name}: <b>${gb(a.done || 0)} / ${gb(a.total || m.bytes || 0)}</b> (${pct}%)${a.waitingWifi ? ' — <b>đang chờ Wi-Fi</b>' : ''}. ` +
@@ -938,7 +949,7 @@
         `App chỉ dùng mạng để tải model; lá số và câu hỏi không gửi đi đâu. Máy cần còn trống khoảng ${gb((m.bytes || 0) + 3e8)}` +
         (a.freeBytes ? ` (đang trống ${gb(a.freeBytes)})` : '') + `.</p>` +
         (a.message ? `<p class="small err-t">${esc(a.message)}</p>` : '') +
-        (a.wifi === false ? `<p class="small muted">Máy đang không dùng Wi-Fi: bấm tải thì app chờ có Wi-Fi mới tải.</p>` : '') +
+        (a.wifi === false ? `<p class="small muted">Máy đang không dùng Wi-Fi: bấm tải thì app chờ có Wi-Fi mới tải.</p>` : '') + choose +
         `<button class="btn primary block" data-act="ai-download">${ic('tro-ly-ai')} Tải Trợ lý AI (${gb(m.bytes || a.total || 0)}, qua Wi-Fi)</button>`;
     }
     return `<div class="card" id="ai-card"><h2>${ic('tro-ly-ai', 'h kim')}Trợ lý AI trên máy</h2>${body}</div>`;
@@ -1604,6 +1615,7 @@
           S.ai = safe(() => api('aiAction', { name: 'download' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } aiWatch();
         });
         break;
+      case 'ai-model': S.ai = safe(() => api('aiAction', { name: 'select:' + el.dataset.k }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
       case 'ai-cancel': S.ai = safe(() => api('aiAction', { name: 'cancel' }), S.ai); { const sy = window.scrollY; render(false); window.scrollTo(0, sy); } break;
       case 'ai-delete':
         openModal('Xóa model Trợ lý AI?', 'Xóa file model khỏi máy để giải phóng bộ nhớ. Hỏi đáp vẫn trả lời bằng bản luận của app; muốn dùng lại thì tải lại.', 'Xóa', () => {

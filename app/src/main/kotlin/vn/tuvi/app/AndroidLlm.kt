@@ -43,7 +43,16 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
     init {
         // Lần trước tiến trình chết giữa lúc nạp GPU (lỗi trong thư viện máy) → không thử GPU nữa.
         if (prefs.getString(GPU_KEY, null) == "trying") prefs.edit().putString(GPU_KEY, "bad").commit()
+        // Model người dùng đã chọn (Nhanh E2B / Mạnh E4B, D-68).
+        AiFlow.select(prefs.getString(MODEL_KEY, null))
     }
+
+    /** Id các model đã tải và kiểm SHA-256 xong (có thể có cả hai). */
+    private fun have(): List<String> = AiFlow.models().filter { m ->
+        val ok = File(dir, m.file + ".ok")
+        val f = File(dir, m.file)
+        ok.isFile && f.isFile && f.length() == m.bytes && ok.readText().trim() == m.sha256
+    }.map { it.id }
 
     private fun ramMb(): Long {
         val mi = ActivityManager.MemoryInfo()
@@ -75,6 +84,7 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
         val base = buildJsonObject {
             put("ramMb", ram); put("wifi", wifi()); put("freeBytes", dir.usableSpace); put("total", cfg.bytes)
             put("gpu", prefs.getString(GPU_KEY, null) ?: "chưa thử")
+            put("have", kotlinx.serialization.json.JsonArray(have().map { kotlinx.serialization.json.JsonPrimitive(it) }))
             probeResult?.let { put("probe", it) }
         }
         fun with(state: String, extra: Map<String, kotlinx.serialization.json.JsonElement> = emptyMap()) =
@@ -129,6 +139,7 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
                 "cancel" -> cancel()
                 "delete" -> { cancel(); closeEngine(); modelFile.delete(); okFile.delete(); partFile.delete() }
                 "probe" -> probe()
+                else -> if (name.startsWith("select:")) select(name.removePrefix("select:"))
             }
         }
         return status()
@@ -154,6 +165,19 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
         val id = dm().enqueue(req)
         prefs.edit().putLong(DL_KEY, id).apply()
         Log.i(TAG, "Bắt đầu tải model ${cfg.id} (id $id)")
+    }
+
+    private fun select(id: String) {
+        if (id == cfg.id) return
+        if (prefs.getLong(DL_KEY, -1L) >= 0 || verifying) {
+            lastError = "Đang tải model: hủy tải trước khi đổi model."
+            return
+        }
+        closeEngine()
+        AiFlow.select(id)
+        prefs.edit().putString(MODEL_KEY, cfg.id).apply()
+        lastError = null
+        Log.i(TAG, "Chọn model ${cfg.id}")
     }
 
     private fun cancel() {
@@ -276,6 +300,7 @@ class AndroidLlm private constructor(private val ctx: Context) : LlmHost {
         private const val TAG = "TuViAI"
         private const val DL_KEY = "download_id"
         private const val GPU_KEY = "gpu"
+        private const val MODEL_KEY = "model"
         @Volatile private var instance: AndroidLlm? = null
 
         fun get(ctx: Context): AndroidLlm = instance ?: synchronized(this) {

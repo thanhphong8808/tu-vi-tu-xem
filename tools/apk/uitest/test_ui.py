@@ -447,6 +447,8 @@ async def main():
         await phase8(page)
         # ———————————————— 0.8.1: đoán năm cưới, đối chiếu năm đã cưới ————————————————
         await phase81(page)
+        # ———————————————— 0.9.0: luận chi tiết, việc đã qua, chọn model AI, tương sinh tương khắc ————————————————
+        await phase9(page)
 
         check(not errors, f'Lỗi JavaScript: {errors}')
 
@@ -924,5 +926,54 @@ async def phase81(page):
     check('Đối chiếu năm 2015 với lá số' in t and 'năm bạn nêu' in t and '2013 (Quý Tỵ' in t and '2017 (Đinh Dậu' in t,
           f'Câu “đã cưới năm 2015” phải đối chiếu năm đó và hai năm mỗi bên: {t[:200]}')
     await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+
+async def phase9(page):
+    print('0.9.0 — Luận chi tiết, việc đã qua, model AI, tương sinh tương khắc')
+    await page.click('.profile:has-text("Ca A")'); await page.wait_for_selector('#board')
+    await page.click('#qa-card [data-act="open-reading"]'); await page.wait_for_selector('#ai-card')
+
+    async def full(q):
+        await qa_ask(page, q)
+        await page.wait_for_timeout(500)
+        t = page.locator('.qa-turn').last
+        if await t.locator('[data-act="qa-detail"]').count():
+            await t.locator('[data-act="qa-detail"]').click(); t = page.locator('.qa-turn').last
+        return await t.inner_text()
+
+    t = await full('Năm sau sự nghiệp của tôi thế nào?')
+    check('Từng sao trong cung Quan Lộc' in t and 'Cụ thể năm 2027' in t and 'nên chủ động ở tháng' in t,
+          f'Câu trả lời năm phải có từng sao, cụ thể trong năm, theo tháng: {t[:200]}')
+    t = await full('Năm 2015 tôi gặp chuyện gì?')
+    check('đã có gì' in t and 'Tứ Hóa năm Ất trên lá số gốc' in t and 'Việc được các tầng vận hạn chỉ tới' in t,
+          f'Câu hỏi năm đã qua phải kể lại tín hiệu năm đó: {t[:200]}')
+    await shot(page, 'p9_nam_da_qua')
+    t = await full('Những mốc quan trọng đã qua của tôi?')
+    check('Các mốc đã qua theo lá số' in t and '2008 (Mậu Tý' in t, f'Câu hỏi các mốc đã qua: {t[:200]}')
+    alltext = await page.inner_text('#app')
+    check(not forbidden_in(alltext), f'Lọt từ cấm: {forbidden_in(alltext)}')
+    # Chọn model Trợ lý AI: Nhanh / Mạnh (máy chủ thử: giả lập).
+    await page.evaluate('window.tvBack()'); await page.evaluate('window.tvBack()')
+    await page.click('[data-act="settings"]'); await page.wait_for_selector('#ai-card')
+    models = page.locator('#ai-card [data-act="ai-model"]')
+    check(await models.count() == 2, 'Cài đặt: thẻ Trợ lý AI phải cho chọn 2 model (Nhanh, Mạnh)')
+    txt = await page.inner_text('#ai-card')
+    check('Nhanh · Gemma 4 E2B' in txt and 'Mạnh · Gemma 4 E4B' in txt, f'Tên hai model: {txt[:200]}')
+    await page.click('#ai-card [data-act="ai-model"][data-k="gemma-4-E4B-it"]')
+    check(await page.get_attribute('#ai-card [data-act="ai-model"][data-k="gemma-4-E4B-it"]', 'aria-pressed') == 'true', 'Chọn model Mạnh phải được ghi nhận')
+    check('3,7 GB' in await page.inner_text('#ai-card'), 'Chọn Mạnh thì nút tải ghi 3,7 GB')
+    await shot(page, 'p9_chon_model')
+    await page.click('#ai-card [data-act="ai-model"][data-k="gemma-4-E2B-it"]')
+    await page.evaluate('window.tvBack()')
+    # So hai lá số: tương sinh tương khắc.
+    await page.click('[data-act="compare"]')
+    await pick(page, '[data-cmp="a"]', 'Ca A')
+    await pick(page, '[data-cmp="b"]', 'Ca B')
+    await page.click('[data-act="cmp-run"]')
+    await page.wait_for_selector('#cmp-res')
+    cr = await page.inner_text('#cmp-res')
+    check('mức hòa hợp' in cr and 'Bản mệnh Ca A (Thổ) sinh bản mệnh Ca B (Kim)' in cr and 'ngũ hợp' in cr,
+          f'So hai lá số phải có tương sinh tương khắc: {cr[:300]}')
+    await shot(page, 'p9_tuong_sinh_khac')
+    await page.evaluate('window.tvBack()')
 
 asyncio.run(main())

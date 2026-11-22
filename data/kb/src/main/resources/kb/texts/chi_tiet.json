@@ -1,0 +1,1078 @@
+{
+ "texts": [
+  {
+   "key": "ct.SU_NGHIEP.HOA_LOC",
+   "text": "công việc có thêm cơ hội, nguồn thu hoặc dự án mới; dễ được giao phần việc có lợi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_LOC.nen",
+   "text": "nhận việc mới, mở rộng quan hệ công việc, chốt các thỏa thuận đang chờ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_QUYEN",
+   "text": "dễ được trao quyền, thêm trách nhiệm quản lý hoặc có tiếng nói lớn hơn trong tập thể",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_QUYEN.nen",
+   "text": "nhận vai trò dẫn dắt, giữ cách nói mềm để tránh va chạm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_KHOA",
+   "text": "uy tín được chú ý; thuận thi cử, bằng cấp, được người có vị thế nâng đỡ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_KHOA.nen",
+   "text": "học thêm, lấy chứng chỉ, trình bày thành tích với cấp trên",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_KY",
+   "text": "công việc dễ vướng thị phi, hiểu lầm hoặc trì trệ giấy tờ; kế hoạch có thể phải làm lại",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.HOA_KY.nen",
+   "text": "giữ hồ sơ rõ ràng, nói ít làm nhiều, tránh tranh cãi với cấp trên",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.LOC_TON",
+   "text": "thu nhập từ công việc ổn định hơn, hợp tích lũy hơn là mạo hiểm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.LOC_TON.nen",
+   "text": "giữ việc chính, để dành phần dư",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.THIEN_MA",
+   "text": "công việc nhiều di chuyển; có thể đổi chỗ làm, đi công tác xa hoặc mở thị trường mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.THIEN_MA.nen",
+   "text": "chuẩn bị kỹ trước khi đổi việc, ưu tiên cơ hội có lộ trình rõ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.KINH_DUONG",
+   "text": "cạnh tranh gắt, áp lực chỉ tiêu, dễ va chạm với đồng nghiệp",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.KINH_DUONG.nen",
+   "text": "giữ bình tĩnh, chọn việc đáng tranh, không quyết định khi đang nóng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.DA_LA",
+   "text": "việc dễ chậm, kéo dài, vướng thủ tục; phải kiên nhẫn mới xong",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.DA_LA.nen",
+   "text": "chia việc nhỏ, đặt mốc kiểm tra, không đốt cháy giai đoạn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.DAO_HONG_HY",
+   "text": "quan hệ với đồng nghiệp, khách hàng vui vẻ; dễ có tin vui trong công việc",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.DAO_HONG_HY.nen",
+   "text": "tận dụng các dịp gặp gỡ để mở rộng quan hệ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.TANG_HO",
+   "text": "công việc dễ có chuyện phiền lòng, mệt mỏi; cần để ý an toàn khi làm việc nặng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.TANG_HO.nen",
+   "text": "giảm tải, giữ an toàn lao động, không nhận việc quá sức",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.KHOC_HU",
+   "text": "tâm trạng dễ chùng xuống, thấy công sức chưa được ghi nhận",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SU_NGHIEP.KHOC_HU.nen",
+   "text": "ghi lại kết quả cụ thể, trao đổi thẳng thắn với người phụ trách",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_LOC",
+   "text": "dòng tiền vào khá hơn, có khoản thu thêm hoặc cơ hội làm ăn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_LOC.nen",
+   "text": "chủ động tìm nguồn thu nhưng vẫn giữ phần dự phòng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_QUYEN",
+   "text": "nắm quyền quyết định về tiền bạc; có thể đứng ra quản lý ngân sách hoặc khoản đầu tư",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_QUYEN.nen",
+   "text": "quyết đoán nhưng có kế hoạch, ghi chép rõ ràng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_KHOA",
+   "text": "tài chính ổn nhờ uy tín; dễ được hỗ trợ hoặc vay mượn khi cần",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_KHOA.nen",
+   "text": "giữ chữ tín, minh bạch giấy tờ tiền bạc",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_KY",
+   "text": "tiền bạc dễ vướng: khoản chi bất ngờ, nợ chậm thu hoặc hiểu lầm về tiền",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.HOA_KY.nen",
+   "text": "không cho vay lớn, không đứng ra bảo lãnh, đọc kỹ hợp đồng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.LOC_TON",
+   "text": "thu nhập đều, hợp tích lũy; có thể nhận lộc từ gia đình hoặc từ công việc ổn định",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.LOC_TON.nen",
+   "text": "lập quỹ tiết kiệm, tránh đầu cơ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.THIEN_MA",
+   "text": "tiền đến từ đi lại, buôn bán hoặc việc ở xa; tiền vào nhanh thì ra cũng nhanh",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.THIEN_MA.nen",
+   "text": "theo dõi dòng tiền hằng tháng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.KINH_DUONG",
+   "text": "dễ hao tiền vì cạnh tranh, tranh chấp hoặc quyết định vội",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.KINH_DUONG.nen",
+   "text": "không xuống tiền khi đang nóng, đặt hạn mức chi tiêu",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.DA_LA",
+   "text": "tiền về chậm, khoản thu bị kéo dài, thủ tục rườm rà",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.DA_LA.nen",
+   "text": "dự phòng tiền mặt, cho vay hay đòi nợ đều có giấy tờ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.DAO_HONG_HY",
+   "text": "chi tiêu cho tiệc tùng, quà cáp, chuyện vui tăng lên",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.DAO_HONG_HY.nen",
+   "text": "đặt ngân sách riêng cho các dịp vui",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.TANG_HO",
+   "text": "có thể phát sinh chi phí cho sức khỏe, việc gia đình hoặc sửa chữa",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.TANG_HO.nen",
+   "text": "giữ quỹ dự phòng, cân nhắc bảo hiểm phù hợp",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.KHOC_HU",
+   "text": "dễ lo lắng về tiền dù thực tế chưa đến mức đó",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TAI_CHINH.KHOC_HU.nen",
+   "text": "lập bảng thu chi để nhìn rõ con số",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_LOC",
+   "text": "tình cảm ngọt hơn; người độc thân dễ gặp người hợp ý, người có đôi gắn bó hơn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_LOC.nen",
+   "text": "chủ động hẹn hò, bàn chuyện tương lai",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_QUYEN",
+   "text": "một bên muốn làm chủ trong quan hệ; dễ có quyết định lớn như ra mắt gia đình, cưới hỏi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_QUYEN.nen",
+   "text": "lắng nghe nhau, tránh áp đặt",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_KHOA",
+   "text": "quan hệ được người xung quanh ủng hộ, dễ có người mai mối",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_KHOA.nen",
+   "text": "giới thiệu người ấy với gia đình, bạn bè",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_KY",
+   "text": "dễ hiểu lầm, ghen tuông hoặc lời nói làm tổn thương nhau",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.HOA_KY.nen",
+   "text": "nói rõ suy nghĩ, tránh im lặng kéo dài",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.LOC_TON",
+   "text": "tình cảm ổn định, bền; hợp vun đắp lâu dài",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.LOC_TON.nen",
+   "text": "chăm lo những việc nhỏ hằng ngày cho nhau",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.THIEN_MA",
+   "text": "tình cảm gắn với đi lại: yêu xa, gặp người ở nơi khác hoặc cùng nhau chuyển chỗ ở",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.THIEN_MA.nen",
+   "text": "giữ liên lạc đều đặn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.KINH_DUONG",
+   "text": "dễ cãi vã, nóng nảy, va chạm cái tôi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.KINH_DUONG.nen",
+   "text": "chậm lại một nhịp trước khi nói",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.DA_LA",
+   "text": "chuyện tình cảm chậm, dây dưa, khó dứt điểm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.DA_LA.nen",
+   "text": "đặt mốc rõ ràng cho mối quan hệ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.DAO_HONG_HY",
+   "text": "dễ có người để ý, nhiều dịp gặp gỡ; người có đôi dễ có tin vui",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.DAO_HONG_HY.nen",
+   "text": "mở lòng nhưng chọn lọc",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.TANG_HO",
+   "text": "trong nhà hoặc trong quan hệ có chuyện buồn phải cùng gánh vác",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.TANG_HO.nen",
+   "text": "ở bên nhau, chia sẻ việc nhà",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.KHOC_HU",
+   "text": "cảm giác cô đơn, hụt hẫng dễ đến",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.TINH_DUYEN.KHOC_HU.nen",
+   "text": "dành thời gian chất lượng cho nhau",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_LOC",
+   "text": "sức khỏe hồi phục tốt, dễ gặp thầy thuốc giỏi hoặc cách chữa hợp",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_LOC.nen",
+   "text": "khám định kỳ, duy trì thói quen tốt",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_QUYEN",
+   "text": "thể lực khá nhưng dễ làm quá sức",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_QUYEN.nen",
+   "text": "tập vừa sức, ngủ đủ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_KHOA",
+   "text": "dễ tìm được thông tin và người hỗ trợ đúng về sức khỏe",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_KHOA.nen",
+   "text": "hỏi ý kiến chuyên môn trước khi dùng thuốc",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_KY",
+   "text": "dễ mệt mỏi kéo dài, bệnh cũ dễ trở lại hoặc lo âu ảnh hưởng giấc ngủ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.HOA_KY.nen",
+   "text": "đi khám khi dấu hiệu kéo dài, không tự ý dùng thuốc",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.LOC_TON",
+   "text": "sức khỏe ổn định",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.LOC_TON.nen",
+   "text": "giữ nếp sinh hoạt đều",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.THIEN_MA",
+   "text": "đi lại nhiều dễ mệt; đổi môi trường làm cơ thể khó thích nghi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.THIEN_MA.nen",
+   "text": "nghỉ đủ giữa các chuyến đi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.KINH_DUONG",
+   "text": "dễ va chạm, trầy xước, hoặc phải can thiệp nhỏ như nhổ răng, tiểu phẫu",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.KINH_DUONG.nen",
+   "text": "cẩn thận khi lái xe, làm việc với máy móc, dao kéo",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.DA_LA",
+   "text": "bệnh nhẹ nhưng dai dẳng, lâu khỏi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.DA_LA.nen",
+   "text": "điều trị đủ liệu trình",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.DAO_HONG_HY",
+   "text": "tinh thần vui, sức khỏe được nâng đỡ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.DAO_HONG_HY.nen",
+   "text": "giữ chừng mực khi ăn uống, tiệc tùng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.TANG_HO",
+   "text": "cần để ý sức khỏe của bản thân và người lớn tuổi trong nhà, nhất là khi đi lại",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.TANG_HO.nen",
+   "text": "đưa người lớn tuổi đi khám, giữ an toàn khi đi đường",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.KHOC_HU",
+   "text": "dễ buồn bã, mất ngủ, căng thẳng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.SUC_KHOE.KHOC_HU.nen",
+   "text": "vận động nhẹ, trò chuyện với người thân",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_LOC",
+   "text": "gia đình êm ấm, có thể đón tin vui hoặc thêm tài sản chung",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_LOC.nen",
+   "text": "tổ chức sum họp, cùng lên kế hoạch chung",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_QUYEN",
+   "text": "có người trong nhà đứng ra quyết việc lớn; dễ bất đồng ý kiến",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_QUYEN.nen",
+   "text": "bàn bạc cùng nhau trước khi quyết",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_KHOA",
+   "text": "gia đình có tiếng tốt, con cái học hành tiến bộ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_KHOA.nen",
+   "text": "khích lệ người nhà",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_KY",
+   "text": "trong nhà dễ hiểu lầm, chuyện cũ được nhắc lại",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.HOA_KY.nen",
+   "text": "nói chuyện thẳng thắn, nhẹ nhàng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.LOC_TON",
+   "text": "nền nếp ổn định, có của để dành",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.LOC_TON.nen",
+   "text": "chăm lo việc nhà đều đặn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.THIEN_MA",
+   "text": "người trong nhà đi xa, chuyển chỗ ở hoặc thay đổi nếp sống",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.THIEN_MA.nen",
+   "text": "giữ liên lạc thường xuyên",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.KINH_DUONG",
+   "text": "dễ to tiếng, va chạm giữa các thế hệ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.KINH_DUONG.nen",
+   "text": "nhường nhịn, tránh lời nặng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.DA_LA",
+   "text": "việc nhà dây dưa, khó dứt điểm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.DA_LA.nen",
+   "text": "phân công việc rõ ràng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.DAO_HONG_HY",
+   "text": "nhà có chuyện vui: cưới hỏi, đón thành viên mới, tân gia",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.DAO_HONG_HY.nen",
+   "text": "chuẩn bị chu đáo cho dịp vui",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.TANG_HO",
+   "text": "có thể phải lo chuyện sức khỏe hoặc chuyện buồn của người lớn trong họ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.TANG_HO.nen",
+   "text": "thăm hỏi người lớn tuổi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.KHOC_HU",
+   "text": "không khí gia đình dễ trầm, có người buồn phiền",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.GIA_DAO.KHOC_HU.nen",
+   "text": "dành thời gian bên nhau",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_LOC",
+   "text": "đi xa có lợi: công tác, buôn bán, học tập ở nơi khác thuận",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_LOC.nen",
+   "text": "chủ động nắm cơ hội ở nơi khác",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_QUYEN",
+   "text": "ra ngoài được nể trọng, có vai trò ở môi trường mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_QUYEN.nen",
+   "text": "chuẩn bị kỹ trước khi nhận việc ở xa",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_KHOA",
+   "text": "đi xa gặp quý nhân, thủ tục giấy tờ thuận",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_KHOA.nen",
+   "text": "nộp hồ sơ, xin thị thực vào thời điểm này",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_KY",
+   "text": "đi lại dễ trục trặc: lỡ chuyến, vướng giấy tờ, hiểu lầm ở nơi xa",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.HOA_KY.nen",
+   "text": "kiểm tra giấy tờ, lịch trình kỹ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.LOC_TON",
+   "text": "ra ngoài có lộc nhỏ, ổn định",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.LOC_TON.nen",
+   "text": "giữ quan hệ tốt ở nơi mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.THIEN_MA",
+   "text": "nhiều chuyến đi; có thể đổi chỗ ở hoặc chỗ làm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.THIEN_MA.nen",
+   "text": "lên kế hoạch rõ cho việc chuyển",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.KINH_DUONG",
+   "text": "đi đường dễ va quẹt, dễ tranh chấp với người lạ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.KINH_DUONG.nen",
+   "text": "lái xe cẩn thận, giữ bình tĩnh",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.DA_LA",
+   "text": "chuyến đi chậm, dời lịch, thủ tục kéo dài",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.DA_LA.nen",
+   "text": "đặt lịch dư thời gian",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.DAO_HONG_HY",
+   "text": "đi xa có niềm vui, gặp người mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.DAO_HONG_HY.nen",
+   "text": "mở rộng quan hệ ở nơi mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.TANG_HO",
+   "text": "đi xa nên để ý an toàn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.TANG_HO.nen",
+   "text": "không đi đường dài khi mệt, chuẩn bị bảo hiểm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.KHOC_HU",
+   "text": "xa nhà dễ nhớ nhà, cô đơn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.DI_CHUYEN.KHOC_HU.nen",
+   "text": "giữ liên lạc với người thân",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_LOC",
+   "text": "giấy tờ, thủ tục suôn sẻ hơn; tranh chấp dễ hòa",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_LOC.nen",
+   "text": "giải quyết dứt điểm hồ sơ tồn đọng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_QUYEN",
+   "text": "có lợi thế khi thương lượng",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_QUYEN.nen",
+   "text": "thương lượng dựa trên chứng cứ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_KHOA",
+   "text": "được người có chuyên môn giúp, dễ làm rõ đúng sai",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_KHOA.nen",
+   "text": "nhờ luật sư, chuyên gia tư vấn",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_KY",
+   "text": "dễ vướng thị phi, khiếu nại hoặc sai sót giấy tờ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.HOA_KY.nen",
+   "text": "đọc kỹ trước khi ký, lưu chứng từ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.LOC_TON",
+   "text": "giấy tờ ổn định",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.LOC_TON.nen",
+   "text": "lưu giữ hồ sơ cẩn thận",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.THIEN_MA",
+   "text": "có thủ tục liên quan đến xuất nhập cảnh, chuyển hộ khẩu hoặc đăng ký mới",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.THIEN_MA.nen",
+   "text": "chuẩn bị đủ hồ sơ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.KINH_DUONG",
+   "text": "dễ tranh chấp, cãi vã dẫn tới khiếu nại",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.KINH_DUONG.nen",
+   "text": "hòa giải trước, tránh đối đầu",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.DA_LA",
+   "text": "hồ sơ kéo dài, dễ bị trả lại",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.DA_LA.nen",
+   "text": "kiên nhẫn, theo dõi tiến độ",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.TANG_HO",
+   "text": "chuyện giấy tờ dễ gây mệt mỏi",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.TANG_HO.nen",
+   "text": "nhờ người tin cậy cùng lo",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.KHOC_HU",
+   "text": "dễ lo lắng về thủ tục",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "ct.PHAP_LY.KHOC_HU.nen",
+   "text": "hỏi rõ quy trình trước khi làm",
+   "source": "Cẩm nang V2 P.III–P.IV (Tứ Hóa, sao lưu theo cung); Prompt mục 8–9",
+   "reviewed": false
+  },
+  {
+   "key": "hop.menh.sinh",
+   "text": "Bản mệnh {a} ({ha}) sinh bản mệnh {b} ({hb}): {a} có xu hướng nâng đỡ, lo cho {b}; {b} được hưởng sự chăm sóc. Quan hệ thuận, chỉ cần {b} biết ghi nhận để {a} không thấy hao sức.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.menh.khac",
+   "text": "Bản mệnh {a} ({ha}) khắc bản mệnh {b} ({hb}): {a} dễ lấn át, {b} dễ thấy bị gò bó. Đây không phải điều xấu cố định: cần {a} mềm mỏng, tôn trọng khoảng riêng của {b}; khi có người thứ ba hoặc hành trung gian thì dễ hòa.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.menh.hoa",
+   "text": "Hai bản mệnh cùng hành {ha}: dễ hiểu nhau, cùng nhịp sống; nhưng cũng dễ cùng nóng hoặc cùng chần chừ, nên bù trừ cho nhau.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.menh.trung_gian",
+   "text": "Hành trung gian giúp hai bản mệnh hòa nhau là {x}: những việc, màu sắc, môi trường thuộc hành này (theo ngũ hành) giúp hai người dễ dung hòa.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.can.hop",
+   "text": "Thiên can năm sinh {x} là cặp ngũ hợp: dễ đồng lòng trong quyết định lớn, chung mục tiêu.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.can.sinh",
+   "text": "Thiên can năm sinh {x} tương sinh: người này dễ bổ trợ ý tưởng cho người kia.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.can.khac",
+   "text": "Thiên can năm sinh {x} tương khắc: cách nghĩ dễ trái nhau khi bàn việc lớn; nên thống nhất nguyên tắc chung từ đầu.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.can.hoa",
+   "text": "Thiên can năm sinh {x} cùng hành: tính toán giống nhau, dễ cùng quan điểm.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.tam_hop",
+   "text": "Tuổi {x} nằm trong một nhóm tam hợp: hợp tính, dễ cùng chí hướng, làm việc chung thuận.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.luc_hop",
+   "text": "Tuổi {x} lục hợp: dễ gắn bó, biết bù đắp cho nhau.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.xung",
+   "text": "Tuổi {x} lục xung: tính cách và nhịp sống khác nhau rõ, dễ bất đồng; cần thống nhất cách sống chung và nhường nhau ở việc nhỏ.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.hai",
+   "text": "Tuổi {x} lục hại: dễ phật ý vì chuyện nhỏ, hiểu lầm âm ỉ; nên nói rõ thay vì để trong lòng.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.hinh",
+   "text": "Tuổi {x} tương hình: dễ góp ý nặng lời với nhau; giữ lời nói nhẹ nhàng, tôn trọng.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.dong",
+   "text": "Hai người cùng tuổi {x}: hiểu nhau nhanh, nhưng dễ cùng cố chấp ở một điểm.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chi.binh",
+   "text": "Tuổi {x} không xung, không hợp: quan hệ bình thường, hợp hay không tùy cách cư xử.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cung.tam_hop",
+   "text": "Cung Mệnh hai người ({x}) tam hợp: cách nhìn đời gần nhau.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cung.luc_hop",
+   "text": "Cung Mệnh hai người ({x}) lục hợp: dễ nương tựa nhau.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cung.xung",
+   "text": "Cung Mệnh hai người ({x}) xung chiếu: mỗi người một hướng, bổ sung cho nhau nếu biết tôn trọng khác biệt.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cung.dong",
+   "text": "Cung Mệnh hai người cùng ở {x}: tính cách nền giống nhau.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cuc.sinh",
+   "text": "Cục của {a} ({x}) sinh bản mệnh {b} ({hb}): hoàn cảnh, cách làm việc của {a} giúp {b} phát huy.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.cuc.khac",
+   "text": "Cục của {a} ({x}) khắc bản mệnh {b} ({hb}): nhịp sống của {a} có lúc tạo áp lực cho {b}; nên chia việc theo sở trường.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chinh.sinh",
+   "text": "Chính tinh cung Mệnh của {a} ({x}) sinh chính tinh Mệnh của {b} ({y}): {a} dễ khơi gợi điểm mạnh của {b}.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.chinh.khac",
+   "text": "Chính tinh cung Mệnh của {a} ({x}) khắc chính tinh Mệnh của {b} ({y}): cách làm của {a} có lúc lấn át {b}; nên chia vai rõ ràng.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.tong.tot",
+   "text": "Nhìn chung hai lá số nhiều điểm tương sinh, hòa hợp ({x}): nền gắn bó tốt; giữ được sự tôn trọng thì quan hệ bền.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.tong.trung",
+   "text": "Nhìn chung hai lá số vừa có điểm hợp vừa có điểm khắc ({x}): hợp hay không phụ thuộc nhiều vào cách hai người cư xử.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.tong.can",
+   "text": "Nhìn chung hai lá số có nhiều điểm khắc, xung ({x}): cần nhiều nhường nhịn và thỏa thuận rõ; đây là chỗ cần vun đắp, không phải lời phán quan hệ không thành.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  },
+  {
+   "key": "hop.note",
+   "text": "Tương sinh tương khắc chỉ là một góc nhìn theo ngũ hành và can chi; sự hiểu nhau, tôn trọng và cách sống chung mới là điều quyết định.",
+   "source": "Cẩm nang V2 P.I (ngũ hành, can chi), P.V.4 (so hai lá số)",
+   "reviewed": false
+  }
+ ]
+}

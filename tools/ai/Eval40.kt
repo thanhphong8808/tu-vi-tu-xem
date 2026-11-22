@@ -48,6 +48,8 @@ fun main(args: Array<String>) {
     val limit = args.getOrNull(3)?.toInt() ?: Int.MAX_VALUE
     val today = LocalDate.parse(spec.getValue("today").jsonPrimitive.content)
     val charts = spec.getValue("charts").jsonObject
+    // Cấu hình theo file model (Nhanh E2B / Mạnh E4B, D-68).
+    vn.tuvi.app.api.AiFlow.models().firstOrNull { it.file == File(model).name }?.let { vn.tuvi.app.api.AiFlow.select(it.id) }
     val llm = JvmLlm(model)
     val api = AppApi(MemoryStore(), { today }, llm)
     val rows = ArrayList<JsonObject>()
@@ -86,7 +88,7 @@ private fun report(rows: List<JsonObject>, loadMs: Long, model: String): String 
     val ok = asked.filter { it.s("used") == "true" }
     val times = asked.mapNotNull { it.s("ms").toLongOrNull() }.filter { it > 0 }.sorted()
     val median = if (times.isEmpty()) 0 else times[times.size / 2]
-    appendLine("# Chấm bộ 40 câu — Trợ lý AI trên máy (Gemma 4 E2B, LiteRT-LM)")
+    appendLine("# Chấm bộ 40 câu — Trợ lý AI trên máy (${vn.tuvi.app.api.AiFlow.config().label.substringBefore(" (")}, LiteRT-LM)")
     appendLine()
     appendLine("Chạy trên máy build Linux, **CPU 4 nhân**, LiteRT-LM 0.19.1 (`litertlm-jvm`), model `${File(model).name}`.")
     appendLine("Cùng luồng với app: `AppApi.askAi` → lời nhắc từ QaAnalyst → model → kiểm tra mục 12.3 (`AiGuard`).")

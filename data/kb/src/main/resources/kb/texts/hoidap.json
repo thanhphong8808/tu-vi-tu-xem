@@ -325,6 +325,12 @@
    "reviewed": false
   },
   {
+   "key": "qa.note.doi_chieu",
+   "text": "Đây là các tín hiệu lá số cho những năm đã qua; bạn đối chiếu với việc đã thật sự xảy ra. Nhiều năm khớp thì giờ sinh khá đúng; lệch nhiều thì nên xem lại giờ sinh.",
+   "source": "Prompt mục 9",
+   "reviewed": false
+  },
+  {
    "key": "qa.khong_su_kien",
    "text": "Trong khoảng năm đã dò, chưa thấy năm nào có dấu hiệu đồng thanh rõ cho việc này; dưới đây là những năm chủ đề liên quan có điểm cao nhất.",
    "source": "Prompt mục 9",

@@ -141,6 +141,10 @@ OTHER = {
     "qa.chua_hieu": ("Mình chưa hiểu rõ câu hỏi này. Bạn thử hỏi cụ thể hơn, ví dụ nêu chủ đề (công việc, tiền bạc, tình duyên…) "
                      "và thời gian (năm nay, năm 2027, tháng 3 âm, ngày mai…), hoặc chọn một câu gợi ý bên dưới.", P12 + ".4 quy tắc 1"),
     "qa.chua_du": ("Lá số chưa đủ dữ kiện để trả lời riêng câu này; dưới đây là phần gần nhất app tính được.", P12 + ".4 quy tắc 1"),
+    "qa.truoc_nam_sinh": ("Năm bạn hỏi đứng trước năm sinh của lá số đang mở nên chưa có vận hạn để xem. Bạn thử hỏi một năm từ năm "
+                          "sinh trở đi, hoặc mở đúng lá số của người cần xem.", "Mục 8 (vận hạn tính từ năm sinh)"),
+    "qa.note.doi_chieu": ("Đây là các tín hiệu lá số cho những năm đã qua; bạn đối chiếu với việc đã thật sự xảy ra. Nhiều năm khớp "
+                          "thì giờ sinh khá đúng; lệch nhiều thì nên xem lại giờ sinh.", P9),
     "qa.khong_su_kien": ("Trong khoảng năm đã dò, chưa thấy năm nào có dấu hiệu đồng thanh rõ cho việc này; dưới đây là những năm "
                          "chủ đề liên quan có điểm cao nhất.", P9),
     "qa.note.kha_nang": ("Đây là mức khả năng theo số tầng vận cùng chỉ, không phải lời khẳng định; quyết định vẫn là của bạn.", P9 + "; " + P11),

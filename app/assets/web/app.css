@@ -413,3 +413,7 @@ input[type=range] { width: 100%; accent-color: var(--accent); margin: 6px 0 2px;
 .qa-local .ic, .note .ic { color: var(--luu); }
 .contact-line .ic, #contact .btn .ic { color: var(--accent); }
 .btn:not(.primary) .ic { color: var(--accent); }
+
+/* Chọn model Trợ lý AI (D-68) */
+.ai-models { display: grid; gap: 8px; margin: 10px 0; }
+.ai-models .opt { margin: 0; }

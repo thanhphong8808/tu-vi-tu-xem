@@ -27,7 +27,10 @@ interface LlmHost {
      */
     fun status(): JsonObject
 
-    /** `download` | `cancel` | `delete` | `probe` (thử nạp thư viện máy, dùng cho tự kiểm tra). Trả về trạng thái mới. */
+    /**
+     * `download` | `cancel` | `delete` | `probe` (thử nạp thư viện máy, dùng cho tự kiểm tra) | `select:<id>` (chọn model
+     * Nhanh/Mạnh, D-68; không đổi được khi đang tải). Trả về trạng thái mới; `have` = id các model đã tải và kiểm xong.
+     */
     fun action(name: String): JsonObject
 
     /** Sinh lời (chặn luồng). Ném lỗi nếu model chưa sẵn sàng. */
@@ -37,19 +40,28 @@ interface LlmHost {
 /** Luồng một câu hỏi qua AI: dựng lời nhắc → model → kiểm tra mục 12.3 → đạt thì trả câu AI, trượt thì báo dùng bản app. */
 object AiFlow {
     @Volatile private var cfgCache: AiModelConfig? = null
-    fun config(): AiModelConfig = cfgCache ?: AiModelConfig.load().also { cfgCache = it }
+    @Volatile private var selected: String? = null
+    fun config(): AiModelConfig = cfgCache?.takeIf { selected == null || it.id == selected } ?: AiModelConfig.load(selected).also { cfgCache = it }
 
-    fun modelInfo(): JsonObject {
-        val c = config()
-        return buildJsonObject {
-            put("label", c.label); put("runtime", c.runtime); put("bytes", c.bytes); put("minRamMb", c.minRamMb)
-            put("source", c.url.substringAfter("https://").substringBefore("/"))
-        }
+    /** Mọi model chọn được (Nhanh, Mạnh). */
+    fun models(): List<AiModelConfig> = AiModelConfig.all()
+
+    /** Chọn model theo id (D-68); id lạ → giữ model mặc định. */
+    fun select(id: String?) {
+        selected = id?.takeIf { want -> models().any { it.id == want } }
+        cfgCache = null
     }
+
+    private fun info(c: AiModelConfig): JsonObject = buildJsonObject {
+        put("id", c.id); put("tier", c.tier); put("label", c.label); put("runtime", c.runtime); put("bytes", c.bytes); put("minRamMb", c.minRamMb)
+        put("source", c.url.substringAfter("https://").substringBefore("/"))
+    }
+
+    fun modelInfo(): JsonObject = info(config())
 
     fun status(host: LlmHost?): JsonObject {
         val s = host?.status() ?: buildJsonObject { put("state", "unsupported"); put("message", "Bản này chưa có model AI trên máy.") }
-        return JsonObject(s + ("model" to modelInfo()))
+        return JsonObject(s + ("model" to modelInfo()) + ("models" to JsonArray(models().map { info(it) })))
     }
 
     fun answer(host: LlmHost?, a: QaAnswer, currentLunarYear: Int, store: KeyValueStore): JsonObject {
@@ -91,6 +103,7 @@ object AiFlow {
  * Câu hỏi có chữ “thử lỗi AI” → trả đầu ra hỏng để thử đường rơi về bản QaAnalyst.
  */
 class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
+    private val have = java.util.Collections.synchronizedSet(HashSet<String>())
     @Volatile private var state = "absent"
     @Volatile private var done = 0L
     @Volatile private var started = 0L
@@ -101,9 +114,10 @@ class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
         if (state == "downloading") {
             // Tải giả trong khoảng 3 giây.
             done = minOf(total, total * (System.currentTimeMillis() - started) / 3000)
-            if (done >= total) state = "ready"
+            if (done >= total) { state = "ready"; have += AiFlow.config().id }
         }
         return buildJsonObject {
+            put("have", buildJsonArray { have.forEach { add(it) } })
             put("state", state); put("done", done); put("total", total); put("wifi", true); put("fake", true)
             put("ramMb", 12000); put("freeBytes", 100_000_000_000L)
             if (state == "ready") put("backend", "giả lập")
@@ -114,8 +128,13 @@ class FakeLlmHost(private val delayMs: Long = 400) : LlmHost {
     override fun action(name: String): JsonObject {
         when (name) {
             "download" -> if (state == "absent") { state = "downloading"; done = 0; started = System.currentTimeMillis() }
-            "cancel", "delete" -> { state = "absent"; done = 0 }
+            "cancel" -> { state = if (AiFlow.config().id in have) "ready" else "absent"; done = 0 }
+            "delete" -> { have -= AiFlow.config().id; state = "absent"; done = 0 }
             "probe" -> probe = "probe-ok: giả lập"
+            else -> if (name.startsWith("select:") && state != "downloading") {
+                AiFlow.select(name.removePrefix("select:"))
+                state = if (AiFlow.config().id in have) "ready" else "absent"
+            }
 
         }
         return status()

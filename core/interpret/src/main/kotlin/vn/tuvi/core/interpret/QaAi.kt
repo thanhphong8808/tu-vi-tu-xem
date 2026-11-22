@@ -19,6 +19,8 @@ import vn.tuvi.core.engine.StarId
 data class AiModelConfig(
     val id: String,
     val label: String,
+    /** “Nhanh” (E2B) hoặc “Mạnh” (E4B): người dùng chọn trong thẻ Trợ lý AI (D-68). */
+    val tier: String,
     val runtime: String,
     val file: String,
     val url: String,
@@ -39,11 +41,27 @@ data class AiModelConfig(
             (AiModelConfig::class.java.getResourceAsStream(KnowledgeBase.RESOURCE_ROOT + path)
                 ?: throw KbException("Không thấy tài nguyên KB: ${KnowledgeBase.RESOURCE_ROOT}$path")).use { it.readBytes().toString(Charsets.UTF_8) }
 
-        /** Cấu hình model trong `kb/ai/model.json`: đổi model không sửa code (mục 12.1). */
-        fun load(): AiModelConfig = parse(res("ai/model.json"))
+        /** Mọi model trong `kb/ai/model.json` (D-68: Nhanh E2B, Mạnh E4B); model đầu tiên khi không có `default`. */
+        fun all(): List<AiModelConfig> = parseAll(res("ai/model.json")).second
+
+        /** Cấu hình model [id] (null hoặc không có → model mặc định). Đổi model không sửa code (mục 12.1). */
+        fun load(id: String? = null): AiModelConfig {
+            val (def, list) = parseAll(res("ai/model.json"))
+            return list.firstOrNull { it.id == id } ?: list.firstOrNull { it.id == def } ?: list.first()
+        }
+
+        fun parseAll(text: String): Pair<String?, List<AiModelConfig>> {
+            val o = Json.parseToJsonElement(text) as JsonObject
+            val arr = o["models"] as? kotlinx.serialization.json.JsonArray ?: return null to listOf(parse(text))
+            return (o["default"] as? JsonPrimitive)?.contentOrNull to arr.map { parse(it.toString()) }.also {
+                if (it.isEmpty()) throw KbException("ai/model.json: chưa có model nào")
+            }
+        }
 
         /** System prompt chế độ HOI_DAP trong `kb/ai/system_prompt_vi.md` (mục 12.4). */
-        fun systemPrompt(): String = res("ai/system_prompt_vi.md").trim()
+        fun systemPrompt(cfg: AiModelConfig? = null): String = res("ai/system_prompt_vi.md").trim().let { s ->
+            if (cfg == null) s else s.replace("{minWords}", (cfg.minWords + 40).toString()).replace("{maxWords}", (cfg.maxWords - 60).toString())
+        }
 
         fun parse(text: String): AiModelConfig {
             val o = Json.parseToJsonElement(text) as JsonObject
@@ -51,7 +69,7 @@ data class AiModelConfig(
             fun i(k: String) = (o[k] as? JsonPrimitive)?.intOrNull ?: throw KbException("ai/model.json: thiếu $k")
             fun d(k: String) = (o[k] as? JsonPrimitive)?.doubleOrNull ?: throw KbException("ai/model.json: thiếu $k")
             return AiModelConfig(
-                id = s("id"), label = s("label"), runtime = s("runtime"), file = s("file"), url = s("url"),
+                id = s("id"), label = s("label"), tier = (o["tier"] as? JsonPrimitive)?.contentOrNull ?: "Nhanh", runtime = s("runtime"), file = s("file"), url = s("url"),
                 bytes = (o["bytes"] as? JsonPrimitive)?.longOrNull ?: throw KbException("ai/model.json: thiếu bytes"),
                 sha256 = s("sha256").lowercase(), minRamMb = i("minRamMb"), maxTokens = i("maxTokens"),
                 maxOutputTokens = i("maxOutputTokens"), contextChars = i("contextChars"), temperature = d("temperature"),
@@ -85,7 +103,7 @@ data class AiPrompt(val system: String, val user: String, val facts: AiFacts) {
          * Dựng lời nhắc từ câu trả lời của QaAnalyst. Khối dữ kiện không quá [AiModelConfig.contextChars] ký tự
          * (khoảng 2.000 token, mục 12.2 bước 3): đoạn nào vượt thì cắt, nhưng luôn giữ đoạn Kết luận và khuyến nghị.
          */
-        fun build(a: QaAnswer, currentLunarYear: Int, cfg: AiModelConfig, system: String = AiModelConfig.systemPrompt()): AiPrompt {
+        fun build(a: QaAnswer, currentLunarYear: Int, cfg: AiModelConfig, system: String = AiModelConfig.systemPrompt(cfg)): AiPrompt {
             val head = buildList {
                 add("Câu hỏi được hiểu là: ${a.understood}.")
                 add("Năm hiện tại: $currentLunarYear (âm lịch).")
@@ -93,16 +111,19 @@ data class AiPrompt(val system: String, val user: String, val facts: AiFacts) {
             }
             val adv = a.advice.map { "${label(it.type)}: ${it.text}" } + listOfNotNull(a.closing?.let { "Lời kết: $it" })
             val budget = cfg.contextChars - (head + adv).sumOf { it.length + 1 }
-            val paras = ArrayList<String>()
+            // Vượt ngân sách thì giữ đoạn quan trọng trước (D-68): kết luận, việc cụ thể trong năm, đồng thanh, các tầng,
+            // tháng, từng sao, sách, tổng hợp; đoạn được chọn vẫn xếp theo thứ tự gốc.
+            val lines = a.paragraphs.map { p -> (p.title?.let { "[$it] " } ?: "") + p.text }
+            val chosen = arrayOfNulls<String>(lines.size)
             var used = 0
-            for ((i, p) in a.paragraphs.withIndex()) {
-                val line = (p.title?.let { "[$it] " } ?: "") + p.text
+            for (i in lines.indices.sortedBy { priority(a.paragraphs[it], it) }) {
                 val room = budget - used
-                if (i > 0 && room < 120) break
-                val cut = if (line.length > room) cutAtSentence(line, room) else line
-                paras += cut
+                if (i > 0 && room < 120) continue
+                val cut = if (lines[i].length > room) cutAtSentence(lines[i], room) else lines[i]
+                chosen[i] = cut
                 used += cut.length + 1
             }
+            val paras = chosen.filterNotNull()
             val facts = AiFacts(
                 lines = head + paras + adv,
                 score = a.score,
@@ -114,6 +135,20 @@ data class AiPrompt(val system: String, val user: String, val facts: AiFacts) {
                 append("</du_kien>")
             }
             return AiPrompt(system, user, facts)
+        }
+
+        private fun priority(p: Paragraph, i: Int): Int {
+            if (i == 0) return 0
+            val t = p.title ?: return 4
+            return when {
+                "Cụ thể" in t || "đã có gì" in t || "chạm vào đâu" in t -> 1
+                "Đồng thanh" in t || "Việc nổi lên" in t || t.startsWith("Năm ") -> 2
+                "Lá số gốc" in t || "Đại hạn" in t || "Tiểu hạn" in t || "Lưu niên" in t || "Lưu Thái Tuế" in t || "Tứ Hóa" in t -> 3
+                "Theo tháng" in t || "Vì sao" in t -> 4
+                "Từng sao" in t || "Bản mệnh" in t -> 5
+                "Sách bàn" in t -> 6
+                else -> 7
+            }
         }
 
         private fun cutAtSentence(s: String, max: Int): String {
