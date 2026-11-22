@@ -177,7 +177,19 @@ Chỉ một câu cần viết lại (mất khoảng 76 giây); các câu khác �
 
 ## Máy ảo Android 0.9.1 (CI)
 
-(điền sau khi workflow chạy xong)
+Workflow “Chạy thử trên máy ảo Android”, commit `c18eff3`
+([run 45004210473](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/45004210473)) — **đạt cả 5 máy ngay lần đầu**.
+
+| Máy ảo | Cài đè 0.9.0 → 0.9.1 | Selftest | LiteRT-LM (probe) | Gõ câu hỏi, trợ năng, chạm giữ, chia sẻ, PDF, PNG | Luận một năm | “Khi nào tôi lấy vợ?” |
+| --- | --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 30 ms | 281 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 240 ms | 1.064 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 96 ms | 797 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 206 ms | 1.952 ms |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 30 ms | 317 ms |
+
+Lượt “Kiem tra” theo push có lần đỏ vì Maven Central trả 404 khi tải kotlinx-serialization (lượt theo PR cùng commit
+xanh); đã chạy lại.
 
 ## Anh cần thử
 
