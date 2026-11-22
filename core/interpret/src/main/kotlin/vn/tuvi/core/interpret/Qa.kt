@@ -1335,7 +1335,11 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         val asked = ev?.topic ?: parse.topics.firstOrNull()
         // Tính cách, phúc đức không có điểm theo năm → xếp theo điểm cả năm.
         val topic = asked?.let { periodTopic(it) }
-        val datas = range.filter { it >= chart.lunar.year }.map { it to yData(chart, it, ctx) }
+        // Xếp hạng bằng bản tóm tắt năm (điểm + sự kiện, không ghép câu), tính song song; chỉ năm được chọn mới tính đầy đủ.
+        val yrs = range.filter { it >= chart.lunar.year }
+        val digests = cached(chart, "ydig" to (yrs.firstOrNull() to yrs.lastOrNull())) {
+            yrs.parallelStream().map { y -> y to composer.yearDigest(chart, y, ctx.expert) }.collect(java.util.stream.Collectors.toList()).sortedBy { it.first }
+        }
         val paras = ArrayList<Paragraph>()
         parse.reframe?.let { textPara(it) }?.let { paras.add(it) }
         if (asked != null && topic == null) textPara("qa.note.khong_diem_nam", topic = asked)?.let { paras.add(it) }
@@ -1343,17 +1347,21 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
         val negative = (ev?.polarity ?: 0) < 0 || (parse.caution && (ev == null || ev.polarity <= 0))
         val role = analyst.roleFor(topic, parse.relative)
         fun topicScore(d: Composer.PeriodData) = topic?.let { d.topics[it]?.score } ?: d.score
+        // Nhà đất chỉ có điểm năm trong bản đầy đủ: lấy điểm từ yData cho chủ đề đó.
+        val fullOnly = topic != null && digests.none { topic in it.second.topics }
+        fun digScore(g: YearDigest) = if (fullOnly) yData(chart, g.lunarYear, ctx).topics[topic]?.score ?: g.score else topic?.let { g.topics[it] } ?: g.score
         fun why(y: Int, d: Composer.PeriodData, extra: List<String>) = Why("QA_YEAR_$y", "Năm $y theo các tầng", 
             "Điểm ${topic?.let { SHORT[it] } ?: "cả năm"} gộp 5 tầng (mục 9 bước 6). ${analyst.yearReason(chart, d, topic, parse.relative, negative)}.",
             (topic?.let { d.topics[it]?.layers } ?: d.layers).map { "${it.layer.vn}: ${it.score.score} (cung ${role.vn} tại ${it.palace.vn})" } + extra, "Prompt mục 8, 9")
         var best: Int? = null
         if (ev != null) {
-            val hits = datas.mapNotNull { (y, d) -> d.events.firstOrNull { it.event == ev }?.let { e -> Triple(y, e, d) } }
-                .sortedWith(compareByDescending<Triple<Int, YearEvent, Composer.PeriodData>> { pts(it.second.level) }.thenByDescending { topicScore(it.third) }.thenBy { it.first })
+            val hits = digests.mapNotNull { (y, g) -> g.events.firstOrNull { it.event == ev }?.let { e -> Triple(y, e, g) } }
+                .sortedWith(compareByDescending<Triple<Int, YearEvent, YearDigest>> { pts(it.second.level) }.thenByDescending { digScore(it.third) }.thenBy { it.first })
             if (hits.isEmpty()) {
                 textPara("qa.khong_su_kien")?.let { paras.add(it) }
             } else {
-                for ((y, e, d) in hits.take(3)) {
+                for ((y, e, _) in hits.take(3)) {
+                    val d = yData(chart, y, ctx)
                     val s = topicScore(d)
                     paras.add(Paragraph(
                         "${yearTag(chart, y)}: ${ev.short} ${e.level.vn} (${e.layers.size} tầng cùng chỉ: ${e.layers.joinToString(", ") { LAYER_SHORT.getValue(it) }}); điểm ${SHORT[ev.topic]} $s/100. " +
@@ -1365,9 +1373,10 @@ class QaEngine(private val kb: KnowledgeBase, private val composer: Composer = C
             }
         }
         if (best == null) {
-            val ranked = datas.filter { topic == null || it.second.topics.containsKey(topic) }
-                .sortedWith(if (negative) compareBy<Pair<Int, Composer.PeriodData>> { topicScore(it.second) }.thenBy { it.first } else compareByDescending<Pair<Int, Composer.PeriodData>> { topicScore(it.second) }.thenBy { it.first })
-            for ((y, d) in ranked.take(3)) {
+            val ranked = digests.filter { topic == null || fullOnly || it.second.topics.containsKey(topic) }
+                .sortedWith(if (negative) compareBy<Pair<Int, YearDigest>> { digScore(it.second) }.thenBy { it.first } else compareByDescending<Pair<Int, YearDigest>> { digScore(it.second) }.thenBy { it.first })
+            for ((y, _) in ranked.take(3)) {
+                val d = yData(chart, y, ctx)
                 val s = topicScore(d)
                 paras.add(Paragraph("${yearTag(chart, y)}: ${topic?.let { "điểm ${SHORT[it]}" } ?: "điểm cả năm"} $s/100${if (topic != null) ", điểm cả năm ${d.score}/100" else ""}. " +
                     "${analyst.yearReason(chart, d, topic, parse.relative, negative)}.",
