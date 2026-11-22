@@ -12,3 +12,4 @@ tools/apk/env.local.sh
 app/keystore/
 node_modules/
 app/build-eval/
+__pycache__/
