@@ -19,7 +19,7 @@ Bấm vào tên file để tải (GitHub mở trang file, bấm nút **Download 
 | [Ảnh thẻ Trợ lý AI](docs/tai-ve/TroLyAI_TheTai.png) | Thẻ tải Trợ lý AI trong mục Hỏi đáp: dung lượng, nguồn tải, chỉ qua Wi-Fi |
 | [Báo cáo bản 0.8.0 / 0.8.1](docs/PHASE8_REPORT.md) | Kiến thức sách, giao diện mới; 0.8.1: hỏi đoán năm cưới (câu trả lời mẫu, app đoán dựa vào đâu); kết quả kiểm thử, 5 máy ảo |
 | [Báo cáo giai đoạn 7](docs/PHASE7_REPORT.md) | Trợ lý AI trên máy: cách gắn, kiểm tra đầu ra, kết quả kiểm thử, 5 máy ảo, việc anh cần thử trên S22 Ultra |
-| [Ảnh trang chủ trên máy ảo](docs/tai-ve/TrangChu_MayAo_API35.png) · [ảnh Hỏi đáp](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật (Android 15, bản 0.8.0): giao diện mới, số liên hệ; Hỏi đáp sau khi gõ “nam sau tai chinh ra sao” |
+| [Ảnh trang chủ trên máy ảo](docs/tai-ve/TrangChu_MayAo_API35.png) · [ảnh Hỏi đáp](docs/tai-ve/HoiDap_MayAo_API35.png) | Màn hình thật trên máy ảo Android 15: trang chủ (bản 0.8.0); Hỏi đáp (bản 0.9.0) sau khi gõ “nam sau tai chinh ra sao” |
 | [Hỏi đáp mẫu (0.6.1)](docs/tai-ve/HoiDapMau_GiaiDoan6.txt) | 41 câu hỏi và câu trả lời app luận trên lá số mẫu, đủ các tầng: gốc, đại hạn, lưu niên, tiểu hạn, Lưu Thái Tuế, tổng hợp |
 | [Lá số mẫu (PDF A4)](https://github.com/thanhphong8808/tu-vi-tu-xem/raw/main/docs/tai-ve/LaSoMau_CaA.pdf) | Đúng file app xuất ra trên máy Android: trang 1 lá số, sau đó luận trọn đời và năm 2026 |
 | [Lá số mẫu (ảnh PNG)](docs/tai-ve/LaSoMau_CaA.png) | Ảnh lưới 12 cung app xuất ra |

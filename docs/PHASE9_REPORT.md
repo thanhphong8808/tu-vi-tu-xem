@@ -101,7 +101,28 @@ Câu E4B viết cho “Năm 2015 tôi gặp chuyện gì?” (lá số E, nam 19
 
 ## Máy ảo Android (CI)
 
-(điền sau khi workflow chạy xong)
+Workflow “Chạy thử trên máy ảo Android”, commit `e05823a`
+([run 44986090632](https://github.com/thanhphong8808/tu-vi-tu-xem/actions/runs/44986090632)) — **đạt cả 5 máy** (Android 15
+và 16 phải chạy lại một lần, xem dưới). Workflow “Kiem tra” đạt cả lượt push và lượt PR.
+
+| Máy ảo | Cài đè 0.8.1 → 0.9.0 | Selftest | LiteRT-LM (probe) | Gõ câu hỏi, trợ năng, chạm giữ, chia sẻ, PDF, PNG | Luận một năm | “Khi nào tôi lấy vợ?” |
+| --- | --- | --- | --- | --- | --- | --- |
+| Android 11 (API 30) | ✅ | 523/523 | ✅ | ✅ | 29 ms | 284 ms |
+| Android 14 (API 34) | ✅ | 523/523 | ✅ | ✅ | 91 ms | 1.229 ms |
+| Android 15 (API 35) | ✅ | 523/523 | ✅ | ✅ | 69 ms | 712 ms |
+| Android 16 (API 36) | ✅ | 523/523 | ✅ | ✅ | 45 ms | 913 ms |
+| Android 17 (API 37) | ✅ | 523/523 | ✅ | ✅ | 37 ms | 314 ms |
+
+Quá trình:
+
+- Commit `20ac7ec` đạt cả 5 máy, nhưng Android 16 trả lời “Khi nào tôi lấy vợ?” mất 2,8 giây, sát chỉ tiêu 3 giây. Mình sửa
+  phần dò “năm nào…”: xếp hạng bằng bản tóm tắt năm (điểm và sự kiện, không ghép câu), tính song song, chỉ 3 năm được
+  chọn mới tính đầy đủ. Trên máy build câu này còn khoảng 40 ms.
+- Lượt đầu của commit `e05823a`: Android 16 trượt phần đo hiệu năng chung (luận một năm 330 ms, trọn đời 955 ms; phần này
+  không đổi so với lượt trước đã đạt) vì máy ảo chạy chậm; Android 15 khởi động màn hình sai (tỉ lệ điểm ảnh 1, cây trợ năng
+  rỗng) nên các bước chạm không làm được, selftest vẫn 523/523. Chạy lại hai máy này thì đạt.
+
+Ảnh màn hình thật trên máy ảo Android 15: [Hỏi đáp](tai-ve/HoiDap_MayAo_API35.png).
 
 ## Việc còn lại
 
